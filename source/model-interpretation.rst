@@ -387,22 +387,18 @@ Interpretation of mathematics
    ``component`` element, SHALL be treated as a statement which holds true
    unconditionally.
 
-2. Every MathML element which appears as a direct child information item
-   of the MathML ``math`` element information item SHALL be treated as a
-   statement which holds true unconditionally.
-
-3. Every variable name given using the MathML ``ci`` element SHALL be
+2. Every variable name given using the MathML ``ci`` element SHALL be
    treated as a variable reference within the component element ancestor
    the MathML is contained within.
 
-4. Every such variable reference SHALL be treated as a linear expression
+3. Every such variable reference SHALL be treated as a linear expression
    :math:`\frac{m_{V}}{m_{S}} \cdot x - o_{V} + \frac{m_{S}}{m_{V}} \cdot o_{S}`.
    In this equation, :math:`x` represents the
    variable in the mathematical model, in the units of the source
    variable element, while the remaining variables SHALL be interpreted
    as specified in the :ref:`effect-of-units-on-variables` section.
 
-5. Every MathML ``cn`` element MUST have an attribute information item in
+4. Every MathML ``cn`` element MUST have an attribute information item in
    the CellML namespace, with local name ``units``. The value of
    this attribute information item MUST be a valid units reference. The
    referenced units SHALL NOT affect the mathematical interpretation of
