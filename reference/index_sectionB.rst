@@ -8,7 +8,7 @@ Section B of the Normative CellML2.0 Specification outlines the element informat
 items and the rules governing their declaration.
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :numbered:
     :glob:
 
