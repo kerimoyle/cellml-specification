@@ -1,5 +1,5 @@
 .. _informB9:
-
+.. _inform_reset:
 
 .. container:: toggle
 

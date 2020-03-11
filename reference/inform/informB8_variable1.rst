@@ -39,4 +39,5 @@
 
     For examples and further explanation of components and their encapsulation,
     please refer to
-    :ref:`section 3 of the Sodium Channel theory<theory_sodiumchannel_interpretation>`.
+    :ref:`section 3 of the Sodium Channel theory<theory_sodiumchannel_interpretation>`
+    documentation.  **TODO** need to alias these links.
