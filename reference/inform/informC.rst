@@ -1,5 +1,11 @@
 .. _informC:
 
+.. container:: toggle
 
+  .. container:: header
 
-Notes on C go here
+    See more
+
+  .. container:: infospec
+
+    **TODO** Informal notes go here

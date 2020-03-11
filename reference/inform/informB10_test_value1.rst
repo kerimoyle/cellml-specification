@@ -1,5 +1,11 @@
 .. _informB10:
 
+.. container:: toggle
 
+  .. container:: header
 
-Notes on B10 go here
+    See more
+
+  .. container:: infospec
+
+    **TODO** Informal notes go here

@@ -1,5 +1,12 @@
 .. _inform2:
 
+.. container:: toggle
 
+  .. container:: header
 
-Notes on 2 go here
+    See more
+
+  .. container:: infospec
+
+    **TODO** Informal notes go here
+

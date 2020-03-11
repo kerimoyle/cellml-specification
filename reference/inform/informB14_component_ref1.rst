@@ -1,5 +1,13 @@
 .. _informB14:
 
 
+.. container:: toggle
 
-Notes on B14 go here
+  .. container:: header
+
+    See more
+
+  .. container:: infospec
+
+    **TODO** Informal notes go here
+
