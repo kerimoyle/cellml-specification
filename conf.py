@@ -88,12 +88,6 @@ extlinks = {
 
 }
 
-# Mapping to get references in the specification document repo into this one
-# See: https://docs.readthedocs.io/en/stable/guides/intersphinx.html
-intersphinx_mapping = {
-    'spec': ('https://www.sphinx-doc.org/en/master/', None),
-}
-
 # rst_epilog to define formatted, clickable code substitutions throughout.  It's included
 # at the bottom of every file in the project.
 # rst_prolog = """
