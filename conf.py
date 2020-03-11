@@ -68,7 +68,7 @@ extlinks = {
     'github': ('https://github.com/%s', ''),
     'google_styleguide': ('https://google.github.io/styleguide/cppguide.html/%s', ''),
     'href_locator': ('https://www.w3.org/TR/2001/REC-xlink-20010627/#link-locators/%s', ''),
-    'libcellml': ('https://libcellml.org'),
+    'libcellml': ('https://libcellml.org/%s', ''),
     'libcellml_repo': ('https://github.com/cellml/libcellml.git%s', ''),
     'libxml2': ('http://www.xmlsoft.org/%s', ''),
     'mathml2help': ('https://www.w3.org/TR/MathML2/chapter4.html#id.4.2.1.3%s', ''),
