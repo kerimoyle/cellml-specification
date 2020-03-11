@@ -2,10 +2,10 @@
 
 .. container:: toggle
 
-    .. container:: header
+  .. container:: header
 
-        **Show/Hide Code**
+    See more
 
-    .. code-block:: xml
+  .. container:: infospec
 
-      Hello world
+    **TODO** Informal notes go here
