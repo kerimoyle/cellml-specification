@@ -36,7 +36,7 @@ and must not be included in order for a model to be syntactically valid CellML.
 .. toctree::
     :maxdepth: 1
 
-    index_sectionC.rst
+    reference/index_sectionC.rst
 
 .. toctree::
     :maxdepth: 1
