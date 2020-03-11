@@ -14,7 +14,7 @@
 
     Perhaps the most important part of a :code:`component` item is the
     mathematics it contains.  This is stored inside a single :code:`<math>` block
-    as described in :ref:`Section 14: The math item<specB11>`.  The :code:`math`
+    as described in :ref:`Section 14: The math item<specB_math>`.  The :code:`math`
     then defines the operation of the local :code:`variable` items and how they
     relate to each other mathematically.
 
@@ -39,7 +39,7 @@
         ...
       </component>
 
-    Please refer to :ref:`The math information item<spec_math>` for
+    Please refer to :ref:`The math information item<specB_math>` for
     information on the :code:`math` items and MathML format.
 
     .. container:: heading3
@@ -60,7 +60,7 @@
         <variable name="c" ... >
       </component>
 
-    Please refer to :ref:`The variable information item<spec_variable>` for
+    Please refer to :ref:`The variable information item<specB_variable>` for
     information on the :code:`variable` items.
 
     .. container:: heading3

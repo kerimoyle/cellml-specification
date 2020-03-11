@@ -50,7 +50,7 @@
     defined component in line 2, but the same name is used as the name for the
     imported component in line 6.  This is not permitted as it violates 7.1.1.
     The second imported component uses an invalid name attribute
-    (see :ref:`Data representation formats in CellML<spec_data_representation>`)
+    (see :ref:`Data representation formats in CellML<specA_data_representation_formats>`)
     so is not permitted either.
 
     .. code-block:: xml
@@ -73,7 +73,7 @@
       </model>
 
     3) **The component_ref attribute**. This must be a :ref:`valid CellML identifier<specA_cellml_identifier>`
-    (see :ref:`Data representation formats in CellML<spec_data_representation>`).
+    (see :ref:`Data representation formats in CellML<specA_data_representation_formats>`).
     It also has to actually exist as a :code:`component` in the given
     :code:`href` location! Neither of the imports below are permitted:
 

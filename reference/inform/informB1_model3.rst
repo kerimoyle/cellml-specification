@@ -14,8 +14,9 @@
     there can be only one :code:`encapsulation` item in any model.
 
     For more information about encapsulation, please refer to
-    :ref:`The encapsulation element information item<spec_encapsulation>`.
+    :ref:`The encapsulation element information item<specB_encapsulation>`.
 
     For more information and examples involving and explaining encapsulation,
     please refer to the
-    :ref:`Theory of a sodium channel<_theory_sodiumchannel_interpretation>` page.
+    :ref:`Theory of a sodium channel<theory_sodiumchannel_interpretation>` page.
+    **TODO** put link to theory section in libCellML here?

@@ -19,7 +19,7 @@
         - a file to import from, specified using the :code:`xlink:href`
           attribute of the parent :code:`import` block.  This is discussed in
           more detail in
-          :ref:`The import element information item<spec_import>`.  In the
+          :ref:`The import element information item<specB_import>`.  In the
           example below this is the :code:`paint_pot_sizes.cellml` file.
 
         - the specific item name to retrieve from the imported file. In the

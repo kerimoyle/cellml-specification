@@ -11,7 +11,7 @@
     In addition to the standard :code:`name` attribute, each :code:`variable`
     must also define a :code:`units` attribute too.
 
-    Reusing the example from :ref:`The component item<spec_component>` we
+    Reusing the example from :ref:`The component item<specB_component>` we
     can give the three variables their fuller definitions:
 
     .. code-block:: xml
@@ -29,13 +29,13 @@
     which will either set a constant value for a variable, or set its initial
     conditions if it's being solved for.  More information about initialisation
     can be found in the
-    :ref:`Interpretation of initial values<spec_initial_values>` section.
+    :ref:`Interpretation of initial values<specB_initial_values>` section.
 
     Finally, where one :code:`variable` has been mapped to another in a different
     component, the :code:`interface` attribute must be specified.  This
     determines the relative position in the encapsulation that the mapped
     component must have in order to access this variable.  This is outlined in
-    more detail in :ref:`The encapsulation item<spec_encapsulation>`.
+    more detail in :ref:`The encapsulation item<specB_encapsulation>`.
 
     For examples and further explanation of components and their encapsulation,
     please refer to

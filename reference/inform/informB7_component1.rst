@@ -19,6 +19,6 @@
     to all the other CellML items, and described below.  The second relates
     to their structure in relation to other :code:`component` items: this
     structure is called their *encapsulation* and is described in
-    :ref:`The encapsulation item<spec_encapsulation>`.  The third relates to the
+    :ref:`The encapsulation item<encapsulation>`.  The third relates to the
     :code:`import component` item, as described in
-    :ref:`The import_component item<spec_import_component>`.
+    :ref:`The import_component item<import_component>`.
