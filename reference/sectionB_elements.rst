@@ -678,17 +678,20 @@ Specific information items
       :code:`import component` element in the :ref:`CellML infoset<specA_cellml_infoset>`
       (see :ref:`Component reference <specC_component_reference>`).
 
-      It MUST NOT be equal to the value of the :code:`component_1` attribute.
+.. container:: issue-todo
+
+   3. The value of the :code:`connection_1` attribute MUST NOT be equal to the
+      value of the :code:`component_2` attribute.
 
 .. container:: issue-connection-unique-transitive
 
-   3. A :ref:`CellML infoset<specA_cellml_infoset>` MUST NOT contain more than one :code:`connection`
+   4. A :ref:`CellML infoset<specA_cellml_infoset>` MUST NOT contain more than one :code:`connection`
       element with a given pair of :code:`component`\ s referenced by the
       :code:`component_1` and :code:`component_2` attribute values, in any order.
 
 .. container:: issue-connection-map-variables
 
-   4. Every :code:`connection` element MUST contain one or more
+   5. Every :code:`connection` element MUST contain one or more
       :code:`map_variables` elements.
 
 .. marker_connection_end
