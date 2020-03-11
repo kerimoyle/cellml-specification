@@ -10,8 +10,8 @@ Section B: Element information items
 
 .. _model:
 
-The model element
-=================
+The ``model`` element
+=====================
 
 Top-level of CellML infosets
 ----------------------------
@@ -63,8 +63,8 @@ Specific information items
 
 .. _import:
 
-The import element
-==================
+The ``import`` element
+======================
 
 An :code:`import` element information item (referred to in this
 specification as an :code:`import` element) is an element
@@ -118,8 +118,8 @@ Specific information items
 
 .. _import_units:
 
-The import units element
-========================
+The ``import units`` element
+============================
 
 An :code:`import units` element information item (referred to in this
 specification as an :code:`import units` element) is an element in the
@@ -158,8 +158,8 @@ Specific information items
 
 .. _import_component:
 
-The import component element
-============================
+The ``import component`` element
+================================
 
 An :code:`import component` element information item (referred to in this
 specification as an :code:`import component` element) is an element
@@ -197,8 +197,8 @@ Specific information items
 
 .. _units:
 
-The units element
-=================
+The ``units`` element
+=====================
 
 A :code:`units` element information item (referred to in this specification
 as a :code:`units` element) is an element in the CellML
@@ -236,8 +236,8 @@ Specific information items
 
 .. _unit:
 
-The unit element
-================
+The ``unit`` element
+====================
 
 A :code:`unit` element information item (referred to in this specification
 as a :code:`unit` element) is an element in the CellML
@@ -300,8 +300,8 @@ Specific information items
 
 .. _component:
 
-The component element
-=====================
+The ``component`` element
+=========================
 
 A :code:`component` element information item (referred to in this
 specification as a :code:`component` element) is an element
@@ -341,8 +341,8 @@ Specific information items
 
 .. _variable:
 
-The variable element
-====================
+The ``variable`` element
+========================
 
 A :code:`variable` element information item (referred to in this
 specification as a :code:`variable` element) is an element
@@ -392,8 +392,8 @@ Specific information items
 
 .. _reset:
 
-The reset element
-=================
+The ``reset`` element
+=====================
 
 A :code:`reset` element information item (referred to in this specification
 as a :code:`reset` element) is an element in the CellML
@@ -447,8 +447,8 @@ Specific information items
 
 .. _test_value:
 
-The test_value element
-======================
+The ``test_value`` element
+==========================
 
 A :code:`test_value` element information item (referred to in this
 specification as a :code:`test_value` element) is an element in the
@@ -469,8 +469,8 @@ Specific information items
 
 .. _reset_value:
 
-The reset_value element
-=======================
+The ``reset_value`` element
+===========================
 
 A :code:`reset_value` element information item (referred to in this
 specification as a :code:`reset_value` element) is an element in the CellML
@@ -490,8 +490,8 @@ Specific information items
 
 .. _math:
 
-The math element
-================
+The ``math`` element
+====================
 
 A :code:`math` element information item (referred to in this specification
 as a :code:`math` element) is an element in the MathML
@@ -583,8 +583,8 @@ Table: Supported MathML Elements
 
 .. _encapsulation:
 
-The encapsulation element
-=========================
+The ``encapsulation`` element
+=============================
 
 An :code:`encapsulation` element information item (referred to in this
 specification as an :code:`encapsulation` element) is an element in the
@@ -604,8 +604,8 @@ Specific information items
 
 .. _component_ref:
 
-The component_ref element
-=========================
+The ``component_ref`` element
+=============================
 
 A :code:`component_ref` element information item (referred to in this
 specification as a :code:`component_ref` element) is an element in the
@@ -643,8 +643,8 @@ Specific information items
 
 .. _connection:
 
-The connection element
-======================
+The ``connection`` element
+==========================
 
 A :code:`connection` element information item (referred to in this
 specification as a :code:`connection` element) is an element in the
@@ -696,8 +696,8 @@ Specific information items
 
 .. _map_variables:
 
-The map_variables element
-=========================
+The ``map_variables`` element
+=============================
 
 A :code:`map_variables` element information item (referred to in this
 specification as a :code:`map_variables` element) is an element in the
