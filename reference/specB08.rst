@@ -1,4 +1,5 @@
 .. _specB08:
+.. _specB_variable:
 
 .. include:: sectionB_elements.rst
   :start-after: marker_variable_start

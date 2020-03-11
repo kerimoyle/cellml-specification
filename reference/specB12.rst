@@ -1,5 +1,5 @@
 .. _specB12:
-.. _specB_encapsulation:
+.. _specB_math:
 
 .. include:: sectionB_elements.rst
   :start-after: marker_math_start

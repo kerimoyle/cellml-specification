@@ -1,4 +1,5 @@
 .. _specB09:
+.. _specB_reset:
 
 .. include:: sectionB_elements.rst
   :start-after: marker_reset_start

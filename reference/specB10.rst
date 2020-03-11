@@ -1,4 +1,5 @@
 .. _specB10:
+.. _specB_test_value:
 
 .. include:: sectionB_elements.rst
   :start-after: marker_test_value_start

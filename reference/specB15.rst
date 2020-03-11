@@ -1,4 +1,5 @@
 .. _specB15:
+.. _specB_connection:
 
 .. include:: sectionB_elements.rst
   :start-after: marker_connection_start

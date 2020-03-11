@@ -1,5 +1,5 @@
 .. _specB11:
-.. _specB_math:
+.. _specB_reset_value:
 
 .. include:: sectionB_elements.rst
   :start-after: marker_reset_value_start
