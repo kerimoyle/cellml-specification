@@ -1,7 +1,7 @@
 .. _sectionC_index:
 
 =============================================
-Section C: Interpretation of CellML2.0 Models
+Section C: Interpretation 
 =============================================
 
 Section C of the Normative CellML2.0 Specification describes the way in which
