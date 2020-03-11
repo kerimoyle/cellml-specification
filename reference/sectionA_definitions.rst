@@ -1,4 +1,4 @@
-.. _sectionA_definitions:
+.. _sectionA:
 
 **CellML 2.0 Specification**
 

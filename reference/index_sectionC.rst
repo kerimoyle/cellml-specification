@@ -1,3 +1,5 @@
+.. _sectionC_index:
+
 =============================================
 Section C: Interpretation of CellML2.0 Models
 =============================================

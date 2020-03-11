@@ -1,3 +1,5 @@
+.. _sectionA_index:
+
 ====================================
 Section A: Definitions and preamble
 ====================================

@@ -1,3 +1,5 @@
+.. _sectionB_index:
+
 ====================================
 Section B: Element information items
 ====================================
