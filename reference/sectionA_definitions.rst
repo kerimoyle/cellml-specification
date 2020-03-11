@@ -359,8 +359,8 @@ specification:
    .. container:: issue-data-repr-real-base10
 
       1. SHALL be a base 10 representation of a real number
-         *r*\ =\ *s*\ ⋅10\ *e*, where *s* is the significand, a real
-         number, and *e* is the exponent, an integer.
+         :math:`r=s \times 10^e` where :math:`s` is the significand, a real
+         number, and :math:`e` is the exponent, an integer.
 
    .. container:: issue-data-repr-real-repr
 
