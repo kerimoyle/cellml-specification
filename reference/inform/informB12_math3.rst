@@ -15,7 +15,7 @@
 
       <component name="mass_into_energy">
         <!-- the local variables for energy E and speed of light c are listed here -->
-        <variable name="E" units="kilojoules"/>
+        <variable name="E" units="joule"/>
         <variable name="c" units="metres_per_second"/>
         <!-- ...but the variable for mass calculated in another component -->
         <math>
@@ -48,7 +48,7 @@
     .. code-block:: xml
 
       <component name="mass_into_energy">
-        <variable name="E" units="kilojoules"/>
+        <variable name="E" units="joule"/>
         <variable name="c" units="metres_per_second"/>
         <!-- A new local variable named m is created here with a public interface type -->
         <variable name="m" units="kilograms" interface_type="public"/>
