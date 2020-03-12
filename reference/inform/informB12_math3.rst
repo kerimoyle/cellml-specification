@@ -12,6 +12,7 @@
     value of mass :code:`m` is calculated in another component: 
 
     .. code-block:: xml
+    
       <component name="mass_into_energy">
         <!-- the local variables for energy E and speed of light c are listed here -->
         <variable name="E" units="kilojoules"/>
@@ -45,6 +46,7 @@
     attribute in :ref:`The variable element<specB_variable>`.
 
     .. code-block:: xml
+
       <component name="mass_into_energy">
         <variable name="E" units="kilojoules"/>
         <variable name="c" units="metres_per_second"/>
