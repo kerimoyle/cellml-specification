@@ -532,18 +532,16 @@ Specific information items
       to :code:`units`. The value of this attribute MUST be a valid units
       reference.
 
-.. marker_math_4
-
 .. container:: issue-math-cn-type
 
    5. The :code:`cn` element MUST be one of the following
       :mathml2types:`types`\: real or e-notation.
 
-.. marker_math_5
-
 .. container:: issue-math-cn-base10
 
    6. The :code:`cn` element MUST be of base 10.
+
+.. marker_math_4
 
 .. _table_supported_mathml_elements:
 
