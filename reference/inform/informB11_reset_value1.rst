@@ -9,7 +9,7 @@
 
   .. container:: infospec
 
-    The :code:`test_value` (and :code:`reset_value`) block takes a slightly different
+    The :code:`test_value` (like the :code:`reset_value`) block takes a slightly different
     kind of MathML statement to those in the :code:`component` elements.  Because the
     the left hand side of the equation has already been effectively defined by specifying
     the :code:`test_variable`, the :code:`math` child of a :code:`test_value` needs only
@@ -49,4 +49,6 @@
     match those of the :code:`test_variable` against which it will be compared.  In this 
     example the :code:`reset_value` (the new position of the ball over the table) must be
     in metres to match the :code:`variable`\'s units, as with the :code:`test_value` which
-    must match the units of the :code:`test_variable`.
+    must match the units of the :code:`test_variable`.  A mismatch of units here doesn't
+    mean you have an invalid CellML2.0 model, but it does mean that it may not behave in
+    the way you are expecting!

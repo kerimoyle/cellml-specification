@@ -129,7 +129,7 @@ appears as a child of an :code:`import` element.
 Specific information items
 --------------------------
 
-.. contianer:: issue-import-units-name
+.. container:: issue-import-units-name
 
    1. Every :code:`import units` element MUST contain a :code:`name`
       attribute. The value of the :code:`name` attribute MUST be a
@@ -254,7 +254,7 @@ Specific information items
       a valid units reference, as defined in the
       :ref:`Units reference <units_reference>` section.
 
-      .. contianer:: issue-unit-digraph
+      .. container:: issue-unit-digraph
 
          1. For the purpose of the constraint in the next paragraph, the
             :code:`units` element inclusion digraph SHALL be defined as a
@@ -504,13 +504,17 @@ Specific information items
 .. container:: issue-math-mathml
 
    1. A :code:`math` element MUST be the top-level of a content MathML tree, as
-      described in :mathml2spec:`MathML 2.0`.
+      described in :mathml2spec:`MathML 2.0 <>`.
+
+.. marker_math_1
 
 .. container:: issue-math-child
 
    2. Each element child of a :code:`math` element MUST have
       an element-type name that is listed in the
-      :ref:`Supported MathML Elements <table_supported_mathml_elements>` table.
+      :ref:`Supported MathML Elements<table_supported_mathml_elements>` table.
+
+.. marker_math_2
 
 .. container:: issue-math-ci-variable-reference
 
@@ -519,17 +523,23 @@ Specific information items
       within the :code:`component` element that the :code:`math` element
       is contained.
 
+.. marker_math_3
+
 .. container:: issue-math-cn-units-attribute
 
    4. Any MathML :code:`cn` elements MUST each have an attribute in the
-      :ref:`CellML namespace<specA_cellml_namespace>`, with a local name equal to :code:`units`.
-      The value of this attribute MUST be a valid units
+      :ref:`CellML namespace<specA_cellml_namespace>`, with a local name equal
+      to :code:`units`. The value of this attribute MUST be a valid units
       reference.
+
+.. marker_math_4
 
 .. container:: issue-math-cn-type
 
    5. The :code:`cn` element MUST be one of the following
-      :mathml2types:`types` : real or e-notation.
+      :mathml2types:`types`\: real or e-notation.
+
+.. marker_math_5
 
 .. container:: issue-math-cn-base10
 
@@ -559,8 +569,7 @@ Table: Supported MathML Elements
 +----------------------------------+----------------------------------+
 | Calculus Elements                | <diff>                           |
 +----------------------------------+----------------------------------+
-| Qualifier Elements               | <bvar>, <logbase>, <degree>      |
-|                                  | (child of <root> or <diff>)      |
+| Qualifier Elements               | <bvar>, <logbase>, <degree> *    |
 +----------------------------------+----------------------------------+
 | Trigonometric Operators          | <sin>, <cos>, <tan>, <sec>,      |
 |                                  | <csc>, <cot>,                    |
@@ -577,6 +586,8 @@ Table: Supported MathML Elements
 | Constants                        | <notanumber>, <infinity>,        |
 |                                  | <true>, <false>                  |
 +----------------------------------+----------------------------------+
+
+* (child of <root> or <diff>)
 
 .. marker_math_end
 .. marker_encapsulation_start
