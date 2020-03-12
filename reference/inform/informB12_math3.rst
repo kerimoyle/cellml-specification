@@ -12,7 +12,7 @@
     value of mass :code:`m` is calculated in another component: 
 
     .. code-block:: xml
-    
+
       <component name="mass_into_energy">
         <!-- the local variables for energy E and speed of light c are listed here -->
         <variable name="E" units="kilojoules"/>
@@ -42,7 +42,7 @@
     component, and use a :code:`connection` element to link it to variable
     :code:`m` in the other component.  The valid form of the model is shown
     below, and you can read more about :code:`connections` in
-    :ref:`The connection element<specB_connection>`, and the :code:`interface_type`\s
+    :ref:`The connection element<specB_connection>`, and the :code:`interface_type`
     attribute in :ref:`The variable element<specB_variable>`.
 
     .. code-block:: xml

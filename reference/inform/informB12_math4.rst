@@ -19,9 +19,11 @@
       <cn cellml:units="litre">10</cn> <!-- built-in units (with UK spelling) are permitted -->
       <cn cellml:units="dimensionless">3.14159e+03</cn> <!-- e-notation is permitted -->
 
+
     Please note that the units name specified must refer to
     a :code:`units` element that exists in the :code:`model` element,
     or be one from the :ref:`Built-in Units<table_built_in_units>` table.
+
 
     .. code-block:: xml
 

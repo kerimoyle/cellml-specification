@@ -584,8 +584,7 @@ Table: Supported MathML Elements
 | Constants                        | <notanumber>, <infinity>,        |
 |                                  | <true>, <false>                  |
 +----------------------------------+----------------------------------+
-
-* (child of <root> or <diff>)
+\* (child of <root> or <diff>)
 
 .. marker_math_end
 .. marker_encapsulation_start
