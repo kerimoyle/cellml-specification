@@ -680,7 +680,7 @@ Specific information items
 
 .. container:: issue-todo
 
-   3. The value of the :code:`connection_1` attribute MUST NOT be equal to the
+   3. The value of the :code:`component_1` attribute MUST NOT be equal to the
       value of the :code:`component_2` attribute.
 
 .. container:: issue-connection-unique-transitive
