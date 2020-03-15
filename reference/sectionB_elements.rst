@@ -741,6 +741,8 @@ Specific information items
       referenced by the :code:`component_1` attribute on the :code:`connection`
       element which is the parent of this element.
 
+.. marker_map_variables_1
+
 .. container:: issue-map-variables-variable2
 
    2. Each :code:`map_variables` element MUST contain a
@@ -754,6 +756,8 @@ Specific information items
       of the :code:`component` element or :code:`import component` element
       referenced by the :code:`component_2` attribute on the :code:`connection`
       element which is the parent of this element.
+
+.. marker_map_variables_2
 
 .. container:: issue-map-variables-unique
 
