@@ -13,7 +13,7 @@
     specified as :code:`component_2`.  If you have found duplicate
     :code:`connection` elements, simply merge their contents - a
     :code:`connection` can contain any number of :code:`map_variables`
-    children.  
+    children.  Make sure that the order in which you spe
 
     .. code-block:: xml
 
@@ -31,7 +31,8 @@
                 <map_variables variable_1="romeo" variable_2="juliet">
             </connection>
 
-            <!-- This connection duplicates the one above, even though the components are swapped -->
+            <!-- This connection duplicates the one above, even though -->
+            <!-- component_1 and component_2 are swapped -->
             <connection component_1="capulet" component_2="montague">
                 <map_variables variable_1="rosaline" variable_2="romeo">
             </connection>
@@ -48,7 +49,8 @@
             </component>
 
             <!-- The contents have been merged. Note that the order of variables -->
-            <!-- must match the order of the parent component -->
+            <!-- must match the order of the parent component, ie: all variable_1s 
+            <!-- must be within component_1 etc. -->
             <connection component_1="montague" component_2="capulet">
                 <map_variables variable_1="romeo" variable_2="juliet">
                 <map_variables variable_1="romeo" variable_2="rosaline">
