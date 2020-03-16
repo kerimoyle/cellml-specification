@@ -28,7 +28,7 @@
   :start-after: marker_interpretation_of_units_2
   :end-before: marker_interpretation_of_units_3_2
 
-.. include:: inform/informC03_interpretation_of_units_3_2.rst
+.. include:: inform/informC03_interpretation_of_units3_2.rst
 
 .. include:: sectionC_interpretation.rst
   :start-after: marker_interpretation_of_units_3_2
