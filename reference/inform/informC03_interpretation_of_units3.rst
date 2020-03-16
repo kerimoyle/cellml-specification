@@ -24,33 +24,28 @@
 
     .. code-block:: xml
 
-      <!-- 
-           Unit reduction: [ (metre, 1), (second, -1) ] 
-      -->
-      <units name="metres_per_second">
-        <unit units="metre">
-        <unit units="second" exponent="-1>
-      </units>
+        <!-- Unit reduction: [ (metre, 1), (second, -1) ] -->
+        <units name="metres_per_second">
+          <unit units="metre">
+          <unit units="second" exponent="-1>
+        </units>
 
-      <!-- 
-           Unit reduction: [ (kilogram, 1), (metre, 2), (second, -3) ]
-           This is because Joules are equivalent to kg⋅m2⋅s−2, and the extra
-           "per second" takes the effective exponent for "second" to -3.
-      -->
-      <units name="joules_per_second">
-        <unit units="joule" />
-        <unit units="second" exponent="-1" />
-      </units>
+        <!-- Unit reduction: [ (kilogram, 1), (metre, 2), (second, -3) ]
+             This is because Joules are equivalent to kg⋅m2⋅s−2, and the extra
+             "per second" takes the effective exponent for "second" to -3. -->
+        <units name="joules_per_second">
+          <unit units="joule" />
+          <unit units="second" exponent="-1" />
+        </units>
 
-      <!-- 
-           Unit reduction: [ (apple, 1), (metre, -3) ]
-           The concentration of apples per litre of cider is expressed using
-           the custom base units "apple" and the built-in convenience units of 
-           "litre", the latter being equivalent to cubic metres.  Note that 
-           scaling does not affect the unit reduction tuples.
-      -->
-      <units name="apple" />
-      <units name="cider_concentration">
-        <unit units="apple" multiplier="1000" />
-        <unit units="litre" exponent="-1" />
-      </units>
+        <!-- Unit reduction: [ (apple, 1), (metre, -3) ]
+             The concentration of apples per litre of cider is expressed using
+             the custom base units "apple" and the built-in convenience units of 
+             "litre", the latter being equivalent to cubic metres.  Note that 
+             scaling does not affect the unit reduction tuples. -->
+        <units name="apple" />
+        <units name="cider_concentration">
+          <unit units="apple" multiplier="1000" />
+          <unit units="litre" exponent="-1" />
+        </units>
+
