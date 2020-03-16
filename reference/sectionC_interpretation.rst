@@ -180,6 +180,8 @@ Interpretation of units
 
 .. marker_interpretation_of_units_1_3
 
+HELLO!
+
    4. The relationship between the product, :math:`P`, of numerical values
       given in each and every child :code:`unit` element units, to a
       numerical value, :math:`x`, with units given by the encompassing
@@ -197,8 +199,6 @@ Interpretation of units
       values.
 
 .. marker_interpretation_of_units_1_4
-
-HELLO!!
 
 2. For the purposes of this specification, the "irreducible units" of a
    model SHALL consist of 1) the units defined in a model that are not
