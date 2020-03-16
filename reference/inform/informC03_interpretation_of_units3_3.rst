@@ -32,31 +32,34 @@
           <unit units="second" exponent="-1>
         </units>
 
-    Related to C03.3.2.2:
+    Related to C03.3.2.2: Joules are equivalent to :math:`kg⋅m^2⋅s^{−2}`,
+    and the extra "per second" takes the effective exponent for "second" to -3.
 
     .. code-block:: xml
 
-        <!-- Unit reduction: [ (kilogram, 1), (metre, 2), (second, -3) ]
-             This is because Joules are equivalent to kg⋅m2⋅s−2, and the extra
-             "per second" takes the effective exponent for "second" to -3. -->
+        <!-- Unit reduction: [ (kilogram, 1), (metre, 2), (second, -3) ] -->
         <units name="joules_per_second">
           <unit units="joule" />
           <unit units="second" exponent="-1" />
         </units>
 
-    Related to C03.3.2.3:
+    Related to C03.3.2.3 and 4: The concentration of apples per litre of cider
+    is expressed using the custom base units "apple", the custom derived units
+    "bushell_of_apples" and the built-in convenience units of  "litre", the
+    last being equivalent to cubic metres.
+    Note that:
+
+    - scaling does not affect the unit reduction tuples,
+    - the custom derived units :code:`bushell_of_apples` does not appear,
+      as it can be further reduced to :code:`apple`, 
+    - the final exponent of the :code:`metre` base unit comes from applying
+      3.3.2.4 and multiplying the exponent of the litre reduction tuple (metre, 3)
+      with the exponent given in the :code:`cider_concentration` tuple (litre, -1)
+      to give a (metre, -3) in the final unit reduction tuple set.
 
     .. code-block:: xml
 
-        <!-- Unit reduction: [ (apple, 1), (metre, -3) ]
-             The concentration of apples per litre of cider is expressed using
-             the custom base units "apple", the custom derived units
-             "bushell_of_apples" and the built-in convenience units of 
-             "litre", the last being equivalent to cubic metres.
-             Note that: 
-             - scaling does not affect the unit reduction tuples, and
-             - the custom units "bushell_of_apples" does not appear, as it is not an irreducible unit 
-        -->
+        <!-- Unit reduction: [ (apple, 1), (metre, -3) ] -->
 
         <units name="apple" />
 
