@@ -162,6 +162,8 @@ Interpretation of units
       prefix term SHALL have the value taken from the ‘Value’ column of
       the same row.
 
+.. marker_interpretation_of_units_1_1
+
    #. The exponent term is a conceptual property of :code:`unit` elements.
       If a :code:`unit` element has no :code:`exponent` attribute information
       item, the exponent term SHALL have value 1.0. Otherwise, the value
@@ -175,6 +177,8 @@ Interpretation of units
       value of the :code:`multiplier` attribute information item MUST be a
       real number string, and the value of the multiplier term SHALL be
       the numerical value of that string.
+
+.. marker_interpretation_of_units_1_3
 
    #. The relationship between the product, :math:`P`, of numerical values
       given in each and every child :code:`unit` element units, to a
@@ -192,16 +196,21 @@ Interpretation of units
       element, respectively. Square brackets encompass the units of numerical
       values.
 
-#. For the purposes of this specification, the “irreducible units” of a
+.. marker_interpretation_of_units_1_4
+
+#. For the purposes of this specification, the "irreducible units" of a
    model SHALL consist of 1) the units defined in a model that are not
    defined in terms of other units (i.e. the set of :code:`units` elements
-   in the :ref:`CellML model<specA_cellml_model>` which have no :code:`unit` child elements), and 2)
-   built-in irreducible units (those built-in units with ‘-’ in the
-   ‘Unit Reduction...’ column of the
+   in the :ref:`CellML model<specA_cellml_model>` which have no :code:`unit`
+   child elements), and 2)
+   built-in irreducible units (those built-in units with "-" in the
+   "Unit Reduction" column of the
    :ref:`Built-in units<table_built_in_units>`
    table) referenced by variables or other units in the model.
 
-#. The “unit reduction” is a conceptual property of :code:`units` elements.
+.. marker_interpretation_of_units_2
+
+#. The "unit reduction" is a conceptual property of :code:`units` elements.
    It consists of a set of tuples where each tuple is composed of a) a
    unit name and b) a real-valued exponent. Tuples SHALL be determined
    as follows:
@@ -223,11 +232,11 @@ Interpretation of units
 
       #. Where the units reference of the :code:`unit` child element is to
          built-in units other than an irreducible unit, then the tuples
-         SHALL be derived directly from the :ref:`Built-in
-         units<table_built_in_units>` table. Specifically, the set of
-         tuples SHALL consist of the tuples given in the ‘Unit reduction
-         tuple ... set’ column of the row for which the value in the
-         ‘Name’ column matches the name of the units reference.
+         SHALL be derived directly from the 
+         :ref:`Built-in units<table_built_in_units>` table. Specifically,
+         the set of tuples SHALL consist of the tuples given in the
+         "Unit reduction tuple set" column of the row for which the value in the
+         "Name" column matches the name of the units reference.
 
       #. Where the units reference of the :code:`unit` child element is to a
          unit which is neither built-in, nor an irreducible unit, the
@@ -249,6 +258,8 @@ Interpretation of units
       combined tuples’ exponents. If the resulting tuple’s exponent term
       is zero, the tuple SHALL be removed from the set of tuples. Note
       that this can result in the set of tuples being empty.
+
+.. marker_interpretation_of_units_3
 
 .. _table_prefix_values:
 
