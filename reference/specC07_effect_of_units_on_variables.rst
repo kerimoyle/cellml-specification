@@ -1,5 +1,4 @@
-
-.. _specC7:
+.. _specC07:
 
 .. include:: sectionC_interpretation.rst
   :start-after: marker_effect_of_units_on_variables_start

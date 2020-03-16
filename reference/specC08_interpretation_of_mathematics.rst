@@ -1,4 +1,4 @@
-.. _specC8:
+.. _specC08:
 
 .. include:: sectionC_interpretation.rst
   :start-after: marker_interpretation_of_mathematics_start

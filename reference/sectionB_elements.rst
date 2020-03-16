@@ -129,7 +129,7 @@ appears as a child of an :code:`import` element.
 Specific information items
 --------------------------
 
-.. contianer:: issue-import-units-name
+.. container:: issue-import-units-name
 
    1. Every :code:`import units` element MUST contain a :code:`name`
       attribute. The value of the :code:`name` attribute MUST be a
@@ -252,9 +252,9 @@ Specific information items
    1. Every :code:`unit` element MUST contain a :code:`units`
       attribute. The value of the :code:`units` attribute MUST be
       a valid units reference, as defined in the
-      :ref:`Units reference <units_reference>` section.
+      :ref:`Units reference<units_reference>` section.
 
-      .. contianer:: issue-unit-digraph
+      .. container:: issue-unit-digraph
 
          1. For the purpose of the constraint in the next paragraph, the
             :code:`units` element inclusion digraph SHALL be defined as a
@@ -283,7 +283,7 @@ Specific information items
 
          1. The :code:`prefix` attribute. If present, the value of the attribute
             MUST meet the constraints specified in the
-            :ref:`Interpretation of units <specC_units>` section.
+            :ref:`Interpretation of units <specC_interpretation_of_units>` section.
 
       .. container:: issue-unit-multiplier
 
@@ -385,7 +385,7 @@ Specific information items
 
       2. The :code:`initial_value` attribute. If the attribute is present, it
          MUST meet the requirements described by the
-         :ref:`Interpretation of initial values<specC_initial_values>` section.
+         :ref:`Interpretation of initial values<specC_interpretation_of_initial_values>` section.
 
 .. marker_variable_end
 .. marker_reset_start
@@ -427,7 +427,7 @@ Specific information items
          The value of the :code:`order` attribute MUST
          be unique for all :code:`reset` elements with :code:`variable` attributes
          that reference variables in the same connected variable set (see
-         :ref:`Interpretation of map_variables<specC_map_variables>`).
+         :ref:`Interpretation of map_variables<specC_interpretation_of_map_variables>`).
 
 .. container:: issue-reset-child
 
@@ -504,13 +504,17 @@ Specific information items
 .. container:: issue-math-mathml
 
    1. A :code:`math` element MUST be the top-level of a content MathML tree, as
-      described in :mathml2spec:`MathML 2.0`.
+      described in :mathml2spec:`MathML 2.0 <>`.
+
+.. marker_math_1
 
 .. container:: issue-math-child
 
    2. Each element child of a :code:`math` element MUST have
       an element-type name that is listed in the
-      :ref:`Supported MathML Elements <table_supported_mathml_elements>` table.
+      :ref:`Supported MathML Elements<table_supported_mathml_elements>` table.
+
+.. marker_math_2
 
 .. container:: issue-math-ci-variable-reference
 
@@ -519,21 +523,25 @@ Specific information items
       within the :code:`component` element that the :code:`math` element
       is contained.
 
+.. marker_math_3
+
 .. container:: issue-math-cn-units-attribute
 
    4. Any MathML :code:`cn` elements MUST each have an attribute in the
-      :ref:`CellML namespace<specA_cellml_namespace>`, with a local name equal to :code:`units`.
-      The value of this attribute MUST be a valid units
+      :ref:`CellML namespace<specA_cellml_namespace>`, with a local name equal
+      to :code:`units`. The value of this attribute MUST be a valid units
       reference.
 
 .. container:: issue-math-cn-type
 
    5. The :code:`cn` element MUST be one of the following
-      :mathml2types:`types` : real or e-notation.
+      :mathml2types:`types`\: real or e-notation.
 
 .. container:: issue-math-cn-base10
 
    6. The :code:`cn` element MUST be of base 10.
+
+.. marker_math_4
 
 .. _table_supported_mathml_elements:
 
@@ -559,8 +567,7 @@ Table: Supported MathML Elements
 +----------------------------------+----------------------------------+
 | Calculus Elements                | <diff>                           |
 +----------------------------------+----------------------------------+
-| Qualifier Elements               | <bvar>, <logbase>, <degree>      |
-|                                  | (child of <root> or <diff>)      |
+| Qualifier Elements               | <bvar>, <logbase>, <degree> *    |
 +----------------------------------+----------------------------------+
 | Trigonometric Operators          | <sin>, <cos>, <tan>, <sec>,      |
 |                                  | <csc>, <cot>,                    |
@@ -577,6 +584,7 @@ Table: Supported MathML Elements
 | Constants                        | <notanumber>, <infinity>,        |
 |                                  | <true>, <false>                  |
 +----------------------------------+----------------------------------+
+\* (child of <root> or <diff>)
 
 .. marker_math_end
 .. marker_encapsulation_start
@@ -666,6 +674,8 @@ Specific information items
       :code:`import component` element in the :ref:`CellML infoset<specA_cellml_infoset>`
       (see :ref:`Component reference<specC_component_reference>`).
 
+.. marker_connection_1
+
 .. container:: issue-connection-component2
 
    2. Each :code:`connection` element MUST contain a
@@ -678,16 +688,22 @@ Specific information items
       :code:`import component` element in the :ref:`CellML infoset<specA_cellml_infoset>`
       (see :ref:`Component reference <specC_component_reference>`).
 
+.. marker_connection_2
+
 .. container:: issue-todo
 
    3. The value of the :code:`component_1` attribute MUST NOT be equal to the
       value of the :code:`component_2` attribute.
+
+.. marker_connection_3
 
 .. container:: issue-connection-unique-transitive
 
    4. A :ref:`CellML infoset<specA_cellml_infoset>` MUST NOT contain more than one :code:`connection`
       element with a given pair of :code:`component`\ s referenced by the
       :code:`component_1` and :code:`component_2` attribute values, in any order.
+
+.. marker_connection_4
 
 .. container:: issue-connection-map-variables
 
@@ -725,6 +741,8 @@ Specific information items
       referenced by the :code:`component_1` attribute on the :code:`connection`
       element which is the parent of this element.
 
+.. marker_map_variables_1
+
 .. container:: issue-map-variables-variable2
 
    2. Each :code:`map_variables` element MUST contain a
@@ -738,6 +756,8 @@ Specific information items
       of the :code:`component` element or :code:`import component` element
       referenced by the :code:`component_2` attribute on the :code:`connection`
       element which is the parent of this element.
+
+.. marker_map_variables_2
 
 .. container:: issue-map-variables-unique
 

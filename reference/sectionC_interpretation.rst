@@ -7,13 +7,13 @@ Section C: Interpretation
 ===========================================
 .. marker_interpretation_of_imports_start
 
-.. _specC_imports:
+.. _specC_interpretation_of_imports:
 
 Interpretation of imports
 -------------------------
 
 #. Each :code:`import` element present in a
-   :ref:`CellML infosets<specA_cellml_infoset>` (the importing
+   :ref:`CellML infoset<specA_cellml_infoset>` (the importing
    infoset) SHALL define a new and separate instance of the CellML
    infoset referenced by the :code:`href` attribute (the imported infoset).
    See :ref:`Units reference<specC_units_reference>` and
@@ -143,7 +143,7 @@ Table: Built-in units
 .. marker_units_reference_end
 .. marker_interpretation_of_units_start
 
-.. _specC_units:
+.. _specC_interpretation_of_units:
 
 Interpretation of units
 -----------------------
@@ -176,19 +176,20 @@ Interpretation of units
       real number string, and the value of the multiplier term SHALL be
       the numerical value of that string.
 
-   #. The relationship between the product, *P,* of numerical values
+   #. The relationship between the product, :math:`P`, of numerical values
       given in each and every child :code:`unit` element units, to a
-      numerical value, *x,* with units given by the encompassing
+      numerical value, :math:`x`, with units given by the encompassing
       :code:`units` element, SHALL be
 
       .. image:: images/equation_units_expansion.png
           :align: center
           :width: 50%
 
-      where: *u\ x* denotes the units of the :code:`units` element; *p\ i*,
-      *e\ i*, *m\ i*, and *u\ i* refer to the prefix, exponent and
-      multiplier terms and units of the *i*\ th :code:`unit` child element,
-      respectively. Square brackets encompass the units of numerical
+      where: :math:`u_x` denotes the units of the :code:`units` element;
+      :math:`p_i`, :math:`e_i`, :math:`m_i` and :math:`u_i`
+      refer to the prefix, exponent and
+      multiplier terms and units of the :math:`i^{th}` :code:`unit` child
+      element, respectively. Square brackets encompass the units of numerical
       values.
 
 #. For the purposes of this specification, the “irreducible units” of a
@@ -288,8 +289,8 @@ Component reference
 -------------------
 
 #. A component reference SHALL be the name of a component, and SHALL be
-   interpreted based on the context within the :ref:`CellML model<specA_cellml_model>` in which it
-   occurs.
+   interpreted based on the context within the
+   :ref:`CellML model<specA_cellml_model>` in which it occurs.
 
 #. A component reference present in an information item which is a
    descendant of a :code:`model` element SHALL be identical to either the
@@ -365,13 +366,13 @@ Effect of units on variables
 #. The value of the :code:`units` attribute on every :code:`variable` element
    MUST be a valid units reference. The target of this units reference
    is referred to as the variable units, and the corresponding unit
-   reduction (see :ref:`Interpretation of units<specC_units>`) is referred
+   reduction (see :ref:`Interpretation of units<specC_interpretation_of_units>`) is referred
    to as the variable unit reduction.
 
 .. marker_effect_of_units_on_variables_end
 .. marker_interpretation_of_mathematics_start
 
-.. _specC_mathematics:
+.. _specC_interpretation_of_mathematics:
 
 Interpretation of mathematics
 -----------------------------
@@ -390,7 +391,7 @@ Interpretation of mathematics
 
    #. All :code:`component` elements which are descendants in the
       encapsulation digraph (see
-      :ref:`Interpretation of encapsulation <specC_encapsulation>`)
+      :ref:`Interpretation of encapsulation <specC_interpretation_of_encapsulation>`)
       of a pertinent :code:`component` element.
 
 #. Every MathML element in the :ref:`CellML model<specA_cellml_model>` which appears as a direct
@@ -406,7 +407,7 @@ Interpretation of mathematics
 .. marker_interpretation_of_mathematics_end
 .. marker_interpretation_of_encapsulation_start
 
-.. _specC_encapsulation:
+.. _specC_interpretation_of_encapsulation:
 
 Interpretation of encapsulation
 -------------------------------
@@ -450,7 +451,7 @@ Interpretation of encapsulation
 .. marker_interpretation_of_encapsulation_end
 .. marker_interpretation_of_map_variables_start
 
-.. _specC_map_variables:
+.. _specC_interpretation_of_map_variables:
 
 Interpretation of map_variables
 -------------------------------
@@ -499,7 +500,7 @@ Interpretation of map_variables
 
 #.  Tuples differing by a multiplying factor in their unit reduction
     MUST be taken into account when interpreting the numerical values of
-    the variables (see :ref:`Interpretation of units<specC_units>`).
+    the variables (see :ref:`Interpretation of units<specC_interpretation_of_units>`).
 
 #.  For a given variable, the available interfaces SHALL be determined
     by the :code:`interface` attribute information item on the corresponding
@@ -553,7 +554,7 @@ Interpretation of map_variables
 .. marker_interpretation_of_map_variables_end
 .. marker_interpretation_of_variable_resets_start
 
-.. _specC_variable_resets:
+.. _specC_interpretation_of_variable_resets:
 
 Interpretation of variable resets
 ---------------------------------
@@ -564,8 +565,8 @@ Interpretation of variable resets
 
 #. All :code:`reset` elements SHALL be considered sequentially for the
    connected variable set (see
-   :ref:`Interpretation of map_variables<specC_map_variables>`) to which
-   the referenced variable
+   :ref:`Interpretation of map_variables<specC_interpretation_of_map_variables>`)
+   to which the referenced variable
    belongs. The sequence SHALL be determined by the value of the reset
    element’s :code:`order` attribute, lowest (least positive / most
    negative) having priority.

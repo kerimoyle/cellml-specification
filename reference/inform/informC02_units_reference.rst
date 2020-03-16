@@ -1,4 +1,4 @@
-.. _informC:
+.. _informC02_units_reference1:
 
 .. container:: toggle
 
@@ -8,4 +8,4 @@
 
   .. container:: infospec
 
-    **TODO** Informal notes go here
+    **TODO**

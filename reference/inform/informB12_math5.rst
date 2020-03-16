@@ -1,4 +1,4 @@
-.. _informB15:
+.. _informB12_5:
 
 .. container:: toggle
 
@@ -8,4 +8,9 @@
 
   .. container:: infospec
 
-    **TODO** Informal notes go here
+    .. code-block:: xml
+
+      # This is a valid block
+      
+
+

@@ -1,4 +1,4 @@
-.. _specC4:
+.. _specC04:
 
 .. include:: sectionC_interpretation.rst
   :start-after: marker_component_reference_start
