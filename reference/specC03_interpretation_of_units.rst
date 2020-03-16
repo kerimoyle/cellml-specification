@@ -14,24 +14,24 @@
 
 .. include:: sectionC_interpretation.rst
   :start-after: marker_interpretation_of_units_1_3
-  :end_before: marker_interpretation_of_units_1_4
+  :end-before: marker_interpretation_of_units_1_4
 
 .. include:: inform/informC03_interpretation_of_units1_4.rst
 
 .. include:: sectionC_interpretation.rst
   :start-after: marker_interpretation_of_units_1_4
-  :end_before: marker_interpretation_of_units_2
+  :end-before: marker_interpretation_of_units_2
 
 .. include:: inform/informC03_interpretation_of_units2.rst
 
 .. include:: sectionC_interpretation.rst
   :start-after: marker_interpretation_of_units_2
-  :end_before: marker_interpretation_of_units_3
+  :end-before: marker_interpretation_of_units_3
 
 .. include:: inform/informC03_interpretation_of_units3.rst
 
 .. include:: sectionC_interpretation.rst
   :start-after: marker_interpretation_of_units_3
-  :end_before: marker_interpretation_of_units_end
+  :end-before: marker_interpretation_of_units_end
 
 .. include:: libcellml/libcellmlC03_interpretation_of_units.rst

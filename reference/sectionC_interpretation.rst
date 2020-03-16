@@ -180,8 +180,6 @@ Interpretation of units
 
 .. marker_interpretation_of_units_1_3
 
-HELLO!
-
    4. The relationship between the product, :math:`P`, of numerical values
       given in each and every child :code:`unit` element units, to a
       numerical value, :math:`x`, with units given by the encompassing
