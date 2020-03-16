@@ -186,7 +186,7 @@ Interpretation of units
           :width: 50%
 
       where: :math:`u_x` denotes the units of the :code:`units` element;
-      :math:`p_i`, :math:`e_i`, :math: `m_i` and :math:`u_i`
+      :math:`p_i`, :math:`e_i`, :math:`m_i` and :math:`u_i`
       refer to the prefix, exponent and
       multiplier terms and units of the :math:`i^(th)` :code:`unit` child
       element, respectively. Square brackets encompass the units of numerical
