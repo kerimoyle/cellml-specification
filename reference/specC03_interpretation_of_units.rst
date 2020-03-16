@@ -1,4 +1,4 @@
-.. _specC3:
+.. _specC03:
 
 .. include:: sectionC_interpretation.rst
   :start-after: marker_interpretation_of_units_start

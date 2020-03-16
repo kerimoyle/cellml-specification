@@ -1,4 +1,4 @@
-.. _specC9:
+.. _specC09:
 
 .. include:: sectionC_interpretation.rst
   :start-after: marker_interpretation_of_encapsulation_start

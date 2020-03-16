@@ -1,4 +1,4 @@
-.. _specC2:
+.. _specC02:
 
 .. include:: sectionC_interpretation.rst
   :start-after: marker_units_reference_start
