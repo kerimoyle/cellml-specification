@@ -29,4 +29,9 @@
   :end_before: marker_interpretation_of_units_3
 
 .. include:: inform/informC03_interpretation_of_units3.rst
+
+.. include:: sectionC_interpretation.rst
+  :start-after: marker_interpretation_of_units_3
+  :end_before: marker_interpretation_of_units_end
+
 .. include:: libcellml/libcellmlC03_interpretation_of_units.rst

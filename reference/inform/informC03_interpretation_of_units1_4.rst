@@ -55,13 +55,14 @@
             <unit units="centimetre" exponent="3.0"/>
         </units>
 
-    This is equivalent to creating the units of (1e-6)(metre)^3, because the
-    effect of the :code:`exponent` is applied to the combination of
+
+    This is equivalent to creating the units of :math:`(10^{-6})(metre)^3`, 
+    because the effect of the :code:`exponent` is applied to the combination of
     :code:`units` and :code:`prefix`, but not to the :code:`multiplier`:
 
     .. code-block:: xml
 
-        <!-- So this ... >
+        <!-- So this ... -->
         <units name="millilitre">
             <unit units="metre" exponent="3.0" multiplier="1e-6" />
         </units>
@@ -71,6 +72,7 @@
             <units units="metre" exponent="3.0" prefix="-2" />
         </units>
     
+
     It's good to get your head around the difference between how the
     :code:`multiplier` and :code:`prefix` terms work, or your scaling might
-    not be what you expect (and your beer quite disappointing).
+    not be quite what you expect (and your beer disappointing).

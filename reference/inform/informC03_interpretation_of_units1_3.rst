@@ -11,7 +11,8 @@
     As you'd expect, both the :code:`exponent` and :code:`multiplier`
     attributes must be :ref:`valid real numbers<specA_real_number>`, which
     could include an :ref:`integers<specA_integer>`.  (This is in contrast to
-    the :code:`prefix` which *must* be an integer or a named prefix.)
+    the :code:`prefix` which *must* be an integer or a
+    :ref:`named prefix<table_prefix_values>`.)
 
     All three attributes can be combined in different ways to give the same
     effective outcome.  The examples below all define a :code:`units` item
@@ -54,7 +55,7 @@
         </units>
 
     **Note** that all spellings of built in units and prefixes must be UK (not
-     US) English, ie: :code:`metre` (not meter), :code:`litre` (not liter), and
-     :code:`deca` (not deka).
+    US) English, ie: :code:`metre` (not meter), :code:`litre` (not liter), and
+    :code:`deca` (not deka).
 
 
