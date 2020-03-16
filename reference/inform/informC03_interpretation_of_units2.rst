@@ -33,7 +33,7 @@
     +--------+------------+---------------------------+
 
     Some of the units listed in the
-    :ref:`Built-in Units<table_builtin_units>` are these base units, but others
+    :ref:`Built-in Units<table_built_in_units>` are these base units, but others
     are combinations of them included for convenience.  Only those rows in the
     table which have no entries in the "Unit reduction" column are
     "irreducible" or base units.
