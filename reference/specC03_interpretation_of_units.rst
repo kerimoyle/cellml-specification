@@ -26,12 +26,24 @@
 
 .. include:: sectionC_interpretation.rst
   :start-after: marker_interpretation_of_units_2
-  :end-before: marker_interpretation_of_units_3
+  :end-before: marker_interpretation_of_units_3_2
 
-.. include:: inform/informC03_interpretation_of_units3.rst
+.. include:: inform/informC03_interpretation_of_units_3_2.rst
 
 .. include:: sectionC_interpretation.rst
-  :start-after: marker_interpretation_of_units_3
+  :start-after: marker_interpretation_of_units_3_2
+  :end-before: marker_interpretation_of_units_3_3
+
+.. include:: inform/informC03_interpretation_of_units3_3.rst
+
+.. include:: sectionC_interpretation.rst
+  :start-after: marker_interpretation_of_units_3_3
+  :end-before: marker_interpretation_of_units_3_4
+
+.. include:: inform/informC03_interpretation_of_units3_4.rst
+
+.. include:: sectionC_interpretation.rst
+  :start-after: marker_interpretation_of_units_3_4
   :end-before: marker_interpretation_of_units_end
 
 .. include:: libcellml/libcellmlC03_interpretation_of_units.rst

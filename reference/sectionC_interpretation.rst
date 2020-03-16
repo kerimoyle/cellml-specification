@@ -248,9 +248,13 @@ Interpretation of units
          above, SHALL be multiplied by the exponent term of the current,
          referencing, :code:`unit` element.
 
+.. marker_interpretation_of_units_3_2
+
    3. Tuples which have the name element of ‘dimensionless’ SHALL be
       removed from the set of tuples. Note that this can result in the
       set of tuples being empty.
+
+.. marker_interpretation_of_units_3_3
 
    4. Where the set of tuples consists of tuples which have the same
       name element, those tuples SHALL be combined into a single tuple
@@ -259,7 +263,7 @@ Interpretation of units
       is zero, the tuple SHALL be removed from the set of tuples. Note
       that this can result in the set of tuples being empty.
 
-.. marker_interpretation_of_units_3
+.. marker_interpretation_of_units_3_4
 
 .. _table_prefix_values:
 
