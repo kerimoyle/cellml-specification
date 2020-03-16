@@ -252,7 +252,7 @@ Specific information items
    1. Every :code:`unit` element MUST contain a :code:`units`
       attribute. The value of the :code:`units` attribute MUST be
       a valid units reference, as defined in the
-      :ref:`Units reference <units_reference>` section.
+      :ref:`Units reference<units_reference>` section.
 
       .. container:: issue-unit-digraph
 
@@ -283,7 +283,7 @@ Specific information items
 
          1. The :code:`prefix` attribute. If present, the value of the attribute
             MUST meet the constraints specified in the
-            :ref:`Interpretation of units <specC_units>` section.
+            :ref:`Interpretation of units <specC_interpretation_of_units>` section.
 
       .. container:: issue-unit-multiplier
 
@@ -385,7 +385,7 @@ Specific information items
 
       2. The :code:`initial_value` attribute. If the attribute is present, it
          MUST meet the requirements described by the
-         :ref:`Interpretation of initial values<specC_initial_values>` section.
+         :ref:`Interpretation of initial values<specC_interpretation_of_initial_values>` section.
 
 .. marker_variable_end
 .. marker_reset_start
@@ -427,7 +427,7 @@ Specific information items
          The value of the :code:`order` attribute MUST
          be unique for all :code:`reset` elements with :code:`variable` attributes
          that reference variables in the same connected variable set (see
-         :ref:`Interpretation of map_variables<specC_map_variables>`).
+         :ref:`Interpretation of map_variables<specC_interpretation_of_map_variables>`).
 
 .. container:: issue-reset-child
 
