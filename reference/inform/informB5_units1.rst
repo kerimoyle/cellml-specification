@@ -8,11 +8,9 @@
 
   .. container:: infospec
 
-    The best way to understand how :code:`units` work is to read the
-    next section which defines their child :code:`unit` items.
+    The best way to understand how :code:`units` work is to read the next section which defines their child :code:`unit` items.
 
-    The following examples show examples of what is not permitted in
-    defining :code:`units` items.
+    The following examples show examples of what is not permitted in defining :code:`units` items.
 
     .. code-block:: xml
 

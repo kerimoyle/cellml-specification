@@ -8,8 +8,8 @@
 
     .. container:: infospec
 
-      Names and identifiers need to be a single word, and without any special
-      characters other than an underscore.  For example, these are allowed:
+      Names and identifiers need to be a single word, and without any special characters other than an underscore.
+      For example, these are allowed:
 
         - :code:`myName`
         - :code:`my_name`

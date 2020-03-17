@@ -8,11 +8,8 @@
 
   .. container:: infospec
 
-    Once you've read the section in the previous "See more" box on how single
-    :code:`unit` items can be combined to form a :code:`units` item, we also
-    need to define how :code:`units` items can be used to form generations
-    of units.  Using the same example of the 330mL beer bottle as before, here
-    are alternative, but equivalent, definitions.
+    Once you've read the section in the previous "See more" box on how single :code:`unit` items can be combined to form a :code:`units` item, we also need to define how :code:`units` items can be used to form generations of units.
+    Using the same example of the 330mL beer bottle as before, here are alternative, but equivalent, definitions.
 
     .. code-block:: xml
 
@@ -29,9 +26,8 @@
             <unit units="metre" prefix="centi" exponent="3.0" />   <!-- Note UK spelling! -->
         </units>
 
-    But we can also use child :code:`units` in conjunction with
-    :code:`exponents` too.  In this situation you'll need to understand the
-    equation above.  Let's start by defining a centimeter:
+    But we can also use child :code:`units` in conjunction with :code:`exponents` too.
+    In this situation you'll need to understand the equation above.  Let's start by defining a centimeter:
 
     .. code-block:: xml
 
@@ -46,7 +42,7 @@
         <units name="centimeter">
             <unit units="metre" prefix="-2"/>
         </units>
-    
+
     Then cube it to get the units of millilitres:
 
     .. code-block:: xml
@@ -56,9 +52,7 @@
         </units>
 
 
-    This is equivalent to creating the units of :math:`(10^{-6})(metre)^3`, 
-    because the effect of the :code:`exponent` is applied to the combination of
-    :code:`units` and :code:`prefix`, but not to the :code:`multiplier`:
+    This is equivalent to creating the units of :math:`(10^{-6})(metre)^3`, because the effect of the :code:`exponent` is applied to the combination of :code:`units` and :code:`prefix`, but not to the :code:`multiplier`:
 
     .. code-block:: xml
 
@@ -71,8 +65,6 @@
         <units name="millilitre">
             <units units="metre" exponent="3.0" prefix="-2" />
         </units>
-    
 
-    It's good to get your head around the difference between how the
-    :code:`multiplier` and :code:`prefix` terms work, or your scaling might
-    not be quite what you expect (and your beer disappointing).
+
+    It's good to get your head around the difference between how the :code:`multiplier` and :code:`prefix` terms work, or your scaling might not be quite what you expect (and your beer disappointing).

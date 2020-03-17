@@ -10,14 +10,11 @@
 
   .. container:: infospec
 
-    The intention behind this restriction is to prevent circular import
-    definitions from occurring.  Models *are* able to import twins, that is,
-    :code:`component` or :code:`units` items which are identical in content
-    but under different names.  Models may *not* import themselves, because
-    this would create an infinite loop of dependence.
+    The intention behind this restriction is to prevent circular import definitions from occurring.
+    Models *are* able to import twins, that is, :code:`component` or :code:`units` items which are identical in content but under different names.
+    Models may *not* import themselves, because this would create an infinite loop of dependence.
 
-    For example, the first Olsen twins model below is permitted: the same
-    component is imported twice under different names.
+    For example, the first Olsen twins model below is permitted: the same component is imported twice under different names.
 
     .. code-block:: xml
 
@@ -41,8 +38,7 @@
         </import>
       <model>
 
-    The sames applies for "indirect" imports, where recursion is created over
-    several files:
+    The sames applies for "indirect" imports, where recursion is created over several files:
 
     .. code-block:: xml
 

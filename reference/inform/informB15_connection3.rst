@@ -8,11 +8,8 @@
 
   .. container:: infospec
 
-    All this means is that mapped/connected :code:`variables` (ie: those
-    specified by :code:`connection` and :code:`map_variables` items) must be
-    in different :code:`components`. Since the only reason you'd need to use
-    these connections is in order to access a :code:`variable` in another
-    :code:`component`, this restriction does kinda make sense!
+    All this means is that mapped/connected :code:`variables` (ie: those specified by :code:`connection` and :code:`map_variables` items) must be in different :code:`components`.
+    Since the only reason you'd need to use these connections is in order to access a :code:`variable` in another :code:`component`, this restriction does kinda make sense!
 
     .. code-block:: xml
 
@@ -26,4 +23,4 @@
             <connection component_1="happily_ever_after" component_2="happily_ever_after">
                 <map_variables variable_1="romeo" variable_2="juliet">
             </connection>
-        </model> 
+        </model>

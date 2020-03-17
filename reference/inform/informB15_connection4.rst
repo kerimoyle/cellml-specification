@@ -8,12 +8,9 @@
 
   .. container:: infospec
 
-    You may only have one :code:`connection` any two :code:`components`,
-    regardless of which is specified as :code:`component_1` and which is
-    specified as :code:`component_2`.  If you have found duplicate
-    :code:`connection` elements, simply merge their contents - a
-    :code:`connection` can contain any number of :code:`map_variables`
-    children.  Make sure that the order in which you spe
+    You may only have one :code:`connection` any two :code:`components`, regardless of which is specified as :code:`component_1` and which is specified as :code:`component_2`.
+    If you have found duplicate :code:`connection` elements, simply merge their contents - a :code:`connection` can contain any number of :code:`map_variables` children.
+    Make sure that the order in which you spe **TODO**
 
     .. code-block:: xml
 
@@ -49,13 +46,11 @@
             </component>
 
             <!-- The contents have been merged. Note that the order of variables -->
-            <!-- must match the order of the parent component, ie: all variable_1s 
+            <!-- must match the order of the parent component, ie: all variable_1s
             <!-- must be within component_1 etc. -->
             <connection component_1="montague" component_2="capulet">
                 <map_variables variable_1="romeo" variable_2="juliet">
                 <map_variables variable_1="romeo" variable_2="rosaline">
             </connection>
         </model>
-
-
 

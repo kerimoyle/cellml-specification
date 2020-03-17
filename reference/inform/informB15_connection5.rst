@@ -8,9 +8,8 @@
 
   .. container:: infospec
 
-    The point of creating a :code:`connection` item is in order to connect
-    :code:`variables` between eligible :code:`components`.  There is no reason
-    to have an empty :code:`connection` - just delete it.
+    The point of creating a :code:`connection` item is in order to connect :code:`variables` between eligible :code:`components`.
+    There is no reason to have an empty :code:`connection` - just delete it.
 
     .. code-block:: xml
 
@@ -22,8 +21,8 @@
             <component name="house_of_montague">
                 <variable name="romeo" interface_type="public">
             </component>
-            
+
             <!-- an empty connection is meaningless, just delete it! -->
             <connection component_1="montague" component_2="capulet">
             </connection>
-        </model>  
+        </model>

@@ -9,14 +9,11 @@
 
   .. container:: infospec
 
-    Encapsulation is the way that CellML manages the hierarchy of components
-    and keeps their modularity.  This is why there can be only one :code:`encapsulation`
-    element within a :code:`model`: you can think of it as a table of contents for
-    components in the whole model.  
+    Encapsulation is the way that CellML manages the hierarchy of components and keeps their modularity.
+    This is why there can be only one :code:`encapsulation` element within a :code:`model`: you can think of it as a table of contents for components in the whole model.
 
-    Encapsulations don't have to include all of the model's components - only the ones
-    which need to sit within another component.  Components which are not listed within
-    the encapsulation are top-level children of the :code:`model`.
+    Encapsulations don't have to include all of the model's components - only the ones which need to sit within another component.
+    Components which are not listed within the encapsulation are top-level children of the :code:`model`.
 
     .. code-block:: xml
 
@@ -95,6 +92,3 @@
           </encapsulation>
         </model>
 
-
-
-    

@@ -8,10 +8,8 @@
 
   .. container:: infospec
 
-    A :code:`component` item, as with every other part of CellML, must use
-    a name unique to its scope, and obey the format definitions
-    outlined in
-    :ref:`Data representation formats<specA_data_representation_formats>`.  For example:
+    A :code:`component` item, as with every other part of CellML, must use a name unique to its scope, and obey the format definitions outlined in :ref:`Data representation formats<specA_data_representation_formats>`.
+    For example:
 
     .. code-block:: xml
 
