@@ -8,8 +8,7 @@
 
   .. container:: infospec
 
-    Points 16.1.1 and 16.1.2 are both saying the same thing for their
-    :code:`variable_1` and :code:`variable_2` attributes respectively:
+    Points 16.1.1 and 16.1.2 are both saying the same thing for their :code:`variable_1` and :code:`variable_2` attributes respectively:
 
     .. code-block:: xml
 
@@ -36,6 +35,4 @@
                 <map_variables variable_1="romeo" variable_2="juliet_is_the_sun">
             </connection>
         </model>
-
-    
 

@@ -8,14 +8,11 @@
 
   .. container:: infospec
 
-    You may have noticed in the :ref:`Built-in Units<table_built_in_units>`
-    that there is an entry labelled :code:`dimensionless`.
+    You may have noticed in the :ref:`Built-in Units<table_built_in_units>` that there is an entry labelled :code:`dimensionless`.
 
-    This is provided for convenience, and doesn't take part in determining the
-    unit reduction for any :code:`units` items.  Together with the next
-    point, this means that the all unit reduction tuples represent the
-    *minimum possible* description of a :code:`units` item.  For example, this
-    :code:`units` item has the unit reduction of :code:`(metre, 1)`:
+    This is provided for convenience, and doesn't take part in determining the unit reduction for any :code:`units` items.
+    Together with the next point, this means that the all unit reduction tuples represent the *minimum possible* description of a :code:`units` item.
+    For example, this :code:`units` item has the unit reduction of :code:`(metre, 1)`:
 
     .. code-block:: xml
 
@@ -24,9 +21,4 @@
           <unit units="metre">
           <unit units="dimensionless" exponent="3">
         </units>
-
-
-
-
-
 

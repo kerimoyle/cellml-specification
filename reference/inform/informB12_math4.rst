@@ -12,9 +12,7 @@
 
       Constants using the ``<cn>`` tags
 
-    When specifying a constant with :code:`<cn>`, its
-    :ref:`real number value<specA_real_number>` is given between the tags,
-    and its units are specified as an attribute.  
+    When specifying a constant with :code:`<cn>`, its :ref:`real number value<specA_real_number>` is given between the tags, and its units are specified as an attribute.
 
     .. code-block:: xml
 
@@ -24,9 +22,7 @@
       <cn cellml:units="dimensionless">3.14159e+03</cn> <!-- e-notation is permitted -->
 
 
-    Please note that the units name specified must refer to
-    a :code:`units` element that exists in the :code:`model` element,
-    or be one from the :ref:`Built-in Units<table_built_in_units>` table.
+    Please note that the units name specified must refer to a :code:`units` element that exists in the :code:`model` element, or be one from the :ref:`Built-in Units<table_built_in_units>` table.
 
 
     .. code-block:: xml
@@ -45,11 +41,9 @@
 
       Dimensional consistency (or, how to write nonsense maths)
 
-    For a model to have a valid CellML syntax, it needs to follow the MathML
-    rules outlined above.  But it's still possible to create nonsense (should
-    you so desire ... ), and one great way to create nonsense is to have MathML
-    statements which have inconsistent units.  Consider again Einstein's
-    equation :math:`E=mc^2`.  Now imagine that encode it into CellML like this:
+    For a model to have a valid CellML syntax, it needs to follow the MathML rules outlined above.
+    But it's still possible to create nonsense (should you so desire ... ), and one great way to create nonsense is to have MathML statements which have inconsistent units.
+    Consider again Einstein's equation :math:`E=mc^2`.  Now imagine that encode it into CellML like this:
 
     .. code-block:: xml
 
@@ -72,17 +66,8 @@
         </apply>
       </math>
 
-    Believe it or not, this is valid! It's clearly nonsense, but it doesn't
-    actually violate any syntax rules.  The only instance where you will create
-    an invalid model by assigning :code:`units` to :code:`variables` is when
-    you need to form a :code:`map_variables` pair with a :code:`variable` in
-    another :code:`component`.  In this case, each :code:`variable` must have
-    an equivalent unit reduction (see :ref:`Section C.5.3<specC_interpretation_of_units>`) or it
-    won't be valid CellML.
-
-
-
-
-
-    
+    Believe it or not, this is valid!
+    It's clearly nonsense, but it doesn't actually violate any syntax rules.
+    The only instance where you will create an invalid model by assigning :code:`units` to :code:`variables` is when you need to form a :code:`map_variables` pair with a :code:`variable` in another :code:`component`.
+    In this case, each :code:`variable` must have an equivalent unit reduction (see :ref:`Section C.5.3<specC_interpretation_of_units>`) or it won't be valid CellML.
 

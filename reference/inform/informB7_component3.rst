@@ -12,14 +12,11 @@
 
       The mathematics of a component
 
-    Perhaps the most important part of a :code:`component` item is the
-    mathematics it contains.  This is stored inside a collection of :code:`<math>`
-    blocks as described in :ref:`The math element<specB_math>`.  The :code:`math`
-    then defines the operation of the local :code:`variable` items and how they
-    relate to each other mathematically.
+    Perhaps the most important part of a :code:`component` item is the mathematics it contains.
+    This is stored inside a collection of :code:`<math>` blocks as described in :ref:`The math element<specB_math>`.
+    The :code:`math` then defines the operation of the local :code:`variable` items and how they relate to each other mathematically.
 
-    For example, a component to calculate Einstein's :math:`E=mc^2` could be
-    represented by:
+    For example, a component to calculate Einstein's :math:`E=mc^2` could be represented by:
 
     .. code-block:: xml
 
@@ -39,17 +36,14 @@
         ...
       </component>
 
-    Please refer to :ref:`The math element<specB_math>` for
-    information on the :code:`math` items and MathML format.
+    Please refer to :ref:`The math element<specB_math>` for information on the :code:`math` items and MathML format.
 
     .. container:: heading3
 
       The variables of a component
 
-    The MathML block above refers to three variables, named :code:`E`,
-    :code:`m` and :code:`c`.  These variable names be the same as the
-    :code:`name` attributes of the child :code:`variable` items in this
-    component.
+    The MathML block above refers to three variables, named :code:`E`, :code:`m` and :code:`c`.
+    These variable names be the same as the :code:`name` attributes of the child :code:`variable` items in this component.
 
     .. code-block:: xml
 
@@ -60,8 +54,7 @@
         <variable name="c" ... >
       </component>
 
-    Please refer to :ref:`The variable information item<specB_variable>` for
-    information on the :code:`variable` items.
+    Please refer to :ref:`The variable information item<specB_variable>` for information on the :code:`variable` items.
 
     .. container:: heading3
 

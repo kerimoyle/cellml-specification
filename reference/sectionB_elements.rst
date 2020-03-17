@@ -18,27 +18,22 @@ Top-level of CellML infosets
 
 .. container:: issue-model-element
 
-   The top-level element information item in a :ref:`CellML infoset<specA_cellml_infoset>` MUST be an
-   element in the :ref:`CellML namespace<specA_cellml_namespace>` with a
-   local name equal to :code:`model`. In this specification, the top-level
-   element is referred to as the :code:`model` element.
+   The top-level element information item in a :ref:`CellML infoset<specA_cellml_infoset>` MUST be an element in the :ref:`CellML namespace<specA_cellml_namespace>` with a local name equal to :code:`model`.
+   In this specification, the top-level element is referred to as the :code:`model` element.
 
 Specific information items
 --------------------------
 
 .. container:: issue-model-name
 
-   1. Every :code:`model` element MUST contain a :code:`name`
-      attribute. The value of the :code:`name` attribute MUST be a
-      :ref:`valid CellML identifier<specA_cellml_identifier>`.
+   1. Every :code:`model` element MUST contain a :code:`name` attribute.
+      The value of the :code:`name` attribute MUST be a :ref:`valid CellML identifier<specA_cellml_identifier>`.
 
 .. marker_model_1
 
 .. container:: issue-model-child
 
-   2. A :code:`model` element MAY contain one or more additional specific
-      element children, each of which MUST be of one of the
-      following types:
+   2. A :code:`model` element MAY contain one or more additional specific element children, each of which MUST be of one of the following types:
 
       #. A :code:`component` element; or
 
@@ -55,8 +50,7 @@ Specific information items
 
 .. container:: issue-model-more-than-one-encapsulation
 
-   3. A :code:`model` element MUST NOT contain more than one :code:`encapsulation`
-      elements.
+   3. A :code:`model` element MUST NOT contain more than one :code:`encapsulation` elements.
 
 .. marker_model_end
 .. marker_import_start
@@ -66,38 +60,26 @@ Specific information items
 The ``import`` element
 ======================
 
-An :code:`import` element information item (referred to in this
-specification as an :code:`import` element) is an element
-in the :ref:`CellML namespace<specA_cellml_namespace>`
-with a local name equal to :code:`import`.
+An :code:`import` element information item (referred to in this specification as an :code:`import` element) is an element in the :ref:`CellML namespace<specA_cellml_namespace>` with a local name equal to :code:`import`.
 
 Specific information items
 --------------------------
 
 .. container:: issue-import-href
 
-   1. Every :code:`import` element MUST contain an attribute
-      in the namespace :code:`http://www.w3.org/1999/xlink`, with a local
-      name equal to :code:`href`.
+   1. Every :code:`import` element MUST contain an attribute in the namespace :code:`http://www.w3.org/1999/xlink`, with a local name equal to :code:`href`.
 
-      The value of this attribute SHALL be a valid
-      locator :code:`href`, as defined in
-      :href_locator:`Section 5.4 of the XLink specification`.
+      The value of this attribute SHALL be a valid locator :code:`href`, as defined in :href_locator:`Section 5.4 of the XLink specification`.
 
-      The :code:`href` attribute SHALL be treated according to the
-      :xlink:`XLink specification`, by applying the rules for simple-type elements.
+      The :code:`href` attribute SHALL be treated according to the :xlink:`XLink specification`, by applying the rules for simple-type elements.
 
-      When describing an :code:`import` element or one of its children, the phrase
-      “imported CellML infoset” SHALL refer to the
-      :ref:`CellML infoset<specA_cellml_infoset>` obtained
-      by parsing the document referenced by the :code:`href` attribute.
+      When describing an :code:`import` element or one of its children, the phrase “imported CellML infoset” SHALL refer to the :ref:`CellML infoset<specA_cellml_infoset>` obtained by parsing the document referenced by the :code:`href` attribute.
 
 .. marker_import_1
 
 .. container:: issue-import-child
 
-   2. Every :code:`import` element MAY contain one or more specific element
-      children, each of which MUST be of one of the following types:
+   2. Every :code:`import` element MAY contain one or more specific element children, each of which MUST be of one of the following types:
 
       #. An :code:`import units` element; or
 
@@ -107,11 +89,7 @@ Specific information items
 
 .. container:: issue-import-circular
 
-   3. Any :ref:`CellML infoset<specA_cellml_infoset>` imported, directly or indirectly, by the imported
-      CellML infoset MUST NOT be semantically equivalent to the importing
-      CellML infoset (see
-      :ref:`Semantically equivalent CellML infosets <specA_semantic_equivalence>`
-      ).
+   3. Any :ref:`CellML infoset<specA_cellml_infoset>` imported, directly or indirectly, by the imported CellML infoset MUST NOT be semantically equivalent to the importing CellML infoset (see :ref:`Semantically equivalent CellML infosets <specA_semantic_equivalence>`).
 
 .. marker_import_end
 .. marker_import_units_start
@@ -718,51 +696,33 @@ Specific information items
 The ``map_variables`` element
 =============================
 
-A :code:`map_variables` element information item (referred to in this
-specification as a :code:`map_variables` element) is an element in the
-:ref:`CellML namespace<specA_cellml_namespace>` with a local name equal to
-:code:`map_variables`, and which appears as a child of a :code:`connection`
-element.
+A :code:`map_variables` element information item (referred to in this specification as a :code:`map_variables` element) is an element in the :ref:`CellML namespace<specA_cellml_namespace>` with a local name equal to :code:`map_variables`, and which appears as a child of a :code:`connection` element.
 
 Specific information items
 --------------------------
 
 .. container:: issue-map-variables-variable1
 
-   1. Each :code:`map_variables` element MUST contain a
-      :code:`variable_1` attribute.
+   1. Each :code:`map_variables` element MUST contain a :code:`variable_1` attribute.
 
-      The value of the :code:`variable_1` attribute
-      MUST be a :ref:`valid CellML identifier<specA_cellml_identifier>`.
+      The value of the :code:`variable_1` attribute MUST be a :ref:`valid CellML identifier<specA_cellml_identifier>`.
 
-      The value of this attribute MUST
-      be equal to the :code:`name` attribute on a :code:`variable` element child
-      of the :code:`component` element or :code:`import component` element
-      referenced by the :code:`component_1` attribute on the :code:`connection`
-      element which is the parent of this element.
+      The value of this attribute MUST be equal to the :code:`name` attribute on a :code:`variable` element child of the :code:`component` element or :code:`import component` element referenced by the :code:`component_1` attribute on the :code:`connection` element which is the parent of this element.
 
 .. marker_map_variables_1
 
 .. container:: issue-map-variables-variable2
 
-   2. Each :code:`map_variables` element MUST contain a
-      :code:`variable_2` attribute.
+   2. Each :code:`map_variables` element MUST contain a :code:`variable_2` attribute.
 
-      The value of the :code:`variable_2` attribute
-      MUST be a :ref:`valid CellML identifier<specA_cellml_identifier>`.
+      The value of the :code:`variable_2` attribute MUST be a :ref:`valid CellML identifier<specA_cellml_identifier>`.
 
-      The value of this attribute MUST
-      be equal to the :code:`name` attribute on a :code:`variable` element child
-      of the :code:`component` element or :code:`import component` element
-      referenced by the :code:`component_2` attribute on the :code:`connection`
-      element which is the parent of this element.
+      The value of this attribute MUST be equal to the :code:`name` attribute on a :code:`variable` element child of the :code:`component` element or :code:`import component` element referenced by the :code:`component_2` attribute on the :code:`connection` element which is the parent of this element.
 
 .. marker_map_variables_2
 
 .. container:: issue-map-variables-unique
 
-   3. A :code:`connection` element MUST NOT contain more than one
-      :code:`map_variables` element with a given :code:`variable_1` attribute
-      value and :code:`variable_2` attribute value pair.
+   3. A :code:`connection` element MUST NOT contain more than one :code:`map_variables` element with a given :code:`variable_1` attribute value and :code:`variable_2` attribute value pair.
 
 .. marker_map_variables_end

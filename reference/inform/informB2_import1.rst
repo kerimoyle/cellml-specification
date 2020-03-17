@@ -10,21 +10,13 @@
 
   .. container:: infospec
 
-    At present (TODO) the location specified by the :code:`href` attribute
-    must be a locally available file (not online).  The path may either be
-    absolute from the root directory, or relative to the importing model's
-    location.
+    At present (TODO) the location specified by the :code:`href` attribute must be a locally available file (not online).
+The path may either be absolute from the root directory, or relative to the importing model's location.
 
     For example, here's a model based around casting for The Wizard of Oz.
-    In the main model (the one doing the importing), the component
-    used to play Dorothy is defined by importing a :code:`component`
-    named :code:`judy_garland` from the file called
-    :code:`role_of_dorothy.cellml` and setting its reference in the main
-    file to be the component named :code:`dorothy`.
+    In the main model (the one doing the importing), the component used to play Dorothy is defined by importing a :code:`component` named :code:`judy_garland` from the file called :code:`role_of_dorothy.cellml` and setting its reference in the main file to be the component named :code:`dorothy`.
 
-    Note the file structure - the path to the imported file is specified
-    relative to the importing file, in this case :code:`role_of_dorothy.cellml`
-    sits inside a folder called :code:`characters`.
+    Note the file structure - the path to the imported file is specified relative to the importing file, in this case :code:`role_of_dorothy.cellml` sits inside a folder called :code:`characters`.
 
 
     oz_model.cellml
@@ -59,10 +51,8 @@
         <component name="scooby_doo"> ... </component>
       </model>
 
-    The component representing Toto could be imported in one of two ways, both
-    giving identical model representations. Either directly from the
-    :code:`role_of_toto.cellml` file, or indirectly via the
-    :code:`role_of_dorothy.cellml` file:
+    The component representing Toto could be imported in one of two ways, both giving identical model representations.
+    Either directly from the :code:`role_of_toto.cellml` file, or indirectly via the :code:`role_of_dorothy.cellml` file:
 
     .. code-block:: xml
 
