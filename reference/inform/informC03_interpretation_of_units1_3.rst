@@ -16,7 +16,7 @@
 
     All three attributes can be combined in different ways to give the same
     effective outcome.  The examples below all define a :code:`units` item
-    equivalent to a 300 millilitre bottle of beer.
+    equivalent to a 330 mL bottle of beer.
 
     .. code-block:: xml
 

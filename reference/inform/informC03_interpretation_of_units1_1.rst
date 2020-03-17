@@ -29,4 +29,8 @@
 
         <!-- BUT this is not valid, the prefix MUST be an integer or prefix name only! -->
         <unit units="myOtherUnits" prefix="3.0">
+    
+    **Note** that these examples are *only* equivalent because the
+    :code:`exponent` in each case is 1.  Please see the next "See more" block
+    for a full explanation of its role.
 
