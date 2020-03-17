@@ -8,11 +8,8 @@
 
   .. container:: infospec
 
-    The :code:`prefix` term is different from the other attributes of a
-    :code:`unit` element in that it can accept both a string (the name of the
-    prefix from the :ref:`Prefix table<table_prefix_values>`) or an integer
-    (the base 10 log equivalent to the prefix). It's also different because
-    **it will become invalid if a real number is used**.
+    The :code:`prefix` term is different from the other attributes of a :code:`unit` element in that it can accept both a string (the name of the prefix from the :ref:`Prefix table<table_prefix_values>`) or an integer (the base 10 log equivalent to the prefix).
+    It's also different because **it will become invalid if a real number is used**.
 
     For example, these are equivalent:
 
@@ -29,4 +26,7 @@
 
         <!-- BUT this is not valid, the prefix MUST be an integer or prefix name only! -->
         <unit units="myOtherUnits" prefix="3.0">
+
+    **Note** that these examples are *only* equivalent because the :code:`exponent` in each case is 1.
+    Please see the next "See more" block for a full explanation of its role.
 
