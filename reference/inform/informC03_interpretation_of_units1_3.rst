@@ -10,7 +10,7 @@
 
     As you'd expect, both the :code:`exponent` and :code:`multiplier`
     attributes must be :ref:`valid real numbers<specA_real_number>`, which
-    could include an :ref:`integers<specA_integer>`.  (This is in contrast to
+    could include :ref:`integers<specA_integer>`.  (This is in contrast to
     the :code:`prefix` which *must* be an integer or a
     :ref:`named prefix<table_prefix_values>`.)
 
