@@ -9,18 +9,13 @@
   .. container:: infospec
 
     You may have noticed in the :ref:`Built-in Units<table_built_in_units>`
-    that there are three rows which are effectively dimensionless.  These are:
-    
-    - the :code:`dimensionless` units themselves,
-    - the :code:`radian` units, and
-    - the :code:`steradian` units.
+    that there is an entry labelled :code:`dimensionless`.
 
-    These are provided for convenience, and don't take part in determining the
-    unit reduction for any :code:`units` items.  This, together with the next
-    point, means that the unit reduction tuples represent the
-    *minimum possible* description of a :code:`units` item.  For example, all
-    of these :code:`units` items have the same unit reduction of
-    :code:`(metre, 1)`:
+    This is provided for convenience, and doesn't take part in determining the
+    unit reduction for any :code:`units` items.  Together with the next
+    point, this means that the all unit reduction tuples represent the
+    *minimum possible* description of a :code:`units` item.  For example, this
+    :code:`units` item has the unit reduction of :code:`(metre, 1)`:
 
     .. code-block:: xml
 
@@ -30,13 +25,6 @@
           <unit units="dimensionless" exponent="3">
         </units>
 
-        <!-- The "radian" and "steradian" convenience units inherit from the 
-            base "dimensionless" unit, which does not appear in the unit reduction -->
-        <units name="metre_times_radian">
-          <unit units="metre">
-          <unit units="radian">
-          <unit units="steradian">
-        </units>
 
 
 
