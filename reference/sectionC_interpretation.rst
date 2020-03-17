@@ -14,8 +14,16 @@ Interpretation of imports
 
 #. Each :code:`import` element present in a
    :ref:`CellML infoset<specA_cellml_infoset>` (the importing
-   infoset) SHALL define a new and separate instance of the CellML
-   infoset referenced by the :code:`href` attribute (the imported infoset).
+   infoset) SHALL define a new and distinct instance of the CellML
+   infoset which is referenced by the :code:`href` attribute (the imported
+   infoset). This imported infoset instance SHALL define the context in which
+   the child of an import element (a units or component element) exists and is
+   interpreted.
+
+#. The importing of an element SHALL be considered recursively such that items
+   referenced or imported by the :code:`import` element child are themselves
+   included.
+
    See :ref:`Units reference<specC_units_reference>` and
    :ref:`Component reference<specC_component_reference>` for the specifics
    of importing units and components.
@@ -29,12 +37,12 @@ Units reference
 ---------------
 
 #. A units reference SHALL be a CellML identifier and SHALL be
-   interpreted dependent on the context of the :ref:`CellML model<specA_cellml_model>` in which it
-   occurs, according to the units referencing rules defined later in
-   this section.
+   interpreted dependent on the context of the
+   :ref:`CellML model<specA_cellml_model>` in which it occurs, according to the
+   units referencing rules defined later in this section.
 
-#. A :ref:`CellML infoset<specA_cellml_infoset>` MUST NOT contain a units reference for which no
-   referencing rule can be held to have been followed.
+#. A :ref:`CellML infoset<specA_cellml_infoset>` MUST NOT contain a units
+   reference for which no referencing rule can be held to have been followed.
 
 #. The units referencing rules are:
 
@@ -42,7 +50,8 @@ Units reference
       identical to the units reference, then the units reference SHALL
       refer to that :code:`units` element.
 
-   #. Where there is an :code:`import units` element in the :ref:`CellML infoset<specA_cellml_infoset>`,
+   #. Where there is an :code:`import units` element in the
+      :ref:`CellML infoset<specA_cellml_infoset>`,
       such that the :code:`import units` element has a :code:`name` attribute
       identical to the units reference, then the units reference SHALL
       be treated with respect to referencing rules as if the units
@@ -322,8 +331,16 @@ Component reference
    model, and referred to element with the :code:`name` specified in the
    :code:`component_ref` attribute of the :code:`import component` element.
 
-#. It is noted, for the avoidance of doubt, that CellML models MAY apply
-   the previous rule recursively, to reference an :code:`import component`
+#. It is noted, for the avoidance of doubt, that importing a CellML
+   :code:`component` element SHALL additionally and recursively import:
+
+      #. Any and all encapsulated :code:`component` children of the imported
+         :code:`component`, and
+      #. Any and all :code:`units` elements referenced by the imported
+         :code:`component` or its children.
+
+#. It is further noted, for the avoidance of doubt, that CellML models MAY apply
+   the previous rules recursively, to reference an :code:`import component`
    element which in turn references another :code:`import component`
    element.
 
