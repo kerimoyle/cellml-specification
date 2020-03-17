@@ -10,9 +10,9 @@
 
     As outlined in the previous "See more" block, the built-in base units
     :code:`dimensionless` do not contribute to the unit reduction tuple set.
-    This holds for built-in units which inherit it (like :code:`radian` and
-    :code:`steradian`) but also for situations in which base units' exponents
-    could be simplified or cancelled.  
+    This holds for built-in units which are effectively dimensionless (like
+    :code:`radian` and :code:`steradian`) but also for situations in which
+    base units' exponents could be simplified or cancelled.  
     For example, all three of the :code:`units` items below have identical
     unit reduction tuples of :code:`(metre, 1), (second, -1)`:
 
@@ -33,13 +33,25 @@
             <unit units="metre" exponent="-3">
         </units>
 
+    Here the "steradian" inclusion has no effect on the final unit reduction as its 
+    own units cancel out:
+
+    .. code-block:: xml
+
+        <units name="metres_per_second_too">
+            <unit units="metre" exponent="1">
+            <unit units="second" exponent="-1">
+            <unit units="steradian" exponent="-3">
+        </units>
+
+
     Finally a complicated one with the same outcome.  Note that even though
     there are some irreducible units used, they end up with an exponent of 0
     in the tuple, and are therefore removed from the final unit reduction.
     Note that a Volt is equivalent to :math:`m^2.kg.s^{-3}.A^{-1}`
 
     .. code-block:: xml
-    
+
         <units name="orange" />
 
         <units name="cubed_oranges">
