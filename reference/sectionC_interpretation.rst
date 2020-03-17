@@ -16,12 +16,13 @@ Interpretation of imports
    :ref:`CellML infoset<specA_cellml_infoset>` (the importing
    infoset) SHALL define a new and distinct instance of the CellML
    infoset which is referenced by the :code:`href` attribute (the imported
-   infoset). This imported infoset instance SHALL define the context in which
-   the child of an import element (a units or component element) exists and is
-   interpreted.
+   infoset). This imported infoset instance SHALL provide the context in which
+   the child of an import element (a :code:`units` or :code:`component`
+   element) is defined and interpreted.
 
-#. The importing of an element SHALL be considered recursively such that items
-   referenced or imported by the :code:`import` element child are themselves
+#. The import of an element SHALL be considered recursively such that items
+   referenced or imported by the :code:`import` element's child (a
+   :code:`units` or :code:`component` element) are themselves
    included.
 
    See :ref:`Units reference<specC_units_reference>` and
@@ -326,8 +327,8 @@ Component reference
    attribute on an :code:`import component` element.
 
 #. A component reference which is identical to the :code:`name` attribute on
-   a :code:`component` element SHALL be treated as a reference to that
-   :code:`component` element.
+   a :code:`component` element in the same infoset SHALL be treated as a
+   reference to that :code:`component` element.
 
 #. A component reference which is identical to the :code:`name` attribute on
    an :code:`import component` element SHALL be treated for the purposes of
@@ -341,12 +342,12 @@ Component reference
       #. Any and all encapsulated :code:`component` children of the imported
          :code:`component`, and
       #. Any and all :code:`units` elements referenced by the imported
-         :code:`component` or its children.
+         :code:`component` or its encapsulated children.
 
-#. It is further noted, for the avoidance of doubt, that CellML models MAY apply
-   the previous rules recursively, to reference an :code:`import component`
-   element which in turn references another :code:`import component`
-   element.
+#. It is further noted, for the avoidance of doubt, that CellML models MAY
+   apply the previous rules recursively, to reference an
+   :code:`import component` element which in turn references another
+   :code:`import component` element.
 
 .. marker_component_reference_end
 .. marker_variable_reference_start
