@@ -13,7 +13,7 @@
     This holds for built-in units which are effectively dimensionless (like
     :code:`radian` and :code:`steradian`) but also for situations in which
     base units' exponents could be simplified or cancelled.  
-    For example, all three of the :code:`units` items below have identical
+    For example, all of the :code:`units` items below have identical
     unit reduction tuples of :code:`(metre, 1), (second, -1)`:
 
     .. code-block:: xml
