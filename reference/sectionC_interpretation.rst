@@ -148,10 +148,10 @@ Table: Built-in units
 Interpretation of units
 -----------------------
 
-#. The :code:`units` element SHALL be interpreted as the product of its
+1. The :code:`units` element SHALL be interpreted as the product of its
    :code:`unit` element children, according to the following rules:
 
-   #. The prefix term is a conceptual property of :code:`unit` elements. If
+   1. The prefix term is a conceptual property of :code:`unit` elements. If
       the :code:`unit` element does not have a :code:`prefix` attribute
       information item, the prefix term SHALL have value 0. If the
       :code:`prefix` attribute information item has a value which is an
@@ -162,21 +162,25 @@ Interpretation of units
       prefix term SHALL have the value taken from the ‘Value’ column of
       the same row.
 
-   #. The exponent term is a conceptual property of :code:`unit` elements.
+.. marker_interpretation_of_units_1_1
+
+   2. The exponent term is a conceptual property of :code:`unit` elements.
       If a :code:`unit` element has no :code:`exponent` attribute information
       item, the exponent term SHALL have value 1.0. Otherwise, the value
       of the :code:`exponent` attribute information item MUST be a real
       number string, and the value of the exponent term SHALL be the
       numerical value of that string.
 
-   #. The multiplier term is a conceptual property of :code:`unit` elements.
+   3. The multiplier term is a conceptual property of :code:`unit` elements.
       If a :code:`unit` element has no :code:`multiplier` attribute information
       item, the multiplier term SHALL have value 1.0. Otherwise, the
       value of the :code:`multiplier` attribute information item MUST be a
       real number string, and the value of the multiplier term SHALL be
       the numerical value of that string.
 
-   #. The relationship between the product, :math:`P`, of numerical values
+.. marker_interpretation_of_units_1_3
+
+   4. The relationship between the product, :math:`P`, of numerical values
       given in each and every child :code:`unit` element units, to a
       numerical value, :math:`x`, with units given by the encompassing
       :code:`units` element, SHALL be
@@ -192,63 +196,74 @@ Interpretation of units
       element, respectively. Square brackets encompass the units of numerical
       values.
 
-#. For the purposes of this specification, the “irreducible units” of a
+.. marker_interpretation_of_units_1_4
+
+2. For the purposes of this specification, the "irreducible units" of a
    model SHALL consist of 1) the units defined in a model that are not
    defined in terms of other units (i.e. the set of :code:`units` elements
-   in the :ref:`CellML model<specA_cellml_model>` which have no :code:`unit` child elements), and 2)
-   built-in irreducible units (those built-in units with ‘-’ in the
-   ‘Unit Reduction...’ column of the
+   in the :ref:`CellML model<specA_cellml_model>` which have no :code:`unit`
+   child elements), and 2)
+   built-in irreducible units (those built-in units with "-" in the
+   "Unit Reduction" column of the
    :ref:`Built-in units<table_built_in_units>`
    table) referenced by variables or other units in the model.
 
-#. The “unit reduction” is a conceptual property of :code:`units` elements.
+.. marker_interpretation_of_units_2
+
+3. The "unit reduction" is a conceptual property of :code:`units` elements.
    It consists of a set of tuples where each tuple is composed of a) a
    unit name and b) a real-valued exponent. Tuples SHALL be determined
    as follows:
 
-   #. If the :code:`units` element has no :code:`unit` child elements, then the
+   1. If the :code:`units` element has no :code:`unit` child elements, then the
       set of tuples SHALL have a single member, which SHALL consist of
       the name of the :code:`units` element and the exponent 1.0.
 
-   #. If the :code:`units` element has one or more :code:`unit` child elements,
+   2. If the :code:`units` element has one or more :code:`unit` child elements,
       then the set of tuples SHALL consist of the entire collection of
       tuples given by all :code:`unit` child elements. Tuples for each
       :code:`unit` child element SHALL be determined as follows:
 
-      #. Where the units reference of the :code:`unit` child element is to a
+      1. Where the units reference of the :code:`unit` child element is to a
          single unit which is an irreducible unit, then the set of
          tuples SHALL have a single member, which SHALL consist of the
          name of the irreducible unit being referenced and the exponent
          1.0.
 
-      #. Where the units reference of the :code:`unit` child element is to
+      2. Where the units reference of the :code:`unit` child element is to
          built-in units other than an irreducible unit, then the tuples
-         SHALL be derived directly from the :ref:`Built-in
-         units<table_built_in_units>` table. Specifically, the set of
-         tuples SHALL consist of the tuples given in the ‘Unit reduction
-         tuple ... set’ column of the row for which the value in the
-         ‘Name’ column matches the name of the units reference.
+         SHALL be derived directly from the 
+         :ref:`Built-in units<table_built_in_units>` table. Specifically,
+         the set of tuples SHALL consist of the tuples given in the
+         "Unit reduction tuple set" column of the row for which the value in the
+         "Name" column matches the name of the units reference.
 
-      #. Where the units reference of the :code:`unit` child element is to a
+      3. Where the units reference of the :code:`unit` child element is to a
          unit which is neither built-in, nor an irreducible unit, the
          set of tuples SHALL be defined recursively as the set of tuples
          for the :code:`units` element so referenced.
 
-      #. The exponents of each tuple in the set for the current :code:`unit`
+      4. The exponents of each tuple in the set for the current :code:`unit`
          element, as derived by following rule 3.2.1, 3.2.2 or 3.2.3
          above, SHALL be multiplied by the exponent term of the current,
          referencing, :code:`unit` element.
 
-   #. Tuples which have the name element of ‘dimensionless’ SHALL be
+.. marker_interpretation_of_units_3_2
+
+   3. Tuples which have the name element of ‘dimensionless’ SHALL be
       removed from the set of tuples. Note that this can result in the
       set of tuples being empty.
 
-   #. Where the set of tuples consists of tuples which have the same
+.. marker_interpretation_of_units_3_3
+
+   4. Where the set of tuples consists of tuples which have the same
       name element, those tuples SHALL be combined into a single tuple
       with that name element and an exponent being the sum of the
       combined tuples’ exponents. If the resulting tuple’s exponent term
       is zero, the tuple SHALL be removed from the set of tuples. Note
       that this can result in the set of tuples being empty.
+
+.. marker_interpretation_of_units_3_4
 
 .. _table_prefix_values:
 
