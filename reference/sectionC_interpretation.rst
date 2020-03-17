@@ -13,8 +13,10 @@ Section C: Interpretation
 Interpretation of imports
 -------------------------
 
-#. Each :code:`import` element present in a :ref:`CellML infoset<specA_cellml_infoset>` (the importing infoset) SHALL define a new and distinct instance of the CellML infoset which is referenced by the :code:`href` attribute (the imported infoset).
-   This imported infoset instance SHALL provide the context in which the child of an import element (a :code:`units` or :code:`component` element) is defined and interpreted.
+#. Each :code:`import` element present in a :ref:`CellML infoset<specA_cellml_infoset>` (the importing infoset) SHALL define a new and distinct instance of the CellML infoset which is referenced by the :code:`href` attribute (the imported infoset). This imported infoset instance SHALL provide the context in which the child of an import element (a :code:`units` or :code:`component` element) is defined and interpreted.
+
+#. The importing of an element SHALL be considered recursively such that items referenced or imported by the :code:`import` element child (a :code:`units` or :code:`component` element) are themselves available to that :code:`import` element child.
+   It is noted, for the avoidance of doubt, that the importing infoset SHALL NOT have access to such recursively imported items, but only to the explicitly specified :code:`import` element child.
 
 #. The import of an element SHALL be considered recursively such that items referenced or imported by the :code:`import` element's child (a :code:`units` or :code:`component` element) are themselves included.
    See :ref:`Units reference<specC_units_reference>` and :ref:`Component reference<specC_component_reference>` for the specifics of importing units and components.
@@ -250,6 +252,7 @@ Component reference
 
       #. Any and all encapsulated :code:`component` children of the imported :code:`component`, and
       #. Any and all :code:`units` elements referenced by the imported :code:`component` or its encapsulated children.
+         Note also that :code:`units` elements imported in this way SHALL remain within the scope of the imported infoset; they SHALL NOT be available to the importing infoset unless explicitly imported by a separate :code:`import units` element.
 
 #. It is further noted, for the avoidance of doubt, that CellML models MAY apply the previous rules recursively, to reference an :code:`import component` element which in turn references another :code:`import component` element.
 
