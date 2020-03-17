@@ -20,10 +20,13 @@ Interpretation of imports
    the child of an import element (a :code:`units` or :code:`component`
    element) is defined and interpreted.
 
-#. The import of an element SHALL be considered recursively such that items
-   referenced or imported by the :code:`import` element's child (a
-   :code:`units` or :code:`component` element) are themselves
-   included.
+#. The importing of an element SHALL be considered recursively such that items
+   referenced or imported by the :code:`import` element child 
+   (a :code:`units` or :code:`component` element) are themselves
+   available to that :code:`import` element child.  It is noted, for the
+   avoidance of doubt, that the importing infoset SHALL NOT have access to
+   such recursively imported items, but only to the explicitly specified
+   :code:`import` element child.
 
    See :ref:`Units reference<specC_units_reference>` and
    :ref:`Component reference<specC_component_reference>` for the specifics
@@ -342,7 +345,12 @@ Component reference
       #. Any and all encapsulated :code:`component` children of the imported
          :code:`component`, and
       #. Any and all :code:`units` elements referenced by the imported
-         :code:`component` or its encapsulated children.
+         :code:`component` or its encapsulated children.  Note also that
+         :code:`units`
+         elements imported in this way SHALL remain within the scope of the
+         imported infoset; they SHALL NOT be available to the importing
+         infoset unless explicitly imported by a separate
+         :code:`import units` element.
 
 #. It is further noted, for the avoidance of doubt, that CellML models MAY
    apply the previous rules recursively, to reference an
