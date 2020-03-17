@@ -38,17 +38,13 @@ Units reference
 
 #. A units reference SHALL be a CellML identifier and SHALL be
    interpreted dependent on the context of the
-   :ref:`CellML model<specA_cellml_model>` in which it occurs, according to the
-   units referencing rules defined later in this section.
-
-#. A :ref:`CellML infoset<specA_cellml_infoset>` MUST NOT contain a units
-   reference for which no referencing rule can be held to have been followed.
+   :ref:`CellML model<specA_cellml_model>` in which it occurs.
 
 #. The units referencing rules are:
 
    #. Where there is a :code:`units` element with a :code:`name` attribute
-      identical to the units reference, then the units reference SHALL
-      refer to that :code:`units` element.
+      identical to the units reference within the same infoset, then the units
+      reference SHALL refer to that :code:`units` element.  
 
    #. Where there is an :code:`import units` element in the
       :ref:`CellML infoset<specA_cellml_infoset>`,
@@ -63,6 +59,14 @@ Units reference
       column of the :ref:`Built-in units table<table_built_in_units>` ,
       then the units reference SHALL be a reference to the built-in units
       corresponding to that row of the table.
+
+#. A :ref:`CellML infoset<specA_cellml_infoset>` MUST NOT contain a units
+   reference for which no referencing rule can be held to have been followed.
+
+#. It is noted, for the avoidance of doubt, that a units reference specified
+   within an imported CellML infoset SHALL refer to the :code:`units`
+   or :code:`import units` element of the same :code:`name` within the
+   imported (rather than importing) infoset.
 
 .. marker_units_reference1
 
