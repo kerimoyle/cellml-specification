@@ -284,8 +284,8 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    ('formal', 'formal.tex', u'CellML Specification', u'CellML2.0 Editors and Contributors', 'manual'),
-    ('index', 'index.tex', u'CellML Specification', u'CellML2.0 Editors and Contributors', 'manual'),
+    ('formal', 'manual.tex', u'CellML Specification', u'CellML2.0 Editors and Contributors', 'manual'),
+    ('index', 'manual.tex', u'CellML Specification', u'CellML2.0 Editors and Contributors', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -294,7 +294,7 @@ latex_documents = [
 
 # For "manual" documents, if this is true, then toplevel headings are parts,
 # not chapters.
-#latex_use_parts = False
+latex_use_parts = False
 
 # If true, show page references after internal links.
 #latex_show_pagerefs = False
