@@ -11,4 +11,4 @@ Section C of the Normative CellML2.0 Specification describes the way in which th
     :numbered:
     :glob:
 
-    specC*
+    formal_and_informative/specC*

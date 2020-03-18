@@ -9,4 +9,4 @@ Section A: Definitions and preamble
     :numbered:
     :glob:
 
-    specA*
+    formal_and_informative/specA*

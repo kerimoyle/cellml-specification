@@ -11,4 +11,4 @@ Section B of the Normative CellML2.0 Specification outlines the element informat
     :numbered:
     :glob:
 
-    specB*
+    formal_and_informative/specB*
