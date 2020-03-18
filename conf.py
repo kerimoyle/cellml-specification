@@ -276,7 +276,7 @@ latex_elements = {
     # 'pointsize': '10pt',
 
     # Additional stuff for the LaTeX preamble.
-    'preamble': 'usepackage{textgreek}',
+    # 'preamble': 'usepackage{textgreek}', # Removing as weird ... ?
 
 }
 
@@ -284,7 +284,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    ('formal', 'formal.tex', u'CellML Specification', u'CellML2.0 Editors and Contributors', 'manual'),
+    ('formal', 'manual.tex', u'CellML Specification', u'CellML2.0 Editors and Contributors', 'manual'),
     #  ('index', 'manual.tex', u'CellML Specification', u'CellML2.0 Editors and Contributors', 'manual'),
 ]
 
