@@ -14,12 +14,12 @@
     For more on the semantic rules, please see :ref:`Interpretation of map_variables<specC_interpretation_of_map_variables>`.
 
     Points 15.1.1 and 15.1.2 are both saying the same thing.
-    The way in which you specify the :code:`component_1` and :code:`component_2` items must follow the general CellML2.0 format for a valid identifier, and must point to a :code:`component` which exists under that name.
+    The way in which you specify the :code:`component_1` and :code:`component_2` items must follow the general CellML 2.0 format for a valid identifier, and must point to a :code:`component` which exists under that name.
     Note that this could be either an intantiated :code:`component`, or an :code:`import component` item.
 
     .. code-block:: xml
 
-        <!-- This is a valid CellML2.0 connection -->
+        <!-- This is a valid CellML 2.0 connection -->
         <model>
             <component name="house_of_capulet">
                 <variable name="juliet" interface_type="public">

@@ -13,7 +13,7 @@
 
     .. code-block:: xml
 
-        <!-- This is a valid CellML2.0 connection -->
+        <!-- This is a valid CellML 2.0 connection -->
         <model>
             <component name="house_of_capulet">
                 <variable name="juliet" interface_type="public">
