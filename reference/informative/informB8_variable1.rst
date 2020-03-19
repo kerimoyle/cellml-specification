@@ -30,5 +30,5 @@
     This determines the relative position in the encapsulation that the mapped component must have in order to access this variable.
     This is outlined in more detail in :ref:`The encapsulation item<specB_encapsulation>`.
 
-    For examples and further explanation of components and their encapsulation, please refer to :ref:`section 3 of the Sodium Channel theory<theory_sodiumchannel_interpretation>` documentation.
-    **TODO** need to alias these links.
+    For examples and further explanation of components and their encapsulation, please refer to :libcellml_tutorials:`section 3 of the Sodium Channel theory<theory/theory_index.html>` documentation.
+  

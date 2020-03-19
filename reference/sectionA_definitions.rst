@@ -179,7 +179,7 @@ Semantically equivalent CellML infosets
 
    #. The following paragraph applies only to character information items which are the direct child of an element information item in a :ref:`CellML namespace<specA_cellml_namespace>`, or in the :ref:`MathML namespace<specA_mathml_namespace>`.
 
-      Inserting or removing character information items that consist entirely of :ref:`whitespace characters<specA_whitexpace_character>`,
+      Inserting or removing character information items that consist entirely of :ref:`whitespace characters<specA_whitespace_character>`,
       changing the number of whitespace characters in such an information item,
       or changing the number of whitespace characters at the beginning or end of any character information item.
 

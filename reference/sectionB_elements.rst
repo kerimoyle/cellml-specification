@@ -230,7 +230,7 @@ Specific information items
    1. Every :code:`unit` element MUST contain a :code:`units`
       attribute. The value of the :code:`units` attribute MUST be
       a valid units reference, as defined in the
-      :ref:`Units reference<units_reference>` section.
+      :ref:`Units reference<specC_units_reference>` section.
 
       .. container:: issue-unit-digraph
 

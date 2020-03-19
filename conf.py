@@ -70,6 +70,8 @@ extlinks = {
     'href_locator': ('https://www.w3.org/TR/2001/REC-xlink-20010627/#link-locators/%s', ''),
     'libcellml': ('https://libcellml.org/%s', ''),
     'libcellml_repo': ('https://github.com/cellml/libcellml.git%s', ''),
+    # TODO Update this when tutorials have a proper home.
+    'libcellml_tutorials': ('https://libcellml-tutorials.readthedocs.io/en/pr344_documentation/%s',''), 
     'libxml2': ('http://www.xmlsoft.org/%s', ''),
     'mathml2help': ('https://www.w3.org/TR/MathML2/chapter4.html#id.4.2.1.3%s', ''),
     'mathml2spec': ('http://www.w3.org/TR/2003/REC-MathML2-20031021/%s', ''),
