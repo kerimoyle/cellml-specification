@@ -33,7 +33,7 @@ Units reference
 
    #. Where there is an :code:`import units` element in the :ref:`CellML infoset<specA_cellml_infoset>`, such that the :code:`import units` element has a :code:`name` attribute identical to the units reference, then the units reference SHALL be treated with respect to referencing rules as if the units reference appeared in the imported infoset, and referring to the :code:`name` specified in the :code:`units_ref` attribute of the :code:`import units` element.
 
-   #. Where the units reference is equal to the value in the ‘Name’ column of the :ref:`Built-in units table<table_built_in_units>`, then the units reference SHALL be a reference to the built-in units corresponding to that row of the table.
+   #. Where the units reference is equal to the value in the "Name" column of the :ref:`Built-in units table<table_built_in_units>`, then the units reference SHALL be a reference to the built-in units corresponding to that row of the table.
 
 .. marker_units_reference1
 
@@ -134,7 +134,7 @@ Interpretation of units
    1. The prefix term is a conceptual property of :code:`unit` elements.
       If the :code:`unit` element does not have a :code:`prefix` attribute information item, the prefix term SHALL have value 0.
       If the :code:`prefix` attribute information item has a value which is an integer string, then the value of the prefix term SHALL be the numerical value of that string.
-      Otherwise, the :code:`prefix` attribute information item MUST have a value taken from the ‘Name’ column of the :ref:`Prefix values table<table_prefix_values>`, and the prefix term SHALL have the value taken from the ‘Value’ column of the same row.
+      Otherwise, the :code:`prefix` attribute information item MUST have a value taken from the "Name" column of the :ref:`Prefix values table<table_prefix_values>`, and the prefix term SHALL have the value taken from the "Value" column of the same row.
 
 .. marker_interpretation_of_units_1_1
 
@@ -183,7 +183,7 @@ Interpretation of units
 
 .. marker_interpretation_of_units_3_2
 
-   3. Tuples which have the name element of ‘dimensionless’ SHALL be removed from the set of tuples.
+   3. Tuples which have the name element of "dimensionless" SHALL be removed from the set of tuples.
       Note that this can result in the set of tuples being empty.
 
 .. marker_interpretation_of_units_3_3
