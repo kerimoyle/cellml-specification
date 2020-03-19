@@ -1,7 +1,7 @@
 .. _specB10:
 .. _specB_test_value:
 
-.. include:: ../sectionB_elements.rst
+.. include:: ../sectionB_elements.inc
   :start-after: marker_test_value_start
   :end-before: marker_test_value_end
 
