@@ -1,4 +1,4 @@
-.. _sectionA_index:
+.. _sectionA_index_formal:
 
 ====================================
 Section A: Definitions and preamble
@@ -9,4 +9,4 @@ Section A: Definitions and preamble
     :numbered:
     :glob:
 
-    formal_and_informative/specA*
+    formal_only/specA*

@@ -70,6 +70,8 @@ extlinks = {
     'href_locator': ('https://www.w3.org/TR/2001/REC-xlink-20010627/#link-locators/%s', ''),
     'libcellml': ('https://libcellml.org/%s', ''),
     'libcellml_repo': ('https://github.com/cellml/libcellml.git%s', ''),
+    # TODO Update this when tutorials have a proper home.
+    'libcellml_tutorials': ('https://libcellml-tutorials.readthedocs.io/en/pr344_documentation/%s',''), 
     'libxml2': ('http://www.xmlsoft.org/%s', ''),
     'mathml2help': ('https://www.w3.org/TR/MathML2/chapter4.html#id.4.2.1.3%s', ''),
     'mathml2spec': ('http://www.w3.org/TR/2003/REC-MathML2-20031021/%s', ''),
@@ -276,7 +278,7 @@ latex_elements = {
     # 'pointsize': '10pt',
 
     # Additional stuff for the LaTeX preamble.
-    'preamble': 'usepackage{textgreek}',
+    # 'preamble': 'usepackage{textgreek}', # Removing as weird ... ?
 
 }
 
@@ -284,8 +286,8 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    ('index', 'CellML.tex', u'CellML Specification',
-     u'CellML2.0 Editors and Contributors', 'manual'),
+    ('formal', 'formal.tex', u'CellML Specification', u'CellML2.0 Editors and Contributors', 'manual'),
+    ('index', 'index.tex', u'CellML Specification', u'CellML2.0 Editors and Contributors', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -294,7 +296,7 @@ latex_documents = [
 
 # For "manual" documents, if this is true, then toplevel headings are parts,
 # not chapters.
-#latex_use_parts = False
+latex_use_parts = False
 
 # If true, show page references after internal links.
 #latex_show_pagerefs = False
@@ -314,8 +316,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'cellml', u'CellML2.0 Documentation',
-     [u'CellML Editors'], 1)
+    ('index', 'cellml', u'CellML2.0 Documentation', [u'CellML Editors'], 1)
 ]
 
 # If true, show URL addresses after external links.

@@ -1,4 +1,4 @@
-.. _sectionB_index:
+.. _sectionB_index_formal:
 
 ====================================
 Section B: Element information items
@@ -11,4 +11,4 @@ Section B of the Normative CellML2.0 Specification outlines the element informat
     :numbered:
     :glob:
 
-    formal_and_informative/specB*
+    formal_only/specB*
