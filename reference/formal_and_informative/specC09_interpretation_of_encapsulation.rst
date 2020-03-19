@@ -4,4 +4,4 @@
   :start-after: marker_interpretation_of_encapsulation_start
   :end-before: marker_interpretation_of_encapsulation_end
 
-.. include:: ../informative/informC9_interpretation_of_encapsulation.rst
+.. include:: ../informative/informC09_interpretation_of_encapsulation.rst

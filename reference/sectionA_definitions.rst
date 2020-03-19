@@ -18,8 +18,7 @@ David Brooks
 Koray Atalag
 
 The authors also wish to acknowledge the significant contribution of the (discontinued) draft CellML 1.2 specification, much of the text of which was incorporated into this specification - although the semantics have changed considerably.
-The CellML 1.2 specification was itself the result of a collaborative effort by a number of researchers during 2008-2011:
-
+The CellML 1.2 specification was itself the result of a collaborative effort by a number of researchers during 2008-2011\:
 Andrew K. Miller (who wrote the text reused here),
 Jonathan Cooper,
 Justin Marsh,

@@ -19,7 +19,7 @@
 
 .. include:: ../informative/informB15_connection4.rst
 
-  .. include:: ../sectionB_elements.rst
+.. include:: ../sectionB_elements.rst
   :start-after: marker_connection_4
   :end-before: marker_connection_end
 
