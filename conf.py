@@ -284,8 +284,8 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    ('formal', 'manual.tex', u'CellML Specification', u'CellML2.0 Editors and Contributors', 'manual'),
-    ('index', 'manual.tex', u'CellML Specification', u'CellML2.0 Editors and Contributors', 'manual'),
+    ('formal', 'formal.tex', u'CellML Specification', u'CellML2.0 Editors and Contributors', 'manual'),
+    ('index', 'index.tex', u'CellML Specification', u'CellML2.0 Editors and Contributors', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -314,8 +314,7 @@ latex_use_parts = False
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'cellml', u'CellML2.0 Documentation',
-     [u'CellML Editors'], 1)
+    ('index', 'cellml', u'CellML2.0 Documentation', [u'CellML Editors'], 1)
 ]
 
 # If true, show URL addresses after external links.
