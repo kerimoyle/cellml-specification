@@ -290,7 +290,7 @@ Effect of units on variables
 Interpretation of mathematics
 -----------------------------
 
-#. The following :code:`component` elements SHALL, for the purposes of this specification, be “pertinent component elements”:
+#. The following :code:`component` elements SHALL, for the purposes of this specification, be "pertinent component elements":
 
    #. All :code:`component` elements in the top-level :ref:`CellML infoset<specA_cellml_infoset>` for the :ref:`CellML model<specA_cellml_model>`;
 
@@ -310,7 +310,7 @@ Interpretation of mathematics
 Interpretation of encapsulation
 -------------------------------
 
-#. For the purposes of this specification, there SHALL be a “conceptual encapsulation digraph” in which there is EXACTLY one node for every component in the :ref:`CellML model<specA_cellml_model>`.
+#. For the purposes of this specification, there SHALL be a "conceptual encapsulation digraph" in which there is EXACTLY one node for every component in the :ref:`CellML model<specA_cellml_model>`.
     Therefore the encapsulation digraph will not contain any loops.
 
 #. Where a :code:`component_ref` element appears as a child of another :code:`component_ref` element, there SHALL be an arc in the encapsulation digraph, and that arc SHALL be from the node corresponding to the component referenced by the parent :code:`component_ref` element, and to the node corresponding to the component referenced by the child :code:`component_ref` element.
@@ -380,7 +380,7 @@ Interpretation of map_variables
 
 #.  CellML models MUST only contain :code:`map_variables` elements where the interface of variable *A* and the interface of variable *B* are applicable interfaces.
 
-#.  The :code:`variable` elements in a CellML model SHALL be treated as belonging to a single “connected variable set”.
+#.  The :code:`variable` elements in a CellML model SHALL be treated as belonging to a single "connected variable set".
     Each set of connected variables is the set of all :code:`variable` elements for which the corresponding nodes in the variable equivalence network form a connected subgraph.
     Each set of connected variables represents one variable in the underlying mathematical model.
 

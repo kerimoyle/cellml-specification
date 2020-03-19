@@ -45,9 +45,9 @@ Users of CellML models should read the informative version of the CellML Specifi
 Terminology
 ===========
 
-The keywords “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”, “SHOULD NOT”, “RECOMMENDED”, “MAY”, and “OPTIONAL” in this document are to be interpreted as described in :rfc2119:`RFC 2119`.
+The keywords "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in :rfc2119:`RFC 2119`.
 
-The key phrase “information item”, as well as any specific type of information item such as an “element information item”, are to be interpreted as described in :xml_infoset:`XML Information Set`.
+The key phrase "information item", as well as any specific type of information item such as an "element information item", are to be interpreted as described in :xml_infoset:`XML Information Set`.
 
 .. _specA_cellml_infoset:
 
