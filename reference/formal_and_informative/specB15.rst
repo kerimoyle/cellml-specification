@@ -25,7 +25,7 @@
 
 .. include:: ../informative/informB15_connection5.rst
 
-.. include:: libcellml/libcellmlB15_connection.rst
+.. include:: ../libcellml/libcellmlB15_connection.rst
 
 
 

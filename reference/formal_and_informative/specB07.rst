@@ -19,4 +19,4 @@
 
 .. include:: ../informative/informB7_component3.rst
 
-.. include:: libcellml/libcellmlB7.rst
+.. include:: ../libcellml/libcellmlB7.rst

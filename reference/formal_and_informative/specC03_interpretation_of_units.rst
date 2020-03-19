@@ -46,4 +46,4 @@
   :start-after: marker_interpretation_of_units_3_4
   :end-before: marker_interpretation_of_units_end
 
-.. include:: libcellml/libcellmlC03_interpretation_of_units.rst
+.. include:: ../libcellml/libcellmlC03_interpretation_of_units.rst

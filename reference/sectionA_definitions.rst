@@ -5,25 +5,16 @@
 **Authors:**
 
 Michael T. Cooling\*
-
 Michael Clerx
-
 Jonathan Cooper
-
 Alan Garny
-
 Keri Moyle
-
 David P. Nickerson
-
 Hugh Sorby
 
 **Contributors:**
-
 Jesús C. Fernández
-
 David Brooks
-
 Koray Atalag
 
 The authors also wish to acknowledge the significant contribution of the (discontinued) draft CellML 1.2 specification, much of the text of which was incorporated into this specification - although the semantics have changed considerably.

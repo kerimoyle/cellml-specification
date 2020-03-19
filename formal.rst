@@ -1,4 +1,4 @@
-.. _index:
+.. _formal:
 
 ==========================================
 Normative specification for CellML2.0
