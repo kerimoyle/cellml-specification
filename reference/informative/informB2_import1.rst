@@ -11,7 +11,7 @@
   .. container:: infospec
 
     At present (TODO) the location specified by the :code:`href` attribute must be a locally available file (not online).
-The path may either be absolute from the root directory, or relative to the importing model's location.
+    The path may either be absolute from the root directory, or relative to the importing model's location.
 
     For example, here's a model based around casting for The Wizard of Oz.
     In the main model (the one doing the importing), the component used to play Dorothy is defined by importing a :code:`component` named :code:`judy_garland` from the file called :code:`role_of_dorothy.cellml` and setting its reference in the main file to be the component named :code:`dorothy`.

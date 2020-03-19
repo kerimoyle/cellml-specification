@@ -11,7 +11,7 @@
     Creating :code:`connection` items allows :code:`variable` values to be passed between eligible :code:`components`.
     There are both syntactic (ie: format) and semantic (ie: meaning) rules about how these must be specified, including what "eligible" means.
     Syntax will be discussed below and in the other "See more" blocks on this page.
-    For more on the semantic rules, please see :ref:`Interpretation of map_variables<specC_interpretation_of_map_variables>.`
+    For more on the semantic rules, please see :ref:`Interpretation of map_variables<specC_interpretation_of_map_variables>`.
 
     Points 15.1.1 and 15.1.2 are both saying the same thing.
     The way in which you specify the :code:`component_1` and :code:`component_2` items must follow the general CellML2.0 format for a valid identifier, and must point to a :code:`component` which exists under that name.

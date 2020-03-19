@@ -24,11 +24,11 @@
       </component>
 
     Extra attributes that can be used as needed include the :code:`initial_value`, which will either set a constant value for a variable, or set its initial conditions if it's being solved for.
-    More information about initialisation can be found in the :ref:`Interpretation of initial values<specB_initial_values>` section.
+    More information about initialisation can be found in the :ref:`Interpretation of initial values<specC_interpretation_of_initial_values>` section.
 
     Finally, where one :code:`variable` has been mapped to another in a different component, the :code:`interface` attribute must be specified.
     This determines the relative position in the encapsulation that the mapped component must have in order to access this variable.
     This is outlined in more detail in :ref:`The encapsulation item<specB_encapsulation>`.
 
     For examples and further explanation of components and their encapsulation, please refer to :libcellml_tutorials:`section 3 of the Sodium Channel theory<theory/theory_index.html>` documentation.
-  
+

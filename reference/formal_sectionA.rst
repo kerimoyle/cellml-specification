@@ -1,4 +1,4 @@
-.. _sectionA_index:
+.. _sectionA_index_formal:
 
 ====================================
 Section A: Definitions and preamble

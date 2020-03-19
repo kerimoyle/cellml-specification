@@ -6,3 +6,5 @@
   :end-before: marker_units_end
 
 .. include:: ../informative/informB5_units1.rst
+
+.. include:: ../libcellml/libcellmlB5.rst

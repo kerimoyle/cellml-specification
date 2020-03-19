@@ -1,4 +1,4 @@
-.. _sectionC_index:
+.. _sectionC_index_formal:
 
 =============================================
 Section C: Interpretation

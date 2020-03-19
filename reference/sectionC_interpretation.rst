@@ -258,7 +258,7 @@ In this case, the variable reference SHALL be treated as if it was just the vari
 .. marker_variable_reference_end
 .. marker_interpretation_of_initial_values_start
 
-.. _specC_initial_values:
+.. _specC_interpretation_of_initial_values:
 
 Interpretation of initial values
 --------------------------------

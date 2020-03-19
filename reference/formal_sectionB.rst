@@ -1,4 +1,4 @@
-.. _sectionB_index:
+.. _sectionB_index_formal:
 
 ====================================
 Section B: Element information items

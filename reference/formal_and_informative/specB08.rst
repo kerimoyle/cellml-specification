@@ -6,3 +6,5 @@
   :end-before: marker_variable_end
 
 .. include:: ../informative/informB8_variable1.rst
+
+.. include:: ../libcellml/libcellmlB8.rst
