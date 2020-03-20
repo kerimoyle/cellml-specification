@@ -45,9 +45,9 @@ Users of CellML models should read the informative version of the CellML Specifi
 Terminology
 ===========
 
-The keywords “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”, “SHOULD NOT”, “RECOMMENDED”, “MAY”, and “OPTIONAL” in this document are to be interpreted as described in :rfc2119:`RFC 2119`.
+The keywords "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in :rfc2119:`RFC 2119`.
 
-The key phrase “information item”, as well as any specific type of information item such as an “element information item”, are to be interpreted as described in :xml_infoset:`XML Information Set`.
+The key phrase "information item", as well as any specific type of information item such as an "element information item", are to be interpreted as described in :xml_infoset:`XML Information Set`.
 
 .. _specA_cellml_infoset:
 
@@ -314,7 +314,7 @@ The following data representation formats are defined for use in this specificat
 
       4. An exponent SHALL be represented by an exponent separator character, followed by the :ref:`integer string representation<specA_integer>` of the value of the exponent.
       Non-negative exponents MAY begin with the Basic Latin plus sign character :unicode:`002B` as the sign indicator.
-         The exponent separator character SHALL be either the Basic Latin ‘E’ character :unicode:`0045` or the Basic Latin ‘e’ character :unicode:`0065`.
+         The exponent separator character SHALL be either the Basic Latin "E" character :unicode:`0045` or the Basic Latin "e" character :unicode:`0065`.
 
    .. container:: issue-data-repr-real-no-exponent
 
