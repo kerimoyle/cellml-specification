@@ -20,7 +20,7 @@
                 <variable name="romeo" interface_type="public">
             </component>
 
-            <!-- This is a valid CellML2.0 connection -->
+            <!-- This is a valid CellML 2.0 connection -->
             <connection component_1="montague" component_2="capulet">
                 <map_variables variable_1="romeo" variable_2="juliet">
             </connection>
