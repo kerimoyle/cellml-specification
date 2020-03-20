@@ -1,7 +1,7 @@
 .. _formal:
 
 ==========================================
-Normative specification for CellML2.0
+Normative specification for CellML 2.0
 ==========================================
 
 The first section here includes the normative specification documentation for

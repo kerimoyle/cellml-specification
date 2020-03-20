@@ -42,4 +42,4 @@
     For the :code:`reset` to be useful, the equations it contains need to make sense.
     Be sure to check that the units that you're using within the :code:`test_value` block match those of the :code:`test_variable` against which it will be compared.
     In this example the :code:`reset_value` (the new position of the ball over the table) must be in metres to match the :code:`variable`\'s units, as with the :code:`test_value` which must match the units of the :code:`test_variable`.
-    A mismatch of units here doesn't mean you have an invalid CellML2.0 model, but it does mean that it may not behave in the way you are expecting!
+    A mismatch of units here doesn't mean you have an invalid CellML 2.0 model, but it does mean that it may not behave in the way you are expecting!
