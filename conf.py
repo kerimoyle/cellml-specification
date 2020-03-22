@@ -289,7 +289,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    ('formal', 'formal.tex', u'CellML Specification', u'CellML 2.0 Editors and Contributors', 'manual'),
+    ('formal', 'formal.tex', u'CellML Specification', u'CellML 2.0 Editors and Contributors', 'howto'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
