@@ -287,7 +287,6 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     ('formal', 'formal.tex', u'CellML Specification', u'CellML 2.0 Editors and Contributors', 'manual'),
-    ('index', 'index.tex', u'CellML Specification', u'CellML 2.0 Editors and Contributors', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
