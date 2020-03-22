@@ -280,8 +280,8 @@ latex_elements = {
     # Additional stuff for the LaTeX preamble.
     # 'preamble': 'usepackage{textgreek}', # Removing as weird ... ?
 
-    # Fancy chapter names turned off
-    'fncychap' : '',
+    # Fancy chapter names, default is on.  Doesn't affect numbering though.
+    # 'fncychap' : '',
 
 }
 
@@ -298,7 +298,7 @@ latex_documents = [
 
 # For "manual" documents, if this is true, then toplevel headings are parts,
 # not chapters.
-latex_use_parts = False
+latex_use_parts = True
 
 # If true, show page references after internal links.
 #latex_show_pagerefs = False
