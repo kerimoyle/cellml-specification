@@ -1,7 +1,5 @@
 .. _sectionB:
 
-.. sectnum::
-
 ====================================
 Section B: Element information items
 ====================================

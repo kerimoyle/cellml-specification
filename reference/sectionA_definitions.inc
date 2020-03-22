@@ -36,7 +36,6 @@ It is intended primarily for the developers of software tools which directly con
 Users of CellML models should read the informative version of the CellML Specification which is available here: https://doi.org/science/1.1.1.10.
 
 
-.. sectnum::
 
 .. marker_terminology_start
 
