@@ -280,6 +280,9 @@ latex_elements = {
     # Additional stuff for the LaTeX preamble.
     # 'preamble': 'usepackage{textgreek}', # Removing as weird ... ?
 
+    # Fancy chapter names turned off
+    'fncychap' : '',
+
 }
 
 # Grouping the document tree into LaTeX files. List of tuples
