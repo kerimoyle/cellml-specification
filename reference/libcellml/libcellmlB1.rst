@@ -10,6 +10,6 @@
 
       .. container:: heading3
 
-        Messages related to the model item
+        Possible errors related to the :code:`model` item
 
       **TODO** put list of errors/issues/hints from the validator/generator here.
