@@ -13,10 +13,11 @@ Section C: Interpretation
 Interpretation of imports
 -------------------------
 
-#. Each :code:`import` element present in a :ref:`CellML infoset<specA_cellml_infoset>` (the importing infoset) SHALL define a new and distinct instance of the CellML infoset which is referenced by the :code:`href` attribute (the imported infoset). This imported infoset instance SHALL provide the context in which the child of an import element (a :code:`units` or :code:`component` element) is defined and interpreted.
+#. Each :code:`import` element present in a :ref:`CellML infoset<specA_cellml_infoset>` (the importing infoset) SHALL define a new and distinct instance of the CellML infoset which is referenced by the :code:`href` attribute (the imported infoset).
+   This imported infoset instance SHALL provide the context in which the child of an import element (a :code:`units` or :code:`component` element) is defined and interpreted.
 
 #. The importing of an element SHALL be considered recursively such that items referenced or imported by the :code:`import` element child (a :code:`units` or :code:`component` element) are themselves available to that :code:`import` element child.
-   It is noted, for the avoidance of doubt, that the importing infoset SHALL NOT have access to such recursively imported items, but only to the explicitly specified :code:`import` element child.
+   It is noted, for the avoidance of doubt, that the importing infoset SHALL NOT have access to such recursively imported items, but only to the explicitly specified :code:`import` element child, unless that child is itself explicitly imported.
 
 #. The import of an element SHALL be considered recursively such that items referenced or imported by the :code:`import` element's child (a :code:`units` or :code:`component` element) are themselves included.
    See :ref:`Units reference<specC_units_reference>` and :ref:`Component reference<specC_component_reference>` for the specifics of importing units and components.
@@ -33,7 +34,7 @@ Units reference
 
 #. The units referencing rules are:
 
-   #. Where there is a :code:`units` element with a :code:`name` attribute identical to the units reference within the same infoset, then the units reference SHALL refer to that :code:`units` element.  
+   #. Where, within the same infoset, a :code:`units` element has a :code:`name` attribute identical to the units reference, the units reference SHALL refer to that :code:`units` element.
 
    #. Where there is an :code:`import units` element in the :ref:`CellML infoset<specA_cellml_infoset>`, such that the :code:`import units` element has a :code:`name` attribute identical to the units reference, then the units reference SHALL be treated with respect to referencing rules as if the units reference appeared in the imported infoset, and referring to the :code:`name` specified in the :code:`units_ref` attribute of the :code:`import units` element.
 
@@ -244,7 +245,7 @@ Component reference
 
 #. A component reference present in an information item which is a descendant of a :code:`model` element SHALL be identical to either the :code:`name` attribute on a :code:`component` element or to the :code:`name` attribute on an :code:`import component` element.
 
-#. A component reference which is identical to the :code:`name` attribute on a :code:`component` element in the same infoset SHALL be treated as a reference to that :code:`component` element.
+#. Where, within the same infoset, a :code:`component` element has a :code:`name` attribute identical to the component reference, the component reference SHALL refer to that :code:`component` element.
 
 #. A component reference which is identical to the :code:`name` attribute on an :code:`import component` element SHALL be treated for the purposes of referencing as if the component reference appeared in the imported model, and referred to element with the :code:`name` specified in the :code:`component_ref` attribute of the :code:`import component` element.
 
