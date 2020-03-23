@@ -15,10 +15,10 @@ Interpretation of imports
 #. Each :code:`import` element present in a :ref:`CellML infoset<specA_cellml_infoset>` (the importing infoset) SHALL define a new and distinct instance of the CellML infoset which is referenced by the :code:`href` attribute (the imported infoset).
    This imported infoset instance SHALL provide the context in which the child of an import element (a :code:`units` or :code:`component` element) is defined and interpreted.
 
-#. The importing of an element SHALL be considered recursively such that items referenced or imported by the :code:`import` element child (a :code:`units` or :code:`component` element) are themselves available to that :code:`import` element child.
-   It is noted, for the avoidance of doubt, that the importing infoset SHALL NOT have access to such recursively imported items, but only to the explicitly specified :code:`import` element child, unless that child is itself explicitly imported.
+#. The import of an element SHALL be considered recursively such that items referenced by the :code:`import` element child (a :code:`units` or :code:`component` element) are themselves available to that :code:`import` element child.
+   It is noted, for the avoidance of doubt, that the importing infoset SHALL NOT have access to such recursively imported items, but only to explicitly specified :code:`import` element children.
 
-#. The import of an element SHALL be considered recursively such that items referenced or imported by the :code:`import` element's child (a :code:`units` or :code:`component` element) are themselves included.
+#. The import of an element SHALL be considered recursively such that items referenced by the :code:`import` element's child (a :code:`units` or :code:`component` element) are themselves included.
    See :ref:`Units reference<specC_units_reference>` and :ref:`Component reference<specC_component_reference>` for the specifics of importing units and components.
 
 .. marker_interpretation_of_imports_end
@@ -30,8 +30,6 @@ Units reference
 ---------------
 
 #. A units reference SHALL be a CellML identifier and SHALL be interpreted dependent on the context of the :ref:`CellML model<specA_cellml_model>` in which it occurs, according to the units referencing rules defined later in this section.
-
-#. A :ref:`CellML infoset<specA_cellml_infoset>` MUST NOT contain a units reference for which no referencing rule can be held to have been followed.
 
 #. The units referencing rules are:
 
