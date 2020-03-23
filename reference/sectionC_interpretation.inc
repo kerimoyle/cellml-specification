@@ -332,6 +332,7 @@ Interpretation of encapsulation
 #. The encapsulated set for a component *A* SHALL be the set of all components *B* such that there exists an arc in the encapsulation digraph from the node corresponding to *A* to the node corresponding to *B*.
 
 #. The encapsulation parent for a component *A* SHALL be the component corresponding to the node which is the parent node in the encapsulation digraph of the node corresponding to *A*.
+   A component SHALL NOT appear as child of more than one encapsulation parent.
 
 #. The sibling set for a component *A* SHALL be the set of all components which have the same encapsulation parent as *A*, or in the case that *A* has no encapsulation parent, SHALL be the set of all components which do not have an encapsulation parent.
 
