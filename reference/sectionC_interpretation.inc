@@ -37,7 +37,7 @@ Units reference
 
    #. Where there is an :code:`import units` element in the :ref:`CellML infoset<specA_cellml_infoset>`, such that the :code:`import units` element has a :code:`name` attribute identical to the units reference, then the units reference SHALL be treated with respect to referencing rules as if the units reference appeared in the imported infoset, and referring to the :code:`name` specified in the :code:`units_ref` attribute of the :code:`import units` element.
 
-   #. Where the units reference is equal to the value in the ‘Name’ column of the :ref:`Built-in units table<table_built_in_units>`, then the units reference SHALL be a reference to the built-in units corresponding to that row of the table.
+   #. Where the units reference is equal to the value in the "Name" column of the :ref:`Built-in units table<table_built_in_units>`, then the units reference SHALL be a reference to the built-in units corresponding to that row of the table.
 
 #. A :ref:`CellML infoset<specA_cellml_infoset>` MUST NOT contain a units reference for which no referencing rule can be held to have been followed.
 
@@ -142,7 +142,7 @@ Interpretation of units
    1. The prefix term is a conceptual property of :code:`unit` elements.
       If the :code:`unit` element does not have a :code:`prefix` attribute information item, the prefix term SHALL have value 0.
       If the :code:`prefix` attribute information item has a value which is an integer string, then the value of the prefix term SHALL be the numerical value of that string.
-      Otherwise, the :code:`prefix` attribute information item MUST have a value taken from the ‘Name’ column of the :ref:`Prefix values table<table_prefix_values>`, and the prefix term SHALL have the value taken from the ‘Value’ column of the same row.
+      Otherwise, the :code:`prefix` attribute information item MUST have a value taken from the "Name" column of the :ref:`Prefix values table<table_prefix_values>`, and the prefix term SHALL have the value taken from the "Value" column of the same row.
 
 .. marker_interpretation_of_units_1_1
 
@@ -191,7 +191,7 @@ Interpretation of units
 
 .. marker_interpretation_of_units_3_2
 
-   3. Tuples which have the name element of ‘dimensionless’ SHALL be removed from the set of tuples.
+   3. Tuples which have the name element of "dimensionless" SHALL be removed from the set of tuples.
       Note that this can result in the set of tuples being empty.
 
 .. marker_interpretation_of_units_3_3
@@ -304,7 +304,7 @@ Effect of units on variables
 Interpretation of mathematics
 -----------------------------
 
-#. The following :code:`component` elements SHALL, for the purposes of this specification, be “pertinent component elements”:
+#. The following :code:`component` elements SHALL, for the purposes of this specification, be "pertinent component elements":
 
    #. All :code:`component` elements in the top-level :ref:`CellML infoset<specA_cellml_infoset>` for the :ref:`CellML model<specA_cellml_model>`;
 
@@ -324,7 +324,7 @@ Interpretation of mathematics
 Interpretation of encapsulation
 -------------------------------
 
-#. For the purposes of this specification, there SHALL be a “conceptual encapsulation digraph” in which there is EXACTLY one node for every component in the :ref:`CellML model<specA_cellml_model>`.
+#. For the purposes of this specification, there SHALL be a "conceptual encapsulation digraph" in which there is EXACTLY one node for every component in the :ref:`CellML model<specA_cellml_model>`.
     Therefore the encapsulation digraph will not contain any loops.
 
 #. Where a :code:`component_ref` element appears as a child of another :code:`component_ref` element, there SHALL be an arc in the encapsulation digraph, and that arc SHALL be from the node corresponding to the component referenced by the parent :code:`component_ref` element, and to the node corresponding to the component referenced by the child :code:`component_ref` element.
@@ -394,7 +394,7 @@ Interpretation of map_variables
 
 #.  CellML models MUST only contain :code:`map_variables` elements where the interface of variable *A* and the interface of variable *B* are applicable interfaces.
 
-#.  The :code:`variable` elements in a CellML model SHALL be treated as belonging to a single “connected variable set”.
+#.  The :code:`variable` elements in a CellML model SHALL be treated as belonging to a single "connected variable set".
     Each set of connected variables is the set of all :code:`variable` elements for which the corresponding nodes in the variable equivalence network form a connected subgraph.
     Each set of connected variables represents one variable in the underlying mathematical model.
 

@@ -33,7 +33,7 @@
     Some of the units listed in the :ref:`Built-in Units<table_built_in_units>` are these base units, but others are combinations of them included for convenience.
     Only those rows in the table which have no entries in the "Unit reduction" column are "irreducible" or base units.
 
-    In the CellML2.0 world you are able to also define your own base units.
+    In the CellML 2.0 world you are able to also define your own base units.
     These are :code:`units` items which you create which do not reference any child :code:`unit` items, so are therefore "irreducible".
     For example:
 
