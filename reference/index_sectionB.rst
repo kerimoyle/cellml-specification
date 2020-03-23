@@ -1,10 +1,10 @@
 .. _sectionB_index:
 
 ====================================
-Section B: Element information items
+Chapter 2: Element information items
 ====================================
 
-Section B of the Normative CellML 2.0 Specification outlines the element information items and the rules governing their declaration.
+Chapter 2 of the Normative CellML 2.0 Specification outlines the element information items and the rules governing their declaration.
 
 .. toctree::
     :maxdepth: 1

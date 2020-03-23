@@ -10,6 +10,7 @@ These represent the official rules about what must and must not be included in o
 
 .. toctree::
     :maxdepth: 2
+    :numbered:
 
     reference/formal_sectionA.rst
     reference/formal_sectionB.rst
