@@ -5,7 +5,6 @@
 ===========================================
 Section C: Interpretation
 ===========================================
-
 .. marker_interpretation_of_imports_start
 
 .. _specC_interpretation_of_imports:
@@ -30,7 +29,9 @@ Interpretation of imports
 Units reference
 ---------------
 
-#. A units reference SHALL be a CellML identifier and SHALL be  interpreted dependent on the context of the :ref:`CellML model<specA_cellml_model>` in which it occurs.
+#. A units reference SHALL be a CellML identifier and SHALL be interpreted dependent on the context of the :ref:`CellML model<specA_cellml_model>` in which it occurs, according to the units referencing rules defined later in this section.
+
+#. A :ref:`CellML infoset<specA_cellml_infoset>` MUST NOT contain a units reference for which no referencing rule can be held to have been followed.
 
 #. The units referencing rules are:
 
@@ -39,10 +40,6 @@ Units reference
    #. Where there is an :code:`import units` element in the :ref:`CellML infoset<specA_cellml_infoset>`, such that the :code:`import units` element has a :code:`name` attribute identical to the units reference, then the units reference SHALL be treated with respect to referencing rules as if the units reference appeared in the imported infoset, and referring to the :code:`name` specified in the :code:`units_ref` attribute of the :code:`import units` element.
 
    #. Where the units reference is equal to the value in the "Name" column of the :ref:`Built-in units table<table_built_in_units>`, then the units reference SHALL be a reference to the built-in units corresponding to that row of the table.
-
-#. A :ref:`CellML infoset<specA_cellml_infoset>` MUST NOT contain a units reference for which no referencing rule can be held to have been followed.
-
-#. It is noted, for the avoidance of doubt, that a units reference specified within an imported CellML infoset SHALL refer to the :code:`units` or :code:`import units` element of the same :code:`name` within the imported (rather than importing) infoset.
 
 .. marker_units_reference1
 
@@ -249,13 +246,7 @@ Component reference
 
 #. A component reference which is identical to the :code:`name` attribute on an :code:`import component` element SHALL be treated for the purposes of referencing as if the component reference appeared in the imported model, and referred to element with the :code:`name` specified in the :code:`component_ref` attribute of the :code:`import component` element.
 
-#. It is noted, for the avoidance of doubt, that importing a CellML :code:`component` element SHALL additionally and recursively import:
-
-      #. Any and all encapsulated :code:`component` children of the imported :code:`component`, and
-      #. Any and all :code:`units` elements referenced by the imported :code:`component` or its encapsulated children.
-         Note also that :code:`units` elements imported in this way SHALL remain within the scope of the imported infoset; they SHALL NOT be available to the importing infoset unless explicitly imported by a separate :code:`import units` element.
-
-#. It is further noted, for the avoidance of doubt, that CellML models MAY apply the previous rules recursively, to reference an :code:`import component` element which in turn references another :code:`import component` element.
+#. It is noted, for the avoidance of doubt, that CellML models MAY apply the previous rule recursively, to reference an :code:`import component` element which in turn references another :code:`import component` element.
 
 .. marker_component_reference_end
 .. marker_variable_reference_start
