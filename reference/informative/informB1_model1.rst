@@ -24,4 +24,3 @@
         than the underscore :code:`_` are not permitted)
       - :code:`1amNotValidEither` is not valid (must not begin with a number)
       - :code:`" "` empty string is not valid (a name must be present).
-
