@@ -32,7 +32,7 @@
         Best practice for constants, variables, and initial conditions
     
 
-    - A :code:`variable` whose value needs to be set for only the *beginning* of a simulation initialised using the :code:`initial_value` attribute is considered to be true at the *beginning* of a simulation. 
+    - A :code:`variable` whose value needs to be set for only the *beginning* of a simulation is initialised using the :code:`initial_value` attribute. 
       
         - This is most frequently used for state variables (those whose value is found by solving a differential equation).
         - It's possible - but not recommended - to use a variable reference with the :code:`initial_value` attribute.
@@ -44,6 +44,9 @@
 
     - A :code:`variable` which is not a state variable, and whose value changes during the simulation does not require initialisation; simply include it in a :code:`math` block so it can be evaluated.
         
+
+    The following example shows a model for counting games like hide and seek, where the first section shows an older format and the second section shows the best practice for CellML 2.0 models.
+
 
     .. code-block:: xml
 
