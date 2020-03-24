@@ -32,17 +32,17 @@
         Best practice for constants, variables, and initial conditions
     
 
-      - A :code:`variable` whose value needs to be set for only the *beginning* of a simulation initialised using the :code:`initial_value` attribute is considered to be true at the *beginning* of a simulation. 
-        
-         - This is most frequently used for state variables (those whose value is found by solving a differential equation).
-         - It's possible - but not recommended - to use a variable reference with the :code:`initial_value` attribute.
-           This option remains in CellML 2.0 only to provide ease of migration from CellML 1.1 models, and may be discontinued in future versions.
-           The recommended best practice is to make use of connections between variables to move all "hardcoding" of parameters (including initial values and constants) into a top-level component for ease of access.
-           This is demonstrated in the example below. 
-        
-      - A :code:`variable` whose value is *constant* throughout the simulation is best set within the :code:`math` block, rather than via the :code:`initial_value` attribute.  This is so that its value will be held to be true *throughout* the simulation, rather than only the beginning. 
+    - A :code:`variable` whose value needs to be set for only the *beginning* of a simulation initialised using the :code:`initial_value` attribute is considered to be true at the *beginning* of a simulation. 
+      
+        - This is most frequently used for state variables (those whose value is found by solving a differential equation).
+        - It's possible - but not recommended - to use a variable reference with the :code:`initial_value` attribute.
+          This option remains in CellML 2.0 only to provide ease of migration from CellML 1.1 models, and may be discontinued in future versions.
+          The recommended best practice is to make use of connections between variables to move all "hardcoding" of parameters (including initial values and constants) into a top-level component for ease of access.
+          This is demonstrated in the example below. 
+      
+    - A :code:`variable` whose value is *constant* throughout the simulation is best set within the :code:`math` block, rather than via the :code:`initial_value` attribute.  This is so that its value will be held to be true *throughout* the simulation, rather than only the beginning. 
 
-      - A :code:`variable` which is not a state variable, and whose value changes during the simulation does not require initialisation; simply include it in a :code:`math` block so it can be evaluated.
+    - A :code:`variable` which is not a state variable, and whose value changes during the simulation does not require initialisation; simply include it in a :code:`math` block so it can be evaluated.
         
 
     .. code-block:: xml
