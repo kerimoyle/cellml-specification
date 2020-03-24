@@ -8,13 +8,41 @@
 
   .. container:: infospec
 
-    Best practice suggests that the :code:`initial_value` attribute is used to set the initial values only, rather than to simply set the value of a :code:`variable`.  
-    Initialising a variable is different from setting the value of a variable; the former is true only at the *beginning* of a simulation, whereas the latter is true *throughout* the simulation.
-    The option to use a variable reference for initialisation is provided in CellML 2.0 to enable easier migration from CellML 1.1 models, and may not be supported in future releases.
-    Consider the model below which describes the countdown in a game of hide and seek.  **TODO** put in proper time equation?
+    Cycles within initial values
+    ----------------------------
+    As with other places, it's possible to set initial conditions which are valid in syntax but lacking in sense.
+    The examples below are technically valid CellML, but they will not lead to meaningful models.
+
+    .. code-block::
+
+      <component name="cyclical_initialisation" >
+        <variable name="A" initial_value="B" units="dimensionless"/>
+        <variable name="B" initial_value="A" units="dimensionless"/>
+      </component>
+
+      <component name="self_initialisation" >
+        <variable name="C" initial_value="C" units="dimensionless"/>
+      </component>
+
+    Best practice for constants, variables, and initial conditions
+    --------------------------------------------------------------
+
+      - A :code:`variable` whose value needs to be set for only the *beginning* of a simulation initialised using the :code:`initial_value` attribute is considered to be true at the *beginning* of a simulation. 
+        
+         - This is most frequently used for state variables (those whose value is found by solving a differential equation).
+         - It's possible - but not recommended - to use a variable reference with the :code:`initial_value` attribute.
+           This option remains in CellML 2.0 only to provide ease of migration from CellML 1.1 models, and may be discontinued in future versions.
+           The recommended best practice is to make use of connections between variables to move all "hardcoding" of parameters (including initial values and constants) into a top-level component for ease of access.
+           This is demonstrated in the example below. 
+        
+      - A :code:`variable` whose value is *constant* throughout the simulation is best set within the :code:`math` block, rather than via the :code:`initial_value` attribute.  This is so that its value will be held to be true *throughout* the simulation, rather than only the beginning. 
+
+      - A :code:`variable` which is not a state variable, and whose value changes during the simulation does not require initialisation; simply include it in a :code:`math` block so it can be evaluated.
+        
 
     .. code-block:: xml
 
+      <!-- Childhood games involving counting down -->
       <model name="games">
         <component name="hide_and_seek">
           <variable name="countdown_start" units="second" initial_value="100"/>
@@ -67,9 +95,9 @@
       <model name="games">
         <component name="hide_and_seek">
 
-          <!-- Remove the initial_value attribute from this deeply encapsulated component, and move it to the "parameters" component instead -->
+          <!-- Remove the initial_values from encapsulated component, move to the "parameters" component -->
           <variable name="countdown_start" units="second" />
-          <variable name="counter" units="second" initial_value="countdown_start" />
+          <variable name="counter" units="second" />
           <variable name="time" units="second">
           <math>
             <apply><eq/>
@@ -87,7 +115,7 @@
         <component name="parameters">
           <variable name="time" units="second" />
 
-          <!-- Moving the initialisation of the countdown start into this top-level component -->
+          <!-- Move the initialisation of the countdown initial value into this top-level component -->
           <variable name="hide_and_seek_start" initial_value="100" />
         </component>
 
@@ -117,8 +145,3 @@
       </model>
 
     Moving the initialisation out of the encapsulation hierarchy and into a top-level component allows us to more easily adjust the parameters of the game, as well as making its use more modular so that it can be shared with others.
-
-
-      
-    
-     
