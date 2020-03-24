@@ -4,8 +4,8 @@
 
 **Authors:**
 
-Michael T. Cooling\*
 Michael Clerx
+Michael T. Cooling
 Jonathan Cooper
 Alan Garny
 Keri Moyle
@@ -27,7 +27,7 @@ Randall Britten,
 Poul Nielsen
 and David P. Nickerson
 
-\* corresponding author: mtcooling.research@gmail.com  **TODO what should this be?**
+**Contact:** help@physiomeproject.org
 
 **Preamble**
 
