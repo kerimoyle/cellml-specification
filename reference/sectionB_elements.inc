@@ -399,21 +399,21 @@ Specific information items
 
 .. container:: issue-math-ci-variable-reference
 
-   3. Every variable name given using the MathML :code:`ci` element MUST be a :ref:`variable reference<specC_variable_reference>` to a :code:`variable` within the :code:`component` element that the :code:`math` element is contained.
+   3. Every variable name given using the MathML :code:`ci` element MUST be a :ref:`variable reference<specC_variable_reference>` to a :code:`variable` within the :code:`component` element in which the :code:`math` element is contained.
 
 .. marker_math_3
 
 .. container:: issue-math-cn-units-attribute
 
-   4. Any MathML :code:`cn` elements MUST each have an attribute in the :ref:`CellML namespace<specA_cellml_namespace>`, with a local name equal to :code:`units`. The value of this attribute MUST be a valid units reference.
+   4. A MathML :code:`cn` element MUST have an attribute in the :ref:`CellML namespace<specA_cellml_namespace>`, with a local name equal to :code:`units`. The value of this attribute MUST be a valid units reference to a :code:`units` item within the infoset or a :ref:`built-in units<table_built_in_units>` item.
 
 .. container:: issue-math-cn-type
 
-   5. The :code:`cn` element MUST be one of the following :mathml2types:`types`\: real or e-notation.
+   5. A :code:`cn` element MUST be one of the following :mathml2types:`types`\: real or e-notation.
 
 .. container:: issue-math-cn-base10
 
-   6. The :code:`cn` element MUST be of base 10.
+   6. A :code:`cn` element MUST be of base 10.
 
 .. marker_math_4
 
@@ -441,7 +441,7 @@ Table: Supported MathML Elements
 +----------------------------------+----------------------------------+
 | Calculus Elements                | <diff>                           |
 +----------------------------------+----------------------------------+
-| Qualifier Elements               | <bvar>, <logbase>, <degree> *    |
+| Qualifier Elements               | <bvar>, <logbase>, <degree> \*   |
 +----------------------------------+----------------------------------+
 | Trigonometric Operators          | <sin>, <cos>, <tan>, <sec>,      |
 |                                  | <csc>, <cot>,                    |
