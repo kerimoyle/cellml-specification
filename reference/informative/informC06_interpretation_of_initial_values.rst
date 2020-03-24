@@ -11,8 +11,7 @@
     Best practice suggests that the :code:`initial_value` attribute is used to set the initial values only, rather than to simply set the value of a :code:`variable`.  
     Initialising a variable is different from setting the value of a variable; the former is true only at the *beginning* of a simulation, whereas the latter is true *throughout* the simulation.
     The option to use a variable reference for initialisation is provided in CellML 2.0 to enable easier migration from CellML 1.1 models, and may not be supported in future releases.
-    Consider the model below which describes the countdown in a game of hide and seek.  
-    The :code:`counter` variable is reduced from an initial value 
+    Consider the model below which describes the countdown in a game of hide and seek.  **TODO** put in proper time equation?
 
     .. code-block:: xml
 
