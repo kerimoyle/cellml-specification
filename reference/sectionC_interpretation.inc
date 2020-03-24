@@ -45,7 +45,7 @@ Table: Built-in units
 ~~~~~~~~~~~~~~~~~~~~~
 
 +---------------+-------------------+----------------------------------+------------------------------------+
-| **Name**      | **Symbol**        | | **Unit reduction tuple**       | **Common equivalent definitions**  |
+| **Name**      | **Symbol**        | | **Unit reduction tuple**       | **Common definitions**             |
 |               |                   | | multiplier*(base, exponent)    |                                    |
 +---------------+-------------------+----------------------------------+------------------------------------+
 | ampere        | :math:`A`         | \-                               |                                    |
