@@ -8,12 +8,14 @@
 
   .. container:: infospec
 
-    Cycles within initial values
-    ----------------------------
+    .. container:: heading3
+        
+        Cycles within initial values
+   
     As with other places, it's possible to set initial conditions which are valid in syntax but lacking in sense.
     The examples below are technically valid CellML, but they will not lead to meaningful models.
 
-    .. code-block::
+    .. code-block:: xml
 
       <component name="cyclical_initialisation" >
         <variable name="A" initial_value="B" units="dimensionless"/>
@@ -24,8 +26,11 @@
         <variable name="C" initial_value="C" units="dimensionless"/>
       </component>
 
-    Best practice for constants, variables, and initial conditions
-    --------------------------------------------------------------
+
+    .. container:: heading3
+
+        Best practice for constants, variables, and initial conditions
+    
 
       - A :code:`variable` whose value needs to be set for only the *beginning* of a simulation initialised using the :code:`initial_value` attribute is considered to be true at the *beginning* of a simulation. 
         
