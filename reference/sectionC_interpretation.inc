@@ -250,7 +250,7 @@ Variable reference
 #. When present in an information item which is a descendant of a :code:`component` element, a variable reference SHALL be the name of a variable, and SHALL refer to the :code:`variable` element in that component with a :code:`name` attribute identical to the variable reference.
 
 #. In all other cases, a variable reference SHALL consist of a component reference and a variable name.
-In this case, the variable reference SHALL be treated as if it was just the variable name present in the :code:`component` element referenced by the component reference.
+   In this case, the variable reference SHALL be treated as if it was just the variable name present in the :code:`component` element referenced by the component reference.
 
 .. marker_variable_reference_end
 .. marker_interpretation_of_initial_values_start
