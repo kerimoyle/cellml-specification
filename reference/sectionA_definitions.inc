@@ -2,6 +2,8 @@
 
 .. sectnum::
 
+.. marker_preamble_start
+
 **CellML 2.0 Specification**
 
 **Authors:**
@@ -37,6 +39,7 @@ This document is the normative version of the CellML Specification, defining the
 It is intended primarily for the developers of software tools which directly consume CellML syntax.
 Users of CellML models should read the informative version of the CellML Specification which is available here: https://doi.org/science/1.1.1.10.
 
+.. marker_premable_end
 .. marker_terminology_start
 
 .. _specA_terminology:
