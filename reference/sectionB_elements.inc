@@ -2,10 +2,6 @@
 
 .. sectnum::
 
-====================================
-Element information items
-====================================
-
 .. marker_model_start
 
 .. _model:

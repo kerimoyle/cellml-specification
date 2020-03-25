@@ -2,15 +2,12 @@
 
 .. sectnum::
 
-===========================================
-Interpretation
-===========================================
 .. marker_interpretation_of_imports_start
 
 .. _specC_interpretation_of_imports:
 
 Interpretation of imports
--------------------------
+=========================
 
 #. Each :code:`import` element present in a :ref:`CellML infoset<specA_cellml_infoset>` (the importing infoset) SHALL define a new and separate instance of the CellML infoset referenced by the :code:`href` attribute (the imported infoset).
    See :ref:`Units reference<specC_units_reference>` and    :ref:`Component reference<specC_component_reference>` for the specifics    of importing units and components.
@@ -21,7 +18,7 @@ Interpretation of imports
 .. _specC_units_reference:
 
 Units reference
----------------
+===============
 
 #. A units reference SHALL be a CellML identifier and SHALL be interpreted dependent on the context of the :ref:`CellML model<specA_cellml_model>` in which it occurs, according to the units referencing rules defined later in this section.
 
@@ -126,7 +123,7 @@ Table: Built-in units
 .. _specC_interpretation_of_units:
 
 Interpretation of units
------------------------
+=======================
 
 1. The :code:`units` element SHALL be interpreted as the product of its
    :code:`unit` element children, according to the following rules:
@@ -230,7 +227,7 @@ yocto    −24
 .. _specC_component_reference:
 
 Component reference
--------------------
+===================
 
 #. A component reference SHALL be the name of a component, and SHALL be interpreted based on the context within the :ref:`CellML model<specA_cellml_model>` in which it occurs.
 
@@ -248,7 +245,7 @@ Component reference
 .. _specC_variable_reference:
 
 Variable reference
-------------------
+==================
 
 #. When present in an information item which is a descendant of a :code:`component` element, a variable reference SHALL be the name of a variable, and SHALL refer to the :code:`variable` element in that component with a :code:`name` attribute identical to the variable reference.
 
@@ -261,7 +258,7 @@ In this case, the variable reference SHALL be treated as if it was just the vari
 .. _specC_interpretation_of_initial_values:
 
 Interpretation of initial values
---------------------------------
+================================
 
 #. The :code:`initial_value` attribute of a :code:`variable` element MUST either be a real number string, or a variable reference (see 19.5).
 
@@ -277,7 +274,7 @@ Interpretation of initial values
 .. _specC_effect_of_units_on_variables:
 
 Effect of units on variables
-----------------------------
+============================
 
 #. The value of the :code:`units` attribute on every :code:`variable` element MUST be a valid units reference.
    The target of this units reference is referred to as the variable units, and the corresponding unit reduction (see :ref:`Interpretation of units<specC_interpretation_of_units>`) is referred to as the variable unit reduction.
@@ -288,7 +285,7 @@ Effect of units on variables
 .. _specC_interpretation_of_mathematics:
 
 Interpretation of mathematics
------------------------------
+=============================
 
 #. The following :code:`component` elements SHALL, for the purposes of this specification, be "pertinent component elements":
 
@@ -308,7 +305,7 @@ Interpretation of mathematics
 .. _specC_interpretation_of_encapsulation:
 
 Interpretation of encapsulation
--------------------------------
+===============================
 
 #. For the purposes of this specification, there SHALL be a "conceptual encapsulation digraph" in which there is EXACTLY one node for every component in the :ref:`CellML model<specA_cellml_model>`.
    Therefore the encapsulation digraph will not contain any loops.
@@ -391,7 +388,7 @@ Interpretation of map_variables
 .. _specC_interpretation_of_variable_resets:
 
 Interpretation of variable resets
----------------------------------
+=================================
 
 #. Each :code:`reset` element describes a change to be applied to the variable referenced by the :code:`variable` attribute when specified conditions are met during the simulation of the model.
 
