@@ -415,9 +415,6 @@ Specific information items
 
 .. _table_supported_mathml_elements:
 
-Table: Supported MathML Elements
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 +----------------------------------+----------------------------------+
 | **Element Category**             | **Element List**                 |
 +----------------------------------+----------------------------------+

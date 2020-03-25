@@ -36,9 +36,6 @@ Units reference
 
 .. _table_built_in_units:
 
-Table: Built-in units
-~~~~~~~~~~~~~~~~~~~~~
-
 +---------------+-------------------+--------------------------------+
 | **Name**      | **Multiplier(s)** | **Unit reduction tuple**       |
 |               |                   | (dimension, exponent) set      |
@@ -193,9 +190,6 @@ Interpretation of units
 
 .. _table_prefix_values:
 
-Table: Prefix values
-~~~~~~~~~~~~~~~~~~~~
-
 ======== =========
 **Name** **Value**
 yotta    24
@@ -219,7 +213,6 @@ atto     −18
 zepto    −21
 yocto    −24
 ======== =========
-
 
 .. marker_interpretation_of_units_end
 .. marker_component_reference_start
