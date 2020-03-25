@@ -33,7 +33,7 @@ extensions = [
     'sphinx.ext.todo',
     'sphinx.ext.viewcode',
     'sphinx.ext.extlinks',
-    # 'sphinx.ext.autosectionlabel', # Removing as we have a lot of duplicated titles
+    'sphinx.ext.autosectionlabel',
     'sphinx.ext.intersphinx',
     'hoverxref.extension',
 ]

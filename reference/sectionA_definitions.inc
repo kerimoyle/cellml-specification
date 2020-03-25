@@ -4,8 +4,8 @@
 
 **Authors:**
 
-Michael T. Cooling\*
 Michael Clerx
+Michael T. Cooling
 Jonathan Cooper
 Alan Garny
 Keri Moyle
@@ -27,7 +27,7 @@ Randall Britten,
 Poul Nielsen
 and David P. Nickerson
 
-\* corresponding author: mtcooling.research@gmail.com  **TODO what should this be?**
+**Contact:** help@physiomeproject.org
 
 **Preamble**
 
@@ -313,7 +313,7 @@ The following data representation formats are defined for use in this specificat
    .. container:: issue-data-repr-real-exponent
 
       4. An exponent SHALL be represented by an exponent separator character, followed by the :ref:`integer string representation<specA_integer>` of the value of the exponent.
-         Non-negative exponents MAY begin with the Basic Latin plus sign character :unicode:`002B` as the sign indicator.
+      Non-negative exponents MAY begin with the Basic Latin plus sign character :unicode:`002B` as the sign indicator.
          The exponent separator character SHALL be either the Basic Latin "E" character :unicode:`0045` or the Basic Latin "e" character :unicode:`0065`.
 
    .. container:: issue-data-repr-real-no-exponent
