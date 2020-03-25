@@ -16,4 +16,3 @@ CellML 2.0 Specification
     reference/index_sectionB.rst
     reference/index_sectionC.rst
     reference/sectionD_references.rst
-

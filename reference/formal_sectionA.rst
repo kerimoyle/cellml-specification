@@ -1,7 +1,7 @@
 .. _sectionA_index_formal:
 
 ===================================
-Definitions and preamble
+Definitions 
 ===================================
 
 .. toctree::
