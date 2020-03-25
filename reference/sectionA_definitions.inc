@@ -4,40 +4,38 @@
 
 .. marker_preamble_start
 
-**CellML 2.0 Specification**
-
-**Authors:**
-
-Michael Clerx
-Michael T. Cooling
-Jonathan Cooper
-Alan Garny
-Keri Moyle
-David P. Nickerson
-Hugh Sorby
-
-**Contributors:**
-Jesús C. Fernández
-David Brooks
-Koray Atalag
-
-The authors also wish to acknowledge the significant contribution of the (discontinued) draft CellML 1.2 specification, much of the text of which was incorporated into this specification - although the semantics have changed considerably.
-The CellML 1.2 specification was itself the result of a collaborative effort by a number of researchers during 2008-2011\:
-Andrew K. Miller (who wrote the text reused here),
-Jonathan Cooper,
-Justin Marsh,
-Alan Garny,
-Randall Britten,
-Poul Nielsen
-and David P. Nickerson
-
-**Contact:** help@physiomeproject.org
-
-**Preamble**
-
 This document is the normative version of the CellML Specification, defining the CellML syntax and the rules by which it should be used.
 It is intended primarily for the developers of software tools which directly consume CellML syntax.
 Users of CellML models should read the informative version of the CellML Specification which is available here: https://doi.org/science/1.1.1.10.
+
+**Authors**
+
+   Michael Clerx
+   Michael T. Cooling
+   Jonathan Cooper
+   Alan Garny
+   Keri Moyle
+   David P. Nickerson
+   Hugh Sorby
+
+**Contributors**
+
+   Jesús C. Fernández
+   David Brooks
+   Koray Atalag
+
+The authors also wish to acknowledge the significant contribution of the (discontinued) draft CellML 1.2 specification, much of the text of which was incorporated into this specification - although the semantics have changed considerably.
+The CellML 1.2 specification was itself the result of a collaborative effort by a number of researchers during 2008-2011\:
+
+   Andrew K. Miller (who wrote the text reused here)
+   Jonathan Cooper
+   Justin Marsh
+   Alan Garny
+   Randall Britten
+   Poul Nielsen
+   and David P. Nickerson
+
+**Contact** help@physiomeproject.org
 
 .. marker_preamble_end
 .. marker_terminology_start
