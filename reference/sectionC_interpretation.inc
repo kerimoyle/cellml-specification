@@ -36,8 +36,9 @@ Units reference
 
 .. _table_built_in_units:
 
-Table: Built-in units
-~~~~~~~~~~~~~~~~~~~~~
+.. container:: heading3
+
+   Table: Built-in units
 
 +---------------+-------------------+--------------------------------+
 | **Name**      | **Multiplier(s)** | **Unit reduction tuple**       |
@@ -193,8 +194,9 @@ Interpretation of units
 
 .. _table_prefix_values:
 
-Table: Prefix values
-~~~~~~~~~~~~~~~~~~~~
+.. container:: heading3
+
+   Table: Prefix values
 
 ======== =========
 **Name** **Value**
