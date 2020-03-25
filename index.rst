@@ -5,7 +5,7 @@ Normative specification for CellML 2.0
 ==========================================
 
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
     :numbered:
 
     reference/index_sectionA.rst
@@ -13,4 +13,3 @@ Normative specification for CellML 2.0
     reference/index_sectionC.rst
     reference/sectionD_references.rst
 
-.. include:: reference/preamble.rst
