@@ -71,7 +71,7 @@ extlinks = {
     'libcellml': ('https://libcellml.org/%s', ''),
     'libcellml_repo': ('https://github.com/cellml/libcellml.git%s', ''),
     # TODO Update this when tutorials have a proper home.
-    'libcellml_tutorials': ('https://libcellml-tutorials.readthedocs.io/en/pr344_documentation/%s',''),
+    'libcellml_tutorials': ('https://libcellml-tutorials.readthedocs.io/en/pr344_documentation/%s', ''),
     'libxml2': ('http://www.xmlsoft.org/%s', ''),
     'mathml2help': ('https://www.w3.org/TR/MathML2/chapter4.html#id.4.2.1.3%s', ''),
     'mathml2spec': ('http://www.w3.org/TR/2003/REC-MathML2-20031021/%s', ''),
@@ -278,18 +278,19 @@ latex_elements = {
     # 'pointsize': '10pt',
 
     # Additional stuff for the LaTeX preamble.
-    # 'preamble': 'usepackage{textgreek}', # Removing as weird ... ?
-
-    # Fancy chapter names, default is on.  Doesn't affect numbering though.
-    # 'fncychap' : '',
-
+    'preamble': r'''
+                    \usepackage[titles]{tocloft}
+                    \usepackage{textgreek}
+                    \DeclareUnicodeCharacter{2212}{-}
+                '''
 }
 
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    ('formal', 'formal.tex', u'CellML Specification', u'CellML 2.0 Editors and Contributors', 'manual'),
+    ('formal', 'formal.tex', u'CellML Specification',
+     u'CellML 2.0 Editors and Contributors', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
