@@ -1,7 +1,5 @@
 .. _sectionB:
 
-.. sectnum::
-
 .. marker_model_start
 
 .. _model:
@@ -24,6 +22,7 @@ Specific information items
 
    1. Every :code:`model` element MUST contain a :code:`name` attribute.
       The value of the :code:`name` attribute MUST be a :ref:`valid CellML identifier<specA_cellml_identifier>`.
+
 
 .. marker_model_1
 

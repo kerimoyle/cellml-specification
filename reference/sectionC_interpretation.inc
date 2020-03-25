@@ -1,7 +1,5 @@
 .. _sectionC:
 
-.. sectnum::
-
 .. marker_interpretation_of_imports_start
 
 .. _specC_interpretation_of_imports:
