@@ -18,8 +18,7 @@ Interpretation of imports
 #. The import of an element SHALL be considered recursively such that items referenced by the :code:`import` element child (a :code:`units` or :code:`component` element) are themselves available to that :code:`import` element child.
    It is noted, for the avoidance of doubt, that the importing infoset SHALL NOT have access to such recursively imported items, but only to explicitly specified :code:`import` element children.
 
-#. The import of an element SHALL be considered recursively such that items referenced by the :code:`import` element's child (a :code:`units` or :code:`component` element) are themselves included.
-   See :ref:`Units reference<specC_units_reference>` and :ref:`Component reference<specC_component_reference>` for the specifics of importing units and components.
+See :ref:`Units reference<specC_units_reference>` and :ref:`Component reference<specC_component_reference>` for the specifics of importing units and components.
 
 .. marker_interpretation_of_imports_end
 .. marker_units_reference_start
