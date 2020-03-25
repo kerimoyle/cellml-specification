@@ -10,7 +10,7 @@ Interpretation of imports
 =========================
 
 #. Each :code:`import` element present in a :ref:`CellML infoset<specA_cellml_infoset>` (the importing infoset) SHALL define a new and separate instance of the CellML infoset referenced by the :code:`href` attribute (the imported infoset).
-   See :ref:`Units reference<specC_units_reference>` and :ref:`Component reference<specC_component_reference>` for the specifics of importing units and components.
+   See :ref:`Units reference<specC_units_reference>` and    :ref:`Component reference<specC_component_reference>` for the specifics    of importing units and components.
 
 .. marker_interpretation_of_imports_end
 .. marker_units_reference_start
@@ -36,7 +36,8 @@ Units reference
 
 .. _table_built_in_units:
 
-**Table: Built-in units**
+Table: Built-in units
+~~~~~~~~~~~~~~~~~~~~~
 
 +---------------+-------------------+--------------------------------+
 | **Name**      | **Multiplier(s)** | **Unit reduction tuple**       |
@@ -155,7 +156,7 @@ Interpretation of units
 
 .. marker_interpretation_of_units_1_4
 
-2. For the purposes of this specification, the "irreducible units" of a model SHALL consist of 1) the units defined in a model that are not defined in terms of other units (i.e. the set of :code:`units` elements in the :ref:`CellML model<specA_cellml_model>` which have no :code:`unit` child elements), and 2) built-in irreducible units (those built-in units with "-" in the "Unit Reduction" column of the :ref:`Built-in units<table_built_in_units>` table) referenced by variables or other units in the model.
+2. For the purposes of  this specification, the "irreducible units" of a model SHALL consist of 1) the units defined in a model that are not defined in terms of other units (i.e. the set of :code:`units` elements in the :ref:`CellML model<specA_cellml_model>` which have no :code:`unit` child elements), and 2) built-in irreducible units (those built-in units with "-" in the "Unit Reduction" column of the :ref:`Built-in units<table_built_in_units>` table) referenced by variables or other units in the model.
 
 .. marker_interpretation_of_units_2
 
@@ -192,7 +193,8 @@ Interpretation of units
 
 .. _table_prefix_values:
 
-**Table: Prefix values**
+Table: Prefix values
+~~~~~~~~~~~~~~~~~~~~
 
 ======== =========
 **Name** **Value**
