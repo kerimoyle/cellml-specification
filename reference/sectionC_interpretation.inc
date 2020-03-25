@@ -23,7 +23,7 @@ Interpretation of imports
 Units reference
 ---------------
 
-A "units reference" refers to the :code:`units_ref` attribute in :code:`import units` items, and the :code:`units` attribute used in :code:`unit` and :code:`variable` items.
+The term "units reference" refers to the value of the :code:`units_ref` attribute in :code:`import` items for :code:`units`, and the values of the :code:`units` attribute used in :code:`unit` and :code:`variable` items.
 
 #. A units reference SHALL be a CellML identifier and SHALL be interpreted dependent on the context of the :ref:`CellML model<specA_cellml_model>` in which it occurs, according to the units referencing rules defined later in this section.
 
@@ -238,7 +238,7 @@ yocto    −24
 Component reference
 -------------------
 
-A "component reference" refers to the :code:`component_ref` attribute used in :code:`import component` items, to the :code:`component_ref` elements which occurs as children of :code:`encapsulation` items, and to the :code:`component_1` and :code:`component_2` attributes used in :code:`connection` items.
+The term "component reference" refers to the value of a :code:`component_ref` attribute used in an :code:`import` item for :code:`component` items, to :code:`component_ref` elements which occur as children of :code:`encapsulation` items, and to the value of :code:`component_1` and :code:`component_2` attributes used in :code:`connection` items.
 
 #. A component reference SHALL be the name of a component, and SHALL be interpreted based on the context within the :ref:`CellML model<specA_cellml_model>` in which it occurs.
 
