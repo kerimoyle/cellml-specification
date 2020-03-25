@@ -1,5 +1,7 @@
 .. _sectionA:
 
+.. sectnum::
+
 **CellML 2.0 Specification**
 
 **Authors:**
@@ -34,9 +36,6 @@ and David P. Nickerson
 This document is the normative version of the CellML Specification, defining the CellML syntax and the rules by which it should be used.
 It is intended primarily for the developers of software tools which directly consume CellML syntax.
 Users of CellML models should read the informative version of the CellML Specification which is available here: https://doi.org/science/1.1.1.10.
-
-
-.. sectnum::
 
 .. marker_terminology_start
 
