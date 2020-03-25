@@ -324,7 +324,7 @@ Interpretation of encapsulation
 
 #. The hidden set for a component *A* SHALL be the set of all components *B* where component *B* is not in the encapsulated set for component *A*, and component *B* is not the encapsulation parent of component *A*, and component *B* is not in the sibling set for component *A*.
 
-#. There MUST NOT be a :code:`connection` element such that the component referenced by the :code:`component_1` attribute is in the hidden set of the component referenced by the :code:`component_2` attribute, nor vice versa.
+#. For the avoidance of doubt, there MUST NOT be a :code:`connection` element such that the component referenced by the :code:`component_1` attribute is in the hidden set of the component referenced by the :code:`component_2` attribute, nor vice versa.
 
 .. marker_interpretation_of_encapsulation_end
 .. marker_interpretation_of_map_variables_start
