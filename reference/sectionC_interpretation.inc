@@ -34,6 +34,8 @@ Units reference
 
 .. _table_built_in_units:
 
+**Table 3.1: Built-in units**
+
 +---------------+-------------------+--------------------------------+
 | **Name**      | **Multiplier(s)** | **Unit reduction tuple**       |
 |               |                   | (dimension, exponent) set      |
@@ -187,6 +189,8 @@ Interpretation of units
 .. marker_interpretation_of_units_3_4
 
 .. _table_prefix_values:
+
+**Table 3.2: Prefix values**
 
 ======== =========
 **Name** **Value**
