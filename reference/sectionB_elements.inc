@@ -476,7 +476,7 @@ Specific information items
 
 .. container:: issue-encapsulation-component-ref
 
-   1. Every :code:`encapsulation` element MUST contain one or more :code:`component_ref` elements.
+   1. An :code:`encapsulation` element MAY contain one or more :code:`component_ref` elements.
 
 .. marker_encapsulation_end
 .. marker_component_ref_start
@@ -500,10 +500,6 @@ Specific information items
 .. container:: issue-component-ref-child
 
    2. Every :code:`component_ref` element MAY in turn contain one or more :code:`component_ref` element children.
-
-.. container:: issue-component-ref-encapsulation
-
-   3. A :code:`component_ref` element which is an immediate child of an :code:`encapsulation` element MUST each contain at least one :code:`component_ref` element child.
 
 .. marker_component_ref_end
 .. marker_connection_start
