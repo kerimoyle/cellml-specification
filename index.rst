@@ -13,3 +13,6 @@ Normative specification for CellML 2.0
     reference/index_sectionC.rst
     reference/sectionD_references.rst
 
+.. include:: reference/sectionA_definitions.inc
+  :start-after: marker_preamble_start
+  :end-before: marker_preamble_end
