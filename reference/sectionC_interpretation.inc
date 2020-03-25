@@ -3,7 +3,7 @@
 .. sectnum::
 
 ===========================================
-Section C: Interpretation
+Interpretation
 ===========================================
 .. marker_interpretation_of_imports_start
 
@@ -150,7 +150,7 @@ Interpretation of units
 
    4. The relationship between the product, :math:`P`, of numerical values given in each and every child :code:`unit` element units, to a numerical value, :math:`x`, with units given by the encompassing :code:`units` element, SHALL be
 
-      .. image:: images/equation_units_expansion.png
+      .. image:: ./images/equation_units_expansion.png
           :align: center
           :width: 50%
 

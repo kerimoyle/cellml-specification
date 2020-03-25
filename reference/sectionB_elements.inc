@@ -3,7 +3,7 @@
 .. sectnum::
 
 ====================================
-Section B: Element information items
+Element information items
 ====================================
 
 .. marker_model_start

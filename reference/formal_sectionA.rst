@@ -5,7 +5,7 @@ Definitions and preamble
 ===================================
 
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
     :glob:
 
     formal_only/specA*
