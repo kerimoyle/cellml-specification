@@ -170,13 +170,13 @@ Specific information items
 Semantically equivalent CellML infosets
 ---------------------------------------
 
-#. Two :ref:`CellML infosets<specA_cellml_infoset>` SHALL be deemed semantically equivalent if one can be transformed into the other by making zero or more of the following changes:
+#. Two :ref:`CellML infosets<specA_cellml_infoset>` SHALL be deemed semantically equivalent if one can be transformed into the other by making any or none of the following changes:
 
    #. Adding, removing, and/or modifying comment information items.
 
    #. Changing (inserting, removing, and/or modifying) one or more namespace information items, and/or modifying the prefix of one or more information items, without changing the namespace that any information item is in.
 
-   #. The following paragraph applies only to character information items which are the direct child of an element information item in a :ref:`CellML namespace<specA_cellml_namespace>`, or in the :ref:`MathML namespace<specA_mathml_namespace>`.
+   #. The following paragraph applies only to character information items which are the direct child of an element information item in a :ref:`CellML namespace<specA_cellml_namespace>`, or in the :ref:`MathML namespace<specA_mathml_namespace>`:
 
       Inserting or removing character information items that consist entirely of :ref:`whitespace characters<specA_whitespace_character>`,
       changing the number of whitespace characters in such an information item,
