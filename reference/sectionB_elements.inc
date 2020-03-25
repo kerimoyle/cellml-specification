@@ -415,9 +415,8 @@ Specific information items
 
 .. _table_supported_mathml_elements:
 
-.. container:: heading3
-
-   Table: Supported MathML Elements
+Table: Supported MathML Elements
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------------------------------+----------------------------------+
 | **Element Category**             | **Element List**                 |
