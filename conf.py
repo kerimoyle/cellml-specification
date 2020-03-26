@@ -279,6 +279,7 @@ latex_elements = {
 
     # Additional stuff for the LaTeX preamble.
     # 'preamble': 'usepackage{textgreek}', # Removing as weird ... ?
+    'preamble': '\\usepackage{newtxsf}'
 
 }
 
