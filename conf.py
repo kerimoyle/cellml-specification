@@ -281,8 +281,9 @@ latex_elements = {
     'preamble': r''' 
         \usepackage[utf8]{inputenc}
         \usepackage{amssymb}
-        \usepackage{newunicodechar}
         \DeclareUnicodeCharacter{2212}{-}
+        \DeclareUnicodeCharacter{03A9}{Ω}
+        \DeclareUnicodeCharacter{03A9}{⋅}
     '''
 }
 # \newunicodechar{⋅}{\.}
