@@ -326,12 +326,6 @@ Interpretation of encapsulation
 
 #. For the avoidance of doubt, there MUST NOT be a :code:`connection` element such that the component referenced by the :code:`component_1` attribute is in the hidden set of the component referenced by the :code:`component_2` attribute, nor vice versa.
 
-#. An :code:`encapsulation` element MAY be empty, implying that no encapsulation hierarchy exists.
-   This is the default condition,
-
-#. A :code:`component_ref` element MAY be empty, implying that the :code:`component` to which it refers has no encapsulated children.
-   This is the default condition.
-
 .. marker_interpretation_of_encapsulation_end
 .. marker_interpretation_of_map_variables_start
 
