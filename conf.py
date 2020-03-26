@@ -282,11 +282,14 @@ latex_elements = {
     'preamble': r''' 
         \usepackage[utf8]{inputenc}
         \usepackage{amssymb}
-        \DeclareUnicodeCharacter{22C5}{⋅}
+        \usepackage{newunicodechar}
         \DeclareUnicodeCharacter{2212}{-}
-        \DeclareUnicodeCharacter{03A9}{Ω}
+        \newunicodechar{⋅}{\.}
+        \newunicodechar{Ω}{\ohm}
     '''
     # \usepackage{newtxsf}
+    # \DeclareUnicodeCharacter{22C5}{⋅}
+    # \DeclareUnicodeCharacter{03A9}{Ω}
 }
 
 # Grouping the document tree into LaTeX files. List of tuples
