@@ -23,7 +23,7 @@ Interpretation of imports
 Units reference
 ---------------
 
-The term "units reference" refers to the value of the :code:`units_ref` attribute in :code:`import` items for :code:`units`, and the values of the :code:`units` attribute used in :code:`unit` and :code:`variable` items.
+The term "units reference" refers to the value of a :code:`units_ref` attribute in :code:`import` items for :code:`units`, and the values of :code:`units` attributes used in :code:`unit` and :code:`variable` items.
 
 #. A units reference SHALL be a CellML identifier and SHALL be interpreted dependent on the context of the :ref:`CellML model<specA_cellml_model>` in which it occurs, according to the units referencing rules defined later in this section.
 
