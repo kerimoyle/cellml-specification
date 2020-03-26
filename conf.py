@@ -283,10 +283,10 @@ latex_elements = {
         \usepackage{amssymb}
         \usepackage{newunicodechar}
         \DeclareUnicodeCharacter{2212}{-}
-        # \newunicodechar{⋅}{\.}
-        # \newunicodechar{Ω}{\ohm}
     '''
 }
+# \newunicodechar{⋅}{\.}
+# \newunicodechar{Ω}{\ohm}
 
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title,
