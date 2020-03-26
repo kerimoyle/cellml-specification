@@ -283,8 +283,8 @@ latex_elements = {
         \usepackage{amssymb}
         \usepackage{newunicodechar}
         \DeclareUnicodeCharacter{2212}{-}
-        \newunicodechar{⋅}{\.}
-        \newunicodechar{Ω}{\ohm}
+        # \newunicodechar{⋅}{\.}
+        # \newunicodechar{Ω}{\ohm}
     '''
 }
 
