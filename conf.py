@@ -281,9 +281,9 @@ latex_elements = {
     # 'preamble': 'usepackage{textgreek}', # Removing as weird ... ?
     'preamble': r''' 
         \DeclareUnicodeCharacter{2212}{-}
-        \DeclareUnicodeCharacter{22C5}{⋅}
-        \usepackage{newtxsf}
     '''
+    # \DeclareUnicodeCharacter{22C5}{⋅}
+    # \usepackage{newtxsf}
 }
 
 # Grouping the document tree into LaTeX files. List of tuples
