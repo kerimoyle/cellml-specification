@@ -280,9 +280,9 @@ latex_elements = {
     # Additional stuff for the LaTeX preamble.
     # 'preamble': 'usepackage{textgreek}', # Removing as weird ... ?
     'preamble': r''' 
+        \DeclareUnicodeCharacter{22C5}{⋅}
         \DeclareUnicodeCharacter{2212}{-}
     '''
-    # \DeclareUnicodeCharacter{22C5}{⋅}
     # \usepackage{newtxsf}
 }
 
