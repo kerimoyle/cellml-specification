@@ -283,7 +283,7 @@ latex_elements = {
         \usepackage{amssymb}
         \DeclareUnicodeCharacter{2212}{-}
         \DeclareUnicodeCharacter{03A9}{Ω}
-        \DeclareUnicodeCharacter{03A9}{⋅}
+        \DeclareUnicodeCharacter{00B7}{⋅}
     '''
 }
 # \newunicodechar{⋅}{\.}
