@@ -278,7 +278,6 @@ latex_elements = {
     # 'pointsize': '10pt',
 
     # Additional stuff for the LaTeX preamble.
-    # 'preamble': 'usepackage{textgreek}', # Removing as weird ... ?
     'preamble': r''' 
         \usepackage[utf8]{inputenc}
         \usepackage{amssymb}
@@ -287,9 +286,6 @@ latex_elements = {
         \newunicodechar{⋅}{\.}
         \newunicodechar{Ω}{\ohm}
     '''
-    # \usepackage{newtxsf}
-    # \DeclareUnicodeCharacter{22C5}{⋅}
-    # \DeclareUnicodeCharacter{03A9}{Ω}
 }
 
 # Grouping the document tree into LaTeX files. List of tuples
