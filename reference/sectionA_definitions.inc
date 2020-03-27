@@ -27,7 +27,7 @@ Randall Britten,
 Poul Nielsen
 and David P. Nickerson
 
-**Contact:** help@physiomeproject.org
+**Contact:** editors@cellml.org
 
 **Preamble**
 
