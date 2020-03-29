@@ -160,7 +160,7 @@ Interpretation of units
 
          x[u_x] = {\dfrac {1} {m_1 \dotsm m_n(10^{p_1})^{e_1} \dotsm (10^{p_1})^{e_n}}} { \left[ \dfrac {u_x}{u^{e_1} \dotsm u^{e_n}} \right ] }P \left[ u^{e_1} \dotsm u^{e_n} \right]
 
-      where: :math:`u_x` denotes the units of the :code:`units` element; :math:`p_i`, :math:`e_i`, :math:`m_i` and :math:`u_i` refer to the prefix, exponent and multiplier terms and units of the :math:`i^{th}` :code:`unit` child element, respectively.
+      where :math:`u_x` denotes the units of the :code:`units` element; :math:`p_i`, :math:`e_i`, :math:`m_i` and :math:`u_i` refer to the prefix, exponent and multiplier terms and units of the :math:`i^{th}` :code:`unit` child element, respectively.
       Square brackets encompass the units of numerical values.
 
 .. marker_interpretation_of_units_1_4
