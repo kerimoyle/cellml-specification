@@ -4,8 +4,6 @@
 CellML 2.0 Specification
 ==========================================
 
-.. include:: reference/informative_preamble.rst
-
 .. toctree::
     :maxdepth: 1
     :numbered:
@@ -14,3 +12,5 @@ CellML 2.0 Specification
     reference/index_sectionB.rst
     reference/index_sectionC.rst
     reference/sectionD_references.rst
+
+.. include:: reference/informative_preamble.rst
