@@ -50,5 +50,3 @@
           </component>
         </model>
 
-      Note that libCellML uses some workarounds to avoid this kind of conflict.
-      Please click the :ref:`See libCellML implementation +<libcellml_import_units>` toggle for details.
