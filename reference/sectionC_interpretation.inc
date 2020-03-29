@@ -315,8 +315,8 @@ Interpretation of mathematics
 
 .. _specC_interpretation_of_encapsulation:
 
-Interpretation of ``encapsulation``
------------------------------------
+Interpretation of ``encapsulation`` elements
+--------------------------------------------
 
 #. For the purposes of this specification, there SHALL be a "conceptual encapsulation digraph" in which there is EXACTLY one node for every component in the :ref:`CellML model<specA_cellml_model>`.
    Therefore the encapsulation digraph will not contain any loops.
@@ -398,8 +398,8 @@ Interpretation of ``map_variables``
 
 .. _specC_interpretation_of_variable_resets:
 
-Interpretation of ``variable`` ``reset`` elements
--------------------------------------------------
+Interpretation of ``reset`` elements
+------------------------------------
 
 #. Each :code:`reset` element describes a change to be applied to the variable referenced by the :code:`variable` attribute when specified conditions are met during the simulation of the model.
 
