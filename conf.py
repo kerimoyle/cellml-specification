@@ -288,8 +288,6 @@ latex_elements = {
                     \DeclareUnicodeCharacter{00B7}{⋅}
                 '''
 }
-# \newunicodechar{⋅}{\.}
-# \newunicodechar{Ω}{\ohm}
 
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title,
