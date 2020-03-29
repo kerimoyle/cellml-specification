@@ -13,7 +13,7 @@ Interpretation of ``import`` elements
 -------------------------------------
 
 #. Each :code:`import` element present in a :ref:`CellML infoset<specA_cellml_infoset>` (the importing infoset) SHALL define a new and separate instance of the CellML infoset referenced by the :code:`href` attribute (the imported infoset).
-   See :ref:`Units reference<specC_units_reference>` and    :ref:`Component reference<specC_component_reference>` for the specifics    of importing units and components.
+   See :ref:`Units reference<specC_units_reference>` and :ref:`Component reference<specC_component_reference>` for the specifics of importing units and components.
 
 .. marker_interpretation_of_imports_end
 .. marker_units_reference_start
@@ -131,8 +131,8 @@ Table: Built-in units
 
 .. _specC_interpretation_of_units:
 
-Interpretation of ``units``
----------------------------
+Interpretation of ``units`` elements
+------------------------------------
 
 1. The :code:`units` element SHALL be interpreted as the product of its
    :code:`unit` element children, according to the following rules:
@@ -165,7 +165,7 @@ Interpretation of ``units``
 
 .. marker_interpretation_of_units_1_4
 
-2. For the purposes of  this specification, the "irreducible units" of a model SHALL consist of 1) the units defined in a model that are not defined in terms of other units (i.e. the set of :code:`units` elements in the :ref:`CellML model<specA_cellml_model>` which have no :code:`unit` child elements), and 2) built-in irreducible units (those built-in units with "-" in the "Unit Reduction" column of the :ref:`Built-in units<table_built_in_units>` table) referenced by variables or other units in the model.
+2. For the purposes of this specification, the "irreducible units" of a model SHALL consist of 1) the units defined in a model that are not defined in terms of other units (i.e. the set of :code:`units` elements in the :ref:`CellML model<specA_cellml_model>` which have no :code:`unit` child elements), and 2) built-in irreducible units (those built-in units with "-" in the "Unit Reduction" column of the :ref:`Built-in units<table_built_in_units>` table) referenced by variables or other units in the model.
 
 .. marker_interpretation_of_units_2
 
@@ -284,8 +284,8 @@ Interpretation of ``initial_value`` attributes
 
 .. _specC_effect_of_units_on_variables:
 
-Effect of ``units`` element on a ``variable``
----------------------------------------------
+Effect of ``units`` on a ``variable``
+-------------------------------------
 
 #. The value of the :code:`units` attribute on every :code:`variable` element MUST be a valid units reference.
    The target of this units reference is referred to as the variable units, and the corresponding unit reduction (see :ref:`Interpretation of units<specC_interpretation_of_units>`) is referred to as the variable unit reduction.
@@ -398,8 +398,8 @@ Interpretation of ``map_variables``
 
 .. _specC_interpretation_of_variable_resets:
 
-Interpretation of variable ``reset`` elements
----------------------------------------------
+Interpretation of ``variable`` ``reset`` elements
+-------------------------------------------------
 
 #. Each :code:`reset` element describes a change to be applied to the variable referenced by the :code:`variable` attribute when specified conditions are met during the simulation of the model.
 
