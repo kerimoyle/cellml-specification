@@ -4,9 +4,7 @@
 CellML 2.0 Specification
 ==========================================
 
-.. include:: reference/sectionA_definitions.inc
-    :start-after: marker_preamble_start
-    :end-before: marker_preamble_end
+.. include:: reference/informative_preamble.rst
 
 .. toctree::
     :maxdepth: 1
