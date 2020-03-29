@@ -282,6 +282,7 @@ latex_elements = {
                     \usepackage[titles]{tocloft}
                     \usepackage{textgreek}
                     \DeclareUnicodeCharacter{2212}{-}
+                    "This is where I want to put some text.  I have no clue if it will work."
                 '''
 }
 
