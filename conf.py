@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# libCellML documentation build configuration file, created by
+# CellML specifications build configuration file, created by
 # sphinx-quickstart on Mon Jun  9 21:58:16 2014.
 #
 # This file is execfile()d with the current directory set to its
