@@ -136,9 +136,7 @@ Specific information items
 
 .. container:: issue-import-component-ref
 
-   2. Every :code:`import component` element MUST contain a
-:code:`component_ref` attribute. The value of the :code:`component_ref`
-attribute MUST be a :ref:`valid CellML identifier<specA_cellml_identifier>`.
+   2. Every :code:`import component` element MUST contain a :code:`component_ref` attribute. The value of the :code:`component_ref` attribute MUST be a :ref:`valid CellML identifier<specA_cellml_identifier>`.
 
       The value of the :code:`component_ref` attribute MUST match the value of the :code:`name` attribute on a :code:`component` or :code:`import component` element in the imported :ref:`CellML infoset<specA_cellml_infoset>`.
       See also the :ref:`Component reference<specC_component_reference>` section.
