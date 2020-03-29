@@ -281,9 +281,15 @@ latex_elements = {
     'preamble': r'''
                     \usepackage[titles]{tocloft}
                     \usepackage{textgreek}
+                    \usepackage[utf8]{inputenc}
+                    \usepackage{amssymb}
                     \DeclareUnicodeCharacter{2212}{-}
+                    \DeclareUnicodeCharacter{03A9}{Ω}
+                    \DeclareUnicodeCharacter{00B7}{⋅}
                 '''
 }
+# \newunicodechar{⋅}{\.}
+# \newunicodechar{Ω}{\ohm}
 
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title,
