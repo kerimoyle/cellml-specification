@@ -278,7 +278,7 @@ latex_elements = {
     # 'pointsize': '10pt',
 
     # Removing the blank pages between chapters
-    'extraclassoptions': 'openany,oneside'
+    'extraclassoptions': 'openany,oneside',
 
     # Additional stuff for the LaTeX preamble.
     'preamble': r'''
