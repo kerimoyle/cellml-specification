@@ -2,14 +2,16 @@
 CellML Specification
 ====================
 
-This repository will be used by the CellML editors to develop the CellML specification (starting with version 1.2). The content has been reworked to include an informal guide embedded within the normative specification text (in version 2.0).
+This repository will be used by the CellML editors to develop the CellML specification (starting with version 1.2)
+The content has been reworked to include an informal guide embedded within the normative specification text (in version 2.0).
 
 If things work correctly, changes in this repository will be reflected over at: https://cellml-specification.readthedocs.org/.
 
 Building the documentation locally
 ----------------------------------
 
-The documentation can be built on your local machine following these instructions. The following instructions are suitable for Unicies derived operating systems and may need modification for other operating systems.
+The documentation can be built on your local machine following these instructions.
+The following instructions are suitable for Unicies derived operating systems and may need modification for other operating systems.
 
 First clone a local copy of the CellML specification repository::
 
@@ -27,7 +29,8 @@ Then activate the virtual environment and install the required packages::
   pip install sphinx sphinx_rtd_theme
   pip install -r cellml-specification/requirements.txt
 
-That completes the environment setup required for building the documentation.  Once the environment is completed the html form of the documentation can be built with the following commands::
+That completes the environment setup required for building the documentation.
+Once the environment is completed the html form of the documentation can be built with the following commands::
 
   cd cellml-specification
   make html
