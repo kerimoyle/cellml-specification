@@ -11,7 +11,7 @@ Building the documentation locally
 ----------------------------------
 
 The documentation can be built on your local machine following these instructions.
-The following instructions are suitable for Unicies derived operating systems and may need modification for other operating systems.
+The following instructions are suitable for Unix-derived derived operating systems and may need modification for other operating systems.
 
 First clone a local copy of the CellML specification repository::
 
@@ -23,7 +23,7 @@ Next setup a virtual environment::
 
 Note: Make sure you are creating a Python 3 virtual environment, if required use the -p flag to set the Python interpreter (for example `virtualenv -p /absolute/path/to/python venv_specification`).
 
-Then activate the virtual environment and install the required packages::
+Then activate the virtual environment and instal the required packages::
 
   source venv_specification/bin/activate
   pip install sphinx sphinx_rtd_theme
