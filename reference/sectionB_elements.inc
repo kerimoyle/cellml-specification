@@ -489,7 +489,7 @@ A :code:`connection` element information item (referred to in this specification
 
 .. container:: issue-connection-map-variables
 
-   5. Every :code:`connection` element MUST contain one or more :code:`map_variables` elements.
+   5. A :code:`connection` element MAY contain one or more :code:`map_variables` elements.
 
 .. marker_connection_end
 .. marker_map_variables_start
