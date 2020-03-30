@@ -295,8 +295,8 @@ Effect of ``units`` on a ``variable``
 
 .. _specC_interpretation_of_mathematics:
 
-Interpretation of mathematics
------------------------------
+Interpretation of ``math`` elements
+-----------------------------------
 
 #. The following :code:`component` elements SHALL, for the purposes of this specification, be "pertinent component elements":
 
