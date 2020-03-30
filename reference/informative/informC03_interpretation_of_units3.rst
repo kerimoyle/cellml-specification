@@ -20,7 +20,7 @@
     This final list of tuples, representing the base unit and its exponent, is referred to as the unit reduction tuples for the :code:`units` element.
     Some other examples are given below.
 
-    Related to C03.3.2.1:
+    **Related to 3.3.3.2.1:**
 
     .. code-block:: xml
 
@@ -30,7 +30,7 @@
           <unit units="second" exponent="-1>
         </units>
 
-    Related to C03.3.2.2: Joules are equivalent to :math:`kg⋅m^2⋅s^{−2}`, and the extra "per second" takes the effective exponent for "second" to -3.
+    **Related to 3.3.3.2.2:** Joules are equivalent to :math:`kg⋅m^2⋅s^{−2}`, and the extra "per second" takes the effective exponent for "second" to -3.
 
     .. code-block:: xml
 
@@ -40,7 +40,7 @@
           <unit units="second" exponent="-1" />
         </units>
 
-    Related to C03.3.2.3 and 4: The concentration of apples per litre of cider is expressed using the custom base units "apple", the custom derived units "bushell_of_apples" and the built-in convenience units of  "litre", the last being equivalent to cubic metres.
+    **Related to 3.3.3.2.3 and 4:** The concentration of apples per litre of cider is expressed using the custom base units "apple", the custom derived units "bushell_of_apples" and the built-in convenience units of  "litre", the last being equivalent to cubic metres.
     Note that:
 
     - scaling does not affect the unit reduction tuples,
