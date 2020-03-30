@@ -1,11 +1,5 @@
 .. _sectionB:
 
-.. sectnum::
-
-====================================
-Section B: Element information items
-====================================
-
 .. marker_model_start
 
 .. _model:
@@ -28,6 +22,7 @@ Specific information items
 
    1. Every :code:`model` element MUST contain a :code:`name` attribute.
       The value of the :code:`name` attribute MUST be a :ref:`valid CellML identifier<specA_cellml_identifier>`.
+
 
 .. marker_model_1
 
@@ -141,9 +136,7 @@ Specific information items
 
 .. container:: issue-import-component-ref
 
-   2. Every :code:`import component` element MUST contain a
-:code:`component_ref` attribute. The value of the :code:`component_ref`
-attribute MUST be a :ref:`valid CellML identifier<specA_cellml_identifier>`.
+   2. Every :code:`import component` element MUST contain a :code:`component_ref` attribute. The value of the :code:`component_ref` attribute MUST be a :ref:`valid CellML identifier<specA_cellml_identifier>`.
 
       The value of the :code:`component_ref` attribute MUST match the value of the :code:`name` attribute on a :code:`component` or :code:`import component` element in the imported :ref:`CellML infoset<specA_cellml_infoset>`.
       See also the :ref:`Component reference<specC_component_reference>` section.
@@ -419,8 +412,7 @@ Specific information items
 
 .. _table_supported_mathml_elements:
 
-Table: Supported MathML Elements
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Table 2.1: Supported MathML elements**
 
 +----------------------------------+----------------------------------+
 | **Element Category**             | **Element List**                 |

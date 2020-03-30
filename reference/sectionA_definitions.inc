@@ -1,52 +1,5 @@
 .. _sectionA:
 
-**CellML 2.0 Specification**
-
-**Authors:**
-
- - Michael Clerx,
- - Michael T. Cooling,
- - Jonathan Cooper,
- - Alan Garny,
- - Keri Moyle,
- - David P. Nickerson,
- - Poul Nielsen,
- - Hugh Sorby.
-
-**Contributors:**
-
- - Koray Atalag,
- - David Brooks,
- - Edmund J. Crampin,
- - Jesús Carro Fernández,
- - Peter J. Hunter,
- - Gary R. Mirams,
- - Maxwell L. Neal.
-
-The authors also wish to acknowledge the significant contribution of the (discontinued) draft CellML 1.2 specification, much of the text of which was incorporated into this specification - although the semantics have changed considerably.
-The CellML 1.2 specification was itself the result of a collaborative effort by a number of researchers during 2008-2011\:
-
- - Andrew K. Miller (who wrote the text reused here),
- - Randall Britten,
- - Jonathan Cooper,
- - Alan Garny,
- - Peter J. Hunter
- - Justin Marsh,
- - Poul Nielsen,
- - David P. Nickerson,
- - Hugh Sorby.
-
-**Contact:** editors@cellml.org
-
-**Preamble**
-
-This document is the normative version of the CellML Specification, defining the CellML syntax and the rules by which it should be used.
-It is intended primarily for the developers of software tools which directly consume CellML syntax.
-Users of CellML models should read the informative version of the CellML Specification which is available here: https://doi.org/science/1.1.1.10.
-
-
-.. sectnum::
-
 .. marker_terminology_start
 
 .. _specA_terminology:
@@ -322,7 +275,7 @@ The following data representation formats are defined for use in this specificat
    .. container:: issue-data-repr-real-exponent
 
       4. An exponent SHALL be represented by an exponent separator character, followed by the :ref:`integer string representation<specA_integer>` of the value of the exponent.
-      Non-negative exponents MAY begin with the Basic Latin plus sign character :unicode:`002B` as the sign indicator.
+         Non-negative exponents MAY begin with the Basic Latin plus sign character :unicode:`002B` as the sign indicator.
          The exponent separator character SHALL be either the Basic Latin "E" character :unicode:`0045` or the Basic Latin "e" character :unicode:`0065`.
 
    .. container:: issue-data-repr-real-no-exponent
