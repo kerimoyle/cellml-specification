@@ -8,7 +8,7 @@ This document is the normative version of the CellML Specification, defining the
 It is intended primarily for the developers of software tools which directly consume CellML syntax.
 
 
-Users of CellML models should read the informative version of the CellML Specification which is available here: https://cellml.org/specifications/cellml_2.0
+Users of CellML models should read the informative version of the CellML Specification which is available at https://cellml.org/specifications/cellml_2.0.
 
 **Authors:**
 Michael Clerx,
