@@ -9,13 +9,12 @@ Interpretation of ``import`` elements
 -------------------------------------
 
 #. Each :code:`import` element present in a :ref:`CellML infoset<specA_cellml_infoset>` (the importing infoset) SHALL define a new and separate instance of the CellML infoset referenced by the :code:`href` attribute (the imported infoset).
-   See :ref:`Units reference<specC_units_reference>` and :ref:`Component reference<specC_component_reference>` for the specifics of importing units and components.
+   See :ref:`References to units elements<specC_units_reference>` and :ref:`References to component elements<specC_component_reference>` for the specifics of importing units and components.
 
 .. marker_interpretation_of_imports_end
 .. marker_units_reference_start
 
 .. _specC_units_reference:
-
 
 References to ``units`` elements
 --------------------------------
@@ -258,7 +257,7 @@ Interpretation of ``units`` elements
    2. If the :code:`units` element has one or more :code:`unit` child elements, then the set of tuples SHALL consist of the entire collection of tuples given by all :code:`unit` child elements.
       Tuples for each :code:`unit` child element SHALL be determined as follows:
 
-      1. Where the units reference of the :code:`unit` child element is to a single unit which is an irreducible unit, then the set of tuples SHALL have a single member, which SHALL consist of the name of the irreducible unit being referenced and the exponent 1.0.
+      1. Where the ref:`units reference<specC_units_reference>` of the :code:`unit` child element is to a single unit which is an irreducible unit, then the set of tuples SHALL have a single member, which SHALL consist of the name of the irreducible unit being referenced and the exponent 1.0.
 
       2. Where the units reference of the :code:`unit` child element is to built-in units other than an irreducible unit, then the tuples SHALL be derived directly from the :ref:`Built-in units<table_built_in_units>` table.
          Specifically, the set of tuples SHALL consist of the tuples given in the "Unit reduction tuple set" column of the row for which the value in the "Name" column matches the name of the units reference.
@@ -365,7 +364,7 @@ Interpretation of ``initial_value`` attributes
 Effect of ``units`` on a ``variable``
 -------------------------------------
 
-#. The value of the :code:`units` attribute on every :code:`variable` element MUST be a valid units reference.
+#. The value of the :code:`units` attribute on every :code:`variable` element MUST be a valid :ref:`units reference<specC_units_reference>`.
    The target of this units reference is referred to as the variable units, and the corresponding unit reduction (see :ref:`Interpretation of units<specC_interpretation_of_units>`) is referred to as the variable unit reduction.
 
 .. marker_effect_of_units_on_variables_end
