@@ -1,4 +1,4 @@
-.. _formal:
+.. _formal_singlepage:
 
 ==================================
 Normative CellML 2.0 Specification
@@ -9,15 +9,12 @@ It is intended primarily for the developers of software tools which directly con
 
 Users of CellML models should read the informative version of the CellML Specification which is available at https://cellml.org/specifications/cellml_2.0.
 
+A PDF of this page is available from **TODO**.
+
 .. include:: reference/acknowledgements.rst
-
-.. toctree::
-    :maxdepth: 2
-    :numbered:
-
-    reference/formal_sectionA.rst
-    reference/formal_sectionB.rst
-    reference/formal_sectionC.rst
-    reference/sectionD_references.rst
+.. include:: reference/formal_sectionA.rst
+.. include:: reference/formal_sectionB.rst
+.. include:: reference/formal_sectionC.rst
+.. include:: reference/sectionD_references.rst
 
 
