@@ -10,7 +10,7 @@
 
     You may only have one :code:`connection` any two :code:`components`, regardless of which is specified as :code:`component_1` and which is specified as :code:`component_2`.
     If you have found duplicate :code:`connection` elements, simply merge their contents - a :code:`connection` can contain any number of :code:`map_variables` children.
-    Make sure that the order in which you spe **TODO**
+    Make sure that the order in which you specify the :code:`component` attributes matches the order in which you specify their child :code:`variable` items too: ie, all :code:`variable_1` items must be within the :code:`component_1` component and vice versa.
 
     .. code-block:: xml
 
@@ -35,7 +35,7 @@
             </connection>
         </model>
 
-        <!-- Merge the contents to create a valid model -->
+        <!-- This is now valid: The contents were merged to create a valid model -->
         <model>
             <component name="house_of_capulet">
                 <variable name="juliet" interface_type="public">
