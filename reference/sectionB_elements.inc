@@ -12,6 +12,7 @@ The ``model`` element
    The top-level element information item in a :ref:`CellML infoset<specA_cellml_infoset>` MUST be an element in the :ref:`CellML namespace<specA_cellml_namespace>` with a local name equal to :code:`model`.
    In this specification, the top-level element is referred to as the :code:`model` element.
 
+
 .. container:: issue-model-name
 
    1. Every :code:`model` element MUST contain a :code:`name` attribute.
