@@ -338,9 +338,7 @@ The term "component reference" refers to the value of a :code:`component_ref` at
 References to ``variable`` elements
 -----------------------------------
 
-#. When present as the value of an :code:`initial_value` attribute of a :code:`variable` element, a variable reference SHALL be the name of a variable, and SHALL refer to the :code:`variable` element in that component with a :code:`name` attribute identical to the variable reference.
-
-#. When present within :code:`<ci>` tags in a :code:`<math>` element, a variable reference SHALL be the name of a variable, and SHALL refer to the :code:`variable` element in that component with a :code:`name` attribute identical to the variable reference.
+#. When present in a descendant of a :code:`component` element, a variable reference SHALL be the name of a variable, and SHALL refer to the :code:`variable` element in that component with a :code:`name` attribute identical to the variable reference.
 
 #. When present as the value of a :code:`variable_1` attribute of a :code:`map_variables` element, a variable reference SHALL be the name of a variable, and SHALL be interpreted as referring to the :code:`variable` element with a :code:`name` attribute identical to the variable reference and being a child of the :code:`component` named by the value of the :code:`component_1` attribute of the parent :code:`connection` element.
 
