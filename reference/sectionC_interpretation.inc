@@ -270,16 +270,11 @@ Interpretation of ``units`` elements
    3. Tuples which have the name element of "dimensionless" SHALL be removed from the set of tuples.
       Note that this can result in the set of tuples being empty.
 
-
    4. Where the set of tuples consists of tuples which have the same name element, those tuples SHALL be combined into a single tuple with that name element and an exponent being the sum of the combined tuples’ exponents.
       If the resulting tuple’s exponent term is zero, the tuple SHALL be removed from the set of tuples.
       Note that this can result in the set of tuples being empty.
 
 .. marker_interpretation_of_units_3
-
-.. raw:: latex
-
-   \newpage
 
 .. _table_prefix_values:
 
