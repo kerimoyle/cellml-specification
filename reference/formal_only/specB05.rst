@@ -3,6 +3,4 @@
   :start-after: marker_units_start
   :end-before: marker_units_end
 
-.. raw:: latex
-
-    \newpage
+ 
