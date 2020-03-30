@@ -1,8 +1,8 @@
 .. _formal:
 
-==========================================
-CellML 2.0 Specification
-==========================================
+==================================
+Normative CellML 2.0 Specification
+==================================
 
 This document is the normative version of the CellML Specification, defining the CellML syntax and the rules by which it should be used.
 It is intended primarily for the developers of software tools which directly consume CellML syntax.
