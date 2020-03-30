@@ -405,7 +405,8 @@ Specific information items
 
 .. container:: issue-math-cn-units-attribute
 
-   4. A MathML :code:`cn` element MUST have an attribute in the :ref:`CellML namespace<specA_cellml_namespace>`, with a local name equal to :code:`units`. The value of this attribute MUST be a valid units reference to a :code:`units` item within the infoset or a :ref:`built-in units<table_built_in_units>` item.
+   4. A MathML :code:`cn` element MUST have an attribute in the :ref:`CellML namespace<specA_cellml_namespace>`, with a local name equal to :code:`units`. 
+   The value of this attribute MUST be a valid :ref:`units reference<specC_units_reference>` to a :code:`units` item within the infoset or a :ref:`built-in units<table_built_in_units>` item.
 
 .. container:: issue-math-cn-type
 
