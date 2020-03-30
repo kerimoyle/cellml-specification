@@ -280,6 +280,10 @@ Interpretation of ``units`` elements
 
 .. marker_interpretation_of_units_3_4
 
+.. raw:: latex
+
+   \newpage
+
 .. _table_prefix_values:
 
 **Table 3.2: Prefix values**
