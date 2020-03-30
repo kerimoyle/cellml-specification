@@ -277,6 +277,9 @@ latex_elements = {
     # The font size ('10pt', '11pt' or '12pt').
     # 'pointsize': '10pt',
 
+    # Removing the blank pages between chapters
+    'extraclassoptions': 'openany,oneside',
+
     # Additional stuff for the LaTeX preamble.
     'preamble': r'''
                     \usepackage[titles]{tocloft}
