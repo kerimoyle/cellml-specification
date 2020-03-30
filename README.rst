@@ -29,7 +29,7 @@ Then activate the virtual environment and install the required packages::
 
 That completes the environment setup required for building the documentation.  Once the environment is completed the html form of the documentation can be built with the following commands::
 
-  cd cell-specification
+  cd cellml-specification
   make html
 
 The built documentation will be available at::
