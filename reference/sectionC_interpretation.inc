@@ -267,18 +267,15 @@ Interpretation of ``units`` elements
 
       4. The exponents of each tuple in the set for the current :code:`unit` element, as derived by following rule 3.2.1, 3.2.2 or 3.2.3 above, SHALL be multiplied by the exponent term of the current, referencing, :code:`unit` element.
 
-.. marker_interpretation_of_units_3_2
-
    3. Tuples which have the name element of "dimensionless" SHALL be removed from the set of tuples.
       Note that this can result in the set of tuples being empty.
 
-.. marker_interpretation_of_units_3_3
 
    4. Where the set of tuples consists of tuples which have the same name element, those tuples SHALL be combined into a single tuple with that name element and an exponent being the sum of the combined tuples’ exponents.
       If the resulting tuple’s exponent term is zero, the tuple SHALL be removed from the set of tuples.
       Note that this can result in the set of tuples being empty.
 
-.. marker_interpretation_of_units_3_4
+.. marker_interpretation_of_units_3
 
 .. raw:: latex
 
