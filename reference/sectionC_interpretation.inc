@@ -339,8 +339,8 @@ Interpretation of ``encapsulation`` elements
 
 .. _specC_interpretation_of_map_variables:
 
-Interpretation of ``map_variables``
------------------------------------
+Interpretation of ``map_variables`` elements
+--------------------------------------------
 
 #.  For the purposes of this specification, the variable equivalence (conceptual) network SHALL be an undirected graph with one node for every :code:`variable` element in the :ref:`CellML model<specA_cellml_model>`.
     The arcs of this graph SHALL be equivalences defined in the CellML model.
