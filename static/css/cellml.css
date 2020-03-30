@@ -120,6 +120,7 @@ div[class^="issue"], div[class*=" issue"] > ol {
     font-family: "Roboto Slab","ff-tisa-web-pro","Georgia",Arial,sans-serif;
     font-size:200%;
     font-weight: 700;
+    padding-bottom: 20px;
 }
 
 .heading2 {
