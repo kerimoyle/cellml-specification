@@ -1,27 +1,26 @@
 .. _sectionC:
 
-.. sectnum::
-
-===========================================
-Section C: Interpretation
-===========================================
 .. marker_interpretation_of_imports_start
 
 .. _specC_interpretation_of_imports:
 
-Interpretation of imports
--------------------------
+
+Interpretation of ``import`` elements
+-------------------------------------
 
 #. Each :code:`import` element present in a :ref:`CellML infoset<specA_cellml_infoset>` (the importing infoset) SHALL define a new and separate instance of the CellML infoset referenced by the :code:`href` attribute (the imported infoset).
-   See :ref:`Units reference<specC_units_reference>` and    :ref:`Component reference<specC_component_reference>` for the specifics    of importing units and components.
+   See :ref:`Units reference<specC_units_reference>` and :ref:`Component reference<specC_component_reference>` for the specifics of importing units and components.
 
 .. marker_interpretation_of_imports_end
 .. marker_units_reference_start
 
 .. _specC_units_reference:
 
-Units reference
----------------
+
+References to ``units`` elements
+--------------------------------
+
+The term "units reference" refers to the value of a :code:`units_ref` attribute in :code:`import` items for :code:`units`, and the values of :code:`units` attributes used in :code:`unit` and :code:`variable` items.
 
 #. A units reference SHALL be a CellML identifier and SHALL be interpreted dependent on the context of the :ref:`CellML model<specA_cellml_model>` in which it occurs, according to the units referencing rules defined later in this section.
 
@@ -39,94 +38,185 @@ Units reference
 
 .. _table_built_in_units:
 
-Table: Built-in units
-~~~~~~~~~~~~~~~~~~~~~
+**Table 3.1: Built-in units**
 
-+---------------+-------------------+--------------------------------+
-| **Name**      | **Multiplier(s)** | **Unit reduction tuple**       |
-|               |                   | (dimension, exponent) set      |
-+---------------+-------------------+--------------------------------+
-| ampere        | -                 | -                              |
-+---------------+-------------------+--------------------------------+
-| becquerel     | 1                 | (second, -1)                   |
-+---------------+-------------------+--------------------------------+
-| candela       | -                 | -                              |
-+---------------+-------------------+--------------------------------+
-| coulomb       | 1, 1              | (second, 1), (ampere,1)        |
-+---------------+-------------------+--------------------------------+
-| dimensionless | -                 | -                              |
-+---------------+-------------------+--------------------------------+
-| farad         | 1, 1, 1, 1        | (metre, -2), (kilogram, -1),   |
-|               |                   | (second, 4), (ampere, 2)       |
-+---------------+-------------------+--------------------------------+
-| gram          | 0.001             | (kilogram,1 )                  |
-+---------------+-------------------+--------------------------------+
-| gray          | 1, 1              | (metre, 2), (second, -2)       |
-+---------------+-------------------+--------------------------------+
-| henry         | 1, 1, 1, 1        | (metre, 2), (kilogram, 1),     |
-|               |                   | (second, -2), (ampere, -2)     |
-+---------------+-------------------+--------------------------------+
-| hertz         | 1                 | (second, -1)                   |
-+---------------+-------------------+--------------------------------+
-| joule         | 1, 1, 1           | (metre, 2), (kilogram, 1),     |
-|               |                   | (second, -2)                   |
-+---------------+-------------------+--------------------------------+
-| katal         | 1, 1              | (second, -1), (mole, 1)        |
-+---------------+-------------------+--------------------------------+
-| kelvin        | -                 | -                              |
-+---------------+-------------------+--------------------------------+
-| kilogram      | -                 | -                              |
-+---------------+-------------------+--------------------------------+
-| litre         | 0.001             | (metre, 3)                     |
-+---------------+-------------------+--------------------------------+
-| lumen         | 1                 | (candela, 1)                   |
-+---------------+-------------------+--------------------------------+
-| lux           | 1, 1              | (metre, -2), (candela, 1)      |
-+---------------+-------------------+--------------------------------+
-| metre         | -                 | -                              |
-+---------------+-------------------+--------------------------------+
-| mole          | -                 | -                              |
-+---------------+-------------------+--------------------------------+
-| newton        | 1, 1, 1           | (metre, 1), (kilogram, 1),     |
-|               |                   | (second, -2)                   |
-+---------------+-------------------+--------------------------------+
-| ohm           | 1, 1, 1, 1        | (metre, 2), (kilogram, 1),     |
-|               |                   | (second, -3), (ampere, -2)     |
-+---------------+-------------------+--------------------------------+
-| pascal        | 1, 1, 1           | (metre, -1), (kilogram, 1),    |
-|               |                   | (second, -2)                   |
-+---------------+-------------------+--------------------------------+
-| radian        | 1, 1              | (metre, 1), (metre, -1)        |
-+---------------+-------------------+--------------------------------+
-| second        | -                 | -                              |
-+---------------+-------------------+--------------------------------+
-| siemens       | 1, 1, 1, 1        | (metre, -2), (kilogram -1),    |
-|               |                   | (second, 3), (ampere, 2)       |
-+---------------+-------------------+--------------------------------+
-| sievert       | 1, 1              | (metre, 2), (second, -2)       |
-+---------------+-------------------+--------------------------------+
-| steradian     | 1, 1              | (metre, 2), (metre, -2)        |
-+---------------+-------------------+--------------------------------+
-| tesla         | 1, 1, 1           | (kilogram, 1), (second, -2),   |
-|               |                   | (ampere, -1)                   |
-+---------------+-------------------+--------------------------------+
-| volt          | 1, 1, 1, 1        | (metre, 2), (kilogram, 1),     |
-|               |                   | (second , -3), (ampere, -1)    |
-+---------------+-------------------+--------------------------------+
-| watt          | 1, 1, 1           | (metre, 2), (kilogram, 1),     |
-|               |                   | (second, -3)                   |
-+---------------+-------------------+--------------------------------+
-| weber         | 1, 1, 1, 1        | (metre, 2), (kilogram, 1),     |
-|               |                   | (second, -2), (ampere, -1)     |
-+---------------+-------------------+--------------------------------+
+.. only:: html
+
+      +---------------+-------------------+-------------------------------------------+-------------------------+
+      | **Name**      | **Symbol**        | | **Unit reduction tuple**                | **Common definitions**  |
+      |               |                   | | multiplier⋅(base, exponent)             |                         |
+      +---------------+-------------------+-------------------------------------------+-------------------------+
+      | ampere        | A                 | \-                                        |                         |
+      +---------------+-------------------+-------------------------------------------+-------------------------+
+      | becquerel     | Bq                | (second, -1)                              | 1/s                     |
+      +---------------+-------------------+-------------------------------------------+-------------------------+
+      | candela       | cd                | \-                                        |                         |
+      +---------------+-------------------+-------------------------------------------+-------------------------+
+      | coulomb       | C                 | (second, 1), (ampere,1)                   | | s⋅A                   |
+      |               |                   |                                           | | F⋅V                   |
+      +---------------+-------------------+-------------------------------------------+-------------------------+
+      | dimensionless | \-                | \-                                        |                         |
+      +---------------+-------------------+-------------------------------------------+-------------------------+
+      | farad         | F                 | (kilogram, -1), (metre, -2),              | | C/V                   |
+      |               |                   | (second, 4), (ampere, 2)                  | | s/Ω                   |
+      +---------------+-------------------+-------------------------------------------+-------------------------+
+      | gram          | g                 | 0.001⋅(kilogram, 1)                       |                         |
+      +---------------+-------------------+-------------------------------------------+-------------------------+
+      | gray          | Gy                | (metre, 2), (second, -2)                  | J/kg                    |
+      +---------------+-------------------+-------------------------------------------+-------------------------+
+      | henry         | H                 | (kilogram, 1), (metre, 2),                | | V⋅s/A                 |
+      |               |                   | (second, -2), (ampere, -2)                | | Ω⋅s                   |
+      |               |                   |                                           | | Wb/A                  |
+      +---------------+-------------------+-------------------------------------------+-------------------------+
+      | hertz         | Hz                | (second, -1)                              |                         |
+      +---------------+-------------------+-------------------------------------------+-------------------------+ 
+      | joule         | J                 | (kilogram, 1), (metre, 2),                | | N⋅m                   |
+      |               |                   | (second, -2)                              | | C⋅V                   |
+      |               |                   |                                           | | Wb⋅s                  |
+      +---------------+-------------------+-------------------------------------------+-------------------------+
+      | katal         | kat               | (second, -1), (mole, 1)                   |                         |
+      +---------------+-------------------+-------------------------------------------+-------------------------+
+      | kelvin        | K                 | \-                                        |                         |
+      +---------------+-------------------+-------------------------------------------+-------------------------+
+      | kilogram      | kg                | \-                                        |                         |
+      +---------------+-------------------+-------------------------------------------+-------------------------+ 
+      | litre         | l                 | 0.001⋅(metre, 3)                          |                         |
+      +---------------+-------------------+-------------------------------------------+-------------------------+
+      | lumen         | lm                | (candela, 1)                              | cd⋅sr                   |
+      +---------------+-------------------+-------------------------------------------+-------------------------+
+      | lux           | lx                | (metre, -2), (candela, 1)                 | lm/m\ :sup:`2`          |
+      +---------------+-------------------+-------------------------------------------+-------------------------+
+      | metre         | m                 | \-                                        |                         |
+      +---------------+-------------------+-------------------------------------------+-------------------------+
+      | mole          | mol               | \-                                        |                         |
+      +---------------+-------------------+-------------------------------------------+-------------------------+
+      | newton        | N                 | (kilogram, 1), (metre, 1),                |                         |
+      |               |                   | (second, -2)                              |                         |
+      +---------------+-------------------+-------------------------------------------+-------------------------+
+      | ohm           | Ω                 | (kilogram, 1), (metre, 2),                | | 1/S                   |
+      |               |                   | (second, -3), (ampere, -2)                | | V/A                   |
+      +---------------+-------------------+-------------------------------------------+-------------------------+
+      | pascal        | Pa                | (kilogram, 1), (metre, -1),               | N/m\ :sup:`2`           |
+      |               |                   | (second, -2)                              |                         |
+      +---------------+-------------------+-------------------------------------------+-------------------------+
+      | radian        | rad               | (dimensionless, 1)                        | m/m                     |
+      +---------------+-------------------+-------------------------------------------+-------------------------+
+      | second        | s                 | \-                                        |                         |
+      +---------------+-------------------+-------------------------------------------+-------------------------+
+      | siemens       | S                 | (kilogram -1), (metre, -2),               | | 1/Ω                   |
+      |               |                   | (second, 3), (ampere, 2)                  | | A/V                   |
+      +---------------+-------------------+-------------------------------------------+-------------------------+
+      | sievert       | Sv                | (metre, 2), (second, -2)                  | J/kg                    |
+      +---------------+-------------------+-------------------------------------------+-------------------------+
+      | steradian     | sr                | (dimensionless, 1)                        | m\ :sup:`2`/m\ :sup:`2` |
+      +---------------+-------------------+-------------------------------------------+-------------------------+
+      | tesla         | T                 | (kilogram, 1), (second, -2),              | | V⋅s/m\ :sup:`2`       |
+      |               |                   | (ampere, -1)                              | | Wb/m\ :sup:`2`        |
+      |               |                   |                                           | | N/(A⋅m)               |
+      +---------------+-------------------+-------------------------------------------+-------------------------+
+      | volt          | V                 | (kilogram, 1), (metre, 2),                | | W/A                   |
+      |               |                   | (second , -3), (ampere, -1)               | | J/C                   |
+      +---------------+-------------------+-------------------------------------------+-------------------------+
+      | watt          | W                 | (kilogram, 1), (metre, 2),                | | J/s                   |
+      |               |                   | (second, -3)                              | | V⋅A                   |
+      +---------------+-------------------+-------------------------------------------+-------------------------+
+      | weber         | Wb                | (kilogram, 1), (metre, 2),                | | J/A                   |
+      |               |                   | (second, -2), (ampere, -1)                | | T⋅m\ :sup:`2`         |
+      +---------------+-------------------+-------------------------------------------+-------------------------+
+
+
+.. only:: latex
+
+      +---------------+-------------------+-------------------------------------------+-------------------------+
+      | **Name**      | **Symbol**        | | **Unit reduction tuple**                | **Common definitions**  |
+      |               |                   | | multiplier.(base, exponent)             |                         |
+      +---------------+-------------------+-------------------------------------------+-------------------------+
+      | ampere        | A                 | \-                                        |                         |
+      +---------------+-------------------+-------------------------------------------+-------------------------+
+      | becquerel     | Bq                | (second, -1)                              | 1/s                     |
+      +---------------+-------------------+-------------------------------------------+-------------------------+
+      | candela       | cd                | \-                                        |                         |
+      +---------------+-------------------+-------------------------------------------+-------------------------+
+      | coulomb       | C                 | (second, 1), (ampere,1)                   | | s.A                   |
+      |               |                   |                                           | | F.V                   |
+      +---------------+-------------------+-------------------------------------------+-------------------------+
+      | dimensionless | \-                | \-                                        |                         |
+      +---------------+-------------------+-------------------------------------------+-------------------------+
+      | farad         | F                 | | (kilogram, -1), (metre, -2),            | | C/V                   |
+      |               |                   | | (second, 4), (ampere, 2)                | | s/Ω                   |
+      +---------------+-------------------+-------------------------------------------+-------------------------+
+      | gram          | g                 | 0.001 . (kilogram, 1)                     |                         |
+      +---------------+-------------------+-------------------------------------------+-------------------------+
+      | gray          | Gy                | (metre, 2), (second, -2)                  | J/kg                    |
+      +---------------+-------------------+-------------------------------------------+-------------------------+
+      | henry         | H                 | | (kilogram, 1), (metre, 2),              | | V.s/A                 |
+      |               |                   | | (second, -2), (ampere, -2)              | | Ω.s                   |
+      |               |                   |                                           | | Wb/A                  |
+      +---------------+-------------------+-------------------------------------------+-------------------------+
+      | hertz         | Hz                | (second, -1)                              |                         |
+      +---------------+-------------------+-------------------------------------------+-------------------------+ 
+      | joule         | J                 | (kilogram, 1), (metre, 2),                | | N.m                   |
+      |               |                   | (second, -2)                              | | C.V                   |
+      |               |                   |                                           | | Wb.s                  |
+      +---------------+-------------------+-------------------------------------------+-------------------------+
+      | katal         | kat               | (second, -1), (mole, 1)                   |                         |
+      +---------------+-------------------+-------------------------------------------+-------------------------+
+      | kelvin        | K                 | \-                                        |                         |
+      +---------------+-------------------+-------------------------------------------+-------------------------+
+      | kilogram      | kg                | \-                                        |                         |
+      +---------------+-------------------+-------------------------------------------+-------------------------+ 
+      | litre         | l                 | 0.001 . (metre, 3)                        |                         |
+      +---------------+-------------------+-------------------------------------------+-------------------------+
+      | lumen         | lm                | (candela, 1)                              | cd.sr                   |
+      +---------------+-------------------+-------------------------------------------+-------------------------+
+      | lux           | lx                | (metre, -2), (candela, 1)                 | lm/m\ :sup:`2`          |
+      +---------------+-------------------+-------------------------------------------+-------------------------+
+      | metre         | m                 | \-                                        |                         |
+      +---------------+-------------------+-------------------------------------------+-------------------------+
+      | mole          | mol               | \-                                        |                         |
+      +---------------+-------------------+-------------------------------------------+-------------------------+
+      | newton        | N                 | (kilogram, 1), (metre, 1),                |                         |
+      |               |                   | (second, -2)                              |                         |
+      +---------------+-------------------+-------------------------------------------+-------------------------+
+      | ohm           | Ω                 | (kilogram, 1), (metre, 2),                | | 1/S                   |
+      |               |                   | (second, -3), (ampere, -2)                | | V/A                   |
+      +---------------+-------------------+-------------------------------------------+-------------------------+
+      | pascal        | Pa                | (kilogram, 1), (metre, -1),               | N/m\ :sup:`2`           |
+      |               |                   | (second, -2)                              |                         |
+      +---------------+-------------------+-------------------------------------------+-------------------------+
+      | radian        | rad               | (dimensionless, 1)                        | m/m                     |
+      +---------------+-------------------+-------------------------------------------+-------------------------+
+      | second        | s                 | \-                                        |                         |
+      +---------------+-------------------+-------------------------------------------+-------------------------+
+      | siemens       | S                 | (kilogram -1), (metre, -2),               | | 1/Ω                   |
+      |               |                   | (second, 3), (ampere, 2)                  | | A/V                   |
+      +---------------+-------------------+-------------------------------------------+-------------------------+
+      | sievert       | Sv                | (metre, 2), (second, -2)                  | J/kg                    |
+      +---------------+-------------------+-------------------------------------------+-------------------------+
+      | steradian     | sr                | (dimensionless, 1)                        | m\ :sup:`2`/m\ :sup:`2` |
+      +---------------+-------------------+-------------------------------------------+-------------------------+
+      | tesla         | T                 | | (kilogram, 1), (second, -2),            | | V⋅s/m\ :sup:`2`       |
+      |               |                   | | (ampere, -1)                            | | Wb/m\ :sup:`2`        |
+      |               |                   |                                           | | N/(A.m)               |
+      +---------------+-------------------+-------------------------------------------+-------------------------+
+      | volt          | V                 | (kilogram, 1), (metre, 2),                | | W/A                   |
+      |               |                   | (second , -3), (ampere, -1)               | | J/C                   |
+      +---------------+-------------------+-------------------------------------------+-------------------------+
+      | watt          | W                 | (kilogram, 1), (metre, 2),                | | J/s                   |
+      |               |                   | (second, -3)                              | | V.A                   |
+      +---------------+-------------------+-------------------------------------------+-------------------------+
+      | weber         | Wb                | (kilogram, 1), (metre, 2),                | | J/A                   |
+      |               |                   | (second, -2), (ampere, -1)                | | T.m\ :sup:`2`         |
+      +---------------+-------------------+-------------------------------------------+-------------------------+
+
 
 .. marker_units_reference_end
 .. marker_interpretation_of_units_start
 
 .. _specC_interpretation_of_units:
 
-Interpretation of units
------------------------
+Interpretation of ``units`` elements
+------------------------------------
 
 1. The :code:`units` element SHALL be interpreted as the product of its
    :code:`unit` element children, according to the following rules:
@@ -136,8 +226,6 @@ Interpretation of units
       If the :code:`prefix` attribute information item has a value which is an integer string, then the value of the prefix term SHALL be the numerical value of that string.
       Otherwise, the :code:`prefix` attribute information item MUST have a value taken from the "Name" column of the :ref:`Prefix values table<table_prefix_values>`, and the prefix term SHALL have the value taken from the "Value" column of the same row.
 
-.. marker_interpretation_of_units_1_1
-
    2. The exponent term is a conceptual property of :code:`unit` elements.
       If a :code:`unit` element has no :code:`exponent` attribute information item, the exponent term SHALL have value 1.0.
       Otherwise, the value of the :code:`exponent` attribute information item MUST be a real number string, and the value of the exponent term SHALL be the numerical value of that string.
@@ -146,20 +234,18 @@ Interpretation of units
       If a :code:`unit` element has no :code:`multiplier` attribute information item, the multiplier term SHALL have value 1.0.
       Otherwise, the value of the :code:`multiplier` attribute information item MUST be a real number string, and the value of the multiplier term SHALL be the numerical value of that string.
 
-.. marker_interpretation_of_units_1_3
-
    4. The relationship between the product, :math:`P`, of numerical values given in each and every child :code:`unit` element units, to a numerical value, :math:`x`, with units given by the encompassing :code:`units` element, SHALL be
 
-      .. image:: images/equation_units_expansion.png
-          :align: center
-          :width: 50%
+      .. math::
 
-      where: :math:`u_x` denotes the units of the :code:`units` element; :math:`p_i`, :math:`e_i`, :math:`m_i` and :math:`u_i` refer to the prefix, exponent and multiplier terms and units of the :math:`i^{th}` :code:`unit` child element, respectively.
+         x[u_x] = {\dfrac {1} {m_1 \dotsm m_n(10^{p_1})^{e_1} \dotsm (10^{p_1})^{e_n}}} { \left[ \dfrac {u_x}{u^{e_1} \dotsm u^{e_n}} \right ] }P \left[ u^{e_1} \dotsm u^{e_n} \right]
+
+      where :math:`u_x` denotes the units of the :code:`units` element; :math:`p_i`, :math:`e_i`, :math:`m_i` and :math:`u_i` refer to the prefix, exponent and multiplier terms and units of the :math:`i^{th}` :code:`unit` child element, respectively.
       Square brackets encompass the units of numerical values.
 
-.. marker_interpretation_of_units_1_4
+.. marker_interpretation_of_units_1
 
-2. For the purposes of  this specification, the "irreducible units" of a model SHALL consist of 1) the units defined in a model that are not defined in terms of other units (i.e. the set of :code:`units` elements in the :ref:`CellML model<specA_cellml_model>` which have no :code:`unit` child elements), and 2) built-in irreducible units (those built-in units with "-" in the "Unit Reduction" column of the :ref:`Built-in units<table_built_in_units>` table) referenced by variables or other units in the model.
+2. For the purposes of this specification, the "irreducible units" of a model SHALL consist of 1) the units defined in a model that are not defined in terms of other units (i.e. the set of :code:`units` elements in the :ref:`CellML model<specA_cellml_model>` which have no :code:`unit` child elements), and 2) built-in irreducible units (those built-in units with "-" in the "Unit Reduction" column of the :ref:`Built-in units<table_built_in_units>` table) referenced by variables or other units in the model.
 
 .. marker_interpretation_of_units_2
 
@@ -181,23 +267,23 @@ Interpretation of units
 
       4. The exponents of each tuple in the set for the current :code:`unit` element, as derived by following rule 3.2.1, 3.2.2 or 3.2.3 above, SHALL be multiplied by the exponent term of the current, referencing, :code:`unit` element.
 
-.. marker_interpretation_of_units_3_2
-
    3. Tuples which have the name element of "dimensionless" SHALL be removed from the set of tuples.
       Note that this can result in the set of tuples being empty.
 
-.. marker_interpretation_of_units_3_3
 
    4. Where the set of tuples consists of tuples which have the same name element, those tuples SHALL be combined into a single tuple with that name element and an exponent being the sum of the combined tuples’ exponents.
       If the resulting tuple’s exponent term is zero, the tuple SHALL be removed from the set of tuples.
       Note that this can result in the set of tuples being empty.
 
-.. marker_interpretation_of_units_3_4
+.. marker_interpretation_of_units_3
+
+.. raw:: latex
+
+   \newpage
 
 .. _table_prefix_values:
 
-Table: Prefix values
-~~~~~~~~~~~~~~~~~~~~
+**Table 3.2: Prefix values**
 
 ======== =========
 **Name** **Value**
@@ -223,14 +309,16 @@ zepto    −21
 yocto    −24
 ======== =========
 
-
 .. marker_interpretation_of_units_end
 .. marker_component_reference_start
 
 .. _specC_component_reference:
 
-Component reference
--------------------
+
+References to ``component`` elements
+------------------------------------
+
+The term "component reference" refers to the value of a :code:`component_ref` attribute used in an :code:`import` item for :code:`component` items, to :code:`component_ref` elements which occur as children of :code:`encapsulation` items, and to the value of :code:`component_1` and :code:`component_2` attributes used in :code:`connection` items.
 
 #. A component reference SHALL be the name of a component, and SHALL be interpreted based on the context within the :ref:`CellML model<specA_cellml_model>` in which it occurs.
 
@@ -247,23 +335,24 @@ Component reference
 
 .. _specC_variable_reference:
 
-Variable reference
-------------------
+References to ``variable`` elements
+-----------------------------------
 
 #. When present in an information item which is a descendant of a :code:`component` element, a variable reference SHALL be the name of a variable, and SHALL refer to the :code:`variable` element in that component with a :code:`name` attribute identical to the variable reference.
 
 #. In all other cases, a variable reference SHALL consist of a component reference and a variable name.
-In this case, the variable reference SHALL be treated as if it was just the variable name present in the :code:`component` element referenced by the component reference.
+   In this case, the variable reference SHALL be treated as if it was just the variable name present in the :code:`component` element referenced by the component reference.
 
 .. marker_variable_reference_end
 .. marker_interpretation_of_initial_values_start
 
 .. _specC_interpretation_of_initial_values:
 
-Interpretation of initial values
---------------------------------
 
-#. The :code:`initial_value` attribute of a :code:`variable` element MUST either be a real number string, or a variable reference (see 19.5).
+Interpretation of ``initial_value`` attributes
+----------------------------------------------
+
+#. The :code:`initial_value` attribute of a :code:`variable` element MUST either be a real number string, or a :ref:`variable reference<_specC_variable_reference>`.
 
 #. The conditions when initial values hold are (by design) not defined in a :ref:`CellML model<specA_cellml_model>` document.
 
@@ -276,8 +365,9 @@ Interpretation of initial values
 
 .. _specC_effect_of_units_on_variables:
 
-Effect of units on variables
-----------------------------
+
+Effect of ``units`` on a ``variable``
+-------------------------------------
 
 #. The value of the :code:`units` attribute on every :code:`variable` element MUST be a valid units reference.
    The target of this units reference is referred to as the variable units, and the corresponding unit reduction (see :ref:`Interpretation of units<specC_interpretation_of_units>`) is referred to as the variable unit reduction.
@@ -287,8 +377,9 @@ Effect of units on variables
 
 .. _specC_interpretation_of_mathematics:
 
-Interpretation of mathematics
------------------------------
+
+Interpretation of ``math`` elements
+-----------------------------------
 
 #. The following :code:`component` elements SHALL, for the purposes of this specification, be "pertinent component elements":
 
@@ -307,8 +398,9 @@ Interpretation of mathematics
 
 .. _specC_interpretation_of_encapsulation:
 
-Interpretation of encapsulation
--------------------------------
+
+Interpretation of ``encapsulation`` elements
+--------------------------------------------
 
 #. For the purposes of this specification, there SHALL be a "conceptual encapsulation digraph" in which there is EXACTLY one node for every component in the :ref:`CellML model<specA_cellml_model>`.
    Therefore the encapsulation digraph will not contain any loops.
@@ -331,8 +423,8 @@ Interpretation of encapsulation
 
 .. _specC_interpretation_of_map_variables:
 
-Interpretation of map_variables
--------------------------------
+Interpretation of ``map_variables`` elements
+--------------------------------------------
 
 #.  For the purposes of this specification, the variable equivalence (conceptual) network SHALL be an undirected graph with one node for every :code:`variable` element in the :ref:`CellML model<specA_cellml_model>`.
     The arcs of this graph SHALL be equivalences defined in the CellML model.
@@ -390,8 +482,9 @@ Interpretation of map_variables
 
 .. _specC_interpretation_of_variable_resets:
 
-Interpretation of variable resets
----------------------------------
+
+Interpretation of ``reset`` elements
+------------------------------------
 
 #. Each :code:`reset` element describes a change to be applied to the variable referenced by the :code:`variable` attribute when specified conditions are met during the simulation of the model.
 

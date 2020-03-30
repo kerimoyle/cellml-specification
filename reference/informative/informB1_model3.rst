@@ -15,4 +15,4 @@
     For more information about encapsulation, please refer to :ref:`The encapsulation element information item<specB_encapsulation>`.
 
     For more information and examples involving and explaining encapsulation, please refer to the :libcellml_tutorials:`Theory of a sodium channel <theory/theory_index.html>` page.
-    **TODO** put link to theory section in libCellML here?
+
