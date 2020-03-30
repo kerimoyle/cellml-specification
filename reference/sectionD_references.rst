@@ -2,7 +2,7 @@
 .. _sectionD:
 
 =====================
-Section D: References
+References
 =====================
 
 `RFC 2119: Key words for use in RFCs to Indicate Requirement Levels <http://www.ietf.org/rfc/rfc2119.txt>`__ (March 1997)
