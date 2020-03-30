@@ -19,5 +19,3 @@ Users of CellML models should read the informative version of the CellML Specifi
     reference/formal_sectionB.rst
     reference/formal_sectionC.rst
     reference/sectionD_references.rst
-
-

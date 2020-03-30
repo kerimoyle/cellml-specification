@@ -12,6 +12,9 @@ Users of CellML models should read the informative version of the CellML Specifi
 A PDF of this page is available from **TODO**.
 
 .. include:: reference/acknowledgements.rst
+
+.. sectnum::
+
 .. include:: reference/sectionA_definitions.inc
 .. include:: reference/sectionB_elements.inc
 .. include:: reference/sectionC_interpretation.inc
