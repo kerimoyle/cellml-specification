@@ -142,8 +142,6 @@ Interpretation of units
       If the :code:`prefix` attribute information item has a value which is an integer string, then the value of the prefix term SHALL be the numerical value of that string.
       Otherwise, the :code:`prefix` attribute information item MUST have a value taken from the "Name" column of the :ref:`Prefix values table<table_prefix_values>`, and the prefix term SHALL have the value taken from the "Value" column of the same row.
 
-.. marker_interpretation_of_units_1_1
-
    2. The exponent term is a conceptual property of :code:`unit` elements.
       If a :code:`unit` element has no :code:`exponent` attribute information item, the exponent term SHALL have value 1.0.
       Otherwise, the value of the :code:`exponent` attribute information item MUST be a real number string, and the value of the exponent term SHALL be the numerical value of that string.
@@ -152,18 +150,16 @@ Interpretation of units
       If a :code:`unit` element has no :code:`multiplier` attribute information item, the multiplier term SHALL have value 1.0.
       Otherwise, the value of the :code:`multiplier` attribute information item MUST be a real number string, and the value of the multiplier term SHALL be the numerical value of that string.
 
-.. marker_interpretation_of_units_1_3
-
    4. The relationship between the product, :math:`P`, of numerical values given in each and every child :code:`unit` element units, to a numerical value, :math:`x`, with units given by the encompassing :code:`units` element, SHALL be
 
-      .. image:: images/equation_units_expansion.png
-          :align: center
-          :width: 50%
+      .. math::
 
-      where: :math:`u_x` denotes the units of the :code:`units` element; :math:`p_i`, :math:`e_i`, :math:`m_i` and :math:`u_i` refer to the prefix, exponent and multiplier terms and units of the :math:`i^{th}` :code:`unit` child element, respectively.
+         x[u_x] = {\dfrac {1} {m_1 \dotsm m_n(10^{p_1})^{e_1} \dotsm (10^{p_1})^{e_n}}} { \left[ \dfrac {u_x}{u^{e_1} \dotsm u^{e_n}} \right ] }P \left[ u^{e_1} \dotsm u^{e_n} \right]
+
+      where :math:`u_x` denotes the units of the :code:`units` element; :math:`p_i`, :math:`e_i`, :math:`m_i` and :math:`u_i` refer to the prefix, exponent and multiplier terms and units of the :math:`i^{th}` :code:`unit` child element, respectively.
       Square brackets encompass the units of numerical values.
 
-.. marker_interpretation_of_units_1_4
+.. marker_interpretation_of_units_1
 
 2. For the purposes of  this specification, the "irreducible units" of a model SHALL consist of 1) the units defined in a model that are not defined in terms of other units (i.e. the set of :code:`units` elements in the :ref:`CellML model<specA_cellml_model>` which have no :code:`unit` child elements), and 2) built-in irreducible units (those built-in units with "-" in the "Unit Reduction" column of the :ref:`Built-in units<table_built_in_units>` table) referenced by variables or other units in the model.
 
