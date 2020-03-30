@@ -14,24 +14,8 @@
 
 .. include:: ../sectionC_interpretation.inc
   :start-after: marker_interpretation_of_units_2
-  :end-before: marker_interpretation_of_units_3_2
+  :end-before: marker_interpretation_of_units_3
 
-.. include:: ../informative/informC03_interpretation_of_units3_2.rst
-
-.. include:: ../sectionC_interpretation.inc
-  :start-after: marker_interpretation_of_units_3_2
-  :end-before: marker_interpretation_of_units_3_3
-
-.. include:: ../informative/informC03_interpretation_of_units3_3.rst
-
-.. include:: ../sectionC_interpretation.inc
-  :start-after: marker_interpretation_of_units_3_3
-  :end-before: marker_interpretation_of_units_3_4
-
-.. include:: ../informative/informC03_interpretation_of_units3_4.rst
-
-.. include:: ../sectionC_interpretation.inc
-  :start-after: marker_interpretation_of_units_3_4
-  :end-before: marker_interpretation_of_units_end
+.. include:: ../informative/informC03_interpretation_of_units3.rst
 
 .. include:: ../libcellml/libcellmlC03_interpretation_of_units.rst
