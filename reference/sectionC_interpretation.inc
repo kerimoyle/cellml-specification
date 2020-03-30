@@ -4,19 +4,21 @@
 
 .. _specC_interpretation_of_imports:
 
-Interpretation of imports
-=========================
+
+Interpretation of ``import`` elements
+-------------------------------------
 
 #. Each :code:`import` element present in a :ref:`CellML infoset<specA_cellml_infoset>` (the importing infoset) SHALL define a new and separate instance of the CellML infoset referenced by the :code:`href` attribute (the imported infoset).
-   See :ref:`Units reference<specC_units_reference>` and    :ref:`Component reference<specC_component_reference>` for the specifics    of importing units and components.
+   See :ref:`Units reference<specC_units_reference>` and :ref:`Component reference<specC_component_reference>` for the specifics of importing units and components.
 
 .. marker_interpretation_of_imports_end
 .. marker_units_reference_start
 
 .. _specC_units_reference:
 
-Units reference
-===============
+
+References to ``units`` elements
+--------------------------------
 
 The term "units reference" refers to the value of a :code:`units_ref` attribute in :code:`import` items for :code:`units`, and the values of :code:`units` attributes used in :code:`unit` and :code:`variable` items.
 
@@ -211,8 +213,9 @@ The term "units reference" refers to the value of a :code:`units_ref` attribute 
 
 .. _specC_interpretation_of_units:
 
-Interpretation of units
-=======================
+
+Interpretation of ``units`` elements
+------------------------------------
 
 1. The :code:`units` element SHALL be interpreted as the product of its
    :code:`unit` element children, according to the following rules:
@@ -241,7 +244,7 @@ Interpretation of units
 
 .. marker_interpretation_of_units_1
 
-2. For the purposes of  this specification, the "irreducible units" of a model SHALL consist of 1) the units defined in a model that are not defined in terms of other units (i.e. the set of :code:`units` elements in the :ref:`CellML model<specA_cellml_model>` which have no :code:`unit` child elements), and 2) built-in irreducible units (those built-in units with "-" in the "Unit Reduction" column of the :ref:`Built-in units<table_built_in_units>` table) referenced by variables or other units in the model.
+2. For the purposes of this specification, the "irreducible units" of a model SHALL consist of 1) the units defined in a model that are not defined in terms of other units (i.e. the set of :code:`units` elements in the :ref:`CellML model<specA_cellml_model>` which have no :code:`unit` child elements), and 2) built-in irreducible units (those built-in units with "-" in the "Unit Reduction" column of the :ref:`Built-in units<table_built_in_units>` table) referenced by variables or other units in the model.
 
 .. marker_interpretation_of_units_2
 
@@ -309,8 +312,9 @@ yocto    −24
 
 .. _specC_component_reference:
 
-Component reference
-===================
+
+References to ``component`` elements
+------------------------------------
 
 The term "component reference" refers to the value of a :code:`component_ref` attribute used in an :code:`import` item for :code:`component` items, to :code:`component_ref` elements which occur as children of :code:`encapsulation` items, and to the value of :code:`component_1` and :code:`component_2` attributes used in :code:`connection` items.
 
@@ -329,8 +333,8 @@ The term "component reference" refers to the value of a :code:`component_ref` at
 
 .. _specC_variable_reference:
 
-Variable reference
-==================
+References to ``variable`` elements
+-----------------------------------
 
 #. When present in an information item which is a descendant of a :code:`component` element, a variable reference SHALL be the name of a variable, and SHALL refer to the :code:`variable` element in that component with a :code:`name` attribute identical to the variable reference.
 
@@ -342,8 +346,9 @@ Variable reference
 
 .. _specC_interpretation_of_initial_values:
 
-Interpretation of initial values
-================================
+
+Interpretation of ``initial_value`` attributes
+----------------------------------------------
 
 #. The :code:`initial_value` attribute of a :code:`variable` element MUST either be a real number string, or a :ref:`variable reference<_specC_variable_reference>`.
 
@@ -358,8 +363,9 @@ Interpretation of initial values
 
 .. _specC_effect_of_units_on_variables:
 
-Effect of units on variables
-============================
+
+Effect of ``units`` on a ``variable``
+-------------------------------------
 
 #. The value of the :code:`units` attribute on every :code:`variable` element MUST be a valid units reference.
    The target of this units reference is referred to as the variable units, and the corresponding unit reduction (see :ref:`Interpretation of units<specC_interpretation_of_units>`) is referred to as the variable unit reduction.
@@ -369,8 +375,9 @@ Effect of units on variables
 
 .. _specC_interpretation_of_mathematics:
 
-Interpretation of mathematics
-=============================
+
+Interpretation of ``math`` elements
+-----------------------------------
 
 #. The following :code:`component` elements SHALL, for the purposes of this specification, be "pertinent component elements":
 
@@ -389,8 +396,9 @@ Interpretation of mathematics
 
 .. _specC_interpretation_of_encapsulation:
 
-Interpretation of encapsulation
-===============================
+
+Interpretation of ``encapsulation`` elements
+--------------------------------------------
 
 #. For the purposes of this specification, there SHALL be a "conceptual encapsulation digraph" in which there is EXACTLY one node for every component in the :ref:`CellML model<specA_cellml_model>`.
    Therefore the encapsulation digraph will not contain any loops.
@@ -413,8 +421,8 @@ Interpretation of encapsulation
 
 .. _specC_interpretation_of_map_variables:
 
-Interpretation of map_variables
--------------------------------
+Interpretation of ``map_variables`` elements
+--------------------------------------------
 
 #.  For the purposes of this specification, the variable equivalence (conceptual) network SHALL be an undirected graph with one node for every :code:`variable` element in the :ref:`CellML model<specA_cellml_model>`.
     The arcs of this graph SHALL be equivalences defined in the CellML model.
@@ -472,8 +480,9 @@ Interpretation of map_variables
 
 .. _specC_interpretation_of_variable_resets:
 
-Interpretation of variable resets
-=================================
+
+Interpretation of ``reset`` elements
+------------------------------------
 
 #. Each :code:`reset` element describes a change to be applied to the variable referenced by the :code:`variable` attribute when specified conditions are met during the simulation of the model.
 
