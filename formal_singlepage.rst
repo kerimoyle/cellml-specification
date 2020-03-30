@@ -15,9 +15,22 @@ A PDF of this page is available from **TODO**.
 
 .. sectnum::
 
+
+Definitions 
+===========
 .. include:: reference/sectionA_definitions.inc
+
+
+Element information items
+=========================
 .. include:: reference/sectionB_elements.inc
+
+
+Interpretation
+==============
 .. include:: reference/sectionC_interpretation.inc
+
+
 .. include:: reference/sectionD_references.rst
 
 
