@@ -1,12 +1,11 @@
 .. _sectionA_index_formal:
 
-===================================
-Section A: Definitions and preamble
-===================================
+===========
+Definitions 
+===========
 
 .. toctree::
-    :maxdepth: 1
-    :numbered:
+    :maxdepth: 2
     :glob:
 
     formal_only/specA*
