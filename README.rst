@@ -10,8 +10,9 @@ If things work correctly, changes in this repository will be reflected over at: 
 Building the documentation locally
 ----------------------------------
 
-The documentation can be built on your local machine following these instructions.
-The following instructions are suitable for Unix-derived derived operating systems and may need modification for other operating systems.
+The documentation can be built on your local machine with the following instructions.
+Do take note that the following instructions are suitable for Unix-derived operating systems and may need modification for other operating systems.
+Also, note that we require at least version 3.5 of Python to build the documentation.
 
 First clone a local copy of the CellML specification repository::
 
@@ -45,4 +46,8 @@ To build the pdf form of the documentation simply execute the following command:
 
   make latexpdf
 
-Note: Creating the pdf form of the documentation requires that latexmk is available.
+Note: Creating the pdf form of the documentation requires that latexmk is available, information on latexmk can be found at https://ctan.org/pkg/latexmk/.
+
+Note: The documentation built with `make html` is different to the documentation built with `make latexpdf`.
+The html form of the documentation is the full form being both the normative specification and the informative specification.
+Whilst the pdf form of the documentation is solely the normative specification.
