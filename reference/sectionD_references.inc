@@ -9,7 +9,7 @@ Namespaces in XML 1.1 (Second Edition) https://www.w3.org/TR/2006/REC-xml-names1
 
 RFC 2119: Key words for use in RFCs to Indicate Requirement Levels https://www.ietf.org/rfc/rfc2119.txt (March 1997)
 
-Unicode 1.1.0  https://www.unicode.org/charts/ (June 1993)
+Unicode 13.0  https://www.unicode.org/charts/ (6 February 2020)
 
 XML Information Set (Second Edition) https://www.w3.org/TR/2004/REC-xml-infoset-20040204/ (4 February 2004)
 
