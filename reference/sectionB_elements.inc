@@ -388,28 +388,26 @@ A :code:`math` element information item (referred to in this specification as a 
 | Relational and Logical Operators | :code:`eq`, :code:`neq`, :code:`gt`, :code:`lt`, :code:`geq`,  |
 |                                  | :code:`leq`, :code:`and`, :code:`or`, :code:`xor`, :code:`not` |
 +----------------------------------+----------------------------------------------------------------+
-| Arithmetic Operators             | :code:`plus`, :code:`minus`, :code:`times`,                    |
-|                                  | :code:`divide`, :code:`power`, :code:`root`,                   |
-|                                  | :code:`abs`, :code:`exp`, :code:`ln`,                          |
-|                                  |                                                                |
-|                                  | :code:`log`,                                                   |
-|                                  | :code:`floor`, :code:`ceiling`, :code:`min`,                   |
-|                                  | :code:`max`, :code:`rem`,                                      |
+| Arithmetic Operators             | | :code:`plus`, :code:`minus`, :code:`times`, :code:`divide`,  |
+|                                  | | :code:`power`, :code:`root`, :code:`abs`,                    |
+|                                  | | :code:`exp`, :code:`ln`, :code:`log`,                        |
+|                                  | | :code:`floor`, :code:`ceiling`,                              |
+|                                  | | :code:`min`, :code:`max`, :code:`rem`,                       |
 +----------------------------------+----------------------------------------------------------------+
 | Calculus Elements                | :code:`diff`                                                   |
 +----------------------------------+----------------------------------------------------------------+
 | Qualifier Elements \*            | :code:`bvar`, :code:`logbase`, :code:`degree`                  |
 +----------------------------------+----------------------------------------------------------------+
-| Trigonometric Operators          | :code:`sin`, :code:`cos`, :code:`tan`, :code:`sec`,            |
-|                                  | :code:`csc`, :code:`cot`,                                      |
+| Trigonometric Operators          | | :code:`sin`, :code:`cos`, :code:`tan`, :code:`sec`,          |
+|                                  | | :code:`csc`, :code:`cot`,                                    |
 |                                  |                                                                |
-|                                  | :code:`sinh`, :code:`cosh`, :code:`tanh`, :code:`sech`,        |
-|                                  | :code:`csch`, :code:`coth`, :code:`arcsin`,                    |
-|                                  | :code:`arccos`, :code:`arctan`,                                |
+|                                  | | :code:`sinh`, :code:`cosh`, :code:`tanh`, :code:`sech`,      |
+|                                  | | :code:`csch`, :code:`coth`, :code:`arcsin`,                  |
+|                                  | | :code:`arccos`, :code:`arctan`,                              |
 |                                  |                                                                |
-|                                  | :code:`arcsec`, :code:`arccsc`, :code:`arccot`,                |
-|                                  | :code:`arcsinh`, :code:`arccosh`, :code:`arctanh`,             |
-|                                  | :code:`arcsech`, :code:`arccsch`, :code:`arccoth`              |
+|                                  | | :code:`arcsec`, :code:`arccsc`, :code:`arccot`,              |
+|                                  | | :code:`arcsinh`, :code:`arccosh`, :code:`arctanh`,           |
+|                                  | | :code:`arcsech`, :code:`arccsch`, :code:`arccoth`            |
 +----------------------------------+----------------------------------------------------------------+
 | Mathematical and Logical         | :code:`pi`, :code:`exponentiale`,                              |
 | Constants                        | :code:`notanumber`, :code:`infinity`,                          |
