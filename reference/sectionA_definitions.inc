@@ -127,6 +127,8 @@ Specific information items
 
 #. The order in which specific information items appear, as children of an element information item defined in this specification, SHALL NOT affect the semantic interpretation of the :ref:`CellML model<specA_cellml_model>`.
 
+.. marker_cellml_information_sets_2
+
 .. _specA_semantic_equivalence:
 
 Semantically equivalent CellML infosets
@@ -144,10 +146,14 @@ Semantically equivalent CellML infosets
       changing the number of whitespace characters in such an information item,
       or changing the number of whitespace characters at the beginning or end of any character information item.
 
+.. marker_cellml_information_sets_3
+
 Character information items
 ---------------------------
 
 #. An element information item in the :ref:`CellML namespace<specA_cellml_namespace>` MUST NOT contain any character information items, except for character information items which consist entirely of whitespace characters.
+
+.. marker_cellml_information_sets_4
 
 Use of namespaces
 -----------------
