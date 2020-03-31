@@ -377,44 +377,44 @@ A :code:`math` element information item (referred to in this specification as a 
 
 **Table 2.1: Supported MathML elements**
 
-+----------------------------------+----------------------------------+
-| **Element Category**             | **Element List**                 |
-+----------------------------------+----------------------------------+
-| Simple Operands                  | <ci>, <cn>, <sep>                |
-+----------------------------------+----------------------------------+
-| Basic Structural                 | <apply>, <piecewise>, <piece>,   |
-|                                  | <otherwise>                      |
-+----------------------------------+----------------------------------+
-| Relational and Logical Operators | <eq>, <neq>, <gt>, <lt>, <geq>,  |
-|                                  | <leq>, <and>, <or>, <xor>, <not> |
-+----------------------------------+----------------------------------+
-| Arithmetic Operators             | <plus>, <minus>, <times>,        |
-|                                  | <divide>, <power>, <root>,       |
-|                                  | <abs>, <exp>, <ln>, <log>,       |
-|                                  | <floor>, <ceiling>, <min>,       |
-|                                  | <max>, <rem>,                    |
-+----------------------------------+----------------------------------+
-| Calculus Elements                | <diff>                           |
-+----------------------------------+----------------------------------+
-| Qualifier Elements               | <bvar>, <logbase>, <degree> \*   |
-+----------------------------------+----------------------------------+
-| Trigonometric Operators          | <sin>, <cos>, <tan>, <sec>,      |
-|                                  | <csc>, <cot>,                    |
-|                                  |                                  |
-|                                  | <sinh>, <cosh>, <tanh>, <sech>,  |
-|                                  | <csch>, <coth>, <arcsin>,        |
-|                                  | <arccos>, <arctan>,              |
-|                                  |                                  |
-|                                  | <arcsec>, <arccsc>, <arccot>,    |
-|                                  | <arcsinh>, <arccosh>, <arctanh>, |
-|                                  | <arcsech>, <arccsch>, <arccoth>  |
-+----------------------------------+----------------------------------+
-| Mathematical and Logical         | <pi>, <exponentiale>,            |
-| Constants                        | <notanumber>, <infinity>,        |
-|                                  | <true>, <false>                  |
-+----------------------------------+----------------------------------+
++----------------------------------+----------------------------------------------------------------+
+| **Element Category**             | **Element List**                                               |
++----------------------------------+----------------------------------------------------------------+
+| Simple Operands                  | :code:`ci`, :code:`cn`, :code:`sep`                            |
++----------------------------------+----------------------------------------------------------------+
+| Basic Structural                 | :code:`apply`, :code:`piecewise`, :code:`piece`,               |
+|                                  | :code:`otherwise`                                              |
++----------------------------------+----------------------------------------------------------------+
+| Relational and Logical Operators | :code:`eq`, :code:`neq`, :code:`gt`, :code:`lt`, :code:`geq`,  |
+|                                  | :code:`leq`, :code:`and`, :code:`or`, :code:`xor`, :code:`not` |
++----------------------------------+----------------------------------------------------------------+
+| Arithmetic Operators             | :code:`plus`, :code:`minus`, :code:`times`,                    |
+|                                  | :code:`divide`, :code:`power`, :code:`root`,                   |
+|                                  | :code:`abs`, :code:`exp`, :code:`ln`, :code:`log`,             |
+|                                  | :code:`floor`, :code:`ceiling`, :code:`min`,                   |
+|                                  | :code:`max`, :code:`rem`,                                      |
++----------------------------------+----------------------------------------------------------------+
+| Calculus Elements                | :code:`diff`                                                   |
++----------------------------------+----------------------------------------------------------------+
+| Qualifier Elements               | :code:`bvar`, :code:`logbase`, :code:`degree` \*               |
++----------------------------------+----------------------------------------------------------------+
+| Trigonometric Operators          | :code:`sin`, :code:`cos`, :code:`tan`, :code:`sec`,            |
+|                                  | :code:`csc`, :code:`cot`,                                      |
+|                                  |                                                                |
+|                                  | :code:`sinh`, :code:`cosh`, :code:`tanh`, :code:`sech`,        |
+|                                  | :code:`csch`, :code:`coth`, :code:`arcsin`,                    |
+|                                  | :code:`arccos`, :code:`arctan`,                                |
+|                                  |                                                                |
+|                                  | :code:`arcsec`, :code:`arccsc`, :code:`arccot`,                |
+|                                  | :code:`arcsinh`, :code:`arccosh`, :code:`arctanh`,             |
+|                                  | :code:`arcsech`, :code:`arccsch`, :code:`arccoth`              |
++----------------------------------+----------------------------------------------------------------+
+| Mathematical and Logical         | :code:`pi`, :code:`exponentiale`,                              |
+| Constants                        | :code:`notanumber`, :code:`infinity`,                          |
+|                                  | :code:`true`, :code:`false`                                    |
++----------------------------------+----------------------------------------------------------------+
 
-\* (child of <root> or <diff>)
+\* (child of :code:`root` or :code:`diff`)
 
 .. marker_math_end
 .. marker_encapsulation_start
