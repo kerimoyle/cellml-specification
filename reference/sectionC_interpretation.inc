@@ -11,7 +11,7 @@ Interpretation of ``import`` elements
 #. Each :code:`import` element present in a :ref:`CellML infoset<specA_cellml_infoset>` (the importing infoset) SHALL define a new and distinct instance of the CellML infoset which is referenced by the :code:`href` attribute (the imported infoset).
    This imported infoset instance SHALL provide the context in which the child of an import element (a :code:`units` or :code:`component` element) is defined and interpreted.
 
-#. The imported infoset SHALL be considered holistically such that items relevant to the imported infoset (:code:`unit` children of imported :code:`units` elements or encapsulation children of imported :code:`component` elements) are themselves available to that :code:`import` element child.
+#. The imported infoset SHALL be considered holistically such that items relevant to the imported infoset (:code:`unit` children of imported :code:`units` elements or :ref:`encapsulation set<specC_encapsulation_set>` of imported :code:`component` elements) are themselves available to that :code:`import` element child.
    It is noted, for the avoidance of doubt, that the importing infoset SHALL NOT have access to such implicitly imported items, but only to explicitly specified :code:`import` element children.
 
 See :ref:`Units reference<specC_units_reference>` and :ref:`Component reference<specC_component_reference>` for the specifics of importing units and components.
@@ -405,7 +405,9 @@ Interpretation of ``encapsulation`` elements
 
 #. Where a :code:`component_ref` element appears as a child of another :code:`component_ref` element, there SHALL be an arc in the encapsulation digraph, and that arc SHALL be from the node corresponding to the component referenced by the parent :code:`component_ref` element, and to the node corresponding to the component referenced by the child :code:`component_ref` element.
 
-#. The encapsulated set for a component *A* SHALL be the set of all components *B* such that there exists an arc in the encapsulation digraph from the node corresponding to *A* to the node corresponding to *B*.
+.. _specC_encapsulation_set
+
+3. The encapsulated set for a component *A* SHALL be the set of all components *B* such that there exists an arc in the encapsulation digraph from the node corresponding to *A* to the node corresponding to *B*.
 
 #. The encapsulation parent for a component *A* SHALL be the component corresponding to the node which is the parent node in the encapsulation digraph of the node corresponding to *A*.
    A component SHALL NOT appear as child of more than one encapsulation parent.
