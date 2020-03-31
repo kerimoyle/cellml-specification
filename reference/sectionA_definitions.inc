@@ -35,7 +35,7 @@ An XML namespace, as defined in :xml_namespace_1_1:`Namespaces in XML 1.1`.
 .. _specA_cellml2_namespace:
 
 **CellML 2.0 namespace:**
-The namespace http://www.cellml.org/cellml/2.0#.
+The namespace :cellml2:`http://www.cellml.org/cellml/2.0# <cellml/2.0#>`\.
 
 .. _specA_mathml_namespace:
 
