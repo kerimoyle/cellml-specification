@@ -399,12 +399,10 @@ A :code:`math` element information item (referred to in this specification as a 
 | Qualifier Elements               | :code:`bvar`, :code:`logbase`, :code:`degree` \*               |
 +----------------------------------+----------------------------------------------------------------+
 | Trigonometric Operators          | | :code:`sin`, :code:`cos`, :code:`tan`, :code:`sec`,          |
-|                                  | | :code:`csc`, :code:`cot`,                                    |
-|                                  |                                                                |
+|                                  |   :code:`csc`, :code:`cot`,                                    |
 |                                  | | :code:`sinh`, :code:`cosh`, :code:`tanh`, :code:`sech`,      |
-|                                  | | :code:`csch`, :code:`coth`, :code:`arcsin`,                  |
-|                                  | | :code:`arccos`, :code:`arctan`,                              |
-|                                  |                                                                |
+|                                  |   :code:`csch`, :code:`coth`,                                  |
+|                                  | | :code:`arcsin`, :code:`arccos`, :code:`arctan`,              |
 |                                  | | :code:`arcsec`, :code:`arccsc`, :code:`arccot`,              |
 |                                  | | :code:`arcsinh`, :code:`arccosh`, :code:`arctanh`,           |
 |                                  | | :code:`arcsech`, :code:`arccsch`, :code:`arccoth`            |
@@ -414,7 +412,7 @@ A :code:`math` element information item (referred to in this specification as a 
 |                                  | :code:`true`, :code:`false`                                    |
 +----------------------------------+----------------------------------------------------------------+
 
-\* (:code:`degree` must be a child of :code:`root` or :code:`diff`)
+\* :code:`degree` must be a child of :code:`root` or :code:`diff`
 
 .. marker_math_end
 .. marker_encapsulation_start
