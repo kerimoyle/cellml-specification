@@ -21,7 +21,6 @@ See :ref:`Units reference<specC_units_reference>` and :ref:`Component reference<
 
 .. _specC_units_reference:
 
-
 References to ``units`` elements
 --------------------------------
 
@@ -261,7 +260,7 @@ Interpretation of ``units`` elements
    2. If the :code:`units` element has one or more :code:`unit` child elements, then the set of tuples SHALL consist of the entire collection of tuples given by all :code:`unit` child elements.
       Tuples for each :code:`unit` child element SHALL be determined as follows:
 
-      1. Where the units reference of the :code:`unit` child element is to a single unit which is an irreducible unit, then the set of tuples SHALL have a single member, which SHALL consist of the name of the irreducible unit being referenced and the exponent 1.0.
+      1. Where the ref:`units reference<specC_units_reference>` of the :code:`unit` child element is to a single unit which is an irreducible unit, then the set of tuples SHALL have a single member, which SHALL consist of the name of the irreducible unit being referenced and the exponent 1.0.
 
       2. Where the units reference of the :code:`unit` child element is to built-in units other than an irreducible unit, then the tuples SHALL be derived directly from the :ref:`Built-in units<table_built_in_units>` table.
          Specifically, the set of tuples SHALL consist of the tuples given in the "Unit reduction tuple set" column of the row for which the value in the "Name" column matches the name of the units reference.
@@ -273,16 +272,11 @@ Interpretation of ``units`` elements
    3. Tuples which have the name element of "dimensionless" SHALL be removed from the set of tuples.
       Note that this can result in the set of tuples being empty.
 
-
    4. Where the set of tuples consists of tuples which have the same name element, those tuples SHALL be combined into a single tuple with that name element and an exponent being the sum of the combined tuples’ exponents.
       If the resulting tuple’s exponent term is zero, the tuple SHALL be removed from the set of tuples.
       Note that this can result in the set of tuples being empty.
 
 .. marker_interpretation_of_units_3
-
-.. raw:: latex
-
-   \newpage
 
 .. _table_prefix_values:
 
@@ -341,10 +335,11 @@ The term "component reference" refers to the value of a :code:`component_ref` at
 References to ``variable`` elements
 -----------------------------------
 
-#. When present in an information item which is a descendant of a :code:`component` element, a variable reference SHALL be the name of a variable, and SHALL refer to the :code:`variable` element in that component with a :code:`name` attribute identical to the variable reference.
+#. When present in a descendant of a :code:`component` element, a variable reference SHALL be the name of a variable, and SHALL refer to the :code:`variable` element in that component with a :code:`name` attribute identical to the variable reference.
 
-#. In all other cases, a variable reference SHALL consist of a component reference and a variable name.
-   In this case, the variable reference SHALL be treated as if it was just the variable name present in the :code:`component` element referenced by the component reference.
+#. When present as the value of a :code:`variable_1` attribute of a :code:`map_variables` element, a variable reference SHALL be the name of a variable, and SHALL be interpreted as referring to the :code:`variable` element with a :code:`name` attribute identical to the variable reference and being a child of the :code:`component` named by the value of the :code:`component_1` attribute of the parent :code:`connection` element.
+
+#. When present as the value of a :code:`variable_2` attribute of a :code:`map_variables` element, a variable reference SHALL be the name of a variable, and SHALL be interpreted as referring to the :code:`variable` element with a :code:`name` attribute identical to the variable reference and being a child of the :code:`component` named by the value of the :code:`component_2` attribute of the parent :code:`connection` element.
 
 .. marker_variable_reference_end
 .. marker_interpretation_of_initial_values_start
@@ -355,7 +350,7 @@ References to ``variable`` elements
 Interpretation of ``initial_value`` attributes
 ----------------------------------------------
 
-#. The :code:`initial_value` attribute of a :code:`variable` element MUST either be a real number string, or a :ref:`variable reference<_specC_variable_reference>`.
+#. The :code:`initial_value` attribute of a :code:`variable` element MUST either be a real number string, or a :ref:`variable reference<specC_variable_reference>`.
 
 #. The conditions when initial values hold are (by design) not defined in a :ref:`CellML model<specA_cellml_model>` document.
 
@@ -372,7 +367,7 @@ Interpretation of ``initial_value`` attributes
 Effect of ``units`` on a ``variable``
 -------------------------------------
 
-#. The value of the :code:`units` attribute on every :code:`variable` element MUST be a valid units reference.
+#. The value of the :code:`units` attribute on every :code:`variable` element MUST be a valid :ref:`units reference<specC_units_reference>`.
    The target of this units reference is referred to as the variable units, and the corresponding unit reduction (see :ref:`Interpretation of units<specC_interpretation_of_units>`) is referred to as the variable unit reduction.
 
 .. marker_effect_of_units_on_variables_end
