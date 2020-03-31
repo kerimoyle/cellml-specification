@@ -11,6 +11,6 @@ Informative CellML 2.0 Specification
     reference/index_sectionA.rst
     reference/index_sectionB.rst
     reference/index_sectionC.rst
-    reference/sectionD_references.rst
+    reference/index_sectionD.rst
 
 .. include:: reference/informative_preamble.rst
