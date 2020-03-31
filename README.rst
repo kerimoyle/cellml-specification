@@ -31,7 +31,7 @@ Then activate the virtual environment and instal the required packages::
   pip install -r cellml-specification/requirements.txt
 
 That completes the environment setup required for building the documentation.
-Once the environment is completed the HTML form of the documentation can be built with the following commands::
+Once the environment is completed the html form of the documentation can be built with the following commands::
 
   cd cellml-specification
   make html
@@ -42,12 +42,11 @@ The built documentation will be available at::
 
 Any good internet browser will be able to display the documentation.
 
-To build the PDF form of the documentation simply execute the following command::
+To build the pdf form of the documentation simply execute the following command::
 
   make latexpdf
 
-Note: Creating the PDF form of the documentation requires that latexmk is available, information on latexmk can be found at https://ctan.org/pkg/latexmk/.
+Note: Creating the pdf form of the documentation requires that latexmk is available, information on latexmk can be found at https://ctan.org/pkg/latexmk/.
 
 Note: The documentation built with `make html` is different to the documentation built with `make latexpdf`.
-The HTML form of the documentation is the full form being both the normative specification and the informative specification.
-Whilst the PDF form of the documentation is solely the normative specification.
+The html form of the documentation is the full form being both the normative specification and the informative specification, the pdf form of the documentation is solely the normative specification.
