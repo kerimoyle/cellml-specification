@@ -41,21 +41,21 @@
             </apply>
           </math>
           
-          <!-- Whitespace (including tab, new line, and space) between attributes is ignored -->
+          <!-- Whitespace (including tab, new line, and space) between attributes is ignored. -->
           <variable 
             name="selfraising_flour" 
             cellml:units="cup" 
           />
            <variable         name="cream"           cellml:units="cup"          />
 
-          <!-- Whitespace (including tab, new line, and space) between elements is ignored -->
+          <!-- Whitespace (including tab, new line, and space) between elements is ignored. -->
 
 
 
           <variable cellml:units="dimensionless"  name="mixture" /><variable name="lemonade" cellml:units="cup" />
         </component>
         <units name="cup">
-          <!-- The order of attributes within an element is ignored -->
+          <!-- The order of attributes within an element is ignored. -->
           <unit multiplier="250.0" prefix="milli"  units="litre" />
         </units>
       </model>

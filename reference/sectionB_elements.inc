@@ -139,8 +139,9 @@ A :code:`units` element information item (referred to in this specification as a
 .. container:: issue-units-name
 
    1. Every :code:`units` element MUST contain a :code:`name` attribute.
-   The value of the :code:`name` attribute MUST be a :ref:`valid CellML identifier<specA_cellml_identifier>`.
+      The value of the :code:`name` attribute MUST be a :ref:`valid CellML identifier<specA_cellml_identifier>`.
 
+.. _issue-units-name-unique:
 .. container:: issue-units-name-unique
 
    2. The value of the :code:`name` attribute MUST NOT be identical to the :code:`name` attribute of any other :code:`units` element or :code:`import units` element in the :ref:`CellML infoset<specA_cellml_infoset>`.
@@ -207,6 +208,8 @@ The ``component`` element
 A :code:`component` element information item (referred to in this specification as a :code:`component` element) is an element in the :ref:`CellML namespace<specA_cellml_namespace>` with a local name equal to :code:`component`, and which appears as a child of a :code:`model` element.
 
 .. marker_component_1
+
+.. _issue-component-name:
 
 .. container:: issue-component-name
 

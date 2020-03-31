@@ -8,19 +8,19 @@
 
     .. container:: infospec
 
-      Importing :code:`Units` means that you're assured of consistency between your models, and allows for a more modular reuse of the components which use them.
-      There are three ingredients required in importing an item:
+      Importing units means that you're assured of consistency between your models, and allows for a more modular reuse of the components which use them.
+      There are three ingredients required in importing any item:
 
-        - a destination item in the importing model (this is the :code:`units` item called :code:`smallPotOfPaint` in the example below)
+        - A destination item in the importing model (this is the :code:`units` item called :code:`smallPotOfPaint` in the example below).
 
-        - a file to import from, specified using the :code:`xlink:href` attribute of the parent :code:`import` block.
+        - A file to import from, specified using the :code:`xlink:href` attribute of the parent :code:`import` block.
           This is discussed in more detail in :ref:`The import element information item<specB_import>`.
           In the example below this is the :code:`paint_pot_sizes.cellml` file.
 
-        - the specific item name to retrieve from the imported file.
+        - The specific item name to retrieve from the imported file.
           In the example below this is the :code:`twoLitrePot` value passed to the :code:`units_ref` attribute.
 
-      Thus we can read the import statement below as: "retrieve the :code:`Units` named :code:`twoLitrePot` from the file :code:`paint_pot_sizes.cellml`, and store it here in this model under the name :code:`potOfPaint` ".
+      Thus we can read the import statement below as: "retrieve the :code:`units` named :code:`twoLitrePot` from the file :code:`paint_pot_sizes.cellml`, and store it here in this model under the name :code:`potOfPaint`".
 
       .. code-block:: xml
 
@@ -32,7 +32,7 @@
 
       Imported items have the same restrictions as concrete items regarding the uniqueness of their names.
       In the example below, the name :code:`potOfPaint` is used for the locally defined units in line 2, but the same name is used as the name for the imported units in line 6.
-      This is not permitted as it violates 6.1.1.
+      This is not permitted as it violates :ref:`the uniqueness requirement for unit names<issue-units-name>`\.
 
       .. code-block:: xml
 
