@@ -11,5 +11,5 @@
     .. code-block:: xml
 
       <model name="myInvalidCellML" has other stuff in the element information item >
-        ...
+        
       </model>

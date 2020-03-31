@@ -17,3 +17,7 @@
   :end-before: marker_cellml_information_sets_4
 
 .. include:: ../informative/informA2_4.rst
+
+.. include:: ../sectionA_definitions.inc
+  :start-after: marker_cellml_information_sets_4
+  :end-before: marker_cellml_information_sets_end
