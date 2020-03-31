@@ -43,7 +43,6 @@ Any good internet browser will be able to display the documentation.
 
 To build the pdf form of the documentation simply execute the following command::
 
-  make pdf
+  make latexpdf
 
-
-
+Note: Creating the pdf form of the documentation requires that latexmk is available.
