@@ -426,7 +426,7 @@ An :code:`encapsulation` element information item (referred to in this specifica
 
 .. container:: issue-encapsulation-component-ref
 
-   1. Every :code:`encapsulation` element MUST contain one or more :code:`component_ref` elements.
+   1. An :code:`encapsulation` element MAY contain one or more :code:`component_ref` elements.
 
 .. marker_encapsulation_end
 .. marker_component_ref_start
@@ -447,10 +447,6 @@ A :code:`component_ref` element information item (referred to in this specificat
 .. container:: issue-component-ref-child
 
    2. Every :code:`component_ref` element MAY in turn contain one or more :code:`component_ref` element children.
-
-.. container:: issue-component-ref-encapsulation
-
-   3. A :code:`component_ref` element which is an immediate child of an :code:`encapsulation` element MUST each contain at least one :code:`component_ref` element child.
 
 .. marker_component_ref_end
 .. marker_connection_start
@@ -493,7 +489,7 @@ A :code:`connection` element information item (referred to in this specification
 
 .. container:: issue-connection-map-variables
 
-   5. Every :code:`connection` element MUST contain one or more :code:`map_variables` elements.
+   5. A :code:`connection` element MAY contain one or more :code:`map_variables` elements.
 
 .. marker_connection_end
 .. marker_map_variables_start

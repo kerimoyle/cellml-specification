@@ -9,11 +9,10 @@
   .. container:: infospec
 
     The point of creating a :code:`connection` item is in order to connect :code:`variables` between eligible :code:`components`.
-    There is no reason to have an empty :code:`connection` - just delete it.
+    You are allowed to have an empty :code:`connection`, but it is meaningless.
 
     .. code-block:: xml
 
-        <!-- This is a valid CellML 2.0 connection -->
         <model>
             <component name="house_of_capulet">
                 <variable name="juliet" interface_type="public">
@@ -22,7 +21,7 @@
                 <variable name="romeo" interface_type="public">
             </component>
 
-            <!-- an empty connection is meaningless, just delete it! -->
+            <!-- Valid but redundant: an empty connection is meaningless -->
             <connection component_1="montague" component_2="capulet">
             </connection>
         </model>
