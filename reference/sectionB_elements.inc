@@ -392,7 +392,7 @@ A :code:`math` element information item (referred to in this specification as a 
 |                                  | | :code:`power`, :code:`root`, :code:`abs`,                    |
 |                                  | | :code:`exp`, :code:`ln`, :code:`log`,                        |
 |                                  | | :code:`floor`, :code:`ceiling`,                              |
-|                                  | | :code:`min`, :code:`max`, :code:`rem`,                       |
+|                                  | | :code:`min`, :code:`max`, :code:`rem`                        |
 +----------------------------------+----------------------------------------------------------------+
 | Calculus Elements                | :code:`diff`                                                   |
 +----------------------------------+----------------------------------------------------------------+
