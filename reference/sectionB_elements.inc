@@ -396,7 +396,7 @@ A :code:`math` element information item (referred to in this specification as a 
 +----------------------------------+----------------------------------------------------------------+
 | Calculus Elements                | :code:`diff`                                                   |
 +----------------------------------+----------------------------------------------------------------+
-| Qualifier Elements \*            | :code:`bvar`, :code:`logbase`, :code:`degree`                  |
+| Qualifier Elements               | :code:`bvar`, :code:`logbase`, :code:`degree` \*               |
 +----------------------------------+----------------------------------------------------------------+
 | Trigonometric Operators          | | :code:`sin`, :code:`cos`, :code:`tan`, :code:`sec`,          |
 |                                  | | :code:`csc`, :code:`cot`,                                    |
