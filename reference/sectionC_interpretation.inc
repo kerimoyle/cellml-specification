@@ -279,29 +279,29 @@ Interpretation of ``units`` elements
 
 **Table 3.2: Prefix values**
 
-======== =========
-**Name** **Value**
-yotta    24
-zetta    21
-exa      18
-peta     15
-tera     12
-giga     9
-mega     6
-kilo     3
-hecto    2
-deca     1
-deci     −1
-centi    −2
-milli    −3
-micro    −6
-nano     −9
-pico     −12
-femto    −15
-atto     −18
-zepto    −21
-yocto    −24
-======== =========
+============== =========
+**Name**       **Value**
+:code:`yotta`    24
+:code:`zetta`    21
+:code:`exa`      18
+:code:`peta`     15
+:code:`tera`     12
+:code:`giga`     9
+:code:`mega`     6
+:code:`kilo`     3
+:code:`hecto`    2
+:code:`deca`     1
+:code:`deci`     −1
+:code:`centi`    −2
+:code:`milli`    −3
+:code:`micro`    −6
+:code:`nano`     −9
+:code:`pico`     −12
+:code:`femto`    −15
+:code:`atto`     −18
+:code:`zepto`    −21
+:code:`yocto`    −24
+============== =========
 
 .. marker_interpretation_of_units_end
 .. marker_component_reference_start
