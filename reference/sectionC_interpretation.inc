@@ -347,7 +347,7 @@ References to ``variable`` elements
 Interpretation of ``initial_value`` attributes
 ----------------------------------------------
 
-#. The :code:`initial_value` attribute of a :code:`variable` element MUST either be a real number string, or a :ref:variable reference<specC_variable_reference>`.
+#. The :code:`initial_value` attribute of a :code:`variable` element MUST either be a real number string, or a :ref:`variable reference<specC_variable_reference>`.
 
 #. The conditions when initial values hold are (by design) not defined in a :ref:`CellML model<specA_cellml_model>` document.
 
