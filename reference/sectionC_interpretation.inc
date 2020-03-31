@@ -8,8 +8,13 @@
 Interpretation of ``import`` elements
 -------------------------------------
 
-#. Each :code:`import` element present in a :ref:`CellML infoset<specA_cellml_infoset>` (the importing infoset) SHALL define a new and separate instance of the CellML infoset referenced by the :code:`href` attribute (the imported infoset).
-   See :ref:`References to units elements<specC_units_reference>` and :ref:`References to component elements<specC_component_reference>` for the specifics of importing units and components.
+#. Each :code:`import` element present in a :ref:`CellML infoset<specA_cellml_infoset>` (the importing infoset) SHALL define a new and distinct instance of the CellML infoset which is referenced by the :code:`href` attribute (the imported infoset).
+   This imported infoset instance SHALL provide the context in which the child of an import element (a :code:`units` or :code:`component` element) is defined and interpreted.
+
+#. The imported infoset SHALL be considered holistically such that items relevant to the imported infoset (:code:`unit` children of imported :code:`units` elements or the :ref:`encapsulated set<specC_encapsulation_set>` of imported :code:`component` elements) are themselves available to that :code:`import` element child.
+   It is noted, for the avoidance of doubt, that the importing infoset SHALL NOT have access to such implicitly imported items, but only to explicitly specified :code:`import` element children.
+
+See :ref:`Units reference<specC_units_reference>` and :ref:`Component reference<specC_component_reference>` for the specifics of importing units and components.
 
 .. marker_interpretation_of_imports_end
 .. marker_units_reference_start
@@ -23,11 +28,9 @@ The term "units reference" refers to the value of a :code:`units_ref` attribute 
 
 #. A units reference SHALL be a CellML identifier and SHALL be interpreted dependent on the context of the :ref:`CellML model<specA_cellml_model>` in which it occurs, according to the units referencing rules defined later in this section.
 
-#. A :ref:`CellML infoset<specA_cellml_infoset>` MUST NOT contain a units reference for which no referencing rule can be held to have been followed.
-
 #. The units referencing rules are:
 
-   #. Where there is a :code:`units` element with a :code:`name` attribute identical to the units reference, then the units reference SHALL refer to that :code:`units` element.
+   #. Where, within the same infoset, a :code:`units` element has a :code:`name` attribute identical to the units reference, the units reference SHALL refer to that :code:`units` element.
 
    #. Where there is an :code:`import units` element in the :ref:`CellML infoset<specA_cellml_infoset>`, such that the :code:`import units` element has a :code:`name` attribute identical to the units reference, then the units reference SHALL be treated with respect to referencing rules as if the units reference appeared in the imported infoset, and referring to the :code:`name` specified in the :code:`units_ref` attribute of the :code:`import units` element.
 
@@ -318,7 +321,7 @@ The term "component reference" refers to the value of a :code:`component_ref` at
 
 #. A component reference present in an information item which is a descendant of a :code:`model` element SHALL be identical to either the :code:`name` attribute on a :code:`component` element or to the :code:`name` attribute on an :code:`import component` element.
 
-#. A component reference which is identical to the :code:`name` attribute on a :code:`component` element SHALL be treated as a reference to that :code:`component` element.
+#. Where, within the same infoset, a :code:`component` element has a :code:`name` attribute identical to the component reference, the component reference SHALL refer to that :code:`component` element.
 
 #. A component reference which is identical to the :code:`name` attribute on an :code:`import component` element SHALL be treated for the purposes of referencing as if the component reference appeared in the imported model, and referred to element with the :code:`name` specified in the :code:`component_ref` attribute of the :code:`import component` element.
 
@@ -402,7 +405,9 @@ Interpretation of ``encapsulation`` elements
 
 #. Where a :code:`component_ref` element appears as a child of another :code:`component_ref` element, there SHALL be an arc in the encapsulation digraph, and that arc SHALL be from the node corresponding to the component referenced by the parent :code:`component_ref` element, and to the node corresponding to the component referenced by the child :code:`component_ref` element.
 
-#. The encapsulated set for a component *A* SHALL be the set of all components *B* such that there exists an arc in the encapsulation digraph from the node corresponding to *A* to the node corresponding to *B*.
+.. _specC_encapsulation_set:
+
+3. The encapsulated set for a component *A* SHALL be the set of all components *B* such that there exists an arc in the encapsulation digraph from the node corresponding to *A* to the node corresponding to *B*.
 
 #. The encapsulation parent for a component *A* SHALL be the component corresponding to the node which is the parent node in the encapsulation digraph of the node corresponding to *A*.
    A component SHALL NOT appear as child of more than one encapsulation parent.
