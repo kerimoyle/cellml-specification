@@ -30,26 +30,26 @@
     | cd     | candela    | luminous intensity        |
     +--------+------------+---------------------------+
 
-    Some of the units listed in the :ref:`Built-in Units<table_built_in_units>` are these base units, but others are combinations of them included for convenience.
+    Some of the units listed in the :ref:`Built-in Units<table_built_in_units>` table are these base units, but others are combinations of them included for convenience.
     Only those rows in the table which have no entries in the "Unit reduction" column are "irreducible" or base units.
 
     In the CellML 2.0 world you are able to also define your own base units.
-    These are :code:`units` items which you create which do not reference any child :code:`unit` items, so are therefore "irreducible".
+    These are :code:`units` items which you create which do not reference any child :code:`unit` items (thus rendering them "irreducible").
     For example:
 
     .. code-block:: xml
 
       <!-- Define a new base unit called "egg".
-           It's a base unit because it has no child unit items -->
+           It's a base unit because it has no child unit items. -->
       <units name="egg">
       </units>
 
-      <!-- Define other units which use this new base unit -->
+      <!-- Define other units which use this new base unit. -->
       <units name="dozen_eggs">
         <unit units="egg" multiplier="12" />
       </units>
 
-      <!-- Combine the new base unit with existing built-in units: eggs/m^2 -->
+      <!-- Combine the new base unit with existing built-in units: eggs/m^2. -->
       <units name="eggs_per_square_metre">
         <unit units="egg" />
         <unit units="metre" exponent="-2" />

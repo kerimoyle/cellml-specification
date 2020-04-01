@@ -38,10 +38,11 @@ The term "units reference" refers to the value of a :code:`units_ref` attribute 
 
 .. marker_units_reference1
 
-.. _table_built_in_units:
+
 
 **Table 3.1: Built-in units**
 
+.. _table_built_in_units:
 .. only:: html
 
       +-----------------------+-------------------+----------------------------------------------+-------------------------+
@@ -260,14 +261,14 @@ Interpretation of ``units`` elements
    2. If the :code:`units` element has one or more :code:`unit` child elements, then the set of tuples SHALL consist of the entire collection of tuples given by all :code:`unit` child elements.
       Tuples for each :code:`unit` child element SHALL be determined as follows:
 
-      1. Where the ref:`units reference<specC_units_reference>` of the :code:`unit` child element is to a single unit which is an irreducible unit, then the set of tuples SHALL have a single member, which SHALL consist of the name of the irreducible unit being referenced and the exponent 1.0.
+      1. Where the :ref:`units reference<specC_units_reference>` of the :code:`unit` child element is to a single unit which is an irreducible unit, then the set of tuples SHALL have a single member, which SHALL consist of the name of the irreducible unit being referenced and the exponent 1.0.
 
       2. Where the units reference of the :code:`unit` child element is to built-in units other than an irreducible unit, then the tuples SHALL be derived directly from the :ref:`Built-in units<table_built_in_units>` table.
          Specifically, the set of tuples SHALL consist of the tuples given in the "Unit reduction tuple set" column of the row for which the value in the "Name" column matches the name of the units reference.
 
       3. Where the units reference of the :code:`unit` child element is to a unit which is neither built-in, nor an irreducible unit, the set of tuples SHALL be defined recursively as the set of tuples for the :code:`units` element so referenced.
 
-      4. The exponents of each tuple in the set for the current :code:`unit` element, as derived by following rule 3.2.1, 3.2.2 or 3.2.3 above, SHALL be multiplied by the exponent term of the current, referencing, :code:`unit` element.
+      4. The exponents of each tuple in the set for the current :code:`unit` element, as derived by following rules 3.3.3.2.1, 3.3.3.2.2 or 3.3.3.2.3 above, SHALL be multiplied by the exponent term of the current, referencing, :code:`unit` element.
 
    3. Tuples which have the name element of "dimensionless" SHALL be removed from the set of tuples.
       Note that this can result in the set of tuples being empty.
@@ -278,10 +279,9 @@ Interpretation of ``units`` elements
 
 .. marker_interpretation_of_units_3
 
-.. _table_prefix_values:
-
 **Table 3.2: Prefix values**
 
+.. _table_prefix_values:
 ============== =========
 **Name**       **Value**
 :code:`yotta`    24
