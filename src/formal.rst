@@ -50,6 +50,6 @@ Hugh Sorby.
     reference/formal_sectionA.rst
     reference/formal_sectionB.rst
     reference/formal_sectionC.rst
-    reference/sectionD_references.rst
+    reference/formal_sectionD.rst
 
 
