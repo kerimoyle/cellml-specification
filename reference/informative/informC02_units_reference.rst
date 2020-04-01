@@ -13,9 +13,9 @@
       Understanding units references
 
     Units are different from other element types in that their names could refer either to other units which you've imported or created in your model, or to one of the list of :ref:`built-in units<table_built_in_units>`.  
-    The same naming conventions apply here as elsewhere, so this part is fairly straightforward.
+    The same naming conventions apply here as elsewhere, so that part is fairly straightforward.
 
-    The trickier part is understanding the *scope* or *domain* in which named units exist, and this is what points 1 and 2.2 are alluding to.
+    The trickier part is understanding the *scope* or *domain* in which named units exist, which is what points 1 and 2.2 are alluding to.
 
     Consider the example below.
     The first model :code:`BlueberryPieRecipe` simply combines two pre-made component ingredients; one for the crust and one for the filling.
