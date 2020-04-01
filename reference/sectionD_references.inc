@@ -1,4 +1,3 @@
-
 .. _sectionD:
 
 Extensible Markup Language (XML) 1.1 https://www.w3.org/TR/xml11
