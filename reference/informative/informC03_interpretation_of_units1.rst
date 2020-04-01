@@ -13,13 +13,13 @@
       Prefixes
 
     The :code:`prefix` term is different from the other attributes of a :code:`unit` element in that it can accept both a string (the name of the prefix from the :ref:`Prefix table<table_prefix_values>`) or an integer (the base 10 log equivalent to the prefix).
-    It's also different because **it will become invalid if a real number is used**.
+    It's also different because **it will become invalid if a non-integer real number is used**.
 
     For example, these are equivalent:
 
     .. code-block:: xml
 
-        <!-- This is valid ... -- >
+        <!-- This is valid ... -->
         <unit units="myOtherUnits" prefix="3">
 
         <!-- ... is the same as ... -->
@@ -29,7 +29,7 @@
         <unit units="myOtherUnits" multiplier="1000.0">
 
         <!-- BUT this is not valid, the prefix MUST be an integer or prefix name only! -->
-        <unit units="myOtherUnits" prefix="3.0">
+        <unit units="myOtherUnits" prefix="3.">
 
     **Note:** These examples are *only* equivalent because the :code:`exponent` in each case is 1.
     
@@ -47,15 +47,14 @@
 
         <!-- The prefix can be an integer or a named prefix: -->
         <units name="bottle_of_beer">
-            <unit units="metre" prefix="-2" exponent="3.0" multiplier="330"/>
+            <unit units="metre" prefix="-2" exponent="3.0" multiplier="330" />
         </units>
         <units name="bottle_of_beer">
-            <unit units="metre" prefix="centi" exponent="3.0" multiplier="330"/>
+            <unit units="metre" prefix="centi" exponent="3.0" multiplier="330" />
         </units>
 
-        <!--
-            Note that exponents are added to the combination of prefix and units terms
-            only, not to the muptiplier:
+        <!-- Note that exponents are added to the combination of prefix and units terms
+             only, not to the muptiplier:
                 i.e.: this is (0.33)*((deci)(metre))^3
         -->
         <units name="bottle_of_beer">
@@ -67,8 +66,7 @@
             <unit units="metre" exponent="3.0" multiplier="3.3e-4"/
         </units>
 
-        <!--
-            Repeated unit items can be included:
+        <!-- Repeated unit items can be included:
                 - the three centimetres together give 1 mL, and
                 - the dimensionless multiplier makes them 330 mL.
         -->
