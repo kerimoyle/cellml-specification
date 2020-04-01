@@ -19,7 +19,7 @@
                 <variable name="romeo" interface_type="public">
             </component>
 
-            <!-- This is a not valid because component_1 and component_2 are the same -->
+            <!-- This is not valid because component_1 and component_2 are the same. -->
             <connection component_1="happily_ever_after" component_2="happily_ever_after">
                 <map_variables variable_1="romeo" variable_2="juliet">
             </connection>
