@@ -42,7 +42,6 @@ The term "units reference" refers to the value of a :code:`units_ref` attribute 
 .. only:: html
 
       **Table 3.1: Built-in units**
-
       +-----------------------+-------------------+----------------------------------------------+-------------------------+
       | **Name**              | **Symbol**        | | **Unit reduction tuple**                   | **Common definitions**  |
       |                       |                   | | multiplier⋅(base, exponent)                |                         |
@@ -280,32 +279,31 @@ Interpretation of ``units`` elements
 .. marker_interpretation_of_units_3
 
 .. _table_prefix_values:
-.. container:
 
-   **Table 3.2: Prefix values**
-   ============== ==========
-   **Name**       **Value**
-   :code:`yotta`    24
-   :code:`zetta`    21
-   :code:`exa`      18
-   :code:`peta`     15
-   :code:`tera`     12
-   :code:`giga`     9
-   :code:`mega`     6
-   :code:`kilo`     3
-   :code:`hecto`    2
-   :code:`deca`     1
-   :code:`deci`     −1
-   :code:`centi`    −2
-   :code:`milli`    −3
-   :code:`micro`    −6
-   :code:`nano`     −9
-   :code:`pico`     −12
-   :code:`femto`    −15
-   :code:`atto`     −18
-   :code:`zepto`    −21
-   :code:`yocto`    −24
-   ============== ==========
+**Table 3.2: Prefix values**
+============== ==========
+**Name**       **Value**
+:code:`yotta`    24
+:code:`zetta`    21
+:code:`exa`      18
+:code:`peta`     15
+:code:`tera`     12
+:code:`giga`     9
+:code:`mega`     6
+:code:`kilo`     3
+:code:`hecto`    2
+:code:`deca`     1
+:code:`deci`     −1
+:code:`centi`    −2
+:code:`milli`    −3
+:code:`micro`    −6
+:code:`nano`     −9
+:code:`pico`     −12
+:code:`femto`    −15
+:code:`atto`     −18
+:code:`zepto`    −21
+:code:`yocto`    −24
+============== ==========
 
 .. marker_interpretation_of_units_end
 .. marker_component_reference_start
