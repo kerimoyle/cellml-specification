@@ -28,7 +28,7 @@
               <component name="crust" component_ref="HazelnutLavenderCrust" />
           </import>
           <import xlink:href="path/to/my/filling_recipe.cellml">
-              <component name="filling" component_ref="BlueberryCinnamonFilling" />
+            <component name="filling" component_ref="BlueberryCinnamonFilling" />
           </import>
       </model>
 
