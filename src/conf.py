@@ -70,13 +70,10 @@ extlinks = {
     'href_locator': ('https://www.w3.org/TR/2001/REC-xlink-20010627/#link-locators/%s', ''),
     'libcellml': ('https://libcellml.org/%s', ''),
     'libcellml_repo': ('https://github.com/cellml/libcellml.git%s', ''),
-    # TODO Update this when tutorials have a proper home.
-    'libcellml_tutorials': ('https://libcellml-tutorials.readthedocs.io/en/pr344_documentation/%s', ''),
     'libxml2': ('http://www.xmlsoft.org/%s', ''),
     'mathml2help': ('https://www.w3.org/TR/MathML2/chapter4.html%s', ''),
     'mathml2spec': ('http://www.w3.org/TR/2003/REC-MathML2-20031021/%s', ''),
-    # 'mathml2types': ('https://www.w3.org/TR/MathML2/chapter4.html#contm.typeattrib%s', ''),
-    'namespace_help':('https://www.w3schools.com/xml/xml_namespaces.asp%s',''),
+    'namespace_help': ('https://www.w3schools.com/xml/xml_namespaces.asp%s', ''),
     'opencor': ('https://opencor.ws/%s', ''),
     'pmr': ('https://models.physiomeproject.org/welcome/%s', ''),
     'python': ('https://www.python.org/%s', ''),
@@ -89,8 +86,6 @@ extlinks = {
     'xml_1_1': ('http://www.w3.org/TR/xml11/%s', ''),
     'xml_infoset': ('http://www.w3.org/TR/2004/REC-xml-infoset-20040204/%s', ''),
     'xml_namespace_1_1': ('https://www.w3.org/TR/2006/REC-xml-names11-20060816/%s', ''),
-    
-
 }
 
 # rst_epilog to define formatted, clickable code substitutions throughout.  It's included
