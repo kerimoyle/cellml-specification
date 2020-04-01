@@ -12,8 +12,6 @@
 
       Understanding units references
 
-    There are two key points to understand when thinking about how units references work; one is naming - which is pretty straightforward - and the other is context.  
-
     Units are different from other element types in that their names could refer either to other units which you've imported or created in your model, or to one of the list of :ref:`built-in units<table_built_in_units>`.  
     The same naming conventions apply here as elsewhere, so this part is fairly straightforward.
 
@@ -22,16 +20,15 @@
     Consider the example below.
     The first model :code:`BlueberryPieRecipe` simply combines two pre-made component ingredients; one for the crust and one for the filling.
 
-
     .. code-block:: xml
 
       <!-- Inside the file "how_to_make_blueberry_pie.cellml": -->
       <model name="BlueberryPieRecipe">
           <import xlink:href="path/to/my/crust_recipes.cellml">
-              <component name="premade_crust" component_ref="crust" />
+              <component name="crust" component_ref="HazelnutLavenderCrust" />
           </import>
           <import xlink:href="path/to/my/filling_recipe.cellml">
-              <component name="tinned_filling" component_ref="filling" />
+              <component name="filling" component_ref="BlueberryCinnamonFilling" />
           </import>
       </model>
 
