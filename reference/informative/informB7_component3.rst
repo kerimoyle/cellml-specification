@@ -36,7 +36,7 @@
         ...
       </component>
 
-    Please refer to :ref:`The math element<specB_math>` section for information on the :code:`math` items and MathML format.
+    Please refer to the :ref:`math element<math>` section for information on the :code:`math` items and MathML format.
 
     .. container:: heading3
 
@@ -54,10 +54,10 @@
         <variable name="c" ... >
       </component>
 
-    Please refer to :ref:`The variable information item<specB_variable>` section for information on the :code:`variable` items.
+    Please refer to the :ref:`variable element<variable>` section for information on :code:`variable` items.
 
     .. container:: heading3
 
       The reset items of a component
 
-    **TODO** 
+    Please refer to the :ref:`reset element<reset>` section for more information on :code:`reset` items.
