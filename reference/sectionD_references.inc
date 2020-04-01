@@ -1,17 +1,16 @@
 
 .. _sectionD:
 
-Extensible Markup Language (XML) 1.1 (Second Edition) https://www.w3.org/TR/2006/REC-xml11-20060816 (16 August 2006)
+Extensible Markup Language (XML) 1.1 https://www.w3.org/TR/xml11
 
-Mathematical Markup Language (MathML) Version 2.0 (Second Edition) https://www.w3.org/TR/2003/REC-MathML2-20031021/ (21 October 2003)
+Mathematical Markup Language (MathML) Version 2.0 https://www.w3.org/TR/MathML2/
 
-Namespaces in XML 1.1 (Second Edition) https://www.w3.org/TR/2006/REC-xml-names11-20060816/ (16 August 2006)
+Namespaces in XML 1.1 https://www.w3.org/TR/xml-names11/
 
-RFC 2119: Key words for use in RFCs to Indicate Requirement Levels https://www.ietf.org/rfc/rfc2119.txt (March 1997)
+RFC 2119: Key words for use in RFCs to Indicate Requirement Levels https://www.ietf.org/rfc/rfc2119.txt
 
-Unicode 13.0  https://www.unicode.org/charts/ (6 February 2020)
+Unicode 13.0.0 https://www.unicode.org/versions/Unicode13.0.0/
 
-XML Information Set (Second Edition) https://www.w3.org/TR/2004/REC-xml-infoset-20040204/ (4 February 2004)
+XML Information Set https://www.w3.org/TR/xml-infoset/
 
-XML Linking Language (XLink) Version 1.0 https://www.w3.org/TR/2001/REC-xlink-20010627/ (27 June 2001)
-
+XML Linking Language (XLink) Version 1.1 https://www.w3.org/TR/xlink11/
