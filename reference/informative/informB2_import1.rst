@@ -19,6 +19,7 @@
     Note the file structure: the path to the imported file is specified relative to the importing file, in this case :code:`role_of_dorothy.cellml` sits inside a folder called :code:`characters`.
 
     **oz_model.cellml**
+
     .. code-block:: xml
 
       <model name="oz">
@@ -29,6 +30,7 @@
       </model>
 
     **characters/dorothy.cellml**
+
     .. code-block:: xml
 
       <model name="candidates_for_dorothy">
@@ -40,6 +42,7 @@
       </model>
 
     **characters/role_of_toto.cellml**
+    
     .. code-block:: xml
 
       <model name="candidates_for_toto">
