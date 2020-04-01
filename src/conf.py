@@ -306,10 +306,6 @@ latex_elements = {
                     \usepackage{amssymb}
                 '''
 }
-#\usepackage[utf8]{inputenc}
-#\DeclareUnicodeCharacter{2212}{-}
-#\DeclareUnicodeCharacter{03A9}{Ω}
-#\DeclareUnicodeCharacter{22C5}{⋅}
 
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title,

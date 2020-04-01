@@ -353,21 +353,23 @@ A :code:`math` element information item (referred to in this specification as a 
 
 .. container:: issue-math-ci-variable-reference
 
-   3. Every variable name given using the MathML :code:`ci` element MUST be a :ref:`variable reference<specC_variable_reference>` to a :code:`variable` within the :code:`component` element that the :code:`math` element is contained.
+   3. Every variable name given using the MathML :code:`ci` element MUST be a :ref:`variable reference<specC_variable_reference>` to a :code:`variable` within the :code:`component` element in which the :code:`math` element is contained.
 
 .. marker_math_3
 
 .. container:: issue-math-cn-units-attribute
 
-   4. Any MathML :code:`cn` elements MUST each have an attribute in the :ref:`CellML namespace<specA_cellml_namespace>`, with a local name equal to :code:`units`. The value of this attribute MUST be a valid units reference.
+   4. A MathML :code:`cn` element MUST have an attribute in the :ref:`CellML namespace<specA_cellml_namespace>`, with a local name equal to :code:`units`. 
+
+   The value of this attribute MUST be a valid :ref:`units reference<specC_units_reference>`.
 
 .. container:: issue-math-cn-type
 
-   5. The :code:`cn` element MUST be one of the following :mathml2types:`types`\: real or e-notation.
+   5. A :code:`cn` element MUST be one of the following :mathml2types:`types`\: real or e-notation.
 
 .. container:: issue-math-cn-base10
 
-   6. The :code:`cn` element MUST be of base 10.
+   6. A :code:`cn` element MUST be of base 10.
 
 .. marker_math_4
 
@@ -375,44 +377,42 @@ A :code:`math` element information item (referred to in this specification as a 
 
 **Table 2.1: Supported MathML elements**
 
-+----------------------------------+----------------------------------+
-| **Element Category**             | **Element List**                 |
-+----------------------------------+----------------------------------+
-| Simple Operands                  | <ci>, <cn>, <sep>                |
-+----------------------------------+----------------------------------+
-| Basic Structural                 | <apply>, <piecewise>, <piece>,   |
-|                                  | <otherwise>                      |
-+----------------------------------+----------------------------------+
-| Relational and Logical Operators | <eq>, <neq>, <gt>, <lt>, <geq>,  |
-|                                  | <leq>, <and>, <or>, <xor>, <not> |
-+----------------------------------+----------------------------------+
-| Arithmetic Operators             | <plus>, <minus>, <times>,        |
-|                                  | <divide>, <power>, <root>,       |
-|                                  | <abs>, <exp>, <ln>, <log>,       |
-|                                  | <floor>, <ceiling>, <min>,       |
-|                                  | <max>, <rem>,                    |
-+----------------------------------+----------------------------------+
-| Calculus Elements                | <diff>                           |
-+----------------------------------+----------------------------------+
-| Qualifier Elements               | <bvar>, <logbase>, <degree> *    |
-+----------------------------------+----------------------------------+
-| Trigonometric Operators          | <sin>, <cos>, <tan>, <sec>,      |
-|                                  | <csc>, <cot>,                    |
-|                                  |                                  |
-|                                  | <sinh>, <cosh>, <tanh>, <sech>,  |
-|                                  | <csch>, <coth>, <arcsin>,        |
-|                                  | <arccos>, <arctan>,              |
-|                                  |                                  |
-|                                  | <arcsec>, <arccsc>, <arccot>,    |
-|                                  | <arcsinh>, <arccosh>, <arctanh>, |
-|                                  | <arcsech>, <arccsch>, <arccoth>  |
-+----------------------------------+----------------------------------+
-| Mathematical and Logical         | <pi>, <exponentiale>,            |
-| Constants                        | <notanumber>, <infinity>,        |
-|                                  | <true>, <false>                  |
-+----------------------------------+----------------------------------+
++----------------------------------+----------------------------------------------------------------+
+| **Element Category**             | **Element List**                                               |
++----------------------------------+----------------------------------------------------------------+
+| Simple Operands                  | :code:`ci`, :code:`cn`, :code:`sep`                            |
++----------------------------------+----------------------------------------------------------------+
+| Basic Structural                 | :code:`apply`, :code:`piecewise`, :code:`piece`,               |
+|                                  | :code:`otherwise`                                              |
++----------------------------------+----------------------------------------------------------------+
+| Relational and Logical Operators | :code:`eq`, :code:`neq`, :code:`gt`, :code:`lt`, :code:`geq`,  |
+|                                  | :code:`leq`, :code:`and`, :code:`or`, :code:`xor`, :code:`not` |
++----------------------------------+----------------------------------------------------------------+
+| Arithmetic Operators             | | :code:`plus`, :code:`minus`, :code:`times`, :code:`divide`,  |
+|                                  | | :code:`power`, :code:`root`, :code:`abs`,                    |
+|                                  | | :code:`exp`, :code:`ln`, :code:`log`,                        |
+|                                  | | :code:`floor`, :code:`ceiling`,                              |
+|                                  | | :code:`min`, :code:`max`, :code:`rem`                        |
++----------------------------------+----------------------------------------------------------------+
+| Calculus Elements                | :code:`diff`                                                   |
++----------------------------------+----------------------------------------------------------------+
+| Qualifier Elements               | :code:`bvar`, :code:`logbase`, :code:`degree` \*               |
++----------------------------------+----------------------------------------------------------------+
+| Trigonometric Operators          | | :code:`sin`, :code:`cos`, :code:`tan`, :code:`sec`,          |
+|                                  |   :code:`csc`, :code:`cot`,                                    |
+|                                  | | :code:`sinh`, :code:`cosh`, :code:`tanh`, :code:`sech`,      |
+|                                  |   :code:`csch`, :code:`coth`,                                  |
+|                                  | | :code:`arcsin`, :code:`arccos`, :code:`arctan`,              |
+|                                  | | :code:`arcsec`, :code:`arccsc`, :code:`arccot`,              |
+|                                  | | :code:`arcsinh`, :code:`arccosh`, :code:`arctanh`,           |
+|                                  | | :code:`arcsech`, :code:`arccsch`, :code:`arccoth`            |
++----------------------------------+----------------------------------------------------------------+
+| Mathematical and Logical         | :code:`pi`, :code:`exponentiale`,                              |
+| Constants                        | :code:`notanumber`, :code:`infinity`,                          |
+|                                  | :code:`true`, :code:`false`                                    |
++----------------------------------+----------------------------------------------------------------+
 
-\* (child of <root> or <diff>)
+\* :code:`degree` must be a child of :code:`root` or :code:`diff`
 
 .. marker_math_end
 .. marker_encapsulation_start
@@ -426,7 +426,7 @@ An :code:`encapsulation` element information item (referred to in this specifica
 
 .. container:: issue-encapsulation-component-ref
 
-   1. Every :code:`encapsulation` element MUST contain one or more :code:`component_ref` elements.
+   1. An :code:`encapsulation` element MAY contain one or more :code:`component_ref` elements.
 
 .. marker_encapsulation_end
 .. marker_component_ref_start
@@ -447,10 +447,6 @@ A :code:`component_ref` element information item (referred to in this specificat
 .. container:: issue-component-ref-child
 
    2. Every :code:`component_ref` element MAY in turn contain one or more :code:`component_ref` element children.
-
-.. container:: issue-component-ref-encapsulation
-
-   3. A :code:`component_ref` element which is an immediate child of an :code:`encapsulation` element MUST each contain at least one :code:`component_ref` element child.
 
 .. marker_component_ref_end
 .. marker_connection_start
@@ -475,7 +471,7 @@ A :code:`connection` element information item (referred to in this specification
    2. Each :code:`connection` element MUST contain a :code:`component_2` attribute.
       The value of the :code:`component_2` attribute MUST be a :ref:`valid CellML identifier<specA_cellml_identifier>`.
 
-      The value of this attribute MUST be equal to the :code:`name` attribute on a :code:`component` or :code:`import component` element in the :ref:`CellML infoset<specA_cellml_infoset>` (see :ref:`Component reference <specC_component_reference>`).
+      The value of this attribute MUST be equal to the :code:`name` attribute on a :code:`component` or :code:`import component` element in the :ref:`CellML infoset<specA_cellml_infoset>` (see :ref:`Component reference<specC_component_reference>`).
 
 .. marker_connection_2
 
@@ -493,7 +489,7 @@ A :code:`connection` element information item (referred to in this specification
 
 .. container:: issue-connection-map-variables
 
-   5. Every :code:`connection` element MUST contain one or more :code:`map_variables` elements.
+   5. A :code:`connection` element MAY contain one or more :code:`map_variables` elements.
 
 .. marker_connection_end
 .. marker_map_variables_start
