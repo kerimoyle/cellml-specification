@@ -148,7 +148,7 @@ A :code:`units` element information item (referred to in this specification as a
 
 .. container:: issue-units-standard
 
-   3. The value of the :code:`name` attribute MUST NOT be equal to the name of any of the units listed in the :ref:`Built-in units <table_built_in_units>` table.
+   3. The value of the :code:`name` attribute MUST NOT be equal to the name of any of the units listed in the :ref:`Built-in units<table_built_in_units>` table.
 
 .. container:: issue-units-child
 
