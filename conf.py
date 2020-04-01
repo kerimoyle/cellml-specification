@@ -15,6 +15,9 @@
 import sys
 import os
 
+if 'FORMAL_SINGLEPAGE' in os.environ:
+  print("Only doing formal single page build")
+
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
@@ -48,6 +51,10 @@ source_suffix = '.rst'
 #source_encoding = 'utf-8-sig'
 
 # The master toctree document.
+if 'FORMAL_SINGLEPAGE' in os.environ:
+    os.rename('formal_singlepage_index.rst', 'index.rst')
+else:
+    os.rename('master_index.rst', 'index.rst')
 master_doc = 'index'
 
 autosectionlabel_prefix_document = True
@@ -141,7 +148,17 @@ release = 'latest'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = []
+if 'FORMAL_SINGLEPAGE' in os.environ:
+  exclude_patterns = ['master_index.rst', 'formal_index.rst', 'reference/formal_and_informative/*.rst', 'reference/formal_only/*.rst',
+    'reference/libcellml/*.rst', 'reference/informative/*.rst',
+    'reference/formal_section*',
+    'reference/index_section*',
+    'reference/sectionD_references.rst',
+    'reference/acknowledgements.rst',
+    'reference/informative_preamble.rst']
+else:
+  exclude_patterns = []
+
 
 # The reST default role (used for this markup: `text`) to use for all
 # documents.
@@ -270,6 +287,8 @@ htmlhelp_basename = 'CellMLdoc'
 
 # -- Options for LaTeX output ---------------------------------------------
 
+latex_engine = 'xelatex'
+
 latex_elements = {
     # The paper size ('letterpaper' or 'a4paper').
     # 'papersize': 'letterpaper',
@@ -284,19 +303,19 @@ latex_elements = {
     'preamble': r'''
                     \usepackage[titles]{tocloft}
                     \usepackage{textgreek}
-                    \usepackage[utf8]{inputenc}
                     \usepackage{amssymb}
-                    \DeclareUnicodeCharacter{2212}{-}
-                    \DeclareUnicodeCharacter{03A9}{Ω}
-                    \DeclareUnicodeCharacter{00B7}{⋅}
                 '''
 }
+#\usepackage[utf8]{inputenc}
+#\DeclareUnicodeCharacter{2212}{-}
+#\DeclareUnicodeCharacter{03A9}{Ω}
+#\DeclareUnicodeCharacter{22C5}{⋅}
 
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    ('formal', 'formal.tex', u'CellML Specification',
+    ('index', 'normative.tex', u'CellML Specification',
      u'CellML 2.0 Editors and Contributors', 'manual'),
 ]
 
@@ -325,9 +344,9 @@ latex_use_parts = True
 
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
-man_pages = [
-    ('index', 'cellml', u'CellML 2.0 Documentation', [u'CellML Editors'], 1)
-]
+#man_pages = [
+#    ('index', 'cellml', u'CellML 2.0 Documentation', [u'CellML Editors'], 1)
+#]
 
 # If true, show URL addresses after external links.
 #man_show_urls = False
@@ -338,11 +357,11 @@ man_pages = [
 # Grouping the document tree into Texinfo files. List of tuples
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
-texinfo_documents = [
-    ('index', 'CellML', u'CellML Documentation',
-     u'CellML 2.0 Editors', 'CellML 2.0', 'CellML 2.0 Normative Specification.',
-     'Miscellaneous'),
-]
+#texinfo_documents = [
+#    ('index', 'CellML', u'CellML Documentation',
+#     u'CellML 2.0 Editors', 'CellML 2.0', 'CellML 2.0 Normative Specification.',
+#     'Miscellaneous'),
+#]
 
 # Documents to append as an appendix to all manuals.
 #texinfo_appendices = []
@@ -356,6 +375,14 @@ texinfo_documents = [
 # If true, do not generate a @detailmenu in the "Top" node's menu.
 #texinfo_no_detailmenu = False
 
+def build_finished_handler(app, exception):
+    print('build finished')
+    if 'FORMAL_SINGLEPAGE' in os.environ:
+        os.rename('index.rst', 'formal_singlepage_index.rst')
+    else:
+        os.rename('index.rst', 'master_index.rst')
+
 
 def setup(app):
+    app.connect('build-finished', build_finished_handler)
     app.add_css_file('cellml.css')

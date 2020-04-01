@@ -13,24 +13,24 @@ A PDF of this page is available from **TODO**.
 
 .. include:: reference/acknowledgements.rst
 
-.. sectnum::
+.. toctree::
+   :numbered:
 
-===========
-Definitions 
-===========
+.. _formal_singlepage_definitions:
+
+-----------
+Definitions
+-----------
+
 .. include:: reference/sectionA_definitions.inc
+   :start-after: .. marker_terminology_start
 
-=========================
+-------------------------
 Element information items
-=========================
+-------------------------
+
 .. include:: reference/sectionB_elements.inc
 
-==============
-Interpretation
-==============
 .. include:: reference/sectionC_interpretation.inc
 
-
-.. include:: reference/sectionD_references.rst
-
-
+.. include:: reference/sectionD_references.inc

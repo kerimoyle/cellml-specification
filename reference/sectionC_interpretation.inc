@@ -1,5 +1,9 @@
 .. _sectionC:
 
+--------------
+Interpretation
+--------------
+
 .. marker_interpretation_of_imports_start
 
 .. _specC_interpretation_of_imports:
@@ -137,8 +141,8 @@ The term "units reference" refers to the value of a :code:`units_ref` attribute 
       +---------------+-------------------+-------------------------------------------+-------------------------+
       | candela       | cd                | \-                                        |                         |
       +---------------+-------------------+-------------------------------------------+-------------------------+
-      | coulomb       | C                 | (second, 1), (ampere,1)                   | | s.A                   |
-      |               |                   |                                           | | F.V                   |
+      | coulomb       | C                 | (second, 1), (ampere,1)                   | | s⋅A                   |
+      |               |                   |                                           | | F⋅V                   |
       +---------------+-------------------+-------------------------------------------+-------------------------+
       | dimensionless | \-                | \-                                        |                         |
       +---------------+-------------------+-------------------------------------------+-------------------------+
@@ -149,15 +153,15 @@ The term "units reference" refers to the value of a :code:`units_ref` attribute 
       +---------------+-------------------+-------------------------------------------+-------------------------+
       | gray          | Gy                | (metre, 2), (second, -2)                  | J/kg                    |
       +---------------+-------------------+-------------------------------------------+-------------------------+
-      | henry         | H                 | | (kilogram, 1), (metre, 2),              | | V.s/A                 |
-      |               |                   | | (second, -2), (ampere, -2)              | | Ω.s                   |
+      | henry         | H                 | | (kilogram, 1), (metre, 2),              | | V⋅s/A                 |
+      |               |                   | | (second, -2), (ampere, -2)              | | Ω⋅s                   |
       |               |                   |                                           | | Wb/A                  |
       +---------------+-------------------+-------------------------------------------+-------------------------+
       | hertz         | Hz                | (second, -1)                              |                         |
       +---------------+-------------------+-------------------------------------------+-------------------------+ 
-      | joule         | J                 | (kilogram, 1), (metre, 2),                | | N.m                   |
-      |               |                   | (second, -2)                              | | C.V                   |
-      |               |                   |                                           | | Wb.s                  |
+      | joule         | J                 | (kilogram, 1), (metre, 2),                | | N⋅m                   |
+      |               |                   | (second, -2)                              | | C⋅V                   |
+      |               |                   |                                           | | Wb⋅s                  |
       +---------------+-------------------+-------------------------------------------+-------------------------+
       | katal         | kat               | (second, -1), (mole, 1)                   |                         |
       +---------------+-------------------+-------------------------------------------+-------------------------+
@@ -167,7 +171,7 @@ The term "units reference" refers to the value of a :code:`units_ref` attribute 
       +---------------+-------------------+-------------------------------------------+-------------------------+ 
       | litre         | l                 | 0.001 . (metre, 3)                        |                         |
       +---------------+-------------------+-------------------------------------------+-------------------------+
-      | lumen         | lm                | (candela, 1)                              | cd.sr                   |
+      | lumen         | lm                | (candela, 1)                              | cd⋅sr                   |
       +---------------+-------------------+-------------------------------------------+-------------------------+
       | lux           | lx                | (metre, -2), (candela, 1)                 | lm/m\ :sup:`2`          |
       +---------------+-------------------+-------------------------------------------+-------------------------+
@@ -197,16 +201,16 @@ The term "units reference" refers to the value of a :code:`units_ref` attribute 
       +---------------+-------------------+-------------------------------------------+-------------------------+
       | tesla         | T                 | | (kilogram, 1), (second, -2),            | | V⋅s/m\ :sup:`2`       |
       |               |                   | | (ampere, -1)                            | | Wb/m\ :sup:`2`        |
-      |               |                   |                                           | | N/(A.m)               |
+      |               |                   |                                           | | N/(A⋅m)               |
       +---------------+-------------------+-------------------------------------------+-------------------------+
       | volt          | V                 | (kilogram, 1), (metre, 2),                | | W/A                   |
       |               |                   | (second , -3), (ampere, -1)               | | J/C                   |
       +---------------+-------------------+-------------------------------------------+-------------------------+
       | watt          | W                 | (kilogram, 1), (metre, 2),                | | J/s                   |
-      |               |                   | (second, -3)                              | | V.A                   |
+      |               |                   | (second, -3)                              | | V⋅A                   |
       +---------------+-------------------+-------------------------------------------+-------------------------+
       | weber         | Wb                | (kilogram, 1), (metre, 2),                | | J/A                   |
-      |               |                   | (second, -2), (ampere, -1)                | | T.m\ :sup:`2`         |
+      |               |                   | (second, -2), (ampere, -1)                | | T⋅m\ :sup:`2`         |
       +---------------+-------------------+-------------------------------------------+-------------------------+
 
 
@@ -348,7 +352,7 @@ References to ``variable`` elements
 Interpretation of ``initial_value`` attributes
 ----------------------------------------------
 
-#. The :code:`initial_value` attribute of a :code:`variable` element MUST either be a real number string, or a :ref:`variable reference<_specC_variable_reference>`.
+#. The :code:`initial_value` attribute of a :code:`variable` element MUST either be a real number string, or a :ref:`variable reference<specC_variable_reference>`.
 
 #. The conditions when initial values hold are (by design) not defined in a :ref:`CellML model<specA_cellml_model>` document.
 
