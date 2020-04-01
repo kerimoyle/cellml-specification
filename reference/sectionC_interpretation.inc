@@ -39,7 +39,9 @@ The term "units reference" refers to the value of a :code:`units_ref` attribute 
 .. marker_units_reference1
 
 .. _table_built_in_units:
+
 **Table 3.1: Built-in units**
+
 .. only:: html
 
       +-----------------------+-------------------+----------------------------------------------+-------------------------+
@@ -277,7 +279,9 @@ Interpretation of ``units`` elements
 .. marker_interpretation_of_units_3
 
 .. _table_prefix_values:
+
 **Table 3.2: Prefix values**
+
 ============== ==========
 **Name**       **Value**
 :code:`yotta`    24
