@@ -122,7 +122,7 @@
 
         <!-- Defining a new component, brandy custard -->
         <component name="BrandyCustard">
-          <variable name="custard" units="cup" />
+          <variable name="custard" units="litre" />
           <variable name="brandy" units="spoonful" />
           ...
         </component>
@@ -145,7 +145,7 @@
 
         <!-- Defining a new component, brandy custard -->
         <component name="BrandyCustard">
-          <variable name="custard" units="cup" />
+          <variable name="custard" units="litre" />
           <variable name="brandy" units="spoonful" />
           ...
         </component>
