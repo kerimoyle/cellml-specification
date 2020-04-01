@@ -46,7 +46,7 @@
             </component>
 
             <!-- The contents have been merged. Note that the order of variables -->
-            <!-- must match the order of the parent component, ie: all variable_1s
+            <!-- must match the order of the parent component, i.e.: all variable_1s
             <!-- must be within component_1 etc. -->
             <connection component_1="montague" component_2="capulet">
                 <map_variables variable_1="romeo" variable_2="juliet">

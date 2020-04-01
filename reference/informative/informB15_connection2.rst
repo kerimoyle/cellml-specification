@@ -9,7 +9,7 @@
   .. container:: infospec
 
     Creating :code:`connection` items allows :code:`variable` values to be passed between eligible :code:`components`.
-    There are both syntactic (ie: format) and semantic (ie: meaning) rules about how these must be specified, including what "eligible" means.
+    There are both syntactic (i.e.: format) and semantic (i.e.: meaning) rules about how these must be specified, including what "eligible" means.
     Syntax will be discussed below and in the other "See more" blocks on this page.
     For more on the semantic rules, please see :ref:`Interpretation of map_variables<specC_interpretation_of_map_variables>`.
 

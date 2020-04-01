@@ -9,7 +9,7 @@
   .. container:: infospec
 
     Probably the biggest aspect of CellML's restrictions of MathML is that it is confined to using **only MathML2** content markup.
-    No form of presentation markup is permitted, and only the version MathML2 is allowed (ie: not MathML 3 or greater).
+    No form of presentation markup is permitted, and only the version MathML2 is allowed (i.e.: not MathML 3 or greater).
 
     .. container:: heading3
 
@@ -41,7 +41,9 @@
         <apply><eq/>
 
           <!-- The line below is not valid because <ci> elements cannot specify units;
-          their units are taken from the units of the variable (in this case, E really does have units Joules) -->
+               their units are taken from the units of the variable 
+               (even though in this case, E really does have units Joules). -->
+
           <ci cellml:units="joule">E</ci>
 
           <!-- The <apply> operation below is missing an operation argument (it should be <times/>) -->
@@ -50,8 +52,8 @@
             <apply><power/>
               <ci>c</ci>
 
-              <!-- The contents of a <cn> block below must be a real number, not a variable-->
-              <!-- It must also define units in the cellml namespace, ie: units:cellml="myUnits"-->
+              <!-- The contents of a <cn> block below must be a real number, not a variable. -->
+              <!-- It must also define units in the cellml namespace, i.e.: units:cellml="myUnits". -->
               <cn>variable_with_value_of_two</cn>
 
             </apply>

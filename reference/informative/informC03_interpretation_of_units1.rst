@@ -56,7 +56,7 @@
         <!--
             Note that exponents are added to the combination of prefix and units terms
             only, not to the muptiplier:
-                ie: this is (0.33)*((deci)(metre))^3
+                i.e.: this is (0.33)*((deci)(metre))^3
         -->
         <units name="bottle_of_beer">
             <unit units="metre" prefix="deci" exponent="3.0" multiplier="0.33"/>
@@ -80,7 +80,7 @@
         </units>
 
 
-    **Note** that all spellings of built in units and prefixes must be UK (not US) English, ie: :code:`metre` (not meter), :code:`litre` (not liter), and :code:`deca` (not deka).
+    **Note** that all spellings of built in units and prefixes must be UK (not US) English, i.e.: :code:`metre` (not meter), :code:`litre` (not liter), and :code:`deca` (not deka).
 
     .. container:: heading3
 

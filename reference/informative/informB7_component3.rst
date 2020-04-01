@@ -36,14 +36,14 @@
         ...
       </component>
 
-    Please refer to :ref:`The math element<specB_math>` for information on the :code:`math` items and MathML format.
+    Please refer to :ref:`The math element<specB_math>` section for information on the :code:`math` items and MathML format.
 
     .. container:: heading3
 
       The variables of a component
 
-    The MathML block above refers to three variables, named :code:`E`, :code:`m` and :code:`c`.
-    These variable names be the same as the :code:`name` attributes of the child :code:`variable` items in this component.
+    The MathML block above refers to three variables named :code:`E`, :code:`m` and :code:`c`.
+    These variable names must be the same as the :code:`name` attributes of the child :code:`variable` items in this component.
 
     .. code-block:: xml
 
@@ -54,10 +54,10 @@
         <variable name="c" ... >
       </component>
 
-    Please refer to :ref:`The variable information item<specB_variable>` for information on the :code:`variable` items.
+    Please refer to :ref:`The variable information item<specB_variable>` section for information on the :code:`variable` items.
 
     .. container:: heading3
 
       The reset items of a component
 
-    **TODO** when resets are finalised
+    **TODO** 
