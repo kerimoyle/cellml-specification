@@ -63,7 +63,7 @@
 
         <!-- A missing prefix has no effect: -->
         <units name="bottle_of_beer">
-            <unit units="metre" exponent="3.0" multiplier="3.3e-4"/
+            <unit units="metre" exponent="3.0" multiplier="3.3e-4"/>
         </units>
 
         <!-- Repeated unit items can be included:

@@ -136,23 +136,21 @@ The ``units`` element
 
 A :code:`units` element information item (referred to in this specification as a :code:`units` element) is an element in the CellML namespace with a local name equal to :code:`units`, and with a :code:`model` element as its parent.
 
+.. _issue-units-name
 .. container:: issue-units-name
 
    1. Every :code:`units` element MUST contain a :code:`name` attribute.
       The value of the :code:`name` attribute MUST be a :ref:`valid CellML identifier<specA_cellml_identifier>`.
 
-.. _issue-units-name-unique:
-.. container:: issue-units-name-unique
-
-   2. The value of the :code:`name` attribute MUST NOT be identical to the :code:`name` attribute of any other :code:`units` element or :code:`import units` element in the :ref:`CellML infoset<specA_cellml_infoset>`.
+      The value of the :code:`name` attribute MUST NOT be identical to the :code:`name` attribute of any other :code:`units` element or :code:`import units` element in the :ref:`CellML infoset<specA_cellml_infoset>`.
 
 .. container:: issue-units-standard
 
-   3. The value of the :code:`name` attribute MUST NOT be equal to the name of any of the units listed in the :ref:`Built-in units<table_built_in_units>` table.
+   2. The value of the :code:`name` attribute MUST NOT be equal to the name of any of the units listed in the :ref:`Built-in units<table_built_in_units>` table.
 
 .. container:: issue-units-child
 
-   4. A :code:`units` element MAY contain one or more :code:`unit` element children.
+   3. A :code:`units` element MAY contain one or more :code:`unit` element children.
 
 .. marker_units_end
 .. marker_unit_start

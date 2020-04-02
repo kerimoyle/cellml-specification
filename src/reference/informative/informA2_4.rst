@@ -8,7 +8,7 @@
 
   .. container:: infospec
 
-    .. code-block:: xml
+    .. code-block:: 
 
       <model name="myInvalidCellML" has other stuff in the element information item >
         

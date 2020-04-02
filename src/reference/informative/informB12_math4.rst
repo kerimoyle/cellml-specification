@@ -30,7 +30,7 @@
       <!-- These are not valid: -->
       <cn cellml:units="unitsThatDontExist">35.3</cn> <!-- The units reference must exist in the model. -->
       <cn>42</cn> <!-- Units must be specified. -->
-      <cn some_other_namespace:units>502.642</cn> <!-- Units must be in the cellml namespace. -->
+      <cn some_other_namespace:units="some_units">502.642</cn> <!-- Units must be in the cellml namespace. -->
       <cn cellml:units="meter">26.6</cn> <!-- Built-in unit names must be in UK spelling, i.e.: metre, litre. -->
       <cn cellml:units="dimensionless">3,000</cn> <!-- Must be a valid real number string, the comma separator is not permitted. -->
       <cn cellml:units="dimensionless">+4.0</cn> <!-- The plus sign indicator is not permitted except in e-notation exponents. -->

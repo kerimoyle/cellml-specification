@@ -49,9 +49,9 @@
 
       <component name="mass_into_energy">
         ...
-        <variable name="E" ... >
-        <variable name="m" ... >
-        <variable name="c" ... >
+        <variable name="E" units="joule" />
+        <variable name="m" units="kilogram" />
+        <variable name="c" units="metres_per_second" />
       </component>
 
     Please refer to the :ref:`variable element<variable>` section for information on :code:`variable` items.
