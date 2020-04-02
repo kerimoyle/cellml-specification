@@ -40,7 +40,7 @@ The built documentation will be available at::
 
   /absolute/path/to/cellml-specification/build/html/index.html
 
-Any good internet browser will be able to display the documentation (see also _`Serving the documentation`).
+Any good internet browser will be able to display the documentation (see also `Serving the documentation`_).
 
 To build the PDF form of the documentation simply execute the following command::
 
