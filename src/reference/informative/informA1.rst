@@ -37,4 +37,3 @@
     and the following whitespace characters: the space (U+0020), the tab (U+0009), the carriage return (U+000D), or the line feed (U+000A).  
 
     Together these seventy symbols define the only characters which can be interpreted into values for CellML element attributes and content. 
-

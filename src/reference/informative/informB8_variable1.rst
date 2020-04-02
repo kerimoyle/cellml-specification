@@ -29,5 +29,3 @@
     Finally, where one :code:`variable` has been mapped to another in a different component, the :code:`interface` attribute must be specified.
     This determines the relative position in the encapsulation that the mapped component must have in order to access this variable.
     This is outlined in more detail in the :ref:`encapsulation item<specB_encapsulation>` section.
-
-

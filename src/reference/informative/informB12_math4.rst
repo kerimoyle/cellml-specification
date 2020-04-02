@@ -70,4 +70,3 @@
     It's clearly nonsense, but it doesn't actually violate any syntax rules.
     The only instance where you will create an invalid model by assigning :code:`units` to :code:`variables` is when you need to form a :code:`map_variables` pair with a :code:`variable` in another :code:`component`.
     In this case, each :code:`variable` must have an :ref:`equivalent unit reduction<specC_interpretation_of_units>` or it won't be valid CellML.
-

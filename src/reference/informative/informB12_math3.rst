@@ -68,4 +68,3 @@
         <!-- A map_variable pair is created which links the "m" variables in each of the connected components. -->
         <map_variables variable_1="m" variable_2="m" />
       </connection>
-

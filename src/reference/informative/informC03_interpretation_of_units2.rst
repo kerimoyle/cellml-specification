@@ -58,4 +58,3 @@
     The terms "irreducible units" and "unit reduction" are used when discussing situations where the units of two variables must be equivalent.
     It makes no sense to equate a variable with units of seconds to another with units of kilograms, for example.
     The same is true for more complicated versions of units, as outlined in the next section.
-

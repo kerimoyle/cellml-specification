@@ -70,4 +70,3 @@
         	<component name="toto" component_ref="judy_garlands_dog" />
         </import>
       </model>
-

@@ -60,4 +60,3 @@
           </apply>
         </apply>
       </math>
-

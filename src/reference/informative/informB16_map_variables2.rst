@@ -35,4 +35,3 @@
                 <map_variables variable_1="romeo" variable_2="juliet_is_the_sun">
             </connection>
         </model>
-
