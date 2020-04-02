@@ -46,7 +46,21 @@ To build the PDF form of the documentation simply execute the following command:
 
   make latexpdf
 
-Note: Creating the PDF form of the documentation requires that latexmk is available, information on latexmk can be found at https://ctan.org/pkg/latexmk/.
+Note: Creating the PDF form of the documentation requires that some or all of a tool like Windows/MikTeX, macOS/MacTeX, Windows/TeXlive, Linux/TeXlive is available to the Sphinx build tool.
 
-Note: The documentation built with `make html` is different to the documentation built with `make latexpdf`.
-The HTML form of the documentation is the full form being both the normative specification and the informative specification, the PDF form of the documentation is solely the normative specification.
+Documentation builds
+^^^^^^^^^^^^^^^^^^^^
+
+There are three types of build that can be created from this codebase.
+
+1. Full documentation build of the normative and informative specification combined.
+2. Multi-paged documentation build of the normative specification.
+3. Single page documentation build of the normative specification.
+
+The different builds can be controlled through the use of the environment variable:
+
+  CELLML_SPEC_BUILD
+
+To build the multi-paged normative specification set the value of this environment variable to 'MultiPageNormative'.
+For the single page normative specification set the value of the environment variable to 'SinglePageNormative'.
+Any other value, or if the environment variable is not set, will build the full documentation.
