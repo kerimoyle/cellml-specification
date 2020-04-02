@@ -4,6 +4,10 @@
     color:darkslategray;
 }
 
+.wy-plain-list-decimal, .rst-content .section ol, .rst-content ol.arabic, article ol {
+    margin-bottom: 5px;
+}
+
 pre {
     border: none;
     background-color:#eeeeee;
@@ -30,6 +34,10 @@ div[class^="issue"], div[class*=" issue"] {
 
 div[class^="issue"], div[class*=" issue"] > ol {
     margin-bottom: 0;
+}
+
+li {
+    margin-bottom:12px;
 }
 
 .issue-title {
