@@ -35,11 +35,16 @@
 
     In addition, CellML recognises four special characters:
 
-    - :code:`+` the plus sign (U+002B)
-    - :code:`-` the minus sign (U+002D)
-    - :code:`_` the underscore (U+005F)
-    - :code:`.` the fullstop (U+002E)
+    - :code:`+` the plus sign (U+002B),
+    - :code:`-` the minus sign (U+002D),
+    - :code:`_` the underscore (U+005F),
+    - :code:`.` the fullstop (U+002E),
 
-    and the following whitespace characters: the space (U+0020), the tab (U+0009), the carriage return (U+000D), and the line feed (U+000A).  
+    and the following whitespace characters:
+    
+    - the space (U+0020), 
+    - the tab (U+0009), 
+    - the carriage return (U+000D), and
+    - the line feed (U+000A).  
 
     Together these symbols define the only characters which can be interpreted into values for CellML element attributes and content. 
