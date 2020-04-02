@@ -44,18 +44,18 @@
 
           <component name="Dancers">
             <variable name="FredAstaire" units="dimensionless" />
-            <variable name="GingerRogers" units="dimensionless />
+            <variable name="GingerRogers" units="dimensionless" />
           </component>
 
           <!-- Correct: connecting the variable "Fred" in component "Flintstone" into the
-              variable "FredFlintsone" in the "CartoonCharacters" component. -->
+               variable "FredFlintsone" in the "CartoonCharacters" component. -->
           <connection component_1="Flintstone" component_2="CartoonCharacters" >
             <map_variables variable_1="Fred" variable_2="FredFlintstone" />
           </connection>
 
           <!-- Incorrect: trying to connect variable "Fred" from component "Dancers" into the
-              variable "FredAstaire" from component "Astair": variable_1 must exist within
-              component_1, and variable_2 must exist within component_2. -->
+               variable "FredAstaire" from component "Astair": variable_1 must exist within
+               component_1, and variable_2 must exist within component_2. -->
           <connection component_1="Dancers" component_2="Astaire">
             <map_variables variable_1="Fred" variable_2="FredAstaire" />
           </connection>
