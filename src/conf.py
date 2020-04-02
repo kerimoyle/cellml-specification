@@ -413,4 +413,4 @@ def build_finished_handler(app, exception):
 
 def setup(app):
     app.connect('build-finished', build_finished_handler)
-    app.add_css_file('cellml.css')
+    app.add_css_file('css/cellml.css')
