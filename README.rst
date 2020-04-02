@@ -47,6 +47,8 @@ To build the PDF form of the documentation simply execute the following command:
   make latexpdf
 
 Note: Creating the PDF form of the documentation requires that some or all of a tool like Windows/MikTeX, Windows/TeXlive, Linux/TeXlive, and macOS/MacTeX is available to the Sphinx build tool.
+Also check that you have ``latexmk`` available as this is required for creating the PDF form of the documentation.
+Information on latexmk can be found at https://ctan.org/pkg/latexmk/.
 
 Documentation builds
 ^^^^^^^^^^^^^^^^^^^^
