@@ -254,7 +254,7 @@ A :code:`variable` element information item (referred to in this specification a
    .. container:: issue-variable-interface
 
       1. The :code:`interface` attribute.
-      If the attribute is present, it MUST have value of :code:`public`, :code:`private`, :code:`public_and_private`, or :code:`none`.
+         If the attribute is present, it MUST have value of :code:`public`, :code:`private`, :code:`public_and_private`, or :code:`none`.
 
    .. container:: issue-variable-initial-value
 
