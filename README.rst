@@ -80,8 +80,11 @@ Save the following text to a file named ``webserver.py`` (this file can be saved
 To run the web server use a terminal type application and change directory into::
 
   cd /absolute/path/to/cellml-specification/build/html/
+
+then run the command::
+
   python /absolute/path/to/webserver.py
 
-Now open your internet browser and open the location::
+Now launch your internet browser and open the location::
 
   http://localhost:8008/
