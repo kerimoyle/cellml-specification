@@ -4,7 +4,6 @@
 
 .. _specC_interpretation_of_imports:
 
-
 Interpretation of ``import`` elements
 -------------------------------------
 

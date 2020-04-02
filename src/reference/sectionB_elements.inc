@@ -136,7 +136,7 @@ The ``units`` element
 
 A :code:`units` element information item (referred to in this specification as a :code:`units` element) is an element in the CellML namespace with a local name equal to :code:`units`, and with a :code:`model` element as its parent.
 
-.. _issue-units-name
+.. _issue_units_name
 .. container:: issue-units-name
 
    1. Every :code:`units` element MUST contain a :code:`name` attribute.

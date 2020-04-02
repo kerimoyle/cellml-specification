@@ -14,10 +14,11 @@
 
     There are different kinds of information stored in XML elements.  In the example below, the :code:`<food_ideas>` element has 
     In the example below:
-      - :code:`title`, :code:`instructions`, :code:`ingredient` have *text* content (note that numbers like 1.0 are treated as text),
-      - :code:`ingredients` and :code:`food_ideas` have *element* contents, because they have child elements inside them,
-      - :code:`category` is an *attribute* of the :code:`recipe` element, and :code:`name` and :code:`units` are *attributes* of the :code:`ingredient` element, and
-      - the note within :code:`<!-- ... -->` comment tags is an *unparsed* and is ignored.
+
+    - :code:`title`, :code:`instructions`, :code:`ingredient` have *text* content (note that numbers like 1.0 are treated as text),
+    - :code:`ingredients` and :code:`food_ideas` have *element* contents, because they have child elements inside them,
+    - :code:`category` is an *attribute* of the :code:`recipe` element, and :code:`name` and :code:`units` are *attributes* of the :code:`ingredient` element, and
+    - the note within :code:`<!-- ... -->` comment tags is an *unparsed* and is ignored.
 
     .. code-block:: xml
 
