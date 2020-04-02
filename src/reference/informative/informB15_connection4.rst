@@ -53,4 +53,3 @@
                 <map_variables variable_1="romeo" variable_2="rosaline">
             </connection>
         </model>
-

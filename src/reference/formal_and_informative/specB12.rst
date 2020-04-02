@@ -30,7 +30,3 @@
   :end-before: marker_math_end
 
 .. todo ../libcellml/libcellmlB12_math.rst
-
-
-
-

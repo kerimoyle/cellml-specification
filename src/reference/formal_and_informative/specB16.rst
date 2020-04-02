@@ -14,4 +14,3 @@
 .. include:: ../informative/informB16_map_variables3.rst
 
 .. todo ../libcellml/libcellmlB16_map_variables.rst
-
