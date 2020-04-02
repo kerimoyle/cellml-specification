@@ -26,25 +26,25 @@
     The codes themselves are arranged into blocks representing sets or alphabets of characters, and the Basic Latin alphabet is one of these.
     It contains the upper and lowercase alphabet without decoration:
 
-      :code:`abcdefghijklmnopqrstuvwxyz` (symbols between U+0061 and U+007A)
-      :code:`ABCDEFGHIJKLMNOPQRSTUVWXYZ` (symbols between U+0041 and U+005A)
+      :code:`abcdefghijklmnopqrstuvwxyz` (symbols between :unicode:`0061` and :unicode:`007A`)
+      :code:`ABCDEFGHIJKLMNOPQRSTUVWXYZ` (symbols between :unicode:`0041` and :unicode:`005A`)
 
     The European numerals are the Unicode set:
 
-      :code:`0123456789` (symbols between U+0030 and U+0039)
+      :code:`0123456789` (symbols between :unicode:`0030` and :unicode:`0039`)
 
     In addition, CellML recognises four special characters:
 
-    - :code:`+` the plus sign (U+002B),
-    - :code:`-` the minus sign (U+002D),
-    - :code:`_` the underscore (U+005F),
-    - :code:`.` the fullstop (U+002E),
+    - :code:`+` the plus sign (:unicode:`002B`),
+    - :code:`-` the minus sign (:unicode:`002D`),
+    - :code:`_` the underscore (:unicode:`005F`),
+    - :code:`.` the fullstop (:unicode:`002E`),
 
     and the following whitespace characters:
     
-    - the space (U+0020), 
-    - the tab (U+0009), 
-    - the carriage return (U+000D), and
-    - the line feed (U+000A).  
+    - the space (:unicode:`0020`), 
+    - the tab (:unicode:`0009`), 
+    - the carriage return (:unicode:`000D`), and
+    - the line feed (:unicode:`000A`).  
 
     Together these symbols define the only characters which can be interpreted into values for CellML element attributes and content. 
