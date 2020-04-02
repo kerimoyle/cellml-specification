@@ -1,11 +1,5 @@
 .. _sectionA:
 
-.. _formal_singlepage_definitions:
-
------------
-Definitions
------------
-
 .. marker_terminology_start
 
 .. _specA_terminology:

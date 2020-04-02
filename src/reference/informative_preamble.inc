@@ -5,4 +5,4 @@ It is intended primarily for the developers of software tools which directly con
 Users of CellML models may expand the "See more" blocks throughout this document to access the informative version and see examples.
 Software-specific information is also available under their repsective names or icons throughout the text. 
 
-.. include:: acknowledgements.rst
+.. include:: reference/acknowledgements.inc

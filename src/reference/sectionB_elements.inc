@@ -398,8 +398,8 @@ A :code:`math` element information item (referred to in this specification as a 
 +----------------------------------+----------------------------------------------------------------+
 | Qualifier Elements               | :code:`bvar`, :code:`logbase`, :code:`degree` \*               |
 +----------------------------------+----------------------------------------------------------------+
-| Trigonometric Operators          | | :code:`sin`, :code:`cos`, :code:`tan`, :code:`sec`,          |
-|                                  |   :code:`csc`, :code:`cot`,                                    |
+|                                  | | :code:`sin`, :code:`cos`, :code:`tan`, :code:`sec`,          |
+| Trigonometric Operators          |   :code:`csc`, :code:`cot`,                                    |
 |                                  | | :code:`sinh`, :code:`cosh`, :code:`tanh`, :code:`sech`,      |
 |                                  |   :code:`csch`, :code:`coth`,                                  |
 |                                  | | :code:`arcsin`, :code:`arccos`, :code:`arctan`,              |

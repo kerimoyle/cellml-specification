@@ -12,11 +12,56 @@
 # All configuration values have a default; values that are commented out
 # serve to show the default.
 
-import sys
 import os
+import sys
 
-if 'FORMAL_SINGLEPAGE' in os.environ:
-  print("Only doing formal single page build")
+def manage_index(direction, base_dir=''):
+    files = ['master_index.rst', 'index.rst']
+    if 'FORMAL_SINGLEPAGE' in os.environ:
+        files = ['formal_singlepage_index.rst', 'index.rst']
+    elif 'FORMAL_ONLY' in os.environ:
+        files = ['formal_only_index.rst', 'index.rst']
+
+    files = [os.path.join(base_dir, files[0]), os.path.join(base_dir, files[1])]
+    if direction == 'out':
+        files.reverse()
+
+    os.rename(os.path.abspath(files[0]), os.path.abspath(files[1]))
+
+
+def tex_document_name():
+  name = 'cellml2_specification'
+  if 'FORMAL_SINGLEPAGE' in os.environ:
+      name = 'cellml2_singlepage_normative_specification'
+  elif 'FORMAL_ONLY' in os.environ:
+      name = 'cellml2_normative_specification'
+
+  return name
+
+
+def define_excluded_patterns():
+    exclude_patterns = ['formal_only_index.rst', 'formal_singlepage_index.rst',
+      'reference/formal_section*',
+      'reference/formal_only/*',]
+    if 'FORMAL_SINGLEPAGE' in os.environ:
+        exclude_patterns = ['master_index.rst', 'formal_only_index.rst',
+          'reference/formal_and_informative/*.rst',
+          'reference/formal_only/*.rst',
+          'reference/libcellml/*.rst',
+          'reference/informative/*.rst',
+          'reference/formal_section*',
+          'reference/index_section*',
+          'reference/sectionD_references.rst',]
+    elif 'FORMAL_ONLY' in os.environ:
+        exclude_patterns = ['master_index.rst', 'formal_singlepage_index.rst',
+          'reference/index_section*',
+          'reference/formal_and_informative/*.rst',
+          'reference/informative/*.rst',
+          'reference/libcellml/*.rst',]
+
+    return exclude_patterns
+
+manage_index('in')
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -51,10 +96,6 @@ source_suffix = '.rst'
 #source_encoding = 'utf-8-sig'
 
 # The master toctree document.
-if 'FORMAL_SINGLEPAGE' in os.environ:
-    os.rename('formal_singlepage_index.rst', 'index.rst')
-else:
-    os.rename('master_index.rst', 'index.rst')
 master_doc = 'index'
 
 autosectionlabel_prefix_document = True
@@ -148,16 +189,7 @@ release = 'latest'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-if 'FORMAL_SINGLEPAGE' in os.environ:
-  exclude_patterns = ['master_index.rst', 'formal_index.rst', 'reference/formal_and_informative/*.rst', 'reference/formal_only/*.rst',
-    'reference/libcellml/*.rst', 'reference/informative/*.rst',
-    'reference/formal_section*',
-    'reference/index_section*',
-    'reference/sectionD_references.rst',
-    'reference/acknowledgements.rst',
-    'reference/informative_preamble.rst']
-else:
-  exclude_patterns = []
+exclude_patterns = define_excluded_patterns()
 
 
 # The reST default role (used for this markup: `text`) to use for all
@@ -292,26 +324,28 @@ latex_engine = 'xelatex'
 latex_elements = {
     # The paper size ('letterpaper' or 'a4paper').
     # 'papersize': 'letterpaper',
+    'papersize': 'a4paper',
 
     # The font size ('10pt', '11pt' or '12pt').
     # 'pointsize': '10pt',
 
     # Removing the blank pages between chapters
-    'extraclassoptions': 'openany,oneside',
+    'extraclassoptions': 'openany,twoside',
 
     # Additional stuff for the LaTeX preamble.
     'preamble': r'''
-                    \usepackage[titles]{tocloft}
-                    \usepackage{textgreek}
-                    \usepackage{amssymb}
-                '''
+% Preamble set from Sphinx configuration
+\usepackage[titles]{tocloft}
+\usepackage{textgreek}
+\usepackage{amssymb}
+'''
 }
 
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    ('index', 'normative.tex', u'CellML Specification',
+    ('index', '{0}.tex'.format(tex_document_name()), u'CellML Specification',
      u'CellML 2.0 Editors and Contributors', 'manual'),
 ]
 
@@ -372,11 +406,7 @@ latex_use_parts = True
 #texinfo_no_detailmenu = False
 
 def build_finished_handler(app, exception):
-    print('build finished')
-    if 'FORMAL_SINGLEPAGE' in os.environ:
-        os.rename('index.rst', 'formal_singlepage_index.rst')
-    else:
-        os.rename('index.rst', 'master_index.rst')
+    manage_index('out', base_dir=app.confdir)
 
 
 def setup(app):

@@ -11,19 +11,24 @@ Users of CellML models should read the informative version of the CellML Specifi
 
 A PDF of this page is available from **TODO**.
 
-.. include:: reference/acknowledgements.rst
+.. include:: reference/acknowledgements.inc
 
 .. toctree::
    :numbered:
 
 .. _formal_singlepage_definitions:
 
+.. only:: latex
+
+   -----------
+   Definitions
+   -----------
+
 -----------
 Definitions
 -----------
 
 .. include:: reference/sectionA_definitions.inc
-   :start-after: .. marker_terminology_start
 
 -------------------------
 Element information items
@@ -31,6 +36,14 @@ Element information items
 
 .. include:: reference/sectionB_elements.inc
 
+--------------
+Interpretation
+--------------
+
 .. include:: reference/sectionC_interpretation.inc
+
+----------
+References
+----------
 
 .. include:: reference/sectionD_references.inc
