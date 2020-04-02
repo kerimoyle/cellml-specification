@@ -40,7 +40,7 @@ The built documentation will be available at::
 
   /absolute/path/to/cellml-specification/build/html/index.html
 
-Any good internet browser will be able to display the documentation.
+Any good internet browser will be able to display the documentation (see also _`Serving the documentation`).
 
 To build the PDF form of the documentation simply execute the following command::
 
@@ -58,3 +58,30 @@ There are three types of build that can be created from this codebase, they can 
 1. Full documentation build of the normative and informative specification combined [The default build].
 2. Single page documentation build of the normative specification, set ``CELLML_SPEC_BUILD=SinglePageNormative``.
 3. Multi-paged documentation build of the normative specification, set ``CELLML_SPEC_BUILD=MultiPageNormative``.
+
+Serving the documentation
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+You can serve the documentation locally using a simple Python server.
+Save the following text to a file named ``webserver.py`` (this file can be saved anywhere on your harddrive)::
+
+  #!/usr/bin/env python
+
+  import http.server
+  import socketserver
+
+  PORT = 8008
+  Handler = http.server.SimpleHTTPRequestHandler
+
+  with socketserver.TCPServer(("", PORT), Handler) as httpd:
+      print("Serving at port", PORT)
+      httpd.serve_forever()
+
+To run the web server use a terminal type application and change directory into::
+
+  cd /absolute/path/to/cellml-specification/build/html/
+  python /absolute/path/to/webserver.py
+
+Now open your internet browser and open the location::
+
+  http://localhost:8008/
