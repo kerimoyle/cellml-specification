@@ -319,8 +319,6 @@ The term "component reference" refers to the value of a :code:`component_ref` at
 
 #. A component reference SHALL be the name of a component, and SHALL be interpreted based on the context within the :ref:`CellML model<specA_cellml_model>` in which it occurs.
 
-#. A component reference present in an information item which is a descendant of a :code:`model` element SHALL be identical to either the :code:`name` attribute on a :code:`component` element or to the :code:`name` attribute on an :code:`import component` element.
-
 #. Where, within the same infoset, a :code:`component` element has a :code:`name` attribute identical to the component reference, the component reference SHALL refer to that :code:`component` element.
 
 #. A component reference which is identical to the :code:`name` attribute on an :code:`import component` element SHALL be treated for the purposes of referencing as if the component reference appeared in the imported model, and referred to element with the :code:`name` specified in the :code:`component_ref` attribute of the :code:`import component` element.
