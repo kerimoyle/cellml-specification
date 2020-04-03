@@ -129,12 +129,12 @@ Specific information items
 
 .. _specA_semantic_equivalence:
 
-Semantically equivalent CellML infosets
----------------------------------------
+Non-specific information items
+------------------------------
 
 #. Two :ref:`CellML infosets<specA_cellml_infoset>` SHALL be deemed semantically equivalent if one can be transformed into the other by making any or none of the following changes:
 
-   #. Adding, removing, and/or modifying comment information items.
+   #. Adding, removing, and/or modifying `comment information items <https://www.w3.org/TR/xml-infoset/#infoitem.comment>`__.
 
    #. Changing (inserting, removing, and/or modifying) one or more namespace information items, and/or modifying the prefix of one or more information items, without changing the namespace that any information item is in.
 
