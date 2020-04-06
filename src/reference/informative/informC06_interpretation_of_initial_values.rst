@@ -49,7 +49,7 @@
 
     .. code-block:: xml
 
-      <!-- Childhood games involving counting down -->
+      <!-- Childhood games involving counting down. -->
       <model name="games">
         <component name="hide_and_seek">
           <variable name="countdown_start" units="second" initial_value="100"/>
@@ -72,12 +72,12 @@
 
         <component name="sardines" />
 
-        <!-- Creating a generic component to hold global variables like time -->
+        <!-- Creating a generic component to hold global variables like time. -->
         <component name="parameters">
           <variable name="time" units="second" initial_value="0" />
         </component>
 
-        <!-- Encapsulating the games into the hiding_games component -->
+        <!-- Encapsulating the games into the hiding_games component. -->
         <encapsulation>
           <component_ref component="hiding_games">
             <component_ref component="hide_and_seek"/>
@@ -85,7 +85,7 @@
           </component_ref>
         </encapsulation>
 
-        <!-- Connect the time variable into the other components -->
+        <!-- Connect the time variable into the other components. -->
         <connection component_1="parameters" component_2="hiding_games">
           <map_variables variable_1="time" variable_2="time" />
         </connection>
@@ -102,7 +102,7 @@
       <model name="games">
         <component name="hide_and_seek">
 
-          <!-- Remove the initial_values from encapsulated component, move to the "parameters" component -->
+          <!-- Remove the initial_values from encapsulated component, move to the "parameters" component. -->
           <variable name="countdown_start" units="second" />
           <variable name="counter" units="second" />
           <variable name="time" units="second">
@@ -118,15 +118,15 @@
         </component>
         <component name="sardines"/>
 
-        <!-- Define (or import) a top-level component used for setting all parameters, constants, and initial values -->
+        <!-- Define (or import) a top-level component used for setting all parameters, constants, and initial values. -->
         <component name="parameters">
           <variable name="time" units="second" />
 
-          <!-- Move the initialisation of the countdown initial value into this top-level component -->
+          <!-- Move the initialisation of the countdown initial value into this top-level component. -->
           <variable name="hide_and_seek_start" initial_value="100" />
         </component>
 
-        <!-- Add a new transfer variable throughout the encapsulation hierarchy -->
+        <!-- Add a new transfer variable throughout the encapsulation hierarchy. -->
         <component name="hiding_games">
           <variable name="time" units="second" />
           <variable name="hide_and_seek_start" units="second" />
@@ -139,7 +139,7 @@
           </component_ref>
         </encapsulation>
 
-        <!-- Connect the initialisation variable thoughout the encapsulation hierarchy -->
+        <!-- Connect the initialisation variable thoughout the encapsulation hierarchy. -->
         <connection component_1="parameters" component_2="hiding_games">
           <map_variables variable_1="time" variable_2="time" />
           <map_variables variable_1="hide_and_seek_start" variable_2="hide_and_seek_start">

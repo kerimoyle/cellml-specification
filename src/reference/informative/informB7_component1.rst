@@ -8,7 +8,7 @@
 
   .. container:: infospec
 
-    Components are a convenient way to modularise the model, allowing parts to be removed, replaced, and reused easily.
+    Components are a convenient way to modularise a model, and allow parts to be removed, replaced, and reused easily.
     They define the scope of their contents, meaning that the items within a component need only be uniquely named in that local scope.
     Commonly needed variables (like *time*, for example) can be given the same name in multiple components without triggering an error.
 

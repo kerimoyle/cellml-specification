@@ -12,7 +12,7 @@
     Encapsulation is the way that CellML manages the hierarchy of components and keeps their modularity.
     This is why there can be only one :code:`encapsulation` element within a :code:`model`: you can think of it as a table of contents for components in the whole model.
 
-    Encapsulations don't have to include all of the model's components - only the ones which need to sit within another component.
+    Encapsulations don't have to include all of the model's components; only the ones which need to sit within another component.
     Components which are not listed within the encapsulation are top-level children of the :code:`model`.
 
     .. code-block:: xml
@@ -41,7 +41,7 @@
           </encapsulation>
         </model>
 
-        <!-- Invalid: More than one encapsulation is not permitted -->
+        <!-- Invalid: More than one encapsulation is not permitted. -->
         <model name="too_many_encapsulations">
           <component name="parent1"/>
           <component name="child1"/>
@@ -59,7 +59,7 @@
           </encapsulation>
         </model>
 
-        <!-- Invalid: A component cannot appear more than once in an encapsulation -->
+        <!-- Invalid: A component cannot appear more than once in an encapsulation. -->
         <model name="duplicated_component_ref">
           <component name="parent"/>
           <component name="child"/>
@@ -88,8 +88,7 @@
           <component name="child"/>
           <encapsulation>
             <component_ref component="parent">
-              <!-- There has to be a child here or the parent is not a parent ... -->
+              <!-- There has to be a child here or the parent is not a parent. -->
             </component_ref>
           </encapsulation>
         </model>
-
