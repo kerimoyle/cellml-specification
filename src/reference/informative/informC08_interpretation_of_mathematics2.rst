@@ -123,7 +123,7 @@
 
     Simple over-definition is valid, but not useful:
 
-    .. math:
+    .. math::
 
       x = 0
 
@@ -131,7 +131,7 @@
 
     Complex over-definition is likewise valid, but not useful:
 
-    .. math:
+    .. math::
 
       x + y = 1
 
@@ -141,7 +141,7 @@
 
     Redundant information is valid, but (well) redundant:
 
-    .. math:
+    .. math::
 
       x = 1
 
@@ -152,13 +152,13 @@
     Under-definition at a localised component level is both valid and useful, as you may need to connect to other components in order to know the value of the variables the maths statements are using.
     Models which *overall* have insufficient definition are also valid, but clearly won't be useful or solvable.
 
-    .. math:
+    .. math::
 
       x = y + z
 
     Unsolvable models and "bad" maths is valid CellML:
 
-    .. math:
+    .. math::
 
       x = 1 / 0
 
@@ -168,7 +168,7 @@
     It is not invalid CellML, but may not result in the same interpretation between software implementations. 
     **TODO** check that this is right because it sounds dodgy!
 
-    .. code:
+    .. code::
 
       x = 1
       x has initial value 2
