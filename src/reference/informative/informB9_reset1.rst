@@ -9,4 +9,4 @@
 
   .. container:: infospec
 
-    **TODO** Informal notes go here
+    **TODO** Informative notes about resets go here

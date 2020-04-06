@@ -13,17 +13,17 @@
 
     .. code-block:: xml
 
-      <!-- This is valid -->
+      <!-- This is valid: -->
       <component name="myValidName"> ... </component>
 
-      <!-- the units name attribute is not a valid CellML identifier -->
+      <!-- Not valid: the units name attribute is not a valid CellML identifier. -->
       <component name="I'm not valid!"> ... </component>
 
-      <!-- duplicted component names are not allowed -->
+      <!-- Not valid: duplicted component names are not allowed. -->
       <component name="duplicatedName"> ... </component>
       <component name="duplicatedName"> ... </component>
 
-      <!-- duplicated name of an imported component item is not allowed -->
+      <!-- Not valid: duplicating the name of an imported component item is not allowed. -->
       <import xlink:href="handyComponentsForImport.cellml">
         <component component_ref="myComponentRef" name="duplicatedName">
       </import>

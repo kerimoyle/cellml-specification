@@ -13,4 +13,4 @@
 
 .. include:: ../informative/informB6_unit2.rst
 
-.. include:: ../libcellml/libcellmlB6.rst
+.. todo ../libcellml/libcellmlB6.rst

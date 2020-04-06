@@ -17,5 +17,3 @@
   :end-before: marker_interpretation_of_mathematics_end
 
 .. include:: ../informative/informC08_interpretation_of_mathematics3.rst
-
-

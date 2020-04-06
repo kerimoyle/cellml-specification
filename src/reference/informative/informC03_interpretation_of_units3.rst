@@ -16,8 +16,14 @@
     This includes user-defined base units too.
     The "unit reduction" of any :code:`units` item is simply a recipe for how any units item is constructed from these "base unit" ingredients.
 
-    For example, the units "metres per second" could be written :math:`m/s` or :code:`product[ (metre)^1 , (second)^-1 ]`, or :code:`product[ power(metre, 1) , power(second, -2) ]`.
-    This final list of tuples, representing the base unit and its exponent, is referred to as the unit reduction tuples for the :code:`units` element.
+    For example, the units "metres per second" could be written:
+
+      - m/s,
+      - m⋅s\ :sup:`-1`,
+      - :code:`product[ (metre)^1 , (second)^-1 ]`, or 
+      - :code:`product[ power(metre, 1) , power(second, -2) ]`.
+
+    This final list of tuples - representing the base unit and its exponent - is referred to as the *unit reduction tuples* for the :code:`units` element.
     Some other examples are given below.
 
     **Related to 3.3.3.2.1:**
@@ -30,7 +36,7 @@
           <unit units="second" exponent="-1>
         </units>
 
-    **Related to 3.3.3.2.2:** Joules are equivalent to :math:`kg⋅m^2⋅s^{−2}`, and the extra "per second" takes the effective exponent for "second" to -3.
+    **Related to 3.3.3.2.2:** :code:`joule`\ s are equivalent to kg⋅m\ :sup:`2`\ ⋅s:sup:`−2`\ , and the extra "per second" takes the effective exponent for :code:`second` to -3.
 
     .. code-block:: xml
 
@@ -40,12 +46,12 @@
           <unit units="second" exponent="-1" />
         </units>
 
-    **Related to 3.3.3.2.3 and 4:** The concentration of apples per litre of cider is expressed using the custom base units "apple", the custom derived units "bushell_of_apples" and the built-in convenience units of  "litre", the last being equivalent to cubic metres.
+    **Related to 3.3.3.2.3 and 4:** The concentration of apples per litre of cider is expressed using the custom base units :code:`apple`, the custom derived units :code:`bushell_of_apples` and the built-in convenience units of :code:`litre`, the last being equivalent to 0.001m\ :sup:`3`\ .
     Note that:
 
     - scaling does not affect the unit reduction tuples,
-    - the custom derived units :code:`bushell_of_apples` does not appear, as it can be further reduced to :code:`apple`,
-    - the final exponent of the :code:`metre` base unit comes from applying 3.3.2.4 and multiplying the exponent of the litre reduction tuple (metre, 3) with the exponent given in the :code:`cider_concentration` tuple (litre, -1) to give a (metre, -3) in the final unit reduction tuple set.
+    - the custom derived units :code:`bushell_of_apples` do not appear because it can be further reduced to :code:`apple`, and
+    - the final exponent of the :code:`metre` base unit comes from applying 3.3.3.2.4 and multiplying the exponent of the litre reduction tuple (metre, 3) with the exponent given in the :code:`cider_concentration` tuple (litre, -1) to give a (metre, -3) in the final unit reduction tuple set.
 
     .. code-block:: xml
 
@@ -74,7 +80,7 @@
 
     .. code-block:: xml
 
-        <!-- The "dimensionless" base units do not appear in the unit reduction -->
+        <!-- The "dimensionless" base units do not appear in the unit reduction. -->
         <units name="metres_by_dimensionless">
           <unit units="metre">
           <unit units="dimensionless" exponent="3">
@@ -95,7 +101,7 @@
             <unit units="second" exponent="-1">
         </units>
 
-    Here the "metre" exponents of 3 and -4 reduce to 1:
+    Here the :code:`metre` exponents of 3 and -4 reduce to 1:
 
     .. code-block:: xml
 
@@ -105,7 +111,7 @@
             <unit units="metre" exponent="-3">
         </units>
 
-    Here the "steradian" inclusion has no effect on the final unit reduction as its own units cancel out:
+    Here the :code:`steradian` inclusion has no effect on the final unit reduction as its own units cancel out:
 
     .. code-block:: xml
 
@@ -115,10 +121,9 @@
             <unit units="steradian" exponent="-3">
         </units>
 
-
     Finally a complicated one with the same outcome.
     Note that even though there are some irreducible units used, they end up with an exponent of 0 in the tuple, and are therefore removed from the final unit reduction.
-    Note that a Volt is equivalent to :math:`m^2.kg.s^{-3}.A^{-1}`
+    Note that a :code:`volt` V is equivalent to m\ :sup:`2`·kg·s\ :sup:`-3`·A\ :sup:`-1`\ .
 
     .. code-block:: xml
 
@@ -146,4 +151,3 @@
             <unit units="acceleration_units" exponent="-1" />
             <unit units="mega_amps_per_gram" multiplier="3.14159" />
         </units>
-
