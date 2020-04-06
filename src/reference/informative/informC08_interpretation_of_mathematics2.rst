@@ -14,7 +14,8 @@
 
     The mathematics of a mathematical model is a collection of statements which are held to be true.
     The collection of statements in CellML are the set of top-level children of a :code:`math` elements inside pertinent model components.
-    The example from the previous point is extended below.
+    The example from the previous point is extended below. 
+    **TODO** complete with a better example that's not so longwinded ...
      
     .. code-block:: xml
 
@@ -111,62 +112,63 @@
         ...
       </model>
 
-      .. container:: heading3
 
-        Understanding how and when the mathematics *doesn't* work
+    .. container:: heading3
 
-      It's possible to write valid CellML that does not represent valid mathematics.
-      You can think of this like correctly spelling a set of words which together do not form a meaningful sentence.
-      Some examples of valid versus valid-but-nonsense :code:`math` elements' contents are shown below.
+      Understanding how and when the mathematics *doesn't* work
 
-      Simple over-definition is valid, but not useful:
+    It's possible to write valid CellML that does not represent valid mathematics.
+    You can think of this like correctly spelling a set of words which together do not form a meaningful sentence.
+    Some examples of valid versus valid-but-nonsense :code:`math` elements' contents are shown below.
 
-      .. math:
+    Simple over-definition is valid, but not useful:
 
-        x = 0
+    .. math:
 
-        x = 1
+      x = 0
 
-      Complex over-definition is likewise valid, but not useful:
+      x = 1
 
-      .. math:
+    Complex over-definition is likewise valid, but not useful:
 
-        x + y = 1
+    .. math:
 
-        x - y = 3
+      x + y = 1
 
-        x * y = 12
+      x - y = 3
 
-      Redundant information is valid, but (well) redundant:
+      x * y = 12
 
-      .. math:
+    Redundant information is valid, but (well) redundant:
 
-        x = 1
+    .. math:
 
-        x = 1
+      x = 1
 
-        x = 1
+      x = 1
 
-      Under-definition at a localised component level is both valid and useful, as you may need to connect to other components in order to know the value of the variables the maths statements are using.
-      Models which *overall* have insufficient definition are also valid, but clearly won't be useful or solvable.
+      x = 1
 
-      .. math:
+    Under-definition at a localised component level is both valid and useful, as you may need to connect to other components in order to know the value of the variables the maths statements are using.
+    Models which *overall* have insufficient definition are also valid, but clearly won't be useful or solvable.
 
-        x = y + z
+    .. math:
 
-      Unsolvable models and "bad" maths is valid CellML:
+      x = y + z
 
-      .. math:
+    Unsolvable models and "bad" maths is valid CellML:
 
-        x = 1 / 0
+    .. math:
 
-        x = \sqrt{-1}
+      x = 1 / 0
 
-      Conflicting information arising from initialising variables which are not state variables will have an outcome which depends on how the implementation software interprets the condition.  
-      It is not invalid CellML, but may not result in the same interpretation between software implementations. 
-      **TODO** check that this is right because it sounds dodgy!
+      x = \sqrt{-1}
 
-      .. code:
+    Conflicting information arising from initialising variables which are not state variables will have an outcome which depends on how the implementation software interprets the condition.  
+    It is not invalid CellML, but may not result in the same interpretation between software implementations. 
+    **TODO** check that this is right because it sounds dodgy!
 
-        x = 1
-        x has initial value 2
+    .. code:
+
+      x = 1
+      x has initial value 2
