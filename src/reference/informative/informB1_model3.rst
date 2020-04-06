@@ -13,6 +13,3 @@
     For this reason, there can be only one :code:`encapsulation` item in any model.
 
     For more information about encapsulation, please refer to :ref:`The encapsulation element information item<specB_encapsulation>`.
-
-    For more information and examples involving and explaining encapsulation, please refer to the :libcellml_tutorials:`Theory of a sodium channel <theory/theory_index.html>` page.
-

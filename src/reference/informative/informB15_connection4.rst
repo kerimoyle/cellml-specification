@@ -14,7 +14,7 @@
 
     .. code-block:: xml
 
-        <!-- This is not valid CellML -->
+        <!-- This is not valid CellML: -->
         <model>
             <component name="house_of_capulet">
                 <variable name="juliet" interface_type="public">
@@ -28,14 +28,14 @@
                 <map_variables variable_1="romeo" variable_2="juliet">
             </connection>
 
-            <!-- This connection duplicates the one above, even though -->
-            <!-- component_1 and component_2 are swapped -->
+            <!-- This connection duplicates the one above, even though 
+                 component_1 and component_2 are swapped. -->
             <connection component_1="capulet" component_2="montague">
                 <map_variables variable_1="rosaline" variable_2="romeo">
             </connection>
         </model>
 
-        <!-- This is now valid: The contents were merged to create a valid model -->
+        <!-- This is now valid: The contents were merged to create a valid model. -->
         <model>
             <component name="house_of_capulet">
                 <variable name="juliet" interface_type="public">
@@ -45,12 +45,11 @@
                 <variable name="romeo" interface_type="public">
             </component>
 
-            <!-- The contents have been merged. Note that the order of variables -->
-            <!-- must match the order of the parent component, ie: all variable_1s
-            <!-- must be within component_1 etc. -->
+            <!-- The contents have been merged. Note that the order of variables
+                 must match the order of the parent component, i.e.: all variable_1s
+                 must be within component_1 etc. -->
             <connection component_1="montague" component_2="capulet">
                 <map_variables variable_1="romeo" variable_2="juliet">
                 <map_variables variable_1="romeo" variable_2="rosaline">
             </connection>
         </model>
-

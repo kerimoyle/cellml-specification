@@ -21,7 +21,7 @@
                 <variable name="romeo" interface_type="public">
             </component>
 
-            <!-- Valid but redundant: an empty connection is meaningless -->
+            <!-- Valid but redundant: an empty connection is meaningless. -->
             <connection component_1="montague" component_2="capulet">
             </connection>
         </model>
