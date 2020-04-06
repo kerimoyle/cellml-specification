@@ -377,7 +377,7 @@ Effect of ``units`` on a ``variable``
 Interpretation of ``math`` elements
 -----------------------------------
 
-#. The following :code:`component` elements SHALL, for the purposes of this specification, be "pertinent component elements":
+1. The following :code:`component` elements SHALL, for the purposes of this specification, be "pertinent component elements":
 
    #. All :code:`component` elements in the top-level :ref:`CellML infoset<specA_cellml_infoset>` for the :ref:`CellML model<specA_cellml_model>`;
 
@@ -385,9 +385,13 @@ Interpretation of ``math`` elements
 
    #. All :code:`component` elements which are descendants in the encapsulation digraph (see :ref:`Interpretation of encapsulation <specC_interpretation_of_encapsulation>`) of a pertinent :code:`component` element.
 
-#. Every MathML element in the :ref:`CellML model<specA_cellml_model>` which appears as a direct child information item of a MathML :code:`math` element information item, which in turn appears as a child information item of a pertinent :code:`component` element, SHALL be treated, in terms of the semantics of the mathematical model, as a statement which holds true unconditionally.
+.. marker_interpretation_of_mathematics_1
 
-#. Units referenced by a :code:`units` attribute information item SHALL NOT affect the mathematical interpretation of the :ref:`CellML model<specA_cellml_model>`.
+2. Every MathML element in the :ref:`CellML model<specA_cellml_model>` which appears as a direct child information item of a MathML :code:`math` element information item, which in turn appears as a child information item of a pertinent :code:`component` element, SHALL be treated, in terms of the semantics of the mathematical model, as a statement which holds true unconditionally.
+
+.. marker_interpretation_of_mathematics_2
+
+3. Units referenced by a :code:`units` attribute information item SHALL NOT affect the mathematical interpretation of the :ref:`CellML model<specA_cellml_model>`.
 
 .. marker_interpretation_of_mathematics_end
 .. marker_interpretation_of_encapsulation_start
