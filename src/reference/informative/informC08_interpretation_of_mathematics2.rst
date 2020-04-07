@@ -14,9 +14,47 @@
 
     The mathematics of a mathematical model is a collection of statements which are held to be true.
     The collection of statements in CellML are the set of top-level children of a :code:`math` elements inside pertinent model components.
-    The example from the previous point is extended below. 
-    **TODO** complete with a better example that's not so longwinded ...
-     
+    The example from the previous point is extended below in pseudocode, with the full CellML code beneath the link below.
+    The final output from the model - the total runs scored - is found by reducing all of the :code:`math` elements from all pertinent components in the model.  In this example, the same mathematical situation could be written:
+
+    .. math::
+
+      r_{total} = r_{Tom} + r_{Dick} + r_{Harry}
+      r_{total} = 99 + 0 + 10t
+
+    where :math:`r` is the number of runs, and :math:`t` is time.
+
+    .. code::
+
+      model: BackyardCricket
+        |
+        └─ component: FirstGame
+            |  ├─ variable: dicks_runs <------┐
+            |  ├─ variable: harrys_runs <--┐  |
+            |  ├─ variable: toms_runs <-┐  |  |
+            |  ├─ variable: time        |  |  |
+            |  └─ math: total_runs = toms_runs + dicks_runs + harrys_runs
+            |                           |  |  |
+            ├─ component: Tom           |  |  |
+            |  ├─ variable: runs -------┘  |  |
+            |  └─ math: runs=99            |  | connected
+            |                              |  | variables
+            └─ component: Harry (imported) |  |
+                |  ├─ variable: runs ------┘  |
+                |  ├─ variable: time          |
+                |  ├─ variable: dicks_runs ---┤
+                |  └─ math: runs=10*time      |
+                |                             |
+                └─ component: DickTheDog      |
+                    ├─ variable: runs --------┘
+                    └─ math: runs=0
+
+    .. container:: toggle
+
+      .. container:: header
+      
+        See CellML syntax example
+
     .. code-block:: xml
 
       <!-- In file: MyHouse.cellml -->
@@ -82,7 +120,8 @@
         <component name="DickTheDog">
           <variable name="runs" units="dimensionless" />
           <math>
-            <!-- This statement sets Dick's score to 0 for all time.  He's a dog.  He can't use a cricket bat. -->
+            <!-- This statement sets Dick's score to 0 for all time.  
+                 He's a dog.  He can't use a cricket bat. -->
             <apply><eq/>
               <ci>runs</ci>
               <cn>0</cn>
@@ -130,7 +169,7 @@
 
       x = 1
 
-    Complex over-definition is likewise valid, but will result in undefined behaviour:
+    Complicated over-definition is likewise valid, but will result in undefined behaviour:
 
     .. math::
 
@@ -166,7 +205,7 @@
       x = \sqrt{-1}
 
     Conflicting information arising from initialising variables which are not state variables will have an outcome which depends on how the implementation software interprets the condition.  
-    It is not invalid CellML, but - as with other forms of overdefinition - may not result in the same interpretation between software implementations. 
+    It is not invalid CellML, but - as with other forms of over-definition - may not result in the same interpretation between software implementations. 
 
     .. code::
 
