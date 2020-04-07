@@ -132,7 +132,7 @@ Specific information items
 .. _specA_semantic_equivalence:
 
 Non-specific information items
-------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. Two :ref:`CellML infosets<specA_cellml_infoset>` SHALL be deemed semantically equivalent if one can be transformed into the other by making any or none of the following changes:
 
