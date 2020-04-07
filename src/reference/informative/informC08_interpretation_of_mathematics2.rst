@@ -59,101 +59,101 @@
       
         See CellML syntax example
 
-    .. code-block:: xml
+      .. code-block:: xml
 
-      <!-- In file: MyHouse.cellml -->
-      <model name="BackyardCricket" >
+        <!-- In file: MyHouse.cellml -->
+        <model name="BackyardCricket" >
 
-        <!-- The local component Tom now has a score, measured by the variable "runs". 
-             This score is constant for all of time.  Tom will never get his century! -->
-        <component name="Tom">
-          <variable name="runs" units="dimensionless" />
-          <math>
-            <apply><eq/>
-              <ci>runs</ci>
-              <cn cellml:units="dimensionless">99</cn>
-            </apply>
-          </math>
-        </component>
-
-        <import href="Neighbours.cellml">
-          <component component_ref="Harry" name="Harry" />
-        </import>
-
-        <!-- The total tally for the game is stored in the variable "total". -->
-        <component name="FirstGame">
-          <variable name="total" units="dimensionless" />
-          <variable name="toms_runs" units=" dimensionless" />
-          <variable name="harrys_runs" units=" dimensionless" />
-          <variable name="dicks_runs" units=" dimensionless" />
-          <math>
-            <apply><eq/>
-              <ci>total</ci>
-              <apply><plus/>
-                <ci>toms_runs</ci>
-                <ci>harrys_runs</ci>
-                <ci>dicks_runs</ci>
+          <!-- The local component Tom now has a score, measured by the variable "runs". 
+              This score is constant for all of time.  Tom will never get his century! -->
+          <component name="Tom">
+            <variable name="runs" units="dimensionless" />
+            <math>
+              <apply><eq/>
+                <ci>runs</ci>
+                <cn cellml:units="dimensionless">99</cn>
               </apply>
-            </apply>
-          </math>
-        </component>
+            </math>
+          </component>
 
-        <!-- Connections to report the runs from each player are established. -->
-        <connection component_1="FirstGame" component_2="Tom" >
-          <map_variables variable_1="toms_runs" variable_2="runs" />
-        </connection>
-        <!-- Since component "DickTheDog" is too distant in the encapsulation structure to be
-             visible to the "FirstGame" component, any runs scored by the dog must be passed
-             through Harry's component. -->
-        <connection component_1="FirstGame" component_2="Harry" >
-          <map_variables variable_1="harrys_runs" variable_2="runs" />
-          <map_variables variable_1="dicks_runs" variable_2="dicks_runs" />
-        </connection>
+          <import href="Neighbours.cellml">
+            <component component_ref="Harry" name="Harry" />
+          </import>
 
-        <encapsulation>
-          <component_ref component="FirstGame" >
-            <component_ref component="Tom" />
-            <component_ref component="Harry" />
-          </component_ref>
-        </encapsulation>
-      </model>
+          <!-- The total tally for the game is stored in the variable "total". -->
+          <component name="FirstGame">
+            <variable name="total" units="dimensionless" />
+            <variable name="toms_runs" units=" dimensionless" />
+            <variable name="harrys_runs" units=" dimensionless" />
+            <variable name="dicks_runs" units=" dimensionless" />
+            <math>
+              <apply><eq/>
+                <ci>total</ci>
+                <apply><plus/>
+                  <ci>toms_runs</ci>
+                  <ci>harrys_runs</ci>
+                  <ci>dicks_runs</ci>
+                </apply>
+              </apply>
+            </math>
+          </component>
 
-      <!-- In file: Neighbours.cellml -->
-      <model name="HarrysHouse" >
+          <!-- Connections to report the runs from each player are established. -->
+          <connection component_1="FirstGame" component_2="Tom" >
+            <map_variables variable_1="toms_runs" variable_2="runs" />
+          </connection>
+          <!-- Since component "DickTheDog" is too distant in the encapsulation structure to be
+              visible to the "FirstGame" component, any runs scored by the dog must be passed
+              through Harry's component. -->
+          <connection component_1="FirstGame" component_2="Harry" >
+            <map_variables variable_1="harrys_runs" variable_2="runs" />
+            <map_variables variable_1="dicks_runs" variable_2="dicks_runs" />
+          </connection>
 
-        <component name="DickTheDog">
-          <variable name="runs" units="dimensionless" />
-          <math>
-            <!-- This statement sets Dick's score to 0 for all time.  
-                 He's a dog.  He can't use a cricket bat. -->
-            <apply><eq/>
-              <ci>runs</ci>
-              <cn cellml:units="dimensionless">0</cn>
-            </apply>
-          </math>
-        </component>
+          <encapsulation>
+            <component_ref component="FirstGame" >
+              <component_ref component="Tom" />
+              <component_ref component="Harry" />
+            </component_ref>
+          </encapsulation>
+        </model>
 
-        <component name="Harry">
-          <variable name="time" units="minute" />
-          <variable name="runs" units="dimensionless" />
-          <math>
-            <!-- This statement represents DickTheDog running away with the ball, 
-                 enabling Harry to score an ever-increasing number of runs. -->
-            <apply><eq/>
-              <ci>runs</ci>
-              <apply><times/>
-                <cn cellml:units="per_minute">10</cn>
-                <ci>time</ci>
-            </apply>
-          </math>
-        </component>
+        <!-- In file: Neighbours.cellml -->
+        <model name="HarrysHouse" >
 
-        <!-- A connection is established between Harry and Dick to enable sharing of their run tally. -->
-        <connection component_1="Harry" component_2="DickTheDog" >
-          <map_variables variable_1="dicks_runs" variable_2="runs" />
-        </connection>
-        ...
-      </model>
+          <component name="DickTheDog">
+            <variable name="runs" units="dimensionless" />
+            <math>
+              <!-- This statement sets Dick's score to 0 for all time.  
+                  He's a dog.  He can't use a cricket bat. -->
+              <apply><eq/>
+                <ci>runs</ci>
+                <cn cellml:units="dimensionless">0</cn>
+              </apply>
+            </math>
+          </component>
+
+          <component name="Harry">
+            <variable name="time" units="minute" />
+            <variable name="runs" units="dimensionless" />
+            <math>
+              <!-- This statement represents DickTheDog running away with the ball, 
+                  enabling Harry to score an ever-increasing number of runs. -->
+              <apply><eq/>
+                <ci>runs</ci>
+                <apply><times/>
+                  <cn cellml:units="per_minute">10</cn>
+                  <ci>time</ci>
+              </apply>
+            </math>
+          </component>
+
+          <!-- A connection is established between Harry and Dick to enable sharing of their run tally. -->
+          <connection component_1="Harry" component_2="DickTheDog" >
+            <map_variables variable_1="dicks_runs" variable_2="runs" />
+          </connection>
+          ...
+        </model>
 
 
     .. container:: heading3
