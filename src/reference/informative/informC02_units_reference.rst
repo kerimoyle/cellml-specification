@@ -12,95 +12,164 @@
 
       Understanding units references
 
-    Units are different from other element types in that their names could refer either to other units which you've imported or created in your model, or to one of the list of :ref:`built-in units<table_built_in_units>`.  
-    The same naming conventions apply here as elsewhere, so that part is fairly straightforward.
+    Units references are different from other reference types in that their value could refer either to other units which you've imported or created in your model, or to one of the list of :ref:`built-in units<table_built_in_units>`.  
 
-    The trickier part is understanding the *scope* or *domain* in which named units exist, which is what points 1 and 2.2 are alluding to.
+    The trickier part is understanding them is during an import process, where the *scope* or *domain* in which named units exist becomes important, as alluded to in points :hardcodedref:`3.2.1 and 3.2.2.2`.
 
     Consider the example below.
     The first model :code:`BlueberryPieRecipe` simply combines two pre-made component ingredients; one for the crust and one for the filling.
 
-    .. code-block:: xml
+    .. code::
 
-      <!-- Inside the file "how_to_make_blueberry_pie.cellml": -->
-      <model name="BlueberryPieRecipe">
-          <import xlink:href="path/to/my/crust_recipes.cellml">
-              <component name="crust" component_ref="HazelnutLavenderCrust" />
-          </import>
-          <import xlink:href="path/to/my/filling_recipe.cellml">
-            <component name="filling" component_ref="BlueberryCinnamonFilling" />
-          </import>
-      </model>
+      model: BlueberryPieRecipe
+        ├─ component: crust <╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴┐
+        └─ component: filling <╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴┐ ╷
+                                                ╷ ╷
+                                  imported components
+                                                ╵ ╵
+      # In filling_recipes.cellml:              ╵ ╵
+      model: FillingRecipeCollection            ╵ ╵
+        ├─ component: BlueberryCinnamonFilling ╶┘ ╵
+        └─ component: AppleAndPearFilling         ╵
+                                                  ╵
+      # In crust_recipes.cellml:                  ╵
+      model: PieCrustRecipes                      ╵
+        ├─ component: HazelnutLavenderCrust ╴╴╴╴╴╴┘
+        └─ component: CheeseAndAlmondCrust
+
+    .. container:: toggle
+
+      .. container:: header
+
+        See CellML syntax
+
+      .. code-block:: xml
+
+        <!-- Inside the file "how_to_make_blueberry_pie.cellml": -->
+        <model name="BlueberryPieRecipe">
+            <import xlink:href="path/to/my/crust_recipes.cellml">
+                <component name="crust" component_ref="HazelnutLavenderCrust" />
+            </import>
+            <import xlink:href="path/to/my/filling_recipe.cellml">
+              <component name="filling" component_ref="BlueberryCinnamonFilling" />
+            </import>
+        </model>
 
     The components are imported from separate files, each of which defines and uses its own local definitions of the custom measurement units :code:`spoon`, :code:`dash`, and :code:`smidgen`.
 
-    .. code-block:: xml
+    .. code::
 
-      <!-- Inside the file "crust_recipes.cellml": -->
-      <model name="PieCrustRecipes">
+      model: BlueberryPieRecipe
+        ├─ component: crust <╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴┐
+        └─ component: filling <╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴┐        ╷
+                                                ╷        ╷
+                                           imported components
+                                         and the units they need
+                                                ╵        ╵
+      # In filling_recipes.cellml:              ╵        ╵
+      model: FillingRecipeCollection            ╵        ╵
+        ├─ component: BlueberryCinnamonFilling ╶┘        ╵
+        └─ component: AppleAndPearFilling                ╵
+                                                         ╵
+          # In crust_recipes.cellml:                     ╵
+          model: PieCrustRecipes                         ╵
+            ├─ component: HazelnutLavenderCrust ╴╴╴╴╴╴┬┬┬┘
+            │     ├─ variable: ground_hazelnut (gram) ╷╷╷
+            │     ├─ variable: egg (dimensionless)    ╷╷╷
+            │     ├─ variable: flour (gram)        units are implicitly
+            │     ├─ variable: sugar (gram)        imported by the component
+            │     ├─ variable: water                  ╵╵╵
+        ┌╴╴╴╴╴╴╴╴╴╴> └─ units: spoonful ╴╴╴╴╴╴╴╴╴╴╴╴╴╴┘╵╵
+        ╷   │     ├─ variable: salt                    ╵╵
+        ╷┌╴╴╴╴╴╴╴╴╴> └─ units: dash ╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴┘╵
+        ╷╷  │     └─ variable: lavender_flowers         ╵
+        ╷╷┌╴╴╴╴╴╴╴╴> └─ units: smidgen ╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴┘
+        ╷╷╷ │
+      explicitly used local custom units
+        ╵╵╵ │
+        ╵╵╵ ├─ component: CheeseAndAlmondCrust
+        ╵╵╵ │
+        ╵╵└╴├─ units: smidgen
+        ╵└╴╴├─ units: dash
+        └╴╴╴├─ units: spoonful
+            └─ units: dollop   
+            # Units like "dollop" that not used by the imported
+            # component are not imported.
+      
 
-        <component name="HazelnutLavenderCrust">
+    .. container:: toggle
 
-          <!-- These units are built-in so do not change. -->
-          <variables name="ground_hazelnut" units="gram" />
-          <variables name="egg" units="dimensionless" />
-          <variables name="flour" units="gram" />
-          <variables name="sugar" units="gram" />
+      .. container:: header
 
-          <!-- These units are defined for this, their local scope, below. -->
-          <variables name="water" units="spoonful" />
-          <variables name="salt" units="dash" />
-          <variables name="lavender_flowers" units="smidgen" />
-          ...
-        </component>
+        See CellML syntax
 
-        <component name="SomeMuchMoreBoringCrustRecipe">
-          ...
-        </component>
+      .. code-block:: xml
 
-        <!-- Local units definitions for spoonful, dash, and smidgen. -->
-        <units name="spoonful">
-          <unit units="litre" prefix="milli" multiplier="15" />
-        </units>
-        <units name="dash">
-          <unit units="gram" multiplier="5" />
-        </units>
-        <units name="smidgen">
-          <unit units="gram" multiplier="1" />
-        </units>
-      </model>
+        <!-- Inside the file "crust_recipes.cellml": -->
+        <model name="PieCrustRecipes">
 
-      <!-- Inside the file "filling_recipes.cellml": -->
-      <model name="PieFillingRecipes">
+          <component name="HazelnutLavenderCrust">
 
-        <component name="BlueberryCinnamonFilling">
-          <!-- These units are built-in, so do not change.  -->
-          <variables name="blueberries" units="gram" />
-          <variables name="sugar" units="dimensionless" />
-          <variables name="cornflour" units="gram" />
+            <!-- These units are built-in so do not change. -->
+            <variables name="ground_hazelnut" units="gram" />
+            <variables name="egg" units="dimensionless" />
+            <variables name="flour" units="gram" />
+            <variables name="sugar" units="gram" />
 
-          <!-- These units are defined for use in this, their local scope, below. -->
-          <variables name="cinnamon" units="smidgen" />
-          <variables name="water" units="spoonful" />
+            <!-- These units are defined for this, their local scope, below. -->
+            <variables name="water" units="spoonful" />
+            <variables name="salt" units="dash" />
+            <variables name="lavender_flowers" units="smidgen" />
+            ...
+          </component>
 
-          <math>
-              ...
-          </math>
-        </component>
+          <component name="CheeseAndAlmondCrust">
+            ...
+          </component>
 
-        <component name="LemonCustardFilling">
-          ...
-        </component>
+          <!-- Local units definitions for spoonful, dash, and smidgen. -->
+          <units name="spoonful">
+            <unit units="litre" prefix="milli" multiplier="15" />
+          </units>
+          <units name="dash">
+            <unit units="gram" multiplier="5" />
+          </units>
+          <units name="smidgen">
+            <unit units="gram" multiplier="1" />
+          </units>
+        </model>
 
-        <!-- Local units definitions for spoonful and smidgen. -->
-        <units name="spoonful">
-          <unit units="litre" prefix="milli" multiplier="5" />
-        </units>
-        <units name="smidgen">
-          <unit units="gram" multiplier="20" />
-        </units>
+        <!-- Inside the file "filling_recipes.cellml": -->
+        <model name="PieFillingRecipes">
 
-      </model>
+          <component name="BlueberryCinnamonFilling">
+            <!-- These units are built-in, so do not change.  -->
+            <variables name="blueberries" units="gram" />
+            <variables name="sugar" units="dimensionless" />
+            <variables name="cornflour" units="gram" />
+
+            <!-- These units are defined for use in this, their local scope, below. -->
+            <variables name="cinnamon" units="smidgen" />
+            <variables name="water" units="spoonful" />
+
+            <math>
+                ...
+            </math>
+          </component>
+
+          <component name="AppleAndPearFilling">
+            ...
+          </component>
+
+          <!-- Local units definitions for spoonful and smidgen. -->
+          <units name="spoonful">
+            <unit units="litre" prefix="milli" multiplier="5" />
+          </units>
+          <units name="smidgen">
+            <unit units="gram" multiplier="20" />
+          </units>
+
+        </model>
 
     This is where the idea of *context* becomes important.  
     As it stands, there is no conflict between the two different definitions of :code:`spoonful` and :code:`dash`, because each of the components refers to *its own definition* of these units.
