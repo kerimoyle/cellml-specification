@@ -38,11 +38,11 @@ def tex_document_name():
 
 
 def define_excluded_patterns():
-    exclude_patterns = ['formal_only_index.rst', 'formal_singlepage_index.rst',
+    exclude_patterns = ['formal_only_index.rst',
       'reference/formal_section*',
       'reference/formal_only/*',]
     if build_type == 'Normative':
-        exclude_patterns = ['master_index.rst', 'formal_singlepage_index.rst',
+        exclude_patterns = ['master_index.rst',
           'reference/index_section*',
           'reference/formal_and_informative/*.rst',
           'reference/informative/*.rst',
