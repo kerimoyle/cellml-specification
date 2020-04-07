@@ -171,60 +171,122 @@
 
         </model>
 
-    This is where the idea of *context* becomes important.  
+    This is where the idea of *scope* becomes important.  
     As it stands, there is no conflict between the two different definitions of :code:`spoonful` and :code:`dash`, because each of the components refers to *its own definition* of these units.
     The components do not "know" that there is any other definition out there, because they cannot "see" up into the importing model.
 
     Now let's consider that the cook wants to alter the recipe a little after these two main ingredients have been imported, by adding a spoonful of brandy to some custard.
     The top-level model becomes:
 
-    .. code-block:: xml
+    .. code::
 
-      <!-- Inside the file "how_to_make_blueberry_pie.cellml": -->
-      <model name="BlueberryPieRecipe">
-        <import xlink:href="path/to/my/crust_recipes.cellml">
-          <component name="premade_crust" component_ref="HazelnutLavenderCrust" />
-        </import>
-        <import xlink:href="path/to/my/filling_recipe.cellml">
-          <component name="yummy_filling" component_ref="BlueberryCinnamonFilling" />
-        </import>
+      model: BlueberryPieRecipe
+        ├─ component: BrandyCustard
+        │    ├─ variable: custard (litre)
+        │    └─ variable: brandy           
+        │         └─ units: spoonful  # These units are not defined in a scope
+        │                               which this component can access: 
+        │                               the model is invalid.
+        ├─ component: crust <╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴┐
+        └─ component: filling <╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴┐ ╷
+                                                ╷ ╷
+                                  imported components
+                                                ╵ ╵
+      # In filling_recipes.cellml:              ╵ ╵
+      model: FillingRecipeCollection            ╵ ╵
+        ├─ component: BlueberryCinnamonFilling ╶┘ ╵
+        └─ component: AppleAndPearFilling         ╵
+                                                  ╵
+      # In crust_recipes.cellml:                  ╵
+      model: PieCrustRecipes                      ╵
+        ├─ component: HazelnutLavenderCrust ╴╴╴╴╴╴┘
+        └─ component: CheeseAndAlmondCrust
 
-        <!-- Defining a new component, brandy custard -->
-        <component name="BrandyCustard">
-          <variable name="custard" units="litre" />
-          <variable name="brandy" units="spoonful" />
-          ...
-        </component>
-      </model>
+    .. container:: toggle
+
+      .. container:: header
+
+        See CellML syntax
+
+      .. code-block:: xml
+
+        <!-- Inside the file "how_to_make_blueberry_pie.cellml": -->
+        <model name="BlueberryPieRecipe">
+          <import xlink:href="path/to/my/crust_recipes.cellml">
+            <component name="premade_crust" component_ref="HazelnutLavenderCrust" />
+          </import>
+          <import xlink:href="path/to/my/filling_recipe.cellml">
+            <component name="yummy_filling" component_ref="BlueberryCinnamonFilling" />
+          </import>
+
+          <!-- Defining a new component, brandy custard -->
+          <component name="BrandyCustard">
+            <variable name="custard" units="litre" />
+            <variable name="brandy" units="spoonful" />
+            ...
+          </component>
+        </model>
 
     At this stage the model is invalid because the units :code:`spoonful` in the top-level model are not defined.  Just as the imported models cannot "see" up into the importing model, neither can the importing model "see" down into the imported models beyond those items which it has explicitly imported.  
 
     In order to reuse the :code:`spoonful` units from either of the imported models, they must be explicitly imported.  The top-level model becomes:
 
-    .. code-block:: xml
+    .. code::
 
-      <!-- Inside the file "how_to_make_blueberry_pie.cellml": -->
-      <model name="BlueberryPieRecipe">
-        <import xlink:href="path/to/my/crust_recipes.cellml">
-          <component name="premade_crust" component_ref="HazelnutLavenderCrust" />
-        </import>
-        <import xlink:href="path/to/my/filling_recipe.cellml">
-          <component name="yummy_filling" component_ref="BlueberryCinnamonFilling" />
-        </import>
+        model: BlueberryPieRecipe
+          ├─ component: BrandyCustard
+          │    ├─ variable: custard (litre)
+          │    └─ variable: brandy           
+      ┌╴╴╴╴╴╴╴╴> └─ units: spoonful
+      ╷   ├─ component: crust <╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴┐
+      ╷   ├─ component: filling <╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴┐ ╷
+      ╷   │                                     ╷ ╷
+      └╴╴╴└─ units: spoonful <╴╴╴╴╴╴╴┐   imported components and
+                                     ╷     the units they need
+                  explicitly imported units     ╵ ╵
+               are available to all components  ╵ ╵
+                                     ╵          ╵ ╵
+      # In filling_recipes.cellml:   ╵          ╵ ╵
+      model: FillingRecipeCollection ╵          ╵ ╵
+        ├─ units: spoonful ╴╴╴╴╴╴╴╴╴╴┘          ╵ ╵
+        ├─ component: BlueberryCinnamonFilling ╶┘ ╵
+        └─ component: AppleAndPearFilling         ╵ 
+                                                  ╵
+      # In crust_recipes.cellml:                  ╵
+      model: PieCrustRecipes                      ╵
+        ├─ component: HazelnutLavenderCrust ╴╴╴╴╴╴┘
+        └─ component: CheeseAndAlmondCrust
 
-        <!-- Defining a new component, brandy custard -->
-        <component name="BrandyCustard">
-          <variable name="custard" units="litre" />
-          <variable name="brandy" units="spoonful" />
-          ...
-        </component>
+    .. container:: toggle
 
-        <!-- Explicitly importing the "spoonful" units from the "filling_recipes.cellml" file: -->
-        <import xlink:href="path/to/my/filling_recipe.cellml">
-          <!-- The units are also called "spoonful" in this top-level scope. -->
-          <units name="spoonful" component_ref="spoonful" />
-        </import>
-      </model>
+      .. container:: header
+
+        See CellML syntax
+
+      .. code-block:: xml
+
+        <!-- Inside the file "how_to_make_blueberry_pie.cellml": -->
+        <model name="BlueberryPieRecipe">
+          <import xlink:href="path/to/my/crust_recipes.cellml">
+            <component name="premade_crust" component_ref="HazelnutLavenderCrust" />
+          </import>
+          <import xlink:href="path/to/my/filling_recipe.cellml">
+            <component name="yummy_filling" component_ref="BlueberryCinnamonFilling" />
+          </import>
+
+          <!-- Defining a new component, brandy custard -->
+          <component name="BrandyCustard">
+            <variable name="custard" units="litre" />
+            <variable name="brandy" units="spoonful" />
+            ...
+          </component>
+
+          <!-- Explicitly importing the "spoonful" units from the "filling_recipes.cellml" file: -->
+          <import xlink:href="path/to/my/filling_recipe.cellml">
+            <!-- The units are also called "spoonful" in this top-level scope. -->
+            <units name="spoonful" component_ref="spoonful" />
+          </import>
+        </model>
               
     At this stage we have three sets of units all named "spoonful".
     Since each is only accessible to its local components there is no conflict of definition or interpretation.
