@@ -22,7 +22,7 @@ Next setup a virtual environment::
 
   virtualenv venv_specification
 
-Note: Make sure you are creating a Python 3 virtual environment, if required use the -p flag to set the Python interpreter (for example `virtualenv -p /absolute/path/to/python venv_specification`).
+**Note:** make sure you are creating virtual environment using a suitable Python interpreter, if required use the ``-p`` flag to set the Python interpreter (for example ``virtualenv -p /absolute/path/to/python venv_specification``).
 
 Then activate the virtual environment and instal the required packages::
 
@@ -31,7 +31,7 @@ Then activate the virtual environment and instal the required packages::
   pip install -r cellml-specification/requirements.txt
 
 That completes the environment setup required for building the documentation.
-Once the environment is completed the HTML form of the documentation can be built with the following commands::
+Once the environment is completed, the HTML form of the documentation can be built with the following commands::
 
   cd cellml-specification
   make html
@@ -54,9 +54,9 @@ To build the PDF form of the documentation, simply execute the following command
 
   make latexpdf
 
-Note: Creating the PDF form of the documentation requires that some or all of a tool like Windows/MikTeX, Windows/TeXlive, Linux/TeXlive, and macOS/MacTeX is available to the Sphinx build tool.
+**Note:** creating the PDF form of the documentation requires that some or all of a tool like Windows/`MikTeX <https://miktex.org/>`_, Windows/`TeXlive <https://www.tug.org/texlive/>`_, Linux/`TeXlive <https://www.tug.org/texlive/>`_, and macOS/`MacTeX <https://tug.org/mactex/>`_ is available to the Sphinx build tool.
 Also check that you have ``latexmk`` available as this is required for creating the PDF form of the documentation.
-Information on latexmk can be found at https://ctan.org/pkg/latexmk/.
+Information on ``latexmk`` can be found at https://ctan.org/pkg/latexmk/.
 
 Documentation builds
 ^^^^^^^^^^^^^^^^^^^^
@@ -84,7 +84,7 @@ Save the following text to a file named ``webserver.py`` (this file can be saved
       print("Serving at port", PORT)
       httpd.serve_forever()
 
-To run the web server use a terminal type application and change directory into::
+To run the web server, use a terminal type application and change directory into::
 
   cd /absolute/path/to/cellml-specification/build/html/
 
