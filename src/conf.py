@@ -14,6 +14,11 @@
 
 import os
 import sys
+import datetime
+
+date_today = datetime.datetime.today()
+
+tags.add('unofficial')
 
 build_type = os.environ['CELLML_SPEC_BUILD'] if 'CELLML_SPEC_BUILD' in os.environ else 'Full'
 
@@ -153,7 +158,7 @@ extlinks = {
 
 # General information about the project.
 project = u'CellML 2.0'
-copyright = u'2019-@SPHINX_YEAR@, CellML Editors and Contributors'
+copyright = u'2019-{0}, CellML Editors and Contributors'.format(date_today.year)
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
