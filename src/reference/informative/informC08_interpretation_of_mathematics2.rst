@@ -22,7 +22,7 @@
 
     .. math::
 
-      r_{total} = r_{Tom} + r_{Dick} + r_{Harry}
+      r_{total} = r_{tom} + r_{dick} + r_{harry}
 
       r_{total} = 99 + 0 + 10t
 
@@ -38,20 +38,20 @@
             │  ├─ variable: toms_runs <╴┐  ╷  ╷
             │  ├─ variable: time        ╷  ╷  ╷
             │  └─ math: total_runs = toms_runs + dicks_runs + harrys_runs
-            │                           ╷  ╷  ╷
-            ├─ component: Tom           ╷  ╷  ╷
-            │  ├─ variable: runs ╴╴╴╴╴╴╴┘  ╷  ╷
-            │  └─ math: runs=99            ╷  ╷ connected
-            │                              ╷  ╷ variables
-            └─ component: Harry (imported) ╷  ╷
-                │  ├─ variable: runs ╴╴╴╴╴╴┘  ╷
-                │  ├─ variable: time          ╷
+            │                           ╵  ╵  ╵
+            ├─ component: Tom           ╵  ╵  ╵
+            │  ├─ variable: runs ╴╴╴╴╴╴╴┘  ╵  ╵
+            │  └─ math: runs = 99          ╵  ╵ connected
+            │                              ╵  ╵ variables
+            └─ component: Harry (imported) ╵  ╵
+                │  ├─ variable: runs ╴╴╴╴╴╴┘  ╵
+                │  ├─ variable: time          ╵
                 │  ├─ variable: dicks_runs ╴╴╴┤
-                │  └─ math: runs=10*time      ╷
+                │  └─ math: runs = 10*time    ╷
                 │                             ╷
                 └─ component: DickTheDog      ╷
                     ├─ variable: runs ╴╴╴╴╴╴╴╴┘
-                    └─ math: runs=0
+                    └─ math: runs = 0
 
     .. container:: toggle
 
