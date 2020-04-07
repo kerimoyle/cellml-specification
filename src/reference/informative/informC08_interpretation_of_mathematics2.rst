@@ -211,7 +211,7 @@
     Conflicting information arising from initialising variables which are not state variables will have an outcome which depends on how the implementation software interprets the condition.  
     It is not invalid CellML, but - as with other forms of over-definition - may not result in the same interpretation between software implementations. 
 
-    .. code::
+    .. math::
 
       x = 1
-      x has initial value 2
+      x(0) = 2
