@@ -19,9 +19,7 @@ build_type = os.environ['CELLML_SPEC_BUILD'] if 'CELLML_SPEC_BUILD' in os.enviro
 
 def manage_index(direction, base_dir=''):
     files = ['master_index.rst', 'index.rst']
-    if build_type == 'SinglePageNormative':
-        files = ['formal_singlepage_index.rst', 'index.rst']
-    elif build_type == 'MultiPageNormative':
+    if build_type == 'Normative':
         files = ['formal_only_index.rst', 'index.rst']
 
     files = [os.path.join(base_dir, files[0]), os.path.join(base_dir, files[1])]
@@ -33,9 +31,7 @@ def manage_index(direction, base_dir=''):
 
 def tex_document_name():
   name = 'cellml2_specification'
-  if build_type == 'SinglePageNormative':
-      name = 'cellml2_singlepage_normative_specification'
-  elif build_type == 'MultiPageNormative':
+  if build_type == 'Normative':
       name = 'cellml2_normative_specification'
 
   return name
@@ -45,16 +41,7 @@ def define_excluded_patterns():
     exclude_patterns = ['formal_only_index.rst', 'formal_singlepage_index.rst',
       'reference/formal_section*',
       'reference/formal_only/*',]
-    if build_type == 'SinglePageNormative':
-        exclude_patterns = ['master_index.rst', 'formal_only_index.rst',
-          'reference/formal_and_informative/*.rst',
-          'reference/formal_only/*.rst',
-          'reference/libcellml/*.rst',
-          'reference/informative/*.rst',
-          'reference/formal_section*',
-          'reference/index_section*',
-          'reference/sectionD_references.rst',]
-    elif build_type == 'MultiPageNormative':
+    if build_type == 'Normative':
         exclude_patterns = ['master_index.rst', 'formal_singlepage_index.rst',
           'reference/index_section*',
           'reference/formal_and_informative/*.rst',

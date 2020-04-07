@@ -42,6 +42,14 @@ The built documentation will be available at::
 
 Any good internet browser will be able to display the documentation (see also `Serving the documentation`_).
 
+To build the documentation into a single page HTML document execute the following command::
+
+  make singlehtml
+
+The built documentation will be available at::
+
+  /absolute/path/to/cellml-specification/build/singlehtml/index.html
+
 To build the PDF form of the documentation simply execute the following command::
 
   make latexpdf
@@ -53,11 +61,10 @@ Information on latexmk can be found at https://ctan.org/pkg/latexmk/.
 Documentation builds
 ^^^^^^^^^^^^^^^^^^^^
 
-There are three types of build that can be created from this codebase, they can be selected through the use of the environment variable ``CELLML_SPEC_BUILD``.
+There are two types of build that can be created from this codebase, they can be selected through the use of the environment variable ``CELLML_SPEC_BUILD``.
 
-1. Full documentation build of the normative and informative specification combined [The default build].
-2. Single page documentation build of the normative specification, set ``CELLML_SPEC_BUILD=SinglePageNormative``.
-3. Multi-paged documentation build of the normative specification, set ``CELLML_SPEC_BUILD=MultiPageNormative``.
+1. Normative and informative specification combined, the default build.
+2. Normative only, set ``CELLML_SPEC_BUILD=Normative``.
 
 Serving the documentation
 ^^^^^^^^^^^^^^^^^^^^^^^^^
