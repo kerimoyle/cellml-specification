@@ -302,7 +302,6 @@ html_css_files = ['css/cellml.css']
 # Output file base name for HTML help builder.
 htmlhelp_basename = 'CellMLdoc'
 
-
 # -- Options for LaTeX output ---------------------------------------------
 
 latex_engine = 'xelatex'
