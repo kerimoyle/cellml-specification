@@ -173,8 +173,8 @@
         ╵ ╵ ╵ ╵  model: 
         ╵ ╵ ╵ └╴╴╴├─ component: FelicityKendal
         ╵ ╵ └╴╴╴╴╴├─ component: RichardBriers
-        ╵ └╴╴╴╴╴╴╴├─ component:
-        └╴╴╴╴╴╴╴╴╴└─ component:
+        ╵ └╴╴╴╴╴╴╴├─ component: PenelopeKeith
+        └╴╴╴╴╴╴╴╴╴└─ component: PaulEddington
 
     .. code-block:: xml
 
