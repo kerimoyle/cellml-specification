@@ -109,17 +109,17 @@
           </connection>
         </model>
 
-    Any custom of built-in units with *differing* unit reduction tuples between connected variables: invalid, as it contradicts point :hardcodednumber:`3.10.6` in the :ref:`Interpretation of map_variables<specC_interpetation_of_map_variables>` section.  
+    Any custom of built-in units with *differing* unit reduction tuples between connected variables: invalid, as it contradicts point :hardcodedref:`3.10.6` in the :ref:`Interpretation of map_variables<specC_interpretation_of_map_variables>` section.  
     Please see the third informative block on the :ref:`Interpretation of units<specC_interpretation_of_units>` section for more discussion and examples of unit reductions.
 
     .. code::
 
       model: DCUniverse
-        ├─ component: Metropolis
+        ├─ component: FarFromKryptonite
         │   └─ variable: Superman (units = megapowers) <╴╴╴╴┐
         │                                                   ╷
         │                                      connection is now invalid
-        ├─ component: AnywhereNearKryptonite                ╵
+        ├─ component: NearToKryptonite                      ╵
         │   └─ variable: ClarkKent (units = marshmallow) ╴╴╴┘
         │
         ├─ units: powers
@@ -143,20 +143,20 @@
           <!-- Creating a new base unit called "marshmallow".-->
           <units name="marshmallow" />
 
-          <!-- The variable "Superman" in component "Metropolis" 
+          <!-- The variable "Superman" in component "FarFromKryptonite" 
                has units of "megapowers". -->
-          <component name="Metropolis">
+          <component name="FarFromKryptonite">
             <variable name="Superman" units="megapowers" />
           </component>
 
-          <!-- The variable "ClarkKent" in component "AnywhereNearKryptonite" 
+          <!-- The variable "ClarkKent" in component "NearToKryptonite" 
                has units of "marshmallow". -->
-          <component name="AnywhereNearKryptonite">
+          <component name="NearToKryptonite">
             <variable name="ClarkKent" units="marshmallow" />
           </component>
 
           <!-- The connection is invalid, because the unit reduction not the same. -->
-          <connection component_1="Metropolis" component_2="AnywhereNearKryptonite">
+          <connection component_1="FarFromKryptonite" component_2="NearToKryptonite">
             <map_variables variable_1="Superman" variable_2="ClarkKent" />
           </connection>
         </model>

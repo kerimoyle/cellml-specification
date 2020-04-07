@@ -90,6 +90,13 @@ extlinks = {
 
 # rst_epilog to define formatted, clickable code substitutions throughout.  It's included
 # at the bottom of every file in the project.
+
+# This reference is only so that we can keep track of where we have needed to hardcode references
+# to section numbers, which will need to be updated manually if the numbering ever changes.
+rst_prolog = """
+.. role:: hardcodedref 
+"""
+
 # rst_prolog = """
 # .. |internalBookmark2| replace:: ``internalBookmark2``
 # .. |model| replace:: ``model``
