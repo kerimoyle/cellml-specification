@@ -88,30 +88,12 @@ extlinks = {
     'xml_namespace_1_1': ('https://www.w3.org/TR/2006/REC-xml-names11-20060816/%s', ''),
 }
 
-# rst_epilog to define formatted, clickable code substitutions throughout.  It's included
-# at the bottom of every file in the project.
-# rst_prolog = """
-# .. |internalBookmark2| replace:: ``internalBookmark2``
-# .. |model| replace:: ``model``
-# .. |component| replace:: ``component``
-# .. |units| replace:: ``units``
-# .. |unit| replace:: ``unit``
-# .. |variable| replace:: ``variable``
-# .. |reset| replace:: ``reset``
-# .. |reset_value| replace:: ``reset_value``
-# .. |test_value| replace:: ``test_value``
-# .. |import| replace:: ``import``
-# .. |import_component| replace:: ``import component``
-# .. |import_units| replace:: ``import units``
-# .. |map_variables| replace:: ``map_variables``
-# .. |connection| replace:: ``connection``
-# .. |math| replace:: ``math``
-# .. |encapsulation| replace:: ``encapsulation``
-# """
-# rst_epilog = """
-# .. |component| replace:: ``component``
-# .. _component: :ref:`component`
-# """
+# Making a passive role with which to decorate hardcoded references to sections. These
+# will need to be manually changed if the numbering is ever altered, and can be located
+# more easily by searching for the "hardcodedref" tag.
+rst_prolog = """
+.. role:: hardcodedref 
+"""
 
 # General information about the project.
 project = u'CellML 2.0'
