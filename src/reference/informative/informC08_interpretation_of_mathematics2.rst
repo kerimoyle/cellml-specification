@@ -71,7 +71,7 @@
           <math>
             <apply><eq/>
               <ci>runs</ci>
-              <cn>99</cn>
+              <cn cellml:units="dimensionless">99</cn>
             </apply>
           </math>
         </component>
@@ -128,7 +128,7 @@
                  He's a dog.  He can't use a cricket bat. -->
             <apply><eq/>
               <ci>runs</ci>
-              <cn>0</cn>
+              <cn cellml:units="dimensionless">0</cn>
             </apply>
           </math>
         </component>
