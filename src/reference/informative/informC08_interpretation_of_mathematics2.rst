@@ -12,10 +12,13 @@
 
       Understanding how the mathematics works
 
-    The mathematics of a mathematical model is a collection of statements which are held to be true.
-    The collection of statements in CellML are the set of top-level children of a :code:`math` elements inside pertinent model components.
+    The mathematics of a mathematical model is a collection of statements which are held to be true at all times.
+    These are distinct from initial conditions of a model (specified using the :code:`initial_value` attribute on :code:`variable` elements) which are only true initially.
+    You can read more about initialisation on the :ref:`Interpretation of initial_values<>` page and in the section below this one.
+
+    The collection of mathematical statements in CellML are the set of top-level children of a :code:`math` elements inside "pertinent components" (as explained in the previous block).
     The example from the previous point is extended below in pseudocode, with the full CellML code beneath the link below.
-    The final output from the model - the total runs scored - is found by reducing all of the :code:`math` elements from all pertinent components in the model.  In this example, the same mathematical situation could be written:
+    The final output from the model - the total runs scored - is found by reducing all of the :code:`math` elements from all pertinent components in the model, whether or not those components interact.  In this example, the same mathematical situation could be written:
 
     .. math::
 
