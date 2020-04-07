@@ -25,7 +25,7 @@ build_type = os.environ['CELLML_SPEC_BUILD'] if 'CELLML_SPEC_BUILD' in os.enviro
 def manage_index(direction, base_dir=''):
     files = ['master_index.rst', 'index.rst']
     if build_type == 'Normative':
-        files = ['formal_only_index.rst', 'index.rst']
+        files = ['normative_only_index.rst', 'index.rst']
 
     files = [os.path.join(base_dir, files[0]), os.path.join(base_dir, files[1])]
     if direction == 'out':
@@ -43,7 +43,7 @@ def tex_document_name():
 
 
 def define_excluded_patterns():
-    exclude_patterns = ['formal_only_index.rst',
+    exclude_patterns = ['normative_only_index.rst',
       'reference/formal_section*',
       'reference/formal_only/*',]
     if build_type == 'Normative':
