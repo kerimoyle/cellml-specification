@@ -4,14 +4,13 @@
 
 .. _specC_interpretation_of_imports:
 
-
 Interpretation of ``import`` elements
 -------------------------------------
 
 #. Each :code:`import` element present in a :ref:`CellML infoset<specA_cellml_infoset>` (the importing infoset) SHALL define a new and distinct instance of the CellML infoset which is referenced by the :code:`href` attribute (the imported infoset).
    This imported infoset instance SHALL provide the context in which the child of an import element (a :code:`units` or :code:`component` element) is defined and interpreted.
 
-#. The imported infoset SHALL be considered holistically such that items relevant to the imported infoset (:code:`unit` children of imported :code:`units` elements or the :ref:`encapsulated set<specC_encapsulation_set>` of imported :code:`component` elements) are themselves available to that :code:`import` element child.
+#. The imported infoset SHALL be considered such that items relevant to the imported infoset (:code:`unit` children of imported :code:`units` elements or the :ref:`encapsulated set<specC_encapsulation_set>` of imported :code:`component` elements) are themselves available to that :code:`import` element child.
    It is noted, for the avoidance of doubt, that the importing infoset SHALL NOT have access to such implicitly imported items, but only to explicitly specified :code:`import` element children.
 
 See :ref:`Units reference<specC_units_reference>` and :ref:`Component reference<specC_component_reference>` for the specifics of importing units and components.
@@ -43,8 +42,8 @@ The term "units reference" refers to the value of a :code:`units_ref` attribute 
 **Table 3.1: Built-in units**
 
 +-----------------------+-------------------+----------------------------------------------+-------------------------+
-| **Name**              | **Symbol**        |  **Unit reduction tuple**                    | | **Common**            |
-|                       |                   |  multiplier (base, exponent)                 | | **definitions**       |
+| | **Name**            | | **Symbol**      | | **Unit reduction tuple**                   | | **Common**            |
+| |                     | |                 | | multiplier⋅(base, exponent)                | | **definitions**       |
 +-----------------------+-------------------+----------------------------------------------+-------------------------+
 | :code:`ampere`        | A                 | \-                                           |                         |
 +-----------------------+-------------------+----------------------------------------------+-------------------------+
@@ -173,14 +172,14 @@ Interpretation of ``units`` elements
    2. If the :code:`units` element has one or more :code:`unit` child elements, then the set of tuples SHALL consist of the entire collection of tuples given by all :code:`unit` child elements.
       Tuples for each :code:`unit` child element SHALL be determined as follows:
 
-      1. Where the ref:`units reference<specC_units_reference>` of the :code:`unit` child element is to a single unit which is an irreducible unit, then the set of tuples SHALL have a single member, which SHALL consist of the name of the irreducible unit being referenced and the exponent 1.0.
+      1. Where the :ref:`units reference<specC_units_reference>` of the :code:`unit` child element is to a single unit which is an irreducible unit, then the set of tuples SHALL have a single member, which SHALL consist of the name of the irreducible unit being referenced and the exponent 1.0.
 
       2. Where the units reference of the :code:`unit` child element is to built-in units other than an irreducible unit, then the tuples SHALL be derived directly from the :ref:`Built-in units<table_built_in_units>` table.
          Specifically, the set of tuples SHALL consist of the tuples given in the "Unit reduction tuple set" column of the row for which the value in the "Name" column matches the name of the units reference.
 
       3. Where the units reference of the :code:`unit` child element is to a unit which is neither built-in, nor an irreducible unit, the set of tuples SHALL be defined recursively as the set of tuples for the :code:`units` element so referenced.
 
-      4. The exponents of each tuple in the set for the current :code:`unit` element, as derived by following rule 3.2.1, 3.2.2 or 3.2.3 above, SHALL be multiplied by the exponent term of the current, referencing, :code:`unit` element.
+      4. The exponents of each tuple in the set for the current :code:`unit` element, as derived by following rules 3.3.3.2.1, 3.3.3.2.2 or 3.3.3.2.3 above, SHALL be multiplied by the exponent term of the current, referencing, :code:`unit` element.
 
    3. Tuples which have the name element of "dimensionless" SHALL be removed from the set of tuples.
       Note that this can result in the set of tuples being empty.
@@ -195,7 +194,7 @@ Interpretation of ``units`` elements
 
 **Table 3.2: Prefix values**
 
-============== =========
+============== ==========
 **Name**       **Value**
 :code:`yotta`    24
 :code:`zetta`    21
@@ -217,7 +216,7 @@ Interpretation of ``units`` elements
 :code:`atto`     −18
 :code:`zepto`    −21
 :code:`yocto`    −24
-============== =========
+============== ==========
 
 .. marker_interpretation_of_units_end
 .. marker_component_reference_start
@@ -231,8 +230,6 @@ References to ``component`` elements
 The term "component reference" refers to the value of a :code:`component_ref` attribute used in an :code:`import` item for :code:`component` items, to :code:`component_ref` elements which occur as children of :code:`encapsulation` items, and to the value of :code:`component_1` and :code:`component_2` attributes used in :code:`connection` items.
 
 #. A component reference SHALL be the name of a component, and SHALL be interpreted based on the context within the :ref:`CellML model<specA_cellml_model>` in which it occurs.
-
-#. A component reference present in an information item which is a descendant of a :code:`model` element SHALL be identical to either the :code:`name` attribute on a :code:`component` element or to the :code:`name` attribute on an :code:`import component` element.
 
 #. Where, within the same infoset, a :code:`component` element has a :code:`name` attribute identical to the component reference, the component reference SHALL refer to that :code:`component` element.
 

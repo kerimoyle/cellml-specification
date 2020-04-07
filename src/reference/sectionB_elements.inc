@@ -136,12 +136,13 @@ The ``units`` element
 
 A :code:`units` element information item (referred to in this specification as a :code:`units` element) is an element in the CellML namespace with a local name equal to :code:`units`, and with a :code:`model` element as its parent.
 
+.. _issue_units_name:
 .. container:: issue-units-name
 
    1. Every :code:`units` element MUST contain a :code:`name` attribute.
-   The value of the :code:`name` attribute MUST be a :ref:`valid CellML identifier<specA_cellml_identifier>`.
+      The value of the :code:`name` attribute MUST be a :ref:`valid CellML identifier<specA_cellml_identifier>`.
 
-   The value of the :code:`name` attribute MUST NOT be identical to the :code:`name` attribute of any other :code:`units` element or :code:`import units` element in the :ref:`CellML infoset<specA_cellml_infoset>`.
+      The value of the :code:`name` attribute MUST NOT be identical to the :code:`name` attribute of any other :code:`units` element or :code:`import units` element in the :ref:`CellML infoset<specA_cellml_infoset>`.
 
 .. container:: issue-units-standard
 
@@ -206,6 +207,8 @@ A :code:`component` element information item (referred to in this specification 
 
 .. marker_component_1
 
+.. _issue-component-name:
+
 .. container:: issue-component-name
 
    1. Every :code:`component` element MUST contain a :code:`name` attribute. The value of the :code:`name` attribute MUST be a :ref:`valid CellML identifier<specA_cellml_identifier>`.
@@ -251,7 +254,7 @@ A :code:`variable` element information item (referred to in this specification a
    .. container:: issue-variable-interface
 
       1. The :code:`interface` attribute.
-      If the attribute is present, it MUST have value of :code:`public`, :code:`private`, :code:`public_and_private`, or :code:`none`.
+         If the attribute is present, it MUST have value of :code:`public`, :code:`private`, :code:`public_and_private`, or :code:`none`.
 
    .. container:: issue-variable-initial-value
 
@@ -268,7 +271,7 @@ The ``reset`` element
 
 A :code:`reset` element information item (referred to in this specification as a :code:`reset` element) is an element in the CellML namespace with a local name equal to :code:`reset`, and which appears as a child of a :code:`component` element.
 
-1. Every :code:`reset` element MUST have exactly one each each of the following attributes:
+1. Every :code:`reset` element MUST have exactly one each of the following attributes:
 
    .. container:: issue-reset-variable-reference
 
@@ -363,7 +366,7 @@ A :code:`math` element information item (referred to in this specification as a 
 
 .. container:: issue-math-cn-type
 
-   5. A :code:`cn` element MUST be one of the following :mathml2types:`types`\: real or e-notation.
+   5. A :code:`cn` element MUST be one of the following :mathml2help:`types<#contm.typeattrib>`\: real or e-notation.
 
 .. container:: issue-math-cn-base10
 

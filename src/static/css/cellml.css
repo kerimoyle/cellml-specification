@@ -4,6 +4,10 @@
     color: darkslategray;
 }
 
+.wy-plain-list-decimal, .rst-content .section ol, .rst-content ol.arabic, article ol {
+    margin-bottom: 5px;
+}
+
 pre {
     border: none;
     background-color: #eeeeee;
@@ -32,6 +36,10 @@ div[class^="issue"], div[class*=" issue"] > ol {
     margin-bottom: 0;
 }
 
+li {
+    margin-bottom: 12px;
+}
+
 .issue-title {
     font-weight: 700;
     font-size: large;
@@ -51,7 +59,7 @@ div[class^="issue"], div[class*=" issue"] > ol {
     margin-top: 20px;
     margin-bottom: 20px;
     line-height: 24px;
-    font-family: "Lato","proxima-nova","Helvetica Neue",Arial,sans-serif;
+    font-family: "Lato", "proxima-nova", "Helvetica Neue", "Arial", sans-serif;
 }
 
 .dothis > .guilabel {
@@ -81,13 +89,13 @@ div[class^="issue"], div[class*=" issue"] > ol {
     color: #444444;
     padding: 10px;
 
-    margin-top: 0px;
+    margin-top: 0;
     margin-bottom: 15px;
     margin-left: 0;
     margin-right: 0;
 
     line-height: 24px;
-    font-family: "Lato","proxima-nova","Helvetica Neue",Arial,sans-serif;
+    font-family: "Lato", "proxima-nova", "Helvetica Neue", "Arial", sans-serif;
 }
 
 .infolib {
@@ -96,13 +104,13 @@ div[class^="issue"], div[class*=" issue"] > ol {
     color: #444444;
     padding: 10px;
 
-    margin-top: 0px;
+    margin-top: 0;
     margin-bottom: 15px;
     margin-left: 0;
     margin-right: 0;
 
     line-height: 24px;
-    font-family: "Lato","proxima-nova","Helvetica Neue",Arial,sans-serif;
+    font-family: "Lato", "proxima-nova", "Helvetica Neue", "Arial", sans-serif;
 }
 
 .nb {
@@ -112,7 +120,7 @@ div[class^="issue"], div[class*=" issue"] > ol {
     margin-top: 20px;
     margin-bottom: 20px;
     line-height: 24px;
-    font-family: "Lato","proxima-nova","Helvetica Neue",Arial,sans-serif;
+    font-family: "Lato", "proxima-nova", "Helvetica Neue", "Arial", sans-serif;
 }
 
 .heading1 {
@@ -125,14 +133,14 @@ div[class^="issue"], div[class*=" issue"] > ol {
 
 .heading2 {
     color: #444444;
-    font-family: "Roboto Slab","ff-tisa-web-pro","Georgia",Arial,sans-serif;
+    font-family: "Roboto Slab", "ff-tisa-web-pro", "Georgia", "Arial", sans-serif;
     font-size: 150%;
     font-weight: 700;
 }
 
 .heading3 {
     color: #444444;
-    font-family: "Roboto Slab","ff-tisa-web-pro","Georgia",Arial,sans-serif;
+    font-family: "Roboto Slab", "ff-tisa-web-pro", "Georgia", "Arial", sans-serif;
     font-size: 120%;
     font-weight: 700;
 }
@@ -142,6 +150,6 @@ div[class^="issue"], div[class*=" issue"] > ol {
     color: white;
     background-color: #777777;
     padding: 5px 0px 0px 10px;
-    font-family: 'Consolas', 'Deja Vu Sans Mono','Bitstream Vera Sans Mono', monospace;
+    font-family: "Consolas", "Deja Vu Sans Mono", "Bitstream Vera Sans Mono", monospace;
     font-size: 0.85em;
 }

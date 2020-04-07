@@ -35,7 +35,7 @@ An XML namespace, as defined in :xml_namespace_1_1:`Namespaces in XML 1.1`.
 .. _specA_cellml2_namespace:
 
 **CellML 2.0 namespace:**
-The namespace http://www.cellml.org/cellml/2.0#.
+The namespace :cellml2:`http://www.cellml.org/cellml/2.0# <cellml/2.0#>`\.
 
 .. _specA_mathml_namespace:
 
@@ -127,14 +127,16 @@ Specific information items
 
 #. The order in which specific information items appear, as children of an element information item defined in this specification, SHALL NOT affect the semantic interpretation of the :ref:`CellML model<specA_cellml_model>`.
 
+.. marker_cellml_information_sets_2
+
 .. _specA_semantic_equivalence:
 
-Semantically equivalent CellML infosets
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Non-specific information items
+------------------------------
 
 #. Two :ref:`CellML infosets<specA_cellml_infoset>` SHALL be deemed semantically equivalent if one can be transformed into the other by making any or none of the following changes:
 
-   #. Adding, removing, and/or modifying comment information items.
+   #. Adding, removing, and/or modifying `comment information items <https://www.w3.org/TR/xml-infoset/#infoitem.comment>`__.
 
    #. Changing (inserting, removing, and/or modifying) one or more namespace information items, and/or modifying the prefix of one or more information items, without changing the namespace that any information item is in.
 
@@ -144,10 +146,14 @@ Semantically equivalent CellML infosets
       changing the number of whitespace characters in such an information item,
       or changing the number of whitespace characters at the beginning or end of any character information item.
 
+.. marker_cellml_information_sets_3
+
 Character information items
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. An element information item in the :ref:`CellML namespace<specA_cellml_namespace>` MUST NOT contain any character information items, except for character information items which consist entirely of whitespace characters.
+
+.. marker_cellml_information_sets_4
 
 Use of namespaces
 ~~~~~~~~~~~~~~~~~
