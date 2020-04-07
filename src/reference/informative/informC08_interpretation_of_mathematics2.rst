@@ -23,6 +23,7 @@
     .. math::
 
       r_{total} = r_{Tom} + r_{Dick} + r_{Harry}
+
       r_{total} = 99 + 0 + 10t
 
     where :math:`r` is the number of runs, and :math:`t` is time.
@@ -30,26 +31,26 @@
     .. code::
 
       model: BackyardCricket
-        |
+        │
         └─ component: FirstGame
-            |  ├─ variable: dicks_runs <------┐
-            |  ├─ variable: harrys_runs <--┐  |
-            |  ├─ variable: toms_runs <-┐  |  |
-            |  ├─ variable: time        |  |  |
-            |  └─ math: total_runs = toms_runs + dicks_runs + harrys_runs
-            |                           |  |  |
-            ├─ component: Tom           |  |  |
-            |  ├─ variable: runs -------┘  |  |
-            |  └─ math: runs=99            |  | connected
-            |                              |  | variables
-            └─ component: Harry (imported) |  |
-                |  ├─ variable: runs ------┘  |
-                |  ├─ variable: time          |
-                |  ├─ variable: dicks_runs ---┤
-                |  └─ math: runs=10*time      |
-                |                             |
-                └─ component: DickTheDog      |
-                    ├─ variable: runs --------┘
+            │  ├─ variable: dicks_runs <╴╴╴╴╴╴┐
+            │  ├─ variable: harrys_runs <╴╴┐  ╷
+            │  ├─ variable: toms_runs <╴┐  ╷  ╷
+            │  ├─ variable: time        ╷  ╷  ╷
+            │  └─ math: total_runs = toms_runs + dicks_runs + harrys_runs
+            │                           ╷  ╷  ╷
+            ├─ component: Tom           ╷  ╷  ╷
+            │  ├─ variable: runs ╴╴╴╴╴╴╴┘  ╷  ╷
+            │  └─ math: runs=99            ╷  ╷ connected
+            │                              ╷  ╷ variables
+            └─ component: Harry (imported) ╷  ╷
+                │  ├─ variable: runs ╴╴╴╴╴╴┘  ╷
+                │  ├─ variable: time          ╷
+                │  ├─ variable: dicks_runs ╴╴╴┤
+                │  └─ math: runs=10*time      ╷
+                │                             ╷
+                └─ component: DickTheDog      ╷
+                    ├─ variable: runs ╴╴╴╴╴╴╴╴┘
                     └─ math: runs=0
 
     .. container:: toggle
