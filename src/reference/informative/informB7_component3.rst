@@ -36,28 +36,28 @@
         ...
       </component>
 
-    Please refer to :ref:`The math element<specB_math>` for information on the :code:`math` items and MathML format.
+    Please refer to the :ref:`math element<math>` section for information on the :code:`math` items and MathML format.
 
     .. container:: heading3
 
       The variables of a component
 
-    The MathML block above refers to three variables, named :code:`E`, :code:`m` and :code:`c`.
-    These variable names be the same as the :code:`name` attributes of the child :code:`variable` items in this component.
+    The MathML block above refers to three variables named :code:`E`, :code:`m` and :code:`c`.
+    These variable names must be the same as the :code:`name` attributes of the child :code:`variable` items in this component.
 
     .. code-block:: xml
 
       <component name="mass_into_energy">
         ...
-        <variable name="E" ... >
-        <variable name="m" ... >
-        <variable name="c" ... >
+        <variable name="E" units="joule" />
+        <variable name="m" units="kilogram" />
+        <variable name="c" units="metres_per_second" />
       </component>
 
-    Please refer to :ref:`The variable information item<specB_variable>` for information on the :code:`variable` items.
+    Please refer to the :ref:`variable element<variable>` section for information on :code:`variable` items.
 
     .. container:: heading3
 
       The reset items of a component
 
-    **TODO** when resets are finalised
+    Please refer to the :ref:`reset element<reset>` section for more information on :code:`reset` items.
