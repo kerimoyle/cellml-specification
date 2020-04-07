@@ -50,7 +50,7 @@ The built documentation will be available at::
 
   /absolute/path/to/cellml-specification/build/singlehtml/index.html
 
-To build the PDF form of the documentation simply execute the following command::
+To build the PDF form of the documentation, simply execute the following command::
 
   make latexpdf
 
