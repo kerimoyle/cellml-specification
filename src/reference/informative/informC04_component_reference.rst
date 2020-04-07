@@ -22,7 +22,6 @@
     Here, two families live next door to one another, and within each family unit use the terms "husband" and "wife" to refer to one another.
     In the wider neighbourhood, however, they must be referred to by their names: "BarbaraGood", "TomGood", "JerryLeadbetter", and "MargotLeadbetter".
 
-
     .. code::
 
       model: SurbitonNeighbourhood
@@ -42,11 +41,10 @@
       model: GoodFamilyModel                ╵ ╵
         ├─ component: wife ╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴┘ ╵
         └─ component: husband ╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴┘
-            
 
-    .. toggle::
+    .. container:: toggle
 
-      .. header:: 
+      .. container:: header
 
         See CellML syntax
 
@@ -111,9 +109,9 @@
         ├─ component: husband ╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴┘   ╵
         └─ component: wife ╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴┘
 
-    .. toggle::
+    .. container:: toggle
 
-      .. header::
+      .. container:: header
 
         See CellML syntax
 
