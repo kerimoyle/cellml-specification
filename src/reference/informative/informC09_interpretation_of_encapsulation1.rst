@@ -11,7 +11,7 @@
     You can think of an encapsulation structure as a tree.
     The model is the tree's trunk, and each component at the top-level of the model is a branch.
     Subsequent generations of branches can stem from any component, but no two branches can recombine or belong to more than one parent, as this would create a loop. 
-    Any component not listed inside the encapsulation is made a top-level component (a branch off the trunk).
+    Any component not listed inside the encapsulation is a top-level component (a branch off the trunk).
 
     An encapsulation hierarchy is specified using a single :code:`encapsulation` element, and any number of generations of :code:`component_ref` children.
     Where no :code:`encapsulation` element is present, all :code:`component` elements have the same level; they branch off the :code:`model`\-trunk.
