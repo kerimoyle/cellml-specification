@@ -77,6 +77,7 @@
                 </component_ref>
               </component_ref>
           </encapsulation>
+        </model>
 
     In this example, we can see that the *encapsulation set* (or direct children) of component :code:`PearlBodine` are the twins :code:`JethroBodine` and :code:`JethrineBodine`.
     Similarly, :code:`LukeClampett` is the *parent* of :code:`MyrtleClampett` and :code:`JedClampett`.
