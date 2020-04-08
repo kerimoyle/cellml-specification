@@ -25,5 +25,3 @@ A PDF of this page is available from https://www.cellml.org/specifications/cellm
     reference/formal_sectionB.rst
     reference/formal_sectionC.rst
     reference/formal_sectionD.rst
-
-
