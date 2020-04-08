@@ -5,7 +5,7 @@
 .. _specA_terminology:
 
 Terminology
-===========
+-----------
 
 The keywords "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in :rfc2119:`RFC 2119`.
 
@@ -93,17 +93,17 @@ Any one of the Unicode characters :unicode:`0020`, :unicode:`0009`, :unicode:`00
 .. _specA_cellml_information_sets:
 
 CellML information sets
-=======================
+-----------------------
 
 CellML and XML
---------------
+~~~~~~~~~~~~~~
 
 #. Every CellML infoset SHALL be represented in an XML information set which conforms with the well-formedness requirements of :xml_1_1:`XML 1.1`.
 
 #. In this document, the remaining provisions relating to CellML infosets SHALL be interpreted as additional constraints on the XML information set represented by a CellML infoset.
 
 Specific information items
---------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. For the purposes of this specification, a specific information item is one of the following (see https://www.w3.org/TR/xml-infoset/#infoitem for definitions):
 
@@ -132,7 +132,7 @@ Specific information items
 .. _specA_semantic_equivalence:
 
 Non-specific information items
-------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. Two :ref:`CellML infosets<specA_cellml_infoset>` SHALL be deemed semantically equivalent if one can be transformed into the other by making any or none of the following changes:
 
@@ -149,14 +149,14 @@ Non-specific information items
 .. marker_cellml_information_sets_3
 
 Character information items
----------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. An element information item in the :ref:`CellML namespace<specA_cellml_namespace>` MUST NOT contain any character information items, except for character information items which consist entirely of whitespace characters.
 
 .. marker_cellml_information_sets_4
 
 Use of namespaces
------------------
+~~~~~~~~~~~~~~~~~
 
 #. Element information items in a :ref:`CellML infoset<specA_cellml_infoset>` MUST belong to one of the following namespaces, unless explicitly indicated otherwise:
 
@@ -167,7 +167,7 @@ Use of namespaces
 #. Attribute information items in a CellML element MUST NOT be prefixed with a namespace, unless explicitly indicated otherwise.
 
 XML ID Attributes
------------------
+~~~~~~~~~~~~~~~~~
 
 #. Any element information item in the :ref:`CellML namespace<specA_cellml_namespace>` MAY contain an attribute with local name :code:`id.`
    This attribute SHALL be treated as having attribute type ID, as defined in `section 3.3.1 <http://www.w3.org/TR/xml11/#sec-attribute-types>`__ of `XML 1.1 <http://www.w3.org/TR/xml11/>`__.
@@ -178,7 +178,7 @@ XML ID Attributes
 .. _specA_data_representation_formats:
 
 Data representation formats in CellML
-=====================================
+-------------------------------------
 
 The following data representation formats are defined for use in this specification:
 
