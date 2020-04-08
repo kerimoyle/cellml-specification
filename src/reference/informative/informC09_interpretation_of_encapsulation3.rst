@@ -43,22 +43,22 @@
                     ├─ component: JethroBodine
                     └─ component: JethrineBodine
 
-      .. code-block:: xml
+    .. code-block:: xml
 
-        <!-- None of the following connections are possible as their 
-             components are hidden from one another. -->
+      <!-- None of the following connections are possible as their 
+            components are hidden from one another. -->
 
-        <!-- Grandfather and grandchild. -->
-        <connection component_1="LukeClampett" component_2="EllyMayClampett" />
+      <!-- Grandfather and grandchild. -->
+      <connection component_1="LukeClampett" component_2="EllyMayClampett" />
 
-        <!-- Uncle and niece. -->
-        <connection component_1="AmosClampett" component_2="MyrtleClampett" />
-        
-        <!-- Cousin and cousin. -->
-        <connection component_1="PearlBodine" component_2="JedClampett" />
+      <!-- Uncle and niece. -->
+      <connection component_1="AmosClampett" component_2="MyrtleClampett" />
+      
+      <!-- Cousin and cousin. -->
+      <connection component_1="PearlBodine" component_2="JedClampett" />
 
-        <!-- Great-aunt and great-nephew. -->
-        <connection component_1="GrannyMoses" component_2="LukeClampett" />
+      <!-- Great-aunt and great-nephew. -->
+      <connection component_1="GrannyMoses" component_2="LukeClampett" />
     
     The second rule above addresses the restrictions around which :code:`variables` are able to access one another.  This is a little more complicated, and explained in more detail in the informative block on the :ref:`interpretation of map_variables<specC_interpretation_of_map_variables>` section.
 
