@@ -28,7 +28,7 @@
                                   imported components
                                                 ╵ ╵
       # In filling_recipes.cellml:              ╵ ╵
-      model: FillingRecipeCollection            ╵ ╵
+      model: PieFillingRecipes                  ╵ ╵
         ├─ component: BlueberryCinnamonFilling ╶┘ ╵
         └─ component: AppleAndPearFilling         ╵
                                                   ╵
@@ -57,35 +57,58 @@
 
     The components are imported from separate files, each of which defines and uses its own local definitions of the custom measurement units :code:`spoon`, :code:`dash`, and :code:`smidgen`.
 
+
+ <variables name="blueberries" units="gram" />
+            <variables name="sugar" units="dimensionless" />
+            <variables name="cornflour" units="gram" />
+
+            <!-- These units are defined for use in this, their local scope, below. -->
+            <variables name="cinnamon" units="smidgen" />
+            <variables name="water" units="spoonful" />
+
+
     .. code::
 
-      model: BlueberryPieRecipe
-        ├─ component: crust <╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴┐
-        └─ component: filling <╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴┐        ╷
-                                                ╷        ╷
-                                           imported components
-                                         and the units they need
-                                                ╵        ╵
-      # In filling_recipes.cellml:              ╵        ╵
-      model: FillingRecipeCollection            ╵        ╵
-        ├─ component: BlueberryCinnamonFilling ╶┘        ╵
-        └─ component: AppleAndPearFilling                ╵
-                                                         ╵
-          # In crust_recipes.cellml:                     ╵
-          model: PieCrustRecipes                         ╵
-            ├─ component: HazelnutLavenderCrust ╴╴╴╴╴╴┬┬┬┘
-            │     ├─ variable: ground_hazelnut (gram) ╷╷╷
-            │     ├─ variable: egg (dimensionless)    ╷╷╷
-            │     ├─ variable: flour (gram)        units are implicitly
-            │     ├─ variable: sugar (gram)        imported by the component
-            │     ├─ variable: water                  ╵╵╵
-        ┌╴╴╴╴╴╴╴╴╴╴> └─ units: spoonful ╴╴╴╴╴╴╴╴╴╴╴╴╴╴┘╵╵
-        ╷   │     ├─ variable: salt                    ╵╵
-        ╷┌╴╴╴╴╴╴╴╴╴> └─ units: dash ╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴┘╵
-        ╷╷  │     └─ variable: lavender_flowers         ╵
-        ╷╷┌╴╴╴╴╴╴╴╴> └─ units: smidgen ╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴┘
+        model: BlueberryPieRecipe
+          ├─ component: crust <╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴┐
+          └─ component: filling <╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴┐ ╷
+                                                        ╷ ╷
+                                          imported components and
+                                              the units they need
+                                                        ╵ ╵
+          # In filling_recipes.cellml:                  ╵ ╵
+          model: PieFillingRecipes                      ╵ ╵
+            ├─ component: BlueberryCinnamonFilling ╴╴╴┬┬┘ ╵
+            │    ├─ variable: blueberries (gram)      ╷╷  ╵
+            │    ├─ variable: sugar (dimensionless)  units are implicitly
+            │    ├─ variable: cornflour (gram)       imported by the component
+            │    ├─ variable: cinnamon                ╵╵  ╵
+        ┌╴╴╴╴╴╴╴╴╴> └─ units: smidgen ╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴┘╵  ╵
+        ╷   |   └─ variable: water                     ╵  ╵
+        ╷┌╴╴╴╴╴╴╴╴╴> └─ units: spoonful ╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴┘  ╵
+        ╷╷  |                                             ╵
+        ╷╷  ├─ component: AppleAndPearFilling             ╵
+        ╷╷  |                                             ╵
+      local custom units                                  ╵
+        ╵╵  |                                             ╵
+        ╵└╴╴├─ units: spoonful                            ╵
+        └╴╴╴└─ units: smidgen                             ╵
+                                                          ╵
+          # In crust_recipes.cellml:                      ╵
+          model: PieCrustRecipes                          ╵
+            ├─ component: HazelnutLavenderCrust ╴╴╴╴╴╴╴┬┬┬┘
+            │     ├─ variable: ground_hazelnut (gram)  ╷╷╷
+            │     ├─ variable: egg (dimensionless)     ╷╷╷
+            │     ├─ variable: flour (gram)         units are implicitly
+            │     ├─ variable: sugar (gram)         imported by the component
+            │     ├─ variable: water                   ╵╵╵
+        ┌╴╴╴╴╴╴╴╴╴╴> └─ units: spoonful ╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴┘╵╵
+        ╷   │     ├─ variable: salt                     ╵╵
+        ╷┌╴╴╴╴╴╴╴╴╴> └─ units: dash ╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴┘╵
+        ╷╷  │     └─ variable: lavender_flowers          ╵
+        ╷╷┌╴╴╴╴╴╴╴╴> └─ units: smidgen ╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴┘
         ╷╷╷ │
-      explicitly used local custom units
+      local custom units
         ╵╵╵ │
         ╵╵╵ ├─ component: CheeseAndAlmondCrust
         ╵╵╵ │
@@ -93,9 +116,7 @@
         ╵└╴╴├─ units: dash
         └╴╴╴├─ units: spoonful
             └─ units: dollop   
-            # Units like "dollop" that not used by the imported
-            # component are not imported.
-      
+
 
     .. container:: toggle
 
@@ -136,6 +157,9 @@
           </units>
           <units name="smidgen">
             <unit units="gram" multiplier="1" />
+          </units>
+          <units name="dollop">
+            <unit units="litre" prefix="milli" multiplier="20" />
           </units>
         </model>
 
@@ -193,7 +217,7 @@
                                   imported components
                                                 ╵ ╵
       # In filling_recipes.cellml:              ╵ ╵
-      model: FillingRecipeCollection            ╵ ╵
+      model: PieFillingRecipes                  ╵ ╵
         ├─ component: BlueberryCinnamonFilling ╶┘ ╵
         └─ component: AppleAndPearFilling         ╵
                                                   ╵
@@ -241,10 +265,10 @@
       ╷   ├─ component: crust <╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴┐
       ╷   ├─ component: filling <╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴┐ ╷
       ╷   │                                     ╷ ╷
-      └╴╴╴└─ units: spoonful <╴╴╴╴╴╴╴┐   imported components and
+      └╴╴╴└─ units: spoonful <╴╴╴╴╴╴╴┐     imported components and
                                      ╷     the units they need
                   explicitly imported units     ╵ ╵
-               are available to all components  ╵ ╵
+            are available to all components     ╵ ╵
                                      ╵          ╵ ╵
       # In filling_recipes.cellml:   ╵          ╵ ╵
       model: FillingRecipeCollection ╵          ╵ ╵
