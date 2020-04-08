@@ -35,7 +35,7 @@
         └─ component: French
             ├─ variable: un
             ├─ variable: deux
-            ├─ variable: tois
+            ├─ variable: trois
             └─ variable: quatre
     
 
