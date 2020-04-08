@@ -14,4 +14,10 @@
 
 .. include:: ../sectionC_interpretation.inc
   :start-after: marker_interpretation_of_map_variables_2
+  :end-before: marker_interpretation_of_map_variables_3
+
+.. include:: ../informative/informC10_interpretation_of_map_variables3.rst
+
+.. include:: ../sectionC_interpretation.inc
+  :start-after: marker_interpretation_of_map_variables_3
   :end-before: marker_interpretation_of_map_variables_end
