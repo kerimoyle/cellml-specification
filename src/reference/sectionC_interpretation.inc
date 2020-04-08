@@ -402,6 +402,7 @@ Interpretation of ``encapsulation`` elements
 
 #. Where a :code:`component_ref` element appears as a child of another :code:`component_ref` element, there SHALL be an arc in the encapsulation digraph, and that arc SHALL be from the node corresponding to the component referenced by the parent :code:`component_ref` element, and to the node corresponding to the component referenced by the child :code:`component_ref` element.
 
+.. marker_interpretation_of_encapsulation_1
 .. _specC_encapsulation_set:
 
 3. The encapsulated set for a component *A* SHALL be the set of all components *B* such that there exists an arc in the encapsulation digraph from the node corresponding to *A* to the node corresponding to *B*.
@@ -412,6 +413,8 @@ Interpretation of ``encapsulation`` elements
 #. The sibling set for a component *A* SHALL be the set of all components which have the same encapsulation parent as *A*, or in the case that *A* has no encapsulation parent, SHALL be the set of all components which do not have an encapsulation parent.
 
 #. The hidden set for a component *A* SHALL be the set of all components *B* where component *B* is not in the encapsulated set for component *A*, and component *B* is not the encapsulation parent of component *A*, and component *B* is not in the sibling set for component *A*.
+
+.. marker_interpretation_of_encapsulation_2
 
 #. For the avoidance of doubt, there MUST NOT be a :code:`connection` element such that the component referenced by the :code:`component_1` attribute is in the hidden set of the component referenced by the :code:`component_2` attribute, nor vice versa.
 
