@@ -62,4 +62,3 @@
     
     The second rule above addresses the restrictions around which :code:`variable` elements are able to access one another.
     This is a little more complicated, and explained in more detail in the informative block on the :ref:`interpretation of map_variables<specC_interpretation_of_map_variables>` section.
-

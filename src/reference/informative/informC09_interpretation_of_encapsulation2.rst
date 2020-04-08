@@ -16,9 +16,9 @@
     - :hardcodedref:`3.9.5` defines siblings as those :code:`component` elements which share a parent, be that parent a :code:`component` element or the :code:`model` element itself.
     - :hardcodedref:`3.9.6` defines the "hidden set" of any :code:`component` as those other :code:`component` elements which are neither the parent, the children, nor the siblings of that current :code:`component` element.
 
-    These distinctions become important when considering the kind of :code:`connection` elements which may be formed, and in determining the available :code:`interface_type` attribute values which are available to a component's :code:`variable` children.
+    These distinctions become important when considering the kind of :code:`connection` elements which may be formed, and in determining the :code:`interface_type` attribute values which are available to a component's :code:`variable` children.
 
-    Some examples are shown below.
+    The example below illustrates the extended family tree from the 1980s TV show, The Beverly Hillbillies.
 
     .. code::
 
@@ -51,7 +51,6 @@
           <component name="GrannyMoses" />
           <component name="MissJane" />
           <component name="ClampettFamily" />
-
           <component name="LukeClampett" />
           <component name="AmosClampett" />
           <component name="MyrtleClampett" />
