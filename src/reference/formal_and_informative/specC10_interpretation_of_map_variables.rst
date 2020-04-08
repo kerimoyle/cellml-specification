@@ -8,5 +8,10 @@
 
 .. include:: ../sectionC_interpretation.inc
   :start-after: marker_interpretation_of_map_variables_1
-  :end-before: marker_interpretation_of_map_variables_end
+  :end-before: marker_interpretation_of_map_variables_2
 
+.. include:: ../informative/informC10_interpretation_of_map_variables2.rst
+
+.. include:: ../sectionC_interpretation.inc
+  :start-after: marker_interpretation_of_map_variables_2
+  :end-before: marker_interpretation_of_map_variables_end
