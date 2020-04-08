@@ -12,15 +12,17 @@
 
       Understanding component references
 
-    As with references to units and variables, the term "component reference" refers to places where you need to specify a component by name.
-    This is done through the :code:`component_ref` attribute found in :code:`encapsulation` and :code:`import component` elements, as well as the :code:`component_1` and :code:`component_2` attributes of :code:`connection` elements.
+    As with references to units and variables, the term "component reference" refers to places where you need to specify or reference a component using its name (but not assign it its name).
+    This is done through the :code:`component_ref` attribute found in :code:`import component` and :code:`encapsulation` elements, as well as the :code:`component_1` and :code:`component_2` attributes of :code:`connection` elements.
 
     The complicated part occurs during imports, and involves understanding the *scope* of a component's reference.
     This is really just the appropriate name by which to call it depending on who is doing the calling.
 
     Consider the following example.  
-    Here, two families live next door to one another, and within each family unit use the terms "husband" and "wife" to refer to one another.
-    In the wider neighbourhood, however, they must be referred to by their names: "BarbaraGood", "TomGood", "JerryLeadbetter", and "MargotLeadbetter".
+    Here, two families live next door to one another, and within each family use the terms "husband" and "wife" to refer to their own component members.
+    In the local "LeadbetterFamilyModel" and "GoodFamilyModel" :code:`model` contexts, "husband" and "wife" are the :code:`name` attributes of the local :code:`components`.
+    In the wider neighbourhood, however, each person must be referred to by their real-world name: "BarbaraGood", "TomGood", "JerryLeadbetter", and "MargotLeadbetter".
+    In the "SurbitonNeighbourhood" :code:`model` context, the real-world names of "BarbaraGood" etc. are treated as :code:`name` attributes of local :code:`component` elements (even though they're imported), but now the "husband" and "wife" terms are :code:`component_ref` elements, as they are not the context providing the name. 
 
     .. code::
 
@@ -139,7 +141,7 @@
 
     This particular encapsulation structure means that the women (Barbara and Margot) are essentially unable to have any contact with the men (Tom and Jerry) even though their original components in the models from which they were imported *were* able to access one another.
 
-    Note also that these locality naming-calling rules are be applied through multiple generations of importing.
+    Note also that these locality-based naming-calling rules will be applied through multiple generations of importing.
     Since The Good Life is a TV show, there are actors who play the roles of each of the characters. 
     This could be reflected by using another generation of imports within the two family files like this:
 
@@ -174,23 +176,29 @@
         ╵ └╴╴╴╴╴╴╴├─ component: PenelopeKeith
         └╴╴╴╴╴╴╴╴╴└─ component: PaulEddington
 
-    .. code-block:: xml
+    .. container:: toggle
 
-      <!-- Inside the GoodFamily.cellml file: -->
-      <model name="TheGoodFamilyUnit">
-        <import xlink:href="CastOfCharacters.cellml">
-          <component name="husband" component_ref="RichardBriers" />
-          <component name="wife" component_ref="FelicityKendal" />
-        </import>
-      </model>
+      .. container:: header
 
-      <!-- Inside the LeadbetterFamily.cellml file: -->
-      <model name="TheLeadbetterFamilyUnit">
-        <import xlink:href="CastOfCharacters.cellml">
-          <component name="husband" component_ref="PaulEddington" />
-          <component name="wife" component_ref="PenelopeKeith" />
-        </import>
-      </model>
+        See CellML syntax
+
+      .. code-block:: xml
+
+        <!-- Inside the GoodFamily.cellml file: -->
+        <model name="TheGoodFamilyUnit">
+          <import xlink:href="CastOfCharacters.cellml">
+            <component name="husband" component_ref="RichardBriers" />
+            <component name="wife" component_ref="FelicityKendal" />
+          </import>
+        </model>
+
+        <!-- Inside the LeadbetterFamily.cellml file: -->
+        <model name="TheLeadbetterFamilyUnit">
+          <import xlink:href="CastOfCharacters.cellml">
+            <component name="husband" component_ref="PaulEddington" />
+            <component name="wife" component_ref="PenelopeKeith" />
+          </import>
+        </model>
 
     Note that in this situation, the original :code:`SurbitonNeighbourhood` model does not need to change at all.
     Each of the component references remains correct, as each is isolated in its own scope.
