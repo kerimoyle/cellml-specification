@@ -26,7 +26,7 @@
         │   ├─ variable: een
         │   ├─ variable: twee
         │   ├─ variable: drie
-        │   └─ variable: veir
+        │   └─ variable: vier
         ├─ component: Maori
         │   ├─ variable: tahi
         │   ├─ variable: rua
