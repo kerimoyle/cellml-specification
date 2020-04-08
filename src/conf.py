@@ -18,7 +18,10 @@ import datetime
 
 date_today = datetime.datetime.today()
 
-tags.add('unofficial')
+unofficial = False
+
+if unofficial:
+  tags.add('unofficial')
 
 build_type = os.environ['CELLML_SPEC_BUILD'] if 'CELLML_SPEC_BUILD' in os.environ else 'Full'
 
@@ -205,6 +208,11 @@ html_theme = 'sphinx_rtd_theme'
 # documentation.
 html_theme_options = {
     'navigation_depth': 2,
+}
+
+# Pass options through to the template
+html_context = {
+  'unofficial': unofficial,
 }
 
 # Automagically convert all :ref: blocks to show a tooltip using the hoverxref

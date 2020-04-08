@@ -1,0 +1,20 @@
+{% if builder == "singlehtml" %}
+
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+  <style scoped>
+    .cellml-spec ol {list-style-type: decimal;}
+    .cellml-spec .headerlink {display: none; }
+  </style>
+  {% block body %}
+
+      {{ body }}
+
+  {% endblock %}
+</body>
+</html>
+{% else %}
+  {% extends "!layout.html" %}
+{% endif %}
