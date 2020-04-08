@@ -339,6 +339,8 @@ Interpretation of ``map_variables`` elements
 #.  For the purposes of this specification, the variable equivalence (conceptual) network SHALL be an undirected graph with one node for every :code:`variable` element in the :ref:`CellML model<specA_cellml_model>`.
     The arcs of this graph SHALL be equivalences defined in the CellML model.
 
+.. marker_interpretation_of_map_variables_1
+
 #.  For each :code:`map_variables` element present in the CellML model, we define variables *A* and *B* for use in the rules in this section as follows.
 
     #. Variable *A* SHALL be the variable referenced by the encompassing :code:`connection` element’s :code:`component_1` and this :code:`map_variables` element’s :code:`variable_1` attribute.
@@ -351,15 +353,21 @@ Interpretation of ``map_variables`` elements
 
     #. One endpoint of the arc in the variable equivalence network SHALL be the node corresponding to variable *B*.
 
+.. marker_interpretation_of_map_variables_2
+
 #.  CellML models MUST NOT contain any pair of :code:`map_variables` elements which duplicates an existing arc in the variable equivalence network.
 
 #.  The variable equivalence network MUST NOT contain any cycles.
+
+.. marker_interpretation_of_map_variables_3
 
 #.  For each :code:`map_variables` element present in the CellML model, the variable unit reduction (see :ref:`Effect of units on variables <specC_effect_of_units_on_variables>` ) of variable *A* MUST have an identical set of tuples to the variable unit reduction of variable *B*.
     Two sets of tuples SHALL be considered identical if all of the tuples from each set are present in the other, or if both sets are empty.
     Two tuples are considered identical if and only if both the name and exponent value of each tuple are equivalent.
 
 #.  Tuples differing by a multiplying factor in their unit reduction MUST be taken into account when interpreting the numerical values of the variables (see :ref:`Interpretation of units<specC_interpretation_of_units>`).
+
+.. marker_interpretation_of_map_variables_4
 
 #.  For a given variable, the available interfaces SHALL be determined by the :code:`interface` attribute information item on the corresponding :code:`variable` element as follows.
 
@@ -382,6 +390,8 @@ Interpretation of ``map_variables`` elements
     #. When the parent :code:`component` element of variable *B* is in the encapsulated set of the parent :code:`component` element of variable *A*, the applicable interface for variable *A* SHALL be the private interface, and the applicable interface for variable *B* SHALL be the public interface.
 
 #.  CellML models MUST only contain :code:`map_variables` elements where the interface of variable *A* and the interface of variable *B* are applicable interfaces.
+
+.. marker_interpretation_of_map_variables_5
 
 #.  The :code:`variable` elements in a CellML model SHALL be treated as belonging to a single "connected variable set".
     Each set of connected variables is the set of all :code:`variable` elements for which the corresponding nodes in the variable equivalence network form a connected subgraph.
