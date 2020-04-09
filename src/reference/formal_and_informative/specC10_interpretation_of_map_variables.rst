@@ -33,3 +33,5 @@
 .. include:: ../sectionC_interpretation.inc
   :start-after: marker_interpretation_of_map_variables_5
   :end-before: marker_interpretation_of_map_variables_end
+
+.. include:: ../informative/informC10_interpretation_of_map_variables6.rst
