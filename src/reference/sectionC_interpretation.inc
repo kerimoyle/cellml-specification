@@ -383,9 +383,9 @@ Interpretation of ``map_variables`` elements
 
 #.  Tuples differing by a multiplying factor in their unit reduction MUST be taken into account when interpreting the numerical values of the variables (see :ref:`Interpretation of units<specC_interpretation_of_units>`).
 
-#.  The :code:`variable` elements in a CellML model SHALL be treated as belonging to a single "connected variable set".
-    Each set of connected variables is the set of all :code:`variable` elements for which the corresponding nodes in the variable equivalence network form a connected subgraph.
-    Each set of connected variables represents one variable in the underlying mathematical model.
+#.  The :code:`variable` elements in a CellML model SHALL be treated as belonging to a set, connected by the relationships specified in the :code:`math` elements of the model.
+    Each set of mapped variables is the set of all :code:`variable` elements for which the corresponding nodes in the variable equivalence network form a connected subgraph.
+    Each set of mapped variables represents one variable in the underlying mathematical model.
 
 .. marker_interpretation_of_map_variables_end
 .. marker_interpretation_of_variable_resets_start
