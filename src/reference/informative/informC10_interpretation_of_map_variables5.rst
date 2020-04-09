@@ -19,7 +19,7 @@
     The :code:`interface_type` attribute value choices are: 
     - :code:`public` (used by child components to reference their parent, or between siblings),
     - :code:`private` (used by parent components to reference their children), 
-    - :code:`public_and_private` (used by all near relatives), or
+    - :code:`public_and_private` (used when both the :code:`public` and :code:`private` interfaces are required), or
     - :code:`none`, which is the default.
 
     Which one(s) of these are deemed *applicable* for any :code:`variable` mapping is determined by the relationship between the their parent :code:`component` elements.  

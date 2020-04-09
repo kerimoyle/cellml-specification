@@ -22,5 +22,5 @@
     The first is through the mathematical equations as specified in intra-component :code:`math` elements; the second is through variable equivalences as specified in inter-component :code:`connection` and :code:`map_variables` elements.
 
     Both the :code:`connection` and :code:`map_variables` elements are *undirected*.
-    There is no update direction or hierarchy; they all have, instantaneously, the same value.
+    There is no update direction or hierarchy; they all represent, instantaneously, the same thing.
     
