@@ -20,4 +20,4 @@
     There are no clones, no duplicates, no mappings. 
 
     Thus, the purely mathematical model is found by collapsing each set of mapped variables (cloned characters) onto a single unique variable (character), until the relationships between these unique variables no longer involve mapping (cloning) but only mathematics.
-    In the end, :calvin_and_hobbes"`Calvin does the same <1990/01/30>`, and the world returns to (roughly) normal.
+    In the end, :calvin_and_hobbes:`Calvin does the same <1990/01/30>`, and the world returns to (roughly) normal.
