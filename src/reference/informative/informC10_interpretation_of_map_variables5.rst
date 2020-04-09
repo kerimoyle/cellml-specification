@@ -89,6 +89,7 @@
       .. code-block:: xml
 
         <model name="TheHouseAtPoohCorner">
+
           <!-- Defining the components and local variables. -->
           <component name="ChristopherRobin">
             <variable name="my_mood" interface_type="none" units="mood_score" />
@@ -98,18 +99,22 @@
             <variable name="eeyores_mood" interface_type="public" units="mood_score" />
             <variable name="poohs_mood" interface_type="public" units="mood_score" />
           </component>
+
           <component name="WinnieThePooh">
             <variable name="mood" interface_type="public" units="mood_score" />
           </component>
+
           <component name="Eeyore">
             <variable name="mood" units="mood_score" />
           </component>
+
           <component name="Kanga">
             <variable name="mood" interface_type="public" units="mood_score" />
             <!-- The utility variable roos_mood is included here so that it can pass
                  the value of mood in component Roo to roos_mood in component ChristopherRobin. -->
             <variable name="roos_mood" interface_type="private" units="mood_score" />
           </component>
+
           <component name="Roo">
             <variable name="mood" interface_type="public" units="mood_score" />
           </component>
@@ -119,20 +124,24 @@
             <!-- Mapping A -->
             <map_variables variable_1="poohs_mood" variable_2="mood" />
           </connection>
+
           <connection component_1="ChristopherRobin" component_2="Eeyore">
             <!-- Mapping B -->
             <map_variables variable_1="eeyores_mood" variable_2="mood" />
           </connection>
+
           <connection component_1="ChristopherRobin" component_2="Kanga">
             <!-- Mapping C -->
             <map_variables variable_1="kangas_mood" variable_2="mood" />
             <!-- Mapping D -->
             <map_variables variable_1="roos_mood" variable_2="roos_mood" />
           </connection>
+
           <connection component_1="Kanga" component_2="Roo">
             <!-- Mapping E -->
             <map_variables variable_1="roos_mood" variable_2="mood" />
           </connection>
+
         </model>
 
     - Mapping A is valid.
@@ -187,6 +196,7 @@
       .. code-block:: xml
 
         <model name="TheHouseAtPoohCorner">
+
           <!-- Defining the components and local variables. -->
           <component name="ChristopherRobin">
             <variable name="my_mood" interface_type="none" units="mood_score" />
@@ -196,18 +206,22 @@
             <variable name="eeyores_mood" interface_type="public" units="mood_score" />
             <variable name="poohs_mood" interface_type="public" units="mood_score" />
           </component>
+
           <component name="WinnieThePooh">
             <variable name="mood" interface_type="public" units="mood_score" />
           </component>
+
           <component name="Eeyore">
             <variable name="mood" interface_type="public" units="mood_score" />
           </component>
+
           <component name="Kanga">
             <variable name="mood" interface_type="public" units="mood_score" />
             <!-- The utility variable roos_mood is included here so that it can pass
                  the value of mood in component Roo to roos_mood in component ChristopherRobin. -->
             <variable name="roos_mood" interface_type="public_and_private" units="mood_score" />
           </component>
+
           <component name="Roo">
             <variable name="mood" interface_type="public" units="mood_score" />
           </component>
@@ -216,14 +230,18 @@
           <connection component_1="ChristopherRobin" component_2="WinnieThePooh">
             <map_variables variable_1="poohs_mood" variable_2="mood" />
           </connection>
+
           <connection component_1="ChristopherRobin" component_2="Kanga">
             <map_variables variable_1="kangas_mood" variable_2="mood" />
             <map_variables variable_1="roos_mood" variable_2="roos_mood" />
           </connection>
+
           <connection component_1="ChristopherRobin" component_2="Eeyore">
             <map_variables variable_1="eeyores_mood" variable_2="mood" />
           </connection>
+
           <connection component_1="Kanga" component_2="Roo">
             <map_variables variable_1="roos_mood" variable_2="mood" />
           </connection>
+          
         </model>
