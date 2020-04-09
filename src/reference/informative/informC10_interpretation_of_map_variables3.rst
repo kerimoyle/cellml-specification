@@ -89,38 +89,38 @@
             ├─ variable: trois
             └─ variable: quatre
 
-      .. container:: toggle
+    .. container:: toggle
 
-        .. container:: header
+      .. container:: header
 
-          See CellML syntax
+        See CellML syntax
 
-        .. code-block:: xml
+      .. code-block:: xml
 
-          <!-- Valid: First define the two components using a connection ... -->
-          <connection component_1="Dutch" component_2="Maori">
-            <!-- ... and then define the mapping between two variables within
-                those two components. -->
-            <map_variables variable_1="een" variable_2="tahi" />
-              ...
-          </component>
+        <!-- Valid: First define the two components using a connection ... -->
+        <connection component_1="Dutch" component_2="Maori">
+          <!-- ... and then define the mapping between two variables within
+              those two components. -->
+          <map_variables variable_1="een" variable_2="tahi" />
+            ...
+        </component>
 
-          <!-- Invalid: Duplicated mappings are not allowed. -->
-          <connection component_1="Dutch" component_2="Maori">
-            <map_variables variable_1="een" variable_2="tahi" />
-            <map_variables variable_1="een" variable_2="tahi" />
-              ...
-          </component>
+        <!-- Invalid: Duplicated mappings are not allowed. -->
+        <connection component_1="Dutch" component_2="Maori">
+          <map_variables variable_1="een" variable_2="tahi" />
+          <map_variables variable_1="een" variable_2="tahi" />
+            ...
+        </component>
 
-          <!-- Invalid: Duplicated connections are not allowed. -->
-          <connection component_1="Dutch" component_2="Maori"
-            <map_variables variable_1="een" variable_2="tahi" />
-              ...
-          </connection>
-          <connection component_1="Maori" component_2="Dutch"
-            <map_variables variable_1="tahi" variable_2="een" />
-              ...
-          </connection>
+        <!-- Invalid: Duplicated connections are not allowed. -->
+        <connection component_1="Dutch" component_2="Maori"
+          <map_variables variable_1="een" variable_2="tahi" />
+            ...
+        </connection>
+        <connection component_1="Maori" component_2="Dutch"
+          <map_variables variable_1="tahi" variable_2="een" />
+            ...
+        </connection>
 
     2. Secondly, *any* form of cyclical definition is invalid, as it leaves the mathematical model underdefined.
        So our Anglophone could be also told that *drie* means *tois*, *tois* means *toru*, and *toru* means *drie*, but unless one of them is nailed down to an actual value somewhere, the model remains under-defined.
