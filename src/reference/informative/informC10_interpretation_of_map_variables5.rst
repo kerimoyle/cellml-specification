@@ -77,7 +77,7 @@
             │  ├─ variable: mood (interface: public) ╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴┘       ╵
             │  └─ variable: roos_mood (interface: private) <╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴┤
             └─ component: Roo                                               ╷
-                └─ variable: mood (interface: public) ╴╴╴╴╴╴╴E╴╴╴╴╴╴╴╴╴╴╴╴╴╴┘
+                └─ variable: mood (interface: public) ╴╴╴╴╴╴ E ╴╴╴╴╴╴╴╴╴╴╴╴╴┘
 
 
     .. container:: toggle
