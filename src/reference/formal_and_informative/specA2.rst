@@ -21,3 +21,5 @@
 .. include:: ../sectionA_definitions.inc
   :start-after: marker_cellml_information_sets_4
   :end-before: marker_cellml_information_sets_end
+
+.. include:: ../informative/informA2_6.rst
