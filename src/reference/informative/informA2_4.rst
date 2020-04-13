@@ -10,6 +10,7 @@
 
     .. code-block:: none
 
+      <!-- This is not valid! -->
       <model name="myInvalidCellML" has other stuff in the element information item >
         
       </model>
