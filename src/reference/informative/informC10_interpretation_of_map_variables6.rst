@@ -17,7 +17,7 @@
     The first sentence in :hardcodedref:`3.10.11` explains this: Each :code:`variable` element in a CellML model SHALL be treated as belonging to a single "connected variable set"; or, while there are many "connected variable sets" in a model, any one :code:`variable` may belong to only one of them.
 
     In a *CellML model* there are two mechanisms by which variables can relate to one another: through the mathematics in the :code:`math` elements, and through the mapping in the :code:`map_variables` elements.
-    In a mathematical model, there is only one mechanism: the maths itself.
+    In a *mathematical model*, there is only one mechanism: the maths itself.
     There are no clones, no duplicates, no mappings. 
 
     Thus, the purely mathematical model is found by collapsing each set of mapped variables (cloned characters) onto a single unique variable (character), until the relationships between these unique variables no longer involve mapping (cloning) but only mathematics.
