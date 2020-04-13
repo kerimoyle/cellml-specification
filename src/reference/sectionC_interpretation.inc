@@ -393,7 +393,7 @@ Interpretation of ``map_variables`` elements
 
 .. marker_interpretation_of_map_variables_5
 
-11.  The :code:`variable` elements in a CellML model SHALL be treated as belonging to a single "connected variable set".
+11.  Each :code:`variable` element in a CellML model SHALL be treated as belonging to a single "connected variable set".
     Each set of connected variables is the set of all :code:`variable` elements for which the corresponding nodes in the variable equivalence network form a connected subgraph.
     Each set of connected variables represents one variable in the underlying mathematical model.
 
