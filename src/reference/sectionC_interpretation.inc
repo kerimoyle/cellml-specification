@@ -383,9 +383,9 @@ Interpretation of ``map_variables`` elements
 
 #.  CellML models MUST only contain :code:`map_variables` elements where the interface of variable *A* and the interface of variable *B* are applicable interfaces.
 
-#.  The :code:`variable` elements in a CellML model SHALL be treated as belonging to a single "connected variable set".
-    Each set of connected variables is the set of all :code:`variable` elements for which the corresponding nodes in the variable equivalence network form a connected subgraph.
-    Each set of connected variables represents one variable in the underlying mathematical model.
+#.  The :code:`variable` elements in a CellML model SHALL be treated as belonging to a single "equivalent variable set".
+    Each set of equivalent variables is the set of all :code:`variable` elements for which the corresponding nodes in the variable equivalence network form a equivalent subgraph.
+    Each set of equivalent variables represents one variable in the underlying mathematical model.
 
 .. marker_interpretation_of_map_variables_end
 .. marker_interpretation_of_variable_resets_start
@@ -398,7 +398,7 @@ Interpretation of ``reset`` elements
 
 #. Each :code:`reset` element describes a change to be applied to the variable referenced by the :code:`variable` attribute when specified conditions are met during the simulation of the model.
 
-#. All :code:`reset` elements SHALL be considered sequentially for the connected variable set (see :ref:`Interpretation of map_variables<specC_interpretation_of_map_variables>`) to which the referenced variable belongs.
+#. All :code:`reset` elements SHALL be considered sequentially for the equivalent variable set (see :ref:`Interpretation of map_variables<specC_interpretation_of_map_variables>`) to which the referenced variable belongs.
    The sequence SHALL be determined by the value of the reset element’s :code:`order` attribute, lowest (least positive / most negative) having priority.
 
 #. The condition under which a reset occurs SHALL be defined by the equality of the reset element’s :code:`test_variable` attribute and the evaluation of the MathML expression encoded in the :code:`test_value`.
