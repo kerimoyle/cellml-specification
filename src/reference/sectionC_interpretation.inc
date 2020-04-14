@@ -8,12 +8,15 @@ Interpretation of ``import`` elements
 -------------------------------------
 
 #. Each :code:`import` element present in a :ref:`CellML infoset<specA_cellml_infoset>` (the importing infoset) SHALL define a new and distinct instance of the CellML infoset which is referenced by the :code:`href` attribute (the imported infoset).
-   This imported infoset instance SHALL provide the context in which the child of an import element (a :code:`units` or :code:`component` element) is defined and interpreted.
 
-#. The imported infoset SHALL be considered such that items relevant to the imported infoset (:code:`unit` children of imported :code:`units` elements or the :ref:`encapsulated set<specC_encapsulation_set>` of imported :code:`component` elements) are themselves available to that :code:`import` element child.
-   It is noted, for the avoidance of doubt, that the importing infoset SHALL NOT have access to such implicitly imported items, but only to explicitly specified :code:`import` element children.
+#. A :ref:`units reference<specC_units_reference>` occurring within an imported component or within an imported units definition, SHALL be resolved with respect to the imported infoset.
 
-See :ref:`Units reference<specC_units_reference>` and :ref:`Component reference<specC_component_reference>` for the specifics of importing units and components.
+#. When determining the equivalent variable set of a variable in an imported component:
+
+   #. connections to variables in the encapsulated set of the imported component SHALL be considered, and this rule SHALL be applied recursively;
+
+   #. connections to variables in the sibling set of the imported component SHALL NOT be considered.
+
 
 .. marker_interpretation_of_imports_end
 .. marker_units_reference_start
