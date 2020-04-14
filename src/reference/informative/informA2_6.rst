@@ -12,10 +12,15 @@
 
       Understanding element IDs
 
-    In order to understand how the XML :code:`id` attribute is used in CellML models, we need to remember three things.
+    In order to understand how the XML :code:`id` attribute is used in CellML models, we need to understand four things.
     Firstly, in CellML the elements are identified by uniqueness over the *model* scope of their :code:`name` attribute, their type (eg: :code:`variable`), and in some cases, by their parent element too.
     Secondly, the CellML :code:`model` might exist over several different *documents*, and make use of :code:`import` functionality to connect these documents into one *model*.
-    Finally, the uniqueness of the XML :code:`id` attribute value extends only to the *document* scope, not the CellML *model* scope.
+    Thirdly, the uniqueness of the XML :code:`id` attribute value extends only to the *document* scope, not the CellML *model* scope.
+    Finally, there are aspects of the *written* XML which do not contribute to the *conceptual* model as represented by the CellML; simple examples are things like whitespace between elements, comments, quotation and angle bracket markers.
+    These are all parts of the written language which guide interpretation into the conceptual model.
+    The :code:`id` attribute is likewise an XML attribute which falls into the same category: it may be read when a document is parsed, but as it doesn't form a part of any CellML element, it doesn't exist in the constructed conceptual representation.
+    Having said this, the syntax of CellML is a subset of XML (as specified in :ref:`CellML information sets<specA_cellml_information_sets>`), so the rules of XML :code:`id` attributes must be followed, where present.
+
     Consider the example below.
 
     .. code::
@@ -28,8 +33,9 @@
         └─ component: name = "FunStuff", id = "f"                ╷
              └─ variable: name = "FunStuff", id = "fs"           ╷
                                                                  ╷
-                                              Valid: Component named "Porridge" is
-                                              imported, but its id attribute "p" is not.
+                                              Valid: A CellML component named "Porridge" is
+                                              imported, but its XML id attribute "p" is not
+                                              a part of that import.
                                                                  ╵
       # In the document "CarbohydrateIdeas.cellml".              ╵
       # All id attributes should be unique within this document. ╵
@@ -40,7 +46,7 @@
             └─ variable: name = "Peanutbutter", id = "p" 
 
             # Invalid: The variable Peanutbutter is not allowed to have an id of "p"
-            # as this conflicts with the component Porridge id in the same document.
+            # as this conflicts with the component Porridge id "p" in the same document.
 
 
     .. container:: toggle
