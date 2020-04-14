@@ -29,9 +29,9 @@
       :code:`abcdefghijklmnopqrstuvwxyz` (symbols between :unicode:`0061` and :unicode:`007A`)
       :code:`ABCDEFGHIJKLMNOPQRSTUVWXYZ` (symbols between :unicode:`0041` and :unicode:`005A`)
 
-    These 2*26 characters are refferd to in CellML as the Basic Latin alphabetic characters.
+    These characters are refferd to in CellML as the Basic Latin alphabetic characters.
 
-    The Digits are the Unicode set:
+    The Digits are the Unicode characters:
 
       :code:`0123456789` (symbols between :unicode:`0030` and :unicode:`0039`)
 
