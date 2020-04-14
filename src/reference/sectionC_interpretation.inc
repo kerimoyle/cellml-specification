@@ -369,11 +369,13 @@ Interpretation of ``map_variables`` elements
 
 #.  The applicable interfaces for variables *A* and *B* in components *AA* and *BB* respectively SHALL be defined as follows.
 
-    #. When components *AA* and *BB* are siblings, the applicable interface for both variables *A* and *B* SHALL be the public interface.
+    #. When component *AA* is in the sibling set of component *BB* (and vice versa), the applicable interface for both variables *A* and *B* SHALL be the public interface.
 
-    #. When component *AA* is a child of component *BB* the applicable interface for variable *A* SHALL be the public interface, and the applicable interface for variable *B* SHALL be the private interface.
+    #. When component *AA* is in the encapsulated set of component *BB* the applicable interface for variable *A* SHALL be the public interface, and the applicable interface for variable *B* SHALL be the private interface.
 
-    #. When component *AA* is neither a sibling, parent nor child of component *BB* no connection is possible between the components, so no interface is available between the variables *A* and *B*.
+    #. When component *BB* is in the encapsulated set of component *AA* the applicable interface for variable *B* SHALL be the public interface, and the applicable interface for variable *A* SHALL be the private interface.
+
+    #. It is noted, for the avoidance of doubt, that any other encapsulation relationship between components *AA* and *BB* will not permit connections, meaning that no interface is available between the variables *A* and *B*.
 
 #.  CellML models MUST only contain :code:`map_variables` elements where the interface of variable *A* and the interface of variable *B* are applicable interfaces.
 
