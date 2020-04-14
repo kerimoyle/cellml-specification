@@ -23,7 +23,7 @@
       # In the document "BreakfastMenu.cellml".
       # All id attributes are unique within this document.
       model: name = "BreakfastOfChampions", id = "b"
-        ├─ component: name = "Protien", id = "p"
+        ├─ component: name = "Protein", id = "p"
         ├─ component: name = "Carbohydrates", id = "c" <╴╴╴╴╴╴╴╴╴┐
         └─ component: name = "FunStuff", id = "f"                ╷
              └─ variable: name = "FunStuff", id = "fs"           ╷
@@ -53,7 +53,7 @@
 
         <!-- In the file BreakfastMenu.cellml: -->
         <model name="BreakfastOfChampions" id="b">
-          <component name="Protien" id="p" />
+          <component name="Protein" id="p" />
 
           <import href="CarbohydrateIdeas.cellml">
             <!-- Valid: The id attribute value is set here to be "c" 
@@ -75,7 +75,7 @@
                and in different documents. -->
           <component name="Chocolate" id="c" />
           
-          <!-- Valid: The id attribute "p" here does not clash with the Protien 
+          <!-- Valid: The id attribute "p" here does not clash with the Protein 
                component id above because even though they are in the same model,
                they are in different documents. -->
           <component name="Porridge" id="p" />
