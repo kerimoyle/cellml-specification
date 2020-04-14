@@ -247,7 +247,7 @@ A :code:`variable` element information item (referred to in this specification a
 
    .. container:: issue-variable-units
 
-      2. The :code:`units` attribute. The value of the :code:`units` attribute MUST be a :ref:`valid CellML identifier<specA_cellml_identifier>`, and MUST meet the constraints described in the :ref:`Effect of units on variables<specC_effect_of_units_on_variables>` section.
+      2. The :code:`units` attribute. The value of the :code:`units` attribute MUST be a :ref:`valid CellML identifier<specA_cellml_identifier>`, and MUST be a :ref:`valid units reference<specC_units_reference>`.
 
 2. Every :code:`variable` element MAY contain one or more of the following attributes:
 
