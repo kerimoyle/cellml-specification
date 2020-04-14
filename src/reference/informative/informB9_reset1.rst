@@ -9,4 +9,134 @@
 
   .. container:: infospec
 
-    **TODO** Informative notes about resets go here
+    .. container:: heading3
+
+      Understanding reset elements
+
+    Resets are a new addition to CellML in version 2.0, and their intention is to allow the user to specify how and when discontinuities can exist in variable values throughout the solution.
+
+    Some examples of the application of resets to a modelling situation are shown below, and the specific syntax is explained beneath that.
+    .. Because there are many different situations in which resets can be used (and misused) a separate section of this informative specification document has been created, and can be accessed **TODO**.
+
+    .. container:: heading4
+    
+      What does a reset do?
+
+    A reset lets you do just that: reset a variable to another value, restart a timer, flip a switch, take a step, start again.
+    In order to work, a reset needs to know some information:
+
+    - Which variable's value do you want to change?
+      This is called the "reset variable" and is specified by the :code:`variable` attribute in the :code:`reset` block.
+    - Which variable will tell us when to trigger the change?
+      This is called the "test variable" and is referenced by the :code:`test_variable` attribute in the :code:`reset` block.
+      The test variable can be the same as the reset variable.
+    - What new value should be given to the reset variable?
+      This is called the "reset value" and is specified by evaluating the MathML content which is inside the :code:`reset_value` element child of this :code:`reset` element.
+    - What value of the test variable should be used to trigger the change?
+      This is called the "test value" and is specified by evaluating the MathML content inside the :code:`test_value` element child of this :code:`reset` element.
+    - What happens if more than one reset point to the same reset variable?
+      This will be sorted out by the unique :code:`order` attribute on each :code:`reset` element which changes this reset variable.
+      The order will determine which of the valid competing resets is applied.
+  
+    In the following example we want to model the position of an automatic vacuum cleaner as it deflects off two opposite walls in a room.
+    The device follows a straight line until it encounters a wall, at which point it immediately switches direction and travels back to the other wall.
+
+    .. code::
+
+      model: NotCleaningTheHouse
+        units: metres_per_second
+          unit: metre
+          unit: second, exponent = -1
+        component: Roomba
+          variable: position (metre)
+          variable: velocity (metres_per_second)
+          variable: time (second)
+          variable: time_step (second)
+          variable: width (metre)
+          math: 
+            position = position + time_step*velocity
+            time = time + time_step
+    
+    .. code-block:: xml
+
+      <model name="NotCleaningTheHouse">
+        <units name="metres_per_second">
+          <unit units="metre" />
+          <unit units="second" exponent="-1" />
+        </units>
+        <component name="Roomba">
+          <!-- Variables should be initialised using the initial_value attribute. -->
+          <variable name="position" units="metre" initial_value="0" />
+          <variable name="velocity" units="metres_per_second" initial_value="0.5" />
+          <variable name="time" units="second" initial_value="0" />
+
+          <!-- Constants should be set in the math element so that they are true for all time. -->
+          <variable name="time_step" units="second"/>
+          <variable name="width" units="metre" />
+
+          <math>
+            <!-- Constants: the room is 5m wide. -->
+            <apply><eq/>
+              <ci>width</ci>
+              <cn cellml:units="metre">5</cn>
+            </apply>
+
+            <!-- Constant: the timestep for calculations will be 0.1s. -->
+            <apply><eq/>
+              <ci>time_step</ci>
+              <cn cellml:units="second">0.1</cn>
+            </apply>
+            
+            <!-- Variable: the overall time will increment by the timestep each iteration. -->
+            <apply><eq/>
+              <ci>time</ci>
+              <apply><plus/>
+                <ci>time</ci>
+                <ci>time_step</ci>
+              </apply>
+            </apply>
+
+            <!-- Variable: the position of the device will increment based on its velocity and previous positon. -->
+            <apply><eq/>
+              <ci>position</ci>
+              <apply><plus/>
+                <ci>position</ci>
+                <apply><times/>
+                  <ci>time_step</ci>
+                  <ci>velocity</ci>
+                </apply>
+              </apply>
+            </apply>
+
+          </math>
+        </component>
+      </model>
+
+    Now let's add a reset to this such that when the device reaches the opposite wall its direction of travel reverses.
+    In pseudocode this would be:
+
+    .. code::
+
+      if (position equals width)    # statement A below
+      then (change direction)       # statement B below
+      else (maintain direction)
+
+    In CellML this would be:
+
+    .. code-block:: xml
+
+      <reset variable="velocity" test_variable="position" order="1">
+
+        <!-- Statement A above comes from the combination of the test_variable attribute and the test_value: -->
+        <test_value>
+          <ci>width</ci>
+        </test_value>
+
+        <!-- Statement B above comes from the combination of the variable attribute and the reset_value: -->
+        <reset_value>
+          <apply><times/>
+            <ci>velocity</ci>
+            <cn cellml:units="dimensionless">-1</cn>
+          <apply>
+        </reset_value>
+      </reset>
