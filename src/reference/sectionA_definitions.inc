@@ -60,7 +60,7 @@ A Unicode character in the range :unicode:`0030` to :unicode:`0039`.
 .. _specA_basic_latin_alphanumeric_character:
 
 **Basic Latin alphanumeric character:**
-A Unicode character which is either a :ref:`Basic Latin alphabetic character<specA_basic_latin_alphabetic_character>` or a :ref:`Digit<specA_digit>`.
+A Unicode character which is either a :ref:`Basic Latin alphabetic character<specA_basic_latin_alphabetic_character>` or a :ref:`digit<specA_digit>`.
 
 .. _specA_basic_latin_underscore:
 

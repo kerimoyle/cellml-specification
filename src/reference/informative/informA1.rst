@@ -19,7 +19,7 @@
 
     .. container:: heading3
 
-      Unicode, Basic Latin alphabetical characters, and Digits
+      Unicode, Basic Latin alphabetical characters, and digits
 
     The Unicode project is an attempt to codify all of the symbols - alphabets, writings, even emojis - of all the languages of the world so that they can be interchangeable and interpreted by computers.
     Since computers understand numbers rather than symbols, each character in each language is given a unique numerical code.
@@ -31,9 +31,11 @@
 
     These characters are refferd to in CellML as the Basic Latin alphabetic characters.
 
-    The Digits are the Unicode characters:
+    The digits are the Unicode characters:
 
       :code:`0123456789` (symbols between :unicode:`0030` and :unicode:`0039`)
+
+    Together with the Basic Latin alphabetic characters, they form the Basic Latin alphanumerical characters.
 
     In addition, CellML recognises four special characters:
 
