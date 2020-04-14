@@ -88,6 +88,7 @@
         </model>
 
     Some points to note:
+    
     - Here we have two separate *documents* which are partially combined to make one *model*.
     - There is **no** repetition of :code:`id` attribute values within the BreakfastMenu.cellml *document*.
     - There **is** repetition of the :code:`name` attribute "FunStuff", but the elements have different types (:code:`component` and :code:`variable`), so this remains valid.
