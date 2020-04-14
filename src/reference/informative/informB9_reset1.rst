@@ -48,11 +48,11 @@
           unit: metre
           unit: second, exponent = -1
         component: Roomba
-          variable: position (metre)
-          variable: velocity (metres_per_second)
-          variable: time (second)
-          variable: time_step (second)
-          variable: width (metre)
+          variable: position (metre), initially 0
+          variable: velocity (metres_per_second), initially 0.5
+          variable: time (second), initially 0
+          variable: time_step (second), constant, 0.1
+          variable: width (metre), constant, 5
           math: 
             position = position + time_step*velocity
             time = time + time_step
@@ -127,12 +127,30 @@
 
       <reset variable="velocity" test_variable="position" order="1">
 
-        <!-- Statement A above comes from the combination of the test_variable attribute and the test_value: -->
+        <!-- Statement A above is true when the test_variable 
+             equals the test_value statement: -->
         <test_value>
           <ci>width</ci>
         </test_value>
 
-        <!-- Statement B above comes from the combination of the variable attribute and the reset_value: -->
+        <!-- Statement B above is defined by setting the reset
+             variable to the reset_value statement: -->
+        <reset_value>
+          <apply><times/>
+            <ci>velocity</ci>
+            <cn cellml:units="dimensionless">-1</cn>
+          <apply>
+        </reset_value>
+      </reset>
+    
+    Finally, we need another reset which will simulate the return of the device to its starting place at the first wall, where it again reverses direction.
+
+    .. code-block:: xml
+
+      <reset variable="velocity" test_variable="position" order="2">
+        <test_value>
+          <cn units:cellml="metre">0</cn>
+        </test_value>
         <reset_value>
           <apply><times/>
             <ci>velocity</ci>
