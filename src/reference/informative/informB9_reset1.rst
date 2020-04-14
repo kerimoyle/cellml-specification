@@ -22,7 +22,7 @@
     
       What does a reset do?
 
-    A reset lets you do just that: reset a variable to another value, restart a timer, flip a switch, take a step, start again.
+    A reset lets you do just that: reset a variable to a totally different value, restart a timer, flip a switch, take a step, start again.
     In order to work, a reset needs to know some information:
 
     - Which variable's value do you want to change?
@@ -30,14 +30,14 @@
     - Which variable will tell us when to trigger the change?
       This is called the "test variable" and is referenced by the :code:`test_variable` attribute in the :code:`reset` block.
       The test variable can be the same as the reset variable.
+    - What happens if more than one reset points to the same reset variable?
+      This will be sorted out by the unique :code:`order` attribute on each :code:`reset` element which changes this reset variable.
+      The order will determine which of the valid competing resets is applied.
     - What new value should be given to the reset variable?
       This is called the "reset value" and is specified by evaluating the MathML content which is inside the :code:`reset_value` element child of this :code:`reset` element.
     - What value of the test variable should be used to trigger the change?
       This is called the "test value" and is specified by evaluating the MathML content inside the :code:`test_value` element child of this :code:`reset` element.
-    - What happens if more than one reset point to the same reset variable?
-      This will be sorted out by the unique :code:`order` attribute on each :code:`reset` element which changes this reset variable.
-      The order will determine which of the valid competing resets is applied.
-  
+
     In the following example we want to model the position of an automatic vacuum cleaner as it deflects off two opposite walls in a room.
     The device follows a straight line until it encounters a wall, at which point it immediately switches direction and travels back to the other wall.
 
