@@ -105,7 +105,7 @@ CellML and XML
 Specific information items
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. For the purposes of this specification, a specific information item is one of the following (see https://www.w3.org/TR/xml-infoset/#infoitem for definitions):
+#. For the purposes of this specification, a specific information item is one of the following (see https://www.w3.org/TR/xml-infoset/ for definitions):
 
    #. A document information item;
 
@@ -134,9 +134,19 @@ Specific information items
 Non-specific information items
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+#. For the purposes of this specification, a non-specific information item is one of the following (see https://www.w3.org/TR/xml-infoset/ for definitions):
+
+   #. A comment information item;
+
+   #. A namespace information item;
+
+   #. A character information item.
+
+#. An element information item in the :ref:`CellML namespace<specA_cellml_namespace>` MUST NOT contain any character information items, except for character information items which consist entirely of whitespace characters.
+
 #. Two :ref:`CellML infosets<specA_cellml_infoset>` SHALL be deemed semantically equivalent if one can be transformed into the other by making any or none of the following changes:
 
-   #. Adding, removing, and/or modifying `comment information items <https://www.w3.org/TR/xml-infoset/#infoitem.comment>`__.
+   #. Adding, removing, and/or modifying comment information items.
 
    #. Changing (inserting, removing, and/or modifying) one or more namespace information items, and/or modifying the prefix of one or more information items, without changing the namespace that any information item is in.
 
@@ -145,13 +155,6 @@ Non-specific information items
       Inserting or removing character information items that consist entirely of :ref:`whitespace characters<specA_whitespace_character>`,
       changing the number of whitespace characters in such an information item,
       or changing the number of whitespace characters at the beginning or end of any character information item.
-
-.. marker_cellml_information_sets_3
-
-Character information items
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-#. An element information item in the :ref:`CellML namespace<specA_cellml_namespace>` MUST NOT contain any character information items, except for character information items which consist entirely of whitespace characters.
 
 .. marker_cellml_information_sets_4
 
