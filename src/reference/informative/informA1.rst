@@ -41,7 +41,7 @@
 
     - :code:`+` the plus sign (:unicode:`002B`),
     - :code:`-` the minus sign (:unicode:`002D`),
-    - :code:`.` the fullstop or decimal point (:unicode:`002E`),
+    - :code:`.` the full stop or decimal point (:unicode:`002E`),
     - :code:`_` the underscore (:unicode:`005F`),
 
     and the following whitespace characters:
