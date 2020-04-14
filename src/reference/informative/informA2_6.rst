@@ -87,9 +87,10 @@
           </component>
         </model>
 
-    Here we have two separate *documents* which are partially combined to make one *model*.
-    There is *no* repetition of :code:`id` attribute values within the BreakfastMenu.cellml *document*.
-    There *is* repetition of the :code:`name` attribute "FunStuff", but the elements have different types (:code:`component` and :code:`variable`), so this remains valid.
-    There *is* repetition of the :code:`id` attribute "p" in the CarbohydrateIdeas.cellml *document*, between the :code:`variable` named "Peanutbutter" and the :code:`component` named "Porridge".
-    This is not valid.
+    Some points to note:
+    - Here we have two separate *documents* which are partially combined to make one *model*.
+    - There is **no** repetition of :code:`id` attribute values within the BreakfastMenu.cellml *document*.
+    - There **is** repetition of the :code:`name` attribute "FunStuff", but the elements have different types (:code:`component` and :code:`variable`), so this remains valid.
+    - There **is** repetition of the :code:`id` attribute "p" in the CarbohydrateIdeas.cellml *document*, between the :code:`variable` named "Peanutbutter" and the :code:`component` named "Porridge".
+      This is not valid.
 
