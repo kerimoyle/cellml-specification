@@ -16,13 +16,12 @@
     There are two different ways that any :code:`variable` could be referenced.
 
     The first and simplest is within its own local scope, the parent :code:`component`.
-    In that situation, the :code:`variable`\'s :code:`name` attribute is enough to uniquely locate it.
+    In that situation, the :code:`variable` element's :code:`name` attribute is enough to uniquely locate it.
 
     The second situation is when a :code:`variable` is referred to from a :code:`component` other than its parent, so a reference to the parent :code:`component` as well as the :code:`variable`'s :code:`name` is required.
     This is found when creating :code:`connection` items using :code:`map_variables`.
 
     The example below shows how the pairing of components and variables are required to form a valid connection.  
-
 
     .. code-block:: xml
 
