@@ -163,9 +163,8 @@
     It's possible to write valid CellML that does not represent valid mathematics.
     You can think of this like correctly spelling a set of words which together do not form a meaningful sentence.
     Some examples of valid versus valid-but-nonsense :code:`math` elements' contents are shown below.
-    It's anticipated that good software implementations of CellML will check for these kinds of situations and inform the user.
 
-    Simple over-definition is valid, but will result in undefined behaviour:
+    Simple over-definition is valid, but will result in behaviour that is hard to interpret meaningfully:
 
     .. math::
 
@@ -173,7 +172,7 @@
 
       x = 1
 
-    Complicated over-definition is likewise valid, but will result in undefined behaviour:
+    Complicated over-definition is likewise valid:
 
     .. math::
 
