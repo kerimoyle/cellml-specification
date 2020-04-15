@@ -9,6 +9,10 @@
 
   .. container:: infospec
 
-    
+    .. container:: heading3
+
+      Understanding the order of resets
+
+    **TODO** Get algorithm description from Michael?
       
 
