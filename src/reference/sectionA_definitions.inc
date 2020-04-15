@@ -208,20 +208,6 @@ The following data representation formats are defined for use in this specificat
 
 .. marker_data_formats_1
 
-.. _specA_nonnegative_integer:
-
-2. A non-negative integer string:
-
-   .. container:: issue-data-repr-nneg-int-base10
-
-      1. SHALL be a base 10 representation of a non-negative integer.
-
-   .. container:: issue-data-repr-nneg-int-euro-num
-
-      2. SHALL consist of one or more :ref:`digits<specA_digit>`.
-
-.. marker_data_formats_2
-
 .. _specA_integer:
 
 3. An integer string:
@@ -238,7 +224,7 @@ The following data representation formats are defined for use in this specificat
 
       3. SHALL, other than the sign indicator, consist of one or more :ref:`digits<specA_digit>`.
 
-.. marker_data_formats_3
+.. marker_data_formats_2
 
 .. _specA_basic_real_number:
 
@@ -260,7 +246,7 @@ The following data representation formats are defined for use in this specificat
 
       4. SHALL, other than the sign indicator and the decimal point separator, consist of one or more :ref:`digits<specA_digit>`.
 
-.. marker_data_formats_4
+.. marker_data_formats_3
 
 .. _specA_real_number:
 

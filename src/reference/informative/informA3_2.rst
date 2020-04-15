@@ -8,5 +8,5 @@
 
   .. container:: infospec
 
-    A non-negative integer string is just a string which represents a non-negative integer, containing *only* digits between 0 and 9.
-    It must not contain either the plus :code:`+` or minus :code:`-` signs.
+    An integer string is simply a string containing only the numerical characters between 0 and 9.
+    If it's a negative then it should begin with the minus sign, :code:`-`, but it *must not* begin with the plus sign, :code:`+`.
