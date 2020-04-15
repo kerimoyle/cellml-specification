@@ -13,10 +13,13 @@ Interpretation of ``import`` elements
 
 #. When determining the equivalent variable set of a variable in an imported component:
 
-   #. connections to variables in the encapsulated set of the imported component SHALL be considered, and this rule SHALL be applied recursively;
+   #. connections made in the importing infoset shall be handled as usual (see :ref:`Interpretation of ``map_variables`` <specC_interpretation_of_map_variables>`)
 
-   #. connections to variables in the sibling set of the imported component SHALL NOT be considered.
+   #. connections made in the imported infoset shall be handled as follows:
 
+      #. connections to components in the encapsulated set of the imported component SHALL be maintained, and this rule SHALL be applied recursively (encapsulated components are implicitly imported);
+
+      #. connections to components in the sibling set, or to the parent of the imported component SHALL NOT be maintained.
 
 .. marker_interpretation_of_imports_end
 .. marker_units_reference_start
