@@ -105,7 +105,7 @@ CellML and XML
 Specific information items
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. For the purposes of this specification, a specific information item is one of the following (see :xml_infoset: for definitions):
+#. For the purposes of this specification, a specific information item is one of the following (see :xml_infoset:`` for definitions):
 
    #. A document information item;
 
