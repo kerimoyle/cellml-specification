@@ -17,7 +17,7 @@ Interpretation of ``import`` elements
 
    #. connections made in the imported infoset shall be handled as follows:
 
-      #. connections to components in the encapsulated set of the imported component SHALL be maintained, and this rule SHALL be applied recursively (encapsulated components are implicitly imported);
+      #. connections to components in the encapsulated set of the imported component SHALL be maintained, and this rule SHALL be applied recursively;
 
       #. connections to components in the sibling set, or to the parent of the imported component SHALL NOT be maintained.
 
