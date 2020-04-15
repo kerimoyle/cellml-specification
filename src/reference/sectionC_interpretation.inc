@@ -310,23 +310,26 @@ Interpretation of ``math`` elements
 Interpretation of ``encapsulation`` elements
 --------------------------------------------
 
-#. For the purposes of this specification, there SHALL be a "conceptual encapsulation digraph" in which there is EXACTLY one node for every component in the :ref:`CellML model<specA_cellml_model>`.
+1. For the purposes of this specification, there SHALL be a "conceptual encapsulation digraph" in which there is EXACTLY one node for every component in the :ref:`CellML model<specA_cellml_model>`.
    Therefore the encapsulation digraph will not contain any loops.
 
-#. Where a :code:`component_ref` element appears as a child of another :code:`component_ref` element, there SHALL be an arc in the encapsulation digraph, and that arc SHALL be from the node corresponding to the component referenced by the parent :code:`component_ref` element, and to the node corresponding to the component referenced by the child :code:`component_ref` element.
+2. Where a :code:`component_ref` element appears as a child of another :code:`component_ref` element, there SHALL be an arc in the encapsulation digraph, and that arc SHALL be from the node corresponding to the component referenced by the parent :code:`component_ref` element, and to the node corresponding to the component referenced by the child :code:`component_ref` element.
 
+.. marker_interpretation_of_encapsulation_1
 .. _specC_encapsulation_set:
 
 3. The encapsulated set for a component *A* SHALL be the set of all components *B* such that there exists an arc in the encapsulation digraph from the node corresponding to *A* to the node corresponding to *B*.
 
-#. The encapsulation parent for a component *A* SHALL be the component corresponding to the node which is the parent node in the encapsulation digraph of the node corresponding to *A*.
+4. The encapsulation parent for a component *A* SHALL be the component corresponding to the node which is the parent node in the encapsulation digraph of the node corresponding to *A*.
    A component SHALL NOT appear as child of more than one encapsulation parent.
 
-#. The sibling set for a component *A* SHALL be the set of all components which have the same encapsulation parent as *A*, or in the case that *A* has no encapsulation parent, SHALL be the set of all components which do not have an encapsulation parent.
+5. The sibling set for a component *A* SHALL be the set of all components which have the same encapsulation parent as *A*, or in the case that *A* has no encapsulation parent, SHALL be the set of all components which do not have an encapsulation parent.
 
-#. The hidden set for a component *A* SHALL be the set of all components *B* where component *B* is not in the encapsulated set for component *A*, and component *B* is not the encapsulation parent of component *A*, and component *B* is not in the sibling set for component *A*.
+6. The hidden set for a component *A* SHALL be the set of all components *B* where component *B* is not in the encapsulated set for component *A*, and component *B* is not the encapsulation parent of component *A*, and component *B* is not in the sibling set for component *A*.
 
-#. For the avoidance of doubt, there MUST NOT be a :code:`connection` element such that the component referenced by the :code:`component_1` attribute is in the hidden set of the component referenced by the :code:`component_2` attribute, nor vice versa.
+.. marker_interpretation_of_encapsulation_2
+
+7. For the avoidance of doubt, there MUST NOT be a :code:`connection` element such that the component referenced by the :code:`component_1` attribute is in the hidden set of the component referenced by the :code:`component_2` attribute, nor vice versa.
 
 .. marker_interpretation_of_encapsulation_end
 .. marker_interpretation_of_map_variables_start
@@ -336,30 +339,30 @@ Interpretation of ``encapsulation`` elements
 Interpretation of ``map_variables`` elements
 --------------------------------------------
 
-#.  For the purposes of this specification, the variable equivalence (conceptual) network SHALL be an undirected graph with one node for every :code:`variable` element in the :ref:`CellML model<specA_cellml_model>`.
+1.  For the purposes of this specification, the variable equivalence (conceptual) network SHALL be an undirected graph with one node for every :code:`variable` element in the :ref:`CellML model<specA_cellml_model>`.
     The arcs of this graph SHALL be equivalences defined in the CellML model.
 
-#.  For each :code:`map_variables` element present in the CellML model, we define variables *A* and *B* for use in the rules in this section as follows.
+.. marker_interpretation_of_map_variables_1
+
+2.  For each :code:`map_variables` element present in the CellML model, we define variables *A* and *B* for use in the rules in this section as follows.
 
     #. Variable *A* SHALL be the variable referenced by the encompassing :code:`connection` element’s :code:`component_1` and this :code:`map_variables` element’s :code:`variable_1` attribute.
 
     #. Variable *B* SHALL be the variable referenced by the encompassing :code:`connection` element’s :code:`component_2` and this :code:`map_variables` element’s :code:`variable_2` attribute.
 
-#.  For every :code:`map_variables` element present in the CellML model, there SHALL be an arc in the variable equivalence network.
+3.  For every :code:`map_variables` element present in the CellML model, there SHALL be an arc in the variable equivalence network.
 
     #. One endpoint of the arc in the variable equivalence network SHALL be the node corresponding to variable *A*.
 
     #. One endpoint of the arc in the variable equivalence network SHALL be the node corresponding to variable *B*.
 
-#.  CellML models MUST NOT contain any pair of :code:`map_variables` elements which duplicates an existing arc in the variable equivalence network.
+.. marker_interpretation_of_map_variables_2
 
-#.  The variable equivalence network MUST NOT contain any cycles.
+4.  CellML models MUST NOT contain any pair of :code:`map_variables` elements which duplicates an existing arc in the variable equivalence network.
 
-#.  For each :code:`map_variables` element present in the CellML model, the variable unit reduction (see :ref:`Effect of units on variables <specC_effect_of_units_on_variables>` ) of variable *A* MUST have an identical set of tuples to the variable unit reduction of variable *B*.
-    Two sets of tuples SHALL be considered identical if all of the tuples from each set are present in the other, or if both sets are empty.
-    Two tuples are considered identical if and only if both the name and exponent value of each tuple are equivalent.
+5.  The variable equivalence network MUST NOT contain any cycles.
 
-#.  Tuples differing by a multiplying factor in their unit reduction MUST be taken into account when interpreting the numerical values of the variables (see :ref:`Interpretation of units<specC_interpretation_of_units>`).
+.. marker_interpretation_of_map_variables_3
 
 #.  For a given variable, the available interfaces SHALL be determined by the :code:`interface` attribute information item on the corresponding :code:`variable` element as follows.
 
@@ -373,19 +376,31 @@ Interpretation of ``map_variables`` elements
 
     #. If the :code:`interface` attribute information item is absent, then the variable has no interface.
 
-#.  The applicable interfaces for variables *A* and *B* SHALL be defined as follows.
+#.  The applicable interfaces for variables *A* and *B* in components *AA* and *BB* respectively SHALL be defined as follows.
 
-    #. When the parent :code:`component` element of variable *A* is in the sibling set of the parent :code:`component` element of variable *B*, the applicable interface for both variables *A* and *B* SHALL be the public interface.
+    #. When component *AA* is in the sibling set of component *BB* (and vice versa), the applicable interface for both variables *A* and *B* SHALL be the public interface.
 
-    #. When the parent :code:`component` element of variable *A* is in the encapsulated set of the parent :code:`component` element of variable *B*, the applicable interface for variable *A* SHALL be the public interface, and the applicable interface for variable *B* SHALL be the private interface.
+    #. When component *AA* is in the encapsulated set of component *BB* the applicable interface for variable *A* SHALL be the public interface, and the applicable interface for variable *B* SHALL be the private interface.
 
-    #. When the parent :code:`component` element of variable *B* is in the encapsulated set of the parent :code:`component` element of variable *A*, the applicable interface for variable *A* SHALL be the private interface, and the applicable interface for variable *B* SHALL be the public interface.
+    #. When component *BB* is in the encapsulated set of component *AA* the applicable interface for variable *B* SHALL be the public interface, and the applicable interface for variable *A* SHALL be the private interface.
 
-#.  CellML models MUST only contain :code:`map_variables` elements where the interface of variable *A* and the interface of variable *B* are applicable interfaces.
+    #. It is noted, for the avoidance of doubt, that any other encapsulation relationship between components *AA* and *BB* will not permit connections, meaning that no interface is available between the variables *A* and *B*.
 
-#.  The :code:`variable` elements in a CellML model SHALL be treated as belonging to a single "connected variable set".
-    Each set of connected variables is the set of all :code:`variable` elements for which the corresponding nodes in the variable equivalence network form a connected subgraph.
-    Each set of connected variables represents one variable in the underlying mathematical model.
+3.  CellML models MUST only contain :code:`map_variables` elements where the interface of variable *A* and the interface of variable *B* are applicable interfaces.
+
+.. marker_interpretation_of_map_variables_4
+
+#.  For each :code:`map_variables` element present in the CellML model, the variable unit reduction (see :ref:`Effect of units on variables <specC_effect_of_units_on_variables>` ) of variable *A* MUST have an identical set of tuples to the variable unit reduction of variable *B*.
+    Two sets of tuples SHALL be considered identical if all of the tuples from each set are present in the other, or if both sets are empty.
+    Two tuples are considered identical if and only if both the name and exponent value of each tuple are equivalent.
+
+#.  Tuples differing by a multiplying factor in their unit reduction MUST be taken into account when interpreting the numerical values of the variables (see :ref:`Interpretation of units<specC_interpretation_of_units>`).
+
+.. marker_interpretation_of_map_variables_5
+
+#.  Each :code:`variable` element in a CellML model SHALL be treated as belonging to a single "equivalent variable set".
+    Each equivalent variables set is the set of all :code:`variable` elements for which the corresponding nodes in the variable equivalence network form a connected subgraph.
+    Each equivalent variables set represents one variable in the underlying mathematical model.
 
 .. marker_interpretation_of_map_variables_end
 .. marker_interpretation_of_variable_resets_start

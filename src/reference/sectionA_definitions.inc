@@ -188,23 +188,11 @@ The following data representation formats are defined for use in this specificat
 
    .. container:: issue-data-repr-identifier-unicode
 
-      1. SHALL be a sequence of Unicode characters.
-
-   .. container:: issue-data-repr-identifier-latin-alphanum
-
-      2. SHALL NOT contain any characters except :ref:`Basic Latin alphanumeric characters<specA_basic_latin_alphanumeric_character>` and :ref:`Basic Latin underscores<specA_basic_latin_underscore>`.
-
-   .. container:: issue-data-repr-identifier-at-least-one-alphanum
-
-      3. SHALL contain at least one :ref:`alphabetic<specA_basic_latin_alphabetic_character>` character.
-
-   .. container:: issue-data-repr-identifier-begin-euro-num
-
-      4. SHALL NOT begin with a :ref:`digit<specA_digit>` or an :ref:`underscore<specA_basic_latin_underscore>`.
+      1. SHALL consist of a single :ref:`Basic Latin alphabetic character<specA_basic_latin_alphabetic_character>`, which MAY be followed by any combination of :ref:`Basic Latin alphanumeric characters<specA_basic_latin_alphanumeric_character>` and/or :ref:`Basic Latin underscores<specA_basic_latin_underscore>`.
 
    .. container:: issue-data-repr-identifier-identical
 
-      5. SHALL, when comparing two identifiers, be considered identical to another identifier if and only if both identifiers have identical sequences of characters.
+      2. SHALL, when comparing two identifiers, be considered identical to another identifier if and only if both identifiers are identical sequences of characters.
 
 .. marker_data_formats_1
 
