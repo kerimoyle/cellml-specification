@@ -171,7 +171,7 @@ A :code:`unit` element information item (referred to in this specification as a 
 
          1. For the purpose of the constraint in the next paragraph, the :code:`units` element inclusion digraph SHALL be defined as a conceptual digraph which SHALL contain one node for every :code:`units` element in the :ref:`CellML model<specA_cellml_model>`.
 
-            The :code:`units` element inclusion digraph SHALL contain an arc from :code:`units` element *A* to :code:`units` element *B* if and only if :code:`units` element *A* contains a :code:`unit` element with :code:`units` attribute value that is a units reference to :code:`units` element *B*.
+            The :code:`units` element inclusion digraph SHALL contain an arc from :code:`units` element *A* to :code:`units` element *B* if and only if :code:`units` element *A* contains a :code:`unit` element with a :code:`units` attribute value that is equal to the :code:`name` attribute value of :code:`units` element *B*.
 
       .. container:: issue-unit-circular-ref
 
@@ -241,13 +241,15 @@ A :code:`variable` element information item (referred to in this specification a
 
    .. container:: issue-variable-name
 
-      1. The :code:`name` attribute. The value of the :code:`name` attribute MUST be a :ref:`valid CellML identifier<specA_cellml_identifier>`.
+      1. The :code:`name` attribute.
+         The value of the :code:`name` attribute MUST be a :ref:`valid CellML identifier<specA_cellml_identifier>`.
 
          The value of the :code:`name` attribute MUST NOT be identical to the :code:`name` attribute on any sibling :code:`variable` element.
 
    .. container:: issue-variable-units
 
-      2. The :code:`units` attribute. The value of the :code:`units` attribute MUST be a :ref:`valid CellML identifier<specA_cellml_identifier>`, and MUST meet the constraints described in the :ref:`Effect of units on variables<specC_effect_of_units_on_variables>` section.
+      2. The :code:`units` attribute.
+         The value of the :code:`units` attribute MUST be a valid units reference, as defined in the :ref:`Units reference<specC_units_reference>` section.
 
 2. Every :code:`variable` element MAY contain one or more of the following attributes:
 
@@ -360,9 +362,9 @@ A :code:`math` element information item (referred to in this specification as a 
 
 .. container:: issue-math-cn-units-attribute
 
-   4. A MathML :code:`cn` element MUST have an attribute in the :ref:`CellML namespace<specA_cellml_namespace>`, with a local name equal to :code:`units`. 
+   4. A MathML :code:`cn` element MUST have an attribute in the :ref:`CellML namespace<specA_cellml_namespace>`, with a local name equal to :code:`units`.
 
-   The value of this attribute MUST be a valid :ref:`units reference<specC_units_reference>`.
+      The value of the :code:`units` attribute MUST be a valid units reference, as defined in the :ref:`Units reference<specC_units_reference>` section.
 
 .. container:: issue-math-cn-type
 
