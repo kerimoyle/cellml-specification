@@ -1,6 +1,5 @@
 
-
-.. note:: 
+.. container:: preamble
 
   A *model* is a conceptual entity defining a system of equations.
 

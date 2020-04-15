@@ -1,4 +1,4 @@
-.. note::
+.. container:: preamble
 
   A *variable* is a conceptual entity representing a mathematical variable.
 

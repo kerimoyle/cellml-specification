@@ -83,6 +83,20 @@ li {
     content: " -";
 }
 
+.preamble {
+    background: rgb(242, 249, 227);
+    padding: 10px;
+
+    margin-top: 0;
+    margin-bottom: 15px;
+    margin-left: 0;
+    margin-right: 0;
+
+    line-height: 24px;
+    font-family: "Lato", "proxima-nova", "Helvetica Neue", "Arial", sans-serif;
+}
+
+
 .infospec {
     /* border-top: 1px solid #b9c6dd; */
     background: #e1eaf0;
