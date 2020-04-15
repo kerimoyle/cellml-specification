@@ -186,7 +186,7 @@
         </model>
 
     This is where the idea of *scope* becomes important.  
-    As it stands, there is no conflict between the two different definitions of :code:`spoonful` and :code:`dash`, because each of the components refers to *its own definition* of these units.
+    As it stands, there is no conflict between the two different definitions of :code:`spoonful` and :code:`smidgen`, because each of the components refers to *its own definition* of these units.
     The components do not "know" that there is any other definition out there, because they cannot "see" up into the importing model.
 
     Now let's consider that the cook wants to alter the recipe a little after these two main ingredients have been imported, by adding a spoonful of brandy to some custard.
