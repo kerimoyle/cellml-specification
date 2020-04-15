@@ -31,7 +31,7 @@ Units references
 
 A "units reference" is an attribute value that specifies the physical units a variable or number is in.
 
-#. A units reference SHALL be a CellML identifier.
+#. A units reference SHALL be a :ref:`CellML identifier<specA_cellml_identifier>`.
 
 #. The units identified by a units reference SHALL be determined as follows:
 
@@ -238,7 +238,7 @@ Component references
 
 A "component reference" is an attribute value that specifies a CellML component.
 
-#. A component reference SHALL be a CellML identifier.
+#. A component reference SHALL be a :ref:`CellML identifier<specA_cellml_identifier>`.
 
 #. The component identifier by a component reference SHALL be determined as follows:
 
@@ -255,14 +255,22 @@ A "component reference" is an attribute value that specifies a CellML component.
 
 .. _specC_variable_reference:
 
-References to ``variable`` elements
------------------------------------
+Variable references
+-------------------
 
-#. When present in a descendant of a :code:`component` element, a variable reference SHALL be the name of a variable, and SHALL refer to the :code:`variable` element in that component with a :code:`name` attribute identical to the variable reference.
+A "variable reference" is an attribute value that specifies a CellML variable.
 
-#. When present as the value of a :code:`variable_1` attribute of a :code:`map_variables` element, a variable reference SHALL be the name of a variable, and SHALL be interpreted as referring to the :code:`variable` element with a :code:`name` attribute identical to the variable reference and being a child of the :code:`component` named by the value of the :code:`component_1` attribute of the parent :code:`connection` element.
+#. A variable reference SHALL be a :ref:`CellML identifier<specA_cellml_identifier>`.
 
-#. When present as the value of a :code:`variable_2` attribute of a :code:`map_variables` element, a variable reference SHALL be the name of a variable, and SHALL be interpreted as referring to the :code:`variable` element with a :code:`name` attribute identical to the variable reference and being a child of the :code:`component` named by the value of the :code:`component_2` attribute of the parent :code:`connection` element.
+#. The variable identified by a variable reference SHALL be determined as follows:
+
+#. When present in a descendant of a :code:`component` element, it SHALL refer to the variable of the same name within that component.
+
+#. When present in the :code:`variable_1` attribute of a :code:`map_variables` element, it SHALL refer to the variable of the same name in the component identified by the :code:`component_1` attribute in the same :code:`map_variables` element.
+
+#. When present in the :code:`variable_2` attribute of a :code:`map_variables` element, it SHALL refer to the variable of the same name in the component identified by the :code:`component_2` attribute in the same :code:`map_variables` element.
+
+#. If no variable can be identified using the rules above, the attribute value SHALL NOT be a valid variable reference.
 
 .. marker_variable_reference_end
 .. marker_interpretation_of_initial_values_start

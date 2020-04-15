@@ -166,7 +166,7 @@ A :code:`unit` element information item (referred to in this specification as a 
 .. container:: issue-unit-units-ref
 
    1. Every :code:`unit` element MUST contain a :code:`units` attribute.
-      The value of the :code:`units` attribute MUST be a valid units reference, as defined in the :ref:`Units reference<specC_units_reference>` section.
+      The value of the :code:`units` attribute MUST be a valid units reference, as defined in the section :ref:`Units references<specC_units_reference>`.
 
       .. container:: issue-unit-digraph
 
@@ -250,7 +250,7 @@ A :code:`variable` element information item (referred to in this specification a
    .. container:: issue-variable-units
 
       2. The :code:`units` attribute.
-         The value of the :code:`units` attribute MUST be a valid units reference, as defined in the :ref:`Units reference<specC_units_reference>` section.
+         The value of the :code:`units` attribute MUST be a valid units reference, as defined in the section :ref:`Units references<specC_units_reference>`.
 
 2. Every :code:`variable` element MAY contain one or more of the following attributes:
 
@@ -279,12 +279,12 @@ A :code:`reset` element information item (referred to in this specification as a
    .. container:: issue-reset-variable-reference
 
       1. The :code:`variable` attribute.
-         The value of the :code:`variable` attribute MUST be a variable reference to a variable defined within the parent :code:`component` element of the :code:`reset` element.
+         The value of the :code:`variable` attribute MUST be a valid variable reference, as defined in the section :ref:`Variable references<specC_variable_reference>`.
 
    .. container:: issue-reset-test-variable-reference
 
       2. The :code:`test_variable` attribute.
-         The value of the :code:`test_variable` attribute MUST be a variable reference to a variable defined within the parent :code:`component` element of the :code:`reset` element.
+         The value of the :code:`test_variable` attribute MUST be a valid variable reference, as defined in the section :ref:`Variable references<specC_variable_reference>`.
 
    .. container:: issue-reset-order
 
@@ -357,7 +357,7 @@ A :code:`math` element information item (referred to in this specification as a 
 
 .. container:: issue-math-ci-variable-reference
 
-   3. Every variable name given using the MathML :code:`ci` element MUST be a :ref:`variable reference<specC_variable_reference>` to a :code:`variable` within the :code:`component` element in which the :code:`math` element is contained.
+   3. The contents of a MathML :code:`ci` element MUST be a valid variable reference, as defined in the section :ref:`Variable references<specC_variable_reference>`.
 
 .. marker_math_3
 
@@ -365,7 +365,7 @@ A :code:`math` element information item (referred to in this specification as a 
 
    4. A MathML :code:`cn` element MUST have an attribute in the :ref:`CellML namespace<specA_cellml_namespace>`, with a local name equal to :code:`units`.
 
-      The value of the :code:`units` attribute MUST be a valid units reference, as defined in the :ref:`Units reference<specC_units_reference>` section.
+      The value of the :code:`units` attribute MUST be a valid units reference, as defined in the section :ref:`Units references<specC_units_reference>`.
 
 .. container:: issue-math-cn-type
 
@@ -446,7 +446,7 @@ A :code:`component_ref` element information item (referred to in this specificat
 
    1. Every :code:`component_ref` element MUST contain a :code:`component` attribute.
 
-      The value of the :code:`component` attribute MUST be a valid component reference, as defined in the :ref:`Components reference<specC_component_reference>` section.
+      The value of the :code:`component` attribute MUST be a valid component reference, as defined in the section :ref:`Component references<specC_component_reference>`.
 
 .. container:: issue-component-ref-child
 
@@ -466,7 +466,7 @@ A :code:`connection` element information item (referred to in this specification
 
    1. Each :code:`connection` element MUST contain a :code:`component_1` attribute.
 
-      The value of the :code:`component_1` attribute MUST be a valid component reference, as defined in the :ref:`Components reference<specC_component_reference>` section.
+      The value of the :code:`component_1` attribute MUST be a valid component reference, as defined in the section :ref:`Component references<specC_component_reference>`.
 
 .. marker_connection_1
 
@@ -474,7 +474,7 @@ A :code:`connection` element information item (referred to in this specification
 
    2. Each :code:`connection` element MUST contain a :code:`component_2` attribute.
 
-      The value of the :code:`component_2` attribute MUST be a valid component reference, as defined in the :ref:`Components reference<specC_component_reference>` section.
+      The value of the :code:`component_2` attribute MUST be a valid component reference, as defined in the section :ref:`Component references<specC_component_reference>`.
 
 .. marker_connection_2
 
@@ -508,9 +508,7 @@ A :code:`map_variables` element information item (referred to in this specificat
 
    1. Each :code:`map_variables` element MUST contain a :code:`variable_1` attribute.
 
-      The value of the :code:`variable_1` attribute MUST be a :ref:`valid CellML identifier<specA_cellml_identifier>`.
-
-      The value of this attribute MUST be equal to the :code:`name` attribute on a :code:`variable` element child of the :code:`component` element or :code:`import component` element referenced by the :code:`component_1` attribute on the :code:`connection` element which is the parent of this element.
+      The value of the :code:`variable_1` attribute MUST be a valid variable reference, as defined in the section :ref:`Variable references<specC_variable_reference>`.
 
 .. marker_map_variables_1
 
@@ -518,9 +516,7 @@ A :code:`map_variables` element information item (referred to in this specificat
 
    2. Each :code:`map_variables` element MUST contain a :code:`variable_2` attribute.
 
-      The value of the :code:`variable_2` attribute MUST be a :ref:`valid CellML identifier<specA_cellml_identifier>`.
-
-      The value of this attribute MUST be equal to the :code:`name` attribute on a :code:`variable` element child of the :code:`component` element or :code:`import component` element referenced by the :code:`component_2` attribute on the :code:`connection` element which is the parent of this element.
+      The value of the :code:`variable_2` attribute MUST be a valid variable reference, as defined in the section :ref:`Variable references<specC_variable_reference>`.
 
 .. marker_map_variables_2
 
