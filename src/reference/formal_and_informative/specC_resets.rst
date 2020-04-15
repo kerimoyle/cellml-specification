@@ -1,4 +1,3 @@
-.. _specC11:
 
 .. include:: ../sectionC_interpretation.inc
   :start-after: marker_interpretation_of_variable_resets_start
