@@ -47,9 +47,9 @@ The namespace http://www.w3.org/1998/Math/MathML.
 **CellML information item:**
 Any information item in the :ref:`CellML namespace<specA_cellml_namespace>`.
 
-.. _specA_basic_latin_alphabetic_character:
+.. _specA_basic_latin_alphabetical_character:
 
-**Basic Latin alphabetic character:**
+**Basic Latin alphabetical character:**
 A Unicode character in the range :unicode:`0041` to :unicode:`005A` or in the range :unicode:`0061` to :unicode:`007A`.
 
 .. _specA_digit:
@@ -57,10 +57,10 @@ A Unicode character in the range :unicode:`0041` to :unicode:`005A` or in the ra
 **Digit:**
 A Unicode character in the range :unicode:`0030` to :unicode:`0039`.
 
-.. _specA_basic_latin_alphanumeric_character:
+.. _specA_basic_latin_alphanumerical_character:
 
-**Basic Latin alphanumeric character:**
-A Unicode character which is either a :ref:`Basic Latin alphabetic character<specA_basic_latin_alphabetic_character>` or a :ref:`digit<specA_digit>`.
+**Basic Latin alphanumerical character:**
+A Unicode character which is either a :ref:`Basic Latin alphabetical character<specA_basic_latin_alphabetical_character>` or a :ref:`digit<specA_digit>`.
 
 .. _specA_basic_latin_underscore:
 
@@ -193,7 +193,7 @@ The following data representation formats are defined for use in this specificat
 
    .. container:: issue-data-repr-identifier-unicode
 
-      1. SHALL consist of a single :ref:`Basic Latin alphabetic character<specA_basic_latin_alphabetic_character>`, which MAY be followed by any combination of :ref:`Basic Latin alphanumeric characters<specA_basic_latin_alphanumeric_character>` and/or :ref:`Basic Latin underscores<specA_basic_latin_underscore>`.
+      1. SHALL consist of a single :ref:`Basic Latin alphabetical character<specA_basic_latin_alphabetical_character>`, which MAY be followed by any combination of :ref:`Basic Latin alphanumerical characters<specA_basic_latin_alphanumerical_character>` and/or :ref:`Basic Latin underscores<specA_basic_latin_underscore>`.
 
    .. container:: issue-data-repr-identifier-identical
 
