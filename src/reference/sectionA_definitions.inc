@@ -156,6 +156,7 @@ Non-specific information items
       changing the number of whitespace characters in such an information item,
       or changing the number of whitespace characters at the beginning or end of any character information item.
 
+.. marker_cellml_information_sets_3
 .. marker_cellml_information_sets_4
 
 Use of namespaces
