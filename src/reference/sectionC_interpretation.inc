@@ -1,5 +1,16 @@
 .. _sectionC:
 
+
+.. marker_interpretation_of_models_start
+
+Interpretation of ``model`` elements
+------------------------------------
+
+**TODO** Stuff about models should go here!
+
+.. marker_interpretation_of_models_end
+
+
 .. marker_interpretation_of_imports_start
 
 .. _specC_interpretation_of_imports:
