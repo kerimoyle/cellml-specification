@@ -12,10 +12,15 @@
 
       Understanding how the units work
 
+    **Within a component:**
     We know that units in real life make a big difference, but *within* a CellML component, they don't.
-    (Note that *between* components is another story, because :ref:`equivalent variables are requried to have the same unit reduction<specC_equivalent_variables_units>`.) 
-    Each :code:`variable` element has to specify a corresponding :code:`units` element, but this combination doesn't affect the validity of the :code:`math` element.
-    It does, however, make a difference to how your model may to be interpreted, and can help you to find errors or inconsistencies in your model definition.
+    Units in equations are provided to help the user find bugs, and each :code:`variable` element has to specify a corresponding :code:`units` element, but these combinations don't affect the validity of the :code:`math` element.
+    They do make a difference to how your model may to be interpreted, and can help you to find errors or inconsistencies in your mathematical definitions.
+
+    **Between components:**
+    Components were designed to promote modularity and reuse of models, so it's important that those re-users understand what they're getting into. 
+    This is why equivalent variables (those connected across components) must have the same :ref:`unit reduction<specC_equivalent_variables_units>`, so that whatever the inner workings of a component are, the external users of that component are able to interpret them correctly.
+
     Some examples are shown below.
 
     1. Constants and variables in an equation have different units: this is not invalid CellML, but doesn't make any mathematical sense.
