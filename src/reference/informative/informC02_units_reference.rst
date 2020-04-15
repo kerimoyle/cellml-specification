@@ -47,10 +47,10 @@
 
         <!-- Inside the file "how_to_make_blueberry_pie.cellml": -->
         <model name="BlueberryPieRecipe">
-            <import xlink:href="path/to/my/crust_recipes.cellml">
+            <import xlink:href="relative/path/to/my/crust_recipes.cellml">
                 <component name="crust" component_ref="HazelnutLavenderCrust" />
             </import>
-            <import xlink:href="path/to/my/filling_recipe.cellml">
+            <import xlink:href="relative/path/to/my/filling_recipe.cellml">
               <component name="filling" component_ref="BlueberryCinnamonFilling" />
             </import>
         </model>
@@ -226,10 +226,10 @@
 
         <!-- Inside the file "how_to_make_blueberry_pie.cellml": -->
         <model name="BlueberryPieRecipe">
-          <import xlink:href="path/to/my/crust_recipes.cellml">
+          <import xlink:href="relative/path/to/my/crust_recipes.cellml">
             <component name="premade_crust" component_ref="HazelnutLavenderCrust" />
           </import>
-          <import xlink:href="path/to/my/filling_recipe.cellml">
+          <import xlink:href="relative/path/to/my/filling_recipe.cellml">
             <component name="yummy_filling" component_ref="BlueberryCinnamonFilling" />
           </import>
 
@@ -281,10 +281,10 @@
 
         <!-- Inside the file "how_to_make_blueberry_pie.cellml": -->
         <model name="BlueberryPieRecipe">
-          <import xlink:href="path/to/my/crust_recipes.cellml">
+          <import xlink:href="relative/path/to/my/crust_recipes.cellml">
             <component name="premade_crust" component_ref="HazelnutLavenderCrust" />
           </import>
-          <import xlink:href="path/to/my/filling_recipe.cellml">
+          <import xlink:href="relative/path/to/my/filling_recipe.cellml">
             <component name="yummy_filling" component_ref="BlueberryCinnamonFilling" />
           </import>
 
@@ -296,7 +296,7 @@
           </component>
 
           <!-- Explicitly importing the "spoonful" units from the "filling_recipes.cellml" file: -->
-          <import xlink:href="path/to/my/filling_recipe.cellml">
+          <import xlink:href="relative/path/to/my/filling_recipe.cellml">
             <!-- The units are also called "spoonful" in this top-level scope. -->
             <units name="spoonful" component_ref="spoonful" />
           </import>
