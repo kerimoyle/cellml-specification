@@ -165,9 +165,9 @@ Use of namespaces
 
 #. Element information items in a :ref:`CellML infoset<specA_cellml_infoset>` MUST belong to one of the following namespaces, unless explicitly indicated otherwise:
 
-   #. The :ref:`CellML namespace<specA_cellml_namespace>`
+   #. The :ref:`CellML namespace<specA_cellml_namespace>`;
 
-   #. The :ref:`MathML namespace<specA_mathml_namespace>`
+   #. The :ref:`MathML namespace<specA_mathml_namespace>`.
 
 #. Attribute information items in a CellML element MUST NOT be prefixed with a namespace, unless explicitly indicated otherwise.
 
