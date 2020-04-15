@@ -18,7 +18,7 @@ Interpretation of ``model`` elements
 
   A model contains zero or more components [LINK **TODO**].
 
-  
+
 **TODO** Stuff about models should go here!
 
 .. marker_interpretation_of_models_end
@@ -30,6 +30,10 @@ Interpretation of ``model`` elements
 
 Interpretation of ``import`` elements
 -------------------------------------
+
+.. container:: preamble
+
+  **TODO** Preamble for imports goes here
 
 #. Each :code:`import` element present in a :ref:`CellML infoset<specA_cellml_infoset>` (the importing infoset) SHALL define a new and distinct instance of the CellML infoset which is referenced by the :code:`href` attribute (the imported infoset).
    This imported infoset instance SHALL provide the context in which the child of an import element (a :code:`units` or :code:`component` element) is defined and interpreted.
@@ -155,6 +159,18 @@ The term "units reference" refers to the value of a :code:`units_ref` attribute 
 
 Interpretation of ``units`` elements
 ------------------------------------
+
+.. container:: preamble
+
+  A *units definition* is a conceptual entity representing physical units.
+
+  A units definition is defined by a :code:`units` element or an :code:`import units` element, or is one of the built-in units listed in the :ref:`Built-in Units table<table_built_in_units>`.
+
+  A units definition has a *name*, determined by the :code:`name` attribute of its :code:`units` element or :code:`import units` element, or by the "Name" column in the :ref:`Built-in Units table<table_built_in_units>`.
+
+  A units definition has a *unit reduction*, determined by the rules in section XYZ **TODO**.
+
+
 
 1. The :code:`units` element SHALL be interpreted as the product of its
    :code:`unit` element children, according to the following rules:
@@ -313,6 +329,11 @@ Effect of ``units`` on a ``variable``
 Interpretation of ``math`` elements
 -----------------------------------
 
+.. container:: preamble
+
+  **TODO** Preamble for maths and initial values goes here
+
+
 #. The following :code:`component` elements SHALL, for the purposes of this specification, be "pertinent component elements":
 
    #. All :code:`component` elements in the top-level :ref:`CellML infoset<specA_cellml_infoset>` for the :ref:`CellML model<specA_cellml_model>`;
@@ -330,9 +351,21 @@ Interpretation of ``math`` elements
 
 .. _specC_interpretation_of_encapsulation:
 
-
 Interpretation of ``encapsulation`` elements
 --------------------------------------------
+
+.. container:: preamble
+
+  A *component* is a conceptual entity representing a group of variables.
+
+  A component is defined by a :code:`component` element or an :code:`import component` element.
+
+  A component has a *name*, determined by the :code:`name` attribute of its :code:`component` element or :code:`import component` element.
+
+  A component contains zero or more variables [LINK **TODO**].
+
+  A component contains zero or more encapsulated components, as defined in section ABC **TODO**.
+
 
 #. For the purposes of this specification, there SHALL be a "conceptual encapsulation digraph" in which there is EXACTLY one node for every component in the :ref:`CellML model<specA_cellml_model>`.
    Therefore the encapsulation digraph will not contain any loops.
@@ -359,6 +392,26 @@ Interpretation of ``encapsulation`` elements
 
 Interpretation of ``map_variables`` elements
 --------------------------------------------
+
+.. container:: preamble
+
+  A *variable* is a conceptual entity representing a mathematical variable.
+
+  A variable is defined by a :code:`variable` element.
+
+  A variable has a *name*, determined by the :code:`name` attribute of its :code:`variable` element.
+
+  A variable has *units*, determined by the :code:`units` attribute of its :code:`variable` element.
+  The value of the :code:`units` attribute of a :code:`variable` element must equal the name of a predefined unit, or a unit defined within the model.
+  
+  A variable has an *initial value*, determined by the :code:`initial_value` attribute of its :code:`variable`.
+
+  A variable has an *interface*, determined by the :code:`interface` attribute of its :code:`variable` element.
+
+  A variable can be part of an *equivalent variable network*, as defined in section PQR **TODO**.
+
+  A variable can be used in equations, see section KLM **TODO**.
+  
 
 #.  For the purposes of this specification, the variable equivalence (conceptual) network SHALL be an undirected graph with one node for every :code:`variable` element in the :ref:`CellML model<specA_cellml_model>`.
     The arcs of this graph SHALL be equivalences defined in the CellML model.
@@ -416,9 +469,13 @@ Interpretation of ``map_variables`` elements
 
 .. _specC_interpretation_of_variable_resets:
 
-
 Interpretation of ``reset`` elements
 ------------------------------------
+
+.. container:: preamble
+
+  **TODO** Preamble for resets goes here
+
 
 #. Each :code:`reset` element describes a change to be applied to the variable referenced by the :code:`variable` attribute when specified conditions are met during the simulation of the model.
 
