@@ -29,13 +29,13 @@
       :code:`abcdefghijklmnopqrstuvwxyz` (symbols between :unicode:`0061` and :unicode:`007A`)
       :code:`ABCDEFGHIJKLMNOPQRSTUVWXYZ` (symbols between :unicode:`0041` and :unicode:`005A`)
 
-    These characters are refferd to in CellML as the Basic Latin alphabetic characters.
+    These characters are referred to in CellML as the "Basic Latin alphabetical characters".
 
-    The digits are the Unicode characters:
+    The "digits" are the Unicode characters:
 
       :code:`0123456789` (symbols between :unicode:`0030` and :unicode:`0039`)
 
-    Together with the Basic Latin alphabetic characters, they form the Basic Latin alphanumerical characters.
+    Together with the Basic Latin alphabetic characters, they form the "Basic Latin alphanumerical characters".
 
     In addition, CellML recognises four special characters:
 
@@ -51,4 +51,4 @@
     - the carriage return (:unicode:`000D`), and
     - the line feed (:unicode:`000A`).
 
-    Together these symbols define the only characters which can be interpreted into values for CellML names and numbers.
+    These symbols and character sets will be used throughout the CellML definition to define allowed content of attributes and elements.
