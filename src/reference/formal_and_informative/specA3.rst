@@ -20,12 +20,6 @@
 
 .. include:: ../sectionA_definitions.inc
   :start-after: marker_data_formats_3
-  :end-before: marker_data_formats_4
-
-.. include:: ../informative/informA3_4.rst
-
-.. include:: ../sectionA_definitions.inc
-  :start-after: marker_data_formats_4
   :end-before: marker_data_formats_end
 
-.. include:: ../informative/informA3_5.rst
+.. include:: ../informative/informA3_4.rst

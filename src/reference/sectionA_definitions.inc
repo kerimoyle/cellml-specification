@@ -52,15 +52,15 @@ Any information item in the :ref:`CellML namespace<specA_cellml_namespace>`.
 **Basic Latin alphabetic character:**
 A Unicode character in the range :unicode:`0041` to :unicode:`005A` or in the range :unicode:`0061` to :unicode:`007A`.
 
-.. _specA_european_numeral:
+.. _specA_digit:
 
-**European numeral:**
+**Digit:**
 A Unicode character in the range :unicode:`0030` to :unicode:`0039`.
 
 .. _specA_basic_latin_alphanumeric_character:
 
 **Basic Latin alphanumeric character:**
-A Unicode character which is either a :ref:`Basic Latin alphabetic character<specA_basic_latin_alphabetic_character>` or a :ref:`European numeral<specA_european_numeral>`.
+A Unicode character which is either a :ref:`Basic Latin alphabetic character<specA_basic_latin_alphabetic_character>` or a :ref:`digit<specA_digit>`.
 
 .. _specA_basic_latin_underscore:
 
@@ -196,23 +196,9 @@ The following data representation formats are defined for use in this specificat
 
 .. marker_data_formats_1
 
-.. _specA_nonnegative_integer:
-
-2. A non-negative integer string:
-
-   .. container:: issue-data-repr-nneg-int-base10
-
-      1. SHALL be a base 10 representation of a non-negative integer.
-
-   .. container:: issue-data-repr-nneg-int-euro-num
-
-      2. SHALL consist entirely of :ref:`European numerals<specA_european_numeral>`.
-
-.. marker_data_formats_2
-
 .. _specA_integer:
 
-3. An integer string:
+2. An integer string:
 
    .. container:: issue-data-repr-int-base10
 
@@ -220,17 +206,17 @@ The following data representation formats are defined for use in this specificat
 
    .. container:: issue-data-repr-int-sign
 
-      2. SHALL, when the integer being represented is negative, begin with the Basic Latin hyphen-minus character :unicode:`002D` as the sign indicator.
+      2. MAY begin with a single Basic Latin plus character :unicode:`002B` or a Basic Latin hyphen-minus character :unicode:`002D` as the sign indicator.
 
    .. container:: issue-data-repr-int-euro-num
 
-      3. SHALL, other than the sign indicator, consist only of :ref:`European numerals<specA_european_numeral>`.
+      3. SHALL, other than the sign indicator, consist of one or more :ref:`digits<specA_digit>`.
 
-.. marker_data_formats_3
+.. marker_data_formats_2
 
 .. _specA_basic_real_number:
 
-4. A basic real number string:
+3. A basic real number string:
 
    .. container:: issue-data-repr-basic-real-base10
 
@@ -238,7 +224,7 @@ The following data representation formats are defined for use in this specificat
 
    .. container:: issue-data-repr-basic-real-sign
 
-      2. SHALL, when the basic real number being represented is negative, begin with the Basic Latin hyphen-minus character :unicode:`002D` as the sign indicator.
+      2. MAY begin with a single Basic Latin plus character :unicode:`002B` or a Basic Latin hyphen-minus character :unicode:`002D` as the sign indicator.
 
    .. container:: issue-data-repr-basic-real-decimal
 
@@ -246,13 +232,13 @@ The following data representation formats are defined for use in this specificat
 
    .. container:: issue-data-repr-basic-real-euro-num
 
-      4. SHALL, other than the sign indicator and the decimal point separator, consist only of :ref:`European numerals<specA_european_numeral>`.
+      4. SHALL, other than the sign indicator and the decimal point separator, consist of one or more :ref:`digits<specA_digit>`.
 
-.. marker_data_formats_4
+.. marker_data_formats_3
 
 .. _specA_real_number:
 
-5. A real number string:
+4. A real number string:
 
    .. container:: issue-data-repr-real-base10
 
@@ -260,7 +246,7 @@ The following data representation formats are defined for use in this specificat
 
    .. container:: issue-data-repr-real-repr
 
-      2. The representation of the number SHALL be the representation of the significand followed immediately by the representation of the exponent.
+      2. The representation of the number SHALL be the representation of the significand, optionally followed by a representation of the exponent.
 
    .. container:: issue-data-repr-real-significand
 
@@ -269,11 +255,10 @@ The following data representation formats are defined for use in this specificat
    .. container:: issue-data-repr-real-exponent
 
       4. An exponent SHALL be represented by an exponent separator character, followed by the :ref:`integer string representation<specA_integer>` of the value of the exponent.
-         Non-negative exponents MAY begin with the Basic Latin plus sign character :unicode:`002B` as the sign indicator.
          The exponent separator character SHALL be either the Basic Latin "E" character :unicode:`0045` or the Basic Latin "e" character :unicode:`0065`.
 
    .. container:: issue-data-repr-real-no-exponent
 
-      5. A real number string without an exponent SHALL be a :ref:`basic real number string<specA_basic_real_number>`.
+      5. If the exponent representation is omitted, the exponent shall be zero.
 
 .. marker_data_formats_end
