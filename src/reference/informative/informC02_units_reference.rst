@@ -1,4 +1,4 @@
-.. _informC02_units_reference1:
+.. _informC02_units_reference:
 
 .. container:: toggle
 
@@ -56,16 +56,6 @@
         </model>
 
     The components are imported from separate files, each of which defines and uses its own local definitions of the custom measurement units :code:`spoon`, :code:`dash`, and :code:`smidgen`.
-
-
- <variables name="blueberries" units="gram" />
-            <variables name="sugar" units="dimensionless" />
-            <variables name="cornflour" units="gram" />
-
-            <!-- These units are defined for use in this, their local scope, below. -->
-            <variables name="cinnamon" units="smidgen" />
-            <variables name="water" units="spoonful" />
-
 
     .. code::
 
