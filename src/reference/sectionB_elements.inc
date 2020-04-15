@@ -24,15 +24,15 @@ The ``model`` element
 
    2. A :code:`model` element MAY contain one or more additional specific element children, each of which MUST be of one of the following types:
 
-      #. A :code:`component` element; or
+      #. A :code:`component` element;
 
-      #. A :code:`connection` element; or
+      #. A :code:`connection` element;
 
-      #. An :code:`encapsulation` element; or
+      #. An :code:`encapsulation` element;
 
-      #. An :code:`import` element; or
+      #. An :code:`import` element;
 
-      #. A :code:`units` element;
+      #. A :code:`units` element.
 
 
 .. marker_model_2
@@ -364,7 +364,7 @@ A :code:`math` element information item (referred to in this specification as a 
 
 .. container:: issue-math-cn-units-attribute
 
-   4. A MathML :code:`cn` element MUST have an attribute in the :ref:`CellML namespace<specA_cellml_namespace>`, with a local name equal to :code:`units`. 
+   4. A MathML :code:`cn` element MUST have an attribute in the :ref:`CellML namespace<specA_cellml_namespace>`, with a local name equal to :code:`units`.
       The value of this attribute MUST be a valid :ref:`units reference<specC_units_reference>`.
 
 .. container:: issue-math-cn-type
