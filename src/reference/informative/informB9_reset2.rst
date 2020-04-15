@@ -43,11 +43,11 @@
       model: AutomaticTransmission
         ├─ component: Gearbox
         │   └─ variable: ratio (dimensionless)
-        │       └─ reset: change gear up when revs are too high
+        │       └─ reset: want to change gear when revs are too high, but don't know the revs?
         │                  
         └─ component: Engine
             └─ variable: revs (hertz)
-                └─ reset: reduce revs when gear is changed
+                └─ reset: want to reduce revs when the gear is changed, but don't know the gear?
 
     .. container:: toggle
 
@@ -60,17 +60,21 @@
         <model name="AutomaticTransmission">
           <component name="Gearbox">
             <variable name="ratio" units="dimensionless" initial_value="3" />
+
             <!-- Invalid: the test_variable "revs" is outside of the "Gearbox" component. -->
             <reset variable="ratio" test_variable="revs" order="1" >
               ...
             </reset>
+
           </component>
           <component name="Engine">
             <variable name="revs" units="hertz" initial_value="0" />
+
             <!-- Invalid: the variable "ratio" is outside of the "Engine" component. -->
             <reset variable="ratio" test_variable="revs" order="2" >
               ...
             </reset>
+
           </component>
         </model>
 
@@ -81,20 +85,20 @@
 
                   model: AutomaticTransmission
                     ├─ component: Gearbox
-              ┌╴╴╴╴╴╴╴╴╴├─ variable: ratio (dimensionless)
-              ╷         │    │
-              ╷         │    ├─ reset: change ratio based on engine_revs
-              ╷         │    │
-              ╷ ┌╴╴╴╴╴╴>└─ variable: engine_revs (hertz)
+              ┌╴╴╴╴╴╴╴╴╴╴├─ variable: ratio (dimensionless)
+              ╷     │    │    │
+              ╷     │    │    ├─ reset: change ratio based on engine_revs
+              ╷     │    │    │
+              ╷ ┌╴╴╴╴╴╴╴>└─ variable: engine_revs (hertz)
               ╷ ╷   │
          equivalent │
           variables │
               ╵ ╵   └─ component: Engine
-              ╵ └╴╴╴╴╴╴╴├─ variable: revs (hertz)
-              ╵         │    │
-              ╵         │    ├─ reset: change revs based on gear_ratio
-              ╵         │    │
-              └╴╴╴╴╴╴╴╴>└─ variable: gear_ratio (dimensionless)
+              ╵ └╴╴╴╴╴╴╴╴├─ variable: revs (hertz)
+              ╵          │    │
+              ╵          │    ├─ reset: change revs based on gear_ratio
+              ╵          │    │
+              └╴╴╴╴╴╴╴╴╴>└─ variable: gear_ratio (dimensionless)
 
     .. container:: toggle
 
@@ -134,6 +138,5 @@
           </connection>
         </model>
 
-    
-
-
+    This example highlights the need for both the reset variable and the test variable to be local to the reset's parent component, and also brings up the possiblity of circular dependencies in resets.
+    This latter issue will be discussed in the following "See more" block regarding the :code:`order` attribute.
