@@ -19,7 +19,7 @@ Interpretation of ``import`` elements
 
       #. connections to components in the encapsulated set of the imported component SHALL be maintained, and this rule SHALL be applied recursively;
 
-      #. connections to components in the sibling set, or to the parent of the imported component SHALL NOT be maintained.
+      #. connections to components in the sibling set, or to the encapsulation parent of the imported component SHALL NOT be maintained.
 
 .. marker_interpretation_of_imports_end
 .. marker_units_reference_start
