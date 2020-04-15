@@ -26,6 +26,6 @@
     Extra attributes that can be used as needed include the :code:`initial_value`, which will either set a constant value for a variable, or set its initial conditions if it's being solved for.
     More information about initialisation can be found in the :ref:`Interpretation of initial values<specC_interpretation_of_initial_values>` section.
 
-    Finally, where one :code:`variable` has been mapped to another in a different component, the :code:`interface` attribute must be specified.
-    This determines the relative position in the encapsulation that the mapped component must have in order to access this variable.
-    This is outlined in more detail in the :ref:`encapsulation item<specB_encapsulation>` section.
+    Finally, where one :code:`variable` (A) has been mapped to another (B) in a different component (BB), both A and B must specify :code:`interface` attributes.
+    These prescribe the relative positions in the encapsulation that the components AA and BB must have in order for their respective variables A and B to access one another.
+    This is outlined in more detail in the :ref:`encapsulation element<specB_encapsulation>` section.

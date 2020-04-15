@@ -292,7 +292,7 @@ A :code:`reset` element information item (referred to in this specification as a
       3. The :code:`order` attribute.
          The value of the :code:`order` attribute MUST be an integer string.
 
-         The value of the :code:`order` attribute MUST be unique for all :code:`reset` elements with :code:`variable` attributes that reference variables in the same connected variable set (see :ref:`Interpretation of map_variables<specC_interpretation_of_map_variables>`).
+         The value of the :code:`order` attribute MUST be unique for all :code:`reset` elements with :code:`variable` attributes that reference variables in the same equivalent variable set (see :ref:`Interpretation of map_variables<specC_interpretation_of_map_variables>`).
 
 .. container:: issue-reset-child
 
