@@ -35,7 +35,7 @@
 
       :code:`0123456789` (symbols between :unicode:`0030` and :unicode:`0039`)
 
-    Together with the Basic Latin alphabetic characters, they form the "Basic Latin alphanumerical characters".
+    Together with the Basic Latin alphabetical characters, they form the "Basic Latin alphanumerical characters".
 
     In addition, CellML recognises four special characters:
 
