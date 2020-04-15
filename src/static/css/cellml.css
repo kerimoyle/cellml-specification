@@ -96,6 +96,10 @@ li {
     font-family: "Lato", "proxima-nova", "Helvetica Neue", "Arial", sans-serif;
 }
 
+.preamble > p{
+    margin-bottom: 0;
+}
+
 
 .infospec {
     /* border-top: 1px solid #b9c6dd; */
