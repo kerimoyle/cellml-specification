@@ -8,8 +8,4 @@
 
   .. container:: infospec
 
-    CellML 2.0 is not xenophobic.
-    When an element (either a :code:`component` or a :code:`units` item) is imported, it is treated in the same way as the locally defined items.
-
-
-    **TODO** Don't fully understand the first sentence...
+    Please see the informative sections on :ref:`Units reference<specC_units_reference>` and :ref:`Component reference<specC_component_reference>` pages for examples specific to importing :code:`units` and :code:`component` elements.

@@ -101,6 +101,7 @@ autosectionlabel_prefix_document = True
 #   'shortcut': ('http://linkhere/%s',''), NB have to put the string insertion %s to make it work
 extlinks = {
     'buildbot': ('https://buildbot.net%s', ''),
+    'calvin_and_hobbes':('https://www.gocomics.com/calvinandhobbes/%s',''),
     'cellml1to2': ('https://github.com/hsorby/cellml1to2%s', ''),
     'cellml2': ('https://www.cellml.org/%s', ''),
     'cellsolver': ('https://github.com/hsorby/cellsolver%s', ''),
