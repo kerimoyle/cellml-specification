@@ -129,7 +129,7 @@ extlinks = {
     'xlink': ('http://www.w3.org/TR/2001/REC-xlink-20010627/%s', ''),
     'xml_help': ('https://www.w3.org/XML/%s', ''),
     'xml_1_1': ('http://www.w3.org/TR/xml11/%s', ''),
-    'xml_infoset': ('https://www.w3.org/TR/xml-infoset/', None),
+    'xml_infoset': ('https://www.w3.org/TR/xml-infoset%s', None),
     'xml_infoset2004': ('http://www.w3.org/TR/2004/REC-xml-infoset-20040204/%s', ''),
     'xml_namespace_1_1': ('https://www.w3.org/TR/2006/REC-xml-names11-20060816/%s', ''),
     'xml_namespace_refs': ('https://www.w3.org/TR/xml-names11/%s', ''),
