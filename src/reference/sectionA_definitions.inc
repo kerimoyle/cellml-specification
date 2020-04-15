@@ -7,9 +7,9 @@
 Terminology
 -----------
 
-The keywords "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in :rfc2119:`RFC 2119`.
+The keywords "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in :rfc2119:`RFC 2119 <>`.
 
-The key phrase "information item", as well as any specific type of information item such as an "element information item", are to be interpreted as described in :xml_infoset:`XML Information Set`.
+The key phrase "information item", as well as any specific type of information item such as an "element information item", are to be interpreted as described in :xml_infoset2004:`XML Information Set <>`.
 
 .. _specA_cellml_infoset:
 
@@ -26,7 +26,7 @@ In this specification, the topmost CellML infoset in a hierarchy is referred to 
 .. _specA_namespace:
 
 **Namespace:**
-An XML namespace, as defined in :xml_namespace_1_1:`Namespaces in XML 1.1`.
+An XML namespace, as defined in :xml_namespace_1_1:`Namespaces in XML 1.1 <>`.
 
 .. _specA_cellml_namespace:
 
@@ -98,14 +98,14 @@ CellML information sets
 CellML and XML
 ~~~~~~~~~~~~~~
 
-#. Every CellML infoset SHALL be represented in an XML information set which conforms with the well-formedness requirements of :xml_1_1:`XML 1.1`.
+#. Every CellML infoset SHALL be represented in an XML information set which conforms with the well-formedness requirements of :xml_1_1:`XML 1.1 <>`.
 
 #. In this document, the remaining provisions relating to CellML infosets SHALL be interpreted as additional constraints on the XML information set represented by a CellML infoset.
 
 Specific information items
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. For the purposes of this specification, a specific information item is one of the following (see https://www.w3.org/TR/xml-infoset/ for definitions):
+#. For the purposes of this specification, a specific information item is one of the following (see :xml_infoset:`` for definitions):
 
    #. A document information item;
 
@@ -134,7 +134,7 @@ Specific information items
 Non-specific information items
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. For the purposes of this specification, a non-specific information item is one of the following (see https://www.w3.org/TR/xml-infoset/ for definitions):
+1. For the purposes of this specification, a non-specific information item is one of the following (see :xml_infoset:`https://www.w3.org/TR/xml-infoset/ <>` for definitions):
 
    #. A comment information item;
 

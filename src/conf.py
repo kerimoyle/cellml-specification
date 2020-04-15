@@ -125,11 +125,14 @@ extlinks = {
     'sphinx': ('http://sphinx-doc.org/%s', ''),
     'swig': ('http://www.swig.org/%s', ''),
     'unicode': ('http://www.fileformat.info/info/unicode/char/%s/index.htm', 'U+'),
+    'unicode13': ('https://www.unicode.org/versions/Unicode13.0.0/%s',''),
     'xlink': ('http://www.w3.org/TR/2001/REC-xlink-20010627/%s', ''),
     'xml_help': ('https://www.w3.org/XML/%s', ''),
     'xml_1_1': ('http://www.w3.org/TR/xml11/%s', ''),
-    'xml_infoset': ('http://www.w3.org/TR/2004/REC-xml-infoset-20040204/%s', ''),
+    'xml_infoset': ('https://www.w3.org/TR/xml-infoset/%s', None),
+    'xml_infoset2004': ('http://www.w3.org/TR/2004/REC-xml-infoset-20040204/%s', ''),
     'xml_namespace_1_1': ('https://www.w3.org/TR/2006/REC-xml-names11-20060816/%s', ''),
+    'xml_namespace_refs': ('https://www.w3.org/TR/xml-names11/%s', ''),
 }
 
 # Making a passive role with which to decorate hardcoded references to sections. These
