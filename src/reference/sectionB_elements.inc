@@ -247,7 +247,7 @@ A :code:`variable` element information item (referred to in this specification a
 
    .. container:: issue-variable-units
 
-      2. The :code:`units` attribute. The value of the :code:`units` attribute MUST be a :ref:`valid CellML identifier<specA_cellml_identifier>`, and MUST meet the constraints described in the :ref:`Effect of units on variables<specC_effect_of_units_on_variables>` section.
+      2. The :code:`units` attribute. The value of the :code:`units` attribute MUST be a :ref:`valid CellML identifier<specA_cellml_identifier>`, and MUST be a :ref:`valid units reference<specC_units_reference>`.
 
 2. Every :code:`variable` element MAY contain one or more of the following attributes:
 
@@ -276,11 +276,15 @@ A :code:`reset` element information item (referred to in this specification as a
    .. container:: issue-reset-variable-reference
 
       1. The :code:`variable` attribute.
+         The value of the :code:`variable` attribute MUST be a :ref:`valid CellML identifier<specA_cellml_identifier>`.
+
          The value of the :code:`variable` attribute MUST be a variable reference to a variable defined within the parent :code:`component` element of the :code:`reset` element.
 
    .. container:: issue-reset-test-variable-reference
 
       2. The :code:`test_variable` attribute.
+         The value of the :code:`test_variable` attribute MUST be a :ref:`valid CellML identifier<specA_cellml_identifier>`.
+
          The value of the :code:`test_variable` attribute MUST be a variable reference to a variable defined within the parent :code:`component` element of the :code:`reset` element.
 
    .. container:: issue-reset-order
@@ -288,7 +292,7 @@ A :code:`reset` element information item (referred to in this specification as a
       3. The :code:`order` attribute.
          The value of the :code:`order` attribute MUST be an integer string.
 
-         The value of the :code:`order` attribute MUST be unique for all :code:`reset` elements with :code:`variable` attributes that reference variables in the same connected variable set (see :ref:`Interpretation of map_variables<specC_interpretation_of_map_variables>`).
+         The value of the :code:`order` attribute MUST be unique for all :code:`reset` elements with :code:`variable` attributes that reference variables in the same equivalent variable set (see :ref:`Interpretation of map_variables<specC_interpretation_of_map_variables>`).
 
 .. container:: issue-reset-child
 

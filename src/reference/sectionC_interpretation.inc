@@ -277,8 +277,7 @@ Interpretation of ``initial_value`` attributes
 Effect of ``units`` on a ``variable``
 -------------------------------------
 
-#. The value of the :code:`units` attribute on every :code:`variable` element MUST be a valid :ref:`units reference<specC_units_reference>`.
-   The target of this units reference is referred to as the variable units, and the corresponding unit reduction (see :ref:`Interpretation of units<specC_interpretation_of_units>`) is referred to as the variable unit reduction.
+#. The target of the :code:`units` attribute on a variable is referred to as the "variable units", and the corresponding unit reduction (see :ref:`Interpretation of units<specC_interpretation_of_units>`) is referred to as the "variable unit reduction".
 
 .. marker_effect_of_units_on_variables_end
 .. marker_interpretation_of_mathematics_start
@@ -398,9 +397,9 @@ Interpretation of ``map_variables`` elements
 
 .. marker_interpretation_of_map_variables_5
 
-#.  Each :code:`variable` element in a CellML model SHALL be treated as belonging to a single "equivalent variable set".
-    Each equivalent variables set is the set of all :code:`variable` elements for which the corresponding nodes in the variable equivalence network form a connected subgraph.
-    Each equivalent variables set represents one variable in the underlying mathematical model.
+#.  The :code:`variable` elements in a CellML model SHALL be treated as belonging to a single "equivalent variable set".
+    Each set of equivalent variables is the set of all :code:`variable` elements for which the corresponding nodes in the variable equivalence network form a connected subgraph.
+    Each set of equivalent variables represents one variable in the underlying mathematical model.
 
 .. marker_interpretation_of_map_variables_end
 .. marker_interpretation_of_variable_resets_start
@@ -411,12 +410,14 @@ Interpretation of ``map_variables`` elements
 Interpretation of ``reset`` elements
 ------------------------------------
 
-#. Each :code:`reset` element describes a change to be applied to the variable referenced by the :code:`variable` attribute when specified conditions are met during the simulation of the model.
+#. For the purposes of this section, we define the "reset variable" to be the variable referenced by a :code:`reset` element's :code:`variable` attribute, and the "test variable" to be the variable referenced by its :code:`test_variable` attribute.
 
-#. All :code:`reset` elements SHALL be considered sequentially for the connected variable set (see :ref:`Interpretation of map_variables<specC_interpretation_of_map_variables>`) to which the referenced variable belongs.
+#. Each :code:`reset` element describes a change to be applied to the reset variable when specified conditions are met during the simulation of the model.
+
+#. All :code:`reset` elements SHALL be considered sequentially for the equivalent variable set (see :ref:`Interpretation of map_variables<specC_interpretation_of_map_variables>`) to which the reset variable belongs.
    The sequence SHALL be determined by the value of the reset element’s :code:`order` attribute, lowest (least positive / most negative) having priority.
 
-#. The condition under which a reset occurs SHALL be defined by the equality of the reset element’s :code:`test_variable` attribute and the evaluation of the MathML expression encoded in the :code:`test_value`.
+#. The condition under which a reset occurs SHALL be defined by the equality of evaluation of the test variable and the evaluation of the MathML expression encoded in the :code:`test_value`.
 
 #. When a reset occurs, the variable referenced by the reset element’s :code:`variable` attribute SHALL be set to the result of evaluating the MathML expression encoded in the :code:`reset_value`.
 
