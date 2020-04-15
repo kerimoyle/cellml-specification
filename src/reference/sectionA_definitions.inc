@@ -7,7 +7,7 @@
 Terminology
 -----------
 
-The keywords "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in :rfc2119:`RFC 2119`.
+The keywords "MUST", "MUST NOT", "SHALL", "SHALL NOT", and "MAY" in this document are to be interpreted as described in :rfc2119:`RFC 2119`.
 
 The key phrase "information item", as well as any specific type of information item such as an "element information item", are to be interpreted as described in :xml_infoset:`XML Information Set`.
 
@@ -15,7 +15,7 @@ The key phrase "information item", as well as any specific type of information i
 
 **CellML infoset:**
 An XML information set containing a hierarchy of information items conforming to the rules described in this document.
-In this specification such infosets are assumed to be CellML 2.0 infosets.
+In this specification, such infosets are assumed to be CellML 2.0 infosets.
 
 .. _specA_cellml_model:
 
@@ -47,9 +47,9 @@ The namespace http://www.w3.org/1998/Math/MathML.
 **CellML information item:**
 Any information item in the :ref:`CellML namespace<specA_cellml_namespace>`.
 
-.. _specA_basic_latin_alphabetic_character:
+.. _specA_basic_latin_alphabetical_character:
 
-**Basic Latin alphabetic character:**
+**Basic Latin alphabetical character:**
 A Unicode character in the range :unicode:`0041` to :unicode:`005A` or in the range :unicode:`0061` to :unicode:`007A`.
 
 .. _specA_digit:
@@ -57,10 +57,10 @@ A Unicode character in the range :unicode:`0041` to :unicode:`005A` or in the ra
 **Digit:**
 A Unicode character in the range :unicode:`0030` to :unicode:`0039`.
 
-.. _specA_basic_latin_alphanumeric_character:
+.. _specA_basic_latin_alphanumerical_character:
 
-**Basic Latin alphanumeric character:**
-A Unicode character which is either a :ref:`Basic Latin alphabetic character<specA_basic_latin_alphabetic_character>` or a :ref:`digit<specA_digit>`.
+**Basic Latin alphanumerical character:**
+A Unicode character which is either a :ref:`Basic Latin alphabetical character<specA_basic_latin_alphabetical_character>` or a :ref:`digit<specA_digit>`.
 
 .. _specA_basic_latin_underscore:
 
@@ -85,7 +85,7 @@ The Unicode character :unicode:`002E`.
 .. _specA_whitespace_character:
 
 **Whitespace character:**
-Any one of the Unicode characters :unicode:`0020`, :unicode:`0009`, :unicode:`000D`, or :unicode:`000A`.
+Any one of the Unicode characters :unicode:`0009`, :unicode:`000A`, :unicode:`000D`, or :unicode:`0020`.
 
 .. marker_terminology_end
 .. marker_cellml_information_sets_start
@@ -165,9 +165,9 @@ Use of namespaces
 
 #. Element information items in a :ref:`CellML infoset<specA_cellml_infoset>` MUST belong to one of the following namespaces, unless explicitly indicated otherwise:
 
-   #. The :ref:`CellML namespace<specA_cellml_namespace>`
+   #. The :ref:`CellML namespace<specA_cellml_namespace>`;
 
-   #. The :ref:`MathML namespace<specA_mathml_namespace>`
+   #. The :ref:`MathML namespace<specA_mathml_namespace>`.
 
 #. Attribute information items in a CellML element MUST NOT be prefixed with a namespace, unless explicitly indicated otherwise.
 
@@ -193,7 +193,7 @@ The following data representation formats are defined for use in this specificat
 
    .. container:: issue-data-repr-identifier-unicode
 
-      1. SHALL consist of a single :ref:`Basic Latin alphabetic character<specA_basic_latin_alphabetic_character>`, which MAY be followed by any combination of :ref:`Basic Latin alphanumeric characters<specA_basic_latin_alphanumeric_character>` and/or :ref:`Basic Latin underscores<specA_basic_latin_underscore>`.
+      1. SHALL consist of a single :ref:`Basic Latin alphabetical character<specA_basic_latin_alphabetical_character>`, which MAY be followed by any combination of :ref:`Basic Latin alphanumerical characters<specA_basic_latin_alphanumerical_character>` and/or :ref:`Basic Latin underscores<specA_basic_latin_underscore>`.
 
    .. container:: issue-data-repr-identifier-identical
 
