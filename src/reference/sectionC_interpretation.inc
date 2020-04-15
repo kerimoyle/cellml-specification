@@ -363,7 +363,7 @@ Interpretation of ``map_variables`` elements
 
 .. marker_interpretation_of_map_variables_3
 
-#.  For a given variable, the available interfaces SHALL be determined by the :code:`interface` attribute information item on the corresponding :code:`variable` element as follows.
+6.  For a given variable, the available interfaces SHALL be determined by the :code:`interface` attribute information item on the corresponding :code:`variable` element as follows.
 
     #. A value of :code:`public` specifies that the variable has a public interface.
 
@@ -385,11 +385,11 @@ Interpretation of ``map_variables`` elements
 
     #. It is noted, for the avoidance of doubt, that any other encapsulation relationship between components *AA* and *BB* will not permit connections, meaning that no interface is available between the variables *A* and *B*.
 
-3.  CellML models MUST only contain :code:`map_variables` elements where the interface of variable *A* and the interface of variable *B* are applicable interfaces.
+#.  CellML models MUST only contain :code:`map_variables` elements where the interface of variable *A* and the interface of variable *B* are applicable interfaces.
 
 .. marker_interpretation_of_map_variables_4
 
-#.  For each :code:`map_variables` element present in the CellML model, the variable unit reduction (see :ref:`Effect of units on variables <specC_effect_of_units_on_variables>` ) of variable *A* MUST have an identical set of tuples to the variable unit reduction of variable *B*.
+9.  For each :code:`map_variables` element present in the CellML model, the variable unit reduction (see :ref:`Effect of units on variables <specC_effect_of_units_on_variables>` ) of variable *A* MUST have an identical set of tuples to the variable unit reduction of variable *B*.
     Two sets of tuples SHALL be considered identical if all of the tuples from each set are present in the other, or if both sets are empty.
     Two tuples are considered identical if and only if both the name and exponent value of each tuple are equivalent.
 
@@ -397,9 +397,9 @@ Interpretation of ``map_variables`` elements
 
 .. marker_interpretation_of_map_variables_5
 
-#.  The :code:`variable` elements in a CellML model SHALL be treated as belonging to a single "equivalent variable set".
-    Each set of equivalent variables is the set of all :code:`variable` elements for which the corresponding nodes in the variable equivalence network form a connected subgraph.
-    Each set of equivalent variables represents one variable in the underlying mathematical model.
+11.  The :code:`variable` elements in a CellML model SHALL be treated as belonging to a single "equivalent variable set".
+     Each set of equivalent variables is the set of all :code:`variable` elements for which the corresponding nodes in the variable equivalence network form a connected subgraph.
+     Each set of equivalent variables represents one variable in the underlying mathematical model.
 
 .. marker_interpretation_of_map_variables_end
 .. marker_interpretation_of_variable_resets_start

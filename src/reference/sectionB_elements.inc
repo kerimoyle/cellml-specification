@@ -55,7 +55,7 @@ An :code:`import` element information item (referred to in this specification as
 
    1. Every :code:`import` element MUST contain an attribute in the namespace :code:`http://www.w3.org/1999/xlink`, with a local name equal to :code:`href`.
 
-      The value of this attribute SHALL be a valid locator :code:`href`, as defined in :href_locator:`Section 5.4 of the XLink specification`.
+      The value of this attribute SHALL be a valid locator :code:`href`, as defined in :href_locator:`Section 5.4 of the XLink specification <>`.
 
       The :code:`href` attribute SHALL be treated according to the :xlink:`XLink specification`, by applying the rules for simple-type elements.
 
