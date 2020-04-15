@@ -7,7 +7,7 @@
 Terminology
 -----------
 
-The keywords "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in :rfc2119:`RFC 2119`.
+The keywords "MUST", "MUST NOT", "SHALL", "SHALL NOT", and "MAY" in this document are to be interpreted as described in :rfc2119:`RFC 2119`.
 
 The key phrase "information item", as well as any specific type of information item such as an "element information item", are to be interpreted as described in :xml_infoset:`XML Information Set`.
 
@@ -15,7 +15,7 @@ The key phrase "information item", as well as any specific type of information i
 
 **CellML infoset:**
 An XML information set containing a hierarchy of information items conforming to the rules described in this document.
-In this specification such infosets are assumed to be CellML 2.0 infosets.
+In this specification, such infosets are assumed to be CellML 2.0 infosets.
 
 .. _specA_cellml_model:
 
@@ -85,7 +85,7 @@ The Unicode character :unicode:`002E`.
 .. _specA_whitespace_character:
 
 **Whitespace character:**
-Any one of the Unicode characters :unicode:`0020`, :unicode:`0009`, :unicode:`000D`, or :unicode:`000A`.
+Any one of the Unicode characters :unicode:`0009`, :unicode:`000A`, :unicode:`000D`, or :unicode:`0020`.
 
 .. marker_terminology_end
 .. marker_cellml_information_sets_start
