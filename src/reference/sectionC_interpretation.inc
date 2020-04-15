@@ -7,7 +7,7 @@
 Interpretation of ``import`` elements
 -------------------------------------
 
-#. Each :code:`import` element present in a :ref:`CellML infoset<specA_cellml_infoset>` (the importing infoset) SHALL define a new and distinct instance of the CellML infoset which is referenced by the :code:`href` attribute (the imported infoset).
+#. Each :code:`import units` or :code:`import component` element present in a :ref:`CellML infoset<specA_cellml_infoset>` (the importing infoset) SHALL define a new and distinct instance of the CellML infoset (the imported infoset) that is specified by the parent :code:`import` element's :code:`href` attribute.
 
 #. A :ref:`units reference<specC_units_reference>` occurring within an imported component or within an imported units definition, SHALL be resolved with respect to the imported infoset.
 
