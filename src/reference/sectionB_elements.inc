@@ -134,7 +134,7 @@ An :code:`import component` element information item (referred to in this specif
 The ``units`` element
 ---------------------
 
-A :code:`units` element information item (referred to in this specification as a :code:`units` element) is an element in the CellML namespace with a local name equal to :code:`units`, and with a :code:`model` element as its parent.
+A :code:`units` element information item (referred to in this specification as a :code:`units` element) is an element in the :ref:`CellML namespace<specA_cellml_namespace>` with a local name equal to :code:`units`, and with a :code:`model` element as its parent.
 
 .. _issue_units_name:
 .. container:: issue-units-name
@@ -160,7 +160,7 @@ A :code:`units` element information item (referred to in this specification as a
 The ``unit`` element
 --------------------
 
-A :code:`unit` element information item (referred to in this specification as a :code:`unit` element) is an element in the CellML namespace with a local name equal to :code:`unit`, and with a :code:`units` element as its parent.
+A :code:`unit` element information item (referred to in this specification as a :code:`unit` element) is an element in the :ref:`CellML namespace<specA_cellml_namespace>` with a local name equal to :code:`unit`, and with a :code:`units` element as its parent.
 
 .. container:: issue-unit-units-ref
 
@@ -269,7 +269,7 @@ A :code:`variable` element information item (referred to in this specification a
 The ``reset`` element
 ---------------------
 
-A :code:`reset` element information item (referred to in this specification as a :code:`reset` element) is an element in the CellML namespace with a local name equal to :code:`reset`, and which appears as a child of a :code:`component` element.
+A :code:`reset` element information item (referred to in this specification as a :code:`reset` element) is an element in the :ref:`CellML namespace<specA_cellml_namespace>` with a local name equal to :code:`reset`, and which appears as a child of a :code:`component` element.
 
 1. Every :code:`reset` element MUST have exactly one each of the following attributes:
 
@@ -328,7 +328,7 @@ A :code:`test_value` element information item (referred to in this specification
 The ``reset_value`` element
 ---------------------------
 
-A :code:`reset_value` element information item (referred to in this specification as a :code:`reset_value` element) is an element in the CellML namespace with a local name equal to :code:`reset_value`, and which appears as a child of a :code:`reset` element.
+A :code:`reset_value` element information item (referred to in this specification as a :code:`reset_value` element) is an element in the :ref:`CellML namespace<specA_cellml_namespace>` with a local name equal to :code:`reset_value`, and which appears as a child of a :code:`reset` element.
 
 .. container:: issue-reset-value
 
@@ -364,7 +364,7 @@ A :code:`math` element information item (referred to in this specification as a 
 
 .. container:: issue-math-cn-units-attribute
 
-   4. A MathML :code:`cn` element MUST have an attribute in the :ref:`CellML namespace<specA_cellml_namespace>`, with a local name equal to :code:`units`. 
+   4. A MathML :code:`cn` element MUST have an attribute in the :ref:`CellML namespace<specA_cellml_namespace>`, with a local name equal to :code:`units`.
       The value of this attribute MUST be a valid :ref:`units reference<specC_units_reference>`.
 
 .. container:: issue-math-cn-type
