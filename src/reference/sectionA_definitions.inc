@@ -210,7 +210,7 @@ The following data representation formats are defined for use in this specificat
 
 .. _specA_integer:
 
-3. An integer string:
+2. An integer string:
 
    .. container:: issue-data-repr-int-base10
 
@@ -228,7 +228,7 @@ The following data representation formats are defined for use in this specificat
 
 .. _specA_basic_real_number:
 
-4. A basic real number string:
+3. A basic real number string:
 
    .. container:: issue-data-repr-basic-real-base10
 
@@ -250,7 +250,7 @@ The following data representation formats are defined for use in this specificat
 
 .. _specA_real_number:
 
-5. A real number string:
+4. A real number string:
 
    .. container:: issue-data-repr-real-base10
 
