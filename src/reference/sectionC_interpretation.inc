@@ -13,9 +13,9 @@ Interpretation of ``import`` elements
 
 #. When determining the equivalent variable set of a variable in an imported component:
 
-   #. connections made in the importing infoset shall be handled as usual (see :ref:`Interpretation of ``map_variables`` <specC_interpretation_of_map_variables>`)
+   #. connections defined in the importing infoset shall be handled as described in :ref:`Interpretation of ``map_variables`` <specC_interpretation_of_map_variables>`.
 
-   #. connections made in the imported infoset shall be handled as follows:
+   #. connections defined in the imported infoset shall be handled as follows:
 
       #. connections to components in the encapsulated set of the imported component SHALL be maintained, and this rule SHALL be applied recursively;
 
