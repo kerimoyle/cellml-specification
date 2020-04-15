@@ -13,6 +13,6 @@
 
       Understanding the order of resets
 
-    **TODO** Get algorithm description from Michael?
+    **TODO** Get algorithm description for here?
       
 

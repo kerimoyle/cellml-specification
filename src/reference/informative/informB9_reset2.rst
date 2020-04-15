@@ -138,5 +138,4 @@
           </connection>
         </model>
 
-    This example highlights the need for both the reset variable and the test variable to be local to the reset's parent component, and also brings up the possiblity of circular dependencies in resets.
-    This latter issue will be discussed in the following "See more" block regarding the :code:`order` attribute.
+    This example also highlights the possiblity of circular dependencies in resets, which will be discussed in the following "See more" block regarding the :code:`order` attribute.
