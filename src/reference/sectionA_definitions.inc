@@ -152,7 +152,7 @@ Non-specific information items
 
    #. Changing (inserting, removing, and/or modifying) one or more namespace information items, and/or modifying the prefix of one or more information items, without changing the namespace that any information item is in.
 
-   #. The following paragraph applies only to character information items which are the direct child of an element information item in a :ref:`CellML namespace<specA_cellml_namespace>`, or in the :ref:`MathML namespace<specA_mathml_namespace>`:
+   #. The following paragraph applies to character information items which are the direct child of an element information item in the :ref:`CellML namespace<specA_cellml_namespace>`, or in the :ref:`MathML namespace<specA_mathml_namespace>`:
 
       Inserting or removing character information items that consist entirely of :ref:`whitespace characters<specA_whitespace_character>`,
       changing the number of whitespace characters in such an information item,
