@@ -12,7 +12,7 @@
 
       Understanding component references
 
-    As with references to units and variables, the term "component reference" refers to places where you need to specify or reference a component using its name (but not assign it its name).
+    As with references to units and variables, the term "component reference" refers to places where you need to  refer to a component using its name.
     This is done through the :code:`component_ref` attribute found in :code:`import component` and :code:`encapsulation` elements, as well as the :code:`component_1` and :code:`component_2` attributes of :code:`connection` elements.
 
     The complicated part occurs during imports, and involves understanding the *scope* of a component's reference.
