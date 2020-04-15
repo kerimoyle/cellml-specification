@@ -35,12 +35,12 @@ An XML namespace, as defined in :xml_namespace_1_1:`Namespaces in XML 1.1 <>`.
 .. _specA_cellml2_namespace:
 
 **CellML 2.0 namespace:**
-The namespace :cellml2:`http://www.cellml.org/cellml/2.0# <cellml/2.0#>`\.
+The namespace :cellml2namespace:`#`.
 
 .. _specA_mathml_namespace:
 
 **MathML namespace:**
-The namespace http://www.w3.org/1998/Math/MathML.
+The namespace :mathml2namespace:`/`.
 
 .. _specA_cellml_information_item:
 
@@ -134,7 +134,7 @@ Specific information items
 Non-specific information items
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. For the purposes of this specification, a non-specific information item is one of the following (see :xml_infoset:`https://www.w3.org/TR/xml-infoset/ <>` for definitions):
+1. For the purposes of this specification, a non-specific information item is one of the following (see :xml_infoset:`/` for definitions):
 
    #. A comment information item;
 
@@ -175,7 +175,7 @@ XML ID Attributes
 ~~~~~~~~~~~~~~~~~
 
 #. Any element information item in the :ref:`CellML namespace<specA_cellml_namespace>` MAY contain an attribute with local name :code:`id.`
-   This attribute SHALL be treated as having attribute type ID, as defined in `section 3.3.1 <http://www.w3.org/TR/xml11/#sec-attribute-types>`__ of `XML 1.1 <http://www.w3.org/TR/xml11/>`__.
+   This attribute SHALL be treated as having attribute type ID, as defined in :xml_1_1:`section 3.3.1 <#sec-attribute-types>` of :xml_1_1:`XML 1.1 <>`.
 
 .. marker_cellml_information_sets_end
 .. marker_data_formats_start

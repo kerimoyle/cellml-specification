@@ -99,11 +99,13 @@ autosectionlabel_prefix_document = True
 #   :shortcut:`Shortcut text <extra string if needed>` NB space before <
 # Declare below as:
 #   'shortcut': ('http://linkhere/%s',''), NB have to put the string insertion %s to make it work
+#   OR, where you want to print out the URL to the rendered version:
+#   'shortcut': ('http://linkhere%s', None) then use :shortcut:`/` in the text to display full URL, including the trailing slash.
 extlinks = {
     'buildbot': ('https://buildbot.net%s', ''),
     'calvin_and_hobbes':('https://www.gocomics.com/calvinandhobbes/%s',''),
     'cellml1to2': ('https://github.com/hsorby/cellml1to2%s', ''),
-    'cellml2': ('https://www.cellml.org/%s', ''),
+    'cellml2namespace': ('http://www.cellml.org/cellml/2.0%s', None),
     'cellsolver': ('https://github.com/hsorby/cellsolver%s', ''),
     'cmake': ('https://cmake.org/%s', ''),
     'doxygen': ('http://www.doxygen.nl/%s', ''),
@@ -116,6 +118,7 @@ extlinks = {
     'libcellml_repo': ('https://github.com/cellml/libcellml.git%s', ''),
     'libxml2': ('http://www.xmlsoft.org/%s', ''),
     'mathml2help': ('https://www.w3.org/TR/MathML2/chapter4.html%s', ''),
+    'mathml2namespace': ('http://www.w3.org/1998/Math/MathML%s', None),
     'mathml2spec': ('http://www.w3.org/TR/2003/REC-MathML2-20031021/%s', ''),
     'namespace_help': ('https://www.w3schools.com/xml/xml_namespaces.asp%s', ''),
     'opencor': ('https://opencor.ws/%s', ''),
@@ -132,7 +135,7 @@ extlinks = {
     'xml_infoset': ('https://www.w3.org/TR/xml-infoset%s', None),
     'xml_infoset2004': ('http://www.w3.org/TR/2004/REC-xml-infoset-20040204/%s', ''),
     'xml_namespace_1_1': ('https://www.w3.org/TR/2006/REC-xml-names11-20060816/%s', ''),
-    'xml_namespace_refs': ('https://www.w3.org/TR/xml-names11/%s', ''),
+    'xml_namespace_refs': ('https://www.w3.org/TR/xml-names11%s', None),
 }
 
 # Making a passive role with which to decorate hardcoded references to sections. These
