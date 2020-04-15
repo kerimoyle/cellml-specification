@@ -67,9 +67,9 @@ An :code:`import` element information item (referred to in this specification as
 
    2. Every :code:`import` element MAY contain one or more specific element children, each of which MUST be of one of the following types:
 
-      #. An :code:`import units` element; or
+      #. An :code:`import component` element; or
 
-      #. An :code:`import component` element.
+      #. An :code:`import units` element.
 
 .. marker_import_2
 
@@ -221,11 +221,11 @@ A :code:`component` element information item (referred to in this specification 
 
    2. A :code:`component` element MAY contain one or more specific element children, each of which MUST be of one of the following types:
 
-      #. A :code:`variable` element; or
+      #. A :code:`math` element; or
 
       #. A :code:`reset` element; or
 
-      #. A :code:`math` element.
+      #. A :code:`variable` element.
 
 .. marker_component_end
 .. marker_variable_start
@@ -298,13 +298,13 @@ A :code:`reset` element information item (referred to in this specification as a
 
    2. A :code:`reset` element MUST contain exactly two element children, which MUST be one each of the following types:
 
-      .. container:: issue-reset-test-value
-
-         1. A :code:`test_value` element; and,
-
       .. container:: issue-reset-reset-value
 
          2. A :code:`reset_value` element.
+
+      .. container:: issue-reset-test-value
+
+         1. A :code:`test_value` element; and,
 
 .. marker_reset_end
 .. marker_test_value_start
