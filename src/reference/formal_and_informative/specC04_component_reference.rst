@@ -4,4 +4,4 @@
   :start-after: marker_component_reference_start
   :end-before: marker_component_reference_end
 
-.. todo ../informative/informC04_component_reference.rst
+.. include:: ../informative/informC04_component_reference.rst
