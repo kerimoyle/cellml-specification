@@ -12,7 +12,7 @@
 
       Understanding units references
 
-    Units references are different from other reference types in that their value could refer either to other units which you've imported or created in your model, or to one of the list of :ref:`built-in units<table_built_in_units>`.  
+    Units references are different from other reference types in that their value refers either to other units which you've imported or created in your model, or to one of the list of :ref:`built-in units<table_built_in_units>`.  
 
     The trickier part is understanding them is during an import process, where the *scope* or *domain* in which named units exist becomes important, as alluded to in points :hardcodedref:`3.2.1 and 3.2.2.2`.
 
