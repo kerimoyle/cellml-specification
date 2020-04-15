@@ -134,7 +134,7 @@ Specific information items
 Non-specific information items
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. For the purposes of this specification, a non-specific information item is one of the following (see https://www.w3.org/TR/xml-infoset/ for definitions):
+1. For the purposes of this specification, a non-specific information item is one of the following (see https://www.w3.org/TR/xml-infoset/ for definitions):
 
    #. A comment information item;
 
@@ -142,9 +142,11 @@ Non-specific information items
 
    #. A character information item.
 
-#. An element information item in the :ref:`CellML namespace<specA_cellml_namespace>` MUST NOT contain any character information items, except for character information items which consist entirely of whitespace characters.
+2. An element information item in the :ref:`CellML namespace<specA_cellml_namespace>` MUST NOT contain any character information items, except for character information items which consist entirely of whitespace characters.
 
-#. Two :ref:`CellML infosets<specA_cellml_infoset>` SHALL be deemed semantically equivalent if one can be transformed into the other by making any or none of the following changes:
+.. marker_cellml_information_sets_3
+
+3. Two :ref:`CellML infosets<specA_cellml_infoset>` SHALL be deemed semantically equivalent if one can be transformed into the other by making any or none of the following changes:
 
    #. Adding, removing, and/or modifying comment information items.
 
@@ -156,7 +158,6 @@ Non-specific information items
       changing the number of whitespace characters in such an information item,
       or changing the number of whitespace characters at the beginning or end of any character information item.
 
-.. marker_cellml_information_sets_3
 .. marker_cellml_information_sets_4
 
 Use of namespaces
