@@ -1,6 +1,5 @@
 .. _inform3_3:
 
-
 .. container:: toggle
 
   .. container:: header
