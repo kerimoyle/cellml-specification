@@ -121,7 +121,7 @@
           </component>
           <component name="Engine">
             <variable name="revs" units="hertz" initial_value="0" />
-            <variable name="gear_ratio units="dimensionless" />
+            <variable name="gear_ratio" units="dimensionless" />
 
             <!-- Valid: the variable "gear_ratio" is now inside the "Engine"
                 component. -->
