@@ -304,4 +304,4 @@
               
     At this stage we have three sets of units all named "spoonful".
     Since each is only accessible to its local components there is no conflict of definition or interpretation.
-    Now that the units required in the new :code:`BrandyCustard` component are defined within the same infoset, the model becomes valid, and our dessert needs are satisfied once more.
+    Now that the units required in the new :code:`BrandyCustard` component are defined within the same scope, the model becomes valid, and our dessert needs are satisfied once more.
