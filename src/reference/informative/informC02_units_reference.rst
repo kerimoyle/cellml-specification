@@ -14,7 +14,7 @@
 
     Units references are different from other reference types in that their value refers either to other units which you've imported or created in your model, or to one of the list of :ref:`built-in units<table_built_in_units>`.  
 
-    The trickier part is understanding them is during an import process, where the *scope* or *domain* in which named units exist becomes important, as alluded to in points :hardcodedref:`3.2.1 and 3.2.2.2`.
+    The trickier part is understanding them during an import process, where the *scope* or *domain* in which named units exist becomes important, as alluded to in points :hardcodedref:`3.2.1 and 3.2.2.2`.
 
     Consider the example below.
     The first model :code:`BlueberryPieRecipe` simply combines two pre-made component ingredients; one for the crust and one for the filling.
