@@ -101,7 +101,7 @@ An :code:`import units` element information item (referred to in this specificat
    2. Every :code:`import units` element MUST contain a :code:`units_ref` attribute.
       The value of the :code:`units_ref` attribute MUST be a :ref:`valid CellML identifier<specA_cellml_identifier>`.
 
-      The value of the :code:`units_ref` attribute MUST match the value of the :code:`name` attribute on a :code:`units` or :code:`import units` element in the imported CellML infoset.
+      The value of the :code:`units_ref` attribute MUST match the value of the :code:`name` attribute on a :code:`units` or :code:`import units` element in the imported :ref:`CellML infoset<specA_cellml_infoset>`.
 
 .. marker_import_units_end
 .. marker_import_component_start
@@ -115,16 +115,17 @@ An :code:`import component` element information item (referred to in this specif
 
 .. container:: issue-import-component-name
 
-   1. Every :code:`import component` element MUST contain a :code:`name` attribute. The value of the :code:`name` attribute MUST be a :ref:`valid CellML identifier<specA_cellml_identifier>`.
+   1. Every :code:`import component` element MUST contain a :code:`name` attribute.
+      The value of the :code:`name` attribute MUST be a :ref:`valid CellML identifier<specA_cellml_identifier>`.
 
-      The value of the :code:`name` attribute MUST NOT be identical to the :code:`name` attribute of any other :code:`component` or :code:`import component` element in the :ref:`CellML infoset<specA_cellml_infoset>`.
+      The value of the :code:`name` attribute MUST NOT be identical to the :code:`name` attribute of any :code:`component` or :code:`import component` element in the :ref:`CellML infoset<specA_cellml_infoset>`.
 
 .. container:: issue-import-component-ref
 
-   2. Every :code:`import component` element MUST contain a :code:`component_ref` attribute. The value of the :code:`component_ref` attribute MUST be a :ref:`valid CellML identifier<specA_cellml_identifier>`.
+   2. Every :code:`import component` element MUST contain a :code:`component_ref` attribute.
+      The value of the :code:`component_ref` attribute MUST be a :ref:`valid CellML identifier<specA_cellml_identifier>`.
 
       The value of the :code:`component_ref` attribute MUST match the value of the :code:`name` attribute on a :code:`component` or :code:`import component` element in the imported :ref:`CellML infoset<specA_cellml_infoset>`.
-      See also the :ref:`Component reference<specC_component_reference>` section.
 
 .. marker_import_component_end
 .. marker_units_start
@@ -445,7 +446,7 @@ A :code:`component_ref` element information item (referred to in this specificat
 
    1. Every :code:`component_ref` element MUST contain a :code:`component` attribute.
 
-      The value of this attribute MUST be a :ref:`valid CellML identifier<specA_cellml_identifier>`, and MUST match the :code:`name` attribute on a :code:`component` element or an :code:`import component` element in the :ref:`CellML infoset<specA_cellml_infoset>`.
+      The value of the :code:`component` attribute MUST be a valid component reference, as defined in the :ref:`Components reference<specC_component_reference>` section.
 
 .. container:: issue-component-ref-child
 
@@ -463,18 +464,17 @@ A :code:`connection` element information item (referred to in this specification
 
 .. container:: issue-connection-component1
 
-   1. Each :code:`connection` element MUST contain a :code:`component_1` attribute. The value of the :code:`component_1` attribute MUST be a :ref:`valid CellML identifier<specA_cellml_identifier>`.
+   1. Each :code:`connection` element MUST contain a :code:`component_1` attribute.
 
-      The value of this attribute MUST be equal to the :code:`name` attribute on a :code:`component` or :code:`import component` element in the :ref:`CellML infoset<specA_cellml_infoset>` (see :ref:`Component reference<specC_component_reference>`).
+      The value of the :code:`component_1` attribute MUST be a valid component reference, as defined in the :ref:`Components reference<specC_component_reference>` section.
 
 .. marker_connection_1
 
 .. container:: issue-connection-component2
 
    2. Each :code:`connection` element MUST contain a :code:`component_2` attribute.
-      The value of the :code:`component_2` attribute MUST be a :ref:`valid CellML identifier<specA_cellml_identifier>`.
 
-      The value of this attribute MUST be equal to the :code:`name` attribute on a :code:`component` or :code:`import component` element in the :ref:`CellML infoset<specA_cellml_infoset>` (see :ref:`Component reference<specC_component_reference>`).
+      The value of the :code:`component_2` attribute MUST be a valid component reference, as defined in the :ref:`Components reference<specC_component_reference>` section.
 
 .. marker_connection_2
 

@@ -26,8 +26,8 @@ Interpretation of ``import`` elements
 
 .. _specC_units_reference:
 
-The units reference
--------------------
+Units references
+----------------
 
 A "units reference" is an attribute value that specifies the physical units a variable or number is in.
 
@@ -40,8 +40,10 @@ A "units reference" is an attribute value that specifies the physical units a va
    #. If the units reference is equal to the value of the :code:`name` attribute of a :code:`units` element in the same infoset, then it SHALL refer to the units specified by that element.
 
    #. If the units reference is equal to the value of the :code:`name` attribute of an :code:`import units` element in the same infoset, then it SHALL refer to units from the infoset defined by the :code:`import units` element (see :ref:`Interpretation of ``import`` elements`<specC_interpreation_of_imports>`).
-      The units specified SHALL then be determined, by treating the value of the :code:`units_ref` attribute on the :code:`import units` element as a units reference within the imported infoset.
+      The units specified SHALL then be determined by treating the value of the :code:`units_ref` attribute on the :code:`import units` element as a units reference within the imported infoset.
       If necessary, this rule SHALL be applied recursively.
+
+#. If no units can be identified using the rules above, the attribute value SHALL NOT be a valid units reference.
 
 .. marker_units_reference1
 
@@ -231,19 +233,22 @@ Interpretation of ``units`` elements
 
 .. _specC_component_reference:
 
+Component references
+--------------------
 
-References to ``component`` elements
-------------------------------------
+A "component reference" is an attribute value that specifies a CellML component.
 
-The term "component reference" refers to the value of a :code:`component_ref` attribute used in an :code:`import` item for :code:`component` items, to :code:`component_ref` elements which occur as children of :code:`encapsulation` items, and to the value of :code:`component_1` and :code:`component_2` attributes used in :code:`connection` items.
+#. A component reference SHALL be a CellML identifier.
 
-#. A component reference SHALL be the name of a component, and SHALL be interpreted based on the context within the :ref:`CellML model<specA_cellml_model>` in which it occurs.
+#. The component identifier by a component reference SHALL be determined as follows:
 
-#. Where, within the same infoset, a :code:`component` element has a :code:`name` attribute identical to the component reference, the component reference SHALL refer to that :code:`component` element.
+   #. If the component reference is equal to the value of the :code:`name` attribute of a :code:`component` element in the same infoset, then it SHALL refer to the units specified by that element.
 
-#. A component reference which is identical to the :code:`name` attribute on an :code:`import component` element SHALL be treated for the purposes of referencing as if the component reference appeared in the imported model, and referred to element with the :code:`name` specified in the :code:`component_ref` attribute of the :code:`import component` element.
+   #. If the component reference is equal to the value of the :code:`name` attribute of an :code:`import component` element in the same infoset, then it SHALL refer to a component from the infoset defined by the :code:`import component` element (see :ref:`Interpretation of ``import`` elements`<specC_interpreation_of_imports>`).
+      The component specified SHALL then be determined by treating the value of the :code:`component_ref` attribute on the :code:`import component` element as a component reference within the imported infoset.
+      If necessary, this rule SHALL be applied recursively.
 
-#. It is noted, for the avoidance of doubt, that CellML models MAY apply the previous rule recursively, to reference an :code:`import component` element which in turn references another :code:`import component` element.
+#. If no component can be identified using the rules above, the attribute value SHALL NOT be a valid component reference.
 
 .. marker_component_reference_end
 .. marker_variable_reference_start
