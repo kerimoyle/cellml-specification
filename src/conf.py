@@ -109,7 +109,7 @@ extlinks = {
     'cellml1to2': ('https://github.com/hsorby/cellml1to2%s', ''),
     'cellml2namespace': ('http://www.cellml.org/cellml/2.0%s', None),
     'cellml2spec_display': ('https://cellml.org/specifications/cellml_2.0%s', None),
-    'cellml2spec_pdf_display': ('https://www.cellml.org/specifications/cellml_2.0/Normative_CellML_2.0_Specifcation_PDF', None),
+    'cellml2spec_pdf_display': ('https://www.cellml.org/specifications/cellml_2.0/Normative_CellML_2.0_Specifcation_PDF%s', None),
     'cellsolver': ('https://github.com/hsorby/cellsolver%s', ''),
     'cmake': ('https://cmake.org/%s', ''),
     'doxygen': ('http://www.doxygen.nl/%s', ''),
