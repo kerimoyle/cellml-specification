@@ -153,7 +153,7 @@ A :code:`units` element information item (referred to in this specification as a
 
 .. container:: issue-units-standard
 
-   2. The value of the :code:`name` attribute MUST NOT be equal to the name of any of the units listed in the :ref:`Built-in units<table_built_in_units>` table.
+   2. The value of the :code:`name` attribute MUST NOT be identical to the name of any of the units listed in the :ref:`Built-in units<table_built_in_units>` table.
 
 .. container:: issue-units-child
 
@@ -179,7 +179,7 @@ A :code:`unit` element information item (referred to in this specification as a 
 
          1. For the purpose of the constraint in the next paragraph, the :code:`units` element inclusion digraph SHALL be defined as a conceptual digraph which SHALL contain one node for every :code:`units` element in the :ref:`CellML model<specA_cellml_model>`.
 
-            The :code:`units` element inclusion digraph SHALL contain an arc from :code:`units` element *A* to :code:`units` element *B* if and only if :code:`units` element *A* contains a :code:`unit` element with a :code:`units` attribute value that is equal to the :code:`name` attribute value of :code:`units` element *B*.
+            The :code:`units` element inclusion digraph SHALL contain an arc from :code:`units` element *A* to :code:`units` element *B* if and only if :code:`units` element *A* contains a :code:`unit` element with a :code:`units` attribute value that is identical to the :code:`name` attribute value of :code:`units` element *B*.
 
       .. container:: issue-unit-circular-ref
 
@@ -486,7 +486,7 @@ A :code:`connection` element information item (referred to in this specification
 
 .. container:: issue-todo
 
-   3. The value of the :code:`component_1` attribute MUST NOT be equal to the value of the :code:`component_2` attribute.
+   3. The value of the :code:`component_1` attribute MUST NOT be identical to the value of the :code:`component_2` attribute.
 
 .. marker_connection_3
 
