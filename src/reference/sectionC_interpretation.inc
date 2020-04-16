@@ -35,11 +35,11 @@ A "units reference" is an attribute value that specifies the physical units a va
 
 #. The units identified by a units reference SHALL be determined as follows:
 
-   #. If the units reference is equal to a value in the "Name" column of the :ref:`Built-in units table<table_built_in_units>`, then it SHALL refer to the corresponding built-in units from the same of the table.
+   #. If the units reference is identical to a value in the "Name" column of the :ref:`Built-in units table<table_built_in_units>`, then it SHALL refer to the corresponding built-in units from the same of the table.
 
-   #. If the units reference is equal to the value of the :code:`name` attribute of a :code:`units` element in the same infoset, then it SHALL refer to the units specified by that element.
+   #. If the units reference is identical to the value of the :code:`name` attribute of a :code:`units` element in the same infoset, then it SHALL refer to the units specified by that element.
 
-   #. If the units reference is equal to the value of the :code:`name` attribute of an :code:`import units` element in the same infoset, then it SHALL refer to units from the infoset defined by the :code:`import units` element (see :ref:`Interpretation of import elements<specC_interpretation_of_imports>`).
+   #. If the units reference is identical to the value of the :code:`name` attribute of an :code:`import units` element in the same infoset, then it SHALL refer to units from the infoset defined by the :code:`import units` element (see :ref:`Interpretation of import elements`<specC_interpretation_of_imports>`).
       The units specified SHALL then be determined by treating the value of the :code:`units_ref` attribute on the :code:`import units` element as a units reference within the imported infoset.
       If necessary, this rule SHALL be applied recursively.
 
@@ -240,9 +240,9 @@ A "component reference" is an attribute value that specifies a CellML component.
 
 #. The component identifier by a component reference SHALL be determined as follows:
 
-   #. If the component reference is equal to the value of the :code:`name` attribute of a :code:`component` element in the same infoset, then it SHALL refer to the units specified by that element.
+   #. If the component reference is identical to the value of the :code:`name` attribute of a :code:`component` element in the same infoset, then it SHALL refer to the units specified by that element.
 
-   #. If the component reference is equal to the value of the :code:`name` attribute of an :code:`import component` element in the same infoset, then it SHALL refer to a component from the infoset defined by the :code:`import component` element (see :ref:`Interpretation of import elements<specC_interpretation_of_imports>`).
+   #. If the component reference is identical to the value of the :code:`name` attribute of an :code:`import component` element in the same infoset, then it SHALL refer to a component from the infoset defined by the :code:`import component` element (see :ref:`Interpretation of import elements<specC_interpretation_of_imports>`).
       The component specified SHALL then be determined by treating the value of the :code:`component_ref` attribute on the :code:`import component` element as a component reference within the imported infoset.
       If necessary, this rule SHALL be applied recursively.
 
