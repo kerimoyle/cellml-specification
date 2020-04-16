@@ -13,7 +13,7 @@ It is intended primarily for the developers of software tools which directly con
 
 Users of CellML models may prefer the informative version of the CellML Specification, which is available at :cellml2spec_display:`/`.
 
-A PDF version of the normative specification is available at :cellml2spec_pdf_display:`/`.
+A PDF version of the normative specification is available at :cellml2spec_display:`/specification.pdf`.
 
 .. include:: reference/acknowledgements.inc
 
