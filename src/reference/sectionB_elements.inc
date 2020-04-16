@@ -101,7 +101,7 @@ An :code:`import units` element information item (referred to in this specificat
    2. Every :code:`import units` element MUST contain a :code:`units_ref` attribute.
       The value of the :code:`units_ref` attribute MUST be a :ref:`valid CellML identifier<specA_cellml_identifier>`.
 
-      The value of the :code:`units_ref` attribute MUST match the value of the :code:`name` attribute on a :code:`units` or :code:`import units` element in the imported CellML infoset.
+      The value of the :code:`units_ref` attribute MUST match the value of the :code:`name` attribute on a :code:`units` or :code:`import units` element in the imported :ref:`CellML infoset<specA_cellml_infoset>`.
 
 .. marker_import_units_end
 .. marker_import_component_start
@@ -189,11 +189,11 @@ A :code:`unit` element information item (referred to in this specification as a 
 
       .. container:: issue-unit-multiplier
 
-         2. The :code:`multiplier` attribute. If present, the value of the attribute MUST be a real number string.
+         2. The :code:`multiplier` attribute. If present, the value of the attribute MUST be a :ref:`real number string<specA_real_number>`.
 
       .. container:: issue-unit-exponent
 
-         3. The :code:`exponent` attribute. If present, the value of the attribute MUST be a real number string.
+         3. The :code:`exponent` attribute. If present, the value of the attribute MUST be a :ref:`real number string<specA_real_number>`.
 
 .. marker_unit_end
 .. marker_component_start
@@ -278,19 +278,19 @@ A :code:`reset` element information item (referred to in this specification as a
       1. The :code:`variable` attribute.
          The value of the :code:`variable` attribute MUST be a :ref:`valid CellML identifier<specA_cellml_identifier>`.
 
-         The value of the :code:`variable` attribute MUST be a variable reference to a variable defined within the parent :code:`component` element of the :code:`reset` element.
+         The value of the :code:`variable` attribute MUST be a :ref:`variable reference<specC_variable_reference>` to a variable defined within the parent :code:`component` element of the :code:`reset` element.
 
    .. container:: issue-reset-test-variable-reference
 
       2. The :code:`test_variable` attribute.
          The value of the :code:`test_variable` attribute MUST be a :ref:`valid CellML identifier<specA_cellml_identifier>`.
 
-         The value of the :code:`test_variable` attribute MUST be a variable reference to a variable defined within the parent :code:`component` element of the :code:`reset` element.
+         The value of the :code:`test_variable` attribute MUST be a :ref:`variable reference<specC_variable_reference>` to a variable defined within the parent :code:`component` element of the :code:`reset` element.
 
    .. container:: issue-reset-order
 
       3. The :code:`order` attribute.
-         The value of the :code:`order` attribute MUST be an integer string.
+         The value of the :code:`order` attribute MUST be an :ref:`integer string<specA_integer>`.
 
          The value of the :code:`order` attribute MUST be unique for all :code:`reset` elements with :code:`variable` attributes that reference variables in the same equivalent variable set (see :ref:`Interpretation of map_variables<specC_interpretation_of_map_variables>`).
 
