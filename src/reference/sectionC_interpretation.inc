@@ -168,11 +168,11 @@ Interpretation of ``units`` elements
 .. _specC_irreducible_units:
 
 2. For the purposes of this specification, the "irreducible units" of a model SHALL consist of:
-  
+
    1. The units defined in a model that are not defined in terms of other units (i.e. the set of :code:`units` elements in the :ref:`CellML model<specA_cellml_model>` which have no :code:`unit` child elements).
 
    2. The built-in irreducible units (those built-in units with "-" in the "Unit Reduction" column of the :ref:`Built-in units table<table_built_in_units>`) referenced by variables or other units in the model.
-   
+
 .. marker_interpretation_of_units_2
 
 3. The "unit reduction" is a conceptual property of :code:`units` elements.
