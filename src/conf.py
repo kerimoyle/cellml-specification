@@ -134,7 +134,7 @@ extlinks = {
     'python': ('https://www.python.org/%s', ''),
 
     # These should be identical: one for links, one for full URL display
-    'rfc2119': ('http://www.ietf.org/rfc/rfc2119.txt%s', ''),
+    'rfc2119':         ('http://www.ietf.org/rfc/rfc2119.txt%s', ''),
     'rfc2119_display': ('http://www.ietf.org/rfc/rfc2119.txt%s', None),
     
     'sphinx': ('http://sphinx-doc.org/%s', ''),
@@ -143,7 +143,7 @@ extlinks = {
     'unicode13_display': ('https://www.unicode.org/versions/Unicode13.0.0%s', None),
     
     # These should be identical: one for links, one for full URL display
-    'xlink': ('http://www.w3.org/TR/2001/REC-xlink-20010627%s', ''),
+    'xlink':         ('http://www.w3.org/TR/2001/REC-xlink-20010627%s', ''),
     'xlink_display': ('http://www.w3.org/TR/2001/REC-xlink-20010627%s', None),
    
     'xml_help': ('https://www.w3.org/XML/%s', ''),
