@@ -16,6 +16,7 @@ The ``model`` element
 .. container:: issue-model-name
 
    1. Every :code:`model` element MUST contain a :code:`name` attribute.
+
       The value of the :code:`name` attribute MUST be a :ref:`CellML identifier<specA_cellml_identifier>`.
 
 .. marker_model_1
