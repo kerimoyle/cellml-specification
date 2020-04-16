@@ -300,11 +300,11 @@ A :code:`reset` element information item (referred to in this specification as a
 
       .. container:: issue-reset-reset-value
 
-         2. A :code:`reset_value` element.
+         1. A :code:`reset_value` element; and
 
       .. container:: issue-reset-test-value
 
-         1. A :code:`test_value` element; and,
+         2. A :code:`test_value` element.
 
 .. marker_reset_end
 .. marker_test_value_start
@@ -364,7 +364,7 @@ A :code:`math` element information item (referred to in this specification as a 
 
 .. container:: issue-math-cn-units-attribute
 
-   4. A MathML :code:`cn` element MUST have an attribute in the :ref:`CellML namespace<specA_cellml_namespace>`, with a local name equal to :code:`units`. 
+   4. A MathML :code:`cn` element MUST have an attribute in the :ref:`CellML namespace<specA_cellml_namespace>`, with a local name equal to :code:`units`.
       The value of this attribute MUST be a valid :ref:`units reference<specC_units_reference>`.
 
 .. container:: issue-math-cn-type
