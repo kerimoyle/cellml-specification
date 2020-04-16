@@ -419,7 +419,7 @@ Interpretation of ``map_variables`` elements
 
 9.  For each :code:`map_variables` element present in the CellML model, the variable unit reduction (see :ref:`Effect of units on variables <specC_effect_of_units_on_variables>` ) of variable *A* MUST have an identical set of tuples to the variable unit reduction of variable *B*.
     Two sets of tuples SHALL be considered identical if all of the tuples from each set are present in the other, or if both sets are empty.
-    Two tuples are considered identical if and only if both the unit name and exponent of each tuple are equivalent.
+    Two tuples are considered identical if and only if both the unit name and exponent of each tuple are identical.
 
 10.  Tuples differing by a multiplying factor in their unit reduction MUST be taken into account when interpreting the numerical values of the variables (see :ref:`Interpretation of units<specC_interpretation_of_units>`).
 
