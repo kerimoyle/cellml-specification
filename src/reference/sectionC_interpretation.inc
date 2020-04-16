@@ -7,33 +7,43 @@
 Interpretation of ``import`` elements
 -------------------------------------
 
-#. Each :code:`import` element present in a :ref:`CellML infoset<specA_cellml_infoset>` (the importing infoset) SHALL define a new and distinct instance of the CellML infoset which is referenced by the :code:`href` attribute (the imported infoset).
-   This imported infoset instance SHALL provide the context in which the child of an import element (a :code:`units` or :code:`component` element) is defined and interpreted.
+#. Each :code:`import units` or :code:`import component` element present in a :ref:`CellML infoset<specA_cellml_infoset>` (the importing infoset) SHALL define a new and distinct instance of the CellML infoset (the imported infoset) that is specified by the parent :code:`import` element's :code:`href` attribute.
 
-#. The imported infoset SHALL be considered such that elements relevant to the imported infoset (:code:`unit` children of imported :code:`units` elements or the :ref:`encapsulated set<specC_encapsulation_set>` of imported :code:`component` elements) are themselves available to that :code:`import` element child.
-   It is noted, for the avoidance of doubt, that the importing infoset SHALL NOT have access to such implicitly imported elements, but only to explicitly specified :code:`import` element children.
+#. A :ref:`units reference<specC_units_reference>` occurring within an imported element, SHALL be resolved with respect to the imported infoset.
 
-See :ref:`Units reference<specC_units_reference>` and :ref:`Component reference<specC_component_reference>` for the specifics of importing units and components.
+#. When determining the equivalent variable set of a variable in an imported component:
+
+   #. connections defined in the importing infoset shall be handled as described in :ref:`Interpretation of map_variables<specC_interpretation_of_map_variables>`.
+
+   #. connections defined in the imported infoset shall be handled as follows:
+
+      #. connections to components in the encapsulated set of the imported component SHALL be maintained, and this rule SHALL be applied recursively;
+
+      #. connections to components in the sibling set, or to the encapsulation parent of the imported component SHALL NOT be maintained.
 
 .. marker_interpretation_of_imports_end
 .. marker_units_reference_start
 
 .. _specC_units_reference:
 
-References to ``units`` elements
---------------------------------
+Units references
+----------------
 
-The term "units reference" refers to the value of a :code:`units_ref` attribute in :code:`import` elements for :code:`units`, and the values of :code:`units` attributes used in :code:`unit` and :code:`variable` elements.
+A "units reference" is an attribute value that specifies the physical units a variable or number is in.
 
-#. A units reference SHALL be a CellML identifier and SHALL be interpreted dependent on the context of the :ref:`CellML model<specA_cellml_model>` in which it occurs, according to the units referencing rules defined later in this section.
+#. A units reference SHALL be a :ref:`CellML identifier<specA_cellml_identifier>`.
 
-#. The units referencing rules are:
+#. The units identified by a units reference SHALL be determined as follows:
 
-   #. Where, within the same infoset, a :code:`units` element has a :code:`name` attribute identical to the units reference, the units reference SHALL refer to that :code:`units` element.
+   #. If the units reference is equal to a value in the "Name" column of the :ref:`Built-in units table<table_built_in_units>`, then it SHALL refer to the corresponding built-in units from the same of the table.
 
-   #. Where there is an :code:`import units` element in the :ref:`CellML infoset<specA_cellml_infoset>`, such that the :code:`import units` element has a :code:`name` attribute identical to the units reference, then the units reference SHALL be treated with respect to referencing rules as if the units reference appeared in the imported infoset, and referring to the :code:`name` specified in the :code:`units_ref` attribute of the :code:`import units` element.
+   #. If the units reference is equal to the value of the :code:`name` attribute of a :code:`units` element in the same infoset, then it SHALL refer to the units specified by that element.
 
-   #. Where the units reference is equal to the value in the "Name" column of the :ref:`Built-in units table<table_built_in_units>`, then the units reference SHALL be a reference to the built-in units corresponding to that row of the table.
+   #. If the units reference is equal to the value of the :code:`name` attribute of an :code:`import units` element in the same infoset, then it SHALL refer to units from the infoset defined by the :code:`import units` element (see :ref:`Interpretation of ``import`` elements`<specC_interpreation_of_imports>`).
+      The units specified SHALL then be determined by treating the value of the :code:`units_ref` attribute on the :code:`import units` element as a units reference within the imported infoset.
+      If necessary, this rule SHALL be applied recursively.
+
+#. If no units can be identified using the rules above, the attribute value SHALL NOT be a valid units reference.
 
 .. marker_units_reference1
 
@@ -219,33 +229,44 @@ Interpretation of ``units`` elements
 
 .. _specC_component_reference:
 
+Component references
+--------------------
 
-References to ``component`` elements
-------------------------------------
+A "component reference" is an attribute value that specifies a CellML component.
 
-The term "component reference" refers to the value of a :code:`component_ref` attribute used in an :code:`import` element for :code:`component` elements, to :code:`component_ref` elements which occur as children of :code:`encapsulation` elements, and to the value of :code:`component_1` and :code:`component_2` attributes used in :code:`connection` elements.
+#. A component reference SHALL be a :ref:`CellML identifier<specA_cellml_identifier>`.
 
-#. A component reference SHALL be the name of a component, and SHALL be interpreted based on the context within the :ref:`CellML model<specA_cellml_model>` in which it occurs.
+#. The component identifier by a component reference SHALL be determined as follows:
 
-#. Where, within the same infoset, a :code:`component` element has a :code:`name` attribute identical to the component reference, the component reference SHALL refer to that :code:`component` element.
+   #. If the component reference is equal to the value of the :code:`name` attribute of a :code:`component` element in the same infoset, then it SHALL refer to the units specified by that element.
 
-#. A component reference which is identical to the :code:`name` attribute on an :code:`import component` element SHALL be treated for the purposes of referencing as if the component reference appeared in the imported model, and referred to element with the :code:`name` specified in the :code:`component_ref` attribute of the :code:`import component` element.
+   #. If the component reference is equal to the value of the :code:`name` attribute of an :code:`import component` element in the same infoset, then it SHALL refer to a component from the infoset defined by the :code:`import component` element (see :ref:`Interpretation of ``import`` elements`<specC_interpreation_of_imports>`).
+      The component specified SHALL then be determined by treating the value of the :code:`component_ref` attribute on the :code:`import component` element as a component reference within the imported infoset.
+      If necessary, this rule SHALL be applied recursively.
 
-#. It is noted, for the avoidance of doubt, that CellML models MAY apply the previous rule recursively, to reference an :code:`import component` element which in turn references another :code:`import component` element.
+#. If no component can be identified using the rules above, the attribute value SHALL NOT be a valid component reference.
 
 .. marker_component_reference_end
 .. marker_variable_reference_start
 
 .. _specC_variable_reference:
 
-References to ``variable`` elements
------------------------------------
+Variable references
+-------------------
 
-#. When present in a descendant of a :code:`component` element, a variable reference SHALL be the name of a variable, and SHALL refer to the :code:`variable` element in that component with a :code:`name` attribute identical to the variable reference.
+A "variable reference" is an attribute value that specifies a CellML variable.
 
-#. When present as the value of a :code:`variable_1` attribute of a :code:`map_variables` element, a variable reference SHALL be the name of a variable, and SHALL be interpreted as referring to the :code:`variable` element with a :code:`name` attribute identical to the variable reference and being a child of the :code:`component` named by the value of the :code:`component_1` attribute of the parent :code:`connection` element.
+#. A variable reference SHALL be a :ref:`CellML identifier<specA_cellml_identifier>`.
 
-#. When present as the value of a :code:`variable_2` attribute of a :code:`map_variables` element, a variable reference SHALL be the name of a variable, and SHALL be interpreted as referring to the :code:`variable` element with a :code:`name` attribute identical to the variable reference and being a child of the :code:`component` named by the value of the :code:`component_2` attribute of the parent :code:`connection` element.
+#. The variable identified by a variable reference SHALL be determined as follows:
+
+#. When present in a descendant of a :code:`component` element, it SHALL refer to the variable of the same name within that component.
+
+#. When present in the :code:`variable_1` attribute of a :code:`map_variables` element, it SHALL refer to the variable of the same name in the component identified by the :code:`component_1` attribute in the same :code:`map_variables` element.
+
+#. When present in the :code:`variable_2` attribute of a :code:`map_variables` element, it SHALL refer to the variable of the same name in the component identified by the :code:`component_2` attribute in the same :code:`map_variables` element.
+
+#. If no variable can be identified using the rules above, the attribute value SHALL NOT be a valid variable reference.
 
 .. marker_variable_reference_end
 .. marker_interpretation_of_initial_values_start
