@@ -358,8 +358,6 @@ Interpretation of ``encapsulation`` elements
 
 .. marker_interpretation_of_encapsulation_2
 
-7. For the avoidance of doubt, there MUST NOT be a :code:`connection` element such that the component referenced by the :code:`component_1` attribute is in the hidden set of the component referenced by the :code:`component_2` attribute, nor vice versa.
-
 .. marker_interpretation_of_encapsulation_end
 .. marker_interpretation_of_map_variables_start
 
