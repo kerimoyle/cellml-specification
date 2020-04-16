@@ -146,7 +146,7 @@ Non-specific information items
 
 .. marker_cellml_information_sets_3
 
-3. Two :ref:`CellML infosets<specA_cellml_infoset>` SHALL be deemed semantically equivalent if one can be transformed into the other by making any or none of the following changes:
+3. Two :ref:`CellML infosets<specA_cellml_infoset>` SHALL be deemed semantically equivalent if one can be transformed into the other by making zero or more of the following changes:
 
    #. Adding, removing, and/or modifying comment information items.
 
