@@ -134,7 +134,7 @@ extlinks = {
 
     # These should be identical: one for links, one for full URL display
     'rfc2119':         ('http://www.ietf.org/rfc/rfc2119.txt%s', ''),
-    'rfc2119_display': ('http://www.ietf.org/rfc/rfc2119.txt%s', None),
+    'rfc2119_display': ('http://www.ietf.org/rfc/%s', None),
     
     'sphinx': ('http://sphinx-doc.org/%s', ''),
     'swig': ('http://www.swig.org/%s', ''),
