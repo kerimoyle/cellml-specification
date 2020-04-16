@@ -354,7 +354,7 @@ A :code:`math` element information item (referred to in this specification as a 
 
 .. container:: issue-math-mathml
 
-   1. A :code:`math` element MUST be the top-level of a content MathML tree, as described in :mathml2:`MathML 2.0 <>`.
+   1. A :code:`math` element MUST be the top-level element of a Content MathML tree, as described in :mathml2:`MathML 2.0 <>`.
 
 .. marker_math_1
 
