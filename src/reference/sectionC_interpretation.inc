@@ -197,7 +197,7 @@ Interpretation of ``units`` elements
    3. Tuples which have the unit name of "dimensionless" SHALL be removed from the set of tuples.
       Note that this can result in the set of tuples being empty.
 
-   4. If the set of tuples contains tuples which have the same unit name, then those tuples SHALL be combined into a single tuple with that unit name and an exponent being the sum of the combined tuples’ exponents.
+   4. If the set of tuples contains tuples which have the same unit name, then those tuples SHALL be combined into a single tuple with that unit name and an exponent being the sum of those tuples’ exponents.
       If the resulting tuple’s exponent is zero, then the tuple SHALL be removed from the set of tuples.
       Note that this can result in the set of tuples being empty.
 
