@@ -155,6 +155,8 @@ extlinks = {
     'xml_infoset2004': ('http://www.w3.org/TR/2004/REC-xml-infoset-20040204/%s', ''),
     'xml_namespace_1_1': ('https://www.w3.org/TR/2006/REC-xml-names11-20060816/%s', ''),
     'xml_namespace_display': ('https://www.w3.org/TR/xml-names11%s', None),
+
+    'mypage': ('https://example.com%s', 'mypage '),
 }
 
 # Making a passive role with which to decorate hardcoded references to sections. These

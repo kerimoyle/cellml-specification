@@ -13,3 +13,5 @@ Unicode 13.0.0 :unicode13_display:`/`
 XML Information Set :xml_infoset_display:`/`
 
 XML Linking Language (XLink) Version 1.1 :xlink_display:`/`
+
+mypage testing :mypage:`my label </>`
