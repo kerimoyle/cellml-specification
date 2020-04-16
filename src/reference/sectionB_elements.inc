@@ -413,7 +413,7 @@ A :code:`math` element information item (referred to in this specification as a 
 |                                  | :code:`true`, :code:`false`                                    |
 +----------------------------------+----------------------------------------------------------------+
 
-\* :code:`degree` must be a child of :code:`root` or :code:`diff`
+\* :code:`degree` MUST be a child of :code:`root` or :code:`diff`
 
 .. marker_math_end
 .. marker_encapsulation_start
