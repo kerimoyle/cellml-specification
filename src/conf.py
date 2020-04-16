@@ -46,7 +46,12 @@ def tex_document_name():
 
 def define_excluded_patterns():
     exclude_patterns = ['normative_only_index.rst',
+                        'reference/libcellml/*.rst',
                         'reference/formal_section*',
+                        'reference/informative/informB9_reset1.rst',
+                        'reference/informative/informC07_effect_of_units_on_variables.rst',
+                        'reference/informative/informC08_interpretation_of_mathematics.rst',
+                        'reference/informative/informC11_interpretation_of_variable_resets.rst',
                         'reference/formal_only/*', ]
     if build_type == 'Normative':
         exclude_patterns = ['master_index.rst',
