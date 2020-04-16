@@ -454,6 +454,8 @@ A :code:`component_ref` element information item (referred to in this specificat
 
       The value of the :code:`component` attribute MUST be a valid component reference, as defined in the section :ref:`Component references<specC_component_reference>`.
 
+      The value of the :code:`component` attribute MUST NOT be identical to the value of the :code:`component` attribute on any other :code:`component_ref` element in the :ref:`CellML infoset<specA_cellml_infoset>`.
+
 .. container:: issue-component-ref-child
 
    2. Every :code:`component_ref` element MAY in turn contain one or more :code:`component_ref` element children.
