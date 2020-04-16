@@ -7,13 +7,19 @@
 Interpretation of ``import`` elements
 -------------------------------------
 
-#. Each :code:`import` element present in a :ref:`CellML infoset<specA_cellml_infoset>` (the importing infoset) SHALL define a new and distinct instance of the CellML infoset which is referenced by the :code:`href` attribute (the imported infoset).
-   This imported infoset instance SHALL provide the context in which the child of an import element (a :code:`units` or :code:`component` element) is defined and interpreted.
+#. Each :code:`import units` or :code:`import component` element present in a :ref:`CellML infoset<specA_cellml_infoset>` (the importing infoset) SHALL define a new and distinct instance of the CellML infoset (the imported infoset) that is specified by the parent :code:`import` element's :code:`href` attribute.
 
-#. The imported infoset SHALL be considered such that elements relevant to the imported infoset (:code:`unit` children of imported :code:`units` elements or the :ref:`encapsulated set<specC_encapsulation_set>` of imported :code:`component` elements) are themselves available to that :code:`import` element child.
-   It is noted, for the avoidance of doubt, that the importing infoset SHALL NOT have access to such implicitly imported elements, but only to explicitly specified :code:`import` element children.
+#. A :ref:`units reference<specC_units_reference>` occurring within an imported element, SHALL be resolved with respect to the imported infoset.
 
-See :ref:`Units reference<specC_units_reference>` and :ref:`Component reference<specC_component_reference>` for the specifics of importing units and components.
+#. When determining the equivalent variable set of a variable in an imported component:
+
+   #. connections defined in the importing infoset shall be handled as described in :ref:`Interpretation of map_variables<specC_interpretation_of_map_variables>`.
+
+   #. connections defined in the imported infoset shall be handled as follows:
+
+      #. connections to components in the encapsulated set of the imported component SHALL be maintained, and this rule SHALL be applied recursively;
+
+      #. connections to components in the sibling set, or to the encapsulation parent of the imported component SHALL NOT be maintained.
 
 .. marker_interpretation_of_imports_end
 .. marker_units_reference_start
