@@ -7,9 +7,9 @@
 Terminology
 -----------
 
-The keywords "MUST", "MUST NOT", "SHALL", "SHALL NOT", and "MAY" in this document are to be interpreted as described in :rfc2119:`RFC 2119`.
+The keywords "MUST", "MUST NOT", "SHALL", "SHALL NOT", and "MAY" in this document are to be interpreted as described in :rfc2119:`RFC 2119 <>`.
 
-The key phrase "information item", as well as any specific type of information item such as an "element information item", are to be interpreted as described in :xml_infoset:`XML Information Set`.
+The key phrase "information item", as well as any specific type of information item such as an "element information item", are to be interpreted as described in :xml_infoset:`XML Information Set <>`.
 
 .. _specA_cellml_infoset:
 
@@ -26,7 +26,7 @@ In this specification, the topmost CellML infoset in a hierarchy is referred to 
 .. _specA_namespace:
 
 **Namespace:**
-An XML namespace, as defined in :xml_namespace_1_1:`Namespaces in XML 1.1`.
+An XML namespace, as defined in :xml_namespace_1_1:`Namespaces in XML 1.1 <>`.
 
 .. _specA_cellml_namespace:
 
@@ -35,12 +35,12 @@ An XML namespace, as defined in :xml_namespace_1_1:`Namespaces in XML 1.1`.
 .. _specA_cellml2_namespace:
 
 **CellML 2.0 namespace:**
-The namespace :cellml2:`http://www.cellml.org/cellml/2.0# <cellml/2.0#>`\.
+The namespace :cellml2namespace:`#`.
 
 .. _specA_mathml_namespace:
 
 **MathML namespace:**
-The namespace http://www.w3.org/1998/Math/MathML.
+The namespace :mathml2namespace:`/`.
 
 .. _specA_cellml_information_item:
 
@@ -98,14 +98,14 @@ CellML information sets
 CellML and XML
 ~~~~~~~~~~~~~~
 
-#. Every CellML infoset SHALL be represented in an XML information set which conforms with the well-formedness requirements of :xml_1_1:`XML 1.1`.
+#. Every CellML infoset SHALL be represented in an XML information set which conforms with the well-formedness requirements of :xml_1_1:`XML 1.1 <>`.
 
 #. In this document, the remaining provisions relating to CellML infosets SHALL be interpreted as additional constraints on the XML information set represented by a CellML infoset.
 
 Specific information items
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. For the purposes of this specification, a specific information item is one of the following (see https://www.w3.org/TR/xml-infoset/ for definitions):
+#. For the purposes of this specification, a specific information item is one of the following (see :xml_infoset_display:`/` for definitions):
 
    #. A document information item;
 
@@ -134,7 +134,7 @@ Specific information items
 Non-specific information items
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. For the purposes of this specification, a non-specific information item is one of the following (see https://www.w3.org/TR/xml-infoset/ for definitions):
+1. For the purposes of this specification, a non-specific information item is one of the following (see :xml_infoset_display:`/` for definitions):
 
    #. A comment information item;
 
@@ -175,7 +175,7 @@ XML ID Attributes
 ~~~~~~~~~~~~~~~~~
 
 #. Any element information item in the :ref:`CellML namespace<specA_cellml_namespace>` MAY contain an attribute with local name :code:`id.`
-   This attribute SHALL be treated as having attribute type ID, as defined in `section 3.3.1 <http://www.w3.org/TR/xml11/#sec-attribute-types>`__ of `XML 1.1 <http://www.w3.org/TR/xml11/>`__.
+   This attribute SHALL be treated as having attribute type ID, as defined in :xml_1_1:`section 3.3.1 <#sec-attribute-types>` of :xml_1_1:`XML 1.1 <>`.
 
 .. marker_cellml_information_sets_end
 .. marker_data_formats_start
