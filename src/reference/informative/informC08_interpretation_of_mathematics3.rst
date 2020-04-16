@@ -166,5 +166,12 @@
             </connection>
           </model>
 
+    In summary, the only place in which units can cause validation errors related to variables are between equivalent variables (variables connected using :code:`connection` and :code:`map_variables` elements):
+
+    - code:`x` in Volts **equivalent** to :code:`y` in Amps: invalid, conflicting unit reductions;
+    - code:`x` in Volts **equivalent** to :code:`y` in millivolts: valid, unit reductions are the same even though the scaling factor is different; 
+    - in the :code:`math` element :code:`x` in Volts = :code:`y` in Amps: valid (but nonsense); 
+    - in the :code:`math` element :code:`x` in Volts = 3 Amps: valid (but nonsense).
+
 
 
