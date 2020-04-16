@@ -13,13 +13,13 @@ Interpretation of ``import`` elements
 
 #. When determining the :ref:`equivalent variable set<specC_equivalent_variable_set>` of a variable in an imported component:
 
-   #. connections defined in the importing infoset shall be handled as described in :ref:`Interpretation of map_variables<specC_interpretation_of_map_variables>`.
+   #. Connections defined in the importing infoset shall be handled as described in :ref:`Interpretation of map_variables<specC_interpretation_of_map_variables>`.
 
-   #. connections defined in the imported infoset shall be handled as follows:
+   #. Connections defined in the imported infoset shall be handled as follows:
 
-      #. connections to components in the :ref:`encapsulated set<specC_encapsulation_set>` of the imported component SHALL be maintained, and this rule SHALL be applied recursively;
+      #. Connections to components in the :ref:`encapsulated set<specC_encapsulation_set>` of the imported component SHALL be maintained, and this rule SHALL be applied recursively;
 
-      #. connections to components in the :ref:`sibling set<specC_sibling_set>`, or to the :ref:`encapsulation parent<specC_encapsulation_parent>` of the imported component SHALL NOT be maintained.
+      #. Connections to components in the :ref:`sibling set<specC_sibling_set>`, or to the :ref:`encapsulation parent<specC_encapsulation_parent>` of the imported component SHALL NOT be maintained.
 
 .. marker_interpretation_of_imports_end
 .. marker_units_reference_start
