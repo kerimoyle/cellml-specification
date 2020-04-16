@@ -7,7 +7,7 @@
 Terminology
 -----------
 
-The keywords "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in :rfc2119:`RFC 2119`.
+The keywords "MUST", "MUST NOT", "SHALL", "SHALL NOT", and "MAY" in this document are to be interpreted as described in :rfc2119:`RFC 2119`.
 
 The key phrase "information item", as well as any specific type of information item such as an "element information item", are to be interpreted as described in :xml_infoset:`XML Information Set`.
 
@@ -15,7 +15,7 @@ The key phrase "information item", as well as any specific type of information i
 
 **CellML infoset:**
 An XML information set containing a hierarchy of information items conforming to the rules described in this document.
-In this specification such infosets are assumed to be CellML 2.0 infosets.
+In this specification, such infosets are assumed to be CellML 2.0 infosets.
 
 .. _specA_cellml_model:
 
@@ -47,20 +47,20 @@ The namespace http://www.w3.org/1998/Math/MathML.
 **CellML information item:**
 Any information item in the :ref:`CellML namespace<specA_cellml_namespace>`.
 
-.. _specA_basic_latin_alphabetic_character:
+.. _specA_basic_latin_alphabetical_character:
 
-**Basic Latin alphabetic character:**
+**Basic Latin alphabetical character:**
 A Unicode character in the range :unicode:`0041` to :unicode:`005A` or in the range :unicode:`0061` to :unicode:`007A`.
 
-.. _specA_european_numeral:
+.. _specA_digit:
 
-**European numeral:**
+**Digit:**
 A Unicode character in the range :unicode:`0030` to :unicode:`0039`.
 
-.. _specA_basic_latin_alphanumeric_character:
+.. _specA_basic_latin_alphanumerical_character:
 
-**Basic Latin alphanumeric character:**
-A Unicode character which is either a :ref:`Basic Latin alphabetic character<specA_basic_latin_alphabetic_character>` or a :ref:`European numeral<specA_european_numeral>`.
+**Basic Latin alphanumerical character:**
+A Unicode character which is either a :ref:`Basic Latin alphabetical character<specA_basic_latin_alphabetical_character>` or a :ref:`digit<specA_digit>`.
 
 .. _specA_basic_latin_underscore:
 
@@ -85,7 +85,7 @@ The Unicode character :unicode:`002E`.
 .. _specA_whitespace_character:
 
 **Whitespace character:**
-Any one of the Unicode characters :unicode:`0020`, :unicode:`0009`, :unicode:`000D`, or :unicode:`000A`.
+Any one of the Unicode characters :unicode:`0009`, :unicode:`000A`, :unicode:`000D`, or :unicode:`0020`.
 
 .. marker_terminology_end
 .. marker_cellml_information_sets_start
@@ -105,7 +105,7 @@ CellML and XML
 Specific information items
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. For the purposes of this specification, a specific information item is one of the following (see https://www.w3.org/TR/xml-infoset/#infoitem for definitions):
+#. For the purposes of this specification, a specific information item is one of the following (see https://www.w3.org/TR/xml-infoset/ for definitions):
 
    #. A document information item;
 
@@ -134,24 +134,29 @@ Specific information items
 Non-specific information items
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. Two :ref:`CellML infosets<specA_cellml_infoset>` SHALL be deemed semantically equivalent if one can be transformed into the other by making any or none of the following changes:
+1. For the purposes of this specification, a non-specific information item is one of the following (see https://www.w3.org/TR/xml-infoset/ for definitions):
 
-   #. Adding, removing, and/or modifying `comment information items <https://www.w3.org/TR/xml-infoset/#infoitem.comment>`__.
+   #. A comment information item;
+
+   #. A namespace information item;
+
+   #. A character information item.
+
+2. An element information item in the :ref:`CellML namespace<specA_cellml_namespace>` MUST NOT contain any character information items, except for whitespace characters.
+
+.. marker_cellml_information_sets_3
+
+3. Two :ref:`CellML infosets<specA_cellml_infoset>` SHALL be deemed semantically equivalent if one can be transformed into the other by making any or none of the following changes:
+
+   #. Adding, removing, and/or modifying comment information items.
 
    #. Changing (inserting, removing, and/or modifying) one or more namespace information items, and/or modifying the prefix of one or more information items, without changing the namespace that any information item is in.
 
-   #. The following paragraph applies only to character information items which are the direct child of an element information item in a :ref:`CellML namespace<specA_cellml_namespace>`, or in the :ref:`MathML namespace<specA_mathml_namespace>`:
+   #. The following paragraph applies to character information items which are the direct child of an element information item in the :ref:`CellML namespace<specA_cellml_namespace>`, or in the :ref:`MathML namespace<specA_mathml_namespace>`:
 
       Inserting or removing character information items that consist entirely of :ref:`whitespace characters<specA_whitespace_character>`,
       changing the number of whitespace characters in such an information item,
       or changing the number of whitespace characters at the beginning or end of any character information item.
-
-.. marker_cellml_information_sets_3
-
-Character information items
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-#. An element information item in the :ref:`CellML namespace<specA_cellml_namespace>` MUST NOT contain any character information items, except for character information items which consist entirely of whitespace characters.
 
 .. marker_cellml_information_sets_4
 
@@ -160,9 +165,9 @@ Use of namespaces
 
 #. Element information items in a :ref:`CellML infoset<specA_cellml_infoset>` MUST belong to one of the following namespaces, unless explicitly indicated otherwise:
 
-   #. The :ref:`CellML namespace<specA_cellml_namespace>`
+   #. The :ref:`CellML namespace<specA_cellml_namespace>`;
 
-   #. The :ref:`MathML namespace<specA_mathml_namespace>`
+   #. The :ref:`MathML namespace<specA_mathml_namespace>`.
 
 #. Attribute information items in a CellML element MUST NOT be prefixed with a namespace, unless explicitly indicated otherwise.
 
@@ -188,43 +193,17 @@ The following data representation formats are defined for use in this specificat
 
    .. container:: issue-data-repr-identifier-unicode
 
-      1. SHALL be a sequence of Unicode characters.
-
-   .. container:: issue-data-repr-identifier-latin-alphanum
-
-      2. SHALL NOT contain any characters except :ref:`Basic Latin alphanumeric characters<specA_basic_latin_alphanumeric_character>` and :ref:`Basic Latin underscores<specA_basic_latin_underscore>`.
-
-   .. container:: issue-data-repr-identifier-at-least-one-alphanum
-
-      3. SHALL contain at least one :ref:`alphabetic<specA_basic_latin_alphabetic_character>` character.
-
-   .. container:: issue-data-repr-identifier-begin-euro-num
-
-      4. SHALL NOT begin with a :ref:`numeral<specA_european_numeral>` or an :ref:`underscore<specA_basic_latin_underscore>`.
+      1. SHALL consist of a single :ref:`Basic Latin alphabetical character<specA_basic_latin_alphabetical_character>`, which MAY be followed by any combination of :ref:`Basic Latin alphanumerical characters<specA_basic_latin_alphanumerical_character>` and/or :ref:`Basic Latin underscores<specA_basic_latin_underscore>`.
 
    .. container:: issue-data-repr-identifier-identical
 
-      5. SHALL, when comparing two identifiers, be considered identical to another identifier if and only if both identifiers have identical sequences of characters.
+      2. SHALL, when comparing two identifiers, be considered identical to another identifier if and only if both identifiers are identical sequences of characters.
 
 .. marker_data_formats_1
 
-.. _specA_nonnegative_integer:
-
-2. A non-negative integer string:
-
-   .. container:: issue-data-repr-nneg-int-base10
-
-      1. SHALL be a base 10 representation of a non-negative integer.
-
-   .. container:: issue-data-repr-nneg-int-euro-num
-
-      2. SHALL consist entirely of :ref:`European numerals<specA_european_numeral>`.
-
-.. marker_data_formats_2
-
 .. _specA_integer:
 
-3. An integer string:
+2. An integer string:
 
    .. container:: issue-data-repr-int-base10
 
@@ -232,17 +211,17 @@ The following data representation formats are defined for use in this specificat
 
    .. container:: issue-data-repr-int-sign
 
-      2. SHALL, when the integer being represented is negative, begin with the Basic Latin hyphen-minus character :unicode:`002D` as the sign indicator.
+      2. MAY begin with a single Basic Latin plus character :unicode:`002B` or a Basic Latin hyphen-minus character :unicode:`002D` as the sign indicator.
 
    .. container:: issue-data-repr-int-euro-num
 
-      3. SHALL, other than the sign indicator, consist only of :ref:`European numerals<specA_european_numeral>`.
+      3. SHALL, other than the sign indicator, consist of one or more :ref:`digits<specA_digit>`.
 
-.. marker_data_formats_3
+.. marker_data_formats_2
 
 .. _specA_basic_real_number:
 
-4. A basic real number string:
+3. A basic real number string:
 
    .. container:: issue-data-repr-basic-real-base10
 
@@ -250,7 +229,7 @@ The following data representation formats are defined for use in this specificat
 
    .. container:: issue-data-repr-basic-real-sign
 
-      2. SHALL, when the basic real number being represented is negative, begin with the Basic Latin hyphen-minus character :unicode:`002D` as the sign indicator.
+      2. MAY begin with a single Basic Latin plus character :unicode:`002B` or a Basic Latin hyphen-minus character :unicode:`002D` as the sign indicator.
 
    .. container:: issue-data-repr-basic-real-decimal
 
@@ -258,13 +237,13 @@ The following data representation formats are defined for use in this specificat
 
    .. container:: issue-data-repr-basic-real-euro-num
 
-      4. SHALL, other than the sign indicator and the decimal point separator, consist only of :ref:`European numerals<specA_european_numeral>`.
+      4. SHALL, other than the sign indicator and the decimal point separator, consist of one or more :ref:`digits<specA_digit>`.
 
-.. marker_data_formats_4
+.. marker_data_formats_3
 
 .. _specA_real_number:
 
-5. A real number string:
+4. A real number string:
 
    .. container:: issue-data-repr-real-base10
 
@@ -272,7 +251,7 @@ The following data representation formats are defined for use in this specificat
 
    .. container:: issue-data-repr-real-repr
 
-      2. The representation of the number SHALL be the representation of the significand followed immediately by the representation of the exponent.
+      2. The representation of the number SHALL be the representation of the significand, optionally followed by a representation of the exponent.
 
    .. container:: issue-data-repr-real-significand
 
@@ -281,11 +260,10 @@ The following data representation formats are defined for use in this specificat
    .. container:: issue-data-repr-real-exponent
 
       4. An exponent SHALL be represented by an exponent separator character, followed by the :ref:`integer string representation<specA_integer>` of the value of the exponent.
-         Non-negative exponents MAY begin with the Basic Latin plus sign character :unicode:`002B` as the sign indicator.
          The exponent separator character SHALL be either the Basic Latin "E" character :unicode:`0045` or the Basic Latin "e" character :unicode:`0065`.
 
    .. container:: issue-data-repr-real-no-exponent
 
-      5. A real number string without an exponent SHALL be a :ref:`basic real number string<specA_basic_real_number>`.
+      5. If the exponent representation is omitted, the exponent shall be zero.
 
 .. marker_data_formats_end

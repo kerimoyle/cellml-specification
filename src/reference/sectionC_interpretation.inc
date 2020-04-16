@@ -41,87 +41,83 @@ The term "units reference" refers to the value of a :code:`units_ref` attribute 
 
 **Table 3.1: Built-in units**
 
-+-----------------------+-------------------+----------------------------------------------+-------------------------+
-| | **Name**            | | **Symbol**      | | **Unit reduction tuple**                   | | **Common**            |
-| |                     | |                 | | multiplier⋅(base, exponent)                | | **definitions**       |
-+-----------------------+-------------------+----------------------------------------------+-------------------------+
-| :code:`ampere`        | A                 | \-                                           |                         |
-+-----------------------+-------------------+----------------------------------------------+-------------------------+
-| :code:`becquerel`     | Bq                | (:code:`second`, -1)                         | 1/s                     |
-+-----------------------+-------------------+----------------------------------------------+-------------------------+
-| :code:`candela`       | cd                | \-                                           |                         |
-+-----------------------+-------------------+----------------------------------------------+-------------------------+
-| :code:`coulomb`       | C                 | (:code:`second`, 1), (:code:`ampere`, 1)     | | s⋅A                   |
-|                       |                   |                                              | | F⋅V                   |
-+-----------------------+-------------------+----------------------------------------------+-------------------------+
-| :code:`dimensionless` | \-                | \-                                           |                         |
-+-----------------------+-------------------+----------------------------------------------+-------------------------+
-| :code:`farad`         | F                 | (:code:`kilogram`, -1), (:code:`metre`, -2), | | C/V                   |
-|                       |                   | (:code:`second`, 4), (:code:`ampere`, 2)     | | s/Ω                   |
-+-----------------------+-------------------+----------------------------------------------+-------------------------+
-| :code:`gram`          | g                 | 0.001⋅(:code:`kilogram`, 1)                  |                         |
-+-----------------------+-------------------+----------------------------------------------+-------------------------+
-| :code:`gray`          | Gy                | (:code:`metre`, 2), (:code:`second`, -2)     | J/kg                    |
-+-----------------------+-------------------+----------------------------------------------+-------------------------+
-| :code:`henry`         | H                 | (:code:`kilogram`, 1), (:code:`metre`, 2),   | | V⋅s/A                 |
-|                       |                   | (:code:`second`, -2), (:code:`ampere`, -2)   | | Ω⋅s                   |
-|                       |                   |                                              | | Wb/A                  |
-+-----------------------+-------------------+----------------------------------------------+-------------------------+
-| :code:`hertz`         | Hz                | (:code:`second`, -1)                         |                         |
-+-----------------------+-------------------+----------------------------------------------+-------------------------+
-| :code:`joule`         | J                 | (:code:`kilogram`, 1), (:code:`metre`, 2),   | | N⋅m                   |
-|                       |                   | (:code:`second`, -2)                         | | C⋅V                   |
-|                       |                   |                                              | | Wb⋅s                  |
-+-----------------------+-------------------+----------------------------------------------+-------------------------+
-| :code:`katal`         | kat               | (:code:`second`, -1), (:code:`mole`, 1)      |                         |
-+-----------------------+-------------------+----------------------------------------------+-------------------------+
-| :code:`kelvin`        | K                 | \-                                           |                         |
-+-----------------------+-------------------+----------------------------------------------+-------------------------+
-| :code:`kilogram`      | kg                | \-                                           |                         |
-+-----------------------+-------------------+----------------------------------------------+-------------------------+
-| :code:`litre`         | l                 | 0.001⋅(:code:`metre`, 3)                     |                         |
-+-----------------------+-------------------+----------------------------------------------+-------------------------+
-| :code:`lumen`         | lm                | (:code:`candela`, 1)                         | cd⋅sr                   |
-+-----------------------+-------------------+----------------------------------------------+-------------------------+
-| :code:`lux`           | lx                | (:code:`metre`, -2), (:code:`candela`, 1)    | lm/m\ :sup:`2`          |
-+-----------------------+-------------------+----------------------------------------------+-------------------------+
-| :code:`metre`         | m                 | \-                                           |                         |
-+-----------------------+-------------------+----------------------------------------------+-------------------------+
-| :code:`mole`          | mol               | \-                                           |                         |
-+-----------------------+-------------------+----------------------------------------------+-------------------------+
-| :code:`newton`        | N                 | (:code:`kilogram`, 1), (:code:`metre`, 1),   |                         |
-|                       |                   | (:code:`second`, -2)                         |                         |
-+-----------------------+-------------------+----------------------------------------------+-------------------------+
-| :code:`ohm`           | Ω                 | (:code:`kilogram`, 1), (:code:`metre`, 2),   | | 1/S                   |
-|                       |                   | (:code:`second`, -3), (:code:`ampere`, -2)   | | V/A                   |
-+-----------------------+-------------------+----------------------------------------------+-------------------------+
-| :code:`pascal`        | Pa                | (:code:`kilogram`, 1), (:code:`metre`, -1),  | N/m\ :sup:`2`           |
-|                       |                   | (:code:`second`, -2)                         |                         |
-+-----------------------+-------------------+----------------------------------------------+-------------------------+
-| :code:`radian`        | rad               | (:code:`dimensionless`, 1)                   | m/m                     |
-+-----------------------+-------------------+----------------------------------------------+-------------------------+
-| :code:`second`        | s                 | \-                                           |                         |
-+-----------------------+-------------------+----------------------------------------------+-------------------------+
-| :code:`siemens`       | S                 | (:code:`kilogram`, -1), (:code:`metre`, -2), | | 1/Ω                   |
-|                       |                   | (:code:`second`, 3), (:code:`ampere`, 2)     | | A/V                   |
-+-----------------------+-------------------+----------------------------------------------+-------------------------+
-| :code:`sievert`       | Sv                | (:code:`metre`, 2), (:code:`second`, -2)     | J/kg                    |
-+-----------------------+-------------------+----------------------------------------------+-------------------------+
-| :code:`steradian`     | sr                | (:code:`dimensionless`, 1)                   | m\ :sup:`2`/m\ :sup:`2` |
-+-----------------------+-------------------+----------------------------------------------+-------------------------+
-| :code:`tesla`         | T                 | (:code:`kilogram`, 1), (:code:`second`, -2), | | V⋅s/m\ :sup:`2`       |
-|                       |                   | (:code:`ampere`, -1)                         | | Wb/m\ :sup:`2`        |
-|                       |                   |                                              | | N/(A⋅m)               |
-+-----------------------+-------------------+----------------------------------------------+-------------------------+
-| :code:`volt`          | V                 | (:code:`kilogram`, 1), (:code:`metre`, 2),   | | W/A                   |
-|                       |                   | (:code:`second`, -3), (:code:`ampere`, -1)   | | J/C                   |
-+-----------------------+-------------------+----------------------------------------------+-------------------------+
-| :code:`watt`          | W                 | (:code:`kilogram`, 1), (:code:`metre`, 2),   | | J/s                   |
-|                       |                   | (:code:`second`, -3)                         | | V⋅A                   |
-+-----------------------+-------------------+----------------------------------------------+-------------------------+
-| :code:`weber`         | Wb                | (:code:`kilogram`, 1), (:code:`metre`, 2),   | | J/A                   |
-|                       |                   | (:code:`second`, -2), (:code:`ampere`, -1)   | | T⋅m\ :sup:`2`         |
-+-----------------------+-------------------+----------------------------------------------+-------------------------+
++-----------------------+----------------------------------------------+
+| | **Name**            | | **Unit reduction tuple**                   |
+| |                     | | multiplier⋅(base, exponent)                |
++-----------------------+----------------------------------------------+
+| :code:`ampere`        | \-                                           |
++-----------------------+----------------------------------------------+
+| :code:`becquerel`     | (:code:`second`, -1)                         |
++-----------------------+----------------------------------------------+
+| :code:`candela`       | \-                                           |
++-----------------------+----------------------------------------------+
+| :code:`coulomb`       | (:code:`second`, 1), (:code:`ampere`, 1)     |
++-----------------------+----------------------------------------------+
+| :code:`dimensionless` | \-                                           |
++-----------------------+----------------------------------------------+
+| :code:`farad`         | (:code:`kilogram`, -1), (:code:`metre`, -2), |
+|                       | (:code:`second`, 4), (:code:`ampere`, 2)     |
++-----------------------+----------------------------------------------+
+| :code:`gram`          | 0.001⋅(:code:`kilogram`, 1)                  |
++-----------------------+----------------------------------------------+
+| :code:`gray`          | (:code:`metre`, 2), (:code:`second`, -2)     |
++-----------------------+----------------------------------------------+
+| :code:`henry`         | (:code:`kilogram`, 1), (:code:`metre`, 2),   |
+|                       | (:code:`second`, -2), (:code:`ampere`, -2)   |
++-----------------------+----------------------------------------------+
+| :code:`hertz`         | (:code:`second`, -1)                         |
++-----------------------+----------------------------------------------+
+| :code:`joule`         | (:code:`kilogram`, 1), (:code:`metre`, 2),   |
+|                       | (:code:`second`, -2)                         |
++-----------------------+----------------------------------------------+
+| :code:`katal`         | (:code:`second`, -1), (:code:`mole`, 1)      |
++-----------------------+----------------------------------------------+
+| :code:`kelvin`        | \-                                           |
++-----------------------+----------------------------------------------+
+| :code:`kilogram`      | \-                                           |
++-----------------------+----------------------------------------------+
+| :code:`litre`         | 0.001⋅(:code:`metre`, 3)                     |
++-----------------------+----------------------------------------------+
+| :code:`lumen`         | (:code:`candela`, 1)                         |
++-----------------------+----------------------------------------------+
+| :code:`lux`           | (:code:`metre`, -2), (:code:`candela`, 1)    |
++-----------------------+----------------------------------------------+
+| :code:`metre`         | \-                                           |
++-----------------------+----------------------------------------------+
+| :code:`mole`          | \-                                           |
++-----------------------+----------------------------------------------+
+| :code:`newton`        | (:code:`kilogram`, 1), (:code:`metre`, 1),   |
+|                       | (:code:`second`, -2)                         |
++-----------------------+----------------------------------------------+
+| :code:`ohm`           | (:code:`kilogram`, 1), (:code:`metre`, 2),   |
+|                       | (:code:`second`, -3), (:code:`ampere`, -2)   |
++-----------------------+----------------------------------------------+
+| :code:`pascal`        | (:code:`kilogram`, 1), (:code:`metre`, -1),  |
+|                       | (:code:`second`, -2)                         |
++-----------------------+----------------------------------------------+
+| :code:`radian`        | (:code:`dimensionless`, 1)                   |
++-----------------------+----------------------------------------------+
+| :code:`second`        | \-                                           |
++-----------------------+----------------------------------------------+
+| :code:`siemens`       | (:code:`kilogram`, -1), (:code:`metre`, -2), |
+|                       | (:code:`second`, 3), (:code:`ampere`, 2)     |
++-----------------------+----------------------------------------------+
+| :code:`sievert`       | (:code:`metre`, 2), (:code:`second`, -2)     |
++-----------------------+----------------------------------------------+
+| :code:`steradian`     | (:code:`dimensionless`, 1)                   |
++-----------------------+----------------------------------------------+
+| :code:`tesla`         | (:code:`kilogram`, 1), (:code:`second`, -2), |
+|                       | (:code:`ampere`, -1)                         |
++-----------------------+----------------------------------------------+
+| :code:`volt`          | (:code:`kilogram`, 1), (:code:`metre`, 2),   |
+|                       | (:code:`second`, -3), (:code:`ampere`, -1)   |
++-----------------------+----------------------------------------------+
+| :code:`watt`          | (:code:`kilogram`, 1), (:code:`metre`, 2),   |
+|                       | (:code:`second`, -3)                         |
++-----------------------+----------------------------------------------+
+| :code:`weber`         | (:code:`kilogram`, 1), (:code:`metre`, 2),   |
+|                       | (:code:`second`, -2), (:code:`ampere`, -1)   |
++-----------------------+----------------------------------------------+
 
 
 .. marker_units_reference_end
@@ -277,8 +273,7 @@ Interpretation of ``initial_value`` attributes
 Effect of ``units`` on a ``variable``
 -------------------------------------
 
-#. The value of the :code:`units` attribute on every :code:`variable` element MUST be a valid :ref:`units reference<specC_units_reference>`.
-   The target of this units reference is referred to as the variable units, and the corresponding unit reduction (see :ref:`Interpretation of units<specC_interpretation_of_units>`) is referred to as the variable unit reduction.
+#. The target of the :code:`units` attribute on a variable is referred to as the "variable units", and the corresponding unit reduction (see :ref:`Interpretation of units<specC_interpretation_of_units>`) is referred to as the "variable unit reduction".
 
 .. marker_effect_of_units_on_variables_end
 .. marker_interpretation_of_mathematics_start
@@ -403,9 +398,9 @@ Interpretation of ``map_variables`` elements
 
 .. marker_interpretation_of_map_variables_5
 
-#.  Each :code:`variable` element in a CellML model SHALL be treated as belonging to a single "equivalent variable set".
-    Each equivalent variables set is the set of all :code:`variable` elements for which the corresponding nodes in the variable equivalence network form a connected subgraph.
-    Each equivalent variables set represents one variable in the underlying mathematical model.
+#.  The :code:`variable` elements in a CellML model SHALL be treated as belonging to a single "equivalent variable set".
+    Each set of equivalent variables is the set of all :code:`variable` elements for which the corresponding nodes in the variable equivalence network form a connected subgraph.
+    Each set of equivalent variables represents one variable in the underlying mathematical model.
 
 .. marker_interpretation_of_map_variables_end
 .. marker_interpretation_of_variable_resets_start
@@ -416,12 +411,14 @@ Interpretation of ``map_variables`` elements
 Interpretation of ``reset`` elements
 ------------------------------------
 
-#. Each :code:`reset` element describes a change to be applied to the variable referenced by the :code:`variable` attribute when specified conditions are met during the simulation of the model.
+#. For the purposes of this section, we define the "reset variable" to be the variable referenced by a :code:`reset` element's :code:`variable` attribute, and the "test variable" to be the variable referenced by its :code:`test_variable` attribute.
 
-#. All :code:`reset` elements SHALL be considered sequentially for the connected variable set (see :ref:`Interpretation of map_variables<specC_interpretation_of_map_variables>`) to which the referenced variable belongs.
+#. Each :code:`reset` element describes a change to be applied to the reset variable when specified conditions are met during the simulation of the model.
+
+#. All :code:`reset` elements SHALL be considered sequentially for the equivalent variable set (see :ref:`Interpretation of map_variables<specC_interpretation_of_map_variables>`) to which the reset variable belongs.
    The sequence SHALL be determined by the value of the reset element’s :code:`order` attribute, lowest (least positive / most negative) having priority.
 
-#. The condition under which a reset occurs SHALL be defined by the equality of the reset element’s :code:`test_variable` attribute and the evaluation of the MathML expression encoded in the :code:`test_value`.
+#. The condition under which a reset occurs SHALL be defined by the equality of evaluation of the test variable and the evaluation of the MathML expression encoded in the :code:`test_value`.
 
 #. When a reset occurs, the variable referenced by the reset element’s :code:`variable` attribute SHALL be set to the result of evaluating the MathML expression encoded in the :code:`reset_value`.
 
