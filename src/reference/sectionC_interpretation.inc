@@ -10,8 +10,8 @@ Interpretation of ``import`` elements
 #. Each :code:`import` element present in a :ref:`CellML infoset<specA_cellml_infoset>` (the importing infoset) SHALL define a new and distinct instance of the CellML infoset which is referenced by the :code:`href` attribute (the imported infoset).
    This imported infoset instance SHALL provide the context in which the child of an import element (a :code:`units` or :code:`component` element) is defined and interpreted.
 
-#. The imported infoset SHALL be considered such that items relevant to the imported infoset (:code:`unit` children of imported :code:`units` elements or the :ref:`encapsulated set<specC_encapsulation_set>` of imported :code:`component` elements) are themselves available to that :code:`import` element child.
-   It is noted, for the avoidance of doubt, that the importing infoset SHALL NOT have access to such implicitly imported items, but only to explicitly specified :code:`import` element children.
+#. The imported infoset SHALL be considered such that elements relevant to the imported infoset (:code:`unit` children of imported :code:`units` elements or the :ref:`encapsulated set<specC_encapsulation_set>` of imported :code:`component` elements) are themselves available to that :code:`import` element child.
+   It is noted, for the avoidance of doubt, that the importing infoset SHALL NOT have access to such implicitly imported elements, but only to explicitly specified :code:`import` element children.
 
 See :ref:`Units reference<specC_units_reference>` and :ref:`Component reference<specC_component_reference>` for the specifics of importing units and components.
 
@@ -23,7 +23,7 @@ See :ref:`Units reference<specC_units_reference>` and :ref:`Component reference<
 References to ``units`` elements
 --------------------------------
 
-The term "units reference" refers to the value of a :code:`units_ref` attribute in :code:`import` items for :code:`units`, and the values of :code:`units` attributes used in :code:`unit` and :code:`variable` items.
+The term "units reference" refers to the value of a :code:`units_ref` attribute in :code:`import` elements for :code:`units`, and the values of :code:`units` attributes used in :code:`unit` and :code:`variable` elements.
 
 #. A units reference SHALL be a CellML identifier and SHALL be interpreted dependent on the context of the :ref:`CellML model<specA_cellml_model>` in which it occurs, according to the units referencing rules defined later in this section.
 
@@ -132,17 +132,17 @@ Interpretation of ``units`` elements
    :code:`unit` element children, according to the following rules:
 
    1. The prefix term is a conceptual property of :code:`unit` elements.
-      If the :code:`unit` element does not have a :code:`prefix` attribute information item, the prefix term SHALL have value 0.
-      If the :code:`prefix` attribute information item has a value which is an integer string, then the value of the prefix term SHALL be the numerical value of that string.
-      Otherwise, the :code:`prefix` attribute information item MUST have a value taken from the "Name" column of the :ref:`Prefix values table<table_prefix_values>`, and the prefix term SHALL have the value taken from the "Value" column of the same row.
+      If the :code:`unit` element does not have a :code:`prefix` attribute, the prefix term SHALL have value 0.
+      If the :code:`prefix` attribute has a value which is an integer string, then the value of the prefix term SHALL be the numerical value of that string.
+      Otherwise, the :code:`prefix` attribute MUST have a value taken from the "Name" column of the :ref:`Prefix values table<table_prefix_values>`, and the prefix term SHALL have the value taken from the "Value" column of the same row.
 
    2. The exponent term is a conceptual property of :code:`unit` elements.
-      If a :code:`unit` element has no :code:`exponent` attribute information item, the exponent term SHALL have value 1.0.
-      Otherwise, the value of the :code:`exponent` attribute information item MUST be a real number string, and the value of the exponent term SHALL be the numerical value of that string.
+      If a :code:`unit` element has no :code:`exponent` attribute, the exponent term SHALL have value 1.0.
+      Otherwise, the value of the :code:`exponent` attribute MUST be a real number string, and the value of the exponent term SHALL be the numerical value of that string.
 
    3. The multiplier term is a conceptual property of :code:`unit` elements.
-      If a :code:`unit` element has no :code:`multiplier` attribute information item, the multiplier term SHALL have value 1.0.
-      Otherwise, the value of the :code:`multiplier` attribute information item MUST be a real number string, and the value of the multiplier term SHALL be the numerical value of that string.
+      If a :code:`unit` element has no :code:`multiplier` attribute, the multiplier term SHALL have value 1.0.
+      Otherwise, the value of the :code:`multiplier` attribute MUST be a real number string, and the value of the multiplier term SHALL be the numerical value of that string.
 
    4. The relationship between the product, :math:`P`, of numerical values given in each and every child :code:`unit` element units, to a numerical value, :math:`x`, with units given by the encompassing :code:`units` element, SHALL be
 
@@ -223,7 +223,7 @@ Interpretation of ``units`` elements
 References to ``component`` elements
 ------------------------------------
 
-The term "component reference" refers to the value of a :code:`component_ref` attribute used in an :code:`import` item for :code:`component` items, to :code:`component_ref` elements which occur as children of :code:`encapsulation` items, and to the value of :code:`component_1` and :code:`component_2` attributes used in :code:`connection` items.
+The term "component reference" refers to the value of a :code:`component_ref` attribute used in an :code:`import` element for :code:`component` elements, to :code:`component_ref` elements which occur as children of :code:`encapsulation` elements, and to the value of :code:`component_1` and :code:`component_2` attributes used in :code:`connection` elements.
 
 #. A component reference SHALL be the name of a component, and SHALL be interpreted based on the context within the :ref:`CellML model<specA_cellml_model>` in which it occurs.
 
@@ -292,9 +292,9 @@ Interpretation of ``math`` elements
 
    #. All :code:`component` elements which are descendants in the encapsulation digraph (see :ref:`Interpretation of encapsulation <specC_interpretation_of_encapsulation>`) of a pertinent :code:`component` element.
 
-#. Every MathML element in the :ref:`CellML model<specA_cellml_model>` which appears as a direct child information item of a MathML :code:`math` element information item, which in turn appears as a child information item of a pertinent :code:`component` element, SHALL be treated, in terms of the semantics of the mathematical model, as a statement which holds true unconditionally.
+#. Every MathML element in the :ref:`CellML model<specA_cellml_model>` which appears as a direct child of a MathML :code:`math` element, which in turn appears as a child of a pertinent :code:`component` element, SHALL be treated, in terms of the semantics of the mathematical model, as a statement which holds true unconditionally.
 
-#. Units referenced by a :code:`units` attribute information item SHALL NOT affect the mathematical interpretation of the :ref:`CellML model<specA_cellml_model>`.
+#. Units referenced by a :code:`units` attribute SHALL NOT affect the mathematical interpretation of the :ref:`CellML model<specA_cellml_model>`.
 
 .. marker_interpretation_of_mathematics_end
 .. marker_interpretation_of_encapsulation_start
@@ -359,7 +359,7 @@ Interpretation of ``map_variables`` elements
 
 .. marker_interpretation_of_map_variables_3
 
-#.  For a given variable, the available interfaces SHALL be determined by the :code:`interface` attribute information item on the corresponding :code:`variable` element as follows.
+#.  For a given variable, the available interfaces SHALL be determined by the :code:`interface` attribute on the corresponding :code:`variable` element as follows.
 
     #. A value of :code:`public` specifies that the variable has a public interface.
 
@@ -369,7 +369,7 @@ Interpretation of ``map_variables`` elements
 
     #. A value of :code:`none` specifies that the variable has no interface.
 
-    #. If the :code:`interface` attribute information item is absent, then the variable has no interface.
+    #. If the :code:`interface` attribute is absent, then the variable has no interface.
 
 #.  The applicable interfaces for variables *A* and *B* in components *AA* and *BB* respectively SHALL be defined as follows.
 
