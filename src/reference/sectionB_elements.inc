@@ -369,11 +369,8 @@ A :code:`math` element information item (referred to in this specification as a 
 
 .. container:: issue-math-cn-type
 
-   5. A :code:`cn` element MUST be one of the following :mathml2help:`types<#contm.typeattrib>`\: real or e-notation.
+   5. A :code:`cn` element MUST be one of base 10, and MUST be of the following :mathml2help:`types<#contm.typeattrib>`\: real or e-notation.
 
-.. container:: issue-math-cn-base10
-
-   6. A :code:`cn` element MUST be of base 10.
 
 .. marker_math_4
 
