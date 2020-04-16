@@ -333,7 +333,7 @@ Interpretation of ``math`` elements
 Interpretation of ``encapsulation`` elements
 --------------------------------------------
 
-1. For the purposes of this specification, there SHALL be a "conceptual encapsulation digraph" in which there is EXACTLY one node for every component in the :ref:`CellML model<specA_cellml_model>`.
+1. For the purposes of this specification, there SHALL be a conceptual "encapsulation digraph" in which there is EXACTLY one node for every component in the :ref:`CellML model<specA_cellml_model>`.
    Therefore the encapsulation digraph will not contain any loops.
 
 2. Where a :code:`component_ref` element appears as a child of another :code:`component_ref` element, there SHALL be an arc in the encapsulation digraph, and that arc SHALL be from the node corresponding to the component referenced by the parent :code:`component_ref` element, and to the node corresponding to the component referenced by the child :code:`component_ref` element.
@@ -368,7 +368,7 @@ Interpretation of ``encapsulation`` elements
 Interpretation of ``map_variables`` elements
 --------------------------------------------
 
-1.  For the purposes of this specification, the variable equivalence (conceptual) network SHALL be an undirected graph with one node for every :code:`variable` element in the :ref:`CellML model<specA_cellml_model>`.
+1.  For the purposes of this specification, the conceptual "variable equivalence network" SHALL be an undirected graph with one node for every :code:`variable` element in the :ref:`CellML model<specA_cellml_model>`.
     The arcs of this graph SHALL be equivalences defined in the CellML model.
 
 .. marker_interpretation_of_map_variables_1
