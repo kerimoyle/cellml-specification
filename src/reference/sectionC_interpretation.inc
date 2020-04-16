@@ -368,7 +368,7 @@ Interpretation of ``map_variables`` elements
 
 .. marker_interpretation_of_map_variables_1
 
-2.  For each :code:`map_variables` element present in the CellML model, we define variables *A* and *B* for use in the rules in this section as follows.
+2.  For each :code:`map_variables` element present in the CellML model, we define variables *A* and *B* for use in the rules in this section as follows:
 
     #. Variable *A* SHALL be the variable referenced by the encompassing :code:`connection` element’s :code:`component_1` and this :code:`map_variables` element’s :code:`variable_1` attribute.
 
@@ -388,7 +388,7 @@ Interpretation of ``map_variables`` elements
 
 .. marker_interpretation_of_map_variables_3
 
-6.  For a given variable, the available interfaces SHALL be determined by the :code:`interface` attribute on the corresponding :code:`variable` element as follows.
+6.  For a given variable, the available interfaces SHALL be determined by the :code:`interface` attribute on the corresponding :code:`variable` element as follows:
 
     #. A value of :code:`public` specifies that the variable has a public interface.
 
@@ -400,7 +400,7 @@ Interpretation of ``map_variables`` elements
 
     #. If the :code:`interface` attribute is absent, then the variable has no interface.
 
-7.  The applicable interfaces for variables *A* and *B* in components *AA* and *BB* respectively SHALL be defined as follows.
+7.  The applicable interfaces for variables *A* and *B* in components *AA* and *BB* respectively SHALL be defined as follows:
 
     #. When component *AA* is in the :ref:`sibling set<specC_sibling_set>` of component *BB* (and vice versa), the applicable interface for both variables *A* and *B* SHALL be the public interface.
 
