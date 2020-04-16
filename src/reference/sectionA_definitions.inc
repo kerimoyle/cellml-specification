@@ -98,7 +98,7 @@ CellML information sets
 CellML and XML
 ~~~~~~~~~~~~~~
 
-#. Every CellML infoset SHALL be represented in an XML information set which conforms with the well-formedness requirements of :xml_1_1:`XML 1.1 <>`.
+#. Every :ref:`CellML infoset<specA_cellml_infoset>` SHALL be represented in an XML information set which conforms with the well-formedness requirements of :xml_1_1:`XML 1.1 <>`.
 
 #. In this document, the remaining provisions relating to CellML infosets SHALL be interpreted as additional constraints on the XML information set represented by a CellML infoset.
 

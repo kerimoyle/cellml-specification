@@ -197,11 +197,11 @@ A :code:`unit` element information item (referred to in this specification as a 
 
       .. container:: issue-unit-multiplier
 
-         2. The :code:`multiplier` attribute. If present, the value of the attribute MUST be a real number string.
+         2. The :code:`multiplier` attribute. If present, the value of the attribute MUST be a :ref:`real number string<specA_real_number>`.
 
       .. container:: issue-unit-exponent
 
-         3. The :code:`exponent` attribute. If present, the value of the attribute MUST be a real number string.
+         3. The :code:`exponent` attribute. If present, the value of the attribute MUST be a :ref:`real number string<specA_real_number>`.
 
 .. marker_unit_end
 .. marker_component_start
@@ -298,7 +298,7 @@ A :code:`reset` element information item (referred to in this specification as a
    .. container:: issue-reset-order
 
       3. The :code:`order` attribute.
-         The value of the :code:`order` attribute MUST be an integer string.
+         The value of the :code:`order` attribute MUST be an :ref:`integer string<specA_integer>`.
 
          The value of the :code:`order` attribute MUST be unique for all :code:`reset` elements with :code:`variable` attributes that reference variables in the same equivalent variable set (see :ref:`Interpretation of map_variables<specC_interpretation_of_map_variables>`).
 
