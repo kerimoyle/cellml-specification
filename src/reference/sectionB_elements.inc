@@ -175,7 +175,7 @@ A :code:`unit` element information item (referred to in this specification as a 
 
       .. container:: issue-unit-circular-ref
 
-         2. The value of the :code:`units` attribute MUST NOT be such that the :code:`units` element inclusion digraph contains one or more cycles (in other words, units definitions must not be cyclical).
+         2. The element inclusion digraph MUST NOT contain any cycles.
 
 .. marker_unit_1
 
