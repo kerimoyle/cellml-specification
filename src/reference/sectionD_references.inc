@@ -4,7 +4,7 @@ Extensible Markup Language (XML) 1.1 :xml_1_1_display:`/`
 
 Mathematical Markup Language (MathML) Version 2.0 :mathml2_display:`/`
 
-Namespaces in XML 1.1 :xml_namespace_display:`/`
+Namespaces in XML 1.1 :xml_namespace_1_1_display:`/`
 
 RFC 2119: Key words for use in RFCs to Indicate Requirement Levels :rfc2119_display:`#`
 
