@@ -286,11 +286,11 @@ Interpretation of ``initial_value`` attributes
 
 #. The :code:`initial_value` attribute of a :code:`variable` element MUST either be a :ref:`real number string<specA_real_number>`, or a :ref:`variable reference<specC_variable_reference>`.
 
-#. The conditions when initial values hold are (by design) not defined in a :ref:`CellML model<specA_cellml_model>`.
+#. The conditions under which initial values hold are (by design) not defined in a :ref:`CellML model<specA_cellml_model>`.
 
-#. Where the :code:`initial_value` attribute is a :ref:`real number string<specA_real_number>`, it SHALL be interpreted as a statement that the variable on which the attribute appears is equal to that real number value, under the conditions when the initial value holds.
+#. Where the :code:`initial_value` attribute is a :ref:`real number string<specA_real_number>`, it SHALL be interpreted as a statement that the variable on which the attribute appears is equal to that real number value, when the initial values hold.
 
-#. Where the :code:`initial_value` attribute is a :ref:`variable reference<specC_variable_reference>`, it SHALL be interpreted as a statement that the variable on which the attribute appears is equal to the referenced variable under the conditions when the initial value holds.
+#. Where the :code:`initial_value` attribute is a :ref:`variable reference<specC_variable_reference>`, it SHALL be interpreted as a statement that the variable on which the attribute appears is equal to the referenced variable when the initial values hold.
 
 .. marker_interpretation_of_initial_values_end
 .. marker_effect_of_units_on_variables_start
