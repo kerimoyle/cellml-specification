@@ -243,9 +243,9 @@ A "component reference" is an attribute value that specifies a CellML component.
 
 #. A component reference SHALL be a :ref:`CellML identifier<specA_cellml_identifier>`.
 
-#. The component identifier by a component reference SHALL be determined as follows:
+#. The component identified by a component reference SHALL be determined as follows:
 
-   #. If the component reference is identical to the value of the :code:`name` attribute of a :code:`component` element in the same infoset, then it SHALL refer to the units specified by that element.
+   #. If the component reference is identical to the value of the :code:`name` attribute of a :code:`component` element in the same infoset, then it SHALL refer to the component specified by that element.
 
    #. If the component reference is identical to the value of the :code:`name` attribute of an :code:`import component` element in the same infoset, then it SHALL refer to a component from the infoset defined by the :code:`import component` element (see :ref:`Interpretation of import elements<specC_interpretation_of_imports>`).
       The component specified SHALL then be determined by treating the value of the :code:`component_ref` attribute on the :code:`import component` element as a component reference within the imported infoset.
