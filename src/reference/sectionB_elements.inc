@@ -55,7 +55,7 @@ An :code:`import` element information item (referred to in this specification as
 
    1. Every :code:`import` element MUST contain an attribute in the namespace :code:`http://www.w3.org/1999/xlink`, with a local name equal to :code:`href`.
 
-      The value of this attribute SHALL be a valid locator :code:`href`, as defined in :href_locator:`Section 5.4 of the XLink specification`.
+      The value of this attribute SHALL be a valid locator :code:`href`, as defined in :href_locator:`Section 5.4 of the XLink specification <>`.
 
       The :code:`href` attribute SHALL be treated according to the :xlink:`XLink specification`, by applying the rules for simple-type elements.
 
@@ -175,7 +175,7 @@ A :code:`unit` element information item (referred to in this specification as a 
 
       .. container:: issue-unit-circular-ref
 
-         2. The value of the :code:`units` attribute MUST NOT be such that the :code:`units` element inclusion digraph contains one or more cycles (in other words, units definitions must not be cyclical).
+         2. The element inclusion digraph MUST NOT contain any cycles.
 
 .. marker_unit_1
 
@@ -271,7 +271,7 @@ The ``reset`` element
 
 A :code:`reset` element information item (referred to in this specification as a :code:`reset` element) is an element in the :ref:`CellML namespace<specA_cellml_namespace>` with a local name equal to :code:`reset`, which appears as a child of a :code:`component` element.
 
-1. Every :code:`reset` element MUST have exactly one each of the following attributes:
+1. Every :code:`reset` element MUST have exactly one of each of the following attributes:
 
    .. container:: issue-reset-variable-reference
 
@@ -346,7 +346,7 @@ A :code:`math` element information item (referred to in this specification as a 
 
 .. container:: issue-math-mathml
 
-   1. A :code:`math` element MUST be the top-level of a content MathML tree, as described in :mathml2spec:`MathML 2.0 <>`.
+   1. A :code:`math` element MUST be the top-level of a content MathML tree, as described in :mathml2:`MathML 2.0 <>`.
 
 .. marker_math_1
 
@@ -369,11 +369,8 @@ A :code:`math` element information item (referred to in this specification as a 
 
 .. container:: issue-math-cn-type
 
-   5. A :code:`cn` element MUST be one of the following :mathml2help:`types<#contm.typeattrib>`\: real or e-notation.
+   5. A :code:`cn` element MUST be base 10, and MUST be of the following :mathml2help:`types<#contm.typeattrib>`\: real or e-notation.
 
-.. container:: issue-math-cn-base10
-
-   6. A :code:`cn` element MUST be of base 10.
 
 .. marker_math_4
 
@@ -416,7 +413,7 @@ A :code:`math` element information item (referred to in this specification as a 
 |                                  | :code:`true`, :code:`false`                                    |
 +----------------------------------+----------------------------------------------------------------+
 
-\* :code:`degree` must be a child of :code:`root` or :code:`diff`
+\* :code:`degree` MUST be a child of :code:`root` or :code:`diff`
 
 .. marker_math_end
 .. marker_encapsulation_start
@@ -430,7 +427,7 @@ An :code:`encapsulation` element information item (referred to in this specifica
 
 .. container:: issue-encapsulation-component-ref
 
-   1. An :code:`encapsulation` element MAY contain one or more :code:`component_ref` elements.
+   1. An :code:`encapsulation` element MAY contain one or more :code:`component_ref` element children.
 
 .. marker_encapsulation_end
 .. marker_component_ref_start
@@ -493,7 +490,7 @@ A :code:`connection` element information item (referred to in this specification
 
 .. container:: issue-connection-map-variables
 
-   5. A :code:`connection` element MAY contain one or more :code:`map_variables` elements.
+   5. A :code:`connection` element MAY contain one or more :code:`map_variables` element children.
 
 .. marker_connection_end
 .. marker_map_variables_start
