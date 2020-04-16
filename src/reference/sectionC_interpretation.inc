@@ -262,11 +262,11 @@ A "variable reference" is an attribute value that specifies a CellML variable.
 
 #. The variable identified by a variable reference SHALL be determined as follows:
 
-#. When present in a descendant of a :code:`component` element, it SHALL refer to the variable of the same name within that component.
+   #. When present in a descendant of a :code:`component` element, it SHALL refer to the variable of the same name within that component.
 
-#. When present in the :code:`variable_1` attribute of a :code:`map_variables` element, it SHALL refer to the variable of the same name in the component identified by the :code:`component_1` attribute in the same :code:`map_variables` element.
+   #. When present in the :code:`variable_1` attribute of a :code:`map_variables` element, it SHALL refer to the variable of the same name in the component identified by the :code:`component_1` attribute in the same :code:`map_variables` element.
 
-#. When present in the :code:`variable_2` attribute of a :code:`map_variables` element, it SHALL refer to the variable of the same name in the component identified by the :code:`component_2` attribute in the same :code:`map_variables` element.
+   #. When present in the :code:`variable_2` attribute of a :code:`map_variables` element, it SHALL refer to the variable of the same name in the component identified by the :code:`component_2` attribute in the same :code:`map_variables` element.
 
 #. If no variable can be identified using the rules above, the attribute value SHALL NOT be a valid variable reference.
 
