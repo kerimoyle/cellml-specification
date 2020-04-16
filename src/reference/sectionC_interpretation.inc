@@ -35,7 +35,7 @@ A "units reference" is an attribute value that specifies the physical units a va
 
 #. The units identified by a units reference SHALL be determined as follows:
 
-   #. If the units reference is identical to a value in the "Name" column of the :ref:`Built-in units table<table_built_in_units>`, then it SHALL refer to the corresponding built-in units from the same of the table.
+   #. If the units reference is identical to a value in the "Name" column of the :ref:`Built-in units table<table_built_in_units>`, then it SHALL refer to the built-in units from the same row of the table.
 
    #. If the units reference is identical to the value of the :code:`name` attribute of a :code:`units` element in the same infoset, then it SHALL refer to the units specified by that element.
 
