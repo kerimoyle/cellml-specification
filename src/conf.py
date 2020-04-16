@@ -149,7 +149,7 @@ extlinks = {
     'xml_help': ('https://www.w3.org/XML/%s', ''),
 
     # These should be identical: one for links, one for full URL display
-    'xml_1_1':         ('http://www.w3.org/TR/xml11/%s', ''),
+    'xml_1_1':         ('http://www.w3.org/TR/xml11%s', ''),
     'xml_1_1_display': ('http://www.w3.org/TR/xml11%s', None),
 
     'xml_infoset_display': ('https://www.w3.org/TR/xml-infoset%s', None),
