@@ -123,8 +123,8 @@ extlinks = {
     'libxml2': ('http://www.xmlsoft.org/%s', ''),
 
     # These should be identical: one for links, one for full URL display
-    'mathml2':         ('http://www.w3.org/TR/2003/REC-MathML2-20031021/%s', ''),
-    'mathml2_display': ('http://www.w3.org/TR/2003/REC-MathML2-20031021/%s', None),
+    'mathml2':         ('http://www.w3.org/TR/2003/REC-MathML2-20031021%s', ''),
+    'mathml2_display': ('http://www.w3.org/TR/2003/REC-MathML2-20031021%s', None),
 
     'mathml2help': ('https://www.w3.org/TR/MathML2/chapter4.html%s', ''),
     'mathml2namespace': ('http://www.w3.org/1998/Math/MathML%s', None),
@@ -140,7 +140,7 @@ extlinks = {
     'sphinx': ('http://sphinx-doc.org/%s', ''),
     'swig': ('http://www.swig.org/%s', ''),
     'unicode': ('http://www.fileformat.info/info/unicode/char/%s/index.htm', 'U+'),
-    'unicode13_display': ('https://www.unicode.org/versions/Unicode13.0.0/%s', None),
+    'unicode13_display': ('https://www.unicode.org/versions/Unicode13.0.0%s', None),
     
     # These should be identical: one for links, one for full URL display
     'xlink': ('http://www.w3.org/TR/2001/REC-xlink-20010627%s', ''),
