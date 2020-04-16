@@ -492,7 +492,7 @@ A :code:`connection` element information item (referred to in this specification
 
 .. container:: issue-connection-unique-transitive
 
-   4. A :ref:`CellML infoset<specA_cellml_infoset>` MUST NOT contain more than one :code:`connection` element with a given pair of :code:`component`\ s referenced by the :code:`component_1` and :code:`component_2` attribute values, in any order.
+   4. A :ref:`CellML infoset<specA_cellml_infoset>` MUST NOT contain more than one :code:`connection` element with a given pair of components referenced by the :code:`component_1` and :code:`component_2` attribute values, in any order.
 
 .. marker_connection_4
 
