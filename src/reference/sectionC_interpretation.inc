@@ -13,7 +13,7 @@ Interpretation of ``import`` elements
 
 #. When determining the equivalent variable set of a variable in an imported component:
 
-   #. connections defined in the importing infoset shall be handled as described in :ref:`Interpretation of ``map_variables`` <specC_interpretation_of_map_variables>`.
+   #. connections defined in the importing infoset shall be handled as described in :ref:`Interpretation of map_variables<specC_interpretation_of_map_variables>`.
 
    #. connections defined in the imported infoset shall be handled as follows:
 
