@@ -154,8 +154,8 @@ extlinks = {
     'xml_infoset_display': ('https://www.w3.org/TR/xml-infoset%s', None),
     'xml_infoset2004': ('http://www.w3.org/TR/2004/REC-xml-infoset-20040204/%s', ''),
 
-    'xml_namespace_1_1':     ('https://www.w3.org/TR/2006/REC-xml-names11-20060816/%s', ''),
-    'xml_namespace_display': ('https://www.w3.org/TR/xml-names11%s', None),
+    'xml_namespace_1_1':         ('https://www.w3.org/TR/2006/REC-xml-names11-20060816%s', ''),
+    'xml_namespace_1_1_display': ('https://www.w3.org/TR/2006/REC-xml-names11-20060816%s', None),
 
 }
 
