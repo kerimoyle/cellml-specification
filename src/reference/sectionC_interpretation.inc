@@ -448,6 +448,6 @@ Interpretation of ``reset`` elements
 
 #. The condition under which a reset occurs SHALL be defined by the equality of evaluation of the test variable and the evaluation of the MathML expression encoded in the :code:`test_value`.
 
-#. When a reset occurs, the variable referenced by the reset element’s :code:`variable` attribute SHALL be set to the result of evaluating the MathML expression encoded in the :code:`reset_value`.
+#. When a reset occurs, the reset variable SHALL be set to the result of evaluating the MathML expression encoded in the :code:`reset_value`.
 
 .. marker_interpretation_of_variable_resets_end
