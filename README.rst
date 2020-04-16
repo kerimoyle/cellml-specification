@@ -63,8 +63,8 @@ Documentation builds
 
 There are two types of build that can be created from this codebase, they can be selected through the use of the environment variable ``CELLML_SPEC_BUILD``.
 
-1. Normative and informative specification combined, the default build.
-2. Normative only, set ``CELLML_SPEC_BUILD=Normative``.
+1. Normative only, set ``CELLML_SPEC_BUILD=Normative`` (default build).
+2. Normative and informative specification combined, set ``CELLML_SPEC_BUILD=Full``
 
 Serving the documentation
 ^^^^^^^^^^^^^^^^^^^^^^^^^

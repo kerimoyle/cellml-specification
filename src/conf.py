@@ -20,8 +20,9 @@ date_today = datetime.datetime.today()
 
 tags.add('unofficial')
 
-build_type = os.environ['CELLML_SPEC_BUILD'] if 'CELLML_SPEC_BUILD' in os.environ else 'Full'
-
+build_type = os.environ['CELLML_SPEC_BUILD'] if 'CELLML_SPEC_BUILD' in os.environ else 'Normative'
+if build_type not in ('Normative', 'Full'):
+    raise ValueError('Build type must be "Normative" or "Full".')
 
 def manage_index(direction, base_dir=''):
     files = ['master_index.rst', 'index.rst']
