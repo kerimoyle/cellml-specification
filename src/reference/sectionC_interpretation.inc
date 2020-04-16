@@ -176,28 +176,29 @@ Interpretation of ``units`` elements
 .. marker_interpretation_of_units_2
 
 3. The "unit reduction" is a conceptual property of :code:`units` elements.
-   It consists of a set of tuples where each tuple is composed of a unit name and a real-valued exponent.
-   Tuples SHALL be determined as follows:
+   It consists of a set of tuples where each tuple is composed of a "unit name" and a real-valued "exponent".
+   The set of tuples SHALL be determined as follows:
 
    1. If the :code:`units` element has no :code:`unit` child elements, then the set of tuples SHALL have a single member, which SHALL consist of the name of the :code:`units` element and the exponent 1.0.
 
    2. If the :code:`units` element has one or more :code:`unit` child elements, then the set of tuples SHALL consist of the entire collection of tuples given by all :code:`unit` child elements.
+
       Tuples for each :code:`unit` child element SHALL be determined as follows:
 
-      1. Where the :ref:`units reference<specC_units_reference>` of the :code:`unit` child element is to a single unit which is an irreducible unit, then the set of tuples SHALL have a single member, which SHALL consist of the name of the irreducible unit being referenced and the exponent 1.0.
+      1. If the :ref:`units reference<specC_units_reference>` of the :code:`unit` child element is to a single unit which is an irreducible unit, then the set of tuples SHALL have a single member, which SHALL consist of the name of the irreducible unit being referenced and the exponent 1.0.
 
-      2. Where the units reference of the :code:`unit` child element is to built-in units other than an :ref:`irreducible unit<specC_irreducible_units>`, then the tuples SHALL be derived directly from the :ref:`Built-in units<table_built_in_units>` table.
+      2. If the units reference of the :code:`unit` child element is to built-in units other than an :ref:`irreducible unit<specC_irreducible_units>`, then the tuples SHALL be derived directly from the :ref:`Built-in units<table_built_in_units>` table.
          Specifically, the set of tuples SHALL consist of the tuples given in the "Unit reduction tuple set" column of the row for which the value in the "Name" column matches the name of the units reference.
 
-      3. Where the units reference of the :code:`unit` child element is to a unit which is neither built-in, nor an irreducible unit, the set of tuples SHALL be defined recursively as the set of tuples for the :code:`units` element so referenced.
+      3. If the units reference of the :code:`unit` child element is to a unit which is neither built-in, nor an irreducible unit, then the set of tuples SHALL be defined recursively as the set of tuples for the :code:`units` element so referenced.
 
       4. The exponents of each tuple in the set for the current :code:`unit` element, as derived by following rules :hardcodedref:`3.3.3.2.1, 3.3.3.2.2 or 3.3.3.2.3` above, SHALL be multiplied by the exponent term of the current, referencing, :code:`unit` element.
 
-   3. Tuples which have the name element of "dimensionless" SHALL be removed from the set of tuples.
+   3. Tuples which have the unit name of "dimensionless" SHALL be removed from the set of tuples.
       Note that this can result in the set of tuples being empty.
 
-   4. Where the set of tuples consists of tuples which have the same name element, those tuples SHALL be combined into a single tuple with that name element and an exponent being the sum of the combined tuples’ exponents.
-      If the resulting tuple’s exponent term is zero, the tuple SHALL be removed from the set of tuples.
+   4. If the set of tuples contains tuples which have the same unit name, then those tuples SHALL be combined into a single tuple with that unit name and an exponent being the sum of the combined tuples’ exponents.
+      If the resulting tuple’s exponent is zero, then the tuple SHALL be removed from the set of tuples.
       Note that this can result in the set of tuples being empty.
 
 .. marker_interpretation_of_units_3
@@ -420,7 +421,7 @@ Interpretation of ``map_variables`` elements
 
 9.  For each :code:`map_variables` element present in the CellML model, the variable unit reduction (see :ref:`Effect of units on variables <specC_effect_of_units_on_variables>` ) of variable *A* MUST have an identical set of tuples to the variable unit reduction of variable *B*.
     Two sets of tuples SHALL be considered identical if all of the tuples from each set are present in the other, or if both sets are empty.
-    Two tuples are considered identical if and only if both the name and exponent value of each tuple are equivalent.
+    Two tuples are considered identical if and only if both the unit name and exponent of each tuple are equivalent.
 
 10.  Tuples differing by a multiplying factor in their unit reduction MUST be taken into account when interpreting the numerical values of the variables (see :ref:`Interpretation of units<specC_interpretation_of_units>`).
 
