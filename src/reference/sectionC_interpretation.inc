@@ -154,7 +154,7 @@ Interpretation of ``units`` elements
       If a :code:`unit` element has no :code:`multiplier` attribute, the multiplier term SHALL have value 1.0.
       Otherwise, the value of the :code:`multiplier` attribute MUST be a :ref:`real number string<specA_real_number>`, and the value of the multiplier term SHALL be the numerical value of that string.
 
-   4. The relationship between the product, :math:`P`, of numerical values given in each and every child :code:`unit` element units, to a numerical value, :math:`x`, with units given by the encompassing :code:`units` element, SHALL be
+   4. The relationship between the product, :math:`P`, of numerical values given in each and every child :code:`unit` element's :code:`units` attribute, to a numerical value, :math:`x`, with units given by the encompassing :code:`units` element, SHALL be
 
       .. math::
 
