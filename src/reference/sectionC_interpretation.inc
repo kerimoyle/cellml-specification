@@ -11,15 +11,15 @@ Interpretation of ``import`` elements
 
 #. A :ref:`units reference<specC_units_reference>` occurring within an imported element, SHALL be resolved with respect to the imported infoset.
 
-#. When determining the equivalent variable set of a variable in an imported component:
+#. When determining the :ref:`equivalent variable set<specC_equivalent_variable_set>` of a variable in an imported component:
 
    #. connections defined in the importing infoset shall be handled as described in :ref:`Interpretation of map_variables<specC_interpretation_of_map_variables>`.
 
    #. connections defined in the imported infoset shall be handled as follows:
 
-      #. connections to components in the encapsulated set of the imported component SHALL be maintained, and this rule SHALL be applied recursively;
+      #. connections to components in the :ref:`encapsulated set<specC_encapsulation_set>` of the imported component SHALL be maintained, and this rule SHALL be applied recursively;
 
-      #. connections to components in the sibling set, or to the encapsulation parent of the imported component SHALL NOT be maintained.
+      #. connections to components in the :ref:`sibling set<specC_sibling_set>`, or to the :ref:`encapsulation parent<specC_encapsulation_parent>` of the imported component SHALL NOT be maintained.
 
 .. marker_interpretation_of_imports_end
 .. marker_units_reference_start
@@ -39,7 +39,7 @@ A "units reference" is an attribute value that specifies the physical units a va
 
    #. If the units reference is identical to the value of the :code:`name` attribute of a :code:`units` element in the same infoset, then it SHALL refer to the units specified by that element.
 
-   #. If the units reference is identical to the value of the :code:`name` attribute of an :code:`import units` element in the same infoset, then it SHALL refer to units from the infoset defined by the :code:`import units` element (see :ref:`Interpretation of ``import`` elements`<specC_interpreation_of_imports>`).
+   #. If the units reference is identical to the value of the :code:`name` attribute of an :code:`import units` element in the same infoset, then it SHALL refer to units from the infoset defined by the :code:`import units` element (see :ref:`Interpretation of import elements`<specC_interpretation_of_imports>`).
       The units specified SHALL then be determined by treating the value of the :code:`units_ref` attribute on the :code:`import units` element as a units reference within the imported infoset.
       If necessary, this rule SHALL be applied recursively.
 
@@ -143,16 +143,16 @@ Interpretation of ``units`` elements
 
    1. The prefix term is a conceptual property of :code:`unit` elements.
       If the :code:`unit` element does not have a :code:`prefix` attribute, the prefix term SHALL have value 0.
-      If the :code:`prefix` attribute has a value which is an integer string, then the value of the prefix term SHALL be the numerical value of that string.
+      If the :code:`prefix` attribute has a value which is an :ref:`integer string<specA_integer>`, then the value of the prefix term SHALL be the numerical value of that string.
       Otherwise, the :code:`prefix` attribute MUST have a value taken from the "Name" column of the :ref:`Prefix values table<table_prefix_values>`, and the prefix term SHALL have the value taken from the "Value" column of the same row.
 
    2. The exponent term is a conceptual property of :code:`unit` elements.
       If a :code:`unit` element has no :code:`exponent` attribute, the exponent term SHALL have value 1.0.
-      Otherwise, the value of the :code:`exponent` attribute MUST be a real number string, and the value of the exponent term SHALL be the numerical value of that string.
+      Otherwise, the value of the :code:`exponent` attribute MUST be a :ref:`real number string<specA_real_number>`, and the value of the exponent term SHALL be the numerical value of that string.
 
    3. The multiplier term is a conceptual property of :code:`unit` elements.
       If a :code:`unit` element has no :code:`multiplier` attribute, the multiplier term SHALL have value 1.0.
-      Otherwise, the value of the :code:`multiplier` attribute MUST be a real number string, and the value of the multiplier term SHALL be the numerical value of that string.
+      Otherwise, the value of the :code:`multiplier` attribute MUST be a :ref:`real number string<specA_real_number>`, and the value of the multiplier term SHALL be the numerical value of that string.
 
    4. The relationship between the product, :math:`P`, of numerical values given in each and every child :code:`unit` element units, to a numerical value, :math:`x`, with units given by the encompassing :code:`units` element, SHALL be
 
@@ -164,6 +164,8 @@ Interpretation of ``units`` elements
       Square brackets encompass the units of numerical values.
 
 .. marker_interpretation_of_units_1
+
+.. specC_irreducible_units:
 
 2. For the purposes of this specification, the "irreducible units" of a model SHALL consist of 1) the units defined in a model that are not defined in terms of other units (i.e. the set of :code:`units` elements in the :ref:`CellML model<specA_cellml_model>` which have no :code:`unit` child elements), and 2) built-in irreducible units (those built-in units with "-" in the "Unit Reduction" column of the :ref:`Built-in units<table_built_in_units>` table) referenced by variables or other units in the model.
 
@@ -180,12 +182,12 @@ Interpretation of ``units`` elements
 
       1. Where the :ref:`units reference<specC_units_reference>` of the :code:`unit` child element is to a single unit which is an irreducible unit, then the set of tuples SHALL have a single member, which SHALL consist of the name of the irreducible unit being referenced and the exponent 1.0.
 
-      2. Where the units reference of the :code:`unit` child element is to built-in units other than an irreducible unit, then the tuples SHALL be derived directly from the :ref:`Built-in units<table_built_in_units>` table.
+      2. Where the units reference of the :code:`unit` child element is to built-in units other than an :ref:`irreducible unit<specC_irreducible_units>`, then the tuples SHALL be derived directly from the :ref:`Built-in units<table_built_in_units>` table.
          Specifically, the set of tuples SHALL consist of the tuples given in the "Unit reduction tuple set" column of the row for which the value in the "Name" column matches the name of the units reference.
 
       3. Where the units reference of the :code:`unit` child element is to a unit which is neither built-in, nor an irreducible unit, the set of tuples SHALL be defined recursively as the set of tuples for the :code:`units` element so referenced.
 
-      4. The exponents of each tuple in the set for the current :code:`unit` element, as derived by following rules 3.3.3.2.1, 3.3.3.2.2 or 3.3.3.2.3 above, SHALL be multiplied by the exponent term of the current, referencing, :code:`unit` element.
+      4. The exponents of each tuple in the set for the current :code:`unit` element, as derived by following rules :hardcodedref:`3.3.3.2.1, 3.3.3.2.2 or 3.3.3.2.3` above, SHALL be multiplied by the exponent term of the current, referencing, :code:`unit` element.
 
    3. Tuples which have the name element of "dimensionless" SHALL be removed from the set of tuples.
       Note that this can result in the set of tuples being empty.
@@ -240,7 +242,7 @@ A "component reference" is an attribute value that specifies a CellML component.
 
    #. If the component reference is identical to the value of the :code:`name` attribute of a :code:`component` element in the same infoset, then it SHALL refer to the units specified by that element.
 
-   #. If the component reference is identical to the value of the :code:`name` attribute of an :code:`import component` element in the same infoset, then it SHALL refer to a component from the infoset defined by the :code:`import component` element (see :ref:`Interpretation of ``import`` elements`<specC_interpreation_of_imports>`).
+   #. If the component reference is identical to the value of the :code:`name` attribute of an :code:`import component` element in the same infoset, then it SHALL refer to a component from the infoset defined by the :code:`import component` element (see :ref:`Interpretation of import elements<specC_interpretation_of_imports>`).
       The component specified SHALL then be determined by treating the value of the :code:`component_ref` attribute on the :code:`import component` element as a component reference within the imported infoset.
       If necessary, this rule SHALL be applied recursively.
 
@@ -277,13 +279,13 @@ A "variable reference" is an attribute value that specifies a CellML variable.
 Interpretation of ``initial_value`` attributes
 ----------------------------------------------
 
-#. The :code:`initial_value` attribute of a :code:`variable` element MUST either be a real number string, or a :ref:`variable reference<specC_variable_reference>`.
+#. The :code:`initial_value` attribute of a :code:`variable` element MUST either be a :ref:`real number string<specA_real_number>`, or a :ref:`variable reference<specC_variable_reference>`.
 
 #. The conditions when initial values hold are (by design) not defined in a :ref:`CellML model<specA_cellml_model>` document.
 
-#. Where the :code:`initial_value` attribute has a real number value, it SHALL be interpreted as a statement that the variable on which the attribute appears is equal to that real number value, under the conditions when the initial value holds.
+#. Where the :code:`initial_value` attribute has a :ref:`real number value<specA_real_number>`, it SHALL be interpreted as a statement that the variable on which the attribute appears is equal to that real number value, under the conditions when the initial value holds.
 
-#. Where the :code:`initial_value` attribute is a variable reference, it SHALL be interpreted as a statement that the variable on which the attribute appears is equal to the referenced variable under the conditions when the initial value holds.
+#. Where the :code:`initial_value` attribute is a :ref:`variable reference<specC_variable_reference>`, it SHALL be interpreted as a statement that the variable on which the attribute appears is equal to the referenced variable under the conditions when the initial value holds.
 
 .. marker_interpretation_of_initial_values_end
 .. marker_effect_of_units_on_variables_start
@@ -309,13 +311,13 @@ Interpretation of ``math`` elements
 
    #. All :code:`component` elements in the top-level :ref:`CellML infoset<specA_cellml_infoset>` for the :ref:`CellML model<specA_cellml_model>`;
 
-   #. All :code:`component` elements referenced by :code:`import component` elements (see :ref:`The import component element <specC_component_reference>`) in the top-level :ref:`CellML infoset<specA_cellml_infoset>`; and
+   #. All :code:`component` elements referenced by :code:`import component` elements (see :ref:`The import component element <specC_component_reference>`) in the top-level CellML infoset; and
 
    #. All :code:`component` elements which are descendants in the encapsulation digraph (see :ref:`Interpretation of encapsulation <specC_interpretation_of_encapsulation>`) of a pertinent :code:`component` element.
 
-#. Every MathML element in the :ref:`CellML model<specA_cellml_model>` which appears as a direct child of a MathML :code:`math` element, which in turn appears as a child of a pertinent :code:`component` element, SHALL be treated, in terms of the semantics of the mathematical model, as a statement which holds true unconditionally.
+#. Every MathML element in the CellML model which appears as a direct child of a MathML :code:`math` element, which in turn appears as a child of a pertinent :code:`component` element, SHALL be treated, in terms of the semantics of the mathematical model, as a statement which holds true unconditionally.
 
-#. Units referenced by a :code:`units` attribute SHALL NOT affect the mathematical interpretation of the :ref:`CellML model<specA_cellml_model>`.
+#. Units referenced by a :code:`units` attribute SHALL NOT affect the mathematical interpretation of the CellML model.
 
 .. marker_interpretation_of_mathematics_end
 .. marker_interpretation_of_encapsulation_start
@@ -336,10 +338,16 @@ Interpretation of ``encapsulation`` elements
 
 3. The encapsulated set for a component *A* SHALL be the set of all components *B* such that there exists an arc in the encapsulation digraph from the node corresponding to *A* to the node corresponding to *B*.
 
+.. _specC_encapsulation_parent:
+
 4. The encapsulation parent for a component *A* SHALL be the component corresponding to the node which is the parent node in the encapsulation digraph of the node corresponding to *A*.
    A component SHALL NOT appear as child of more than one encapsulation parent.
 
+.. _specC_sibling_set:
+
 5. The sibling set for a component *A* SHALL be the set of all components which have the same encapsulation parent as *A*, or in the case that *A* has no encapsulation parent, SHALL be the set of all components which do not have an encapsulation parent.
+
+.. _specC_hidden_set:
 
 6. The hidden set for a component *A* SHALL be the set of all components *B* where component *B* is not in the encapsulated set for component *A*, and component *B* is not the encapsulation parent of component *A*, and component *B* is not in the sibling set for component *A*.
 
@@ -380,7 +388,7 @@ Interpretation of ``map_variables`` elements
 
 .. marker_interpretation_of_map_variables_3
 
-#.  For a given variable, the available interfaces SHALL be determined by the :code:`interface` attribute on the corresponding :code:`variable` element as follows.
+6.  For a given variable, the available interfaces SHALL be determined by the :code:`interface` attribute on the corresponding :code:`variable` element as follows.
 
     #. A value of :code:`public` specifies that the variable has a public interface.
 
@@ -392,17 +400,17 @@ Interpretation of ``map_variables`` elements
 
     #. If the :code:`interface` attribute is absent, then the variable has no interface.
 
-#.  The applicable interfaces for variables *A* and *B* in components *AA* and *BB* respectively SHALL be defined as follows.
+7.  The applicable interfaces for variables *A* and *B* in components *AA* and *BB* respectively SHALL be defined as follows.
 
-    #. When component *AA* is in the sibling set of component *BB* (and vice versa), the applicable interface for both variables *A* and *B* SHALL be the public interface.
+    #. When component *AA* is in the :ref:`sibling set<specC_sibling_set>` of component *BB* (and vice versa), the applicable interface for both variables *A* and *B* SHALL be the public interface.
 
-    #. When component *AA* is in the encapsulated set of component *BB* the applicable interface for variable *A* SHALL be the public interface, and the applicable interface for variable *B* SHALL be the private interface.
+    #. When component *AA* is in the :ref:`encapsulated set<specC_encapsulation_set>` of component *BB* the applicable interface for variable *A* SHALL be the public interface, and the applicable interface for variable *B* SHALL be the private interface.
 
-    #. When component *BB* is in the encapsulated set of component *AA* the applicable interface for variable *B* SHALL be the public interface, and the applicable interface for variable *A* SHALL be the private interface.
+    #. When component *BB* is in the :ref:`encapsulated set<specC_encapsulation_set>` of component *AA* the applicable interface for variable *B* SHALL be the public interface, and the applicable interface for variable *A* SHALL be the private interface.
 
     #. It is noted, for the avoidance of doubt, that any other encapsulation relationship between components *AA* and *BB* will not permit connections, meaning that no interface is available between the variables *A* and *B*.
 
-#.  CellML models MUST only contain :code:`map_variables` elements where the interface of variable *A* and the interface of variable *B* are applicable interfaces.
+8.  CellML models MUST only contain :code:`map_variables` elements where the interface of variable *A* and the interface of variable *B* are applicable interfaces.
 
 .. marker_interpretation_of_map_variables_4
 
@@ -410,9 +418,10 @@ Interpretation of ``map_variables`` elements
     Two sets of tuples SHALL be considered identical if all of the tuples from each set are present in the other, or if both sets are empty.
     Two tuples are considered identical if and only if both the name and exponent value of each tuple are equivalent.
 
-#.  Tuples differing by a multiplying factor in their unit reduction MUST be taken into account when interpreting the numerical values of the variables (see :ref:`Interpretation of units<specC_interpretation_of_units>`).
+10.  Tuples differing by a multiplying factor in their unit reduction MUST be taken into account when interpreting the numerical values of the variables (see :ref:`Interpretation of units<specC_interpretation_of_units>`).
 
 .. marker_interpretation_of_map_variables_5
+.. _specC_equivalent_variable_set:
 
 11.  The :code:`variable` elements in a CellML model SHALL be treated as belonging to a single "equivalent variable set".
      Each set of equivalent variables is the set of all :code:`variable` elements for which the corresponding nodes in the variable equivalence network form a connected subgraph.
