@@ -118,7 +118,7 @@ An :code:`import component` element information item (referred to in this specif
    1. Every :code:`import component` element MUST contain a :code:`name` attribute.
       The value of the :code:`name` attribute MUST be a :ref:`CellML identifier<specA_cellml_identifier>`.
 
-      The value of the :code:`name` attribute MUST NOT be identical to the :code:`name` attribute of any :code:`component` or :code:`import component` element in the :ref:`CellML infoset<specA_cellml_infoset>`.
+      The value of the :code:`name` attribute MUST NOT be identical to the :code:`name` attribute of any other :code:`component` or :code:`import component` element in the :ref:`CellML infoset<specA_cellml_infoset>`.
 
 .. container:: issue-import-component-ref
 
