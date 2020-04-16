@@ -175,7 +175,7 @@ A :code:`unit` element information item (referred to in this specification as a 
 
       .. container:: issue-unit-circular-ref
 
-         2. The element inclusion digraph MUST NOT contains any cycles.
+         2. The element inclusion digraph MUST NOT contain any cycles.
 
 .. marker_unit_1
 
