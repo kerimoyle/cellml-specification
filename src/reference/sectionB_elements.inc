@@ -271,7 +271,7 @@ The ``reset`` element
 
 A :code:`reset` element information item (referred to in this specification as a :code:`reset` element) is an element in the :ref:`CellML namespace<specA_cellml_namespace>` with a local name equal to :code:`reset`, which appears as a child of a :code:`component` element.
 
-1. Every :code:`reset` element MUST have exactly one each of the following attributes:
+1. Every :code:`reset` element MUST have exactly one of each of the following attributes:
 
    .. container:: issue-reset-variable-reference
 
