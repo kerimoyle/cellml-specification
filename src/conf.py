@@ -135,16 +135,16 @@ extlinks = {
     # These should be identical: one for links, one for full URL display
     'rfc2119':         ('http://www.ietf.org/rfc/rfc2119.txt%s', ''),
     'rfc2119_display': ('http://www.ietf.org/rfc/%s', None),
-    
+
     'sphinx': ('http://sphinx-doc.org/%s', ''),
     'swig': ('http://www.swig.org/%s', ''),
     'unicode': ('http://www.fileformat.info/info/unicode/char/%s/index.htm', 'U+'),
     'unicode13_display': ('https://www.unicode.org/versions/Unicode13.0.0%s', None),
-    
+
     # These should be identical: one for links, one for full URL display
     'xlink':         ('http://www.w3.org/TR/2001/REC-xlink-20010627%s', ''),
     'xlink_display': ('http://www.w3.org/TR/2001/REC-xlink-20010627%s', None),
-   
+
     'xml_help': ('https://www.w3.org/XML/%s', ''),
 
     # These should be identical: one for links, one for full URL display
@@ -164,7 +164,7 @@ extlinks = {
 # will need to be manually changed if the numbering is ever altered, and can be located
 # more easily by searching for the "hardcodedref" tag.
 rst_prolog = """
-.. role:: hardcodedref 
+.. role:: hardcodedref
 """
 
 # General information about the project.
@@ -340,6 +340,9 @@ latex_elements = {
 \usepackage[titles]{tocloft}
 \usepackage{textgreek}
 \usepackage{amssymb}
+
+% Stop cross-references from showing up in italics
+\protected\def\sphinxcrossref#1{#1}
 '''
 }
 
