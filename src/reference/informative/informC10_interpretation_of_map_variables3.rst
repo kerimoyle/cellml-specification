@@ -103,21 +103,21 @@
               those two components. -->
           <map_variables variable_1="een" variable_2="tahi" />
             ...
-        </component>
+        </connection>
 
         <!-- Invalid: Duplicated mappings are not allowed. -->
         <connection component_1="Dutch" component_2="Maori">
           <map_variables variable_1="een" variable_2="tahi" />
           <map_variables variable_1="een" variable_2="tahi" />
-            ...
-        </component>
+           ...
+        </connection>
 
         <!-- Invalid: Duplicated connections are not allowed. -->
-        <connection component_1="Dutch" component_2="Maori"
+        <connection component_1="Dutch" component_2="Maori">
           <map_variables variable_1="een" variable_2="tahi" />
             ...
         </connection>
-        <connection component_1="Maori" component_2="Dutch"
+        <connection component_1="Maori" component_2="Dutch">
           <map_variables variable_1="tahi" variable_2="een" />
             ...
         </connection>
