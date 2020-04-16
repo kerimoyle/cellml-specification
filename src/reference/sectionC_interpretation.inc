@@ -391,7 +391,7 @@ Interpretation of ``map_variables`` elements
 
 .. marker_interpretation_of_map_variables_3
 
-6.  For a given variable, the available interfaces SHALL be determined by the :code:`interface` attribute on the corresponding :code:`variable` element as follows:
+6.  For a given variable, the "available interfaces" SHALL be determined by the :code:`interface` attribute on the corresponding :code:`variable` element as follows:
 
     #. A value of :code:`public` specifies that the variable has a public interface.
 
@@ -403,7 +403,7 @@ Interpretation of ``map_variables`` elements
 
     #. If the :code:`interface` attribute is absent, then the variable has no interface.
 
-7.  The applicable interfaces for variables *A* and *B* in components *AA* and *BB* respectively SHALL be defined as follows:
+7.  The "applicable interfaces" for variables *A* and *B* in components *AA* and *BB* respectively SHALL be defined as follows:
 
     #. When component *AA* is in the :ref:`sibling set<specC_sibling_set>` of component *BB* (and vice versa), the applicable interface for both variables *A* and *B* SHALL be the public interface.
 
@@ -411,9 +411,9 @@ Interpretation of ``map_variables`` elements
 
     #. When component *BB* is in the :ref:`encapsulated set<specC_encapsulation_set>` of component *AA* the applicable interface for variable *B* SHALL be the public interface, and the applicable interface for variable *A* SHALL be the private interface.
 
-    #. It is noted, for the avoidance of doubt, that any other encapsulation relationship between components *AA* and *BB* will not permit connections, meaning that no interface is available between the variables *A* and *B*.
+    It is noted, for the avoidance of doubt, that if components *AA* and *BB* are in each other's :ref:`hidden set<specC_hidden_set>`, there are no applicable interfaces for the variables *A* and *B*.
 
-8.  CellML models MUST only contain :code:`map_variables` elements where the interface of variable *A* and the interface of variable *B* are applicable interfaces.
+8.  CellML models MUST only contain :code:`map_variables` elements where the applicable interfaces for both variables are available.
 
 .. marker_interpretation_of_map_variables_4
 
