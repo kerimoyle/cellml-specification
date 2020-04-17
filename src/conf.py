@@ -122,14 +122,13 @@ extlinks = {
     'git': ('https://git-scm.com/%s', ''),
     'github': ('https://github.com/%s', ''),
     'google_styleguide': ('https://google.github.io/styleguide/cppguide.html/%s', ''),
-    'xlink': ('https://www.w3.org/TR/2001/REC-xlink-20010627/%s', ''),
     'libcellml': ('https://libcellml.org/%s', ''),
     'libcellml_repo': ('https://github.com/cellml/libcellml.git%s', ''),
     'libxml2': ('http://www.xmlsoft.org/%s', ''),
 
     # These should be identical: one for links, one for full URL display
-    'mathml2':         ('http://www.w3.org/TR/2003/REC-MathML2-20031021%s', ''),
-    'mathml2_display': ('http://www.w3.org/TR/2003/REC-MathML2-20031021%s', None),
+    'mathml2':         ('https://www.w3.org/TR/2003/REC-MathML2-20031021%s', ''),
+    'mathml2_display': ('https://www.w3.org/TR/2003/REC-MathML2-20031021%s', None),
 
     'mathml2help': ('https://www.w3.org/TR/MathML2/chapter4.html%s', ''),
 
@@ -143,8 +142,8 @@ extlinks = {
     'python': ('https://www.python.org/%s', ''),
 
     # These should be identical: one for links, one for full URL display
-    'rfc2119':         ('http://www.ietf.org/rfc/rfc2119.txt%s', ''),
-    'rfc2119_display': ('http://www.ietf.org/rfc/%s', None),
+    'rfc2119':         ('https://www.ietf.org/rfc/rfc2119.txt%s', ''),
+    'rfc2119_display': ('https://www.ietf.org/rfc/%s', None),
 
     'sphinx': ('http://sphinx-doc.org/%s', ''),
     'swig': ('http://www.swig.org/%s', ''),
@@ -155,17 +154,17 @@ extlinks = {
     'unicode13_display': ('https://www.unicode.org/versions/Unicode13.0.0%s', None),
 
     # These should be identical: one for links, one for full URL display
-    'xlink':         ('http://www.w3.org/TR/2001/REC-xlink-20010627%s', ''),
-    'xlink_display': ('http://www.w3.org/TR/2001/REC-xlink-20010627%s', None),
+    'xlink':         ('https://www.w3.org/TR/2001/REC-xlink-20010627%s', ''),
+    'xlink_display': ('https://www.w3.org/TR/2001/REC-xlink-20010627%s', None),
 
     'xml_help': ('https://www.w3.org/XML/%s', ''),
 
     # These should be identical: one for links, one for full URL display
-    'xml_1_1':         ('http://www.w3.org/TR/xml11%s', ''),
-    'xml_1_1_display': ('http://www.w3.org/TR/xml11%s', None),
+    'xml_1_1':         ('https://www.w3.org/TR/xml11%s', ''),
+    'xml_1_1_display': ('https://www.w3.org/TR/xml11%s', None),
 
     # These should be identical: one for links, one for full URL display
-    'xml_infoset': ('http://www.w3.org/TR/2004/REC-xml-infoset-20040204/%s', ''),
+    'xml_infoset':         ('https://www.w3.org/TR/2004/REC-xml-infoset-20040204/%s', ''),
     'xml_infoset_display': ('https://www.w3.org/TR/xml-infoset%s', None),
 
     'xml_namespace_1_1':         ('https://www.w3.org/TR/2006/REC-xml-names11-20060816%s', ''),
