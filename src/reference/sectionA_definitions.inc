@@ -7,9 +7,9 @@
 Terminology
 -----------
 
-The keywords "MUST", "MUST NOT", "SHALL", "SHALL NOT", and "MAY" in this document are to be interpreted as described in :rfc2119:`RFC 2119 <>` [Ref_4]_.
+The keywords "MUST", "MUST NOT", "SHALL", "SHALL NOT", and "MAY" in this document are to be interpreted as described in :rfc2119:`RFC 2119 <>` [:ref:`4<ref_rfc2119>`].
 
-The key phrase "information item", as well as any specific type of information item such as an "element information item", are to be interpreted as described in :xml_infoset:`XML Information Set <>` [Ref_6]_.
+The key phrase "information item", as well as any specific type of information item such as an "element information item", are to be interpreted as described in :xml_infoset:`XML Information Set <>` [:ref:`6<ref_xml_infoset>`].
 
 .. _specA_cellml_infoset:
 
@@ -26,7 +26,7 @@ In this specification, the topmost CellML infoset in a hierarchy is referred to 
 .. _specA_namespace:
 
 **Namespace:**
-An XML namespace, as defined in :xml_namespace_1_1:`Namespaces in XML 1.1 <>` [Ref_3]_.
+An XML namespace, as defined in :xml_namespace_1_1:`Namespaces in XML 1.1 <>` [:ref:`3<xml_namespace_1_1>`].
 
 .. _specA_cellml_namespace:
 
@@ -50,7 +50,7 @@ Any information item in the :ref:`CellML namespace<specA_cellml_namespace>`.
 .. _specA_basic_latin_alphabetical_character:
 
 **Basic Latin alphabetical character:**
-A Unicode [Ref_5]_ character in the range :unicode:`0041` to :unicode:`005A` or in the range :unicode:`0061` to :unicode:`007A`.
+A Unicode [:ref:`5<ref_unicode>`] character in the range :unicode:`0041` to :unicode:`005A` or in the range :unicode:`0061` to :unicode:`007A`.
 
 .. _specA_digit:
 
@@ -98,7 +98,7 @@ CellML information sets
 CellML and XML
 ~~~~~~~~~~~~~~
 
-#. Every :ref:`CellML infoset<specA_cellml_infoset>` SHALL be represented in an XML information set which conforms with the well-formedness requirements of :xml_1_1:`XML 1.1 <>` [Ref_1]_.
+#. Every :ref:`CellML infoset<specA_cellml_infoset>` SHALL be represented in an XML information set which conforms with the well-formedness requirements of :xml_1_1:`XML 1.1 <>` [:ref:`1<ref_xml_1_1>`].
 
 #. In this document, the remaining provisions relating to CellML infosets SHALL be interpreted as additional constraints on the XML information set represented by a CellML infoset.
 
@@ -175,7 +175,7 @@ XML ID Attributes
 ~~~~~~~~~~~~~~~~~
 
 #. Any element information item in the :ref:`CellML namespace<specA_cellml_namespace>` MAY contain an attribute with local name :code:`id.`
-   This attribute SHALL be treated as having attribute type ID, as defined in :xml_1_1:`section 3.3.1 <#sec-attribute-types>` of :xml_1_1:`XML 1.1 <>` [Ref_1]_.
+   This attribute SHALL be treated as having attribute type ID, as defined in :xml_1_1:`section 3.3.1 <#sec-attribute-types>` of :xml_1_1:`XML 1.1 <>` [:ref:`1<ref_xml_1_1>`].
 
 .. marker_cellml_information_sets_end
 .. marker_data_formats_start
