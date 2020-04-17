@@ -342,20 +342,20 @@ Interpretation of ``encapsulation`` elements
 .. marker_interpretation_of_encapsulation_1
 .. _specC_encapsulation_set:
 
-3. The encapsulated set for a component *A* SHALL be the set of all components *B* such that there exists an arc in the encapsulation digraph from the node corresponding to *A* to the node corresponding to *B*.
+3. The "encapsulated set" for a component *A* SHALL be the set of all components *B* such that there exists an arc in the encapsulation digraph from the node corresponding to *A* to the node corresponding to *B*.
 
 .. _specC_encapsulation_parent:
 
-4. The encapsulation parent for a component *A* SHALL be the component corresponding to the node which is the parent node in the encapsulation digraph of the node corresponding to *A*.
+4. The "encapsulation parent" for a component *A* SHALL be the component corresponding to the node which is the parent node in the encapsulation digraph of the node corresponding to *A*.
    A component SHALL NOT appear as child of more than one encapsulation parent.
 
 .. _specC_sibling_set:
 
-5. The sibling set for a component *A* SHALL be the set of all components which have the same encapsulation parent as *A*, or in the case that *A* has no encapsulation parent, SHALL be the set of all components which do not have an encapsulation parent.
+5. The "sibling set" for a component *A* SHALL be the set of all components which have the same encapsulation parent as *A*, or in the case that *A* has no encapsulation parent, SHALL be the set of all components which do not have an encapsulation parent.
 
 .. _specC_hidden_set:
 
-6. The hidden set for a component *A* SHALL be the set of all components *B* where component *B* is not in the encapsulated set for component *A*, and component *B* is not the encapsulation parent of component *A*, and component *B* is not in the sibling set for component *A*.
+6. The "hidden set" for a component *A* SHALL be the set of all components *B* where component *B* is not in the encapsulated set for component *A*, and component *B* is not the encapsulation parent of component *A*, and component *B* is not in the sibling set for component *A*.
 
 .. marker_interpretation_of_encapsulation_2
 
