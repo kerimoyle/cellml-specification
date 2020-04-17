@@ -13,7 +13,8 @@ It is intended primarily for the developers of software tools which directly con
 
 Users of CellML models may prefer the informative version of the CellML Specification, which is available at :cellml2spec_display:`/`.
 
-The official version of the CellML Normative Specification is available at :cellml2spec_display:`/specification.pdf`.
+The official version of the CellML Normative Specification is available at :cellml2spec_display:`/cellml_2_0_normative_specification.pdf`.
+
 
 .. include:: reference/acknowledgements.inc
 
