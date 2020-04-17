@@ -402,7 +402,7 @@ Interpretation of ``map_variables`` elements
 
 .. marker_interpretation_of_map_variables_3
 
-6.  For a given variable, the "available interfaces" SHALL be determined by the :code:`interface` attribute on the corresponding :code:`variable` element as follows:
+6.  For a given variable, the "available interfaces" SHALL be determined by the value of the :code:`interface` attribute on the corresponding :code:`variable` element as follows:
 
     #. A value of :code:`public` specifies that the variable has a public interface;
 
