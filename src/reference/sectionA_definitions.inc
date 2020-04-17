@@ -50,7 +50,7 @@ Any information item in the :ref:`CellML namespace<specA_cellml_namespace>`.
 .. _specA_basic_latin_alphabetical_character:
 
 **Basic Latin alphabetical character:**
-A Unicode [:ref:`5<ref_unicode>`] character in the range :unicode:`0041` to :unicode:`005A` or in the range :unicode:`0061` to :unicode:`007A`.
+A :unicode13:`Unicode <>` [:ref:`5<ref_unicode>`] character in the range :unicode:`0041` to :unicode:`005A` or in the range :unicode:`0061` to :unicode:`007A`.
 
 .. _specA_digit:
 
