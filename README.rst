@@ -61,14 +61,12 @@ If this fails, please have a look at the following:
 
 Creating the PDF form of the documentation requires that some or all of a tool like Windows/`MikTeX <https://miktex.org/>`_, Windows/`TeXlive <https://www.tug.org/texlive/>`_, Linux/`TeXlive <https://www.tug.org/texlive/>`_, and macOS/`MacTeX <https://tug.org/mactex/>`_ is available to the Sphinx build tool.
 
-In addition, you'll need the following latex packages:
-
-`babel-greek`, `capt-of`, `cbfonts`, `courier`, `fncychap`, `fontspec`, `framed`, `greek-fontenc`, `helvetic`, `latexmk`, `needspace`, `tabulary`, `textgreek`, `titlesec`, `tocloft`, `varwidth`, `wrapfig`
+In addition, you'll need the following latex packages: ``babel-greek``, ``capt-of``, ``cbfonts``, ``courier``, ``fncychap``, ``fontspec``, ``framed``, ``greek-fontenc``, ``helvetic``, ``latexmk``, ``needspace``, ``tabulary``, ``textgreek``, ``titlesec``, ``tocloft``, ``varwidth``, ``wrapfig``.
 
 In particular, check that you have ``latexmk`` available as this is required for creating the PDF form of the documentation.
 Information on ``latexmk`` can be found at https://ctan.org/pkg/latexmk/.
 
-You may also need to install the ["GNU FreeFont" fonts](https://www.gnu.org/software/freefont/) `FreeSans`, `FreeSerif`, `FreeMono`.
+You may also need to install the `"GNU FreeFont" fonts <https://www.gnu.org/software/freefont/>`_ `FreeSans`, `FreeSerif`, `FreeMono`.
 
 Documentation builds
 ^^^^^^^^^^^^^^^^^^^^
