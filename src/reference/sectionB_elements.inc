@@ -60,7 +60,7 @@ An :code:`import` element information item (referred to in this specification as
 
       The :code:`href` attribute SHALL be treated according to the :xlink:`XLink specification <>` [:ref:`6<ref_xlink>`], by applying the rules for simple-type elements.
 
-      When describing an :code:`import` element or one of its children, the phrase "imported CellML infoset" SHALL refer to the :ref:`CellML infoset<specA_cellml_infoset>` obtained by parsing the document referenced by the :code:`href` attribute value.
+      When describing an :code:`import` element or one of its children, the phrase "imported CellML infoset" SHALL refer to the :ref:`CellML infoset<specA_cellml_infoset>` obtained by parsing the document referenced by the :code:`href` attribute.
 
 .. marker_import_1
 
@@ -96,7 +96,7 @@ An :code:`import units` element information item (referred to in this specificat
 
       The value of the :code:`name` attribute MUST be a :ref:`CellML identifier<specA_cellml_identifier>`.
 
-      The value of the :code:`name` attribute MUST NOT be identical to the value of the :code:`name` attribute of any other :code:`units` or :code:`import units` element in the :ref:`CellML infoset<specA_cellml_infoset>`.
+      The value of the :code:`name` attribute MUST NOT be identical to the :code:`name` attribute of any other :code:`units` or :code:`import units` element in the :ref:`CellML infoset<specA_cellml_infoset>`.
 
 .. marker_import_units_1
 
@@ -124,7 +124,7 @@ An :code:`import component` element information item (referred to in this specif
 
       The value of the :code:`name` attribute MUST be a :ref:`CellML identifier<specA_cellml_identifier>`.
 
-      The value of the :code:`name` attribute MUST NOT be identical to the value of the :code:`name` attribute of any other :code:`component` or :code:`import component` element in the :ref:`CellML infoset<specA_cellml_infoset>`.
+      The value of the :code:`name` attribute MUST NOT be identical to the :code:`name` attribute of any other :code:`component` or :code:`import component` element in the :ref:`CellML infoset<specA_cellml_infoset>`.
 
 .. container:: issue-import-component-ref
 
@@ -151,7 +151,7 @@ A :code:`units` element information item (referred to in this specification as a
 
       The value of the :code:`name` attribute MUST be a :ref:`CellML identifier<specA_cellml_identifier>`.
 
-      The value of the :code:`name` attribute MUST NOT be identical to the value of the :code:`name` attribute of any other :code:`units` element or :code:`import units` element in the :ref:`CellML infoset<specA_cellml_infoset>`.
+      The value of the :code:`name` attribute MUST NOT be identical to the :code:`name` attribute of any other :code:`units` element or :code:`import units` element in the :ref:`CellML infoset<specA_cellml_infoset>`.
 
 .. container:: issue-units-standard
 
@@ -225,7 +225,7 @@ A :code:`component` element information item (referred to in this specification 
 
       The value of the :code:`name` attribute MUST be a :ref:`CellML identifier<specA_cellml_identifier>`.
 
-      The value of the :code:`name` attribute MUST NOT be identical to the value of the :code:`name` attribute on any other :code:`component` element or :code:`import component` element in the :ref:`CellML infoset<specA_cellml_infoset>`.
+      The value of the :code:`name` attribute MUST NOT be identical to the :code:`name` attribute on any other :code:`component` element or :code:`import component` element in the :ref:`CellML infoset<specA_cellml_infoset>`.
 
 .. marker_component_2
 
@@ -256,7 +256,7 @@ A :code:`variable` element information item (referred to in this specification a
       1. The :code:`name` attribute.
          The value of the :code:`name` attribute MUST be a :ref:`CellML identifier<specA_cellml_identifier>`.
 
-         The value of the :code:`name` attribute MUST NOT be identical to the value of the :code:`name` attribute on any sibling :code:`variable` element.
+         The value of the :code:`name` attribute MUST NOT be identical to the :code:`name` attribute on any sibling :code:`variable` element.
 
    .. container:: issue-variable-units
 
