@@ -17,7 +17,7 @@ Interpretation of ``import`` elements
 
    #. Connections defined in the imported infoset SHALL be handled as follows:
 
-      #. Connections to components in the :ref:`encapsulated set<specC_encapsulation_set>` of the imported component SHALL be maintained, and this rule SHALL be applied recursively;
+      #. Connections to components in the :ref:`encapsulated set<specC_encapsulation_set>` of the imported component SHALL be maintained, and this rule SHALL be applied recursively; and
 
       #. Connections to components in the :ref:`sibling set<specC_sibling_set>`, or to the :ref:`encapsulation parent<specC_encapsulation_parent>` of the imported component SHALL NOT be maintained.
 
@@ -374,13 +374,13 @@ Interpretation of ``map_variables`` elements
 
 2.  For each :code:`map_variables` element present in the CellML model, we define variables *A* and *B* for use in the rules in this section as follows:
 
-    #. Variable *A* SHALL be the variable referenced by the encompassing :code:`connection` element’s :code:`component_1` and this :code:`map_variables` element’s :code:`variable_1` attribute.
+    #. Variable *A* SHALL be the variable referenced by the encompassing :code:`connection` element’s :code:`component_1` and this :code:`map_variables` element’s :code:`variable_1` attribute; and
 
     #. Variable *B* SHALL be the variable referenced by the encompassing :code:`connection` element’s :code:`component_2` and this :code:`map_variables` element’s :code:`variable_2` attribute.
 
 3.  For every :code:`map_variables` element present in the CellML model, there SHALL be an arc in the variable equivalence network.
 
-    #. One endpoint of the arc in the variable equivalence network SHALL be the node corresponding to variable *A*.
+    #. One endpoint of the arc in the variable equivalence network SHALL be the node corresponding to variable *A*; and
 
     #. One endpoint of the arc in the variable equivalence network SHALL be the node corresponding to variable *B*.
 
@@ -394,13 +394,13 @@ Interpretation of ``map_variables`` elements
 
 6.  For a given variable, the "available interfaces" SHALL be determined by the :code:`interface` attribute on the corresponding :code:`variable` element as follows:
 
-    #. A value of :code:`public` specifies that the variable has a public interface.
+    #. A value of :code:`public` specifies that the variable has a public interface;
 
-    #. A value of :code:`private` specifies that the variable has a private interface.
+    #. A value of :code:`private` specifies that the variable has a private interface;
 
-    #. A value of :code:`public_and_private` specifies that the variable has both a public and a private interface.
+    #. A value of :code:`public_and_private` specifies that the variable has both a public and a private interface;
 
-    #. A value of :code:`none` specifies that the variable has no interface.
+    #. A value of :code:`none` specifies that the variable has no interface; or
 
     #. If the :code:`interface` attribute is absent, then the variable has no interface.
 

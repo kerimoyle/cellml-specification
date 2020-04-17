@@ -231,7 +231,7 @@ A :code:`component` element information item (referred to in this specification 
 
    2. A :code:`component` element MAY contain one or more specific element children, each of which MUST be of one of the following types:
 
-      #. A :code:`math` element; or
+      #. A :code:`math` element; 
 
       #. A :code:`reset` element; or
 
