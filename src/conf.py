@@ -145,6 +145,9 @@ extlinks = {
     'sphinx': ('http://sphinx-doc.org/%s', ''),
     'swig': ('http://www.swig.org/%s', ''),
     'unicode': ('http://www.fileformat.info/info/unicode/char/%s/index.htm', 'U+'),
+
+    # These should be identical: one for links, one for full URL display
+    'unicode13':         ('https://www.unicode.org/versions/Unicode13.0.0%s', ''),
     'unicode13_display': ('https://www.unicode.org/versions/Unicode13.0.0%s', None),
 
     # These should be identical: one for links, one for full URL display
