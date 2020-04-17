@@ -189,7 +189,7 @@ Interpretation of ``units`` elements
       1. If the :ref:`units reference<specC_units_reference>` of the :code:`unit` child element is to a single unit which is an irreducible unit, then the set of tuples SHALL have a single member, which SHALL consist of the name of the irreducible unit being referenced and the exponent 1.0.
 
       2. If the units reference of the :code:`unit` child element is to built-in units other than an :ref:`irreducible unit<specC_irreducible_units>`, then the tuples SHALL be derived directly from :numref:`Table {number} {name}<table_built_in_units>`.
-         Specifically, the set of tuples SHALL consist of the tuples given in the "Unit reduction tuple" column of the row for which the value in the "Name" column matches the name of the units reference.
+         Specifically, the set of tuples SHALL consist of the tuples given in the "Unit reduction tuple" column of the row for which the value in the "Name" column is identical to the name of the units reference.
 
       3. If the units reference of the :code:`unit` child element is to a unit which is neither built-in, nor an irreducible unit, then the set of tuples SHALL be defined recursively as the set of tuples for the :code:`units` element so referenced.
 
