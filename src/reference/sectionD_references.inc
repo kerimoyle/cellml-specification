@@ -18,7 +18,7 @@
 
 .. _ref_xml_1_1:
 
-5. Extensible Markup Language (XML) 1.1 :xml_1_1_display:`/`
+5. Extensible Markup Language (XML) 1.1 (Second Edition) :xml_1_1_display:`/`
 
 .. _ref_xlink:
 
