@@ -333,8 +333,7 @@ Interpretation of ``math`` elements
 Interpretation of ``encapsulation`` elements
 --------------------------------------------
 
-1. For the purposes of this specification, there SHALL be a conceptual "encapsulation digraph" in which there is EXACTLY one node for every component in the :ref:`CellML model<specA_cellml_model>`.
-   Therefore the encapsulation digraph will not contain any loops.
+1. For the purposes of this specification, there SHALL be a conceptual "encapsulation digraph" in which there is exactly one node for every component in the :ref:`CellML model<specA_cellml_model>`.
 
 2. Where a :code:`component_ref` element appears as a child of another :code:`component_ref` element, there SHALL be an arc in the encapsulation digraph, and that arc SHALL be from the node corresponding to the component referenced by the parent :code:`component_ref` element, and to the node corresponding to the component referenced by the child :code:`component_ref` element.
 
