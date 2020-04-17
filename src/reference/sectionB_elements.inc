@@ -76,7 +76,7 @@ An :code:`import` element information item (referred to in this specification as
 
 .. container:: issue-import-circular
 
-   3. Any :ref:`CellML infoset<specA_cellml_infoset>` imported, directly or indirectly, by the imported CellML infoset MUST NOT be semantically equivalent to the importing CellML infoset (see :numref:`%s. Non-specific information items<specA_semantic_equivalence>`).
+   3. Any :ref:`CellML infoset<specA_cellml_infoset>` imported, directly or indirectly, by the imported CellML infoset MUST NOT be semantically equivalent to the importing CellML infoset (see :numref:`{number}. {name}<specA_semantic_equivalence>`).
 
 .. marker_import_end
 .. marker_import_units_start
@@ -153,7 +153,7 @@ A :code:`units` element information item (referred to in this specification as a
 
 .. container:: issue-units-standard
 
-   2. The value of the :code:`name` attribute MUST NOT be identical to the name of any of the units listed in the :ref:`Built-in units table<table_built_in_units>` (see :numref:`%s. Units references<specC_units_reference>`).
+   2. The value of the :code:`name` attribute MUST NOT be identical to the name of any of the units listed in :numref:`Table {number}: {name}<table_built_in_units>` (see :numref:`{number}. {name}<specC_units_reference>`).
 
 .. container:: issue-units-child
 
@@ -173,7 +173,7 @@ A :code:`unit` element information item (referred to in this specification as a 
 
    1. Every :code:`unit` element MUST contain a :code:`units` attribute.
 
-      The value of the :code:`units` attribute MUST be a valid units reference, as defined in :numref:`%s. Units references<specC_units_reference>`.
+      The value of the :code:`units` attribute MUST be a valid units reference, as defined in :numref:`{number}. {name}<specC_units_reference>`.
 
       .. container:: issue-unit-digraph
 
@@ -193,7 +193,7 @@ A :code:`unit` element information item (referred to in this specification as a 
 
       .. container:: issue-unit-prefix
 
-         1. The :code:`prefix` attribute. If present, the value of the attribute MUST meet the constraints specified in :numref:`%s. Interpretation of units elements <specC_interpretation_of_units>`.
+         1. The :code:`prefix` attribute. If present, the value of the attribute MUST meet the constraints specified in :numref:`{number}. {name}<specC_interpretation_of_units>`.
 
       .. container:: issue-unit-multiplier
 
@@ -259,7 +259,7 @@ A :code:`variable` element information item (referred to in this specification a
    .. container:: issue-variable-units
 
       2. The :code:`units` attribute.
-         The value of the :code:`units` attribute MUST be a valid units reference, as defined in :numref:`%s. Units references<specC_units_reference>`.
+         The value of the :code:`units` attribute MUST be a valid units reference, as defined in :numref:`{number}. {name}<specC_units_reference>`.
 
 2. Every :code:`variable` element MAY contain one or more of the following attributes:
 
@@ -271,7 +271,7 @@ A :code:`variable` element information item (referred to in this specification a
    .. container:: issue-variable-initial-value
 
       2. The :code:`initial_value` attribute.
-         If the attribute is present, it MUST meet the requirements described by :numref:`%s. Interpretation of initial_value attributes<specC_interpretation_of_initial_values>`.
+         If the attribute is present, it MUST meet the requirements described by :numref:`{number}. {name}<specC_interpretation_of_initial_values>`.
 
 .. marker_variable_end
 .. marker_reset_start
@@ -288,19 +288,19 @@ A :code:`reset` element information item (referred to in this specification as a
    .. container:: issue-reset-variable-reference
 
       1. The :code:`variable` attribute.
-         The value of the :code:`variable` attribute MUST be a valid variable reference, as defined in :numref:`%s. Variable references<specC_variable_reference>`.
+         The value of the :code:`variable` attribute MUST be a valid variable reference, as defined in :numref:`{number}. {name}<specC_variable_reference>`.
 
    .. container:: issue-reset-test-variable-reference
 
       2. The :code:`test_variable` attribute.
-         The value of the :code:`test_variable` attribute MUST be a valid variable reference, as defined in :numref:`%s. Variable references<specC_variable_reference>`.
+         The value of the :code:`test_variable` attribute MUST be a valid variable reference, as defined in :numref:`{number}. {name}<specC_variable_reference>`.
 
    .. container:: issue-reset-order
 
       3. The :code:`order` attribute.
          The value of the :code:`order` attribute MUST be an :ref:`integer string<specA_integer>`.
 
-         The value of the :code:`order` attribute MUST be unique for all :code:`reset` elements with :code:`variable` attributes that reference variables in the same equivalent variable set (see :numref:`%s. Interpretation of map_variables elements<specC_interpretation_of_map_variables>`).
+         The value of the :code:`order` attribute MUST be unique for all :code:`reset` elements with :code:`variable` attributes that reference variables in the same equivalent variable set (see :numref:`{number}. {name}<specC_interpretation_of_map_variables>`).
 
 .. container:: issue-reset-child
 
@@ -360,13 +360,13 @@ A :code:`math` element information item (referred to in this specification as a 
 
 .. container:: issue-math-child
 
-   2. Each element child of a :code:`math` element MUST have an element-type name that is listed in the :ref:`Supported MathML Elements table<table_supported_mathml_elements>`.
+   2. Each element child of a :code:`math` element MUST have an element-type name that is listed in :numref:`Table {number}: {name}<table_supported_mathml_elements>`.
 
 .. marker_math_2
 
 .. container:: issue-math-ci-variable-reference
 
-   3. The contents of a MathML :code:`ci` element MUST be a valid variable reference, as defined in :numref:`%s. Variable references<specC_variable_reference>`.
+   3. The contents of a MathML :code:`ci` element MUST be a valid variable reference, as defined in :numref:`{number}. {name}<specC_variable_reference>`.
 
 .. marker_math_3
 
@@ -374,7 +374,7 @@ A :code:`math` element information item (referred to in this specification as a 
 
    4. A MathML :code:`cn` element MUST have an attribute in the :ref:`CellML namespace<specA_cellml_namespace>`, with a local name equal to :code:`units`.
 
-      The value of the :code:`units` attribute MUST be a valid units reference, as defined in :numref:`%s. Units references<specC_units_reference>`.
+      The value of the :code:`units` attribute MUST be a valid units reference, as defined in :numref:`{number}. {name}<specC_units_reference>`.
 
 .. container:: issue-math-cn-type
 
@@ -384,43 +384,43 @@ A :code:`math` element information item (referred to in this specification as a 
 .. marker_math_4
 
 .. _table_supported_mathml_elements:
+.. table:: Supported MathML elements
+  :widths: auto
 
-**Table 2.1: Supported MathML elements**
-
-+----------------------------------+----------------------------------------------------------------+
-| **Element Category**             | **Element List**                                               |
-+----------------------------------+----------------------------------------------------------------+
-| Simple Operands                  | :code:`ci`, :code:`cn`, :code:`sep`                            |
-+----------------------------------+----------------------------------------------------------------+
-| Basic Structural                 | :code:`apply`, :code:`piecewise`, :code:`piece`,               |
-|                                  | :code:`otherwise`                                              |
-+----------------------------------+----------------------------------------------------------------+
-| Relational and Logical Operators | :code:`eq`, :code:`neq`, :code:`gt`, :code:`lt`, :code:`geq`,  |
-|                                  | :code:`leq`, :code:`and`, :code:`or`, :code:`xor`, :code:`not` |
-+----------------------------------+----------------------------------------------------------------+
-| Arithmetic Operators             | | :code:`plus`, :code:`minus`, :code:`times`, :code:`divide`,  |
-|                                  | | :code:`power`, :code:`root`, :code:`abs`,                    |
-|                                  | | :code:`exp`, :code:`ln`, :code:`log`,                        |
-|                                  | | :code:`floor`, :code:`ceiling`,                              |
-|                                  | | :code:`min`, :code:`max`, :code:`rem`                        |
-+----------------------------------+----------------------------------------------------------------+
-| Calculus Elements                | :code:`diff`                                                   |
-+----------------------------------+----------------------------------------------------------------+
-| Qualifier Elements               | :code:`bvar`, :code:`logbase`, :code:`degree` \*               |
-+----------------------------------+----------------------------------------------------------------+
-| Trigonometric Operators          | | :code:`sin`, :code:`cos`, :code:`tan`, :code:`sec`,          |
-|                                  |   :code:`csc`, :code:`cot`,                                    |
-|                                  | | :code:`sinh`, :code:`cosh`, :code:`tanh`, :code:`sech`,      |
-|                                  |   :code:`csch`, :code:`coth`,                                  |
-|                                  | | :code:`arcsin`, :code:`arccos`, :code:`arctan`,              |
-|                                  | | :code:`arcsec`, :code:`arccsc`, :code:`arccot`,              |
-|                                  | | :code:`arcsinh`, :code:`arccosh`, :code:`arctanh`,           |
-|                                  | | :code:`arcsech`, :code:`arccsch`, :code:`arccoth`            |
-+----------------------------------+----------------------------------------------------------------+
-| Mathematical and Logical         | :code:`pi`, :code:`exponentiale`,                              |
-| Constants                        | :code:`notanumber`, :code:`infinity`,                          |
-|                                  | :code:`true`, :code:`false`                                    |
-+----------------------------------+----------------------------------------------------------------+
+  +----------------------------------+------------------------------------------------------------------+
+  | **Element Category**             | **Element List**                                                 |
+  +----------------------------------+------------------------------------------------------------------+
+  | Simple Operands                  | :code:`ci`, :code:`cn`, :code:`sep`                              |
+  +----------------------------------+------------------------------------------------------------------+
+  | Basic Structural                 | :code:`apply`, :code:`piecewise`, :code:`piece`,                 |
+  |                                  | :code:`otherwise`                                                |
+  +----------------------------------+------------------------------------------------------------------+
+  | Relational and Logical Operators | | :code:`eq`, :code:`neq`, :code:`gt`, :code:`lt`, :code:`geq`,  |
+  |                                  | | :code:`leq`, :code:`and`, :code:`or`, :code:`xor`, :code:`not` |
+  +----------------------------------+------------------------------------------------------------------+
+  | Arithmetic Operators             | | :code:`plus`, :code:`minus`, :code:`times`, :code:`divide`,    |
+  |                                  | | :code:`power`, :code:`root`, :code:`abs`,                      |
+  |                                  | | :code:`exp`, :code:`ln`, :code:`log`,                          |
+  |                                  | | :code:`floor`, :code:`ceiling`,                                |
+  |                                  | | :code:`min`, :code:`max`, :code:`rem`                          |
+  +----------------------------------+------------------------------------------------------------------+
+  | Calculus Elements                | :code:`diff`                                                     |
+  +----------------------------------+------------------------------------------------------------------+
+  | Qualifier Elements               | :code:`bvar`, :code:`logbase`, :code:`degree` \*                 |
+  +----------------------------------+------------------------------------------------------------------+
+  | Trigonometric Operators          | | :code:`sin`, :code:`cos`, :code:`tan`, :code:`sec`,            |
+  |                                  |   :code:`csc`, :code:`cot`,                                      |
+  |                                  | | :code:`sinh`, :code:`cosh`, :code:`tanh`, :code:`sech`,        |
+  |                                  |   :code:`csch`, :code:`coth`,                                    |
+  |                                  | | :code:`arcsin`, :code:`arccos`, :code:`arctan`,                |
+  |                                  | | :code:`arcsec`, :code:`arccsc`, :code:`arccot`,                |
+  |                                  | | :code:`arcsinh`, :code:`arccosh`, :code:`arctanh`,             |
+  |                                  | | :code:`arcsech`, :code:`arccsch`, :code:`arccoth`              |
+  +----------------------------------+------------------------------------------------------------------+
+  | Mathematical and Logical         | | :code:`pi`, :code:`exponentiale`,                              |
+  | Constants                        |   :code:`notanumber`,                                            |
+  |                                  | | :code:`infinity`, :code:`true`, :code:`false`                  |
+  +----------------------------------+------------------------------------------------------------------+
 
 \* :code:`degree` MUST be a child of :code:`root` or :code:`diff`
 
@@ -452,7 +452,7 @@ A :code:`component_ref` element information item (referred to in this specificat
 
    1. Every :code:`component_ref` element MUST contain a :code:`component` attribute.
 
-      The value of the :code:`component` attribute MUST be a valid component reference, as defined in :numref:`%s. Component references<specC_component_reference>`.
+      The value of the :code:`component` attribute MUST be a valid component reference, as defined in :numref:`{number}. {name}<specC_component_reference>`.
 
       The value of the :code:`component` attribute MUST NOT be identical to the value of the :code:`component` attribute on any other :code:`component_ref` element in the :ref:`CellML infoset<specA_cellml_infoset>`.
 
@@ -474,7 +474,7 @@ A :code:`connection` element information item (referred to in this specification
 
    1. Each :code:`connection` element MUST contain a :code:`component_1` attribute.
 
-      The value of the :code:`component_1` attribute MUST be a valid component reference, as defined in :numref:`%s. Component references<specC_component_reference>`.
+      The value of the :code:`component_1` attribute MUST be a valid component reference, as defined in :numref:`{number}. {name}<specC_component_reference>`.
 
 .. marker_connection_1
 
@@ -482,7 +482,7 @@ A :code:`connection` element information item (referred to in this specification
 
    2. Each :code:`connection` element MUST contain a :code:`component_2` attribute.
 
-      The value of the :code:`component_2` attribute MUST be a valid component reference, as defined in :numref:`%s. Component references<specC_component_reference>`.
+      The value of the :code:`component_2` attribute MUST be a valid component reference, as defined in :numref:`{number}. {name}<specC_component_reference>`.
 
 .. marker_connection_2
 
@@ -516,7 +516,7 @@ A :code:`map_variables` element information item (referred to in this specificat
 
    1. Each :code:`map_variables` element MUST contain a :code:`variable_1` attribute.
 
-      The value of the :code:`variable_1` attribute MUST be a valid variable reference, as defined in :numref:`%s. Variable references<specC_variable_reference>`.
+      The value of the :code:`variable_1` attribute MUST be a valid variable reference, as defined in :numref:`{number}. {name}<specC_variable_reference>`.
 
 .. marker_map_variables_1
 
@@ -524,7 +524,7 @@ A :code:`map_variables` element information item (referred to in this specificat
 
    2. Each :code:`map_variables` element MUST contain a :code:`variable_2` attribute.
 
-      The value of the :code:`variable_2` attribute MUST be a valid variable reference, as defined in :numref:`%s. Variable references<specC_variable_reference>`.
+      The value of the :code:`variable_2` attribute MUST be a valid variable reference, as defined in :numref:`{number}. {name}<specC_variable_reference>`.
 
 .. marker_map_variables_2
 
