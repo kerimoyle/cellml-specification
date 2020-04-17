@@ -359,14 +359,14 @@ latex_elements = {
 
     # Additional stuff for the LaTeX preamble.
     'preamble': r'''
-% Preamble set from Sphinx configuration
-\usepackage[titles]{tocloft}
-\usepackage{textgreek}
-\usepackage{amssymb}
+        % Preamble set from Sphinx configuration
+        \usepackage[titles]{tocloft}
+        \usepackage{textgreek}
+        \usepackage{amssymb}
 
-% Stop cross-references from showing up in italics
-\protected\def\sphinxcrossref#1{#1}
-'''
+        % Stop cross-references from showing up in italics
+        \protected\def\sphinxcrossref#1{#1}
+    '''
 }
 
 # Grouping the document tree into LaTeX files. List of tuples
