@@ -300,7 +300,7 @@ Interpretation of ``initial_value`` attributes
 
 #. The conditions under which initial values hold are (by design) not defined in a :ref:`CellML model<specA_cellml_model>`.
 
-#. Where the :code:`initial_value` attribute value is a :ref:`real number string<specA_real_number>`, it SHALL be interpreted as a statement that the variable on which the attribute appears is equal to that real number value, when the initial values hold.
+#. Where the :code:`initial_value` attribute value is a :ref:`real number string<specA_real_number>`, it SHALL be interpreted as a statement that the variable on which the attribute appears is equal to that real number value when the initial values hold.
 
 #. Where the :code:`initial_value` attribute value is a :ref:`variable reference<specC_variable_reference>`, it SHALL be interpreted as a statement that the variable on which the attribute appears is equal to the referenced variable when the initial values hold.
 
