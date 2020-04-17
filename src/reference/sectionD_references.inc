@@ -10,7 +10,7 @@
 
 .. _ref_xml_namespace_1_1:
 
-3. Namespaces in XML 1.1 :xml_namespace_1_1_display:`/`
+3. Namespaces in XML 1.1 (Second Edition) :xml_namespace_1_1_display:`/`
 
 .. _ref_unicode:
 
