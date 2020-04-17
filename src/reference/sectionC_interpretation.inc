@@ -50,7 +50,7 @@ A "units reference" is an attribute value that specifies the physical units a va
 .. _table_built_in_units:
 
 .. table:: Built-in units
-  :widths: auto
+  :widths: 40 60
 
   +-----------------------+----------------------------------------------+
   | | **Name**            | | **Unit reduction tuple**                   |
