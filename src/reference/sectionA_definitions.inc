@@ -26,7 +26,7 @@ In this specification, the topmost CellML infoset in a hierarchy is referred to 
 .. _specA_namespace:
 
 **Namespace:**
-An XML namespace, as defined in :xml_namespace_1_1:`Namespaces in XML 1.1 <>` [:ref:`3<xml_namespace_1_1>`].
+An XML namespace, as defined in :xml_namespace_1_1:`Namespaces in XML 1.1 <>` [:ref:`3<ref_xml_namespace_1_1>`].
 
 .. _specA_cellml_namespace:
 

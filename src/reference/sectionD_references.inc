@@ -1,6 +1,7 @@
 .. _sectionD:
 
 .. _ref_xml_1_1:
+
 1. Extensible Markup Language (XML) 1.1 :xml_1_1_display:`/`
 
 .. _ref_mathml2:
