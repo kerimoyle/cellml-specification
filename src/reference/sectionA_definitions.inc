@@ -40,7 +40,7 @@ The namespace :cellml2namespace:`#`.
 .. _specA_mathml_namespace:
 
 **MathML namespace:**
-The namespace :mathml2namespace:`/`.
+The namespace :mathml2namespace:`MathML`.
 
 .. _specA_cellml_information_item:
 

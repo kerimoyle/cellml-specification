@@ -132,7 +132,7 @@ extlinks = {
     'mathml2_display': ('http://www.w3.org/TR/2003/REC-MathML2-20031021%s', None),
 
     'mathml2help': ('https://www.w3.org/TR/MathML2/chapter4.html%s', ''),
-    'mathml2namespace': ('http://www.w3.org/1998/Math/MathML%s', None),
+    'mathml2namespace': ('http://www.w3.org/1998/Math/%s', None),
     'namespace_help': ('https://www.w3schools.com/xml/xml_namespaces.asp%s', ''),
     'opencor': ('https://opencor.ws/%s', ''),
     'pmr': ('https://models.physiomeproject.org/welcome/%s', ''),
