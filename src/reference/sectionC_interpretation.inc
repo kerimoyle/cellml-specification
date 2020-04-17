@@ -422,7 +422,7 @@ Interpretation of ``map_variables`` elements
 
     #. When component *BB* is in the :ref:`encapsulated set<specC_encapsulation_set>` of component *AA*, the applicable interface for variable *B* SHALL be the public interface, and the applicable interface for variable *A* SHALL be the private interface.
 
-    It is noted, for the avoidance of doubt, that if components *AA* and *BB* are in each other's :ref:`hidden set<specC_hidden_set>`, there are no applicable interfaces for the variables *A* and *B*.
+    It is noted, for the avoidance of doubt, that if components *AA* and *BB* are in each other's :ref:`hidden set<specC_hidden_set>`, then there are no applicable interfaces for the variables *A* and *B*.
 
 8.  CellML models MUST only contain :code:`map_variables` elements where the applicable interfaces for both variables are available.
 
