@@ -56,9 +56,9 @@ An :code:`import` element information item (referred to in this specification as
 
    1. Every :code:`import` element MUST contain an attribute in the namespace :code:`http://www.w3.org/1999/xlink`, with a local name equal to :code:`href`.
 
-      The value of this attribute SHALL be a valid locator :code:`href`, as defined in :href_locator:`Section 5.4 of the XLink specification <>` [:ref:`7<ref_xlink>`].
+      The value of this attribute SHALL be a valid locator :code:`href`, as defined in :href_locator:`Section 5.4 of the XLink specification <>` [:ref:`6<ref_xlink>`].
 
-      The :code:`href` attribute SHALL be treated according to the :xlink:`XLink specification` [:ref:`7<ref_xlink>`], by applying the rules for simple-type elements.
+      The :code:`href` attribute SHALL be treated according to the :xlink:`XLink specification` [:ref:`6<ref_xlink>`], by applying the rules for simple-type elements.
 
       When describing an :code:`import` element or one of its children, the phrase "imported CellML infoset" SHALL refer to the :ref:`CellML infoset<specA_cellml_infoset>` obtained by parsing the document referenced by the :code:`href` attribute.
 
@@ -354,7 +354,7 @@ A :code:`math` element information item (referred to in this specification as a 
 
 .. container:: issue-math-mathml
 
-   1. A :code:`math` element MUST be the top-level element of a Content MathML tree, as described in :mathml2:`MathML 2.0 <>` [:ref:`2<ref_mathml2>`].
+   1. A :code:`math` element MUST be the top-level element of a Content MathML tree, as described in :mathml2:`MathML 2.0 <>` [:ref:`7<ref_mathml2>`].
 
 .. marker_math_1
 
