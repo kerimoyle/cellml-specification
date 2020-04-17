@@ -8,7 +8,7 @@
 
   .. container:: infospec
 
-    All this means is that mapped/connected :code:`variables` (i.e.: those specified by :code:`connection` and :code:`map_variables` items) must be in different :code:`components`.
+    All this means is that equivalent :code:`variables` (i.e.: those specified by :code:`connection` and :code:`map_variables` items) must be in different :code:`components`.
     Since the only reason you'd need to use these connections is in order to access a :code:`variable` in another :code:`component`, this restriction does kinda make sense!
 
     .. code-block:: xml
