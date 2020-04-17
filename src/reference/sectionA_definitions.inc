@@ -142,7 +142,7 @@ Non-specific information items
 
    #. A character information item.
 
-2. An element information item in the :ref:`CellML namespace<specA_cellml_namespace>` MUST NOT contain any character information items, except for whitespace characters.
+2. An element information item in the :ref:`CellML namespace<specA_cellml_namespace>` MUST NOT contain any character information items, except for :ref:`whitespace characters<specA_whitespace_character>`.
 
 .. marker_cellml_information_sets_3
 
@@ -153,10 +153,7 @@ Non-specific information items
    #. Changing (inserting, removing, and/or modifying) one or more namespace information items, and/or modifying the prefix of one or more information items, without changing the namespace that any information item is in.
 
    #. The following paragraph applies to character information items which are the direct child of an element information item in the :ref:`CellML namespace<specA_cellml_namespace>`, or in the :ref:`MathML namespace<specA_mathml_namespace>`:
-
-      Inserting or removing character information items that consist entirely of :ref:`whitespace characters<specA_whitespace_character>`,
-      changing the number of whitespace characters in such an information item,
-      or changing the number of whitespace characters at the beginning or end of any character information item.
+      inserting or removing character information items that consist entirely of :ref:`whitespace characters<specA_whitespace_character>`, changing the number of whitespace characters in such an information item, or changing the number of whitespace characters at the beginning or end of any character information item.
 
 .. marker_cellml_information_sets_4
 
