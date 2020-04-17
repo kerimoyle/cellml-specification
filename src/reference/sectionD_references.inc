@@ -26,4 +26,4 @@
 
 .. _ref_mathml2:
 
-7. Mathematical Markup Language (MathML) Version 2.0 :mathml2_display:`/`
+7. Mathematical Markup Language (MathML) Version 2.0 (Second Edition) :mathml2_display:`/`
