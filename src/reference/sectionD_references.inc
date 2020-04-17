@@ -14,7 +14,7 @@
 
 .. _ref_unicode:
 
-4. Unicode 13.0.0 :unicode13_display:`/`
+4. Unicode® 13.0.0 :unicode13_display:`/`
 
 .. _ref_xml_1_1:
 
