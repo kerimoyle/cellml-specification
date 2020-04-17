@@ -104,7 +104,7 @@ An :code:`import units` element information item (referred to in this specificat
 
       The value of the :code:`units_ref` attribute MUST be a :ref:`CellML identifier<specA_cellml_identifier>`.
 
-      The value of the :code:`units_ref` attribute MUST match the value of the :code:`name` attribute on a :code:`units` or :code:`import units` element in the imported :ref:`CellML infoset<specA_cellml_infoset>`.
+      The value of the :code:`units_ref` attribute MUST be identical to the value of the :code:`name` attribute on a :code:`units` or :code:`import units` element in the imported :ref:`CellML infoset<specA_cellml_infoset>`.
 
 .. marker_import_units_end
 .. marker_import_component_start
@@ -130,7 +130,7 @@ An :code:`import component` element information item (referred to in this specif
 
       The value of the :code:`component_ref` attribute MUST be a :ref:`CellML identifier<specA_cellml_identifier>`.
 
-      The value of the :code:`component_ref` attribute MUST match the value of the :code:`name` attribute on a :code:`component` or :code:`import component` element in the imported :ref:`CellML infoset<specA_cellml_infoset>`.
+      The value of the :code:`component_ref` attribute MUST be identical to the value of the :code:`name` attribute on a :code:`component` or :code:`import component` element in the imported :ref:`CellML infoset<specA_cellml_infoset>`.
 
 .. marker_import_component_end
 .. marker_units_start
