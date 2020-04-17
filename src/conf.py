@@ -117,7 +117,7 @@ extlinks = {
     'calvin_and_hobbes': ('https://www.gocomics.com/calvinandhobbes/%s', ''),
     'cellml1to2': ('https://github.com/hsorby/cellml1to2%s', ''),
     'cellml2namespace': ('http://www.cellml.org/cellml/2.0%s', None),
-    'cellml2spec_display': ('https://www.cellml.org/specifications/cellml_2.0%s', None),
+    'cellml2spec_display': ('https://cellml.org/specifications/cellml_2.0%s', None),
     'cellsolver': ('https://github.com/hsorby/cellsolver%s', ''),
     'cmake': ('https://cmake.org/%s', ''),
     'doxygen': ('http://www.doxygen.nl/%s', ''),
@@ -125,25 +125,28 @@ extlinks = {
     'git': ('https://git-scm.com/%s', ''),
     'github': ('https://github.com/%s', ''),
     'google_styleguide': ('https://google.github.io/styleguide/cppguide.html/%s', ''),
-    'href_locator': ('https://www.w3.org/TR/2001/REC-xlink-20010627/#link-locators/%s', ''),
     'libcellml': ('https://libcellml.org/%s', ''),
     'libcellml_repo': ('https://github.com/cellml/libcellml.git%s', ''),
     'libxml2': ('http://www.xmlsoft.org/%s', ''),
 
     # These should be identical: one for links, one for full URL display
-    'mathml2':         ('http://www.w3.org/TR/2003/REC-MathML2-20031021%s', ''),
-    'mathml2_display': ('http://www.w3.org/TR/2003/REC-MathML2-20031021%s', None),
+    'mathml2':         ('https://www.w3.org/TR/MathML2%s', ''),
+    'mathml2_display': ('https://www.w3.org/TR/MathML2%s', None),
 
     'mathml2help': ('https://www.w3.org/TR/MathML2/chapter4.html%s', ''),
-    'mathml2namespace': ('http://www.w3.org/1998/Math/MathML%s', None),
+
+    # This will get MathML added to the end so it becomes http://www.w3.org/1998/Math/MathML
+    # in the final display, to avoid trailing slashes.
+    'mathml2namespace': ('http://www.w3.org/1998/Math/%s', None),
+
     'namespace_help': ('https://www.w3schools.com/xml/xml_namespaces.asp%s', ''),
     'opencor': ('https://opencor.ws/%s', ''),
     'pmr': ('https://models.physiomeproject.org/welcome/%s', ''),
     'python': ('https://www.python.org/%s', ''),
 
     # These should be identical: one for links, one for full URL display
-    'rfc2119':         ('http://www.ietf.org/rfc/rfc2119.txt%s', ''),
-    'rfc2119_display': ('http://www.ietf.org/rfc/%s', None),
+    'rfc2119':         ('https://www.ietf.org/rfc/rfc2119.txt%s', ''),
+    'rfc2119_display': ('https://www.ietf.org/rfc/%s', None),
 
     'sphinx': ('http://sphinx-doc.org/%s', ''),
     'swig': ('http://www.swig.org/%s', ''),
@@ -154,21 +157,21 @@ extlinks = {
     'unicode13_display': ('https://www.unicode.org/versions/Unicode13.0.0%s', None),
 
     # These should be identical: one for links, one for full URL display
-    'xlink':         ('http://www.w3.org/TR/2001/REC-xlink-20010627%s', ''),
-    'xlink_display': ('http://www.w3.org/TR/2001/REC-xlink-20010627%s', None),
+    'xlink':         ('https://www.w3.org/TR/xlink11%s', ''),
+    'xlink_display': ('https://www.w3.org/TR/xlink11%s', None),
 
     'xml_help': ('https://www.w3.org/XML/%s', ''),
 
     # These should be identical: one for links, one for full URL display
-    'xml_1_1':         ('http://www.w3.org/TR/xml11%s', ''),
-    'xml_1_1_display': ('http://www.w3.org/TR/xml11%s', None),
+    'xml_1_1':         ('https://www.w3.org/TR/xml11%s', ''),
+    'xml_1_1_display': ('https://www.w3.org/TR/xml11%s', None),
 
     # These should be identical: one for links, one for full URL display
-    'xml_infoset': ('http://www.w3.org/TR/2004/REC-xml-infoset-20040204/%s', ''),
-    'xml_infoset_display': ('https://www.w3.org/TR/xml-infoset%s', None),
+    'xml_infoset':         ('https://www.w3.org/TR/2004/REC-xml-infoset-20040204/%s', ''),
+    'xml_infoset_display': ('https://www.w3.org/TR/2004/REC-xml-infoset-20040204%s', None),
 
-    'xml_namespace_1_1':         ('https://www.w3.org/TR/2006/REC-xml-names11-20060816%s', ''),
-    'xml_namespace_1_1_display': ('https://www.w3.org/TR/2006/REC-xml-names11-20060816%s', None),
+    'xml_namespace_1_1':         ('https://www.w3.org/TR/xml-names11%s', ''),
+    'xml_namespace_1_1_display': ('https://www.w3.org/TR/xml-names11%s', None),
 
 }
 
@@ -189,9 +192,9 @@ copyright = u'2019-{0}, CellML Editors and Contributors'.format(
 # built documents.
 #
 # The short X.Y version.
-version = '2.0.0-rc1'
+version = '2.0'
 # The full version, including alpha/beta/rc tags.
-release = '2.0.0-rc1'
+release = '2.0'
 if unofficial:
     version += '-unofficial'
     release += '-unofficial'
@@ -204,7 +207,7 @@ if unofficial:
 # non-false value, then it is used:
 #today = ''
 # Else, today_fmt is used as the format for a strftime call.
-#today_fmt = '%B %d, %Y'
+today_fmt = '%d %B %Y'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -297,7 +300,7 @@ html_css_files = ['css/cellml.css']
 
 # If not '', a 'Last updated on:' timestamp is inserted at every page bottom,
 # using the given strftime format.
-#html_last_updated_fmt = '%b %d, %Y'
+html_last_updated_fmt = '%d %B %Y'
 
 # If true, SmartyPants will be used to convert quotes and dashes to
 # typographically correct entities.
@@ -356,21 +359,21 @@ latex_elements = {
 
     # Additional stuff for the LaTeX preamble.
     'preamble': r'''
-% Preamble set from Sphinx configuration
-\usepackage[titles]{tocloft}
-\usepackage{textgreek}
-\usepackage{amssymb}
+        % Preamble set from Sphinx configuration
+        \usepackage[titles]{tocloft}
+        \usepackage{textgreek}
+        \usepackage{amssymb}
 
-% Stop cross-references from showing up in italics
-\protected\def\sphinxcrossref#1{#1}
-'''
+        % Stop cross-references from showing up in italics
+        \protected\def\sphinxcrossref#1{#1}
+    '''
 }
 
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    ('index', '{0}.tex'.format(tex_document_name()), u'CellML Specification',
+    ('index', '{0}.tex'.format(tex_document_name()), u'CellML Normative Specification',
      u'CellML 2.0 Editors and Contributors', 'manual'),
 ]
 

@@ -6,19 +6,19 @@
 
 .. _ref_xml_infoset:
 
-2. XML Information Set :xml_infoset_display:`/`
+2. XML Information Set (Second Edition) :xml_infoset_display:`/`
 
 .. _ref_xml_namespace_1_1:
 
-3. Namespaces in XML 1.1 :xml_namespace_1_1_display:`/`
+3. Namespaces in XML 1.1 (Second Edition) :xml_namespace_1_1_display:`/`
 
 .. _ref_unicode:
 
-4. Unicode 13.0.0 :unicode13_display:`/`
+4. Unicode® 13.0.0 :unicode13_display:`/`
 
 .. _ref_xml_1_1:
 
-5. Extensible Markup Language (XML) 1.1 :xml_1_1_display:`/`
+5. Extensible Markup Language (XML) 1.1 (Second Edition) :xml_1_1_display:`/`
 
 .. _ref_xlink:
 
@@ -26,4 +26,4 @@
 
 .. _ref_mathml2:
 
-7. Mathematical Markup Language (MathML) Version 2.0 :mathml2_display:`/`
+7. Mathematical Markup Language (MathML) Version 2.0 (Second Edition) :mathml2_display:`/`
