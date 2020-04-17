@@ -129,7 +129,7 @@ Specific information items
 
 .. marker_cellml_information_sets_2
 
-.. _specA_semantic_equivalence:
+
 
 Non-specific information items
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -145,6 +145,8 @@ Non-specific information items
 2. An element information item in the :ref:`CellML namespace<specA_cellml_namespace>` MUST NOT contain any character information items, except for :ref:`whitespace characters<specA_whitespace_character>`.
 
 .. marker_cellml_information_sets_3
+
+.. _specA_semantic_equivalence:
 
 3. Two :ref:`CellML infosets<specA_cellml_infoset>` SHALL be deemed semantically equivalent if one can be transformed into the other by making zero or more of the following changes:
 
