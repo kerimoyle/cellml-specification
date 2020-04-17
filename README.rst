@@ -2,7 +2,7 @@
 CellML Specification
 ====================
 
-This repository will be used by the CellML editors to develop the CellML specification (starting with version 1.2)
+This repository will be used by the CellML editors to develop the CellML specification (starting with the discontinued version 1.2)
 The content has been reworked to include an informal guide embedded within the normative specification text (in version 2.0).
 
 If things work correctly, changes in this repository will be reflected over at: https://cellml-specification.readthedocs.org/.
@@ -49,13 +49,23 @@ The built documentation will be available at::
 
   /absolute/path/to/cellml-specification/build/singlehtml/index.html
 
+Building PDFs
+^^^^^^^^^^^^^
+
 To build the PDF form of the documentation, simply execute the following command::
 
   make latexpdf
 
-**Note:** creating the PDF form of the documentation requires that some or all of a tool like Windows/`MikTeX <https://miktex.org/>`_, Windows/`TeXlive <https://www.tug.org/texlive/>`_, Linux/`TeXlive <https://www.tug.org/texlive/>`_, and macOS/`MacTeX <https://tug.org/mactex/>`_ is available to the Sphinx build tool.
-Also check that you have ``latexmk`` available as this is required for creating the PDF form of the documentation.
+If this fails, please have a look at the following:
+
+Creating the PDF form of the documentation requires that some or all of a tool like Windows/`MikTeX <https://miktex.org/>`_, Windows/`TeXlive <https://www.tug.org/texlive/>`_, Linux/`TeXlive <https://www.tug.org/texlive/>`_, and macOS/`MacTeX <https://tug.org/mactex/>`_ is available to the Sphinx build tool.
+
+In addition, you'll need the following LaTeX packages: ``babel-greek``, ``capt-of``, ``cbfonts``, ``courier``, ``fncychap``, ``fontspec``, ``framed``, ``greek-fontenc``, ``helvetic``, ``latexmk``, ``needspace``, ``tabulary``, ``textgreek``, ``titlesec``, ``tocloft``, ``varwidth``, and ``wrapfig``.
+
+In particular, check that you have ``latexmk`` available as this is required for creating the PDF form of the documentation.
 Information on ``latexmk`` can be found at https://ctan.org/pkg/latexmk/.
+
+You may also need to install the `"GNU FreeFont" fonts <https://www.gnu.org/software/freefont/>`_ ``FreeSans``, ``FreeSerif``, and ``FreeMono``.
 
 Documentation builds
 ^^^^^^^^^^^^^^^^^^^^
