@@ -13,7 +13,7 @@ Interpretation of ``import`` elements
 
 #. When determining the :ref:`equivalent variable set<specC_equivalent_variable_set>` of a variable in an imported component:
 
-   #. Connections defined in the importing infoset SHALL be handled as described in :numref:`{number}. {name}<specC_interpretation_of_map_variables>`.
+   #. Connections defined in the importing infoset SHALL be handled as described in :numref:`{number}: {name}<specC_interpretation_of_map_variables>`.
 
    #. Connections defined in the imported infoset SHALL be handled as follows:
 
@@ -39,7 +39,7 @@ A "units reference" is an attribute value that specifies the physical units a va
 
    #. If the units reference is identical to the value of the :code:`name` attribute of a :code:`units` element in the same infoset, then it SHALL refer to the units specified by that element.
 
-   #. If the units reference is identical to the value of the :code:`name` attribute of an :code:`import units` element in the same infoset, then it SHALL refer to units from the infoset defined by the :code:`import units` element (see :numref:`{number}. {name}`<specC_interpretation_of_imports>`).
+   #. If the units reference is identical to the value of the :code:`name` attribute of an :code:`import units` element in the same infoset, then it SHALL refer to units from the infoset defined by the :code:`import units` element (see :numref:`{number}: {name}`<specC_interpretation_of_imports>`).
       The units specified SHALL then be determined by treating the value of the :code:`units_ref` attribute on the :code:`import units` element as a units reference within the imported infoset.
       If necessary, this rule SHALL be applied recursively.
 
@@ -249,7 +249,7 @@ A "component reference" is an attribute value that specifies a CellML component.
 
    #. If the component reference is identical to the value of the :code:`name` attribute of a :code:`component` element in the same infoset, then it SHALL refer to the component specified by that element.
 
-   #. If the component reference is identical to the value of the :code:`name` attribute of an :code:`import component` element in the same infoset, then it SHALL refer to a component from the infoset defined by the :code:`import component` element (see :numref:`{number}. {name}<specC_interpretation_of_imports>`).
+   #. If the component reference is identical to the value of the :code:`name` attribute of an :code:`import component` element in the same infoset, then it SHALL refer to a component from the infoset defined by the :code:`import component` element (see :numref:`{number}: {name}<specC_interpretation_of_imports>`).
       The component specified SHALL then be determined by treating the value of the :code:`component_ref` attribute on the :code:`import component` element as a component reference within the imported infoset.
       If necessary, this rule SHALL be applied recursively.
 
@@ -303,7 +303,7 @@ Interpretation of ``initial_value`` attributes
 Effect of ``units`` on a ``variable``
 -------------------------------------
 
-#. The target of the :code:`units` attribute on a variable is referred to as the "variable units", and the corresponding unit reduction (see :numref:`{number}. {name}<specC_interpretation_of_units>`) is referred to as the "variable unit reduction".
+#. The target of the :code:`units` attribute on a variable is referred to as the "variable units", and the corresponding unit reduction (see :numref:`{number}: {name}<specC_interpretation_of_units>`) is referred to as the "variable unit reduction".
 
 .. marker_effect_of_units_on_variables_end
 .. marker_interpretation_of_mathematics_start
@@ -318,9 +318,9 @@ Interpretation of ``math`` elements
 
    #. All :code:`component` elements in the top-level :ref:`CellML infoset<specA_cellml_infoset>` for the :ref:`CellML model<specA_cellml_model>`;
 
-   #. All :code:`component` elements referenced by :code:`import component` elements (see :numref:`{number}. {name}<specC_interpretation_of_imports>`) in the top-level CellML infoset; and
+   #. All :code:`component` elements referenced by :code:`import component` elements (see :numref:`{number}: {name}<specC_interpretation_of_imports>`) in the top-level CellML infoset; and
 
-   #. All :code:`component` elements which are descendants in the encapsulation digraph (see :numref:`{number}. {name}<specC_interpretation_of_encapsulation>`) of a pertinent :code:`component` element.
+   #. All :code:`component` elements which are descendants in the encapsulation digraph (see :numref:`{number}: {name}<specC_interpretation_of_encapsulation>`) of a pertinent :code:`component` element.
 
 #. Every MathML element in the CellML model which appears as a direct child of a MathML :code:`math` element, which in turn appears as a child of a pertinent :code:`component` element, SHALL be treated, in terms of the semantics of the mathematical model, as a statement which holds true unconditionally.
 
@@ -418,11 +418,11 @@ Interpretation of ``map_variables`` elements
 
 .. marker_interpretation_of_map_variables_4
 
-9.  For each :code:`map_variables` element present in the CellML model, the variable unit reduction (see :numref:`{number}. {name}<specC_effect_of_units_on_variables>`) of variable *A* MUST have an identical set of tuples to the variable unit reduction of variable *B*.
+9.  For each :code:`map_variables` element present in the CellML model, the variable unit reduction (see :numref:`{number}: {name}<specC_effect_of_units_on_variables>`) of variable *A* MUST have an identical set of tuples to the variable unit reduction of variable *B*.
     Two sets of tuples SHALL be considered identical if all of the tuples from each set are present in the other, or if both sets are empty.
     Two tuples are considered identical if and only if both the unit name and exponent of each tuple are identical.
 
-10.  Tuples differing by a multiplying factor in their unit reduction MUST be taken into account when interpreting the numerical values of the variables (see :numref:`{number}. {name}<specC_interpretation_of_units>`).
+10.  Tuples differing by a multiplying factor in their unit reduction MUST be taken into account when interpreting the numerical values of the variables (see :numref:`{number}: {name}<specC_interpretation_of_units>`).
 
 .. marker_interpretation_of_map_variables_5
 .. _specC_equivalent_variable_set:
@@ -444,7 +444,7 @@ Interpretation of ``reset`` elements
 
 #. Each :code:`reset` element describes a change to be applied to the reset variable when specified conditions are met during the simulation of the model.
 
-#. All :code:`reset` elements SHALL be considered sequentially for the equivalent variable set (see :numref:`{number}. {name}<specC_interpretation_of_map_variables>`) to which the reset variable belongs.
+#. All :code:`reset` elements SHALL be considered sequentially for the equivalent variable set (see :numref:`{number}: {name}<specC_interpretation_of_map_variables>`) to which the reset variable belongs.
    The sequence SHALL be determined by the value of the reset element’s :code:`order` attribute, lowest (least positive / most negative) having priority.
 
 #. The condition under which a reset occurs SHALL be defined by the equality of evaluation of the test variable and the evaluation of the MathML expression encoded in the :code:`test_value`.
