@@ -78,6 +78,8 @@ An :code:`import` element information item (referred to in this specification as
 
    3. Any :ref:`CellML infoset<specA_cellml_infoset>` imported, directly or indirectly, by the imported CellML infoset MUST NOT be semantically equivalent to the importing CellML infoset (see :ref:`1.2.3.3 regarding semantic equivalence<specA_semantic_equivalence>`).
 
+.. hardcodedref above: 1.2.3.3
+
 .. marker_import_end
 .. marker_import_units_start
 
