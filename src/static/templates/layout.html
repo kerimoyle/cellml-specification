@@ -1,0 +1,28 @@
+{% if builder == "singlehtml" and not unofficial %}
+
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+  <style scoped>
+    .cellml-spec ol {list-style-type: decimal;}
+    .cellml-spec .headerlink {display: none; }
+  </style>
+  {% block body %}
+
+      {{ body }}
+
+  {% endblock %}
+</body>
+</html>
+{% else %}
+  {% extends "!layout.html" %}
+  {% if unofficial %}
+  {% block document %}
+  {{super()}}
+  <a href="https://cellml.org/specifications/cellml_2.0">
+    <img style="position: absolute; top: 0; right: 0; border: 0;" src="{{ pathto('_static/images/unofficial_version_dark_background_green.png', 1) }}" alt="unofficial version"/>
+  </a>
+  {% endblock %}
+  {% endif %}
+{% endif %}
