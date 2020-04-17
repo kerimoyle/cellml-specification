@@ -66,7 +66,7 @@ In addition, you'll need the following LaTeX packages: ``babel-greek``, ``capt-o
 In particular, check that you have ``latexmk`` available as this is required for creating the PDF form of the documentation.
 Information on ``latexmk`` can be found at https://ctan.org/pkg/latexmk/.
 
-You may also need to install the `"GNU FreeFont" fonts <https://www.gnu.org/software/freefont/>`_ `FreeSans`, `FreeSerif`, `FreeMono`.
+You may also need to install the `"GNU FreeFont" fonts <https://www.gnu.org/software/freefont/>`_ ``FreeSans``, ``FreeSerif``, and ``FreeMono``.
 
 Documentation builds
 ^^^^^^^^^^^^^^^^^^^^
