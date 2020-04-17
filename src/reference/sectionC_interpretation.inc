@@ -7,7 +7,7 @@
 Interpretation of ``import`` elements
 -------------------------------------
 
-#. Each :code:`import units` or :code:`import component` element present in a :ref:`CellML infoset<specA_cellml_infoset>` (the importing infoset) SHALL define a new and distinct instance of the CellML infoset (the imported infoset) that is specified by the parent :code:`import` element's :code:`href` attribute.
+#. Each :code:`import units` or :code:`import component` element present in a :ref:`CellML infoset<specA_cellml_infoset>` (the importing infoset) SHALL define a new and distinct instance of the CellML infoset (the imported infoset) that is specified by the parent :code:`import` element's :code:`href` attribute value.
 
 #. A :ref:`units reference<specC_units_reference>` occurring within an imported element, SHALL be resolved with respect to the imported infoset.
 
@@ -155,7 +155,7 @@ Interpretation of ``units`` elements
       If a :code:`unit` element has no :code:`multiplier` attribute, the multiplier term SHALL have value 1.0.
       Otherwise, the value of the :code:`multiplier` attribute MUST be a :ref:`real number string<specA_real_number>`, and the value of the multiplier term SHALL be the numerical value of that string.
 
-   4. The relationship between the product, :math:`P`, of numerical values given in each and every child :code:`unit` element's :code:`units` attribute, to a numerical value, :math:`x`, with units given by the encompassing :code:`units` element, SHALL be
+   4. The relationship between the product, :math:`P`, of numerical values given in each and every child :code:`unit` element's :code:`units` attribute value, to a numerical value, :math:`x`, with units given by the encompassing :code:`units` element, SHALL be
 
       .. math::
 
@@ -271,9 +271,9 @@ A "variable reference" is an attribute value that specifies a CellML variable.
 
    #. When present in a descendant of a :code:`component` element, it SHALL refer to the variable of the same name within that component.
 
-   #. When present in the :code:`variable_1` attribute of a :code:`map_variables` element, it SHALL refer to the variable of the same name in the component identified by the :code:`component_1` attribute in the same :code:`map_variables` element.
+   #. When present in the :code:`variable_1` attribute value of a :code:`map_variables` element, it SHALL refer to the variable of the same name in the component identified by the :code:`component_1` attribute value in the same :code:`map_variables` element.
 
-   #. When present in the :code:`variable_2` attribute of a :code:`map_variables` element, it SHALL refer to the variable of the same name in the component identified by the :code:`component_2` attribute in the same :code:`map_variables` element.
+   #. When present in the :code:`variable_2` attribute value of a :code:`map_variables` element, it SHALL refer to the variable of the same name in the component identified by the :code:`component_2` attribute value in the same :code:`map_variables` element.
 
 #. If no variable can be identified using the rules above, the attribute value SHALL NOT be a valid variable reference.
 
@@ -290,9 +290,9 @@ Interpretation of ``initial_value`` attributes
 
 #. The conditions under which initial values hold are (by design) not defined in a :ref:`CellML model<specA_cellml_model>`.
 
-#. Where the :code:`initial_value` attribute is a :ref:`real number string<specA_real_number>`, it SHALL be interpreted as a statement that the variable on which the attribute appears is equal to that real number value, when the initial values hold.
+#. Where the :code:`initial_value` attribute value is a :ref:`real number string<specA_real_number>`, it SHALL be interpreted as a statement that the variable on which the attribute appears is equal to that real number value, when the initial values hold.
 
-#. Where the :code:`initial_value` attribute is a :ref:`variable reference<specC_variable_reference>`, it SHALL be interpreted as a statement that the variable on which the attribute appears is equal to the referenced variable when the initial values hold.
+#. Where the :code:`initial_value` attribute value is a :ref:`variable reference<specC_variable_reference>`, it SHALL be interpreted as a statement that the variable on which the attribute appears is equal to the referenced variable when the initial values hold.
 
 .. marker_interpretation_of_initial_values_end
 .. marker_effect_of_units_on_variables_start
@@ -303,7 +303,7 @@ Interpretation of ``initial_value`` attributes
 Effect of ``units`` on a ``variable``
 -------------------------------------
 
-#. The target of the :code:`units` attribute on a variable is referred to as the "variable units", and the corresponding unit reduction (see :numref:`{number}: {name}<specC_interpretation_of_units>`) is referred to as the "variable unit reduction".
+#. The target of the :code:`units` attribute value on a variable is referred to as the "variable units", and the corresponding unit reduction (see :numref:`{number}: {name}<specC_interpretation_of_units>`) is referred to as the "variable unit reduction".
 
 .. marker_effect_of_units_on_variables_end
 .. marker_interpretation_of_mathematics_start
@@ -374,9 +374,9 @@ Interpretation of ``map_variables`` elements
 
 2.  For each :code:`map_variables` element present in the CellML model, we define variables *A* and *B* for use in the rules in this section as follows:
 
-    #. Variable *A* SHALL be the variable referenced by the encompassing :code:`connection` element’s :code:`component_1` and this :code:`map_variables` element’s :code:`variable_1` attribute; and
+    #. Variable *A* SHALL be the variable referenced by the encompassing :code:`connection` element’s :code:`component_1` and this :code:`map_variables` element’s :code:`variable_1` attribute value; and
 
-    #. Variable *B* SHALL be the variable referenced by the encompassing :code:`connection` element’s :code:`component_2` and this :code:`map_variables` element’s :code:`variable_2` attribute.
+    #. Variable *B* SHALL be the variable referenced by the encompassing :code:`connection` element’s :code:`component_2` and this :code:`map_variables` element’s :code:`variable_2` attribute value.
 
 3.  For every :code:`map_variables` element present in the CellML model, there SHALL be an arc in the variable equivalence network.
 
@@ -392,7 +392,7 @@ Interpretation of ``map_variables`` elements
 
 .. marker_interpretation_of_map_variables_3
 
-6.  For a given variable, the "available interfaces" SHALL be determined by the :code:`interface` attribute on the corresponding :code:`variable` element as follows:
+6.  For a given variable, the "available interfaces" SHALL be determined by the :code:`interface` attribute value on the corresponding :code:`variable` element as follows:
 
     #. A value of :code:`public` specifies that the variable has a public interface;
 
@@ -440,7 +440,7 @@ Interpretation of ``map_variables`` elements
 Interpretation of ``reset`` elements
 ------------------------------------
 
-#. For the purposes of this section, we define the "reset variable" to be the variable referenced by a :code:`reset` element's :code:`variable` attribute, and the "test variable" to be the variable referenced by its :code:`test_variable` attribute.
+#. For the purposes of this section, we define the "reset variable" to be the variable referenced by a :code:`reset` element's :code:`variable` attribute value, and the "test variable" to be the variable referenced by its :code:`test_variable` attribute value.
 
 #. Each :code:`reset` element describes a change to be applied to the reset variable when specified conditions are met during the simulation of the model.
 
