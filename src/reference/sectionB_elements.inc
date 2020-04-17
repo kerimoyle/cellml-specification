@@ -76,7 +76,7 @@ An :code:`import` element information item (referred to in this specification as
 
 .. container:: issue-import-circular
 
-   3. Any :ref:`CellML infoset<specA_cellml_infoset>` imported, directly or indirectly, by the imported CellML infoset MUST NOT be semantically equivalent to the importing CellML infoset (see :ref:`1.2.3.3 regarding semantic equivalence<specA_semantic_equivalence>`).
+   3. Any :ref:`CellML infoset<specA_cellml_infoset>` imported, directly or indirectly, by the imported CellML infoset MUST NOT be semantically equivalent to the importing CellML infoset (see :ref:`1.2.3.3<specA_semantic_equivalence>` regarding semantic equivalence).
 
 .. hardcodedref above: 1.2.3.3
 
