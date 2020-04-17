@@ -7,7 +7,7 @@
 Terminology
 -----------
 
-The keywords "MUST", "MUST NOT", "SHALL", "SHALL NOT", and "MAY" in this document are to be interpreted as described in :rfc2119:`RFC 2119 <>`[Ref_4]_.
+The keywords "MUST", "MUST NOT", "SHALL", "SHALL NOT", and "MAY" in this document are to be interpreted as described in :rfc2119:`RFC 2119 <>` [Ref_4]_.
 
 The key phrase "information item", as well as any specific type of information item such as an "element information item", are to be interpreted as described in :xml_infoset:`XML Information Set <>` [Ref_6]_.
 
