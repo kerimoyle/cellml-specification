@@ -306,7 +306,7 @@ A :code:`reset` element information item (referred to in this specification as a
 
 .. container:: issue-reset-child
 
-   2. A :code:`reset` element MUST contain exactly two element children, which MUST be one each of the following types:
+   2. A :code:`reset` element MUST contain exactly two element children, which MUST be one of each of the following types:
 
       .. container:: issue-reset-reset-value
 
