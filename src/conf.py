@@ -130,8 +130,8 @@ extlinks = {
     'libxml2': ('http://www.xmlsoft.org/%s', ''),
 
     # These should be identical: one for links, one for full URL display
-    'mathml2':         ('https://www.w3.org/TR/2003/REC-MathML2-20031021%s', ''),
-    'mathml2_display': ('https://www.w3.org/TR/2003/REC-MathML2-20031021%s', None),
+    'mathml2':         ('https://www.w3.org/TR/MathML2%s', ''),
+    'mathml2_display': ('https://www.w3.org/TR/MathML2%s', None),
 
     'mathml2help': ('https://www.w3.org/TR/MathML2/chapter4.html%s', ''),
 
@@ -157,8 +157,8 @@ extlinks = {
     'unicode13_display': ('https://www.unicode.org/versions/Unicode13.0.0%s', None),
 
     # These should be identical: one for links, one for full URL display
-    'xlink':         ('https://www.w3.org/TR/2010/REC-xlink11-20100506%s', ''),
-    'xlink_display': ('https://www.w3.org/TR/2010/REC-xlink11-20100506%s', None),
+    'xlink':         ('https://www.w3.org/TR/xlink11%s', ''),
+    'xlink_display': ('https://www.w3.org/TR/xlink11%s', None),
 
     'xml_help': ('https://www.w3.org/XML/%s', ''),
 
@@ -168,10 +168,10 @@ extlinks = {
 
     # These should be identical: one for links, one for full URL display
     'xml_infoset':         ('https://www.w3.org/TR/2004/REC-xml-infoset-20040204/%s', ''),
-    'xml_infoset_display': ('https://www.w3.org/TR/xml-infoset%s', None),
+    'xml_infoset_display': ('https://www.w3.org/TR/2004/REC-xml-infoset-20040204%s', None),
 
-    'xml_namespace_1_1':         ('https://www.w3.org/TR/2006/REC-xml-names11-20060816%s', ''),
-    'xml_namespace_1_1_display': ('https://www.w3.org/TR/2006/REC-xml-names11-20060816%s', None),
+    'xml_namespace_1_1':         ('https://www.w3.org/TR/xml-names11%s', ''),
+    'xml_namespace_1_1_display': ('https://www.w3.org/TR/xml-names11%s', None),
 
 }
 
