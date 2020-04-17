@@ -157,8 +157,8 @@ extlinks = {
     'unicode13_display': ('https://www.unicode.org/versions/Unicode13.0.0%s', None),
 
     # These should be identical: one for links, one for full URL display
-    'xlink':         ('https://www.w3.org/TR/2001/REC-xlink-20010627%s', ''),
-    'xlink_display': ('https://www.w3.org/TR/2001/REC-xlink-20010627%s', None),
+    'xlink':         ('https://www.w3.org/TR/2010/REC-xlink11-20100506%s', ''),
+    'xlink_display': ('https://www.w3.org/TR/2010/REC-xlink11-20100506%s', None),
 
     'xml_help': ('https://www.w3.org/XML/%s', ''),
 
