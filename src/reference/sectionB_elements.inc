@@ -56,7 +56,7 @@ An :code:`import` element information item (referred to in this specification as
 
    1. Every :code:`import` element MUST contain an attribute in the namespace :code:`http://www.w3.org/1999/xlink`, with a local name equal to :code:`href`.
 
-      The value of this attribute SHALL be a valid locator :code:`href`, as defined in :href_locator:`Section 5.4 of the XLink specification <>` [:ref:`6<ref_xlink>`].
+      The value of this attribute SHALL be a valid locator :code:`href`, as defined in :xlink:`Section 5.4 <#link-locators>` of the :xlink:`XLink specification <>` [:ref:`6<ref_xlink>`].
 
       The :code:`href` attribute SHALL be treated according to the :xlink:`XLink specification <>` [:ref:`6<ref_xlink>`], by applying the rules for simple-type elements.
 
@@ -76,7 +76,7 @@ An :code:`import` element information item (referred to in this specification as
 
 .. container:: issue-import-circular
 
-   3. Any :ref:`CellML infoset<specA_cellml_infoset>` imported, directly or indirectly, by the imported CellML infoset MUST NOT be semantically equivalent to the importing CellML infoset (see :ref:`1.2.3.3 regarding semantic equivalence<specA_semantic_equivalence>`).
+   3. Any :ref:`CellML infoset<specA_cellml_infoset>` imported, directly or indirectly, by the imported CellML infoset MUST NOT be semantically equivalent to the importing CellML infoset (see :ref:`1.2.3.3<specA_semantic_equivalence>` regarding semantic equivalence).
 
 .. hardcodedref above: 1.2.3.3
 
@@ -233,7 +233,7 @@ A :code:`component` element information item (referred to in this specification 
 
    2. A :code:`component` element MAY contain one or more specific element children, each of which MUST be of one of the following types:
 
-      #. A :code:`math` element; 
+      #. A :code:`math` element;
 
       #. A :code:`reset` element; or
 
