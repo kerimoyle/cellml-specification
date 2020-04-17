@@ -122,7 +122,7 @@ extlinks = {
     'git': ('https://git-scm.com/%s', ''),
     'github': ('https://github.com/%s', ''),
     'google_styleguide': ('https://google.github.io/styleguide/cppguide.html/%s', ''),
-    'href_locator': ('https://www.w3.org/TR/2001/REC-xlink-20010627/#link-locators%s', ''),
+    'xlink': ('https://www.w3.org/TR/2001/REC-xlink-20010627/%s', ''),
     'libcellml': ('https://libcellml.org/%s', ''),
     'libcellml_repo': ('https://github.com/cellml/libcellml.git%s', ''),
     'libxml2': ('http://www.xmlsoft.org/%s', ''),
@@ -136,7 +136,7 @@ extlinks = {
     # This will get MathML added to the end so it becomes http://www.w3.org/1998/Math/MathML
     # in the final display, to avoid trailing slashes.
     'mathml2namespace': ('http://www.w3.org/1998/Math/%s', None),
-    
+
     'namespace_help': ('https://www.w3schools.com/xml/xml_namespaces.asp%s', ''),
     'opencor': ('https://opencor.ws/%s', ''),
     'pmr': ('https://models.physiomeproject.org/welcome/%s', ''),
