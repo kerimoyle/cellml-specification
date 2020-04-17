@@ -119,7 +119,7 @@ Specific information items
 
    #. A document type declaration information item;
 
-   #. An unparsed entity information item;
+   #. An unparsed entity information item; or
 
    #. A notational information item.
 
@@ -138,7 +138,7 @@ Non-specific information items
 
    #. A comment information item;
 
-   #. A namespace information item;
+   #. A namespace information item; or
 
    #. A character information item.
 
@@ -165,7 +165,7 @@ Use of namespaces
 
 #. Element information items in a :ref:`CellML infoset<specA_cellml_infoset>` MUST belong to one of the following namespaces, unless explicitly indicated otherwise:
 
-   #. The :ref:`CellML namespace<specA_cellml_namespace>`;
+   #. The :ref:`CellML namespace<specA_cellml_namespace>`; or
 
    #. The :ref:`MathML namespace<specA_mathml_namespace>`.
 
@@ -175,7 +175,7 @@ XML ID Attributes
 ~~~~~~~~~~~~~~~~~
 
 #. Any element information item in the :ref:`CellML namespace<specA_cellml_namespace>` MAY contain an attribute with local name :code:`id.`
-   This attribute SHALL be treated as having attribute type ID, as defined in :xml_1_1:`section 3.3.1 <#sec-attribute-types>` of :xml_1_1:`XML 1.1 <>` [:ref:`5<ref_xml_1_1>`].
+   This attribute SHALL be treated as having attribute type ID, as defined in :xml_1_1:`Section 3.3.1 <#sec-attribute-types>` of :xml_1_1:`XML 1.1 <>` [:ref:`5<ref_xml_1_1>`].
 
 .. marker_cellml_information_sets_end
 .. marker_data_formats_start
@@ -211,7 +211,7 @@ The following data representation formats are defined for use in this specificat
 
    .. container:: issue-data-repr-int-sign
 
-      2. MAY begin with a single Basic Latin plus character :unicode:`002B` or a Basic Latin hyphen-minus character :unicode:`002D` as the sign indicator.
+      2. MAY begin with a single Basic Latin plus character :unicode:`002B` or a single Basic Latin hyphen-minus character :unicode:`002D` as the sign indicator.
 
    .. container:: issue-data-repr-int-euro-num
 
@@ -229,7 +229,7 @@ The following data representation formats are defined for use in this specificat
 
    .. container:: issue-data-repr-basic-real-sign
 
-      2. MAY begin with a single Basic Latin plus character :unicode:`002B` or a Basic Latin hyphen-minus character :unicode:`002D` as the sign indicator.
+      2. MAY begin with a single Basic Latin plus character :unicode:`002B` or a single Basic Latin hyphen-minus character :unicode:`002D` as the sign indicator.
 
    .. container:: issue-data-repr-basic-real-decimal
 
