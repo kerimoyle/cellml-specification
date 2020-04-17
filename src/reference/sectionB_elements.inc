@@ -31,7 +31,7 @@ The ``model`` element
 
       #. An :code:`encapsulation` element;
 
-      #. An :code:`import` element;
+      #. An :code:`import` element; or
 
       #. A :code:`units` element.
 
