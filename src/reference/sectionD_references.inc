@@ -6,7 +6,7 @@
 
 .. _ref_xml_infoset:
 
-2. XML Information Set :xml_infoset_display:`/`
+2. XML Information Set (Second Edition) :xml_infoset_display:`/`
 
 .. _ref_xml_namespace_1_1:
 
