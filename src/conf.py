@@ -286,7 +286,7 @@ html_css_files = ['css/cellml.css']
 
 # If not '', a 'Last updated on:' timestamp is inserted at every page bottom,
 # using the given strftime format.
-#html_last_updated_fmt = '%b %d, %Y'
+html_last_updated_fmt = '%d %b %Y'
 
 # If true, SmartyPants will be used to convert quotes and dashes to
 # typographically correct entities.
@@ -359,7 +359,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    ('index', '{0}.tex'.format(tex_document_name()), u'CellML Specification',
+    ('index', '{0}.tex'.format(tex_document_name()), u'CellML Normative Specification',
      u'CellML 2.0 Editors and Contributors', 'manual'),
 ]
 
