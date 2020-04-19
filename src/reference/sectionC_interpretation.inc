@@ -13,11 +13,11 @@ Interpretation of ``import`` elements
 
 #. When determining the :ref:`equivalent variable set<specC_equivalent_variable_set>` of a variable in an imported component:
 
-   #. Connections defined in the importing infoset SHALL be handled as described in :numref:`{number}. {name}<specC_interpretation_of_map_variables>`.
+   #. Connections defined in the importing infoset SHALL be handled as described in :numref:`{number} {name}<specC_interpretation_of_map_variables>`.
 
    #. Connections defined in the imported infoset SHALL be handled as follows:
 
-      #. Connections to components in the :ref:`encapsulated set<specC_encapsulation_set>` of the imported component SHALL be maintained, and this rule SHALL be applied recursively;
+      #. Connections to components in the :ref:`encapsulated set<specC_encapsulation_set>` of the imported component SHALL be maintained, and this rule SHALL be applied recursively; and
 
       #. Connections to components in the :ref:`sibling set<specC_sibling_set>`, or to the :ref:`encapsulation parent<specC_encapsulation_parent>` of the imported component SHALL NOT be maintained.
 
@@ -39,7 +39,7 @@ A "units reference" is an attribute value that specifies the physical units a va
 
    #. If the units reference is identical to the value of the :code:`name` attribute of a :code:`units` element in the same infoset, then it SHALL refer to the units specified by that element.
 
-   #. If the units reference is identical to the value of the :code:`name` attribute of an :code:`import units` element in the same infoset, then it SHALL refer to units from the infoset defined by the :code:`import units` element (see :numref:`{number}. {name}`<specC_interpretation_of_imports>`).
+   #. If the units reference is identical to the value of the :code:`name` attribute of an :code:`import units` element in the same infoset, then it SHALL refer to units from the infoset defined by the :code:`import units` element (see :numref:`{number} {name}`<specC_interpretation_of_imports>`).
       The units specified SHALL then be determined by treating the value of the :code:`units_ref` attribute on the :code:`import units` element as a units reference within the imported infoset.
       If necessary, this rule SHALL be applied recursively.
 
@@ -50,7 +50,7 @@ A "units reference" is an attribute value that specifies the physical units a va
 .. _table_built_in_units:
 
 .. table:: Built-in units
-  :widths: auto
+  :widths: 30 70
 
   +-----------------------+----------------------------------------------+
   | | **Name**            | | **Unit reduction tuple**                   |
@@ -172,7 +172,7 @@ Interpretation of ``units`` elements
 
    1. The units defined in a model that are not defined in terms of other units (i.e. the set of :code:`units` elements in the :ref:`CellML model<specA_cellml_model>` which have no :code:`unit` child elements).
 
-   2. The built-in irreducible units (those built-in units with "-" in the "Unit Reduction" column of :numref:`Table {number}: {name}<table_built_in_units>`) referenced by variables or other units in the model.
+   2. The built-in irreducible units (those built-in units with "-" in the "Unit reduction tuple" column of :numref:`Table {number}: {name}<table_built_in_units>`) referenced by variables or other units in the model.
 
 .. marker_interpretation_of_units_2
 
@@ -186,14 +186,24 @@ Interpretation of ``units`` elements
 
       Tuples for each :code:`unit` child element SHALL be determined as follows:
 
+      .. _3_3_3_2_1:
+
       1. If the :ref:`units reference<specC_units_reference>` of the :code:`unit` child element is to a single unit which is an irreducible unit, then the set of tuples SHALL have a single member, which SHALL consist of the name of the irreducible unit being referenced and the exponent 1.0.
 
+      .. _3_3_3_2_2:
+
       2. If the units reference of the :code:`unit` child element is to built-in units other than an :ref:`irreducible unit<specC_irreducible_units>`, then the tuples SHALL be derived directly from :numref:`Table {number}: {name}<table_built_in_units>`.
-         Specifically, the set of tuples SHALL consist of the tuples given in the "Unit reduction tuple set" column of the row for which the value in the "Name" column matches the name of the units reference.
+         Specifically, the set of tuples SHALL consist of the tuples given in the "Unit reduction tuple" column of the row for which the value in the "Name" column is identical to the name of the units reference.
+
+      .. _3_3_3_2_3:
 
       3. If the units reference of the :code:`unit` child element is to a unit which is neither built-in, nor an irreducible unit, then the set of tuples SHALL be defined recursively as the set of tuples for the :code:`units` element so referenced.
 
-      4. The exponents of each tuple in the set for the current :code:`unit` element, as derived by following rules :hardcodedref:`3.3.3.2.1, 3.3.3.2.2 or 3.3.3.2.3` above, SHALL be multiplied by the exponent term of the current, referencing, :code:`unit` element.
+      4. The exponents of each tuple in the set for the current :code:`unit` element, as derived by following rules :ref:`3.3.3.2.1<3_3_3_2_1>`, :ref:`3.3.3.2.2<3_3_3_2_2>` or :ref:`3.3.3.2.3<3_3_3_2_3>` above, SHALL be multiplied by the exponent term of the current, referencing, :code:`unit` element.
+
+      .. hardcodedref above: 3.3.3.2.1
+      .. hardcodedref above: 3.3.3.2.2
+      .. hardcodedref above: 3.3.3.2.3
 
    3. Tuples which have the unit name of "dimensionless" SHALL be removed from the set of tuples.
       Note that this can result in the set of tuples being empty.
@@ -249,7 +259,7 @@ A "component reference" is an attribute value that specifies a CellML component.
 
    #. If the component reference is identical to the value of the :code:`name` attribute of a :code:`component` element in the same infoset, then it SHALL refer to the component specified by that element.
 
-   #. If the component reference is identical to the value of the :code:`name` attribute of an :code:`import component` element in the same infoset, then it SHALL refer to a component from the infoset defined by the :code:`import component` element (see :numref:`{number}. {name}<specC_interpretation_of_imports>`).
+   #. If the component reference is identical to the value of the :code:`name` attribute of an :code:`import component` element in the same infoset, then it SHALL refer to a component from the infoset defined by the :code:`import component` element (see :numref:`{number} {name}<specC_interpretation_of_imports>`).
       The component specified SHALL then be determined by treating the value of the :code:`component_ref` attribute on the :code:`import component` element as a component reference within the imported infoset.
       If necessary, this rule SHALL be applied recursively.
 
@@ -290,7 +300,7 @@ Interpretation of ``initial_value`` attributes
 
 #. The conditions under which initial values hold are (by design) not defined in a :ref:`CellML model<specA_cellml_model>`.
 
-#. Where the :code:`initial_value` attribute is a :ref:`real number string<specA_real_number>`, it SHALL be interpreted as a statement that the variable on which the attribute appears is equal to that real number value, when the initial values hold.
+#. Where the :code:`initial_value` attribute is a :ref:`real number string<specA_real_number>`, it SHALL be interpreted as a statement that the variable on which the attribute appears is equal to that real number value when the initial values hold.
 
 #. Where the :code:`initial_value` attribute is a :ref:`variable reference<specC_variable_reference>`, it SHALL be interpreted as a statement that the variable on which the attribute appears is equal to the referenced variable when the initial values hold.
 
@@ -303,7 +313,7 @@ Interpretation of ``initial_value`` attributes
 Effect of ``units`` on a ``variable``
 -------------------------------------
 
-#. The target of the :code:`units` attribute on a variable is referred to as the "variable units", and the corresponding unit reduction (see :numref:`{number}. {name}<specC_interpretation_of_units>`) is referred to as the "variable unit reduction".
+#. The target of the :code:`units` attribute on a variable is referred to as the "variable units", and the corresponding unit reduction (see :numref:`{number} {name}<specC_interpretation_of_units>`) is referred to as the "variable unit reduction".
 
 .. marker_effect_of_units_on_variables_end
 .. marker_interpretation_of_mathematics_start
@@ -318,9 +328,9 @@ Interpretation of ``math`` elements
 
    #. All :code:`component` elements in the top-level :ref:`CellML infoset<specA_cellml_infoset>` for the :ref:`CellML model<specA_cellml_model>`;
 
-   #. All :code:`component` elements referenced by :code:`import component` elements (see :numref:`{number}. {name}<specC_interpretation_of_imports>`) in the top-level CellML infoset; and
+   #. All :code:`component` elements referenced by :code:`import component` elements (see :numref:`{number} {name}<specC_interpretation_of_imports>`) in the top-level CellML infoset; and
 
-   #. All :code:`component` elements which are descendants in the encapsulation digraph (see :numref:`{number}. {name}<specC_interpretation_of_encapsulation>`) of a pertinent :code:`component` element.
+   #. All :code:`component` elements which are descendants in the encapsulation digraph (see :numref:`{number} {name}<specC_interpretation_of_encapsulation>`) of a pertinent :code:`component` element.
 
 #. Every MathML element in the CellML model which appears as a direct child of a MathML :code:`math` element, which in turn appears as a child of a pertinent :code:`component` element, SHALL be treated, in terms of the semantics of the mathematical model, as a statement which holds true unconditionally.
 
@@ -342,20 +352,20 @@ Interpretation of ``encapsulation`` elements
 .. marker_interpretation_of_encapsulation_1
 .. _specC_encapsulation_set:
 
-3. The encapsulated set for a component *A* SHALL be the set of all components *B* such that there exists an arc in the encapsulation digraph from the node corresponding to *A* to the node corresponding to *B*.
+3. The "encapsulated set" for a component *A* SHALL be the set of all components *B* such that there exists an arc in the encapsulation digraph from the node corresponding to *A* to the node corresponding to *B*.
 
 .. _specC_encapsulation_parent:
 
-4. The encapsulation parent for a component *A* SHALL be the component corresponding to the node which is the parent node in the encapsulation digraph of the node corresponding to *A*.
+4. The "encapsulation parent" for a component *A* SHALL be the component corresponding to the node which is the parent node in the encapsulation digraph of the node corresponding to *A*.
    A component SHALL NOT appear as child of more than one encapsulation parent.
 
 .. _specC_sibling_set:
 
-5. The sibling set for a component *A* SHALL be the set of all components which have the same encapsulation parent as *A*, or in the case that *A* has no encapsulation parent, SHALL be the set of all components which do not have an encapsulation parent.
+5. The "sibling set" for a component *A* SHALL be the set of all components which have the same encapsulation parent as *A*, or in the case that *A* has no encapsulation parent, SHALL be the set of all components which do not have an encapsulation parent.
 
 .. _specC_hidden_set:
 
-6. The hidden set for a component *A* SHALL be the set of all components *B* where component *B* is not in the encapsulated set for component *A*, and component *B* is not the encapsulation parent of component *A*, and component *B* is not in the sibling set for component *A*.
+6. The "hidden set" for a component *A* SHALL be the set of all components *B* where component *B* is not in the encapsulated set for component *A*, and component *B* is not the encapsulation parent of component *A*, and component *B* is not in the sibling set for component *A*.
 
 .. marker_interpretation_of_encapsulation_2
 
@@ -374,13 +384,13 @@ Interpretation of ``map_variables`` elements
 
 2.  For each :code:`map_variables` element present in the CellML model, we define variables *A* and *B* for use in the rules in this section as follows:
 
-    #. Variable *A* SHALL be the variable referenced by the encompassing :code:`connection` element’s :code:`component_1` and this :code:`map_variables` element’s :code:`variable_1` attribute.
+    #. Variable *A* SHALL be the variable referenced by the encompassing :code:`connection` element’s :code:`component_1` and this :code:`map_variables` element’s :code:`variable_1` attribute; and
 
     #. Variable *B* SHALL be the variable referenced by the encompassing :code:`connection` element’s :code:`component_2` and this :code:`map_variables` element’s :code:`variable_2` attribute.
 
 3.  For every :code:`map_variables` element present in the CellML model, there SHALL be an arc in the variable equivalence network.
 
-    #. One endpoint of the arc in the variable equivalence network SHALL be the node corresponding to variable *A*.
+    #. One endpoint of the arc in the variable equivalence network SHALL be the node corresponding to variable *A*; and
 
     #. One endpoint of the arc in the variable equivalence network SHALL be the node corresponding to variable *B*.
 
@@ -392,15 +402,15 @@ Interpretation of ``map_variables`` elements
 
 .. marker_interpretation_of_map_variables_3
 
-6.  For a given variable, the "available interfaces" SHALL be determined by the :code:`interface` attribute on the corresponding :code:`variable` element as follows:
+6.  For a given variable, the "available interfaces" SHALL be determined by the value of the :code:`interface` attribute on the corresponding :code:`variable` element as follows:
 
-    #. A value of :code:`public` specifies that the variable has a public interface.
+    #. A value of :code:`public` specifies that the variable has a public interface;
 
-    #. A value of :code:`private` specifies that the variable has a private interface.
+    #. A value of :code:`private` specifies that the variable has a private interface;
 
-    #. A value of :code:`public_and_private` specifies that the variable has both a public and a private interface.
+    #. A value of :code:`public_and_private` specifies that the variable has both a public and a private interface;
 
-    #. A value of :code:`none` specifies that the variable has no interface.
+    #. A value of :code:`none` specifies that the variable has no interface; or
 
     #. If the :code:`interface` attribute is absent, then the variable has no interface.
 
@@ -408,9 +418,9 @@ Interpretation of ``map_variables`` elements
 
     #. When component *AA* is in the :ref:`sibling set<specC_sibling_set>` of component *BB* (and vice versa), the applicable interface for both variables *A* and *B* SHALL be the public interface.
 
-    #. When component *AA* is in the :ref:`encapsulated set<specC_encapsulation_set>` of component *BB* the applicable interface for variable *A* SHALL be the public interface, and the applicable interface for variable *B* SHALL be the private interface.
+    #. When component *AA* is in the :ref:`encapsulated set<specC_encapsulation_set>` of component *BB*, the applicable interface for variable *A* SHALL be the public interface, and the applicable interface for variable *B* SHALL be the private interface.
 
-    #. When component *BB* is in the :ref:`encapsulated set<specC_encapsulation_set>` of component *AA* the applicable interface for variable *B* SHALL be the public interface, and the applicable interface for variable *A* SHALL be the private interface.
+    #. When component *BB* is in the :ref:`encapsulated set<specC_encapsulation_set>` of component *AA*, the applicable interface for variable *B* SHALL be the public interface, and the applicable interface for variable *A* SHALL be the private interface.
 
     It is noted, for the avoidance of doubt, that if components *AA* and *BB* are in each other's :ref:`hidden set<specC_hidden_set>`, there are no applicable interfaces for the variables *A* and *B*.
 
@@ -418,11 +428,11 @@ Interpretation of ``map_variables`` elements
 
 .. marker_interpretation_of_map_variables_4
 
-9.  For each :code:`map_variables` element present in the CellML model, the variable unit reduction (see :numref:`{number}. {name}<specC_effect_of_units_on_variables>`) of variable *A* MUST have an identical set of tuples to the variable unit reduction of variable *B*.
+9.  For each :code:`map_variables` element present in the CellML model, the variable unit reduction (see :numref:`{number} {name}<specC_effect_of_units_on_variables>`) of variable *A* MUST have an identical set of tuples to the variable unit reduction of variable *B*.
     Two sets of tuples SHALL be considered identical if all of the tuples from each set are present in the other, or if both sets are empty.
     Two tuples are considered identical if and only if both the unit name and exponent of each tuple are identical.
 
-10.  Tuples differing by a multiplying factor in their unit reduction MUST be taken into account when interpreting the numerical values of the variables (see :numref:`{number}. {name}<specC_interpretation_of_units>`).
+10.  Tuples differing by a multiplying factor in their unit reduction MUST be taken into account when interpreting the numerical values of the variables (see :numref:`{number} {name}<specC_interpretation_of_units>`).
 
 .. marker_interpretation_of_map_variables_5
 .. _specC_equivalent_variable_set:
@@ -444,7 +454,7 @@ Interpretation of ``reset`` elements
 
 #. Each :code:`reset` element describes a change to be applied to the reset variable when specified conditions are met during the simulation of the model.
 
-#. All :code:`reset` elements SHALL be considered sequentially for the equivalent variable set (see :numref:`{number}. {name}<specC_interpretation_of_map_variables>`) to which the reset variable belongs.
+#. All :code:`reset` elements SHALL be considered sequentially for the equivalent variable set (see :numref:`{number} {name}<specC_interpretation_of_map_variables>`) to which the reset variable belongs.
    The sequence SHALL be determined by the value of the reset element’s :code:`order` attribute, lowest (least positive / most negative) having priority.
 
 #. The condition under which a reset occurs SHALL be defined by the equality of evaluation of the test variable and the evaluation of the MathML expression encoded in the :code:`test_value`.

@@ -40,7 +40,7 @@ The namespace :cellml2namespace:`#`.
 .. _specA_mathml_namespace:
 
 **MathML namespace:**
-The namespace :mathml2namespace:`/`.
+The namespace :mathml2namespace:`MathML`.
 
 .. _specA_cellml_information_item:
 
@@ -119,7 +119,7 @@ Specific information items
 
    #. A document type declaration information item;
 
-   #. An unparsed entity information item;
+   #. An unparsed entity information item; or
 
    #. A notational information item.
 
@@ -129,7 +129,7 @@ Specific information items
 
 .. marker_cellml_information_sets_2
 
-.. _specA_semantic_equivalence:
+
 
 Non-specific information items
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -138,13 +138,15 @@ Non-specific information items
 
    #. A comment information item;
 
-   #. A namespace information item;
+   #. A namespace information item; or
 
    #. A character information item.
 
-2. An element information item in the :ref:`CellML namespace<specA_cellml_namespace>` MUST NOT contain any character information items, except for whitespace characters.
+2. An element information item in the :ref:`CellML namespace<specA_cellml_namespace>` MUST NOT contain any character information items, except for :ref:`whitespace characters<specA_whitespace_character>`.
 
 .. marker_cellml_information_sets_3
+
+.. _specA_semantic_equivalence:
 
 3. Two :ref:`CellML infosets<specA_cellml_infoset>` SHALL be deemed semantically equivalent if one can be transformed into the other by making zero or more of the following changes:
 
@@ -153,10 +155,7 @@ Non-specific information items
    #. Changing (inserting, removing, and/or modifying) one or more namespace information items, and/or modifying the prefix of one or more information items, without changing the namespace that any information item is in.
 
    #. The following paragraph applies to character information items which are the direct child of an element information item in the :ref:`CellML namespace<specA_cellml_namespace>`, or in the :ref:`MathML namespace<specA_mathml_namespace>`:
-
-      Inserting or removing character information items that consist entirely of :ref:`whitespace characters<specA_whitespace_character>`,
-      changing the number of whitespace characters in such an information item,
-      or changing the number of whitespace characters at the beginning or end of any character information item.
+      inserting or removing character information items that consist entirely of :ref:`whitespace characters<specA_whitespace_character>`, changing the number of whitespace characters in such an information item, or changing the number of whitespace characters at the beginning or end of any character information item.
 
 .. marker_cellml_information_sets_4
 
@@ -165,7 +164,7 @@ Use of namespaces
 
 #. Element information items in a :ref:`CellML infoset<specA_cellml_infoset>` MUST belong to one of the following namespaces, unless explicitly indicated otherwise:
 
-   #. The :ref:`CellML namespace<specA_cellml_namespace>`;
+   #. The :ref:`CellML namespace<specA_cellml_namespace>`; or
 
    #. The :ref:`MathML namespace<specA_mathml_namespace>`.
 
@@ -175,7 +174,7 @@ XML ID Attributes
 ~~~~~~~~~~~~~~~~~
 
 #. Any element information item in the :ref:`CellML namespace<specA_cellml_namespace>` MAY contain an attribute with local name :code:`id.`
-   This attribute SHALL be treated as having attribute type ID, as defined in :xml_1_1:`section 3.3.1 <#sec-attribute-types>` of :xml_1_1:`XML 1.1 <>` [:ref:`5<ref_xml_1_1>`].
+   This attribute SHALL be treated as having attribute type ID, as defined in :xml_1_1:`Section 3.3.1 <#sec-attribute-types>` of :xml_1_1:`XML 1.1 <>` [:ref:`5<ref_xml_1_1>`].
 
 .. marker_cellml_information_sets_end
 .. marker_data_formats_start
@@ -211,7 +210,7 @@ The following data representation formats are defined for use in this specificat
 
    .. container:: issue-data-repr-int-sign
 
-      2. MAY begin with a single Basic Latin plus character :unicode:`002B` or a Basic Latin hyphen-minus character :unicode:`002D` as the sign indicator.
+      2. MAY begin with a single Basic Latin plus character :unicode:`002B` or a single Basic Latin hyphen-minus character :unicode:`002D` as the sign indicator.
 
    .. container:: issue-data-repr-int-euro-num
 
@@ -229,7 +228,7 @@ The following data representation formats are defined for use in this specificat
 
    .. container:: issue-data-repr-basic-real-sign
 
-      2. MAY begin with a single Basic Latin plus character :unicode:`002B` or a Basic Latin hyphen-minus character :unicode:`002D` as the sign indicator.
+      2. MAY begin with a single Basic Latin plus character :unicode:`002B` or a single Basic Latin hyphen-minus character :unicode:`002D` as the sign indicator.
 
    .. container:: issue-data-repr-basic-real-decimal
 
