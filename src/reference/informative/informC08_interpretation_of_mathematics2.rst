@@ -120,7 +120,7 @@
         </model>
 
       In file: Neighbours.cellml 
-      
+
       .. code-block:: xml
 
         <model name="HarrysHouse" >
@@ -129,7 +129,7 @@
             <variable name="runs" units="dimensionless" />
             <math>
               <!-- This statement sets DickTheDog's score to 0 for all time.  
-                  He's a dog.  He can't use a cricket bat. -->
+                  He's a dog: potentially a good outfielder, but a terrible batsman. -->
               <apply><eq/>
                 <ci>runs</ci>
                 <cn cellml:units="dimensionless">0</cn>

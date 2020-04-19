@@ -17,10 +17,6 @@
     Units in equations are provided to help the user find bugs, and each :code:`variable` element has to specify a corresponding :code:`units` element, but these combinations don't affect the validity of the :code:`math` element.
     They do make a difference to how your model may to be interpreted, and can help you to find errors or inconsistencies in your mathematical definitions.
 
-    **Between components:**
-    Components were designed to promote modularity and reuse of models, so it's important that those re-users understand what they're getting into. 
-    This is why equivalent variables (those connected across components) must have the same :ref:`unit reduction<specC_equivalent_variables_units>`, so that whatever the inner workings of a component are, the external users of that component are able to interpret them correctly.
-
     Some examples are shown below.
 
     1. Constants and variables in an equation have different units: this is not invalid CellML, but doesn't make any mathematical sense.
@@ -56,6 +52,10 @@
             </apply>
           </apply>
         </apply>
+  
+    **Between components:**
+    Components were designed to promote modularity and reuse of models, so it's important that those re-users understand what they're getting into. 
+    This is why equivalent variables (those connected across components) must have the same :ref:`unit reduction<specC_equivalent_variables_units>`, so that whatever the inner workings of a component are, the external users of that component are able to interpret them correctly.
 
     The only situation in which :code:`units` items are compared to one another is between equivalent variables, i.e.: the :code:`variable_1` and :code:`variable_2` attributes of a :code:`map_variables` element.
     Here, both of the :code:`variable` elements referenced must have the same :ref:`unit reduction<_informC03_interpretation_of_units_3_2>`, though not necessarily the same multiplication factor.
@@ -77,9 +77,9 @@
               ├─ units: micropowers = 0.000001*powers
               └─ units: megapowers = 1,000,000*powers
 
-      .. toggle::
+      .. container:: toggle
 
-        .. header::
+        .. container:: header
 
           See CellML syntax
 
@@ -132,9 +132,9 @@
           │
           └─ units: marshmallow
 
-      .. toggle::
+      .. container:: toggle
 
-        .. header::
+        .. container:: header
 
           See CellML syntax
 
