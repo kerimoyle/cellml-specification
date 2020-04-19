@@ -140,6 +140,7 @@
           <component name="Harry">
             <variable name="time" units="minute" />
             <variable name="runs" units="dimensionless" />
+            <variable name="dicks_runs" units="dimensionless" />
             <math>
               <!-- This statement represents DickTheDog running away with the ball, 
                   enabling Harry to score an ever-increasing number of runs. -->
