@@ -14,7 +14,7 @@
 
     The mathematics of a mathematical model is a collection of statements which are held to be true at all times.
     These are distinct from initial conditions of a model (specified using the :code:`initial_value` attribute on :code:`variable` elements) which are only true initially.
-    You can read more about initialisation on the :ref:`Interpretation of initial_values<>` page and in the section below this one.
+    You can read more about initialisation on the :ref:`Interpretation of initial_values<specC_interpretation_of_initial_values>` page and in the section below this one.
 
     The collection of mathematical statements in CellML are the set of top-level children of a :code:`math` elements inside "pertinent components" (as explained in the previous block).
     The example from the previous point is extended below in pseudocode, with the full CellML code beneath the link below.
@@ -41,7 +41,7 @@
             │                           ╵  ╵  ╵
             ├─ component: Tom           ╵  ╵  ╵
             │  ├─ variable: runs ╴╴╴╴╴╴╴┘  ╵  ╵
-            │  └─ math: runs = 99          ╵  ╵ connected
+            │  └─ math: runs = 99          ╵  ╵ equivalent
             │                              ╵  ╵ variables
             └─ component: Harry (imported) ╵  ╵
                 │  ├─ variable: runs ╴╴╴╴╴╴┘  ╵
@@ -124,7 +124,7 @@
           <component name="DickTheDog">
             <variable name="runs" units="dimensionless" />
             <math>
-              <!-- This statement sets Dick's score to 0 for all time.  
+              <!-- This statement sets DickTheDog's score to 0 for all time.  
                   He's a dog.  He can't use a cricket bat. -->
               <apply><eq/>
                 <ci>runs</ci>
@@ -148,7 +148,10 @@
             </math>
           </component>
 
-          <!-- A connection is established between Harry and Dick to enable sharing of their run tally. -->
+          <!-- This is not a pertinent component to the BackyardCricket model. -->
+          <component name="George" />
+
+          <!-- A connection is established between Harry and DickTheDog to enable sharing of their run tally. -->
           <connection component_1="Harry" component_2="DickTheDog" >
             <map_variables variable_1="dicks_runs" variable_2="runs" />
           </connection>
@@ -213,4 +216,5 @@
     .. math::
 
       x = 1
+
       x(0) = 2
