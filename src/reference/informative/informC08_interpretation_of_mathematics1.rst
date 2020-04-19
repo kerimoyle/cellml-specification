@@ -36,7 +36,9 @@
 
     .. container:: toggle
 
-      .. header:: See CellML syntax
+      .. container:: header
+      
+        See CellML syntax example
 
       .. code-block:: xml
 

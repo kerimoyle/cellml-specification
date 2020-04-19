@@ -59,9 +59,10 @@
       
         See CellML syntax example
 
+      In file: MyHouse.cellml
+
       .. code-block:: xml
 
-        <!-- In file: MyHouse.cellml -->
         <model name="BackyardCricket" >
 
           <!-- The local component Tom now has a score, measured by the variable "runs". 
@@ -118,7 +119,10 @@
           </encapsulation>
         </model>
 
-        <!-- In file: Neighbours.cellml -->
+      In file: Neighbours.cellml 
+      
+      .. code-block:: xml
+
         <model name="HarrysHouse" >
 
           <component name="DickTheDog">
