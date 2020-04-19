@@ -9,6 +9,10 @@
     margin-bottom: 5px;
 }
 
+.wy-table td, .rst-content table.docutils td, .rst-content table.field-list td {
+    vertical-align: top;
+}
+
 pre {
     border: none;
     background-color: #eeeeee;

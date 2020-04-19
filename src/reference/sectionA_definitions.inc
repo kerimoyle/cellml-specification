@@ -7,9 +7,9 @@
 Terminology
 -----------
 
-The keywords "MUST", "MUST NOT", "SHALL", "SHALL NOT", and "MAY" in this document are to be interpreted as described in :rfc2119:`RFC 2119`.
+The keywords "MUST", "MUST NOT", "SHALL", "SHALL NOT", and "MAY" in this document are to be interpreted as described in :rfc2119:`RFC 2119 <>` [:ref:`1<ref_rfc2119>`].
 
-The key phrase "information item", as well as any specific type of information item such as an "element information item", are to be interpreted as described in :xml_infoset:`XML Information Set`.
+The key phrase "information item", as well as any specific type of information item such as an "element information item", are to be interpreted as described in :xml_infoset:`XML Information Set <>` [:ref:`2<ref_xml_infoset>`].
 
 .. _specA_cellml_infoset:
 
@@ -26,7 +26,7 @@ In this specification, the topmost CellML infoset in a hierarchy is referred to 
 .. _specA_namespace:
 
 **Namespace:**
-An XML namespace, as defined in :xml_namespace_1_1:`Namespaces in XML 1.1`.
+An XML namespace, as defined in :xml_namespace_1_1:`Namespaces in XML 1.1 <>` [:ref:`3<ref_xml_namespace_1_1>`].
 
 .. _specA_cellml_namespace:
 
@@ -35,12 +35,12 @@ An XML namespace, as defined in :xml_namespace_1_1:`Namespaces in XML 1.1`.
 .. _specA_cellml2_namespace:
 
 **CellML 2.0 namespace:**
-The namespace :cellml2:`http://www.cellml.org/cellml/2.0# <cellml/2.0#>`\.
+The namespace :cellml2namespace:`#`.
 
 .. _specA_mathml_namespace:
 
 **MathML namespace:**
-The namespace http://www.w3.org/1998/Math/MathML.
+The namespace :mathml2namespace:`MathML`.
 
 .. _specA_cellml_information_item:
 
@@ -50,7 +50,7 @@ Any information item in the :ref:`CellML namespace<specA_cellml_namespace>`.
 .. _specA_basic_latin_alphabetical_character:
 
 **Basic Latin alphabetical character:**
-A Unicode character in the range :unicode:`0041` to :unicode:`005A` or in the range :unicode:`0061` to :unicode:`007A`.
+A :unicode13:`Unicode <>` [:ref:`4<ref_unicode>`] character in the range :unicode:`0041` to :unicode:`005A` or in the range :unicode:`0061` to :unicode:`007A`.
 
 .. _specA_digit:
 
@@ -98,14 +98,14 @@ CellML information sets
 CellML and XML
 ~~~~~~~~~~~~~~
 
-#. Every CellML infoset SHALL be represented in an XML information set which conforms with the well-formedness requirements of :xml_1_1:`XML 1.1`.
+#. Every :ref:`CellML infoset<specA_cellml_infoset>` SHALL be represented in an XML information set which conforms with the well-formedness requirements of :xml_1_1:`XML 1.1 <>` [:ref:`5<ref_xml_1_1>`].
 
 #. In this document, the remaining provisions relating to CellML infosets SHALL be interpreted as additional constraints on the XML information set represented by a CellML infoset.
 
 Specific information items
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. For the purposes of this specification, a specific information item is one of the following (see https://www.w3.org/TR/xml-infoset/ for definitions):
+#. For the purposes of this specification, a specific information item is one of the following (see :xml_infoset_display:`/` for definitions):
 
    #. A document information item;
 
@@ -119,7 +119,7 @@ Specific information items
 
    #. A document type declaration information item;
 
-   #. An unparsed entity information item;
+   #. An unparsed entity information item; or
 
    #. A notational information item.
 
@@ -129,34 +129,33 @@ Specific information items
 
 .. marker_cellml_information_sets_2
 
-.. _specA_semantic_equivalence:
+
 
 Non-specific information items
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. For the purposes of this specification, a non-specific information item is one of the following (see https://www.w3.org/TR/xml-infoset/ for definitions):
+1. For the purposes of this specification, a non-specific information item is one of the following (see :xml_infoset_display:`/` for definitions):
 
    #. A comment information item;
 
-   #. A namespace information item;
+   #. A namespace information item; or
 
    #. A character information item.
 
-2. An element information item in the :ref:`CellML namespace<specA_cellml_namespace>` MUST NOT contain any character information items, except for whitespace characters.
+2. An element information item in the :ref:`CellML namespace<specA_cellml_namespace>` MUST NOT contain any character information items, except for :ref:`whitespace characters<specA_whitespace_character>`.
 
 .. marker_cellml_information_sets_3
 
-3. Two :ref:`CellML infosets<specA_cellml_infoset>` SHALL be deemed semantically equivalent if one can be transformed into the other by making any or none of the following changes:
+.. _specA_semantic_equivalence:
+
+3. Two :ref:`CellML infosets<specA_cellml_infoset>` SHALL be deemed semantically equivalent if one can be transformed into the other by making zero or more of the following changes:
 
    #. Adding, removing, and/or modifying comment information items.
 
    #. Changing (inserting, removing, and/or modifying) one or more namespace information items, and/or modifying the prefix of one or more information items, without changing the namespace that any information item is in.
 
    #. The following paragraph applies to character information items which are the direct child of an element information item in the :ref:`CellML namespace<specA_cellml_namespace>`, or in the :ref:`MathML namespace<specA_mathml_namespace>`:
-
-      Inserting or removing character information items that consist entirely of :ref:`whitespace characters<specA_whitespace_character>`,
-      changing the number of whitespace characters in such an information item,
-      or changing the number of whitespace characters at the beginning or end of any character information item.
+      inserting or removing character information items that consist entirely of :ref:`whitespace characters<specA_whitespace_character>`, changing the number of whitespace characters in such an information item, or changing the number of whitespace characters at the beginning or end of any character information item.
 
 .. marker_cellml_information_sets_4
 
@@ -165,7 +164,7 @@ Use of namespaces
 
 #. Element information items in a :ref:`CellML infoset<specA_cellml_infoset>` MUST belong to one of the following namespaces, unless explicitly indicated otherwise:
 
-   #. The :ref:`CellML namespace<specA_cellml_namespace>`;
+   #. The :ref:`CellML namespace<specA_cellml_namespace>`; or
 
    #. The :ref:`MathML namespace<specA_mathml_namespace>`.
 
@@ -175,7 +174,7 @@ XML ID Attributes
 ~~~~~~~~~~~~~~~~~
 
 #. Any element information item in the :ref:`CellML namespace<specA_cellml_namespace>` MAY contain an attribute with local name :code:`id.`
-   This attribute SHALL be treated as having attribute type ID, as defined in `section 3.3.1 <http://www.w3.org/TR/xml11/#sec-attribute-types>`__ of `XML 1.1 <http://www.w3.org/TR/xml11/>`__.
+   This attribute SHALL be treated as having attribute type ID, as defined in :xml_1_1:`Section 3.3.1 <#sec-attribute-types>` of :xml_1_1:`XML 1.1 <>` [:ref:`5<ref_xml_1_1>`].
 
 .. marker_cellml_information_sets_end
 .. marker_data_formats_start
@@ -211,7 +210,7 @@ The following data representation formats are defined for use in this specificat
 
    .. container:: issue-data-repr-int-sign
 
-      2. MAY begin with a single Basic Latin plus character :unicode:`002B` or a Basic Latin hyphen-minus character :unicode:`002D` as the sign indicator.
+      2. MAY begin with a single Basic Latin plus character :unicode:`002B` or a single Basic Latin hyphen-minus character :unicode:`002D` as the sign indicator.
 
    .. container:: issue-data-repr-int-euro-num
 
@@ -229,7 +228,7 @@ The following data representation formats are defined for use in this specificat
 
    .. container:: issue-data-repr-basic-real-sign
 
-      2. MAY begin with a single Basic Latin plus character :unicode:`002B` or a Basic Latin hyphen-minus character :unicode:`002D` as the sign indicator.
+      2. MAY begin with a single Basic Latin plus character :unicode:`002B` or a single Basic Latin hyphen-minus character :unicode:`002D` as the sign indicator.
 
    .. container:: issue-data-repr-basic-real-decimal
 

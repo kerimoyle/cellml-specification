@@ -16,7 +16,8 @@ The ``model`` element
 .. container:: issue-model-name
 
    1. Every :code:`model` element MUST contain a :code:`name` attribute.
-      The value of the :code:`name` attribute MUST be a :ref:`valid CellML identifier<specA_cellml_identifier>`.
+
+      The value of the :code:`name` attribute MUST be a :ref:`CellML identifier<specA_cellml_identifier>`.
 
 .. marker_model_1
 
@@ -30,7 +31,7 @@ The ``model`` element
 
       #. An :code:`encapsulation` element;
 
-      #. An :code:`import` element;
+      #. An :code:`import` element; or
 
       #. A :code:`units` element.
 
@@ -55,9 +56,9 @@ An :code:`import` element information item (referred to in this specification as
 
    1. Every :code:`import` element MUST contain an attribute in the namespace :code:`http://www.w3.org/1999/xlink`, with a local name equal to :code:`href`.
 
-      The value of this attribute SHALL be a valid locator :code:`href`, as defined in :href_locator:`Section 5.4 of the XLink specification`.
+      The value of this attribute SHALL be a valid locator :code:`href`, as defined in :xlink:`Section 5.4 <#link-locators>` of the :xlink:`XLink specification <>` [:ref:`6<ref_xlink>`].
 
-      The :code:`href` attribute SHALL be treated according to the :xlink:`XLink specification`, by applying the rules for simple-type elements.
+      The :code:`href` attribute SHALL be treated according to the :xlink:`XLink specification <>` [:ref:`6<ref_xlink>`], by applying the rules for simple-type elements.
 
       When describing an :code:`import` element or one of its children, the phrase "imported CellML infoset" SHALL refer to the :ref:`CellML infoset<specA_cellml_infoset>` obtained by parsing the document referenced by the :code:`href` attribute.
 
@@ -75,7 +76,9 @@ An :code:`import` element information item (referred to in this specification as
 
 .. container:: issue-import-circular
 
-   3. Any :ref:`CellML infoset<specA_cellml_infoset>` imported, directly or indirectly, by the imported CellML infoset MUST NOT be semantically equivalent to the importing CellML infoset (see :ref:`Semantically equivalent CellML infosets <specA_semantic_equivalence>`).
+   3. Any :ref:`CellML infoset<specA_cellml_infoset>` imported, directly or indirectly, by the imported CellML infoset MUST NOT be semantically equivalent to the importing CellML infoset (see :ref:`1.2.3.3<specA_semantic_equivalence>` regarding semantic equivalence).
+
+.. hardcodedref above: 1.2.3.3
 
 .. marker_import_end
 .. marker_import_units_start
@@ -90,18 +93,20 @@ An :code:`import units` element information item (referred to in this specificat
 .. container:: issue-import-units-name
 
    1. Every :code:`import units` element MUST contain a :code:`name` attribute.
-      The value of the :code:`name` attribute MUST be a :ref:`valid CellML identifier<specA_cellml_identifier>`.
 
-      The value of the :code:`name` attribute MUST NOT be identical to the :code:`name` attribute of any other :code:`units` or :code:`import units` element in the :ref:`CellML infoset<specA_cellml_infoset>`.
+      The value of the :code:`name` attribute MUST be a :ref:`CellML identifier<specA_cellml_identifier>`.
+
+      The value of the :code:`name` attribute MUST NOT be identical to the value of the :code:`name` attribute of any other :code:`units` or :code:`import units` element in the :ref:`CellML infoset<specA_cellml_infoset>`.
 
 .. marker_import_units_1
 
 .. container:: issue-import-units-ref
 
    2. Every :code:`import units` element MUST contain a :code:`units_ref` attribute.
-      The value of the :code:`units_ref` attribute MUST be a :ref:`valid CellML identifier<specA_cellml_identifier>`.
 
-      The value of the :code:`units_ref` attribute MUST match the value of the :code:`name` attribute on a :code:`units` or :code:`import units` element in the imported CellML infoset.
+      The value of the :code:`units_ref` attribute MUST be a :ref:`CellML identifier<specA_cellml_identifier>`.
+
+      The value of the :code:`units_ref` attribute MUST be identical to the value of the :code:`name` attribute on a :code:`units` or :code:`import units` element in the imported :ref:`CellML infoset<specA_cellml_infoset>`.
 
 .. marker_import_units_end
 .. marker_import_component_start
@@ -115,16 +120,19 @@ An :code:`import component` element information item (referred to in this specif
 
 .. container:: issue-import-component-name
 
-   1. Every :code:`import component` element MUST contain a :code:`name` attribute. The value of the :code:`name` attribute MUST be a :ref:`valid CellML identifier<specA_cellml_identifier>`.
+   1. Every :code:`import component` element MUST contain a :code:`name` attribute.
 
-      The value of the :code:`name` attribute MUST NOT be identical to the :code:`name` attribute of any other :code:`component` or :code:`import component` element in the :ref:`CellML infoset<specA_cellml_infoset>`.
+      The value of the :code:`name` attribute MUST be a :ref:`CellML identifier<specA_cellml_identifier>`.
+
+      The value of the :code:`name` attribute MUST NOT be identical to the value of the :code:`name` attribute of any other :code:`component` or :code:`import component` element in the :ref:`CellML infoset<specA_cellml_infoset>`.
 
 .. container:: issue-import-component-ref
 
-   2. Every :code:`import component` element MUST contain a :code:`component_ref` attribute. The value of the :code:`component_ref` attribute MUST be a :ref:`valid CellML identifier<specA_cellml_identifier>`.
+   2. Every :code:`import component` element MUST contain a :code:`component_ref` attribute.
 
-      The value of the :code:`component_ref` attribute MUST match the value of the :code:`name` attribute on a :code:`component` or :code:`import component` element in the imported :ref:`CellML infoset<specA_cellml_infoset>`.
-      See also the :ref:`Component reference<specC_component_reference>` section.
+      The value of the :code:`component_ref` attribute MUST be a :ref:`CellML identifier<specA_cellml_identifier>`.
+
+      The value of the :code:`component_ref` attribute MUST be identical to the value of the :code:`name` attribute on a :code:`component` or :code:`import component` element in the imported :ref:`CellML infoset<specA_cellml_infoset>`.
 
 .. marker_import_component_end
 .. marker_units_start
@@ -140,13 +148,14 @@ A :code:`units` element information item (referred to in this specification as a
 .. container:: issue-units-name
 
    1. Every :code:`units` element MUST contain a :code:`name` attribute.
-      The value of the :code:`name` attribute MUST be a :ref:`valid CellML identifier<specA_cellml_identifier>`.
 
-      The value of the :code:`name` attribute MUST NOT be identical to the :code:`name` attribute of any other :code:`units` element or :code:`import units` element in the :ref:`CellML infoset<specA_cellml_infoset>`.
+      The value of the :code:`name` attribute MUST be a :ref:`CellML identifier<specA_cellml_identifier>`.
+
+      The value of the :code:`name` attribute MUST NOT be identical to the value of the :code:`name` attribute of any other :code:`units` element or :code:`import units` element in the :ref:`CellML infoset<specA_cellml_infoset>`.
 
 .. container:: issue-units-standard
 
-   2. The value of the :code:`name` attribute MUST NOT be equal to the name of any of the units listed in the :ref:`Built-in units<table_built_in_units>` table.
+   2. The value of the :code:`name` attribute MUST NOT be identical to the name of any of the units listed in :numref:`Table {number}: {name}<table_built_in_units>` (see :numref:`{number} {name}<specC_units_reference>`).
 
 .. container:: issue-units-child
 
@@ -165,17 +174,18 @@ A :code:`unit` element information item (referred to in this specification as a 
 .. container:: issue-unit-units-ref
 
    1. Every :code:`unit` element MUST contain a :code:`units` attribute.
-      The value of the :code:`units` attribute MUST be a valid units reference, as defined in the :ref:`Units reference<specC_units_reference>` section.
+
+      The value of the :code:`units` attribute MUST be a valid units reference, as defined in :numref:`{number} {name}<specC_units_reference>`.
 
       .. container:: issue-unit-digraph
 
          1. For the purpose of the constraint in the next paragraph, the :code:`units` element inclusion digraph SHALL be defined as a conceptual digraph which SHALL contain one node for every :code:`units` element in the :ref:`CellML model<specA_cellml_model>`.
 
-            The :code:`units` element inclusion digraph SHALL contain an arc from :code:`units` element *A* to :code:`units` element *B* if and only if :code:`units` element *A* contains a :code:`unit` element with :code:`units` attribute value that is a units reference to :code:`units` element *B*.
+            The :code:`units` element inclusion digraph SHALL contain an arc from :code:`units` element *A* to :code:`units` element *B* if and only if :code:`units` element *A* contains a :code:`unit` element with a :code:`units` attribute value that is identical to the :code:`name` attribute value of :code:`units` element *B*.
 
       .. container:: issue-unit-circular-ref
 
-         2. The value of the :code:`units` attribute MUST NOT be such that the :code:`units` element inclusion digraph contains one or more cycles (in other words, units definitions must not be cyclical).
+         2. The element inclusion digraph MUST NOT contain any cycles.
 
 .. marker_unit_1
 
@@ -185,15 +195,15 @@ A :code:`unit` element information item (referred to in this specification as a 
 
       .. container:: issue-unit-prefix
 
-         1. The :code:`prefix` attribute. If present, the value of the attribute MUST meet the constraints specified in the :ref:`Interpretation of units <specC_interpretation_of_units>` section.
+         1. The :code:`prefix` attribute. If present, the value of the attribute MUST meet the constraints specified in :numref:`{number} {name}<specC_interpretation_of_units>`.
 
       .. container:: issue-unit-multiplier
 
-         2. The :code:`multiplier` attribute. If present, the value of the attribute MUST be a real number string.
+         2. The :code:`multiplier` attribute. If present, the value of the attribute MUST be a :ref:`real number string<specA_real_number>`.
 
       .. container:: issue-unit-exponent
 
-         3. The :code:`exponent` attribute. If present, the value of the attribute MUST be a real number string.
+         3. The :code:`exponent` attribute. If present, the value of the attribute MUST be a :ref:`real number string<specA_real_number>`.
 
 .. marker_unit_end
 .. marker_component_start
@@ -211,9 +221,11 @@ A :code:`component` element information item (referred to in this specification 
 
 .. container:: issue-component-name
 
-   1. Every :code:`component` element MUST contain a :code:`name` attribute. The value of the :code:`name` attribute MUST be a :ref:`valid CellML identifier<specA_cellml_identifier>`.
+   1. Every :code:`component` element MUST contain a :code:`name` attribute.
 
-      The value of the :code:`name` attribute MUST NOT be identical to the :code:`name` attribute on any other :code:`component` element or :code:`import component` element in the :ref:`CellML infoset<specA_cellml_infoset>`.
+      The value of the :code:`name` attribute MUST be a :ref:`CellML identifier<specA_cellml_identifier>`.
+
+      The value of the :code:`name` attribute MUST NOT be identical to the value of the :code:`name` attribute on any other :code:`component` element or :code:`import component` element in the :ref:`CellML infoset<specA_cellml_infoset>`.
 
 .. marker_component_2
 
@@ -221,7 +233,7 @@ A :code:`component` element information item (referred to in this specification 
 
    2. A :code:`component` element MAY contain one or more specific element children, each of which MUST be of one of the following types:
 
-      #. A :code:`math` element; or
+      #. A :code:`math` element;
 
       #. A :code:`reset` element; or
 
@@ -241,13 +253,15 @@ A :code:`variable` element information item (referred to in this specification a
 
    .. container:: issue-variable-name
 
-      1. The :code:`name` attribute. The value of the :code:`name` attribute MUST be a :ref:`valid CellML identifier<specA_cellml_identifier>`.
+      1. The :code:`name` attribute.
+         The value of the :code:`name` attribute MUST be a :ref:`CellML identifier<specA_cellml_identifier>`.
 
-         The value of the :code:`name` attribute MUST NOT be identical to the :code:`name` attribute on any sibling :code:`variable` element.
+         The value of the :code:`name` attribute MUST NOT be identical to the value of the :code:`name` attribute on any sibling :code:`variable` element.
 
    .. container:: issue-variable-units
 
-      2. The :code:`units` attribute. The value of the :code:`units` attribute MUST be a :ref:`valid CellML identifier<specA_cellml_identifier>`, and MUST be a :ref:`valid units reference<specC_units_reference>`.
+      2. The :code:`units` attribute.
+         The value of the :code:`units` attribute MUST be a valid units reference, as defined in :numref:`{number} {name}<specC_units_reference>`.
 
 2. Every :code:`variable` element MAY contain one or more of the following attributes:
 
@@ -259,7 +273,7 @@ A :code:`variable` element information item (referred to in this specification a
    .. container:: issue-variable-initial-value
 
       2. The :code:`initial_value` attribute.
-         If the attribute is present, it MUST meet the requirements described by the :ref:`Interpretation of initial values<specC_interpretation_of_initial_values>` section.
+         If the attribute is present, it MUST meet the requirements described by :numref:`{number} {name}<specC_interpretation_of_initial_values>`.
 
 .. marker_variable_end
 .. marker_reset_start
@@ -271,32 +285,28 @@ The ``reset`` element
 
 A :code:`reset` element information item (referred to in this specification as a :code:`reset` element) is an element in the :ref:`CellML namespace<specA_cellml_namespace>` with a local name equal to :code:`reset`, which appears as a child of a :code:`component` element.
 
-1. Every :code:`reset` element MUST have exactly one each of the following attributes:
+1. Every :code:`reset` element MUST have exactly one of each of the following attributes:
 
    .. container:: issue-reset-variable-reference
 
       1. The :code:`variable` attribute.
-         The value of the :code:`variable` attribute MUST be a :ref:`valid CellML identifier<specA_cellml_identifier>`.
-
-         The value of the :code:`variable` attribute MUST be a variable reference to a variable defined within the parent :code:`component` element of the :code:`reset` element.
+         The value of the :code:`variable` attribute MUST be a valid variable reference, as defined in :numref:`{number} {name}<specC_variable_reference>`.
 
    .. container:: issue-reset-test-variable-reference
 
       2. The :code:`test_variable` attribute.
-         The value of the :code:`test_variable` attribute MUST be a :ref:`valid CellML identifier<specA_cellml_identifier>`.
-
-         The value of the :code:`test_variable` attribute MUST be a variable reference to a variable defined within the parent :code:`component` element of the :code:`reset` element.
+         The value of the :code:`test_variable` attribute MUST be a valid variable reference, as defined in :numref:`{number} {name}<specC_variable_reference>`.
 
    .. container:: issue-reset-order
 
       3. The :code:`order` attribute.
-         The value of the :code:`order` attribute MUST be an integer string.
+         The value of the :code:`order` attribute MUST be an :ref:`integer string<specA_integer>`.
 
-         The value of the :code:`order` attribute MUST be unique for all :code:`reset` elements with :code:`variable` attributes that reference variables in the same equivalent variable set (see :ref:`Interpretation of map_variables<specC_interpretation_of_map_variables>`).
+         The value of the :code:`order` attribute MUST be unique for all :code:`reset` elements with :code:`variable` attributes that reference variables in the same equivalent variable set (see :numref:`{number} {name}<specC_interpretation_of_map_variables>`).
 
 .. container:: issue-reset-child
 
-   2. A :code:`reset` element MUST contain exactly two element children, which MUST be one each of the following types:
+   2. A :code:`reset` element MUST contain exactly two element children, which MUST be one of each of the following types:
 
       .. container:: issue-reset-reset-value
 
@@ -346,77 +356,75 @@ A :code:`math` element information item (referred to in this specification as a 
 
 .. container:: issue-math-mathml
 
-   1. A :code:`math` element MUST be the top-level of a content MathML tree, as described in :mathml2spec:`MathML 2.0 <>`.
+   1. A :code:`math` element MUST be the top-level element of a Content MathML tree, as described in :mathml2:`MathML 2.0 <>` [:ref:`7<ref_mathml2>`].
 
 .. marker_math_1
 
 .. container:: issue-math-child
 
-   2. Each element child of a :code:`math` element MUST have an element-type name that is listed in the :ref:`Supported MathML Elements<table_supported_mathml_elements>` table.
+   2. Each element child of a :code:`math` element MUST have an element-type name that is listed in :numref:`Table {number}: {name}<table_supported_mathml_elements>`.
 
 .. marker_math_2
 
 .. container:: issue-math-ci-variable-reference
 
-   3. Every variable name given using the MathML :code:`ci` element MUST be a :ref:`variable reference<specC_variable_reference>` to a :code:`variable` within the :code:`component` element in which the :code:`math` element is contained.
+   3. The contents of a MathML :code:`ci` element MUST be a valid variable reference, as defined in :numref:`{number} {name}<specC_variable_reference>`.
 
 .. marker_math_3
 
 .. container:: issue-math-cn-units-attribute
 
    4. A MathML :code:`cn` element MUST have an attribute in the :ref:`CellML namespace<specA_cellml_namespace>`, with a local name equal to :code:`units`.
-      The value of this attribute MUST be a valid :ref:`units reference<specC_units_reference>`.
+
+      The value of the :code:`units` attribute MUST be a valid units reference, as defined in :numref:`{number} {name}<specC_units_reference>`.
 
 .. container:: issue-math-cn-type
 
-   5. A :code:`cn` element MUST be one of the following :mathml2help:`types<#contm.typeattrib>`\: real or e-notation.
+   5. A :code:`cn` element MUST be base 10, and MUST be of the following :mathml2help:`types<#contm.typeattrib>`\: real or e-notation.
 
-.. container:: issue-math-cn-base10
-
-   6. A :code:`cn` element MUST be of base 10.
 
 .. marker_math_4
 
 .. _table_supported_mathml_elements:
+.. table:: Supported MathML elements
+  :widths: auto
 
-**Table 2.1: Supported MathML elements**
+  +----------------------------------+------------------------------------------------------------------+
+  | **Element Category**             | **Element List**                                                 |
+  +----------------------------------+------------------------------------------------------------------+
+  | Simple Operands                  | :code:`ci`, :code:`cn`, :code:`sep`                              |
+  +----------------------------------+------------------------------------------------------------------+
+  | Basic Structural                 | :code:`apply`, :code:`piecewise`, :code:`piece`,                 |
+  |                                  | :code:`otherwise`                                                |
+  +----------------------------------+------------------------------------------------------------------+
+  | Relational and Logical Operators | | :code:`eq`, :code:`neq`, :code:`gt`, :code:`lt`, :code:`geq`,  |
+  |                                  | | :code:`leq`, :code:`and`, :code:`or`, :code:`xor`, :code:`not` |
+  +----------------------------------+------------------------------------------------------------------+
+  | Arithmetic Operators             | | :code:`plus`, :code:`minus`, :code:`times`, :code:`divide`,    |
+  |                                  | | :code:`power`, :code:`root`, :code:`abs`,                      |
+  |                                  | | :code:`exp`, :code:`ln`, :code:`log`,                          |
+  |                                  | | :code:`floor`, :code:`ceiling`,                                |
+  |                                  | | :code:`min`, :code:`max`, :code:`rem`                          |
+  +----------------------------------+------------------------------------------------------------------+
+  | Calculus Elements                | :code:`diff`                                                     |
+  +----------------------------------+------------------------------------------------------------------+
+  | Qualifier Elements               | :code:`bvar`, :code:`logbase`, :code:`degree` \*                 |
+  +----------------------------------+------------------------------------------------------------------+
+  | Trigonometric Operators          | | :code:`sin`, :code:`cos`, :code:`tan`, :code:`sec`,            |
+  |                                  |   :code:`csc`, :code:`cot`,                                      |
+  |                                  | | :code:`sinh`, :code:`cosh`, :code:`tanh`, :code:`sech`,        |
+  |                                  |   :code:`csch`, :code:`coth`,                                    |
+  |                                  | | :code:`arcsin`, :code:`arccos`, :code:`arctan`,                |
+  |                                  | | :code:`arcsec`, :code:`arccsc`, :code:`arccot`,                |
+  |                                  | | :code:`arcsinh`, :code:`arccosh`, :code:`arctanh`,             |
+  |                                  | | :code:`arcsech`, :code:`arccsch`, :code:`arccoth`              |
+  +----------------------------------+------------------------------------------------------------------+
+  | Mathematical and Logical         | | :code:`pi`, :code:`exponentiale`,                              |
+  | Constants                        |   :code:`notanumber`,                                            |
+  |                                  | | :code:`infinity`, :code:`true`, :code:`false`                  |
+  +----------------------------------+------------------------------------------------------------------+
 
-+----------------------------------+----------------------------------------------------------------+
-| **Element Category**             | **Element List**                                               |
-+----------------------------------+----------------------------------------------------------------+
-| Simple Operands                  | :code:`ci`, :code:`cn`, :code:`sep`                            |
-+----------------------------------+----------------------------------------------------------------+
-| Basic Structural                 | :code:`apply`, :code:`piecewise`, :code:`piece`,               |
-|                                  | :code:`otherwise`                                              |
-+----------------------------------+----------------------------------------------------------------+
-| Relational and Logical Operators | :code:`eq`, :code:`neq`, :code:`gt`, :code:`lt`, :code:`geq`,  |
-|                                  | :code:`leq`, :code:`and`, :code:`or`, :code:`xor`, :code:`not` |
-+----------------------------------+----------------------------------------------------------------+
-| Arithmetic Operators             | | :code:`plus`, :code:`minus`, :code:`times`, :code:`divide`,  |
-|                                  | | :code:`power`, :code:`root`, :code:`abs`,                    |
-|                                  | | :code:`exp`, :code:`ln`, :code:`log`,                        |
-|                                  | | :code:`floor`, :code:`ceiling`,                              |
-|                                  | | :code:`min`, :code:`max`, :code:`rem`                        |
-+----------------------------------+----------------------------------------------------------------+
-| Calculus Elements                | :code:`diff`                                                   |
-+----------------------------------+----------------------------------------------------------------+
-| Qualifier Elements               | :code:`bvar`, :code:`logbase`, :code:`degree` \*               |
-+----------------------------------+----------------------------------------------------------------+
-| Trigonometric Operators          | | :code:`sin`, :code:`cos`, :code:`tan`, :code:`sec`,          |
-|                                  |   :code:`csc`, :code:`cot`,                                    |
-|                                  | | :code:`sinh`, :code:`cosh`, :code:`tanh`, :code:`sech`,      |
-|                                  |   :code:`csch`, :code:`coth`,                                  |
-|                                  | | :code:`arcsin`, :code:`arccos`, :code:`arctan`,              |
-|                                  | | :code:`arcsec`, :code:`arccsc`, :code:`arccot`,              |
-|                                  | | :code:`arcsinh`, :code:`arccosh`, :code:`arctanh`,           |
-|                                  | | :code:`arcsech`, :code:`arccsch`, :code:`arccoth`            |
-+----------------------------------+----------------------------------------------------------------+
-| Mathematical and Logical         | :code:`pi`, :code:`exponentiale`,                              |
-| Constants                        | :code:`notanumber`, :code:`infinity`,                          |
-|                                  | :code:`true`, :code:`false`                                    |
-+----------------------------------+----------------------------------------------------------------+
-
-\* :code:`degree` must be a child of :code:`root` or :code:`diff`
+\* :code:`degree` MUST be a child of :code:`root` or :code:`diff`
 
 .. marker_math_end
 .. marker_encapsulation_start
@@ -430,7 +438,7 @@ An :code:`encapsulation` element information item (referred to in this specifica
 
 .. container:: issue-encapsulation-component-ref
 
-   1. An :code:`encapsulation` element MAY contain one or more :code:`component_ref` elements.
+   1. An :code:`encapsulation` element MAY contain one or more :code:`component_ref` element children.
 
 .. marker_encapsulation_end
 .. marker_component_ref_start
@@ -446,7 +454,9 @@ A :code:`component_ref` element information item (referred to in this specificat
 
    1. Every :code:`component_ref` element MUST contain a :code:`component` attribute.
 
-      The value of this attribute MUST be a :ref:`valid CellML identifier<specA_cellml_identifier>`, and MUST match the :code:`name` attribute on a :code:`component` element or an :code:`import component` element in the :ref:`CellML infoset<specA_cellml_infoset>`.
+      The value of the :code:`component` attribute MUST be a valid component reference, as defined in :numref:`{number} {name}<specC_component_reference>`.
+
+      The value of the :code:`component` attribute MUST NOT be identical to the value of the :code:`component` attribute on any other :code:`component_ref` element in the :ref:`CellML infoset<specA_cellml_infoset>`.
 
 .. container:: issue-component-ref-child
 
@@ -464,36 +474,35 @@ A :code:`connection` element information item (referred to in this specification
 
 .. container:: issue-connection-component1
 
-   1. Each :code:`connection` element MUST contain a :code:`component_1` attribute. The value of the :code:`component_1` attribute MUST be a :ref:`valid CellML identifier<specA_cellml_identifier>`.
+   1. Each :code:`connection` element MUST contain a :code:`component_1` attribute.
 
-      The value of this attribute MUST be equal to the :code:`name` attribute on a :code:`component` or :code:`import component` element in the :ref:`CellML infoset<specA_cellml_infoset>` (see :ref:`Component reference<specC_component_reference>`).
+      The value of the :code:`component_1` attribute MUST be a valid component reference, as defined in :numref:`{number} {name}<specC_component_reference>`.
 
 .. marker_connection_1
 
 .. container:: issue-connection-component2
 
    2. Each :code:`connection` element MUST contain a :code:`component_2` attribute.
-      The value of the :code:`component_2` attribute MUST be a :ref:`valid CellML identifier<specA_cellml_identifier>`.
 
-      The value of this attribute MUST be equal to the :code:`name` attribute on a :code:`component` or :code:`import component` element in the :ref:`CellML infoset<specA_cellml_infoset>` (see :ref:`Component reference<specC_component_reference>`).
+      The value of the :code:`component_2` attribute MUST be a valid component reference, as defined in :numref:`{number} {name}<specC_component_reference>`.
 
 .. marker_connection_2
 
 .. container:: issue-todo
 
-   3. The value of the :code:`component_1` attribute MUST NOT be equal to the value of the :code:`component_2` attribute.
+   3. The value of the :code:`component_1` attribute MUST NOT be identical to the value of the :code:`component_2` attribute.
 
 .. marker_connection_3
 
 .. container:: issue-connection-unique-transitive
 
-   4. A :ref:`CellML infoset<specA_cellml_infoset>` MUST NOT contain more than one :code:`connection` element with a given pair of :code:`component`\ s referenced by the :code:`component_1` and :code:`component_2` attribute values, in any order.
+   4. A :ref:`CellML infoset<specA_cellml_infoset>` MUST NOT contain more than one :code:`connection` element with a given pair of components referenced by the :code:`component_1` and :code:`component_2` attribute values, in any order.
 
 .. marker_connection_4
 
 .. container:: issue-connection-map-variables
 
-   5. A :code:`connection` element MAY contain one or more :code:`map_variables` elements.
+   5. A :code:`connection` element MAY contain one or more :code:`map_variables` element children.
 
 .. marker_connection_end
 .. marker_map_variables_start
@@ -509,9 +518,7 @@ A :code:`map_variables` element information item (referred to in this specificat
 
    1. Each :code:`map_variables` element MUST contain a :code:`variable_1` attribute.
 
-      The value of the :code:`variable_1` attribute MUST be a :ref:`valid CellML identifier<specA_cellml_identifier>`.
-
-      The value of this attribute MUST be equal to the :code:`name` attribute on a :code:`variable` element child of the :code:`component` element or :code:`import component` element referenced by the :code:`component_1` attribute on the :code:`connection` element which is the parent of this element.
+      The value of the :code:`variable_1` attribute MUST be a valid variable reference, as defined in :numref:`{number} {name}<specC_variable_reference>`.
 
 .. marker_map_variables_1
 
@@ -519,9 +526,7 @@ A :code:`map_variables` element information item (referred to in this specificat
 
    2. Each :code:`map_variables` element MUST contain a :code:`variable_2` attribute.
 
-      The value of the :code:`variable_2` attribute MUST be a :ref:`valid CellML identifier<specA_cellml_identifier>`.
-
-      The value of this attribute MUST be equal to the :code:`name` attribute on a :code:`variable` element child of the :code:`component` element or :code:`import component` element referenced by the :code:`component_2` attribute on the :code:`connection` element which is the parent of this element.
+      The value of the :code:`variable_2` attribute MUST be a valid variable reference, as defined in :numref:`{number} {name}<specC_variable_reference>`.
 
 .. marker_map_variables_2
 

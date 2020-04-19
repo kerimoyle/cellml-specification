@@ -1,15 +1,29 @@
 .. _sectionD:
 
-Extensible Markup Language (XML) 1.1 https://www.w3.org/TR/xml11
+.. _ref_rfc2119:
 
-Mathematical Markup Language (MathML) Version 2.0 https://www.w3.org/TR/MathML2/
+1. RFC 2119: Key words for use in RFCs to Indicate Requirement Levels :rfc2119_display:`rfc2119.txt`
 
-Namespaces in XML 1.1 https://www.w3.org/TR/xml-names11/
+.. _ref_xml_infoset:
 
-RFC 2119: Key words for use in RFCs to Indicate Requirement Levels https://www.ietf.org/rfc/rfc2119.txt
+2. XML Information Set (Second Edition) :xml_infoset_display:`/`
 
-Unicode 13.0.0 https://www.unicode.org/versions/Unicode13.0.0/
+.. _ref_xml_namespace_1_1:
 
-XML Information Set https://www.w3.org/TR/xml-infoset/
+3. Namespaces in XML 1.1 (Second Edition) :xml_namespace_1_1_display:`/`
 
-XML Linking Language (XLink) Version 1.1 https://www.w3.org/TR/xlink11/
+.. _ref_unicode:
+
+4. Unicode® 13.0.0 :unicode13_display:`/`
+
+.. _ref_xml_1_1:
+
+5. Extensible Markup Language (XML) 1.1 (Second Edition) :xml_1_1_display:`/`
+
+.. _ref_xlink:
+
+6. XML Linking Language (XLink) Version 1.1 :xlink_display:`/`
+
+.. _ref_mathml2:
+
+7. Mathematical Markup Language (MathML) Version 2.0 (Second Edition) :mathml2_display:`/`
