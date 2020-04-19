@@ -201,7 +201,7 @@
       x = 1
 
     Under-definition at a localised component level is both valid and useful, as you may need to connect to other components in order to know the value of the variables the maths statements are using.
-    Models which *overall* have insufficient definition are also valid, but clearly won't be useful or solvable.
+    Models which *overall* have insufficient definition are also valid, but clearly won't be useful or solvable:
 
     .. math::
 
