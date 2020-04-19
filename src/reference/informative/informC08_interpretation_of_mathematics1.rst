@@ -40,9 +40,10 @@
       
         See CellML syntax example
 
+      In file: MyHouse.cellml
+
       .. code-block:: xml
 
-        <!-- In file: MyHouse.cellml -->
         <model name="BackyardCricket" >
 
           <!-- Pertinent: A locally defined component. -->
@@ -65,7 +66,10 @@
           </encapsulation>
         </model>
 
-        <!-- In file: Neighbours.cellml -->
+      In file: Neighbours.cellml
+
+      .. code-block:: xml
+
         <model name="HarrysHouse" >
           <component name="Harry" />
 
