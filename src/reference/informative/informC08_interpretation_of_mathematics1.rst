@@ -84,5 +84,4 @@
           </encapsulation>
         </model>
 
-    After we know which components are pertinent, we can collect their mathematical grandchildren (i.e.: the top-level children of the pertinent components' :code:`math` elements) and use these to define the mathematics of our mathematical model.
-   
+    After we know which components are pertinent, we can retrieve their mathematical contents (i.e.: the pertinent components' :code:`math` elements) and use these in the broader BackyardCricket model.
