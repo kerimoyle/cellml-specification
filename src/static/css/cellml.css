@@ -71,6 +71,8 @@ li {
     color: rgb(30, 46, 0);
 }
 
+/* Toggle container class for displaying/hiding the "Show more" and "Show CellML syntax" blocks */
+
 .toggle .header {
     display: block;
     clear: both;
@@ -80,11 +82,11 @@ li {
     margin-bottom: 15px;
 }
 
-.toggle .header:after {
+.toggle .header p:after {
     content: " +";
 }
 
-.toggle .header.open:after {
+.toggle .header.open p:after {
     content: " -";
 }
 
