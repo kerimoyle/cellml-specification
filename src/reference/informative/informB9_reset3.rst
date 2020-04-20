@@ -9,10 +9,10 @@
 
   .. container:: infospec
 
-    The :code:`order` attribute of a :code:`reset` element must be specified, and is used when there is more than one :code:`reset` element which has been activated for the same :code:`variable`.
+    The :code:`order` attribute of a :code:`reset` element must be specified, and is used when there is more than one reset which with the ability to change the same variable.
 
-    Continuing the example above which represents the mythological story of Sisyphus rolling a boulder up a mountain, now let's tweak it a little.  
-    The ruler of Tartarus has decided that Sisyphus' should have a day off on Tuesdays, so once a week the boulder doesn't roll down the mountain until the following midnight.
+    We'll continue the example above which represents the mythological story of Sisyphus rolling a boulder up a mountain, but tweak it a little.  
+    The ruler of Tartarus has decided that Sisyphus should have a day off on Tuesdays, so once a week the boulder doesn't roll down the mountain until the following midnight.
     Adding a second :code:`reset` to the model gives us the arrangement shown below.
 
     .. code::

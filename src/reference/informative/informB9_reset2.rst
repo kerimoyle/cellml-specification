@@ -22,6 +22,9 @@
                     ├─ when: time is midnight
                     └─ then: position is bottom of hill
 
+    In this example it's clear that for the reset to operate, it must know what is happening and when; in other words, that the :code:`variable` attribute as well as the :code:`test_variable` attribute must be specified.
+    This is shown in the CellML syntax block below.
+
     .. container:: toggle
 
       .. container:: header
@@ -43,30 +46,66 @@
           </component>
         </model>
 
-        <!-- This is not valid: The test variable "eternity_time" does not exist 
-             in the same component as the reset. -->
+    
+    Examples of invalid configurations include when either the :code:`variable` or :code:`test_variable` attributes are unspecified, or when they do not refer to variables local to the reset's component.
+
+    .. container:: toggle
+
+      .. container:: header
+
+        Show CellML syntax
+
+      .. code-block:: xml
+
+        
         <model name="Tartarus">
           <component name="Sisyphus">
             <variable name="time_of_day" units="second" />
             <variable name="position" units="dimensionless" />
-            <reset variable="position" test_variable="eternity_time" order="1">
+
+            <!-- This is not valid: The test variable has not been specified. -->
+            <reset variable="position" order="1">
               ...
             </reset>
+
+            <!-- This is not valid: The reset variable has not been specified. -->
+            <reset test_variable="time" order="1">
+              ...
+            </reset>
+
           </component>
         </model>
 
-        <!-- This is not valid: The reset variable "position" is in component 
-             "Sisyphus", but the reset which changes it is in component 
-             "RulerOfTartarus". -->
+        
         <model name="Tartarus">
+          <component name="Sisyphus">
+            <variable name="time_of_day" units="second" />
+            <variable name="position" units="dimensionless" />
+
+            <!-- This is not valid: The test variable "eternity_time" does not exist 
+                 in the reset's component. -->
+            <reset variable="position" test_variable="eternity_time" order="1">
+              ...
+            </reset>
+
+          </component>
+        </model>
+
+        
+        <model name="Tartarus">
+
+          <!-- This is not valid: The reset variable "position" is in component  Sisyphus ... -->
           <component name="Sisyphus">
             <variable name="position" units="dimensionless" />
           </component>
+
+          <!-- ... but the reset which changes it is in component "RulerOfTartarus". -->
           <component name="RulerOfTartarus">
             <variable name="time" units="second" />
             <reset variable="position" test_variable="time" order="1">
               ...
             </reset>
           </component>
+
         </model>
 
