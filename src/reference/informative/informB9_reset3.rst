@@ -79,8 +79,8 @@
           </component>
         </model>
 
-    Finally we'll look at the condition for uniqueness of the variable reset order.
-    Note that this is applied within the component itself across all the resets which could apply to a given variable, but also across the set of equivalent variables too.
+    Finally we'll look at the condition for uniqueness of a variable's resets' orders.
+    Note that this is applied within the component itself across all the resets which could apply to a given variable, as well as across the set of equivalent variables too.
     Let's create a second component to represent the whim of Zeus, ruler of the gods, who can intervene at any time to send the stone rolling down the mountain.
 
     .. code::
