@@ -10,7 +10,7 @@
   .. container:: infospec
 
     Consider the following example which represents the mythological story of Sisyphus, king of Ephrya.
-    He was condemned to roll a huge boulder up a mountain each day, but, as it reached the top, the boulder would roll to the bottom and he had to begin again.
+    He was condemned to roll a huge boulder up a mountain each day, but, as it reached the top, the boulder would roll to the bottom so he had to begin again.
 
     .. code::
 

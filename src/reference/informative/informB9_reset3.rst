@@ -9,7 +9,7 @@
 
   .. container:: infospec
 
-    The :code:`order` attribute of a :code:`reset` element must be specified, and is used when there is more than one reset which with the ability to change the same variable.
+    The :code:`order` attribute of a :code:`reset` element must be specified, and is used when there is more than one reset with the ability to change a variable.
 
     We'll continue the example above which represents the mythological story of Sisyphus rolling a boulder up a mountain, but tweak it a little.  
     The ruler of Tartarus has decided that Sisyphus should have a day off on Tuesdays, so once a week the boulder doesn't roll down the mountain until the following midnight.
@@ -35,7 +35,7 @@
     To decide which of the two consequences to enact - to roll the stone or not - we need to consider the :code:`order` attribute.
     In this example, the second reset has an order of 1, so, being the "least positive/most negative" this is considered first. 
     The valid CellML syntax for this situation is shown below, with some examples of invalid syntax too. 
-    For a further discussion on how the :code:`order` attribute is interpreted, please see :numref:`Interpretation of reset elements <specC_interpretation_of_resets>`.
+    For a further discussion on how the :code:`order` attribute is interpreted, please see :numref:`{number} {name} <specC_interpretation_of_resets>`.
  
     .. container:: toggle
 
