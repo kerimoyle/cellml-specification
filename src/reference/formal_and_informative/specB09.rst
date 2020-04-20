@@ -23,4 +23,4 @@
   :start-after: marker_reset_3
   :end-before: marker_reset_end
 
-.. include:: ../informative/informB9_reset4.rst
+.. todo :: ../informative/informB9_reset4.rst
