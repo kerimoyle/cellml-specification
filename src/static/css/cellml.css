@@ -71,8 +71,6 @@ li {
     color: rgb(30, 46, 0);
 }
 
-/* Toggle container for the informative and CellML syntax blocks */
-
 .toggle .header {
     display: block;
     clear: both;
@@ -80,7 +78,6 @@ li {
     text-align: right;
     margin-top: 0;
     margin-bottom: 15px;
-    white-space: nowrap;
 }
 
 .toggle .header:after {
