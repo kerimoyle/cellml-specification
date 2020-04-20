@@ -75,11 +75,11 @@ li {
     margin-bottom: 15px;
 }
 
-.toggle .header + p:after {
+.toggle .header:after {
     content: " +";
 }
 
-.toggle .header.open + p:after {
+.toggle .header.open:after {
     content: " -";
 }
 
