@@ -25,40 +25,47 @@
             └─ component: Gearbox
                 └─ variable: ratio (dimensionless)
 
-    .. code-block:: xml
 
-      <model name="LearningToDrive">
-        <!-- Defining the individual components and their variables. -->
-        <component = "Car">
-          <variable name="road_speed" units="kph" />
-        </component>
-        <component name="Gearbox">
-          <variable name="ratio" units="dimensionless" />
-        </component>
-        <component name="Engine">
-          <variable name="revs" units="hertz"/>
-        </component>
+    .. container:: toggle
 
-        <!-- Defining the custom units required above. -->
-        <units name="kph">
-          <!-- kilometres: -->
-          <unit units="metre" prefix="kilo" />
-          <!-- per hour: -->
-          <unit units="second" exponent="-1" multiplier="3600" />
-        </units>
+      .. container:: header
 
-        <!-- Encapsulating the Gearbox and Engine components inside the Car component. -->
-        <encapsulation>
-          <component_ref component="Car">
-            <component_ref component="Gearbox" />
-            <component_ref component="Engine" />
-          </component_ref>
-        </encapsulation>
-      </model>
+        See CellML syntax
 
+      .. code-block:: xml
+
+        <model name="LearningToDrive">
+          <!-- Defining the individual components and their variables. -->
+          <component = "Car">
+            <variable name="road_speed" units="kph" />
+          </component>
+          <component name="Gearbox">
+            <variable name="ratio" units="dimensionless" />
+          </component>
+          <component name="Engine">
+            <variable name="revs" units="hertz"/>
+          </component>
+
+          <!-- Defining the custom units required above. -->
+          <units name="kph">
+            <!-- kilometres: -->
+            <unit units="metre" prefix="kilo" />
+            <!-- per hour: -->
+            <unit units="second" exponent="-1" multiplier="3600" />
+          </units>
+
+          <!-- Encapsulating the Gearbox and Engine components inside the Car component. -->
+          <encapsulation>
+            <component_ref component="Car">
+              <component_ref component="Gearbox" />
+              <component_ref component="Engine" />
+            </component_ref>
+          </encapsulation>
+        </model>
 
     Of course, the operation of the engine and the gearbox together define the overall operation of the car, so they'll need to exchange information between them.
     This is done by creating equivalent variables between the components.
+
     **Note:** in the CellML model there is no directionality to the variable equivalences; they are part of a set.
     The arrows on the diagrams here are only to explain where information is calculated (the tail of the arrow) and where information is used (the heads of the arrows).
 
@@ -126,12 +133,14 @@
                          └─ "then reduce the gear ratio by 30%"
 
     There are two key aspects to a :code:`reset` item:
+
     - When should a change happen? In this case, when :math:`revs_{engine} \geq 60 [Hertz]`.
     - What should that change be? In this case, :math:`ratio_{new} = 0.7 \times ratio_{current}`.
 
     A third equivalence C is needed now, so that the reset in the :code:`Gearbox` component can have the information it needs (that is, the :code:`revs` of the :code:`Engine`) in order to decide when to change gears.  
 
     In CellML syntax the ideas in the "when" and "then" statements in the diagram above are captured between four items:
+    
     - the "when" by the :code:`test_variable` nominating the variable to evaluate for testing;
     - the :code:`test_value` to specify the threshold point for that variable;
     - the "then" by the :code:`variable` attribute nominating the variable which will be altered by the reset; and
