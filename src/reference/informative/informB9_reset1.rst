@@ -32,4 +32,4 @@
 
     Some of the syntax is explained below in the "see more" sections, and a final example is given at the end.
     For a much more thorough discussion and examples of resets in different scenarios, please see the
-    :numref:`Interpretation of resets <specC_interpretation_of_resets>` section.
+    :numref:`Interpretation of resets<specC_interpretation_of_resets>` section.
