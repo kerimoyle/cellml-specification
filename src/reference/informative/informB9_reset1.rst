@@ -23,11 +23,8 @@
       This is called the "test variable" and is referenced by the :code:`test_variable` attribute in the :code:`reset` block.
       The test variable can be the same as the reset variable.
     - **What happens if more than one reset points to the same reset variable?**
-
-      **TODO** THIS IS NOT TRUE!!!!!!!!!
-      
       This will be sorted out by the unique :code:`order` attribute on each :code:`reset` element which changes this reset variable.
-      The order will determine which of the valid competing resets is applied.
+      The order will determine which of the active competing resets is applied.
     - **What new value should be given to the reset variable?**
       This is called the "reset value" and is specified by evaluating the MathML content which is inside the :code:`reset_value` element child of this :code:`reset` element.
     - **What value of the test variable should be used to trigger the change?**
