@@ -18,16 +18,22 @@ import datetime
 
 date_today = datetime.datetime.today()
 
-tags.add('unofficial')
+unofficial = True
 
-build_type = os.environ['CELLML_SPEC_BUILD'] if 'CELLML_SPEC_BUILD' in os.environ else 'Full'
+if unofficial:
+  tags.add('unofficial')
+
+build_type = os.environ['CELLML_SPEC_BUILD'] if 'CELLML_SPEC_BUILD' in os.environ else 'Normative'
+if build_type not in ('Normative', 'Full'):
+    raise ValueError('Build type must be "Normative" or "Full".')
 
 def manage_index(direction, base_dir=''):
     files = ['master_index.rst', 'index.rst']
     if build_type == 'Normative':
         files = ['normative_only_index.rst', 'index.rst']
 
-    files = [os.path.join(base_dir, files[0]), os.path.join(base_dir, files[1])]
+    files = [os.path.join(base_dir, files[0]),
+             os.path.join(base_dir, files[1])]
     if direction == 'out':
         files.reverse()
 
@@ -35,23 +41,28 @@ def manage_index(direction, base_dir=''):
 
 
 def tex_document_name():
-  name = 'cellml2_specification'
-  if build_type == 'Normative':
-      name = 'cellml2_normative_specification'
+    name = 'cellml2_specification'
+    if build_type == 'Normative':
+        name = 'cellml2_normative_specification'
 
-  return name
+    return name
 
 
 def define_excluded_patterns():
     exclude_patterns = ['normative_only_index.rst',
-      'reference/formal_section*',
-      'reference/formal_only/*',]
+                        'reference/libcellml/*.rst',
+                        'reference/formal_section*',
+                        'reference/informative/informB9_reset1.rst',
+                        'reference/informative/informC07_effect_of_units_on_variables.rst',
+                        'reference/informative/informC08_interpretation_of_mathematics.rst',
+                        'reference/informative/informC11_interpretation_of_variable_resets.rst',
+                        'reference/formal_only/*', ]
     if build_type == 'Normative':
         exclude_patterns = ['master_index.rst',
-          'reference/index_section*',
-          'reference/formal_and_informative/*.rst',
-          'reference/informative/*.rst',
-          'reference/libcellml/*.rst',]
+                            'reference/index_section*',
+                            'reference/formal_and_informative/*.rst',
+                            'reference/informative/*.rst',
+                            'reference/libcellml/*.rst', ]
 
     return exclude_patterns
 
@@ -99,10 +110,14 @@ autosectionlabel_prefix_document = True
 #   :shortcut:`Shortcut text <extra string if needed>` NB space before <
 # Declare below as:
 #   'shortcut': ('http://linkhere/%s',''), NB have to put the string insertion %s to make it work
+#   OR, where you want to print out the URL to the rendered version:
+#   'shortcut': ('http://linkhere%s', None) then use :shortcut:`/` in the text to display full URL, including the trailing slash.
 extlinks = {
     'buildbot': ('https://buildbot.net%s', ''),
+    'calvin_and_hobbes': ('https://www.gocomics.com/calvinandhobbes/%s', ''),
     'cellml1to2': ('https://github.com/hsorby/cellml1to2%s', ''),
-    'cellml2': ('https://www.cellml.org/%s', ''),
+    'cellml2namespace': ('http://www.cellml.org/cellml/2.0%s', None),
+    'cellml2spec_display': ('https://cellml.org/specifications/cellml_2.0%s', None),
     'cellsolver': ('https://github.com/hsorby/cellsolver%s', ''),
     'cmake': ('https://cmake.org/%s', ''),
     'doxygen': ('http://www.doxygen.nl/%s', ''),
@@ -110,46 +125,79 @@ extlinks = {
     'git': ('https://git-scm.com/%s', ''),
     'github': ('https://github.com/%s', ''),
     'google_styleguide': ('https://google.github.io/styleguide/cppguide.html/%s', ''),
-    'href_locator': ('https://www.w3.org/TR/2001/REC-xlink-20010627/#link-locators/%s', ''),
     'libcellml': ('https://libcellml.org/%s', ''),
     'libcellml_repo': ('https://github.com/cellml/libcellml.git%s', ''),
     'libxml2': ('http://www.xmlsoft.org/%s', ''),
+
+    # These should be identical: one for links, one for full URL display
+    'mathml2':         ('https://www.w3.org/TR/MathML2%s', ''),
+    'mathml2_display': ('https://www.w3.org/TR/MathML2%s', None),
+
     'mathml2help': ('https://www.w3.org/TR/MathML2/chapter4.html%s', ''),
-    'mathml2spec': ('http://www.w3.org/TR/2003/REC-MathML2-20031021/%s', ''),
+
+    # This will get MathML added to the end so it becomes http://www.w3.org/1998/Math/MathML
+    # in the final display, to avoid trailing slashes.
+    'mathml2namespace': ('http://www.w3.org/1998/Math/%s', None),
+
     'namespace_help': ('https://www.w3schools.com/xml/xml_namespaces.asp%s', ''),
     'opencor': ('https://opencor.ws/%s', ''),
     'pmr': ('https://models.physiomeproject.org/welcome/%s', ''),
     'python': ('https://www.python.org/%s', ''),
-    'rfc2119': ('http://www.ietf.org/rfc/rfc2119.txt%s', ''),
+
+    # These should be identical: one for links, one for full URL display
+    'rfc2119':         ('https://www.ietf.org/rfc/rfc2119.txt%s', ''),
+    'rfc2119_display': ('https://www.ietf.org/rfc/%s', None),
+
     'sphinx': ('http://sphinx-doc.org/%s', ''),
     'swig': ('http://www.swig.org/%s', ''),
     'unicode': ('http://www.fileformat.info/info/unicode/char/%s/index.htm', 'U+'),
-    'xlink': ('http://www.w3.org/TR/2001/REC-xlink-20010627/%s', ''),
+
+    # These should be identical: one for links, one for full URL display
+    'unicode13':         ('https://www.unicode.org/versions/Unicode13.0.0%s', ''),
+    'unicode13_display': ('https://www.unicode.org/versions/Unicode13.0.0%s', None),
+
+    # These should be identical: one for links, one for full URL display
+    'xlink':         ('https://www.w3.org/TR/xlink11%s', ''),
+    'xlink_display': ('https://www.w3.org/TR/xlink11%s', None),
+
     'xml_help': ('https://www.w3.org/XML/%s', ''),
-    'xml_1_1': ('http://www.w3.org/TR/xml11/%s', ''),
-    'xml_infoset': ('http://www.w3.org/TR/2004/REC-xml-infoset-20040204/%s', ''),
-    'xml_namespace_1_1': ('https://www.w3.org/TR/2006/REC-xml-names11-20060816/%s', ''),
+
+    # These should be identical: one for links, one for full URL display
+    'xml_1_1':         ('https://www.w3.org/TR/xml11%s', ''),
+    'xml_1_1_display': ('https://www.w3.org/TR/xml11%s', None),
+
+    # These should be identical: one for links, one for full URL display
+    'xml_infoset':         ('https://www.w3.org/TR/2004/REC-xml-infoset-20040204/%s', ''),
+    'xml_infoset_display': ('https://www.w3.org/TR/2004/REC-xml-infoset-20040204%s', None),
+
+    'xml_namespace_1_1':         ('https://www.w3.org/TR/xml-names11%s', ''),
+    'xml_namespace_1_1_display': ('https://www.w3.org/TR/xml-names11%s', None),
+
 }
 
 # Making a passive role with which to decorate hardcoded references to sections. These
 # will need to be manually changed if the numbering is ever altered, and can be located
 # more easily by searching for the "hardcodedref" tag.
 rst_prolog = """
-.. role:: hardcodedref 
+.. role:: hardcodedref
 """
 
 # General information about the project.
-project = u'CellML 2.0'
-copyright = u'2019-{0}, CellML Editors and Contributors'.format(date_today.year)
+project = u'CellML'
+copyright = u'2019-{0}, CellML Editors and Contributors'.format(
+    date_today.year)
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
 # built documents.
 #
 # The short X.Y version.
-version = '2.0.0-rc1'
+version = '2.0'
 # The full version, including alpha/beta/rc tags.
-release = '2.0.0-rc1'
+release = '2.0'
+if unofficial:
+    version += '-unofficial'
+    release += '-unofficial'
 
 # The language for content autogenerated by Sphinx. Refer to documentation
 # for a list of supported languages.
@@ -159,7 +207,7 @@ release = '2.0.0-rc1'
 # non-false value, then it is used:
 #today = ''
 # Else, today_fmt is used as the format for a strftime call.
-#today_fmt = '%B %d, %Y'
+today_fmt = '%d %B %Y'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -207,6 +255,11 @@ html_theme_options = {
     'navigation_depth': 2,
 }
 
+# Pass options through to the template
+html_context = {
+  'unofficial': unofficial,
+}
+
 # Automagically convert all :ref: blocks to show a tooltip using the hoverxref
 # extension.
 hoverxref_auto_ref = True
@@ -247,7 +300,7 @@ html_css_files = ['css/cellml.css']
 
 # If not '', a 'Last updated on:' timestamp is inserted at every page bottom,
 # using the given strftime format.
-#html_last_updated_fmt = '%b %d, %Y'
+html_last_updated_fmt = '%d %B %Y'
 
 # If true, SmartyPants will be used to convert quotes and dashes to
 # typographically correct entities.
@@ -306,18 +359,21 @@ latex_elements = {
 
     # Additional stuff for the LaTeX preamble.
     'preamble': r'''
-% Preamble set from Sphinx configuration
-\usepackage[titles]{tocloft}
-\usepackage{textgreek}
-\usepackage{amssymb}
-'''
+        % Preamble set from Sphinx configuration
+        \usepackage[titles]{tocloft}
+        \usepackage{textgreek}
+        \usepackage{amssymb}
+
+        % Stop cross-references from showing up in italics
+        \protected\def\sphinxcrossref#1{#1}
+    '''
 }
 
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    ('index', '{0}.tex'.format(tex_document_name()), u'CellML Specification',
+    ('index', '{0}.tex'.format(tex_document_name()), u'CellML Normative Specification',
      u'CellML 2.0 Editors and Contributors', 'manual'),
 ]
 
@@ -346,9 +402,9 @@ latex_use_parts = True
 
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
-#man_pages = [
+# man_pages = [
 #    ('index', 'cellml', u'CellML 2.0 Documentation', [u'CellML Editors'], 1)
-#]
+# ]
 
 # If true, show URL addresses after external links.
 #man_show_urls = False
@@ -359,11 +415,11 @@ latex_use_parts = True
 # Grouping the document tree into Texinfo files. List of tuples
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
-#texinfo_documents = [
+# texinfo_documents = [
 #    ('index', 'CellML', u'CellML Documentation',
 #     u'CellML 2.0 Editors', 'CellML 2.0', 'CellML 2.0 Normative Specification.',
 #     'Miscellaneous'),
-#]
+# ]
 
 # Documents to append as an appendix to all manuals.
 #texinfo_appendices = []
