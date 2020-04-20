@@ -14,7 +14,7 @@
 
     .. code::
 
-      model: ResidentsOfTartarus
+      model: Tartarus
         └─ component: Sisyphus
             ├─ variable: time
             └─ variable: position
@@ -33,7 +33,7 @@
         <!-- This is valid: both the reset variable "position" and the 
              test_variable "time" are in the same component as the reset
              which uses them. -->
-        <model name="ResidentsOfTartarus">
+        <model name="Tartarus">
           <component name="Sisyphus">
             <variable name="time" units="second" />
             <variable name="position" units="dimensionless" />
@@ -45,7 +45,7 @@
 
         <!-- This is not valid: The test variable "eternity_time" does not exist 
              in the same component as the reset. -->
-        <model name="ResidentsOfTartarus">
+        <model name="Tartarus">
           <component name="Sisyphus">
             <variable name="time_of_day" units="second" />
             <variable name="position" units="dimensionless" />
@@ -58,7 +58,7 @@
         <!-- This is not valid: The reset variable "position" is in component 
              "Sisyphus", but the reset which changes it is in component 
              "RulerOfTartarus". -->
-        <model name="ResidentsOfTartarus">
+        <model name="Tartarus">
           <component name="Sisyphus">
             <variable name="position" units="dimensionless" />
           </component>
