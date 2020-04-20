@@ -21,19 +21,19 @@
         └─ component: Sisyphus
             ├─ variable: time
             └─ variable: position
-                ├─ reset:
+                ├─ reset: A
                 │   ├─ when: time is midnight
                 │   ├─ then: position is bottom of hill
                 │   └─ order: 2
                 │
-                └─ reset:
+                └─ reset: B
                     ├─ when: time is Tuesday midnight
                     ├─ then: position is unchanged at top of hill
                     └─ order: 1
 
-    As it stands, at midnight on a Tuesday *both* of the resets above are active: the first, because midnight on Tuesday is indeed midnight; the second because it's also a Tuesday midnight.
+    As it stands, at midnight on a Tuesday *both* of the resets above are active: the first, reset A, because midnight on any day meets the midnight criterion; the second because midnight on Tuesday also meets the criterion for B.
     To decide which of the two consequences to enact - to roll the stone or not - we need to consider the :code:`order` attribute.
-    In this example, the second reset has an order of 1, so, being the "least positive/most negative" this is considered first. 
+    In this example, reset B has an order of 1, so, being the "least positive/most negative" this is considered first. 
     The valid CellML syntax for this situation is shown below, with some examples of invalid syntax too. 
     For a further discussion on how the :code:`order` attribute is interpreted, please see :numref:`{number} {name} <specC_interpretation_of_resets>`.
  
@@ -72,7 +72,7 @@
             <!-- Invalid: missing order attribute. -->
             <reset variable="position" test_variable="time" />
 
-            <!-- Invalid: order must be an integer. >
+            <!-- Invalid: order must be an integer. -->
             <reset variable="position" test_variable="time" order="first" />
             <reset variable="position" test_variable="time" order="1.0" />
 
@@ -112,6 +112,6 @@
 
       Gotcha: an "equivalent variable set" without any equivalent variables?
 
-    The equivalent variable set here really refers to any reset which references the same variable.
+    The equivalent variable set rule here refers to any reset which references the same variable.
     This is possible in two ways - either by directly referencing it (as in resets A and B above) or through the equivalence network (as in reset C).  
-    Thus, even in situations where there are no equivalent variables defined in the model (which is the case before Zeus stepped in above) there is still the need for order uniqueness between resets of the same variable (as in between A and B).
+    Thus, even in situations where there are no equivalent variables defined in the model (which is the case before Zeus stepped in) there is still the need for order uniqueness between resets of the same variable (as in between A and B).
