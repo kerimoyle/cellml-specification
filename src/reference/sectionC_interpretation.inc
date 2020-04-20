@@ -442,10 +442,9 @@ Interpretation of ``map_variables`` elements
      Each set of equivalent variables represents one variable in the underlying mathematical model.
 
 .. marker_interpretation_of_map_variables_end
-.. marker_interpretation_of_variable_resets_start
+.. marker_interpretation_of_resets_start
 
-.. _specC_interpretation_of_variable_resets:
-
+.. _specC_interpretation_of_resets:
 
 Interpretation of ``reset`` elements
 ------------------------------------
@@ -461,4 +460,4 @@ Interpretation of ``reset`` elements
 
 #. When a reset occurs, the reset variable SHALL be set to the result of evaluating the MathML expression encoded in the :code:`reset_value`.
 
-.. marker_interpretation_of_variable_resets_end
+.. marker_interpretation_of_resets_end

@@ -9,45 +9,18 @@
 
   .. container:: infospec
 
-    .. container:: heading3
-
-      Reset variables and test variables
-
-    Consider the following model which simulates an old-fashioned automatic gearbox in a car, which changes gears based on the speed of revolution in the engine.
+    Consider the following example which represents the mythological story of Sisyphus, king of Ephrya.
+    He was condemned to roll a huge boulder up a mountain each day, but, as it reached the top, the boulder would roll to the bottom and he had to begin again.
 
     .. code::
 
-      model: AutomaticTransmission
-        ├─ component: Gearbox
-        │   └─ variable: ratio (dimensionless)
-        └─ component: Engine
-            └─ variable: revs (hertz)
-
-    .. code-block:: xml
-
-      <model name="AutomaticTransmission">
-        <component name="Gearbox">
-          <variable name="ratio" units="dimensionless" initial_value="3" />
-        </component>
-        <component name="Engine">
-          <variable name="revs" units="hertz" initial_value="0" />
-        </component>
-      </model>
-
-    When the engine's revs get over 60 Hertz (3600rpm) then two things happen: the gearbox should change up a gear by reducing the ratio by 30%, and the engine's revs should drop by that same 30%.
-    Because this behaviour involves discrete changes in value, resets are a good way model it.
-    Let's add them now.
-
-    .. code::
-
-      model: AutomaticTransmission
-        ├─ component: Gearbox
-        │   └─ variable: ratio (dimensionless)
-        │       └─ reset: want to change gear when revs are too high, but don't know the revs?
-        │                  
-        └─ component: Engine
-            └─ variable: revs (hertz)
-                └─ reset: want to reduce revs when the gear is changed, but don't know the gear?
+      model: ResidentsOfTartarus
+        └─ component: Sisyphus
+            ├─ variable: time
+            └─ variable: position
+                └─ reset:
+                    ├─ when: time is midnight
+                    └─ then: position is bottom of hill
 
     .. container:: toggle
 
@@ -57,85 +30,43 @@
 
       .. code-block:: xml
 
-        <model name="AutomaticTransmission">
-          <component name="Gearbox">
-            <variable name="ratio" units="dimensionless" initial_value="3" />
-
-            <!-- Invalid: the test_variable "revs" is outside of the "Gearbox" component. -->
-            <reset variable="ratio" test_variable="revs" order="1" >
+        <!-- This is valid: both the reset variable "position" and the 
+             test_variable "time" are in the same component as the reset
+             which uses them. -->
+        <model name="ResidentsOfTartarus">
+          <component name="Sisyphus">
+            <variable name="time" units="second" />
+            <variable name="position" units="dimensionless" />
+            <reset variable="position" test_variable="time" order="1">
               ...
             </reset>
-
-          </component>
-          <component name="Engine">
-            <variable name="revs" units="hertz" initial_value="0" />
-
-            <!-- Invalid: the variable "ratio" is outside of the "Engine" component. -->
-            <reset variable="ratio" test_variable="revs" order="2" >
-              ...
-            </reset>
-
           </component>
         </model>
 
-    This example illustrates the fact that both the :code:`variable` and :code:`test_variable` attributes must refer to :code:`variable` elements in the same :code:`component` as the :code:`reset` is sitting.
-    It can be fixed by either setting up some variable equivalences to map the required variables from one component to another, as shown below:
-
-    .. code::
-
-                  model: AutomaticTransmission
-                    ├─ component: Gearbox
-              ┌╴╴╴╴╴╴╴╴╴╴├─ variable: ratio (dimensionless)
-              ╷     │    │    │
-              ╷     │    │    ├─ reset: change ratio based on engine_revs
-              ╷     │    │    │
-              ╷ ┌╴╴╴╴╴╴╴>└─ variable: engine_revs (hertz)
-              ╷ ╷   │
-         equivalent │
-          variables │
-              ╵ ╵   └─ component: Engine
-              ╵ └╴╴╴╴╴╴╴╴├─ variable: revs (hertz)
-              ╵          │    │
-              ╵          │    ├─ reset: change revs based on gear_ratio
-              ╵          │    │
-              └╴╴╴╴╴╴╴╴╴>└─ variable: gear_ratio (dimensionless)
-
-    .. container:: toggle
-
-      .. container:: header
-
-        Show CellML syntax
-
-      .. code-block:: xml
-
-        <model name="AutomaticTransmission">
-          <component name="Gearbox">
-            <variable name="ratio" units="dimensionless" initial_value="3" />
-            <variable name="engine_revs" units="hertz" />
-
-            <!-- Valid: the test_variable "engine_revs" is now inside 
-                the "Gearbox" component. -->
-            <reset variable="ratio" test_variable="engine_revs" order="1" >
+        <!-- This is not valid: The test variable "eternity_time" does not exist 
+             in the same component as the reset. -->
+        <model name="ResidentsOfTartarus">
+          <component name="Sisyphus">
+            <variable name="time_of_day" units="second" />
+            <variable name="position" units="dimensionless" />
+            <reset variable="position" test_variable="eternity_time" order="1">
               ...
             </reset>
           </component>
-          <component name="Engine">
-            <variable name="revs" units="hertz" initial_value="0" />
-            <variable name="gear_ratio" units="dimensionless" />
-
-            <!-- Valid: the variable "gear_ratio" is now inside the "Engine"
-                component. -->
-            <reset variable="ratio" test_variable="revs" order="2" >
-              ...
-            </reset>
-          </component>
-
-          <!-- Defining the equivalent variable mappings which enables
-              them to be shared above. -->
-          <connection component_1="Gearbox" component_2="Engine">
-            <map_variables variable_1="ratio" variable_2="gear_ratio" />
-            <map_variables variable_1="engine_revs" variable_2="revs" />
-          </connection>
         </model>
 
-    This example also highlights the possiblity of circular dependencies in resets, which will be discussed in the following "See more" block regarding the :code:`order` attribute.
+        <!-- This is not valid: The reset variable "position" is in component 
+             "Sisyphus", but the reset which changes it is in component 
+             "RulerOfTartarus". -->
+        <model name="ResidentsOfTartarus">
+          <component name="Sisyphus">
+            <variable name="position" units="dimensionless" />
+          </component>
+          <component name="RulerOfTartarus">
+            <variable name="time" units="second" />
+            <reset variable="position" test_variable="time" order="1">
+              ...
+            </reset>
+          </component>
+        </model>
+

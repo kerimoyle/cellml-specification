@@ -1,5 +1,5 @@
-.. _informB9:
-.. _inform_reset:
+.. _informB9_1:
+.. _inform_reset1:
 
 .. container:: toggle
 
@@ -31,4 +31,5 @@
       This is called the "test value" and is specified by evaluating the MathML content inside the :code:`test_value` element child of this :code:`reset` element.
 
     Some of the syntax is explained below in the "see more" sections, and a final example is given at the end.
-    For a much more thorough discussion and examples of resets in different scenarios, please see **TODO**.
+    For a much more thorough discussion and examples of resets in different scenarios, please see the
+    :numref:`Interpretation of resets <specC_interpretation_of_resets>` section.
