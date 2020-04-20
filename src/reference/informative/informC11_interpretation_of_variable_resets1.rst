@@ -10,7 +10,7 @@
 
     .. container:: heading3
 
-      Reset variables and test variables
+      Understanding reset variables and test variables
 
     Consider the following model which simulates an old-fashioned automatic gearbox in a car, which changes gears in order to reduce the engine speed, but maintain the road speed.
     In this example we will consider that the road speed is an input, and the selection of a gear ratio is an output.
@@ -140,7 +140,7 @@
     A third equivalence C is needed now, so that the reset in the :code:`Gearbox` component can have the information it needs (that is, the :code:`revs` of the :code:`Engine`) in order to decide when to change gears.  
 
     In CellML syntax the ideas in the "when" and "then" statements in the diagram above are captured between four items:
-    
+
     - the "when" by the :code:`test_variable` nominating the variable to evaluate for testing;
     - the :code:`test_value` to specify the threshold point for that variable;
     - the "then" by the :code:`variable` attribute nominating the variable which will be altered by the reset; and
@@ -205,3 +205,6 @@
       At this stage we'd expect the behaviour of the gear box to have a step-change in the :code:`ratio` value as the gear change occcured.
       We'd also expect a similar step-change in the :code:`revs` variable in the engine too, as the overall road speed is maintained.
       The difference with the :code:`revs` (and equivalent :code:`engine_revs`) variables is that since these are dependent on the gear ratio, their value will update based on that; they do not need their own reset to create this behaviour.
+
+      To this point we have used only one reset.
+      The next block will look at how more multiple resets can affect a single variable, and introduce concept of a reset order.
