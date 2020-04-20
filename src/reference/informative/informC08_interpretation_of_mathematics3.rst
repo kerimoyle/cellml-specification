@@ -90,7 +90,7 @@
             <units name="powers" />
             <!-- Creating the derived custom units with different prefixes, 
                 mega and micro. -->
-            <units name="megapowers >
+            <units name="megapowers" >
               <unit units="powers" prefix="mega" />
             </units>
             <units name="micropowers">
@@ -142,7 +142,7 @@
 
           <model name="DCUniverse">
             <units name="powers" />
-            <units name="megapowers >
+            <units name="megapowers" >
               <unit units="powers" prefix="mega" />
             </units>
             <!-- Creating a new base unit called "marshmallow".-->

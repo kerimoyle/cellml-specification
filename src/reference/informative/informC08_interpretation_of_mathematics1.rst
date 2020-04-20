@@ -14,9 +14,10 @@
 
     Pertinent components are those which together form the entirety of the model.
     They could be locally defined within the :code:`model` itself, imported from a separate file, or a dependency within the encapsulated set of an imported component.
+
     The example below describes a game of cricket in the backyard of a boy called Tom (defined locally).  
     He imports a boy called Harry from next door, but Harry's dog Dick comes along too as an implicit import because the component :code:`DickTheDog` is encapsulated as a child of the component :code:`Harry` in the :code:`Neighbours.cellml` file.
-    All three components :code:`Tom`, :code:`DickTheDog`, and :code:`Harry` are "pertinent component items" to the :code:`BackyardCricket` model.
+    All three components :code:`Tom`, :code:`DickTheDog`, and :code:`Harry` are "pertinent" to the :code:`BackyardCricket` model.
     The component :code:`George`, also in the :code:`Neighbours.cellml` file is not pertinent, as it is not within the encapsulated set of the imported component :code:`Harry`.
 
     .. code::
