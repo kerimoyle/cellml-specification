@@ -81,11 +81,11 @@ li {
     margin-bottom: 15px;
 }
 
-.toggle .header + p:after {
+.toggle .header p:after {
     content: " +";
 }
 
-.toggle .header.open + p:after {
+.toggle .header.open p:after {
     content: " -";
 }
 
