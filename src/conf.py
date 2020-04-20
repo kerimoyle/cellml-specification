@@ -263,7 +263,7 @@ html_context = {
 # Automagically convert all :ref: blocks to show a tooltip using the hoverxref
 # extension.
 hoverxref_auto_ref = True
-hoverxref_roles = ['ref', 'numref']
+# hoverxref_roles = ['ref', 'numref']
 hoverxref_role_types = {
     'ref': 'tooltip',       
     'numref': 'tooltip',    
