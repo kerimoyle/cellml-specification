@@ -14,7 +14,7 @@
       Understanding reset elements
 
     Resets are a new addition to CellML in version 2.0, and their intention is to allow the user to specify how and when discontinuities can exist in variable values throughout the solution.
-    A reset lets you do just that: reset a variable to a totally different value, restart a timer, flip a switch, take a step, start again.
+    A reset lets you set a variable to a totally different value, restart a timer, flip a switch, take a step, start again.
     In order to work, a reset needs to know some information:
 
     - **Which variable's value do you want to change?**
@@ -23,6 +23,9 @@
       This is called the "test variable" and is referenced by the :code:`test_variable` attribute in the :code:`reset` block.
       The test variable can be the same as the reset variable.
     - **What happens if more than one reset points to the same reset variable?**
+
+      **TODO** THIS IS NOT TRUE!!!!!!!!!
+      
       This will be sorted out by the unique :code:`order` attribute on each :code:`reset` element which changes this reset variable.
       The order will determine which of the valid competing resets is applied.
     - **What new value should be given to the reset variable?**
