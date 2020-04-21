@@ -24,31 +24,13 @@
       model: UnderworldOfTartarus
         └─ component: Sisyphus
             ├─ maths: 
-            │    └─ position = seconds_of_day * speed 
-            ├─ variable: seconds_of_day
-            ├─ variable: speed
+            │    ├─ time = time + 1
+            │    └─ position = position + 1
+            ├─ variable: time
             └─ variable: position
                 └─ reset:
-                    ├─ "when it is midnight"
+                    ├─ "when time is midnight"
                     └─ "then the boulder's position is the bottom of the hill"
-
-    .. container:: toggle
-
-      .. container:: header
-
-        Show CellML syntax
-
-      .. code-block:: xml
-
-        <model name="Tartarus">
-          <component name="Sisyphus">
-            <variable name="time" units="second" />
-            <variable name="position" units="dimensionless" />
-            <reset variable="position" test_variable="time" order="1">
-              ...
-            </reset>
-          </component>
-        </model>
 
     In this example it's clear that for the reset to operate, it must know what is happening and when; this is the interpretation of the *when* and *then* statements above, which (as outlined in :numref:`{number} {name}<reset>`) are controlled by the :code:`test_variable` / :code:`test_value` and :code:`variable` / :code:`reset_value` combinations respectively.
 

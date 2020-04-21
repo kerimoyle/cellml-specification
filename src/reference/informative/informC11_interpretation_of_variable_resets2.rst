@@ -71,4 +71,4 @@
     - Applying (6), we see that the position value has changed ... ???
 
 
-    **Is there no simple way to prevent a reset from being active because a second one is?**
+    **Is there no simple way to prevent a reset from being active because a second one is? no either or? **
