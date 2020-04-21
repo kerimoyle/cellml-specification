@@ -172,3 +172,5 @@
     - :code:`x` [Volts] equivalent to :code:`y` [millivolts] : **valid**, unit reductions are the same even though the scaling factor is different; 
     - in the :code:`math` element :code:`x` [Volts] = :code:`y` [Amps]: **valid** (but nonsense); 
     - in the :code:`math` element :code:`x` [Volts] = 3 [Amps]: **valid** (but nonsense).
+
+    .. include:: inform_table_mathml_units.rst
