@@ -52,6 +52,16 @@
             </apply>
           </apply>
         </apply>
+
+      A complete list of the mathematically valid units for different MathML operations is available under the "Show Table" link below.
+
+      .. container:: toggle
+
+        .. container:: header
+
+          Show Table: Units for operands and results of MathML operations 
+
+        .. include:: ../informative/inform_table_mathml_units.rst
   
     **Between components:**
     Components were designed to promote modularity and reuse of models, so it's important that those re-users understand what they're getting into. 
@@ -172,5 +182,3 @@
     - :code:`x` [Volts] equivalent to :code:`y` [millivolts] : **valid**, unit reductions are the same even though the scaling factor is different; 
     - in the :code:`math` element :code:`x` [Volts] = :code:`y` [Amps]: **valid** (but nonsense); 
     - in the :code:`math` element :code:`x` [Volts] = 3 [Amps]: **valid** (but nonsense).
-
-    .. include:: inform_table_mathml_units.rst
