@@ -8,6 +8,10 @@
 
 .. include:: ../sectionC_interpretation.inc
   :start-after: marker_interpretation_of_variable_resets_1
-  :end-before: marker_interpretation_of_variable_resets_end
+  :end-before: marker_interpretation_of_variable_resets_2
 
 .. include:: ../informative/informC11_interpretation_of_variable_resets2.rst
+
+.. include:: ../sectionC_interpretation.inc
+  :start-after: marker_interpretation_of_variable_resets_2
+  :end-before: marker_interpretation_of_variable_resets_end
