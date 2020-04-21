@@ -22,6 +22,6 @@
 
     - When variables are passed *between* components (through equivalent variables, see :numref:`{number} {name}<specC_interpretation_of_map_variables>`) the units of those variables must be checked for consistency; the external modeller does not necessarily have knowledge of the inner workings of the black-box component, only the variables it passes to and fro across the boundaries.
 
-    - When variables are created to operate *within* a component (its local mathematics) their units are not checked; the modeller *does* have knowledge of the inner workings, and can control and interpret them as needed (see :numref:`{number} {name}<specC_interpretation_of_mathematics>`.
+    - When variables are created to operate *within* a component (its local mathematics) their units are not checked; the modeller *does* have knowledge of the inner workings, and can control and interpret them as needed (see :numref:`{number} {name}<specC_units_and_maths>`).
 
     Thus, CellML deems it important for the component border crossings to have as much information as possible (that is: the units and variable pairs), yet permits modellers the flexibility to make their own decisions about units within components.
