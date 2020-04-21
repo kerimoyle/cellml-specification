@@ -17,10 +17,11 @@
 
     Each component in a CellML model is a package.
     That package may in turn contain other packages too, but each one is intended to represent an idea, a functionality, a black-boxed *thing* which can then be passed around and reused as needed.
-    Think about a component from the perspective of another modeller who wants to reuse it in their own model.
 
-    When variables are passed *between* components (through equivalent variables, see :numref:`{number} {name}<specC_interpretation_of_map_variables>`) the units of those variables must be checked for consistency; the external modeller does not necessarily have knowledge of the inner workings of the black-box component, only the variables it passes to and fro across the boundaries.
+    Now think about a component from the perspective of another modeller who wants to reuse your component in their  model:
 
-    But *within* a component (its local mathematics) the units are not checked; the modeller does have knowledge of the inner workings, and can control and interpret them as needed (see :numref:`{number} {name}<specC_interpretation_of_mathematics>`.
+    - When variables are passed *between* components (through equivalent variables, see :numref:`{number} {name}<specC_interpretation_of_map_variables>`) the units of those variables must be checked for consistency; the external modeller does not necessarily have knowledge of the inner workings of the black-box component, only the variables it passes to and fro across the boundaries.
 
-    Thus, CellML deems it important for the component border crossings to have as much information as possible (that is: the units and variable pairs), but permits modellers to make their own decisions about units within components.
+    - When variables are created to operate *within* a component (its local mathematics) their units are not checked; the modeller *does* have knowledge of the inner workings, and can control and interpret them as needed (see :numref:`{number} {name}<specC_interpretation_of_mathematics>`.
+
+    Thus, CellML deems it important for the component border crossings to have as much information as possible (that is: the units and variable pairs), yet permits modellers the flexibility to make their own decisions about units within components.
