@@ -1,4 +1,3 @@
-.. _table_mathml_units:
 
 .. table:: Units for operands and results of MathML operations
   :widths: auto
@@ -29,11 +28,13 @@
   | :code:`power`                                                                                      | | The second operand must have units of :code:`dimensionless`.                                              |
   |                                                                                                    | | The result of this operator has units that are the units on the first operand raised                      |
   |                                                                                                    | to the power of the second operand.                                                                         |
+  |                                                                                                    |                                                                                                             |
   |                                                                                                    | | If the first operand has units of :code:`dimensionless`, the result will as well.                         |
   |                                                                                                    |                                                                                                             |
   +----------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
   | :code:`root`                                                                                       | | The result of this operator has units that are the units on the first operand raised to                   |
   |                                                                                                    | the reciprocal of the value of the :code:`degree` qualifier element (the default value of which is 2.0).    |
+  |                                                                                                    |                                                                                                             |
   |                                                                                                    | | If the first operand has units of :code:`dimensionless`, the result will as well.                         |
   |                                                                                                    |                                                                                                             |
   +----------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
