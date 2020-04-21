@@ -1,0 +1,74 @@
+.. _informC11_interpretation_of_variable_resets2:
+
+.. container:: toggle
+
+  .. container:: header
+
+    See more
+
+  .. container:: infospec
+
+    .. container:: heading3
+
+      Understanding reset order
+
+    We'll continue the mythological story of Sisyphus rolling a boulder up a mountain, but tweak it a little.  
+    The ruler of Tartarus has decided that Sisyphus can have a little help on Tuesdays, so once a week the boulder doesn't roll down the mountain until the following midnight, but Sisyphus still has to continue to push it upwards (I guess the mountain got bigger too).
+    Adding a second :code:`reset` to the model gives us the arrangement shown below.
+
+    .. code::
+
+      model: Tartarus
+        └─ component: Sisyphus
+            ├─ variable: time
+            └─ variable: position
+                ├─ reset: A
+                │   ├─ "when time is midnight"
+                │   ├─ "then position is bottom of hill"
+                │   └─ order: 1
+                │
+                └─ reset: B
+                    ├─ "when time is midnight between Monday and Tuesday"
+                    ├─ "then position is top of the hill"
+                    └─ order: 2
+
+    At midnight between Monday and Tuesday *both* of the resets above are active: the first, reset A, because midnight on any day meets the midnight criterion; the second because 00:00 on Tuesday morning also meets the criterion for B.
+    To decide which of the two consequences to enact - to roll the stone or not - we need to use the resets' orders as a tie-breaker.
+    Here's how that works.
+
+    .. container:: heading3
+      
+      Enacting the reset algorithm
+
+    Behind the syntax of the resets is an algorithm which determines how they are interpreted.
+    This algorithm is outlined below.
+
+    1. For each reset item, determine whether its test criterion (the "when" idea above) has been met.
+       a. If yes, set its status to "active".
+       b. If not, set its status to "inactive".
+
+    2. Collect all *active resets* for a variable and its equivalent variables into a "variable active set".
+
+    3. For each variable, select the lowest order reset from the *variable active set* and designate it "pending".
+
+    4. Calculate, but do not apply, the update changes specified by each *pending* reset based on the current state of the model.
+
+    5. Apply the updates calculated in (4).  
+       This step means that the order in which the variables' values are altered does not affect the overall behaviour of the resets.
+    
+    6. Test whether the set of variable values in the model's has changed: 
+       a. If yes, repeat the steps above from 1 using the updated values as the basis for the tests.
+       b. If not, continue the modelling process with the updated values.
+
+    Let's apply this to the example and see how it works. 
+    Consider the state when Sisyphus has reached the top of the mountain at midnight between Monday and Tuesday.
+
+    - Applying (1), both resets A and B are designated *active*.
+    - Applying (2), both resets A and B explicitly reference the variable :code:`position`, so are in the same *active set* for that variable.  
+    - Applying (3), we select reset A as having the lower order within the *active set*, and call it *pending*.
+    - Applying (4), we evaluate the new value for the position variable to be the bottom of the hill.
+    - Applying (5), the boulder moves to the bottom of hill.
+    - Applying (6), we see that the position value has changed ... ???
+
+
+    **Is there no simple way to prevent a reset from being active because a second one is?**
