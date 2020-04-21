@@ -14,10 +14,9 @@
 
     Consider the following example which represents the mythological story of Sisyphus.
     Sisyphus was condemned to live in Tartarus - a section of the Underworld - and roll a huge boulder up a mountain each day.
-    And, every day, just as he reached the top, the boulder would roll to the bottom and the process would begin all over again.
+    And, every midnight, the boulder would roll to the bottom and the process would begin all over again.
 
-    We will assume in this model that Sisyphus' speed up the mountain is constant, and that he works constantly through day and night.
-    We will also assume that the variable :code:`seconds_of_day` is supplied.
+    We will assume in this model that Sisyphus' position up the mountain increments by 1 metre each second, and that he works constantly through day and night.
 
     .. code::
 

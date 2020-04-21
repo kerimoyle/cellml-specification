@@ -56,7 +56,7 @@
     5. Apply the updates calculated in (4).  
        This step means that the order in which the variables' values are altered does not affect the overall behaviour of the resets.
     
-    6. Test whether the set of variable values in the model's has changed: 
+    6. Test whether the set of variable values in the model has changed: 
        a. If yes, repeat the steps above from 1 using the updated values as the basis for the tests.
        b. If not, continue the modelling process with the updated values.
 
@@ -66,9 +66,19 @@
     - Applying (1), both resets A and B are designated *active*.
     - Applying (2), both resets A and B explicitly reference the variable :code:`position`, so are in the same *active set* for that variable.  
     - Applying (3), we select reset A as having the lower order within the *active set*, and call it *pending*.
-    - Applying (4), we evaluate the new value for the position variable to be the bottom of the hill.
+    - Applying (4), we evaluate the new value for the position variable to be the bottom of the hill based on the *pending* reset A.
     - Applying (5), the boulder moves to the bottom of hill.
     - Applying (6), we see that the position value has changed ... ???
 
-
     **Is there no simple way to prevent a reset from being active because a second one is? no either or? **
+
+    If the order was reversed:
+
+    - Applying (1), both resets A and B are designated *active*.
+    - Applying (2), both resets A and B explicitly reference the variable :code:`position`, so are in the same *active set* for that variable.  
+    - Applying (3), we select reset B as having the lower order within the *active set*, and call it *pending*.
+    - Applying (4), we evaluate the new value for the position variable to be the top of the hill based on the *pending* reset B.
+    - Applying (5), the boulder's position is unchanged **but only because that's specifically stated in the reset**.
+    - Applying (6), we exit the reset iteration ... ???
+
+
