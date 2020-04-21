@@ -61,7 +61,7 @@
 
           Show Table: Units for operands and results of MathML operations 
 
-        .. include:: ../informative/inform_table_mathml_units.rst
+        .. include:: ../informative/inform_table_mathml_units.inc
   
     **Between components:**
     Components were designed to promote modularity and reuse of models, so it's important that those re-users understand what they're getting into. 
