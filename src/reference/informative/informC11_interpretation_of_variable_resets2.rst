@@ -44,6 +44,7 @@
     This algorithm is outlined below.
 
     1. For each reset item, determine whether its test criterion (the "when" idea above) has been met.
+
        a. If yes, set its status to "active".
        b. If not, set its status to "inactive".
 
@@ -57,7 +58,8 @@
        This step means that the order in which the variables' values are altered does not affect the overall behaviour of the resets.
     
     6. Test whether the set of variable values in the model has changed: 
-       a. If yes, repeat the steps above from 1 using the updated values as the basis for the tests.
+
+       a. If yes, repeat the steps above from (1) using the updated values as the basis for the tests.
        b. If not, continue the modelling process with the updated values.
 
     Let's apply this to the example and see how it works. 
