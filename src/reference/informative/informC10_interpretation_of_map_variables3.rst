@@ -165,10 +165,3 @@
           <map_variables variable_1="un" variable_2="een" />
             ...
         </connection>
-
-
-
-
-
-
-
