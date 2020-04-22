@@ -3,7 +3,7 @@
 Use Case 1: Cell growth
 -----------------------
 
-In this example, *A* represents the size of a cell, which grows until it reaches a threshold size and then divides.
+*Description:* In this example, *A* represents the size of a cell, which grows until it reaches a threshold size and then divides.
 
 .. code-block:: text
 
@@ -12,7 +12,7 @@ In this example, *A* represents the size of a cell, which grows until it reaches
         variable: A, initially 1
         reset:
             when A == 2
-            then A = 1
+            then set A = 1
 
 .. container:: toggle
 
@@ -32,15 +32,22 @@ In this example, *A* represents the size of a cell, which grows until it reaches
             </reset_value>
         </reset>
 
-+-----+-----+-----+-----+-----+-------+-----+-----+
-| *t* | 0.0 | ... | 0.8 | 0.9 | 1.0   | 1.1 | 1.2 |
-+-----+-----+-----+-----+-----+-------+-----+-----+
-| *A* | 1.1 | ... | 1.8 | 1.9 | 2 → 1 | 1.1 | 1.2 |
-+-----+-----+-----+-----+-----+-------+-----+-----+
+.. table::
+    :width: 100
 
-1. At :math:`t=1.0` :math:`t \eq 1.0` :code:`t = 1.0` *t=1.0* *t = 1.0* we detect that :math:`A==2`, so the reset rule becomes active.
+    +-----+-----+-----+-----+-----+-------+-----+-----+
+    | *t* | 0.0 | ... | 0.8 | 0.9 | 1.0   | 1.1 | 1.2 |
+    +-----+-----+-----+-----+-----+-------+-----+-----+
+    | *A* | 1.1 | ... | 1.8 | 1.9 | 2 → 1 | 1.1 | 1.2 |
+    +-----+-----+-----+-----+-----+-------+-----+-----+
+
+.. container:: heading4
+
+    Processing steps
+
+1. At :code:`t = 1.0` we detect that :code:`A == 2`, so the reset rule becomes active.
 2. The reset value is calculated to be 1.
 3. The reset value is applied.
-4. The system is now in a new state :math:`(x\prime, t, p\prime) \neq (x,t,p)` (note that A is included in x), we restart at step 1.
+4. The system is now in a new state :math:`(x^\prime, t, p^\prime) \neq (x,t,p)` (note that :math:`A` is included in :math:`x`), we restart at step 1.
 
 1. No reset rules are active, so evaluation halts.
