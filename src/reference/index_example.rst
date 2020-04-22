@@ -12,4 +12,5 @@ Examples
     examples/reset_usecase_1_cellgrowth.rst
     examples/reset_usecase_2_stimuluscurrent.rst
     examples/reset_usecase_3_resetatinitialpoint.rst
+    examples/reset_implementation_1_forwardintegration.rst
 
