@@ -175,6 +175,7 @@ Interpretation of ``units`` elements
    2. The built-in irreducible units (those built-in units with "-" in the "Unit reduction tuple" column of :numref:`Table {number}: {name}<table_built_in_units>`) referenced by variables or other units in the model.
 
 .. marker_interpretation_of_units_2
+.. _specC_unit_reduction
 
 3. The "unit reduction" is a conceptual property of :code:`units` elements.
    It consists of a set of tuples where each tuple is composed of a "unit name" and a real-valued "exponent".

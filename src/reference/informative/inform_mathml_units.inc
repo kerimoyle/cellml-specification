@@ -20,13 +20,17 @@
 
 - :code:`times`
 
-  - The result of this operator has units that are the product of the units on the operands.
-    This product may be simplified according to the rules outlined in **TODO**.
+  - The result of this operator has units that are the product of the units of the operands.
+    This product may be simplified as long as the unit reduction is maintained (see :numref:`3.3.3 in {number} {name}<specC_interpretation_of_units>`).
+
+.. hardcodedref above, 3.3.3
   
 - :code:`divide`
 
   - The result of this operator has units that are the quotient of the units on the first and second operands.  
-    This quotient may be simplified according to the rules outlined in **TODO**.
+    This quotient may be simplified as long as the unit reduction is maintained (see :numref:`3.3.3 in {number} {name}<specC_interpretation_of_units>`).
+
+.. hardcodedref above, 3.3.3
   
 - :code:`power`
 
@@ -42,7 +46,9 @@
 - :code:`diff`
 
   - The result of this operator has units that are the quotient of the units of the operand over the units of the term in the :code:`bvar` qualifier element raised to the value of the :code:`degree` qualifier element inside the :code:`bvar` qualifier element (the default value of which is 1.0).
-  - This quotient may be simplified according to the rules outlined in **TODO**.
+  - This quotient may be simplified as long as the unit reduction is maintained (see :numref:`3.3.3 in {number} {name}<specC_interpretation_of_units>`).
+
+.. hardcodedref above, 3.3.3
 
 
 
