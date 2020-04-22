@@ -29,13 +29,16 @@ Multiple reset rules can act together: *g* is a composite function
 It is important to note that *g* is defined by all reset rules in the model (including those from imported parts).
 An individual reset rule is triggered whenever the value of its test variable (some function of *(x, t, p)*) equals its test value (another function of *(x, t, p)*).
 At that point, the value of its reset variable (the variable referenced in the :code:`variable` attribute) should be updated to the reset value. 
-If multiple reset rules apply to the same reset variable (which must be in either *x* or *p*) at the same point *(x, t, p)*, only the rule with the lowest order attribute will be triggered. The procedure below can be used to determine the jump occurring at a point *(x, t, p)*:
+If multiple reset rules apply to the same reset variable (which must be in either *x* or *p*) at the same point *(x, t, p)*, only the rule with the lowest order attribute will be triggered. The procedure below can be used to determine the jump occurring at a point *(x, t, p)* :
 
 #. For each reset rule, determine if it’s active by checking if its test variable’s value matches the test value at *(x, t, p)*.
-    #. If more than one reset rule holds for the same reset variable, only the rule with the lowest order is held to be active for that reset variable.
+
+   #. If more than one reset rule holds for the same reset variable, only the rule with the lowest order is held to be active for that reset variable.
+   
 #. For each active reset rule, calculate the specified change, using the values *(x, t, p)* to perform any calculation of new values.
 #. For each active reset rule, apply the calculated change.
 #. If the system is now in a new point *(x', t, p) != (x, t, p)*: 
+
    #. Then let *(x, t, p) := (x’, t, p)* and repeat, starting from step 1. 
    #. If not, return the new *(x, t, p)*.
 
