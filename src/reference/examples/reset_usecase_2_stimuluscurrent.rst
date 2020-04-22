@@ -58,22 +58,34 @@ Use Case 2: Stimulus current with offset
 | *y* | 0   | ... | 0    | 0 → 1 | ... | 1     | 1 → 0 | 
 +-----+-----+-----+------+-------+-----+-------+-------+
 
-1. At t=100 we detect that x==100, so rule 1 becomes active.
-#. The reset value for rule 1 is calculated to be 1.
-#. The reset value for rule 1 is applied.
-#. The system is now in a new state (x’,t,p’)!=(x,t,p)  (note that y is included in p), we restart at step 1.
+.. container:: heading4
 
-1. Since x==100, rule 1 is active.
-2. The reset value is calculated,
-3. And applied.
-4. The state hasn’t changed: (x’,t,p’)==(x,t,p), so reset rule processing halts.
+    Processing steps
 
-1. At t=101 we detect that x==101, so rule 2 becomes active.
-2. The reset value for rule 2 is calculated to be 0.
-3. The reset value for rule 2 is applied.
-4. The system is now in a new state (x’,t’,p’)!=(x,t,p), so restart.
+- **Cycle**
 
-1. Since x==101, rule 2 is active.
-2. The reset value is calculated,
-3. And applied.
-4. The state hasn’t changed: (x’,t,p’)==(x,t,p), so reset rule processing halts.
+    1. At :code:`t = 100` we detect that :code:`x == 100`, so rule 1 becomes active.
+    #. The reset value for rule 1 is calculated to be 1.
+    #. The reset value for rule 1 is applied.
+    #. The system is now in a new state: :math:`(x^\prime, t, p^\prime) \neq (x,t,p)` (note that y is included in p), we restart at step 1.
+
+- **Cycle**
+
+    1. Since it is still true that :code:`x == 100`, rule 1 is still active.
+    2. The reset value is calculated,
+    3. And applied.
+    4. The state hasn’t changed: :math:`(x^\prime, t, p^\prime) == (x,t,p)`, so reset rule 1 processing halts.
+
+- **Cycle** 
+
+    1. At :code:`t = 101` we detect that :code:`x == 101`, so rule 2 becomes active.
+    2. The reset value for rule 2 is calculated to be 0.
+    3. The reset value for rule 2 is applied.
+    4. The system is now in a new state: :math:`(x^\prime, t, p^\prime) \neq (x,t,p)`, so restart.
+
+- **Cycle**
+
+    1. Since it is still true that :code:`x == 101`, rule 2 is still active.
+    2. The reset value is calculated,
+    3. And applied.
+    4. The state hasn’t changed: :math:`(x^\prime, t, p^\prime) == (x,t,p)`, so reset rule 2 processing halts.

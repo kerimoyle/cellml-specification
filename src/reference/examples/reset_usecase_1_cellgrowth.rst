@@ -44,13 +44,13 @@ Use Case 1: Cell growth
 
     Processing steps
 
-- Cycle 1:
+- **Cycle 1**:
 
     1. At :code:`t = 1.0` we detect that :code:`A == 2`, so the reset rule becomes active.
     2. The reset value is calculated to be 1.
     3. The reset value is applied.
     4. The system is now in a new state :math:`(x^\prime, t, p^\prime) \neq (x,t,p)` (note that :math:`A` is included in :math:`x`), we restart at step 1.
 
-- Cycle 2:
+- **Cycle 2**:
 
     1. No reset rules are active, so evaluation halts.
