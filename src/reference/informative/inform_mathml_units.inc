@@ -10,8 +10,8 @@
 
 - :code:`exp`, :code:`ln`, :code:`log`, :code:`factorial`, :code:`sin`, :code:`cos`, :code:`tan`, :code:`sec`, :code:`csc`, :code:`cot`, :code:`sinh`, :code:`cosh`, :code:`tanh`, :code:`sech`, :code:`csch`, :code:`coth`, :code:`arcsin`, :code:`arccos`, :code:`arctan`, :code:`arccosh`, :code:`arccot`, :code:`arccoth`, :code:`arccsc`, :code:`arccsch`, :code:`arcsec`, :code:`arcsech`, :code:`arcsinh`, :code:`arctanh`
 
-  - The operand passed to these operators has units of dimensionless.
-  - The result of these operators has units of dimensionless.
+  - The operand passed to these operators has units of :code:`dimensionless`.
+  - The result of these operators has units of :code:`dimensionless`.
   
 - :code:`plus`, :code:`minus`, :code:`abs`, :code:`floor`, :code:`ceiling`
 
@@ -60,8 +60,8 @@
   | :code:`leq`, :code:`and`, :code:`or`, :code:`xor`, :code:`not`                                       | | The result of these operators has units of cellml:boolean. **TODO**                                       |
   |                                                                                                      |                                                                                                             |
   +------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
-  | | :code:`exp`, :code:`ln`, :code:`log`, :code:`factorial`,                                           | | The operand passed to these operators has units of dimensionless.                                         |
-  | | :code:`sin`, :code:`cos`, :code:`tan`, :code:`sec`, :code:`csc`, :code:`cot`,                      | | The result of these operators has units of dimensionless.                                                 |
+  | | :code:`exp`, :code:`ln`, :code:`log`, :code:`factorial`,                                           | | The operand passed to these operators has units of :code:`dimensionless`.                                         |
+  | | :code:`sin`, :code:`cos`, :code:`tan`, :code:`sec`, :code:`csc`, :code:`cot`,                      | | The result of these operators has units of :code:`dimensionless`.                                                 |
   | | :code:`sinh`, :code:`cosh`, :code:`tanh`, :code:`sech`, :code:`csch`, :code:`coth`,                |                                                                                                             |
   | | :code:`arcsin`, :code:`arccos`, :code:`arctan`, :code:`arccosh`, :code:`arccot`, :code:`arccoth`,  |                                                                                                             |
   | | :code:`arccsc`, :code:`arccsch`, :code:`arcsec`, :code:`arcsech`, :code:`arcsinh`, :code:`arctanh` |                                                                                                             |
