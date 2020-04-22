@@ -51,15 +51,15 @@ Use Case 2: Stimulus current with offset
         </reset>
 
 .. table::
-    :width: 100
+   :width: 100
 
-    +-----+-----+-----+------+-------+-----+-------+-------+
-    | *t* | 0.0 | ... | 99.9 | 100   | ... | 100.9 | 101   |
-    +-----+-----+-----+------+-------+-----+-------+-------+
-    | *x* | 0   | ... | 99.9 | 100   | ... | 100.9 | 101   |
-    +-----+-----+-----+------+-------+-----+-------+-------+
-    | *y* | 0   | ... | 0    | 0 → 1 | ... | 1     | 1 → 0 | 
-    +-----+-----+-----+------+-------+-----+-------+-------+
+   +-----+-----+-----+------+-------+-----+-------+-------+
+   | *t* | 0.0 | ... | 99.9 | 100   | ... | 100.9 | 101   |
+   +-----+-----+-----+------+-------+-----+-------+-------+
+   | *x* | 0   | ... | 99.9 | 100   | ... | 100.9 | 101   |
+   +-----+-----+-----+------+-------+-----+-------+-------+
+   | *y* | 0   | ... | 0    | 0 → 1 | ... | 1     | 1 → 0 | 
+   +-----+-----+-----+------+-------+-----+-------+-------+
 
 1. At t=100 we detect that x==100, so rule 1 becomes active.
 #. The reset value for rule 1 is calculated to be 1.
@@ -71,11 +71,12 @@ Use Case 2: Stimulus current with offset
 3. And applied.
 4. The state hasn’t changed: (x’,t,p’)==(x,t,p), so reset rule processing halts.
 
-At t=101 we detect that x==101, so rule 2 becomes active
-The reset value for rule 2 is calculated to be 0
-The reset value for rule 2 is applied
-The system is now in a new state (x’,t’,p’)!=(x,t,p), so restart
-Since x==101, rule 2 is active
-The reset value is calculated
-And applied
-The state hasn’t changed: (x’,t,p’)==(x,t,p), so reset rule processing halts
+1. At t=101 we detect that x==101, so rule 2 becomes active.
+2. The reset value for rule 2 is calculated to be 0.
+3. The reset value for rule 2 is applied.
+4. The system is now in a new state (x’,t’,p’)!=(x,t,p), so restart.
+
+1. Since x==101, rule 2 is active.
+2. The reset value is calculated,
+3. And applied.
+4. The state hasn’t changed: (x’,t,p’)==(x,t,p), so reset rule processing halts.
