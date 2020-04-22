@@ -100,10 +100,10 @@
           |                                                                                                      | | If the first operand has units of :code:`dimensionless`, the result will as well.                         |
           |                                                                                                      |                                                                                                             |
           +------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
-          | :code:`diff`                                                                                       | The result of this operator has units that are the quotient of the units of the operand over                |
-          |                                                                                                    | the units of the term in the :code:`bvar` qualifier element raised to the value of the :code:`degree`       |
-          |                                                                                                    | qualifier element inside the :code:`bvar` qualifier element (the default value of which is 1.0).            |
-          |                                                                                                    | This quotient may be simplified according to the rules outlined in **TODO**.                                |
+          | :code:`diff`                                                                                         | The result of this operator has units that are the quotient of the units of the operand over                |
+          |                                                                                                      | the units of the term in the :code:`bvar` qualifier element raised to the value of the :code:`degree`       |
+          |                                                                                                      | qualifier element inside the :code:`bvar` qualifier element (the default value of which is 1.0).            |
+          |                                                                                                      | This quotient may be simplified according to the rules outlined in **TODO**.                                |
           +------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
 
 
