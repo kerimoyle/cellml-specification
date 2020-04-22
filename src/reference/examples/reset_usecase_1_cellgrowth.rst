@@ -38,9 +38,9 @@ In this example, *A* represents the size of a cell, which grows until it reaches
 | *A* | 1.1 | ... | 1.8 | 1.9 | 2 → 1 | 1.1 | 1.2 |
 +-----+-----+-----+-----+-----+-------+-----+-----+
 
-1. At :math:`t=1.0` :code:`t = 1.0` *t=1.0* *t = 1.0* we detect that :math:`A==2`, so the reset rule becomes active.
+1. At :math:`t=1.0` :math:`t \eq 1.0` :code:`t = 1.0` *t=1.0* *t = 1.0* we detect that :math:`A==2`, so the reset rule becomes active.
 2. The reset value is calculated to be 1.
 3. The reset value is applied.
-4. The system is now in a new state :math:`(x’,t,p’)!=(x,t,p)` (note that A is included in x), we restart at step 1.
+4. The system is now in a new state :math:`(x\prime, t, p\prime) \neq (x,t,p)` (note that A is included in x), we restart at step 1.
 
 1. No reset rules are active, so evaluation halts.
