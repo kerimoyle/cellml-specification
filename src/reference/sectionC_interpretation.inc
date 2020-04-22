@@ -338,6 +338,7 @@ Interpretation of ``math`` elements
 2. Every MathML element in the CellML model which appears as a direct child of a MathML :code:`math` element, which in turn appears as a child of a pertinent :code:`component` element, SHALL be treated, in terms of the semantics of the mathematical model, as a statement which holds true unconditionally.
 
 .. marker_interpretation_of_mathematics_2
+.. _specC_units_and_maths:
 
 3. Units referenced by a :code:`units` attribute SHALL NOT affect the mathematical interpretation of the CellML model.
 
