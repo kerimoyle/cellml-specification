@@ -6,6 +6,7 @@ Misuse 1: Touching, not crossing
 **Description:** **TODO**
 
 Note that:
+
 - all elements are in the same component;
 - the order values of resets are not shown; and
 - the units of variables are not shown.

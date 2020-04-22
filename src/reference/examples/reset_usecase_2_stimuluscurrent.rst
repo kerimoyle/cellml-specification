@@ -3,7 +3,7 @@
 Use Case 2: Stimulus current with offset
 ----------------------------------------
 
-*Description:* **TODO**
+**Description:** **TODO**
 
 .. code-block:: text
 

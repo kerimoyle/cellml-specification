@@ -6,6 +6,7 @@ Use Case 3: Reset at initial point
 **Description:** **TODO**
 
 Note that:
+
 - all elements are in the same component;
 - the order values of resets are not shown;
 - the units of variables are not shown;

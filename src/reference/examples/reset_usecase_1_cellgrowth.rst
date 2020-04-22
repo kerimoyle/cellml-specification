@@ -3,7 +3,7 @@
 Use Case 1: Cell growth
 -----------------------
 
-*Description:* In this example, *A* represents the size of a cell, which grows until it reaches a threshold size and then divides.
+**Description:** In this example, *A* represents the size of a cell, which grows until it reaches a threshold size and then divides.
 
 .. code-block:: text
 
