@@ -8,4 +8,6 @@ Examples
     :numbered:
     :glob:
 
-    *.rst
+    examples/reset_preamble.rst
+    examples/reset_interpretation.rst
+    examples/reset_usecase*.rst
