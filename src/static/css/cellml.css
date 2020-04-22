@@ -151,6 +151,13 @@ li {
     font-weight: 700;
 }
 
+.heading4 {
+    color: #444444;
+    font-family: "Roboto Slab", "ff-tisa-web-pro", "Georgia", "Arial", sans-serif;
+    font-size: 120%;
+    font-weight: 600;
+}
+
 .terminal {
     border: none;
     color: white;
