@@ -6,8 +6,7 @@ Examples
 .. toctree::
     :maxdepth: 1
     :numbered:
-    :glob:
 
     examples/reset_preamble.rst
     examples/reset_interpretation.rst
-    examples/reset_usecase*.rst
+    examples/reset_usecase_1_cellgrowth.rst
