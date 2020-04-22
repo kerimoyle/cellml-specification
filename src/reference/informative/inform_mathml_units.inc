@@ -1,11 +1,14 @@
 .. _units_guidelines_for_mathml:
-**Units guidelines for MathML operations**
 
-- **Relational and logical operators:** :code:`eq`, :code:`neq`, :code:`gt`, :code:`lt`, :code:`geq`, :code:`leq`, :code:`and`, :code:`or`, :code:`xor`, :code:`not`
+.. container:: heading3
+
+  Units guidelines for MathML operations
+
+- :code:`eq`, :code:`neq`, :code:`gt`, :code:`lt`, :code:`geq`, :code:`leq`, :code:`and`, :code:`or`, :code:`xor`, :code:`not`
 
   - The result of these operators has units of cellml:boolean. **TODO**
 
-- **Trigonometric operators:** :code:`exp`, :code:`ln`, :code:`log`, :code:`factorial`, :code:`sin`, :code:`cos`, :code:`tan`, :code:`sec`, :code:`csc`, :code:`cot`, :code:`sinh`, :code:`cosh`, :code:`tanh`, :code:`sech`, :code:`csch`, :code:`coth`, :code:`arcsin`, :code:`arccos`, :code:`arctan`, :code:`arccosh`, :code:`arccot`, :code:`arccoth`, :code:`arccsc`, :code:`arccsch`, :code:`arcsec`, :code:`arcsech`, :code:`arcsinh`, :code:`arctanh`
+- :code:`exp`, :code:`ln`, :code:`log`, :code:`factorial`, :code:`sin`, :code:`cos`, :code:`tan`, :code:`sec`, :code:`csc`, :code:`cot`, :code:`sinh`, :code:`cosh`, :code:`tanh`, :code:`sech`, :code:`csch`, :code:`coth`, :code:`arcsin`, :code:`arccos`, :code:`arctan`, :code:`arccosh`, :code:`arccot`, :code:`arccoth`, :code:`arccsc`, :code:`arccsch`, :code:`arcsec`, :code:`arcsech`, :code:`arcsinh`, :code:`arctanh`
 
   - The operand passed to these operators has units of dimensionless.
   - The result of these operators has units of dimensionless.
