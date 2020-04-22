@@ -3,16 +3,16 @@
 Use Case 1: Cell growth
 -----------------------
 
-Here, *A* represents the size of a cell, which grows until it reaches a threshold size and then divides.
+In this example, *A* represents the size of a cell, which grows until it reaches a threshold size and then divides.
 
-.. code::
+.. code-block:: text
 
     component: UseCase1
         math: ode(A, t) = 1
         variable: A, initially 1
         reset:
-            when A equals 2
-            then set A to 1
+            when A == 2
+            then A = 1
 
 .. container:: toggle
 
@@ -38,8 +38,9 @@ Here, *A* represents the size of a cell, which grows until it reaches a threshol
 | *A* | 1.1 | ... | 1.8 | 1.9 | 2 → 1 | 1.1 | 1.2 |
 +-----+-----+-----+-----+-----+-------+-----+-----+
 
-1. At :math:`t=1.0` we detect that :math:`A==2`, so the reset rule becomes active.
+1. At :math:`t=1.0` :code:`t = 1.0` *t=1.0* *t = 1.0* we detect that :math:`A==2`, so the reset rule becomes active.
 2. The reset value is calculated to be 1.
-3. The reset value is applied
-4. The system is now in a new state :math:`(x’,t,p’)!=(x,t,p)` (note that A is included in x), we restart at step 1
-1. No reset rules are active, so evaluation halts
+3. The reset value is applied.
+4. The system is now in a new state :math:`(x’,t,p’)!=(x,t,p)` (note that A is included in x), we restart at step 1.
+
+1. No reset rules are active, so evaluation halts.
