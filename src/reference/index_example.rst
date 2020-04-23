@@ -25,3 +25,4 @@ Examples
     examples/reset_example_4_cascading.rst
     examples/reset_example_5_variablesasresetvalues.rst
     examples/reset_example_6_variablesastestvalues.rst
+    examples/reset_example_7_explicitordering.rst
