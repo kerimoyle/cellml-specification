@@ -1,4 +1,4 @@
-.. example_reset_usecase_3:
+.. _example_reset_usecase_3:
 
 Use Case 3: Reset at initial point
 ----------------------------------
