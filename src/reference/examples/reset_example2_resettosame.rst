@@ -32,6 +32,16 @@ Note that:
         <variable name="t" units="dimensionless" />
         <variable name="A" units="dimensionless" initial_value="1" />
 
+        <math>
+            <apply><eq/>
+                <diff>
+                    <ci>A</ci>
+                    <bvar>t</bvar>
+                </diff>
+                <cn cellml:units="dimensionless">1</cn>
+            </apply>
+        </math>
+
         <reset variable="A" test_variable="A">
             <test_value>
                 <cn units="cellml:dimensionless">2</cn>
