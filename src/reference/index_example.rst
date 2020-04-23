@@ -23,3 +23,5 @@ Examples
     examples/reset_example_2_resettosame.rst
     examples/reset_example_3_orderofevaluation.rst
     examples/reset_example_4_cascading.rst
+    examples/reset_example_5_variablesasresetvalues.rst
+    
