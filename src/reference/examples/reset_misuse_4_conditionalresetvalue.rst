@@ -1,7 +1,7 @@
-.. _example_reset_misuse_4_conditionalassignment:
+.. _example_reset_misuse_4_conditionalresetvalue:
 
-Misuse 4: Conditional assignment
---------------------------------
+Misuse 4: Conditional reset value
+---------------------------------
 
 **Description**: **TODO**
 
@@ -9,11 +9,11 @@ Note that:
 
 - all elements are in the same component;
 - the order values of resets are not shown; and
-- the units of variables are not shown.
+- all variables have dimensionless units.
 
 .. code-block:: text
 
-    component: ConditionalAssignment
+    component: ConditionalResetValue
         math: x = sin(t*pi)
         variable: x
         variable: y initially 0 
