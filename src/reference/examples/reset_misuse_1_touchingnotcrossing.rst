@@ -36,6 +36,21 @@ Note that:
         <variable name="x" units="dimensionless" />
         <variable name="y" units="dimensionless" initial_value="0" />
 
+        <math>
+            <apply><eq/>
+                <ci>x</ci>
+                <apply><sin/>
+                    <apply><times/>
+                        <ci>t</ci>
+                        <apply><divide/>
+                            <pi/>
+                            <cn cellml:units="dimensionless">2</cn>
+                        </apply>
+                    </apply>
+                </apply>
+            </apply>
+        </math>
+
         <!-- Reset rule 1: -->
         <reset variable="y" test_variable="x">
             <test_value>

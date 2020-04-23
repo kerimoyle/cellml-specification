@@ -16,3 +16,4 @@ Examples
     examples/reset_misuse_1_touchingnotcrossing.rst
     examples/reset_misuse_2_multipletruths.rst
     examples/reset_misuse_3_indirectlychangestatevars.rst
+    examples/reset_misuse_4_conditionalassignment.rst
