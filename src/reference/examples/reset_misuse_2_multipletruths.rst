@@ -1,6 +1,6 @@
-.. example_reset_misuse_2_multiple_truths:
+.. _example_reset_misuse_2_multiple_truths:
 
-Misuse 1: Multiple truths
+Misuse 2: Multiple truths
 -------------------------
 
 **Description:** **TODO**

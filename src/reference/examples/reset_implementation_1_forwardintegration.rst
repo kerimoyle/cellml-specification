@@ -1,4 +1,4 @@
-.. example_reset_implementation_1:
+.. _example_reset_implementation_1:
 
 Implementation 1: Forward integration
 -------------------------------------

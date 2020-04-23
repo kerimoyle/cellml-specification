@@ -1,4 +1,4 @@
-.. example_reset_misuse_2_touchingnotcrossing:
+.. _example_reset_misuse_2_touchingnotcrossing:
 
 Misuse 2: Touching, not crossing
 --------------------------------

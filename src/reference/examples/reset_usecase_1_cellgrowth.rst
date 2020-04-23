@@ -1,7 +1,7 @@
-.. example_reset_usecase_1:
+.. _example_reset_usecase_1:
 
-Use Case 1: Cell growth
------------------------
+Usecase 1: Cell growth
+----------------------
 
 **Description:** In this example, *A* represents the size of a cell, which grows until it reaches a threshold size and then divides.
 

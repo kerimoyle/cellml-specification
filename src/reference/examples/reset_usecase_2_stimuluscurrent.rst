@@ -1,7 +1,7 @@
-.. example_reset_usecase_2:
+.. _example_reset_usecase_2:
 
-Use Case 2: Stimulus current with offset
-----------------------------------------
+Usecase 2: Stimulus current with offset
+---------------------------------------
 
 **Description:** **TODO**
 

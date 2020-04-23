@@ -5,7 +5,6 @@ Examples
 
 .. toctree::
     :maxdepth: 1
-    :numbered:
 
     examples/reset_preamble.rst
     examples/reset_interpretation.rst
