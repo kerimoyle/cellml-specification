@@ -20,3 +20,4 @@ Examples
     examples/reset_misuse_5_conditionaltestvalue.rst
     examples/reset_misuse_6_infiniteloop.rst
     examples/reset_example1.rst
+    examples/reset_example2_resettosame.rst
