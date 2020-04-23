@@ -15,3 +15,4 @@ Examples
     examples/reset_implementation_1_forwardintegration.rst
     examples/reset_misuse_1_touchingnotcrossing.rst
     examples/reset_misuse_2_multipletruths.rst
+    examples/reset_misuse_3_indirectlychangestatevars.rst

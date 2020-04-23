@@ -1,6 +1,6 @@
-.. example_reset_misuse_1_touchingnotcrossing:
+.. example_reset_misuse_2_touchingnotcrossing:
 
-Misuse 1: Touching, not crossing
+Misuse 2: Touching, not crossing
 --------------------------------
 
 **Description:** **TODO**
