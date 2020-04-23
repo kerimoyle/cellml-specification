@@ -18,3 +18,4 @@ Examples
     examples/reset_misuse_3_indirectlychangestatevars.rst
     examples/reset_misuse_4_conditionalresetvalue.rst
     examples/reset_misuse_5_conditionaltestvalue.rst
+    examples/reset_misuse_6_infiniteloop.rst
