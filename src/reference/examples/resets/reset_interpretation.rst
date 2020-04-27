@@ -21,10 +21,11 @@ When started at some initial point *(x0, t0, p0)*, the derivatives in *f* descri
 Reset rules add the ability to specify *some* values *(x, t, p)* for which the system should instantaneously jump. 
 This is illustrated below, where a trajectory (black line) is interrupted at point *(x, t, p)* by a discontinuous jump (dashed line) to *(x', t, p)*.
 
-.. figure:: images/reset-rules-1-simple.png
+.. figure:: ../images/reset-rules-1-simple.png
    :name: reset_rules_1_simple
    :alt: alt goes here
    :align: center
+   :width: 6.5cm
 
    **TODO** Caption goes here
 
@@ -55,10 +56,11 @@ Note that:
 - For each cycle, because only one reset rule can hold per variable, changes to the system state are orthogonal (see figure below); this ensures that the order in which the rules are applied does not matter.
 - It is entirely possible for the user to specify infinite loops using reset rules, e.g. by having the effects of one rule undoing the effects of a previous one.
 
-.. figure:: images/reset-rules-2-composite.png
+.. figure:: ../images/reset-rules-2-composite.png
    :name: reset_rules_2_composite
    :alt: alt goes here
    :align: center
+   :width: 6.5cm
 
    **TODO** Caption goes here
 
@@ -69,19 +71,21 @@ Because it is highly unlikely for a simulated trajectory to include a point *(x,
 If this occurs, it is up to the solver to decide whether to treat the current point as the discontinuity (inexact), or to backtrack and try to find the threshold crossing point exactly.
 A graphical example of a “lazy” implementation is given below.
 
-.. figure:: images/reset-rules-3-euler.png
+.. figure:: ../images/reset-rules-3-euler.png
    :name: reset_rules_3_euler
    :alt: alt goes here
    :align: center
+   :width: 6.5cm
 
    **TODO** Caption goes here
 
 A particularly difficult case occurs if a reset rule is defined in such a way that (test_variable - test_value) can pass through a root without changing sign (e.g. a reset when *sin(t) == 1*):
 
-.. figure:: images/reset-rules-4-touching.png
+.. figure:: ../images/reset-rules-4-touching.png
    :name: reset_rules_4_touching
    :alt: alt goes here
    :align: center
+   :width: 6.5cm
 
    **TODO** Caption goes here
 
