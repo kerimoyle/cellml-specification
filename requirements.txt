@@ -1,3 +1,4 @@
 sphinx>2,<3
-git+git://github.com/readthedocs/sphinx-hoverxref.git@master
+# git+git://github.com/readthedocs/sphinx-hoverxref.git@master
+sphinx-hoverxref
 sphinx_rtd_theme
