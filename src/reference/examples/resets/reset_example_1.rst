@@ -1,7 +1,7 @@
 .. _example_reset_example1:
 
-Example 1
----------
+Example: Duplicated test conditions
+-----------------------------------
 
 **Description**: Here we show a simple example involving two resets which are both triggered by the same :code:`test_variable` and :code:`test_value` condition: :code:`B == 3`.
 Despite this, the resets alter different variables (they have different :code:`reset_variable` attributes) and can thus be evaluated during the same loop, without needing to refer to the :code:`order` attribute.

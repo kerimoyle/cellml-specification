@@ -81,7 +81,7 @@ Note that:
     1. Since it is still true that :code:`x == 0`, rule 1 is still active.
     2. The reset value is calculated,
     3. And applied.
-    4. The state hasn’t changed: :math:`(x^\prime, t, p^\prime) == (x,t,p)`, so reset rule 1 processing halts.
+    4. The state hasn't changed: :math:`(x^\prime, t, p^\prime) == (x,t,p)`, so reset rule 1 processing halts.
 
 - **Cycle** 
 
@@ -95,4 +95,4 @@ Note that:
     1. Since it is still true that :code:`x == 1`, rule 2 is still active.
     2. The reset value is calculated,
     3. And applied.
-    4. The state hasn’t changed: :math:`(x^\prime, t, p^\prime) == (x,t,p)`, so reset rule 2 processing halts.
+    4. The state hasn't changed: :math:`(x^\prime, t, p^\prime) == (x,t,p)`, so reset rule 2 processing halts.

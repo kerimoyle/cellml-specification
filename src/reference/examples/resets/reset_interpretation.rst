@@ -9,7 +9,8 @@ CellML models define two functions:
    Note that x contains variables for which an initial value, but no derivative, was defined. 
    For these variables :math:`fx` is zero.
 
-#. :math:`g(x, t, p) \to (x^\prime, t, p)` is a discontinuous mapping from one or more points :math:`(x, t, p)` to points :math:`(x^\prime, t, p)`.
+#. :math:`g(x, t, p) \to (x^\prime, t, p)` is a discontinuous mapping from one or more points :math:`(x, t, p)` to points :math:`(x^\prime, t, p)`. 
+   **TODO should this be p' too?? also below??**
    Note that :math:`g` can only change the values of :math:`x`. 
    The values of variables in :math:`p` are already fixed by model equations, while we posited above that :math:`t` is not constrained by the model equations or resets.
 
@@ -17,7 +18,7 @@ The first function, :math:`f(x, t, p) \to fx`, is defined by the equations in th
 The second function, :math:`g(x, t, p) \to (x^\prime t, p)`, is defined by the collection of reset rules in the model. 
 Note that both parts are optional: a user can supply :math:`f`, :math:`g`, both, or neither.
 
-When started at some initial point :math:`(x_0, t_0, p_0)`, the derivatives in :math:`f` describe the system’s trajectory through :math:`(x, t, p)`-space. 
+When started at some initial point :math:`(x_0, t_0, p_0)`, the derivatives in :math:`f` describe the system's trajectory through :math:`(x, t, p)`-space. 
 Reset rules add the ability to specify *some* values :math:`(x, t, p)` for which the system should instantaneously jump. 
 This is illustrated below, where a trajectory (black line) is interrupted at point :math:`(x, t, p)` by a discontinuous jump (dashed line) to :math:`(x^\prime, t, p)`.
 
@@ -38,16 +39,16 @@ An individual reset rule is triggered whenever the value of its test variable (s
 At that point, the value of its reset variable (the variable referenced in the :code:`variable` attribute) should be updated to the reset value. 
 If multiple reset rules apply to the same reset variable (which must be in either :math:`x` or :math:`p`) at the same point :math:`(x, t, p)`, only the rule with the lowest order attribute will be triggered. The procedure below can be used to determine the jump occurring at a point :math:`(x, t, p)` :
 
-#. For each reset rule, determine whether it is active by checking if its test variable’s value matches the test value at :math:`(x, t, p)`.
+#. For each reset rule, determine whether it is active by checking if its test variable's value matches the test value at :math:`(x, t, p)`.
 
    a. If more than one reset rule is active for the same reset variable, only the rule with the lowest order is held to be active for that reset variable.
    b. If only one reset rule is active for the same reset variable, select it.
    
 #. For each active reset rule, calculate the specified change, using the values :math:`(x, t, p)` to perform any calculation of new values.
 #. For each active reset rule, apply the calculated change.
-#. Test whether the system is in a new point *(x^\prime, t, p) != (x, t, p)*: 
+#. Test whether the system is in a new point :math:`(x^\prime, t, p) \neq (x, t, p)`: 
 
-   a. If so, then let *(x, t, p) := (x^\prime, t, p)* and repeat, starting from step 1. 
+   a. If so, then let :math:`(x, t, p) := (x^\prime, t, p)` and repeat, starting from step 1. 
    #. If not, return the new :math:`(x, t, p)`.
 
 Note that:

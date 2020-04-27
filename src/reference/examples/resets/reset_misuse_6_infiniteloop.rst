@@ -89,7 +89,7 @@ Again, a reset rule is active, and gets applied:
 | A | 1 | 2 → 3 → 2 ... |
 +---+---+---------------+
 
-Now we’re back in the original situation where the first reset rule is active, and so reset rule evaluation continues ad infinitum.
+Now we're back in the original situation where the first reset rule is active, and so reset rule evaluation continues ad infinitum.
 (Good software might, at this point, detect that (1) the new point equals the original point before reset evaluation, but (2) reset rule evaluation has not yet terminated.
 This points to an infinite loop, and so perhaps a runtime error.
 But note that, as with e.g. :code:`x = 1 / 0` there is nothing in CellML to prevent users writing these things down.

@@ -83,5 +83,5 @@ Note that:
 | y | 0   | ... | 0    | **0 → 1 ?** |
 +---+-----+-----+------+-------------+
 
-At this point, the CellML model’s interpretation is not defined.
+At this point, the CellML model's interpretation is not defined.
 The reset causing :code:`y = 1` and the mathematics :code:`y = 0` cannot both be true.
