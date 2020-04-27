@@ -1,9 +1,9 @@
 .. _example_reset_example6:
 
-Example 6: Using variables as test values
------------------------------------------
+Example: Using variables as test values
+---------------------------------------
 
-**Description**: **TODO**
+**Description**: A simple example showing the behaviour when a reset test value is given by a variable.
 
 Note that:
 
@@ -14,13 +14,15 @@ Note that:
 .. code-block:: text
 
     component: 
-        math: 
-            ode(A, t) = 1
-        variable: A initially 1
-        variable: B initially 2
-        reset: rule 1
-            when B == A
-            then B = B + 1
+      ├─ math: 
+      │   └─ ode(A, t) = 1
+      │
+      ├─ variable: A initially 1
+      │
+      └─ variable: B initially 2
+          └─ reset: 
+              ├─ when B == A
+              └─ then B = B + 1
         
 .. container:: toggle
 
@@ -59,33 +61,33 @@ Note that:
 
 At :code:`t = 1` the following situation occurs:
 
-+---+---+-----+-----+---+
-| t | 0 | 0.1 | ... | 1 |
-+---+---+-----+-----+---+
-| A | 1 | 1.1 | ... | 2 |
-+---+---+-----+-----+---+
-| B | 2 | 2   | ... | 2 |
-+---+---+-----+-----+---+
++-----+---+-----+-----+---+
+| *t* | 0 | 0.1 | ... | 1 |
++-----+---+-----+-----+---+
+| *A* | 1 | 1.1 | ... | 2 |
++-----+---+-----+-----+---+
+| *B* | 2 | 2   | ... | 2 |
++-----+---+-----+-----+---+
 
 The reset for B is now active, leading to the following update:
 
-+---+---+-----+-----+-------+
-| t | 0 | 0.1 | ... | 1     |
-+---+---+-----+-----+-------+
-| A | 1 | 1.1 | ... | 2     |
-+---+---+-----+-----+-------+
-| B | 2 | 2   | ... | 2 → 3 |
-+---+---+-----+-----+-------+
++-----+---+-----+-----+-------+
+| *t* | 0 | 0.1 | ... | 1     |
++-----+---+-----+-----+-------+
+| *A* | 1 | 1.1 | ... | 2     |
++-----+---+-----+-----+-------+
+| *B* | 2 | 2   | ... | 2 → 3 |
++-----+---+-----+-----+-------+
 
 A change has been made, so a second cycle of evaluations is started.
-No resets are found to be active (B no longer equals A), and so model dynamics continue.
+No resets are found to be active (*B* no longer equals *A*), and so model dynamics continue.
 
-+---+---+-----+-----+-------+-----+-----+-------+-----+
-| t | 0 | 0.1 | ... | 1     | 1.1 | ... | 2     | 2.1 |
-+---+---+-----+-----+-------+-----+-----+-------+-----+
-| A | 1 | 1.1 | ... | 2     | 2.1 | ... | 3     | 3.1 |
-+---+---+-----+-----+-------+-----+-----+-------+-----+
-| B | 2 | 2   | ... | 2 → 3 | 3   | 3   | 3 → 4 | 4   |
-+---+---+-----+-----+-------+-----+-----+-------+-----+
++-----+---+-----+-----+-------+-----+-----+-------+-----+
+| *t* | 0 | 0.1 | ... | 1     | 1.1 | ... | 2     | 2.1 |
++-----+---+-----+-----+-------+-----+-----+-------+-----+
+| *A* | 1 | 1.1 | ... | 2     | 2.1 | ... | 3     | 3.1 |
++-----+---+-----+-----+-------+-----+-----+-------+-----+
+| *B* | 2 | 2   | ... | 2 → 3 | 3   | 3   | 3 → 4 | 4   |
++-----+---+-----+-----+-------+-----+-----+-------+-----+
 
 At :code:`t = 2` the reset rule is triggered a second time, in a similar fashion.
