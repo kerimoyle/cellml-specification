@@ -1,9 +1,9 @@
 .. _example_reset_example5:
 
-Example 5: Using variables as reset values
-------------------------------------------
+Example: Using variables as reset values
+----------------------------------------
 
-**Description**: **TODO**
+**Description**: A simple example demonstrating the behaviour where one variable is reset to the value of another. 
 
 Note that:
 
@@ -14,16 +14,18 @@ Note that:
 .. code-block:: text
 
     component: 
-        math: 
-            ode(B, t) = 1
-        variable: A initially 1
-        variable: B initially 3
-        reset: rule 1
-            when B == 4
-            then A = A + 1 
-        reset: rule 2
-            when A == 2
-            then B = A + B
+      ├─ math: 
+      │    └─ ode(B, t) = 1
+      │
+      ├─ variable: A initially 1
+      │    └─ reset: rule 1
+      │         ├─ when B == 4
+      │         └─ then A = A + 1 
+      │
+      └─ variable: B initially 3
+            └─ reset: rule 2
+                ├─ when A == 2
+                └─ then B = A + B
         
 .. container:: toggle
 
@@ -77,36 +79,36 @@ Note that:
 
 At :code:`t = 1` the following situation occurs:
 
-+---+---+---+
-| t | 0 | 1 |
-+---+---+---+
-| A | 1 | 1 |
-+---+---+---+
-| B | 3 | 4 |
-+---+---+---+
++-----+---+---+
+| *t* | 0 | 1 |
++-----+---+---+
+| *A* | 1 | 1 |
++-----+---+---+
+| *B* | 3 | 4 |
++-----+---+---+
 
-At this point, reset rule 1 for A is active.
+At this point, reset rule 1 for *A* is active.
 Its new value is calculated to be :code:`A → A + 1 = 1 + 1 = 2`.
 
-+---+---+-------+
-| t | 0 | 1     |
-+---+---+-------+
-| A | 1 | 1 → 2 |
-+---+---+-------+
-| B | 3 | 4     |
-+---+---+-------+
++-----+---+-------+
+| *t* | 0 | 1     |
++-----+---+-------+
+| *A* | 1 | 1 → 2 |
++-----+---+-------+
+| *B* | 3 | 4     |
++-----+---+-------+
 
 This is a new point, so reset evaluation enters a second cycle.
-In this cycle, the resets for both A and B are active.
+In this cycle, the resets for both *A* and *B* are active.
 The new values are calculated to be :code:`A → A + 1 = 2 + 1 = 3`, and :code:`B → A + B = 2 + 4 = 6`.
 The new values are applied:
 
-+---+---+-----------+
-| t | 0 | 1         |
-+---+---+-----------+
-| A | 1 | 1 → 2 → 3 |
-+---+---+-----------+
-| B | 3 |     4 → 6 |
-+---+---+-----------+
++-----+---+-----------+
+| *t* | 0 | 1         |
++-----+---+-----------+
+| *A* | 1 | 1 → 2 → 3 |
++-----+---+-----------+
+| *B* | 3 |     4 → 6 |
++-----+---+-----------+
 
 A new cycle of reset evaluation is applied, but finds no active resets, so model dynamics continue.

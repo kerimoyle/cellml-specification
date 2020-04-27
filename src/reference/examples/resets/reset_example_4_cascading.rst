@@ -1,9 +1,9 @@
 .. _example_reset_example4:
 
-Example 4: Cascading
---------------------
+Example: Cascading
+------------------
 
-**Description**: **TODO**
+**Description**: Because resets change the value of variables, they can also trigger downstream reset activity as conditions which were not previously met become active.
 
 Note that:
 
@@ -14,17 +14,19 @@ Note that:
 .. code-block:: text
 
     component: 
-        math: 
-            ode(A, t) = 1
-            ode(B, t) = 1
-        variable: A initially 1
-        variable: B initially 2
-        reset: rule 1
-            when B == 4
-            then A = 5 
-        reset: rule 2
-            when A == 5
-            then B = 6
+      ├─ math: 
+      │   ├─ ode(A, t) = 1
+      │   └─ ode(B, t) = 1
+      │    
+      ├─ variable: A initially 1
+      │    └─ reset: rule 1
+      │        ├─ when A == 4
+      │        └─ then B = 5
+      │
+      └─ variable: B initially 2
+           └─ reset: rule 2
+              ├─ when A == 5
+              └─ then B = 6
         
 .. container:: toggle
 
@@ -80,43 +82,43 @@ Note that:
 
 At :code:`t = 2` the following situation occurs:
 
-+---+---+---+---+
-| t | 0 | 1 | 2 |
-+---+---+---+---+
-| A | 1 | 2 | 3 |
-+---+---+---+---+
-| B | 2 | 3 | 4 |
-+---+---+---+---+
++-----+---+---+---+
+| *t* | 0 | 1 | 2 |
++-----+---+---+---+
+| *A* | 1 | 2 | 3 |
++-----+---+---+---+
+| *B* | 2 | 3 | 4 |
++-----+---+---+---+
 
 At this point reset rule 1 is the only active reset.
 The change is applied:
 
-+---+---+---+-------+
-| t | 0 | 1 | 2     |
-+---+---+---+-------+
-| A | 1 | 2 | 3 → 5 |
-+---+---+---+-------+
-| B | 2 | 3 | 4     |
-+---+---+---+-------+
++-----+---+---+-------+
+| *t* | 0 | 1 | 2     |
++-----+---+---+-------+
+| *A* | 1 | 2 | 3 → 5 |
++-----+---+---+-------+
+| *B* | 2 | 3 | 4     |
++-----+---+---+-------+
 
 Because the new point differs from the last, a second cycle of reset rule checking is started.
 In this cycle, only reset rule 2 is active.
 Again, the change is applied:
 
-+---+---+---+-----------+
-| t | 0 | 1 | 2         |
-+---+---+---+-----------+
-| A | 1 | 2 | 3 → 5     |
-+---+---+---+-----------+
-| B | 2 | 3 |     4 → 6 |
-+---+---+---+-----------+
++-----+---+---+-----------+
+| *t* | 0 | 1 | 2         |
++-----+---+---+-----------+
+| *A* | 1 | 2 | 3 → 5     |
++-----+---+---+-----------+
+| *B* | 2 | 3 |     4 → 6 |
++-----+---+---+-----------+
 
 A third cycle is started, in which B is still active, but after applying the updates the new point is the same as at the end of cycle two, so reset evaluations halts and model dynamics continue.
 
-+---+---+---+-----------+---+-----+
-| t | 0 | 1 | 2         | 3 | ... |
-+---+---+---+-----------+---+-----+
-| A | 1 | 2 | 3 → 5     | 6 | ... |
-+---+---+---+-----------+---+-----+
-| B | 2 | 3 |     4 → 6 | 7 | ... |
-+---+---+---+-----------+---+-----+
++-----+---+---+-----------+---+-----+
+| *t* | 0 | 1 | 2         | 3 | ... |
++-----+---+---+-----------+---+-----+
+| *A* | 1 | 2 | 3 → 5     | 6 | ... |
++-----+---+---+-----------+---+-----+
+| *B* | 2 | 3 |     4 → 6 | 7 | ... |
++-----+---+---+-----------+---+-----+
