@@ -1,7 +1,7 @@
 .. _index_examples_resets:
 
-Examples
-========
+Using resets
+============
 
 .. toctree::
     :maxdepth: 1
