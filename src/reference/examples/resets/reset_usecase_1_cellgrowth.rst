@@ -1,18 +1,18 @@
 .. _example_reset_usecase_1:
 
-Usecase 1: Cell growth
-----------------------
+Usecase: Cell growth and division
+---------------------------------
 
 **Description:** In this example, *A* represents the size of a cell, which grows until it reaches a threshold size and then divides.
 
 .. code-block:: text
 
-    component: UseCase1
-        math: ode(A, t) = 1
-        variable: A, initially 1
-        reset:
-            when A == 2
-            then set A = 1
+    component: CellGrowthAndDivision
+      ├─ math: ode(A, t) = 1
+      └─ variable: A, initially 1
+          └─ reset:
+              ├─ when A == 2
+              └─ then A = 1
 
 .. container:: toggle
 
@@ -49,7 +49,7 @@ Usecase 1: Cell growth
     1. At :code:`t = 1.0` we detect that :code:`A == 2`, so the reset rule becomes active.
     2. The reset value is calculated to be 1.
     3. The reset value is applied.
-    4. The system is now in a new state :math:`(x^\prime, t, p) \neq (x,t,p)` (note that :math:`A` is included in :math:`x`), we restart at step 1.
+    4. The system is now in a new state :math:`(x^\prime, t, p) \neq (x, t, p)` (note that :math:`A` is included in :math:`x`), we restart at step 1.
 
 - **Cycle 2**:
 
