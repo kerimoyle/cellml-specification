@@ -1,7 +1,7 @@
 .. _example_reset_example7:
 
-Example 7: Explicit reset ordering
-----------------------------------
+Example: Explicit reset ordering
+--------------------------------
 
 **Description**: Resets which address the same variable can use the :code:`order` attribute to establish a priority for evaluation.
 Note that "order" here refers to the sequence in which resets are *tested*, not the sequence in which they are *applied*. 
