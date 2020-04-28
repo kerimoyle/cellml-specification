@@ -5,7 +5,7 @@ Using resets
 ============
 
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
 
     reset_introduction.rst
     reset_interpretation.rst
