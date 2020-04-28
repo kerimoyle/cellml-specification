@@ -19,8 +19,9 @@
 
       model: Tartarus
         └─ component: Sisyphus
+            ├─ math: ode(position, time) = 1
             ├─ variable: time
-            └─ variable: position
+            └─ variable: position, initially 0
                 ├─ reset: A
                 │   ├─ when: time is midnight
                 │   ├─ then: position is bottom of hill
@@ -32,10 +33,8 @@
                     └─ order: 1
 
     As it stands, at midnight on a Tuesday *both* of the resets above are active: the first, reset A, because midnight on any day meets the midnight criterion; the second because midnight on Tuesday also meets the criterion for B.
-    To decide which of the two consequences to enact - to roll the stone or not - we need to consider the :code:`order` attribute.
-    In this example, reset B has an order of 1, so, being the "least positive/most negative" this is considered first. 
+    To decide which of the two consequences to enact - to roll the stone or not - we need to consider the :code:`order` attribute, the interpretation of which is discussed in detail in :numref:`{number} {name}<specC_interpretation_of_resets>`.
     The valid CellML syntax for this situation is shown below, with some examples of invalid syntax too. 
-    For a further discussion on how the :code:`order` attribute is interpreted, please see :numref:`{number} {name} <specC_interpretation_of_resets>`.
  
     .. container:: toggle
 
@@ -67,14 +66,20 @@
         <model name="Tartarus">
           <component name="Sisyphus">
             <variable name="time" units="second" />
-            <variable name="position" units="dimensionless" />
+            <variable name="position" units="dimensionless" initial_value="0" />
 
             <!-- Invalid: missing order attribute. -->
-            <reset variable="position" test_variable="time" />
+            <reset variable="position" test_variable="time" >
+              ...
+            </reset>
 
             <!-- Invalid: order must be an integer. -->
-            <reset variable="position" test_variable="time" order="first" />
-            <reset variable="position" test_variable="time" order="1.0" />
+            <reset variable="position" test_variable="time" order="first" >
+              ...
+            </reset>
+            <reset variable="position" test_variable="time" order="1.0" >
+              ...
+            </reset>
 
           </component>
         </model>
@@ -94,6 +99,7 @@
         │           └─ order: -1                                  ╷
         │                                                    equivalent
         └─ component: Sisyphus                               variables
+            ├─ math: ode(position, time) = 1                      ╵
             ├─ variable: time                                     ╵
             └─ variable: position <╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴┘
                 ├─ reset: A
@@ -107,6 +113,7 @@
                     └─ order: 1
 
     This arrangement is valid, because none of the :code:`order` attributes on resets within the same equivalent variable set have duplicated values: reset A has order 2, reset B has order 1, and reset C has order -1.
+    Note also that order values may be negative, as shown here.
 
     .. container:: heading3
 

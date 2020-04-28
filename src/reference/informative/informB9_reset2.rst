@@ -16,8 +16,9 @@
 
       model: Tartarus
         └─ component: Sisyphus
+            ├─ math: ode(position, time) = 1
             ├─ variable: time
-            └─ variable: position
+            └─ variable: position, initially 0
                 └─ reset:
                     ├─ when: time is midnight
                     └─ then: position is bottom of hill
@@ -39,10 +40,22 @@
         <model name="Tartarus">
           <component name="Sisyphus">
             <variable name="time" units="second" />
-            <variable name="position" units="dimensionless" />
+            <variable name="position" units="dimensionless" initial_value="0" />
+
             <reset variable="position" test_variable="time" order="1">
               ...
             </reset>
+
+            <!-- ODE for position based on time. -->
+            <math>
+              <apply><eq/>
+                  <diff>
+                      <ci>B</ci>
+                      <bvar>t</bvar>
+                  </diff>
+                  <cn cellml:units="dimensionless">1</cn>
+              </apply>
+            </math>
           </component>
         </model>
 
@@ -57,11 +70,10 @@
 
       .. code-block:: xml
 
-        
         <model name="Tartarus">
           <component name="Sisyphus">
-            <variable name="time_of_day" units="second" />
-            <variable name="position" units="dimensionless" />
+            <variable name="time" units="second" />
+            <variable name="position" units="dimensionless" initial_value="0" />
 
             <!-- This is not valid: The test variable has not been specified. -->
             <reset variable="position" order="1">
@@ -73,13 +85,17 @@
               ...
             </reset>
 
+            <math>
+              ...
+            </math>
+
           </component>
         </model>
 
         
         <model name="Tartarus">
           <component name="Sisyphus">
-            <variable name="time_of_day" units="second" />
+            <variable name="time" units="second" />
             <variable name="position" units="dimensionless" />
 
             <!-- This is not valid: The test variable "eternity_time" does not exist 
@@ -96,7 +112,7 @@
 
           <!-- This is not valid: The reset variable "position" is in component  Sisyphus ... -->
           <component name="Sisyphus">
-            <variable name="position" units="dimensionless" />
+            <variable name="position" units="dimensionless" initial_value="0" />
           </component>
 
           <!-- ... but the reset which changes it is in component "RulerOfTartarus". -->
