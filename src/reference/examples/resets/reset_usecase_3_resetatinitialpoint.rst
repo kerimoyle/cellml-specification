@@ -1,7 +1,7 @@
 .. _example_reset_usecase_3:
 
-Usecase 3: Reset at initial point
----------------------------------
+Usecase: Reset at initial point
+-------------------------------
 
 **Description:** **TODO**
 
@@ -14,16 +14,20 @@ Note that:
 
 .. code-block:: text
 
-    component: UseCase3
-        math: x = t % 1000
-        variable: x 
-        variable: y, initially 0
-        reset: rule 1
-            when x == 0
-            then y = 1
-        reset: rule 2 
-            when x == 1
-            then y = 0
+    component: 
+      ├─ math: 
+      │    └─ x = t % 1000
+      │
+      ├─ variable: x 
+      │
+      └─ variable: y, initially 0
+          ├─ reset: rule 1
+          │    ├─ when x == 0
+          │    └─ then y = 1
+          │
+          └─ reset: rule 2 
+              ├─ when x == 1
+              └─ then y = 0
 
 .. container:: toggle
 
@@ -57,13 +61,13 @@ Note that:
             </reset_value>
         </reset>
 
-+---+-------+-----+-----+-----+-------+-----+-----+
-| t | 0.0   | 0.1 | ... | 0.9 | 1.0   | 1.1 | ... |
-+---+-------+-----+-----+-----+-------+-----+-----+
-| x | 0     | 0.1 | ... | 0.9 | 1.0   | 1.1 | ... |
-+---+-------+-----+-----+-----+-------+-----+-----+
-| y | 0 → 1 | 1   | ... | 1   | 1 → 0 | 0   | ... |
-+---+-------+-----+-----+-----+-------+-----+-----+
++-----+-------+-----+-----+-----+-------+-----+-----+
+| *t* | 0.0   | 0.1 | ... | 0.9 | 1.0   | 1.1 | ... |
++-----+-------+-----+-----+-----+-------+-----+-----+
+| *x* | 0     | 0.1 | ... | 0.9 | 1.0   | 1.1 | ... |
++-----+-------+-----+-----+-----+-------+-----+-----+
+| *y* | 0 → 1 | 1   | ... | 1   | 1 → 0 | 0   | ... |
++-----+-------+-----+-----+-----+-------+-----+-----+
 
 .. container:: heading4
 
@@ -74,25 +78,25 @@ Note that:
     1. At :code:`t = 0` we detect that :code:`x == 0`, so rule 1 becomes active.
     #. The reset value for rule 1 is calculated to be 1.
     #. The reset value for rule 1 is applied to :code:`y`.
-    #. The system is now in a new state: :math:`(x^\prime, t, p) \neq (x,t,p)`, we restart at step 1.
+    #. The system is now in a new state: :math:`(x^\prime, t, p) \neq (x, t, p)`, we restart at step 1.
 
 - **Cycle**
 
     1. Since it is still true that :code:`x == 0`, rule 1 is still active.
     2. The reset value is calculated,
     3. And applied.
-    4. The state hasn't changed: :math:`(x^\prime, t, p) == (x,t,p)`, so reset rule 1 processing halts.
+    4. The state hasn't changed: :math:`(x^\prime, t, p) == (x, t, p)`, so reset rule 1 processing halts.
 
 - **Cycle** 
 
     1. At :code:`t = 1` we detect that :code:`x == 1`, so rule 2 becomes active.
     2. The reset value for rule 2 is calculated to be 1.
     3. The reset value for rule 2 is applied tp :code:`y`.
-    4. The system is now in a new state: :math:`(x^\prime, t, p) \neq (x,t,p)`, so restart.
+    4. The system is now in a new state: :math:`(x^\prime, t, p) \neq (x, t, p)`, so restart.
 
 - **Cycle**
 
     1. Since it is still true that :code:`x == 1`, rule 2 is still active.
     2. The reset value is calculated,
     3. And applied.
-    4. The state hasn't changed: :math:`(x^\prime, t, p) == (x,t,p)`, so reset rule 2 processing halts.
+    4. The state hasn't changed: :math:`(x^\prime, t, p) == (x, t, p)`, so reset rule 2 processing halts.
