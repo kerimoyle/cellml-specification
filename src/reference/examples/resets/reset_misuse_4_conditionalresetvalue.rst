@@ -14,13 +14,17 @@ Note that:
 .. code-block:: text
 
     component: ConditionalResetValue
-        math: x = sin(t*pi)
-        variable: x
-        variable: y initially 0 
-        reset: 
-            when x == 0
-            then if sin((t-0.1)*pi) < 0 then y = 1
-                                        else y = 0
+      ├─ math: 
+      │    └─  x = sin(t*pi)
+      │
+      ├─ variable: x
+      │
+      └─ variable: y initially 0 
+          └─ reset: 
+              ├─ when x == 0
+              └─ then if sin((t-0.1)*pi) < 0 
+                          ├─ then y = 1
+                          └─ else y = 0
 
 .. container:: toggle
 
