@@ -3,13 +3,13 @@
 Usecase: Reset at initial point
 -------------------------------
 
-**Description:** **TODO**
+**Description:** This example shows that reset evaluation can happen throughout the simulation, including the very beginning. 
 
 Note that:
 
 - all elements are in the same component;
 - the order values of resets are not shown;
-- the units of variables are not shown;
+- all variables have :code:`dimensionless` units;
 - the initial conditions hold when :code:`t = 0`.
 
 .. code-block:: text
@@ -22,8 +22,8 @@ Note that:
       │
       └─ variable: y, initially 0
           ├─ reset: rule 1
-          │    ├─ when x == 0
-          │    └─ then y = 1
+          │   ├─ when x == 0
+          │   └─ then y = 1
           │
           └─ reset: rule 2 
               ├─ when x == 1
@@ -61,6 +61,37 @@ Note that:
             </reset_value>
         </reset>
 
+
+.. container:: heading4
+
+    Processing steps
+
++-----+-------+-----+-----+
+| *t* | 0.0   | 0.1 | ... | 
++-----+-------+-----+-----+
+| *x* | 0     | 0.1 | ... |
++-----+-------+-----+-----+
+| *y* | 0 → 1 | 1   | ... | 
++-----+-------+-----+-----+
+
+- **Cycle 1**
+
+    1. At :code:`t = 0` we detect that :code:`x == 0`, so rule 1 becomes active.
+    #. The reset value for rule 1 is calculated to be 1.
+    #. The reset value for rule 1 is applied to :code:`y`.
+    #. The system is now in a new state: :math:`(x^\prime, t, p) \neq (x, t, p)`, we restart at step 1.
+
+- **Cycle 2**
+
+    1. Since it is still true that :code:`x == 0`, rule 1 is still active.
+    2. The reset value for rule 1 is (again) calculated to be 1.
+    3. The reset value for rule 1 is (again) applied to :code:`y`.
+    4. The state hasn't changed: :math:`(x^\prime, t, p) == (x, t, p)`, so reset rule 1 processing halts.
+
+- **Cycle 3**
+
+    1. No other resets are found to be active, so the reset evaluation cycles finish and model dynamics continue.
+
 +-----+-------+-----+-----+-----+-------+-----+-----+
 | *t* | 0.0   | 0.1 | ... | 0.9 | 1.0   | 1.1 | ... |
 +-----+-------+-----+-----+-----+-------+-----+-----+
@@ -69,34 +100,20 @@ Note that:
 | *y* | 0 → 1 | 1   | ... | 1   | 1 → 0 | 0   | ... |
 +-----+-------+-----+-----+-----+-------+-----+-----+
 
-.. container:: heading4
-
-    Processing steps
-
-- **Cycle**
-
-    1. At :code:`t = 0` we detect that :code:`x == 0`, so rule 1 becomes active.
-    #. The reset value for rule 1 is calculated to be 1.
-    #. The reset value for rule 1 is applied to :code:`y`.
-    #. The system is now in a new state: :math:`(x^\prime, t, p) \neq (x, t, p)`, we restart at step 1.
-
-- **Cycle**
-
-    1. Since it is still true that :code:`x == 0`, rule 1 is still active.
-    2. The reset value is calculated,
-    3. And applied.
-    4. The state hasn't changed: :math:`(x^\prime, t, p) == (x, t, p)`, so reset rule 1 processing halts.
-
-- **Cycle** 
+- **Cycle 4** 
 
     1. At :code:`t = 1` we detect that :code:`x == 1`, so rule 2 becomes active.
-    2. The reset value for rule 2 is calculated to be 1.
-    3. The reset value for rule 2 is applied tp :code:`y`.
+    2. The reset value for rule 2 is calculated to be 0.
+    3. The reset value for rule 2 is applied to :code:`y`.
     4. The system is now in a new state: :math:`(x^\prime, t, p) \neq (x, t, p)`, so restart.
 
-- **Cycle**
+- **Cycle 5**
 
     1. Since it is still true that :code:`x == 1`, rule 2 is still active.
-    2. The reset value is calculated,
-    3. And applied.
+    2. The reset value for rule 2 is calculated (still) to be 0.
+    3. And reset value for rule 2 is applied to :code:`y`.
     4. The state hasn't changed: :math:`(x^\prime, t, p) == (x, t, p)`, so reset rule 2 processing halts.
+
+- **Cycle 6**
+
+    1. No other resets are found to be active, so the reset evaluation cycles finish and model dynamics continue.
