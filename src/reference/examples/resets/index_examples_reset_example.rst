@@ -1,4 +1,4 @@
-.. _index_examples_resets:
+.. _index_examples_resets_examples:
 
 Examples of reset use
 ---------------------
