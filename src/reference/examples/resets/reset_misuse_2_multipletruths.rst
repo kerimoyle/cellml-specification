@@ -3,7 +3,9 @@
 Misuse 2: Multiple truths
 -------------------------
 
-**Description:** **TODO**
+**Description:** The behaviour specified in resets must complement the mathematics of the model; it does not over-ride it.
+For this reason, models containing reset variables which are also present in maths statements are over-defined.
+This is shown in the example below.
 
 Note that:
 
@@ -14,17 +16,20 @@ Note that:
 .. code-block:: text
 
     component: MultipleTruths
-        variable: x 
-        variable: y 
-        math: 
-            x = t % 1000
-            y = 0
-        reset: rule 1
-            when x == 100
-            then y = 1
-        reset: rule 2
-            when x == 101
-            then y = 0
+        ├─ math: 
+        │   ├─ x = t % 1000
+        │   └─ y = 0
+        │
+        ├─ variable: x 
+        │
+        └─ variable: y 
+            ├─ reset: rule 1
+            │   ├─ when x == 100
+            │   └─ then y = 1
+            │
+            └─ reset: rule 2
+                ├─ when x == 101
+                └─ then y = 0
 
 .. container:: toggle
 
@@ -75,13 +80,13 @@ Note that:
             </reset_value>
         </reset>
 
-+---+-----+-----+------+-------------+
-| t | 0.0 | ... | 99.9 | 100         |
-+---+-----+-----+------+-------------+
-| x | 0   | ... | 99.9 | 100         |
-+---+-----+-----+------+-------------+
-| y | 0   | ... | 0    | **0 → 1 ?** |
-+---+-----+-----+------+-------------+
++-----+-----+-----+------+-------------+
+| *t* | 0.0 | ... | 99.9 | 100         |
++-----+-----+-----+------+-------------+
+| *x* | 0   | ... | 99.9 | 100         |
++-----+-----+-----+------+-------------+
+| *y* | 0   | ... | 0    | **0 → 1 ?** |
++-----+-----+-----+------+-------------+
 
 At this point, the CellML model's interpretation is not defined.
 The reset causing :code:`y = 1` and the mathematics :code:`y = 0` cannot both be true.
