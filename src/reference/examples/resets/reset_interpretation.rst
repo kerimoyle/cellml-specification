@@ -10,19 +10,18 @@ CellML models define two functions:
    For these variables :math:`fx` is zero.
 
 #. :math:`g(x, t, p) \to (x^\prime, t, p)` is a discontinuous mapping from one or more points :math:`(x, t, p)` to points :math:`(x^\prime, t, p)`. 
-   **TODO should this be p' too?? also below??**
    Note that :math:`g` can only change the values of :math:`x`. 
    The values of variables in :math:`p` are already fixed by model equations, while we posited above that :math:`t` is not constrained by the model equations or resets.
 
 The first function, :math:`f(x, t, p) \to fx`, is defined by the equations in the model. 
-The second function, :math:`g(x, t, p) \to (x^\prime t, p)`, is defined by the collection of reset rules in the model. 
+The second function, :math:`g(x, t, p) \to (x^\prime, t, p)`, is defined by the collection of reset rules in the model. 
 Note that both parts are optional: a user can supply :math:`f`, :math:`g`, both, or neither.
 
 When started at some initial point :math:`(x_0, t_0, p_0)`, the derivatives in :math:`f` describe the system's trajectory through :math:`(x, t, p)`-space. 
 Reset rules add the ability to specify *some* values :math:`(x, t, p)` for which the system should instantaneously jump. 
 This is illustrated below, where a trajectory (black line) is interrupted at point :math:`(x, t, p)` by a discontinuous jump (dashed line) to :math:`(x^\prime, t, p)`.
 
-.. figure:: ../images/reset-rules-1-simple.svg
+.. figure:: ../images/reset-rules-1-simple.png
    :name: reset_rules_1_simple
    :alt: alt goes here
    :align: center
@@ -58,7 +57,7 @@ Note that:
 - For each cycle, because only one reset rule can hold per variable, changes to the system state are orthogonal (see :numref:`Figure {number}<reset_rules_2_composite>`); this ensures that the order in which the rules are applied does not matter.
 - It is entirely possible for the user to specify infinite loops using reset rules, e.g.: by having the effects of one rule undoing the effects of a previous one.
 
-.. figure:: ../images/reset-rules-2-composite.svg
+.. figure:: ../images/reset-rules-2-composite.png
    :name: reset_rules_2_composite
    :alt: alt goes here
    :align: center
@@ -73,7 +72,7 @@ Because it is highly unlikely for a simulated trajectory to include a point :mat
 If this occurs, it is up to the solver to decide whether to treat the current point as the discontinuity (inexact), or to backtrack and try to find the threshold crossing point exactly.
 A graphical example of a "lazy" implementation is given in :numref:`Figure {number}<reset_rules_3_euler>`.
 
-.. figure:: ../images/reset-rules-3-euler.svg
+.. figure:: ../images/reset-rules-3-euler.png
    :name: reset_rules_3_euler
    :alt: alt goes here
    :align: center
@@ -85,7 +84,7 @@ A graphical example of a "lazy" implementation is given in :numref:`Figure {numb
 
 A particularly difficult case occurs if a reset rule is defined in such a way that (test_variable - test_value) can pass through a root without changing sign (for example, a reset when :math:`sin(t) == 1` as in :numref:`Figure {number}<reset_rules_4_touching>`).
 
-.. figure:: ../images/reset-rules-4-touching.svg
+.. figure:: ../images/reset-rules-4-touching.png
    :name: reset_rules_4_touching
    :alt: alt goes here
    :align: center
