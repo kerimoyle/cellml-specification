@@ -59,7 +59,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="3.4395834"
-     inkscape:cx="-6.4930399"
+     inkscape:cx="-1.1144816"
      inkscape:cy="68.43529"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
@@ -79,7 +79,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -102,7 +102,7 @@
        sodipodi:nodetypes="cc" />
     <text
        xml:space="preserve"
-       style="font-size:3.52777767px;line-height:125%;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-size:3.52777767px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial Italic';letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-weight:normal;font-style:italic;font-stretch:normal;font-variant:normal;"
        x="5.3846159"
        y="281.8718"
        id="text838-8"><tspan
@@ -110,18 +110,18 @@
          id="tspan836-8"
          x="5.3846159"
          y="281.8718"
-         style="font-size:2.82222223px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px">(x, t, p)</tspan></text>
+         style="font-size:2.82222223px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;-inkscape-font-specification:'Arial Italic';font-family:Arial;font-weight:normal;font-style:italic;font-stretch:normal;font-variant:normal;">(x, t, p)</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:3.52777767px;line-height:125%;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="26.811369"
-       y="281.14059"
+       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial Italic';letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="26.888292"
+       y="281.06366"
        id="text838-3-8"><tspan
          sodipodi:role="line"
          id="tspan836-3-9"
-         x="26.811369"
-         y="281.14059"
-         style="font-size:2.82222223px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px">(x*, t, p)</tspan></text>
+         x="26.888292"
+         y="281.06366"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222223px;font-family:Arial;-inkscape-font-specification:'Arial Italic';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px">(x*, t, p)</tspan></text>
     <circle
        style="color:#000000;overflow:visible;opacity:1;vector-effect:none;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
        id="path817-3-4-7"
@@ -130,15 +130,15 @@
        r="0.85433477" />
     <text
        xml:space="preserve"
-       style="font-size:3.52777767px;line-height:125%;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="19.844112"
-       y="295.7731"
+       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial Italic';letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="20.305649"
+       y="295.92697"
        id="text838-3-8-3"><tspan
          sodipodi:role="line"
          id="tspan836-3-9-0"
-         x="19.844112"
-         y="295.7731"
-         style="font-size:2.82222223px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px">(x', t, p)</tspan></text>
+         x="20.305649"
+         y="295.92697"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222223px;font-family:Arial;-inkscape-font-specification:'Arial Italic';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px">(x', t, p)</tspan></text>
     <path
        style="color:#000000;overflow:visible;opacity:1;vector-effect:none;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#cccccc;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
        d="m 16.058138,283.11029 c 3.377189,-5.23778 6.614347,-10.74185 14.159214,-14.02889"
