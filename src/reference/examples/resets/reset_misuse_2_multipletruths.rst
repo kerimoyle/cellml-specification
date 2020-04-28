@@ -1,7 +1,7 @@
-.. _example_reset_misuse_2_multiple_truths:
+.. _example_reset_misuse_multiple_truths:
 
-Misuse 2: Multiple truths
--------------------------
+Misuse: Multiple truths
+-----------------------
 
 **Description:** The behaviour specified in resets must complement the mathematics of the model; it does not over-ride it.
 For this reason, models containing reset variables which are also present in maths statements are over-defined.

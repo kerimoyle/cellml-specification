@@ -1,7 +1,7 @@
-.. _reset_misuse_3_indirectlychangestatevars:
+.. _reset_misuse_indirectlychangestatevars:
 
-Misuse 3: Indirect change of state variables
---------------------------------------------
+Misuse: Indirect change of state variables
+------------------------------------------
 
 **Description:** **TODO**
 
@@ -14,14 +14,16 @@ Note that:
 .. code-block:: text
 
     component: IndirectlyChangeStateVariables
-        math: 
-            ode(A, t) = 1
-            B = A
-        variable: A initially 1
-        variable: B initially 0
-        reset: 
-            when B == 2
-            then B = 1
+      ├─ math: 
+      │    ├─ ode(A, t) = 1
+      │    └─ B = A
+      │
+      ├─ variable: A initially 1
+      │
+      └─ variable: B initially 0
+          └─ reset: 
+              ├─ when B == 2
+              └─ then B = 1
 
 .. container:: toggle
 
@@ -56,9 +58,9 @@ Note that:
 
 This is similar to the previous case, but now the situation is solvable:
 
-When :code:`B == 2`, B it must be reset to 1.
-But since :code:`B = A` is specified in the :code:`math` block, then A must also be 1.
-Since A is a state variable this is allowed.
+When :code:`B == 2`, *B* it must be reset to 1.
+But since :code:`B = A` is specified in the :code:`math` block, then *A* must also be 1.
+Since *A* is a state variable this is allowed.
 
 However, in most implementations the code will get converted to assignments (e.g.: :code:`B := A`) before the system is solved.
 Allowing this type of situation would mean solvers need to recognise potential situations like this and add an :code:`if (...) then B := A else A := B`.
