@@ -25,8 +25,8 @@ Note that:
       │
       └─ variable: B initially 2
            └─ reset: rule 2
-              ├─ when A == 5
-              └─ then B = 6
+               ├─ when A == 5
+               └─ then B = 6
         
 .. container:: toggle
 

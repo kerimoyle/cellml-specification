@@ -15,17 +15,17 @@ Note that:
 
     component: 
       ├─ math: 
-      │    └─ ode(B, t) = 1
+      │   └─ ode(B, t) = 1
       │
       ├─ variable: A initially 1
-      │    └─ reset: rule 1
-      │         ├─ when B == 4
-      │         └─ then A = A + 1 
+      │   └─ reset: rule 1
+      │       ├─ when B == 4
+      │       └─ then A = A + 1 
       │
       └─ variable: B initially 3
-            └─ reset: rule 2
-                ├─ when A == 2
-                └─ then B = A + B
+          └─ reset: rule 2
+              ├─ when A == 2
+              └─ then B = A + B
         
 .. container:: toggle
 

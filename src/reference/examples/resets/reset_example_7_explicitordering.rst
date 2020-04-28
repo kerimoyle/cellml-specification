@@ -22,11 +22,12 @@ Note that:
       │    ├─ reset: rule 1
       │    │    ├─ order = 1
       │    │    ├─ when B == 4
-      │    │    └─  then A = 1
+      │    │    └─ then A = 1
+      │    │
       │    └─ reset: rule 2
-      │      ├─ order = 2
-      │      ├─ when B == 4
-      │      └─ then A = 3
+      │         ├─ order = 2
+      │         ├─ when B == 4
+      │         └─ then A = 3
       │
       └─ variable: B initially 3
 
