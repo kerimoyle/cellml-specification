@@ -44,7 +44,7 @@ li {
     margin-bottom: 12px;
 }
 
-.shortlist {
+.shortlist * {
     margin-bottom: 3px;
 }
 
