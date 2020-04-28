@@ -1,7 +1,7 @@
 .. _example_reset_implementation_1:
 
-Implementation 1: Forward integration
--------------------------------------
+Implementation: Forward integration
+-----------------------------------
 
 **Description:** This example shows two possible strategies to handle resets.
 No particular method is prescribed (just as no method is prescribed for the solution of ODEs either).
