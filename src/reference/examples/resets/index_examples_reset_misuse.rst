@@ -4,7 +4,7 @@ What could go wrong?
 --------------------
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
 
     reset_misuse_1_touchingnotcrossing.rst
     reset_misuse_2_multipletruths.rst

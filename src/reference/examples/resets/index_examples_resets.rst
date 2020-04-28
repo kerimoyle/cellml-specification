@@ -1,10 +1,10 @@
 .. _index_examples_resets:
 
 Using resets
-============
+------------
 
 Preamble
---------
+~~~~~~~~
 
 This document is not part of the CellML specification.
 It gives a suggested interpretation of resets, and involves adding some rules and restrictions on the mathematics described by a CellML document.
@@ -35,7 +35,6 @@ Some extra restrictions
 Note that, while some of the most biologically interesting variables are found be in :math:`z`, for the purposes of evaluating the system trajectory they are simply functions of :math:`(x, t, p)`.
 For the sake of clarity we can omit them and could, for example, specify a function of the model's state as :math:`f(x, t, p)` instead of :math:`f(x, t, p, g(x, t, p))`.
 
-
 .. toctree::
     :maxdepth: 2
 
@@ -44,4 +43,3 @@ For the sake of clarity we can omit them and could, for example, specify a funct
     reset_implementation_1_forwardintegration.rst
     reset_examples_reset_misuse.rst
     reset_examples_reset_modelling.rst
-

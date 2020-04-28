@@ -4,7 +4,7 @@ Examples
 ========
 
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 3
 
     examples/imports/index_examples_imports.rst
     examples/resets/index_examples_resets.rst

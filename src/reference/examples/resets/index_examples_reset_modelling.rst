@@ -4,7 +4,7 @@ Modelling examples
 ------------------
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
 
     reset_usecase_1_cellgrowth.rst
     reset_usecase_2_stimuluscurrent.rst

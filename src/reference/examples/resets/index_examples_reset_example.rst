@@ -4,7 +4,7 @@ Examples of reset use
 ---------------------
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
 
     reset_example_1.rst
     reset_example_2_resettosame.rst
