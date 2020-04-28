@@ -8,15 +8,19 @@ Usecase 2: Stimulus current with offset
 .. code-block:: text
 
     component: UseCase2
-        math: x = t % 1000
-        variable: x 
-        variable: y, initially 0
-        reset: rule 1
-            when x == 100
-            then y = 1
-        reset: rule 2 
-            when x == 101
-            then y = 0
+      ├─ math: 
+      │   └─ x = t % 1000
+      │
+      ├─ variable: x 
+      │
+      └─ variable: y, initially 0
+          ├─ reset: rule 1
+          │   ├─ when x == 100
+          │   └─ then y = 1
+          │
+          └─ reset: rule 2 
+              ├─ when x == 101
+              └─ then y = 0
 
 .. container:: toggle
 
@@ -67,21 +71,21 @@ Usecase 2: Stimulus current with offset
     1. At :code:`t = 100` we detect that :code:`x == 100`, so rule 1 becomes active.
     #. The reset value for rule 1 is calculated to be 1.
     #. The reset value for rule 1 is applied.
-    #. The system is now in a new state: :math:`(x^\prime, t, p) \neq (x,t,p)` (note that y is included in p), we restart at step 1.
+    #. The system is now in a new state: :math:`(x^\prime, t, p) \neq (x, t, p)` (note that :math:`y` is included in :math:`p`), we restart at step 1.
 
 - **Cycle**
 
     1. Since it is still true that :code:`x == 100`, rule 1 is still active.
     2. The reset value is calculated,
     3. And applied.
-    4. The state hasn't changed: :math:`(x^\prime, t, p) = (x,t,p)`, so reset rule 1 processing halts.
+    4. The state hasn't changed: :math:`(x^\prime, t, p) = (x, t, p)`, so reset rule 1 processing halts.
 
 - **Cycle** 
 
     1. At :code:`t = 101` we detect that :code:`x == 101`, so rule 2 becomes active.
     2. The reset value for rule 2 is calculated to be 0.
     3. The reset value for rule 2 is applied.
-    4. The system is now in a new state: :math:`(x^\prime, t, p) \neq (x,t,p)`, so restart.
+    4. The system is now in a new state: :math:`(x^\prime, t, p) \neq (x, t, p)`, so restart.
 
 - **Cycle**
 
