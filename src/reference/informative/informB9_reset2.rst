@@ -16,9 +16,9 @@
 
       model: Tartarus
         └─ component: Sisyphus
-            ├─ math: ode(position, time) = 1
-            ├─ variable: time
-            └─ variable: position, initially 0
+            ├─ math: ode(position, time) = 1 [metres_per_second]
+            ├─ variable: time [second]
+            └─ variable: position, initially 0 [metre]
                 └─ reset:
                     ├─ when: time is midnight
                     └─ then: position is bottom of hill
@@ -40,9 +40,11 @@
         <model name="Tartarus">
           <component name="Sisyphus">
             <variable name="time" units="second" />
-            <variable name="position" units="dimensionless" initial_value="0" />
+            <variable name="position" units="metre" initial_value="0" />
 
             <reset variable="position" test_variable="time" order="1">
+              <!-- The reset_value and test_value children of a reset are 
+                   discussed in the next sections. -->
               ...
             </reset>
 
@@ -53,10 +55,17 @@
                       <ci>B</ci>
                       <bvar>t</bvar>
                   </diff>
-                  <cn cellml:units="dimensionless">1</cn>
+                  <cn cellml:units="metres_per_second">1</cn>
               </apply>
             </math>
           </component>
+
+          <!-- Custom units required by ODE above: -->
+          <units name="metres_per_second" >
+            <unit units="metre" />
+            <unit units="second" exponent="-1" />
+          </units>
+
         </model>
 
     
@@ -85,18 +94,17 @@
               ...
             </reset>
 
-            <math>
-              ...
-            </math>
+            ...
 
           </component>
         </model>
 
-        
+      .. code-block:: xml
+
         <model name="Tartarus">
           <component name="Sisyphus">
             <variable name="time" units="second" />
-            <variable name="position" units="dimensionless" />
+            <variable name="position" units="metre" />
 
             <!-- This is not valid: The test variable "eternity_time" does not exist 
                  in the reset's component. -->
@@ -104,15 +112,18 @@
               ...
             </reset>
 
+            ...
+
           </component>
         </model>
 
-        
+      .. code-block:: xml
+
         <model name="Tartarus">
 
           <!-- This is not valid: The reset variable "position" is in component  Sisyphus ... -->
           <component name="Sisyphus">
-            <variable name="position" units="dimensionless" initial_value="0" />
+            <variable name="position" units="metre" initial_value="0" />
           </component>
 
           <!-- ... but the reset which changes it is in component "RulerOfTartarus". -->
@@ -124,4 +135,3 @@
           </component>
 
         </model>
-

@@ -62,6 +62,8 @@
           </component>
         </model>
 
+      .. code-block:: xml
+
         <!-- These are not valid: -->
         <model name="Tartarus">
           <component name="Sisyphus">
@@ -94,7 +96,7 @@
         ├─ component: Zeus
         │   └─ variable: sisyphus_position <╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴╴┐
         │       └─ reset: C                                       ╷
-        │           ├─ when: on a whim                            ╷
+        │           ├─ when: Sisyphus reaches some position       ╷
         │           ├─ then: sisyphus_position is bottom of hill  ╷
         │           └─ order: -1                                  ╷
         │                                                    equivalent
@@ -111,6 +113,52 @@
                     ├─ when: time is Tuesday midnight
                     ├─ then: position is unchanged at top of hill
                     └─ order: 1
+
+    .. container:: toggle
+
+      .. container:: header
+
+        Show CellML syntax
+
+      .. code-block:: xml
+
+        <model name="Tartarus">
+          <!-- Including a new component with a connected variable, sisyphus_position: -->
+          <component name="Zeus" >
+            <variable name="sisyphus_position" units="metre" initial_value="0" interface="public"/>
+            <!-- Creating a reset that will send the boulder to the bottom of the mountain 
+                 when it reaches a certain point: -->
+            <reset variable="sisyphus_position" test_variable="sisyphus_position" order="-1">
+              ...
+            </reset>
+          </component>
+
+          <component name="Sisyphus">
+            <variable name="time" units="second" />
+            <variable name="position" units="dimensionless" interface="public" />
+
+            <!-- The first reset represents all midnight times. -->
+            <reset variable="position" test_variable="time" order="2">
+              ...
+            </reset>
+            <!-- The second reset represents midnight on Tuesdays only. -->
+            <reset variable="position" test_variable="time" order="1">
+              ...
+            </reset>
+            ...
+          </component>
+
+          <!-- Connecting the variable "position" in component "Sisyphus" with the variable
+               "sisyphus_position" in component "Zeus": -->
+          <connection component_1="Zeus" component_2="Sisyphus" >
+            <map_variables variable_1="sisyphus_position" variable_2="position" />
+          </connection>
+        </model>
+
+
+
+
+
 
     This arrangement is valid, because none of the :code:`order` attributes on resets within the same equivalent variable set have duplicated values: reset A has order 2, reset B has order 1, and reset C has order -1.
     Note also that order values may be negative, as shown here.
