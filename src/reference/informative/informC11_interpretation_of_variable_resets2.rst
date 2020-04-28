@@ -20,17 +20,89 @@
 
       model: Tartarus
         └─ component: Sisyphus
-            ├─ variable: time
-            └─ variable: position
+            ├─ units: metre_per_second
+            ├─ maths: 
+            │   ├─ time_of_day = time_of_week % 86400 [second]
+            │   └─ ode(position, time_of_day) = 1 [metre_per_second]
+            │
+            ├─ variable: time_of_week [second]
+            ├─ variable: time_of_day [second]
+            └─ variable: position [metre], initially 0
                 ├─ reset: A
-                │   ├─ "when time is midnight"
+                │   ├─ "when time of day is midnight"
                 │   ├─ "then position is bottom of hill"
                 │   └─ order: 2
                 │
                 └─ reset: B
-                    ├─ "when time is midnight between Monday and Tuesday"
+                    ├─ "when time of day is midnight, and time of week is between Monday and Tuesday"
                     ├─ "then position is top of the hill"
                     └─ order: 1
+
+    .. container:: toggle
+
+      .. container:: header
+
+        Show CellML syntax
+
+      .. code-block:: xml
+
+        <model name="Tartarus">
+          <component name="Sisyphus">
+            <variable name="time_of_day" units="second" />
+            <variable name="time_of_week" units="second" />
+            <variable name="position" units="metre" initial_value="0" />
+
+            <!-- Reset A which will move the rock to the bottom of the hill each midnight: -->
+            <reset variable="position" test_variable="time_of_day" order="2" >
+              <test_value>
+                <cn cellml:units="second">86399</cn>
+              </test_value>
+              <reset_value>
+                <cn cellml:units="metre">0</cn>
+              </reset_value>
+            </reset>
+
+            <!-- Reset B which will keep the rock at the top of the hill on Tuesdays: -->
+            <reset variable="position" test_variable="time_of_week" order="1" >
+              <test_value>
+                <apply><plus/>
+                  <cn cellml:units="second">86399</cn>
+                  <cn cellml:units="second">86400</cn>
+                </apply>
+              </test_value>
+              <reset_value>
+                <cn cellml:units="metre">0</cn>
+              </reset_value>
+            </reset>
+
+            <math>
+              <!-- Simple ODE for position of the rock with time: -->
+              <apply><eq/>
+                <diff>
+                  <ci>position</ci>
+                  <bvar>time_of_day</bvar>
+                </diff>
+                <cn cellml:units="metre_per_second">1</cn>
+              </apply>
+              <!-- Calculating the time of day from the time of the week: -->
+              <apply><eq/>
+                <ci>time_of_day</ci>
+                <apply><mod/>
+                  <ci>time_of_week</ci>
+                  <cn cellml:units="second">86400</cn>
+                </apply>
+              </apply>
+            </math>
+
+            <!-- Custom units needed to define the ODE above: -->
+            <units name="metre_per_second">
+              <unit units="metre" />
+              <unit units="second" exponent="-1" />
+            </units>
+
+          </component>
+        </model>
+
 
     At midnight between Monday and Tuesday *both* of the resets above are active: the first, reset A, because midnight on any day meets the midnight criterion; the second because 00:00 on Tuesday morning also meets the criterion for B.
     To decide which of the two consequences to enact - to roll the stone or not - we need to use the resets' orders as a tie-breaker.
@@ -55,7 +127,7 @@
     4. Calculate, but do not apply, the update changes specified by each *pending* reset based on the current state of the model.
 
     5. Apply the updates calculated in (4).  
-       This step means that the order in which the variables' values are altered does not affect the overall behaviour of the resets.
+       This step means that the order in which the variables' values are altered does not affect the overall behaviour of the resets, as all of the updates are based on the unchanged state of the system.
     
     6. Test whether the set of variable values in the model has changed: 
 

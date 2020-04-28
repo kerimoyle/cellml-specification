@@ -22,11 +22,11 @@
 
       model: UnderworldOfTartarus
         └─ component: Sisyphus
+            ├─ units: metre_per_second
             ├─ maths: 
-            │    ├─ time = time + 1
-            │    └─ position = position + 1
-            ├─ variable: time
-            └─ variable: position
+            │    └─ ode(position, time) = 1 [metre_per_second]
+            ├─ variable: time [second]
+            └─ variable: position [metre], initially 0
                 └─ reset:
                     ├─ "when time is midnight"
                     └─ "then the boulder's position is the bottom of the hill"
@@ -37,11 +37,11 @@
 
       model: UnderworldOfTartarus
         └─ component: Sisyphus
+            ├─ units: metre_per_second
             ├─ maths: 
-            │    ├─ time = time + 1
-            │    └─ position = position + 1
-            ├─ variable: time
-            └─ variable: position
+            │    └─ ode(position, time) = 1 [metre_per_second]
+            ├─ variable: time [second]
+            └─ variable: position [metre], initially 0
                 └─ reset:
                     ├─ "when time is midnight"
                     │     ├─ test_variable: time
@@ -66,10 +66,10 @@
         <model name="Tartarus">
           <component name="Sisyphus">
             <variable name="time" units="second" />
-            <variable name="position" units="metre" />
+            <variable name="position" units="metre" initial_value="0" />
 
+            <!-- The reset which will move the rock to the bottom of the hill each midnight: -->
             <reset variable="position" test_variable="time" order="1">
-
               <!-- The "when" statement above is given by testing the equality 
                    of the test_variable's value and the test_value: -->
               <test_value>
@@ -82,6 +82,23 @@
                 <cn cellml:units="metre">0</cn>
               </reset_value>
             </reset>
+
+            <!-- Simple ODE for position of the rock with time: -->
+            <math>
+              <apply><eq/>
+                <diff>
+                  <ci>position</ci>
+                  <bvar>time</bvar>
+                </diff>
+                <cn cellml:units="metre_per_second">1</cn>
+              </apply>
+            </math>
+
+            <!-- Custom units needed to define the ODE above: -->
+            <units name="metre_per_second">
+              <unit units="metre" />
+              <unit units="second" exponent="-1" />
+            </units>
 
           </component>
         </model>

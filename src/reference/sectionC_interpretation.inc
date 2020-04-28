@@ -448,7 +448,6 @@ Interpretation of ``map_variables`` elements
 
 .. _specC_interpretation_of_variable_resets:
 
-
 Interpretation of ``reset`` elements
 ------------------------------------
 
