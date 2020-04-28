@@ -1,7 +1,6 @@
 .. _example_resets_introduction:
 
-------------
-Using resets
+Introduction
 ------------
 
 This document is not part of the CellML specification.
