@@ -44,11 +44,7 @@ li {
     margin-bottom: 12px;
 }
 
-.shortlist > li > ol {
-    margin-bottom: 3px;
-}
-
-.shortlist > li > ul {
+.shortlist {
     margin-bottom: 3px;
 }
 
