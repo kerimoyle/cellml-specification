@@ -39,7 +39,7 @@ For the sake of clarity we can omit them and could, for example, specify a funct
     :maxdepth: 1
 
     reset_interpretation.rst
-    reset_examples_reset_example.rst
+    index_examples_reset_example.rst
     reset_implementation_1_forwardintegration.rst
-    reset_examples_reset_misuse.rst
-    reset_examples_reset_modelling.rst
+    index_examples_reset_misuse.rst
+    index_examples_reset_modelling.rst
