@@ -1,9 +1,9 @@
-.. _example_reset_misuse_2_touchingnotcrossing:
+.. _example_reset_misuse_touchingnotcrossing:
 
-Misuse 2: Touching, not crossing
---------------------------------
+Misuse: Touching, not crossing
+------------------------------
 
-**Description:** **TODO**
+**Description:** Resets whose :code:`test_value` coincides with a root or turning point of the :code:`test_variable` risk missing detection of the reset point.
 
 Note that:
 
@@ -14,15 +14,15 @@ Note that:
 .. code-block:: text
 
     component: TouchingNotCrossing
-        math: x = sin(t*pi/2)
-        variable: x
-        variable: y initially 0
-        reset: rule 1
-            when x == 1
-            then y = 1
-        reset: rule 2
-            when x == -1
-            then y = 0
+      ├─ math: x = sin(t*pi/2)
+      ├─ variable: x
+      └─ variable: y initially 0
+          ├─ reset: rule 1
+          │   ├─ when x == 1
+          │   └─ then y = 1
+          └─ reset: rule 2
+              ├─ when x == -1
+              └─ then y = 0
 
 .. container:: toggle
 
@@ -73,26 +73,26 @@ Note that:
 
 A simulation with this model might proceed as follows:
 
-+---+-----+-------+-----+-------+-------+-------+-----+--------+-------+-------+-----+
-| t | 0.0 | 0.1   | ... | 0.9   | 1.0   | 1.1   | ... | 2.9    | 3.0   | 3.3   | ... |
-+---+-----+-------+-----+-------+-------+-------+-----+--------+-------+-------+-----+
-| x | 0   | 0.156 | ... | 0.988 | 1     | 0.988 | ... | -0.988 | -1    | 0.988 | ... |
-+---+-----+-------+-----+-------+-------+-------+-----+--------+-------+-------+-----+
-| y | 0   | 0     | ... | 0     | 0 → 1 | 1     | ... | 1      | 1 → 0 | 0     | ... |
-+---+-----+-------+-----+-------+-------+-------+-----+--------+-------+-------+-----+
++-----+-----+-------+-----+-------+-------+-------+-----+--------+-------+-------+-----+
+| *t* | 0.0 | 0.1   | ... | 0.9   | 1.0   | 1.1   | ... | 2.9    | 3.0   | 3.3   | ... |
++-----+-----+-------+-----+-------+-------+-------+-----+--------+-------+-------+-----+
+| *x* | 0   | 0.156 | ... | 0.988 | 1     | 0.988 | ... | -0.988 | -1    | 0.988 | ... |
++-----+-----+-------+-----+-------+-------+-------+-----+--------+-------+-------+-----+
+| *y* | 0   | 0     | ... | 0     | 0 → 1 | 1     | ... | 1      | 1 → 0 | 0     | ... |
++-----+-----+-------+-----+-------+-------+-------+-----+--------+-------+-------+-----+
 
 However, it is easy for implementations to "miss" this type of reset in a simulation.
 For example, the following may occur in an implementation with adaptive step sizes that uses root finding to detect resets (i.e.: by searching for sign changes in :code:`x - 1`):
 
-+-------+-----+--------+-----+-------+-------+--------+-----+
-| t     | 0.0 | 0.4    | ... | 0.9   | 1.1   | 1.7    | ... |
-+-------+-----+--------+-----+-------+-------+--------+-----+
-| x     | 0   | 0.588  | ... | 0.988 | 0.988 | 0.454  | ... |
-+-------+-----+--------+-----+-------+-------+--------+-----+
-| y     | 0   | 0      | ... | 0     | 0     | 0      | 0   |
-+-------+-----+--------+-----+-------+-------+--------+-----+
-| x - 1 | -1  | -0.412 | ... | -0.12 | -0.12 | -0.546 | ... |
-+-------+-----+--------+-----+-------+-------+--------+-----+
++---------+-----+--------+-----+-------+-------+--------+-----+
+| *t*     | 0.0 | 0.4    | ... | 0.9   | 1.1   | 1.7    | ... |
++---------+-----+--------+-----+-------+-------+--------+-----+
+| *x*     | 0   | 0.588  | ... | 0.988 | 0.988 | 0.454  | ... |
++---------+-----+--------+-----+-------+-------+--------+-----+
+| *y*     | 0   | 0      | ... | 0     | 0     | 0      | 0   |
++---------+-----+--------+-----+-------+-------+--------+-----+
+| *x - 1* | -1  | -0.412 | ... | -0.12 | -0.12 | -0.546 | ... |
++---------+-----+--------+-----+-------+-------+--------+-----+
 
 This behaviour is expected to be common in implementations. 
 For example, the popular adaptive solver :cvode:`CVODE` has a root finding mechanism that can be used to implement reset rules, but its documentation explicitly states it is unlikely to find roots where the sign does not change.
