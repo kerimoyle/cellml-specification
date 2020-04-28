@@ -11,7 +11,7 @@ It gives a suggested interpretation of resets, and involves adding some rules an
 It is perfectly valid for a CellML model to break these rules and/or go beyond these restrictions.
 In that case, the interpretation given here may not hold.
 
-For the purposes of this document, we use the term "variable" to mean "the mathematical variable represented by a connected variable set" (see :numref:`{number} {name}<specC_equivalent_variable_set>`)
+For the purposes of this document, we use the term "variable" to mean "the mathematical variable represented by a connected variable set" (see :numref:`{number} {name} <specC_equivalent_variable_set>`)
 A model's variables can be divided into four sets:
 
 - The variable or variables of integration, :math:`t`.
@@ -36,7 +36,7 @@ Note that, while some of the most biologically interesting variables are found b
 For the sake of clarity we can omit them and could, for example, specify a function of the model's state as :math:`f(x, t, p)` instead of :math:`f(x, t, p, g(x, t, p))`.
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
 
     reset_interpretation.rst
     reset_examples_reset_example.rst
