@@ -5,12 +5,14 @@ Usecase: Reset at initial point
 
 **Description:** This example shows that reset evaluation can happen throughout the simulation, including the very beginning. 
 
-Note that:
+.. container:: shortlist
 
-- all elements are in the same component;
-- the order values of resets are not shown;
-- all variables have :code:`dimensionless` units;
-- the initial conditions hold when :code:`t = 0`.
+    Note that:
+
+    - all elements are in the same component;
+    - the order values of resets are not shown;
+    - all variables have :code:`dimensionless` units;
+    - the initial conditions hold when :code:`t = 0`.
 
 .. code-block:: text
 

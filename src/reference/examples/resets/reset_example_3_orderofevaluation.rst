@@ -5,12 +5,14 @@ Example: Order of evaluation
 
 **Description**: This example shows the behaviour when a reset value involves a variable.
 
-Note that:
+.. container:: shortlist
 
-- all elements are in the same component;
-- resets are shown attached to their :code:`variable` attribute; 
-- the order values of resets are not shown; and
-- all variables have dimensionless units.
+    Note that:
+
+    - all elements are in the same component;
+    - resets are shown attached to their :code:`variable` attribute; 
+    - the order values of resets are not shown; and
+    - all variables have dimensionless units.
 
 .. code-block:: text
 

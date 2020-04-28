@@ -5,11 +5,13 @@ Example: Using variables as reset values
 
 **Description**: A simple example demonstrating the behaviour where one variable is reset to the value of another. 
 
-Note that:
+.. container:: shortlist
 
-- all elements are in the same component;
-- the order values of resets are not shown; and
-- all variables have dimensionless units.
+    Note that:
+
+    - all elements are in the same component;
+    - the order values of resets are not shown; and
+    - all variables have dimensionless units.
 
 .. code-block:: text
 

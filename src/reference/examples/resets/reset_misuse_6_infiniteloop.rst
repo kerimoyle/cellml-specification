@@ -6,11 +6,13 @@ Misuse: Infinite loop
 **Description**: It's possible to write valid CellML syntax that produces an invalid or meaningless outcome.
 One such example is the use of resets to create infinite evaluation loops, where resets change a variable's value back and forth forever.
 
-Note that:
+.. container:: shortlist
 
-- all elements are in the same component;
-- the order values of resets are not shown; and
-- all variables have dimensionless units.
+    Note that:
+
+    - all elements are in the same component;
+    - the order values of resets are not shown; and
+    - all variables have dimensionless units.
 
 .. code-block:: text
 

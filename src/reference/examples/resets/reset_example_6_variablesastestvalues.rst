@@ -5,11 +5,13 @@ Example: Using variables as test values
 
 **Description**: A simple example showing the behaviour when a reset test value is given by a variable.
 
-Note that:
+.. container:: shortlist
 
-- all elements are in the same component;
-- the order values of resets are not shown; and
-- all variables have dimensionless units.
+    Note that:
+
+    - all elements are in the same component;
+    - the order values of resets are not shown; and
+    - all variables have dimensionless units.
 
 .. code-block:: text
 

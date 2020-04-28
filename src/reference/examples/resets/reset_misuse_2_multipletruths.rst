@@ -7,11 +7,13 @@ Misuse: Multiple truths
 For this reason, models containing reset variables which are also present in maths statements are over-defined.
 This is shown in the example below.
 
-Note that:
+.. container:: shortlist
 
-- all elements are in the same component;
-- the order values of resets are not shown; and
-- all variables have dimensionless units.
+    Note that:
+
+    - all elements are in the same component;
+    - the order values of resets are not shown; and
+    - all variables have dimensionless units.
 
 .. code-block:: text
 

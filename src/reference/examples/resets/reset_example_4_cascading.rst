@@ -5,11 +5,13 @@ Example: Cascading
 
 **Description**: Because resets change the value of variables, they can also trigger downstream reset activity as conditions which were not previously met become active.
 
-Note that:
+.. container:: shortlist
 
-- all elements are in the same component;
-- the order values of resets are not shown; and
-- all variables have dimensionless units.
+    Note that:
+
+    - all elements are in the same component;
+    - the order values of resets are not shown; and
+    - all variables have dimensionless units.
 
 .. code-block:: text
 

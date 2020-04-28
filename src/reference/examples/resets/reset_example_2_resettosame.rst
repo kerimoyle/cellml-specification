@@ -5,11 +5,13 @@ Example: Reset to same
 
 **Description**: This example shows how reset evaluation halts if the model's set of system values :math:`(x, t, p)` has stopped changing.
 
-Note that:
+.. container:: shortlist
 
-- all elements are in the same component;
-- the order values of resets are not shown; and
-- all variables have dimensionless units.
+    Note that:
+
+    - all elements are in the same component;
+    - the order values of resets are not shown; and
+    - all variables have dimensionless units.
 
 .. code-block:: text
 

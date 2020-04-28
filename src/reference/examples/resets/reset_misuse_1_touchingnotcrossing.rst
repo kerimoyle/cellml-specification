@@ -5,11 +5,13 @@ Misuse: Touching, not crossing
 
 **Description:** Resets whose :code:`test_value` coincides with a root or turning point of the :code:`test_variable` risk missing detection of the reset point.
 
-Note that:
+.. container:: shortlist
 
-- all elements are in the same component;
-- the order values of resets are not shown; and
-- the units of variables are not shown.
+    Note that:
+
+    - all elements are in the same component;
+    - the order values of resets are not shown; and
+    - the units of variables are not shown.
 
 .. code-block:: text
 

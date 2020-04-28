@@ -7,10 +7,12 @@ Example: Explicit reset ordering
 Note that "order" here refers to the sequence in which resets are *tested*, not the sequence in which they are *applied*. 
 The former determines which reset is selected in an evaluation cycle (only one reset per variable is applied); the latter does not affect the final system values (see :numref:`Figure {number}<reset_rules_2_composite>`).
 
-Note that:
+.. container:: shortlist
 
-- all elements are in the same component; and
-- all variables have dimensionless units.
+    Note that:
+
+    - all elements are in the same component; and
+    - all variables have dimensionless units.
 
 .. code-block:: text
 

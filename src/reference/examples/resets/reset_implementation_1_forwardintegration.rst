@@ -6,11 +6,13 @@ Implementation: Forward integration
 **Description:** This example shows two possible strategies to handle resets.
 No particular method is prescribed (just as no method is prescribed for the solution of ODEs either).
 
-Note that:
+.. container:: shortlist
 
-- all elements are in the same component;
-- the order values of resets are not shown; and
-- the units of variables are not shown.
+    Note that:
+
+    - all elements are in the same component;
+    - the order values of resets are not shown; and
+    - the units of variables are not shown.
 
 .. code-block:: text
 
