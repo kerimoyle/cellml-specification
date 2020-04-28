@@ -20,8 +20,8 @@ Misuse: Conditional test value
         └─ variable: y initially 0 
             └─ reset: 
                 ├─ when y == if t == 1 
-                │              ├─ then 1
-                │              └─ else 0
+                │                   ├─ then 1
+                │                   └─ else 0
                 └─ then y = 1
 
 .. container:: toggle

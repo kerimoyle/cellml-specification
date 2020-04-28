@@ -3,7 +3,9 @@
 Misuse: Indirect change of state variables
 ------------------------------------------
 
-**Description:** **TODO**
+**Description:** Resets applied at :math:`(x, t, p)` can only change the variables in :math:`x`.
+This includes state variables, and variables which have been initialised using the :code:`initial_value` attribute and whose value is not determined through any of the mathematical equations given.
+This example shows the valid case of where the mathematical equation may - depending on the implementation - covertly change a state variable.
 
 .. container:: shortlist
 
@@ -17,8 +19,8 @@ Misuse: Indirect change of state variables
 
     component: IndirectlyChangeStateVariables
       ├─ math: 
-      │    ├─ ode(A, t) = 1
-      │    └─ B = A
+      │   ├─ ode(A, t) = 1
+      │   └─ B = A
       │
       ├─ variable: A initially 1
       │
@@ -58,7 +60,7 @@ Misuse: Indirect change of state variables
             </reset_value>
         </reset>
 
-This is similar to the previous case, but now the situation is solvable:
+This is similar to :ref:`the previous case<example_reset_misuse_multiple_truths>`, but now the situation is solvable:
 
 When :code:`B == 2`, *B* it must be reset to 1.
 But since :code:`B = A` is specified in the :code:`math` block, then *A* must also be 1.

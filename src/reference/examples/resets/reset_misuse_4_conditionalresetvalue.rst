@@ -17,7 +17,7 @@ Misuse: Conditional reset value
 
     component: ConditionalResetValue
       ├─ math: 
-      │    └─ x = sin(t*pi)
+      │   └─ x = sin(t*pi)
       │
       ├─ variable: x
       │

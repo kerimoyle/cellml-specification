@@ -18,14 +18,16 @@ Despite this, the resets alter different variables (they have different :code:`r
 
     component: 
       ├─ math: ode(B, t) = 1
+      │
       ├─ variable: A initially 1
+      │   └─ reset: rule 1
+      │       ├─ when B == 3
+      │       └─ then A = 2
+      │
       └─ variable: B initially 1 
-        ├─ reset: rule 1
-        │   ├─ when B == 3
-        │   └─ then A = 2
-        └─ reset: rule 2
-            ├─ when B == 3
-            └─ then B = 1
+          └─ reset: rule 2
+              ├─ when B == 3
+              └─ then B = 1
 
 .. container:: toggle
 

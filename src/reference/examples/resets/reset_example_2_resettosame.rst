@@ -4,6 +4,7 @@ Example: Reset to same
 ----------------------
 
 **Description**: This example shows how reset evaluation halts if the model's set of system values :math:`(x, t, p)` has stopped changing.
+The reset itself doesn't actually do anything, but it does go through the process of checking the active resets, applying them, and deciding whether or not to continue the reset evaluation loop.
 
 .. container:: shortlist
 
@@ -19,7 +20,7 @@ Example: Reset to same
       ├─ math: ode(A, t) = 1
       └─ variable: A initially 1
           └─ reset: 
-              ├─when A == 2
+              ├─ when t == 1
               └─ then A = 2
 
 .. container:: toggle
@@ -43,9 +44,9 @@ Example: Reset to same
             </apply>
         </math>
 
-        <reset variable="A" test_variable="A">
+        <reset variable="A" test_variable="t">
             <test_value>
-                <cn units="cellml:dimensionless">2</cn>
+                <cn units="cellml:dimensionless">1</cn>
             </test_value>
             <reset_value>
                 <cn units="cellml:dimensionless">2</cn>
