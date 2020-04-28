@@ -25,12 +25,12 @@
                 ├─ reset: A
                 │   ├─ "when time is midnight"
                 │   ├─ "then position is bottom of hill"
-                │   └─ order: 1
+                │   └─ order: 2
                 │
                 └─ reset: B
                     ├─ "when time is midnight between Monday and Tuesday"
                     ├─ "then position is top of the hill"
-                    └─ order: 2
+                    └─ order: 1
 
     At midnight between Monday and Tuesday *both* of the resets above are active: the first, reset A, because midnight on any day meets the midnight criterion; the second because 00:00 on Tuesday morning also meets the criterion for B.
     To decide which of the two consequences to enact - to roll the stone or not - we need to use the resets' orders as a tie-breaker.
@@ -67,20 +67,7 @@
 
     - Applying (1), both resets A and B are designated *active*.
     - Applying (2), both resets A and B explicitly reference the variable :code:`position`, so are in the same *active set* for that variable.  
-    - Applying (3), we select reset A as having the lower order within the *active set*, and call it *pending*.
-    - Applying (4), we evaluate the new value for the position variable to be the bottom of the hill based on the *pending* reset A.
-    - Applying (5), the boulder moves to the bottom of hill.
-    - Applying (6), we see that the position value has changed ... ???
-
-    **Is there no simple way to prevent a reset from being active because a second one is? no either or? **
-
-    If the order was reversed:
-
-    - Applying (1), both resets A and B are designated *active*.
-    - Applying (2), both resets A and B explicitly reference the variable :code:`position`, so are in the same *active set* for that variable.  
     - Applying (3), we select reset B as having the lower order within the *active set*, and call it *pending*.
     - Applying (4), we evaluate the new value for the position variable to be the top of the hill based on the *pending* reset B.
-    - Applying (5), the boulder's position is unchanged **but only because that's specifically stated in the reset**.
-    - Applying (6), we exit the reset iteration ... ???
-
-
+    - Applying (5), the boulder's position is unchanged.
+    - Applying (6), we exit the reset evaluation cycle, and the model dynamics continue.
