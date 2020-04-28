@@ -1,7 +1,7 @@
-.. _example_reset_misuse_4_conditionalresetvalue:
+.. _example_reset_misuse_conditionalresetvalue:
 
-Misuse 4: Conditional reset value
----------------------------------
+Misuse: Conditional reset value
+-------------------------------
 
 **Description**: **TODO**
 
@@ -15,7 +15,7 @@ Note that:
 
     component: ConditionalResetValue
       ├─ math: 
-      │    └─  x = sin(t*pi)
+      │    └─ x = sin(t*pi)
       │
       ├─ variable: x
       │

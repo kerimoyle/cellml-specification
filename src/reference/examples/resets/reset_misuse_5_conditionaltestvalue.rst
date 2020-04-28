@@ -1,7 +1,7 @@
-.. _example_reset_misuse_5_conditionaltestvalue:
+.. _example_reset_misuse_conditionaltestvalue:
 
-Misuse 5: Conditional test value
---------------------------------
+Misuse: Conditional test value
+------------------------------
 
 **Description**: **TODO**
 
@@ -14,12 +14,13 @@ Note that:
 .. code-block:: text
 
     component: ConditionalTestValue
-        variable: x initially 0
-        variable: y initially 0 
-        reset: 
-            when y == if t == 1 then 1
-                                else 0
-            then y = 1
+        ├─ variable: x initially 0
+        └─ variable: y initially 0 
+            └─ reset: 
+                ├─ when y == if t == 1 
+                │              ├─ then 1
+                │              └─ else 0
+                └─ then y = 1
 
 .. container:: toggle
 
