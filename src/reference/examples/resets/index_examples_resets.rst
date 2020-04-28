@@ -3,25 +3,45 @@
 Using resets
 ============
 
-.. toctree::
-    :maxdepth: 1
+Preamble
+--------
 
-    reset_preamble.rst
+This document is not part of the CellML specification.
+It gives a suggested interpretation of resets, and involves adding some rules and restrictions on the mathematics described by a CellML document.
+It is perfectly valid for a CellML model to break these rules and/or go beyond these restrictions.
+In that case, the interpretation given here may not hold.
+
+For the purposes of this document, we use the term "variable" to mean "the mathematical variable represented by a connected variable set" (see :numref:`{number} {name}<>`
+A model's variables can be divided into four sets:
+
+- The variable or variables of integration, :math:`t`.
+  These are defined as all variables which appear inside the MathML :code:`<bvar>` element inside a :code:`<diff>`.
+- The state variables, :math:`x`. 
+  These are defined as all variables for which an initial value is defined. 
+- The constant variables (or parameters), :math:`p`.
+  These are all variables which are not in :math:`(x, t)`, and whose values do not depend on any other variable.
+- The derived variables, :math:`z`. 
+  The variables that are not in :math:`(x, t, p)`.
+
+Some extra restrictions
+~~~~~~~~~~~~~~~~~~~~~~~
+
+- None of the variables can have boolean values.
+- The variables in :math:`t` must not be constrained by the model equations or resets: they must be free variables.
+- Any variable for which a derivative is used (i.e.: the variables in a :code:`<diff>` but not in its :code:`<bvar>`) must define an initial value.
+- The model must not be overdefined or underdefined.
+- The sets :math:`t, x, z` and :math:`p` must not overlap.
+
+Note that, while some of the most biologically interesting variables are found be in :math:`z`, for the purposes of evaluating the system trajectory they are simply functions of :math:`(x, t, p)`.
+For the sake of clarity we can omit them and could, for example, specify a function of the model's state as :math:`f(x, t, p)` instead of :math:`f(x, t, p, g(x, t, p))`.
+
+
+.. toctree::
+    :maxdepth: 2
+
     reset_interpretation.rst
-    reset_usecase_1_cellgrowth.rst
-    reset_usecase_2_stimuluscurrent.rst
-    reset_usecase_3_resetatinitialpoint.rst
+    reset_examples_reset_example.rst
     reset_implementation_1_forwardintegration.rst
-    reset_misuse_1_touchingnotcrossing.rst
-    reset_misuse_2_multipletruths.rst
-    reset_misuse_3_indirectlychangestatevars.rst
-    reset_misuse_4_conditionalresetvalue.rst
-    reset_misuse_5_conditionaltestvalue.rst
-    reset_misuse_6_infiniteloop.rst
-    reset_example_1.rst
-    reset_example_2_resettosame.rst
-    reset_example_3_orderofevaluation.rst
-    reset_example_4_cascading.rst
-    reset_example_5_variablesasresetvalues.rst
-    reset_example_6_variablesastestvalues.rst
-    reset_example_7_explicitordering.rst
+    reset_examples_reset_misuse.rst
+    reset_examples_reset_modelling.rst
+
