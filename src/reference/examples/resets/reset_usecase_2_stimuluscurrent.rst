@@ -92,4 +92,4 @@ Usecase: Stimulus current with offset
     1. Since it is still true that :code:`x == 101`, rule 2 is still active.
     2. The reset value is calculated,
     3. And applied.
-    4. The state hasn't changed: :math:`(x^\prime, t, p) = (x,t,p)`, so reset rule 2 processing halts.
+    4. The state hasn't changed: :math:`(x^\prime, t, p) = (x, t, p)`, so reset rule 2 processing halts.
