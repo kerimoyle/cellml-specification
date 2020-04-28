@@ -59,7 +59,7 @@ Note that:
 At :code:`t = 1.0` the reset rule for *A* becomes active.
 The update is calculated as :code:`A = 2`, and (finding no other values need to be calculated) the change is applied. 
 
-After applying the change, the new point :math:`(x^\prime, t, p^\prime)` equals the old point :math:`(x, t, p)` and so reset evaluation is halted, and model dynamics continue.
+After applying the change, the new point :math:`(x^\prime, t, p)` equals the old point :math:`(x, t, p)` and so reset evaluation is halted, and model dynamics continue.
 
 +-----+-----+-----+-----+-----+-------+-----+-----+
 | *t* | 0.0 | ... | 0.8 | 0.9 | 1.0   | 1.1 | 1.2 |

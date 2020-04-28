@@ -81,8 +81,7 @@ At :code:`t = 2` the following situation occurs:
 +-----+---+---+---+
 
 At this point :math:`(x, t, p)`, the test conditions for both resets are true, so both are active. 
-New values are first calculated, and then applied to yield a new point :math:`(x^\prime, t^\prime, p^\prime)`:
-**TODO** why t' here?? also below??
+New values are first calculated, and then applied to yield a new point :math:`(x^\prime, t, p)`:
 
 +-----+---+---+-------+
 | *t* | 0 | 1 | 2     |
@@ -93,9 +92,9 @@ New values are first calculated, and then applied to yield a new point :math:`(x
 +-----+---+---+-------+
 
 Note that both tests are performed using :math:`(x, t, p)`, so the order of these tests doesn't change the outcome. 
-Secondly, because the changes are orthogonal (each reset affects a different node in the directed acyclic graph), we can apply them in any order and reach the same point :math:`(x^\prime, t, p^\prime)`.
+Secondly, because the changes are orthogonal (each reset affects a different node in the directed acyclic graph), we can apply them in any order and reach the same point :math:`(x^\prime, t, p)`.
 
-Because :math:`(x^\prime, t^\prime, p^\prime) \neq (x, t, p)` a second round of reset evaluation is started, but no active resets are found, the reset evaluation is halted and model dynamics continue.
+Because :math:`(x^\prime,t, p) \neq (x, t, p)` a second round of reset evaluation is started, but no active resets are found, the reset evaluation is halted and model dynamics continue.
 
 +-----+---+---+-------+--------+---+
 | *t* | 0 | 1 | 2     | 2 + dt | 3 |
