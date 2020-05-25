@@ -10,7 +10,6 @@ The desired behaviour is shown in :numref:`reset_misuse4_1`.
    :name: reset_misuse4_1
    :alt: alt goes here
    :align: center
-   :width: 6.5cm
 
    Expected behaviour of a reset with a conditional reset value.
 
