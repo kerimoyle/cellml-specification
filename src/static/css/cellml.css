@@ -45,6 +45,10 @@ li {
     margin-bottom: 12px;
 }
 
+.shortlist * {
+    margin-bottom: 3px;
+}
+
 .issue-title {
     font-weight: 700;
     font-size: large;
@@ -152,6 +156,13 @@ li {
     font-weight: 700;
 }
 
+.heading4 {
+    color: #444444;
+    font-family: "Roboto Slab", "ff-tisa-web-pro", "Georgia", "Arial", sans-serif;
+    font-size: 120%;
+    font-weight: 600;
+}
+
 .terminal {
     border: none;
     color: white;
@@ -160,3 +171,10 @@ li {
     font-family: "Consolas", "Deja Vu Sans Mono", "Bitstream Vera Sans Mono", monospace;
     font-size: 0.85em;
 }
+
+table.align-default {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
