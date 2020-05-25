@@ -81,21 +81,27 @@
             └─ math: 
                 └─ ode(position, time) = velocity
 
-    .. code-block:: xml
+    .. container:: toggle
 
-      <reset variable="velocity" test_variable="position" order="1">
+      .. container:: header
 
-        <!-- The "when" statement above is true when the test_variable 
-             attribute equals the test_value statement: -->
-        <test_value>
-          <ci>width</ci>
-        </test_value>
+        Show CellML syntax
+      
+      .. code-block:: xml
 
-        <!-- The "then" statement above is defined by setting the
-              variable attribute to the reset_value statement: -->
-        <reset_value>
-            <cn cellml:units="metre_per_second">-0.1</cn>
-        </reset_value>
-      </reset>
+        <reset variable="velocity" test_variable="position" order="1">
+
+          <!-- The "when" statement above is true when the test_variable 
+              attribute equals the test_value statement: -->
+          <test_value>
+            <ci>width</ci>
+          </test_value>
+
+          <!-- The "then" statement above is defined by setting the
+                variable attribute to the reset_value statement: -->
+          <reset_value>
+              <cn cellml:units="metre_per_second">-0.1</cn>
+          </reset_value>
+        </reset>
     
     The behaviour at the other end of the wall is discussed in the following section.
