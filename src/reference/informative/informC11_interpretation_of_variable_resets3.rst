@@ -10,7 +10,7 @@
 
     .. container:: heading3
 
-      Understanding the test value element
+      Understanding the ``test_value`` and ``reset_value`` elements
 
     In the previous block we introduced a model which showed how both a low battery and an encounter with a wall could affect the velocity of the Roomba, and used the :code:`order` attribute to determine which reset was followed.
     Now we'd like to make sure that the low-battery Roomba is only ever stopped at a wall, so that people don't trip up on it.
@@ -52,28 +52,22 @@
 
       model: CleaningTheHouse
         └─ component: Roomba
-            ├─ variable: position 
-            ├─ variable: width 
+            ├─ variable: position [metre], initially 0
+            ├─ variable: width [metre], constant 5
             ├─ variable: battery_level [charge], initially 100
             │
-            ├─ variable: battery_check [dimensionless], initially 0
-            │    ├─ reset A1: order = 1
-            │    │   ├─ "when position equals width"
-            │    │   └─ "then set battery_check to 1"
-            │    └─ reset B1: order = 2
-            │        ├─ "when position equals start"
-            │        └─ "then set battery_check to 1"
+            ├─ variable: battery_check [dimensionless], initially 1
+            │    └─ reset C: order = 1
+            │        ├─ "when battery_level equals 10"
+            │        └─ "then set battery_check to 0"
             │
-            ├─ variable: velocity
-            │    ├─ reset A2: order = 1
+            ├─ variable: velocity [metre_per_second], initially 0.1
+            │    ├─ reset A: order = 1
             │    │   ├─ "when position equals width"
-            │    │   └─ "then set negative velocity"
-            │    ├─ reset B2: order = 2
-            │    │   ├─ "when position equals start"
-            │    │   └─ "then set positive velocity"
-            │    └─ reset C: order = -1
-            │        ├─ "when battery_check*battery_level is 10"
-            │        └─ "then set velocity to zero"
+            │    │   └─ "then velocity to be negative product with battery_check"
+            │    └─ reset B: order = 2
+            │        ├─ "when position equals start"
+            │        └─ "then set to be positive product with battery_check"
             │
             └─ math: 
                 ├─ ode(position, time) = velocity
@@ -94,9 +88,6 @@
               <variable name="battery_level" units="charge" initial_value="100" />
               <variable name="velocity" units="metre_per_second" initial_value="0.1" />
               <variable name="battery_check" units="dimensionless" initial_value="0" />
-
-              <!-- Adding new resets to the battery_check variable which parallel those 
-              on the velocity variable: -->
 
               <!-- Resets active at any position tell when the battery check means it should
               be stopped at the next wall encounter. Note that this doesn't actually affect 

@@ -26,16 +26,14 @@
             ├─ variable: velocity
             │    ├─ reset A: order = 1
             │    │   ├─ "when position equals width"
-            │    │   └─ "then reverse direction"
+            │    │   └─ "then set negative velocity"
             │    └─ reset B: order = 2
             │        ├─ "when position equals start"
-            │        └─ "then reverse direction"
+            │        └─ "then set positive velocity"
             │
             └─ math: 
                 └─ ode(position, time) = velocity
 
-
-    
     At present it's clear from the conditions on the two resets (the position at the start and at the far wall) that they cannot occur simulataneously, but this is not always the case.
     For this reason, every reset must specify an :code:`order` attribute which will be used as a tie-breaker in situations where more than one reset on a variable is active at the same time.
 
