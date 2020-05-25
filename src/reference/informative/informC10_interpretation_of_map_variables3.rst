@@ -123,7 +123,7 @@
         </connection>
 
     2. Secondly, *any* form of cyclical definition is invalid, as it leaves the mathematical model underdefined.
-       So our Anglophone could be also told that *drie* means *tois*, *tois* means *toru*, and *toru* means *drie*, but unless one of them is nailed down to an actual value somewhere, the model remains under-defined.
+       So our Anglophone could be also told that *drie* means *trois*, *trois* means *toru*, and *toru* means *drie*, but unless one of them is nailed down to an actual value somewhere, the model remains under-defined.
 
     .. code::
 
@@ -165,10 +165,3 @@
           <map_variables variable_1="un" variable_2="een" />
             ...
         </connection>
-
-
-
-
-
-
-
