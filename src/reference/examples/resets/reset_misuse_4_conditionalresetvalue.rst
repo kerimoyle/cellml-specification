@@ -101,6 +101,8 @@ The desired behaviour is shown in :numref:`reset_misuse4_1`.
 It is valid, though probably not advisable, to use conditional statements (the MathML :code:`piecewise`, :code:`piece` and :code:`otherwise` items) when specifying a reset value.
 Two alternative arranements which give the same behaviour are shown below.
 
+Suggestions
+~~~~~~~~~~~
 In the first, we create a dummy variable *r* and apply the conditional statement to its value external to the reset.  
 When the reset is active, the value of *r* is retrieved and used as normal.
 

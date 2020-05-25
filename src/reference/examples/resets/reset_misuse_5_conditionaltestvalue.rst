@@ -65,6 +65,11 @@ Misuse: Conditional test value
 It is valid, though probably not advisable, to use conditional statements (the MathML :code:`piecewise`, :code:`piece` and :code:`otherwise` items) when specifying a test value.
 Alternative approaches which avoid this are shown below.
 
+Suggestions
+~~~~~~~~~~~
+Simply by moving the conditional statement from the test value and into a variable in the maths block gets around the problem.
+**TODO** really?? What is the problem actually?? Shouldn't it be addressed with other resets so that we can use the order to decide how they behave??
+
 .. code-block:: text
 
   component: AvoidConditionalTestValue
