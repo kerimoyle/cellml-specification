@@ -3,7 +3,7 @@
 Usecase: Reset at initial point
 -------------------------------
 
-**Description:** This example shows that reset evaluation can happen throughout the simulation, including the very beginning. 
+**Description:** This example shows that reset evaluation can happen throughout the simulation, including at the very beginning. 
 
 .. container:: shortlist
 

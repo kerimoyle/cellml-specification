@@ -71,8 +71,7 @@ Usecase: Stimulus current with offset
     1. At :code:`t = 100` we detect that :code:`x == 100`, so rule 1 becomes active.
     #. The reset value for rule 1 is calculated to be 1.
     #. The reset value for rule 1 is applied to :code:`y`.
-    #. The system is now in a new state: :math:`(x^\prime, t, p) \neq (x, t, p)` (note that :math:`y` is included in :math:`p`), we restart at step 1.
-       **TODO** y should be part of x not p??
+    #. The system is now in a new state: :math:`(x^\prime, t, p) \neq (x, t, p)` (note that :math:`y` is included in :math:`x`), we restart at step 1.
 
 - **Cycle**
 
