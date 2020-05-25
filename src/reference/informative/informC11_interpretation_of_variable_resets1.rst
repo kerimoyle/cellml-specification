@@ -98,6 +98,4 @@
         </reset_value>
       </reset>
     
-    The behavior at the other end of the wall is discussed in the following section.
-
-    
+    The behaviour at the other end of the wall is discussed in the following section.
