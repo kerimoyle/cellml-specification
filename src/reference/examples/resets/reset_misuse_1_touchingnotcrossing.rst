@@ -99,3 +99,7 @@ For example, the following may occur in an implementation with adaptive step siz
 This behaviour is expected to be common in implementations. 
 For example, the popular adaptive solver :cvode:`CVODE` has a root finding mechanism that can be used to implement reset rules, but its documentation explicitly states it is unlikely to find roots where the sign does not change.
 As a result, this type of reset rule is probably best avoided.
+
+Suggestions
+~~~~~~~~~~~
+**TODO** ?

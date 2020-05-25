@@ -80,17 +80,17 @@ At this point, the CellML model's interpretation is not defined.
 The reset causing :code:`y = 1` and the mathematics :code:`y = 0` cannot both be true.
 
 Suggestions
------------
+~~~~~~~~~~~
 
 There is no workaround that will give the behaviour of the model as it is: the situation is not possible. 
 However, it's probable that this occurred because you actually wanted a different behaviour:
 
-- **Initial conditions for *y*:** If the line in the maths block stating that :math:`y=0` is intended to provide only an initial condition, you should remove it from the maths block.
+- **Initial conditions:** If the line in the maths block stating that :math:`y=0` is intended to provide only an initial condition, you should remove it from the maths block.
   Statements here are held to be true for all time, so simple definitions such as :math:`a=1` lock the value of :math:`a` in stone: it cannot be changed by resets, by other mathematics, or by initial conditions.
   To initialise a variable whose value can be changed (including by a reset item) please use the :code:`initial_value` attribute on the variable instead.
   You can read more about variables and constants in the **TODO pr344_documentation**
 
-- **Default conditions for *y*:** If the use of a reset on variable *y* is intended to be a temporary situation, active only when the reset conditions are met, then the mathematics :math:`y=0` should again be removed.
+- **Default conditions:** If the use of a reset on variable *y* is intended to be a temporary situation, active only when the reset conditions are met, then the mathematics :math:`y=0` should again be removed.
   Resets provide a one-way switch: in the case of the reset above this switch is from :math:`y=0→1`.
   To switch back the other way (making the condition temporary), simply provide a second reset, as shown below.
 

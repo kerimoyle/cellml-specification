@@ -60,13 +60,37 @@ This example shows the valid case of where the mathematical equation may - depen
             </reset_value>
         </reset>
 
-This is similar to :ref:`the previous case<example_reset_misuse_multiple_truths>`, but now the situation is solvable:
+This is similar to :ref:`the previous case<example_reset_misuse_multiple_truths>`, but now the situation could perhaps be solvable:
 
-When :code:`B == 2`, *B* it must be reset to 1.
-But since :code:`B = A` is specified in the :code:`math` block, then *A* must also be 1.
-Since *A* is a state variable this is allowed.
+- Initially, both *A* and *B* are 1.
+- As the solution progresses, the solved value for *A* is given as the value for *B* because of the equality :math:`B=A` in the maths block.
+- When :code:`B == 2`, the reset it triggered and *B* is reset to 1.
 
-However, in most implementations the code will get converted to assignments (e.g.: :code:`B := A`) before the system is solved.
-Allowing this type of situation would mean solvers need to recognise potential situations like this and add an :code:`if (...) then B := A else A := B`.
+This is where the ambiguity arrises.
+The equality statement in the maths block of :math:`B=A` would commonly be turned into an assignment statement when implemented in code.
+The trouble is which of the values (that of *A* or that of *B*) will be changed to make sure the equality remains.
+The one-way property of the assigment (that :code:`B:=A` has the ability to change the value of *B*, but not the value of *A*) is different from the two-way property of the equality (that *A* and *B* are always the same), and so more information is needed before the behaviour of the model is unambiguous.
+
++-----+-----+-----+------+---------+
+| *t* | 0.0 | ... | 1    |         |
++-----+-----+-----+------+---------+
+| *A* | 1   | ... | 2    | ?       |
++-----+-----+-----+------+---------+
+| *B* | 1   | ... | 2    | 1 → 2   |
++-----+-----+-----+------+---------+
 
 (In addition, determining whether a situation like this does or does not have a solution has the potential to be difficult.)
+
+Suggestions
+~~~~~~~~~~~
+Since the issue arrises in the interpretation of the reset and mathematics into code, that is where the solution lies also.
+In most implementations the equality :math:`=` will be converted to an assignment (e.g.: :code:`B := A`) before the system is solved.
+In turn, this means that the system is not over-defined, and solution is possible.
+Allowing this type of situation would mean solvers need to recognise potential situations like this and add statements which decide which direction of the assignment should be followed:
+
+.. code::
+
+    if (some condition):
+        then: assign the value of A to B
+        else: assign the value of B to A
+
