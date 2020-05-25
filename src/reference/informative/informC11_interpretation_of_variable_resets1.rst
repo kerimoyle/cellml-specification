@@ -1,9 +1,16 @@
+.. _informC11_interpretation_of_variable_resets1:
 
-      **OR**
-   
+.. container:: toggle
+
+  .. container:: header
+
+    See more
+
+  .. container:: infospec
+
     .. container:: heading3
 
-        An example: Cleaning the house
+      Understanding reset variables and test variables
       
     In the following example we want to model the position of an automatic vacuum cleaner as it deflects off two opposite walls in a room.
     The device follows a straight line until it encounters a wall, at which point it immediately switches direction and travels back to the other wall.
