@@ -2,6 +2,7 @@
 
 .rst-content tt.literal, .rst-content tt.literal, .rst-content code.literal {
     color: darkslategray;
+    font-family: "Consolas", "Menlo", "Deja Vu Sans Mono", "Bitstream Vera Sans Mono", "Monospace";
 }
 
 .wy-plain-list-decimal, .rst-content .section ol, .rst-content ol.arabic, article ol {
