@@ -15,3 +15,5 @@
 .. include:: ../sectionC_interpretation.inc
   :start-after: marker_interpretation_of_variable_resets_2
   :end-before: marker_interpretation_of_variable_resets_end
+
+.. include:: ../informative/informC11_interpretation_of_variable_resets3.rst

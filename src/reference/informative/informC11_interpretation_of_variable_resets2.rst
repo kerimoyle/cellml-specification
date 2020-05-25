@@ -10,33 +10,62 @@
 
     .. container:: heading3
 
-      Understanding reset order
+      Understanding the reset order
 
-    We'll continue the mythological story of Sisyphus rolling a boulder up a mountain, but tweak it a little.  
-    The ruler of Tartarus has decided that Sisyphus can have a little help on Tuesdays, so once a week the boulder doesn't roll down the mountain until the following midnight, but Sisyphus still has to continue to push it upwards (I guess the mountain got bigger too).
-    Adding a second :code:`reset` to the model gives us the arrangement shown below.
+    CellML is designed to represent complicated model behaviour, and this includes the idea that a single variable might need to be reset based different kinds of behaviour; or, that more than one reset is permitted per variable.
+
+    Continuing the example from the previous block, we'll now add the behaviour of the automatic vacuum cleaner when it reaches its starting position at the first side of the room.
 
     .. code::
 
-      model: Tartarus
-        └─ component: Sisyphus
-            ├─ units: metre_per_second
-            ├─ maths: 
-            │   ├─ time_of_day = time_of_week % 86400 [second]
-            │   └─ ode(position, time_of_day) = 1 [metre_per_second]
+      model: CleaningTheHouse
+        └─ component: Roomba
+            ├─ variable: position 
+            ├─ variable: width 
             │
-            ├─ variable: time_of_week [second]
-            ├─ variable: time_of_day [second]
-            └─ variable: position [metre], initially 0
-                ├─ reset: A
-                │   ├─ "when time of day is midnight"
-                │   ├─ "then position is bottom of hill"
-                │   └─ order: 2
-                │
-                └─ reset: B
-                    ├─ "when time of day is midnight, and time of week is between Monday and Tuesday"
-                    ├─ "then position is top of the hill"
-                    └─ order: 1
+            ├─ variable: velocity
+            │    ├─ reset A: order = 1
+            │    │   ├─ "when position equals width"
+            │    │   └─ "then reverse direction"
+            │    └─ reset B: order = 2
+            │        ├─ "when position equals start"
+            │        └─ "then reverse direction"
+            │
+            └─ math: 
+                └─ ode(position, time) = velocity
+
+
+    
+    At present it's clear from the conditions on the two resets (the position at the start and at the far wall) that they cannot occur simulataneously, but this is not always the case.
+    For this reason, every reset must specify an :code:`order` attribute which will be used as a tie-breaker in situations where more than one reset on a variable is active at the same time.
+
+    It's also worth noting that because of the variable equivalence functionality, when we talk about "per variable" here, we're really including *all* resets which directly (as above, through the same :code:`variable` attribute) or indirectly (where another variable in the same equivalent variable set is referenced) change a variable's value.
+
+    To illustrate the idea of the equivalent variables and order, we'll add a new component which represents the battery charge on the device.
+    When the battery reaches a lower limit the machine will stop moving.
+
+    .. code::
+
+      model: CleaningTheHouse
+        └─ component: Roomba
+            ├─ variable: position 
+            ├─ variable: width 
+            ├─ variable: battery_level [charge], initially 100
+            │
+            ├─ variable: velocity
+            │    ├─ reset A: order = 1
+            │    │   ├─ "when position equals width"
+            │    │   └─ "then set negative velocity"
+            │    ├─ reset B: order = 2
+            │    │   ├─ "when position equals start"
+            │    │   └─ "then set positive velocity"
+            │    └─ reset C: order = -1
+            │        ├─ "when battery level is less than 10"
+            │        └─ "then stop"
+            │
+            └─ math: 
+                ├─ ode(position, time) = velocity
+                └─ ode(battery_level, time) = -abs(velocity)
 
     .. container:: toggle
 
@@ -46,67 +75,100 @@
 
       .. code-block:: xml
 
-        <model name="Tartarus">
-          <component name="Sisyphus">
-            <variable name="time_of_day" units="second" />
-            <variable name="time_of_week" units="second" />
-            <variable name="position" units="metre" initial_value="0" />
+        <model name="CleaningTheHouse">
+          <component name="Roomba">
+            <variable name="position" units="metre" />
+            <variable name="width" units="metre" />
+            <variable name="battery_level" units="charge" initial_value="100" />
+            <variable name="velocity" units="metre_per_second" initial_value="0.1" />
 
-            <!-- Reset A which will move the rock to the bottom of the hill each midnight: -->
-            <reset variable="position" test_variable="time_of_day" order="2" >
+            <!-- Reset A will set a negative velocity when the Roomba reaches 
+                    the opposite wall: -->
+            <reset variable="velocity" test_variable="position" order="1">
               <test_value>
-                <cn cellml:units="second">86399</cn>
+                <ci>width</ci>
               </test_value>
               <reset_value>
-                <cn cellml:units="metre">0</cn>
+                <cn cellml:units="metre_per_second">-0.1</cn>
               </reset_value>
             </reset>
 
-            <!-- Reset B which will keep the rock at the top of the hill on Tuesdays: -->
-            <reset variable="position" test_variable="time_of_week" order="1" >
+            <!-- Reset B will set a positive velocity when the Roomba reaches
+                    the starting wall: -->
+            <reset variable="velocity" test_variable="position" order="2">
               <test_value>
-                <apply><plus/>
-                  <cn cellml:units="second">86399</cn>
-                  <cn cellml:units="second">86400</cn>
-                </apply>
+                <cn cellml:units="metre">0</cn>
               </test_value>
               <reset_value>
-                <cn cellml:units="metre">0</cn>
+                <cn cellml:units="metre_per_second">0.1</cn>
+              </reset_value>
+            </reset>
+
+            <!-- Reset C will stop the Roomba when its charge is 10. -->
+            <reset variable="velocity" test_variable="battery_level" order="-1">
+              <test_value>
+                <cn cellml:units="charge">10</cn>
+              </test_value>
+              <reset_value>
+                <cn cellml:units="metre_per_second">0</cn>
               </reset_value>
             </reset>
 
             <math>
-              <!-- Simple ODE for position of the rock with time: -->
-              <apply><eq/>
+              <!-- Setting the width of the room as a constant: -->
+              <apply>
+                <eq/>
+                <ci>width</ci>
+                <cn cellml:units="metre">5</cn>
+              </apply>
+
+              <!-- Simple ODE for position of the Roomba with time: -->
+              <apply>
+                <eq/>
                 <diff>
                   <ci>position</ci>
-                  <bvar>time_of_day</bvar>
+                  <bvar>time</bvar>
                 </diff>
-                <cn cellml:units="metre_per_second">1</cn>
+                <ci>velocity</ci>
               </apply>
-              <!-- Calculating the time of day from the time of the week: -->
-              <apply><eq/>
-                <ci>time_of_day</ci>
-                <apply><mod/>
-                  <ci>time_of_week</ci>
-                  <cn cellml:units="second">86400</cn>
+
+              <!-- Simple ODE for charge of the Roomba with time: -->
+              <apply>
+                <eq/>
+                <diff>
+                  <ci>battery_level</ci>
+                  <bvar>time</bvar>
+                </diff>
+                <apply>
+                  <times/>
+                  <apply>
+                    <abs/>
+                    <ci>velocity</ci>
+                  </apply>
+                  <cn units:cellml="charge_second_per_metre">-1</cn>
                 </apply>
               </apply>
+
             </math>
-
-            <!-- Custom units needed to define the ODE above: -->
-            <units name="metre_per_second">
-              <unit units="metre" />
-              <unit units="second" exponent="-1" />
-            </units>
-
           </component>
+
+          <!-- Custom units needed: -->
+          <units name="metre_per_second">
+            <unit units="metre" />
+            <unit units="second" exponent="-1" />
+          </units>
+
+          <units name="charge"/>
+
+          <units name="charge_second_per_metre">
+            <unit units="charge" />
+            <unit units="metre_per_second" exponent="-1"/>
+          </units>
+
         </model>
-
-
-    At midnight between Monday and Tuesday *both* of the resets above are active: the first, reset A, because midnight on any day meets the midnight criterion; the second because 00:00 on Tuesday morning also meets the criterion for B.
-    To decide which of the two consequences to enact - to roll the stone or not - we need to use the resets' orders as a tie-breaker.
-    Here's how that works.
+        
+    In order for the machine to be able to stop when the battery is low, reset C must always be able to trump either of the other two as the conditions of reaching a wall and having a low battery could occur at the same time.
+    This is accomplished by using an order of -1, making it lower than the order values of the other two resets, which also illustrates the idea that orders can be negative numbers (where the most negative is the most "important").
 
     .. container:: heading3
       
@@ -117,8 +179,8 @@
 
     1. For each reset item, determine whether its test criterion (the "when" idea above) has been met.
 
-       a. If yes, set its status to "active".
-       b. If not, set its status to "inactive".
+       a. If yes, the reset is said to be "active".
+       b. If not, it is "inactive".
 
     2. Collect all *active resets* for a variable and its equivalent variables into a "variable active set".
 
@@ -135,11 +197,15 @@
        b. If not, continue the modelling process with the updated values.
 
     Let's apply this to the example and see how it works. 
-    Consider the state when Sisyphus has reached the top of the mountain at midnight between Monday and Tuesday.
+    Consider the state when the roomba has reached the other side of the room, and the battery level has fallen to 10.
 
-    - Applying (1), both resets A and B are designated *active*.
-    - Applying (2), both resets A and B explicitly reference the variable :code:`position`, so are in the same *active set* for that variable.  
-    - Applying (3), we select reset B as having the lower order within the *active set*, and call it *pending*.
-    - Applying (4), we evaluate the new value for the position variable to be the top of the hill based on the *pending* reset B.
-    - Applying (5), the boulder's position is unchanged.
-    - Applying (6), we exit the reset evaluation cycle, and the model dynamics continue.
+    - Applying (1), both resets A and C are designated *active*.
+    - Applying (2), both resets A and C explicitly reference the variable :code:`velocity`, so are in the same *active set* for that variable.  
+    - Applying (3), we select reset C as having the lower order within the *active set*, and call it *pending*.
+    - Applying (4), we evaluate the new value for the velocity variable to be zero because of the *pending* reset C.
+    - Applying (5), set the velocity to zero.
+    - Applying (6), this loop would be checked through again, but with the same result.
+      The second time through the loop, we exit as there would be no further changes to the variables' values.
+
+    There are alternative ways of arranging resets which would have the same functional outcome.
+    These are described in the Examples chapter **TODO**.
