@@ -120,6 +120,7 @@ extlinks = {
     'cellml2spec_display': ('https://cellml.org/specifications/cellml_2.0%s', None),
     'cellsolver': ('https://github.com/hsorby/cellsolver%s', ''),
     'cmake': ('https://cmake.org/%s', ''),
+    'cvode': ('https://computing.llnl.gov/projects/sundials/cvode%s', ''),
     'doxygen': ('http://www.doxygen.nl/%s', ''),
     'euler_method': ('https://en.wikipedia.org/wiki/Euler_method%s', ''),
     'git': ('https://git-scm.com/%s', ''),
