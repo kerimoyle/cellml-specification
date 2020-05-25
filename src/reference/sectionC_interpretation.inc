@@ -175,6 +175,7 @@ Interpretation of ``units`` elements
    2. The built-in irreducible units (those built-in units with "-" in the "Unit reduction tuple" column of :numref:`Table {number}: {name}<table_built_in_units>`) referenced by variables or other units in the model.
 
 .. marker_interpretation_of_units_2
+.. _specC_unit_reduction
 
 3. The "unit reduction" is a conceptual property of :code:`units` elements.
    It consists of a set of tuples where each tuple is composed of a "unit name" and a real-valued "exponent".
@@ -324,7 +325,7 @@ Effect of ``units`` on a ``variable``
 Interpretation of ``math`` elements
 -----------------------------------
 
-#. The following :code:`component` elements SHALL, for the purposes of this specification, be "pertinent component elements":
+1. The following :code:`component` elements SHALL, for the purposes of this specification, be "pertinent component elements":
 
    #. All :code:`component` elements in the top-level :ref:`CellML infoset<specA_cellml_infoset>` for the :ref:`CellML model<specA_cellml_model>`;
 
@@ -332,8 +333,11 @@ Interpretation of ``math`` elements
 
    #. All :code:`component` elements which are descendants in the encapsulation digraph (see :numref:`{number} {name}<specC_interpretation_of_encapsulation>`) of a pertinent :code:`component` element.
 
-#. Every MathML element in the CellML model which appears as a direct child of a MathML :code:`math` element, which in turn appears as a child of a pertinent :code:`component` element, SHALL be treated, in terms of the semantics of the mathematical model, as a statement which holds true unconditionally.
+.. marker_interpretation_of_mathematics_1
 
+2. Every MathML element in the CellML model which appears as a direct child of a MathML :code:`math` element, which in turn appears as a child of a pertinent :code:`component` element, SHALL be treated, in terms of the semantics of the mathematical model, as a statement which holds true unconditionally.
+
+.. marker_interpretation_of_mathematics_2
 .. _specC_units_and_maths:
 
 3. Units referenced by a :code:`units` attribute SHALL NOT affect the mathematical interpretation of the CellML model.
@@ -402,6 +406,7 @@ Interpretation of ``map_variables`` elements
 
 5.  The variable equivalence network MUST NOT contain any cycles.
 
+.. _specC_equivalent_variables_units:
 .. marker_interpretation_of_map_variables_3
 
 6.  For a given variable, the "available interfaces" SHALL be determined by the value of the :code:`interface` attribute on the corresponding :code:`variable` element as follows:
