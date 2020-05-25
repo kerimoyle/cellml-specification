@@ -12,18 +12,18 @@
 
       Understanding reset variables and test variables
 
-    Consider the following model which simulates an old-fashioned automatic gearbox in a car, which changes gears in order to reduce the engine speed, but maintain the road speed.
+    Consider the following model which simulates an old-fashioned automatic gearbox in a car, which changes gears in order to reduce the engine revolutions while maintaining the road speed.
     In this example we will consider that the road speed is an input, and the selection of a gear ratio is an output.
 
     .. code::
 
       model: LearningToDrive
         └─ component: Car
-            ├─ variable: road_speed (kph)
+            ├─ variable: road_speed [kph]
             ├─ component: Engine
-            │   └─ variable: revs (hertz)
+            │   └─ variable: revs [hertz]
             └─ component: Gearbox
-                └─ variable: ratio (dimensionless)
+                └─ variable: ratio [dimensionless]
 
 
     .. container:: toggle
@@ -67,7 +67,7 @@
     This is done by creating equivalent variables between the components.
 
     **Note:** in the CellML model there is no directionality to the variable equivalences; they are part of a set.
-    The arrows on the diagrams here are only to explain where information is calculated (the tail of the arrow) and where information is used (the heads of the arrows).
+    The arrows on the diagrams here are only to explain where information is calculated (the tails of the arrows) and where information is used (the heads of the arrows).
 
     .. code::
 
@@ -211,114 +211,4 @@
 
 
 
-      **OR**
-   
-    .. container:: heading3
-
-        An example: Cleaning the house
-      
-    In the following example we want to model the position of an automatic vacuum cleaner as it deflects off two opposite walls in a room.
-    The device follows a straight line until it encounters a wall, at which point it immediately switches direction and travels back to the other wall.
-    We will use resets to model the interaction of the device with the wall, but before they're added, we'll start with a very simplistic model which describes the position of the device changing with time:
-
-    .. code::
-
-      model: CleaningTheHouse
-        └─ component: Roomba
-            ├─ variable: position (metre), initially 0
-            ├─ variable: step (metre)
-            ├─ variable: width (metre), constant, 5
-            ├─ variable: direction (dimensionless), initially 1
-            └─ math: 
-                └─ position = position + direction*step
-    
-    .. container:: toggle
-
-      .. container:: header
-
-        See CellML syntax
-
-      .. code-block:: xml
-
-        <model name="NotCleaningTheHouse">
-
-          <component name="Roomba">
-            <!-- Variables should be initialised using the initial_value attribute. -->
-            <variable name="position" units="metre" initial_value="0" />
-            <variable name="direction" units="dimensionless" initial_value="1" />
-
-            <!-- Constants should be set in the math element so that they are true for all time. -->
-            <variable name="step" units="metre"/>
-            <variable name="width" units="metre" />
-
-            <math>
-              <!-- Constant: the room is 5m wide. -->
-              <apply><eq/>
-                <ci>width</ci>
-                <cn cellml:units="metre">5</cn>
-              </apply>
-
-              <!-- Constant: the step update will be 0.1m. -->
-              <apply><eq/>
-                <ci>step</ci>
-                <cn cellml:units="metre">0.1</cn>
-              </apply>
-              
-              <!-- Variable: the position of the device will increment based on its direction and previous positon. -->
-              <apply><eq/>
-                <ci>position</ci>
-                <apply><plus/>
-                  <ci>position</ci>
-                  <apply><times/>
-                    <ci>step</ci>
-                    <ci>direction</ci>
-                  </apply>
-                </apply>
-              </apply>
-
-            </math>
-          </component>
-        </model>
-
-    Now let's add a reset to this such that when the device reaches the opposite wall, its direction of travel is reversed.
-
-    .. code::
-
-      model: CleaningTheHouse
-        └─ component: Roomba
-            ├─ variable: position 
-            ├─ variable: step
-            ├─ variable: width 
-            │
-            ├─ variable: direction
-            │    └─reset:
-            │      ├─ "when position equals width"
-            │      └─ "then reverse direction"
-            │
-            └─ math: 
-                └─ position = position + direction*step
-
-    .. code-block:: xml
-
-      <reset variable="direction" test_variable="position" order="1">
-
-        <!-- The "when" statement above is true when the test_variable 
-             attribute equals the test_value statement: -->
-        <test_value>
-          <ci>width</ci>
-        </test_value>
-
-        <!-- The "then" statement above is defined by setting the
-              variable attribute to the reset_value statement: -->
-        <reset_value>
-          <apply><times/>
-            <ci>direction</ci>
-            <cn cellml:units="dimensionless">-1</cn>
-          <apply>
-        </reset_value>
-      </reset>
-    
-    The behavior at the other end of the wall is discussed in the following section.
-
-    
 
