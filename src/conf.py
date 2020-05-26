@@ -264,7 +264,11 @@ html_context = {
 # Automagically convert all :ref: blocks to show a tooltip using the hoverxref
 # extension.
 hoverxref_auto_ref = True
-hoverxref_roles = ['term', 'code']
+hoverxref_roles = ['ref', 'numref']
+hoverxref_role_types = {
+    'ref': 'tooltip',       
+    'numref': 'tooltip',    
+}
 
 # Add any paths that contain custom themes here, relative to this directory.
 # html_theme_path = ['@SPHINX_THEME_DIR@']
