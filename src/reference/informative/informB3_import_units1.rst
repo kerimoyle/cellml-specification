@@ -32,7 +32,7 @@
 
       Imported items have the same restrictions as concrete items regarding the uniqueness of their names.
       In the example below, the name :code:`potOfPaint` is used for the locally defined units in line 2, but the same name is used as the name for the imported units in line 6.
-      This is not permitted as it violates :numref:`{number} {name}<issue_units_name>`.
+      This is not permitted as it violates the :ref:`unique name<issue_units_name>` requirement.
 
       .. code-block:: xml
 
