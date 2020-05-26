@@ -21,10 +21,8 @@
     });
     const url_object = new URL(window.location.href);
     const code = url_object.searchParams.get("issue");
-    alert(code);
     if (code != null) {
       let issueCode = ".issue-" + code.split(".").join("-");
-      alert(issueCode);
       let contents = $(issueCode).html();
       let title = "<div style='color:saddlebrown;font-weight:700;padding-bottom:10px;'>";
       title += code + "</div>";
