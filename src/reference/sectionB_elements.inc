@@ -11,7 +11,7 @@ The top-level element information item in a :ref:`CellML infoset<specA_cellml_in
 In this specification, the top-level element is referred to as the :code:`model` element.
 
 
-.. container:: issue-2-1
+.. container:: issue-2-1-1
 
    1. Every :code:`model` element MUST contain a :code:`name` attribute.
 
@@ -19,7 +19,7 @@ In this specification, the top-level element is referred to as the :code:`model`
 
 .. marker_model_1
 
-.. container:: issue-2-2
+.. container:: issue-2-1-2
 
    2. A :code:`model` element MAY contain one or more additional specific element children, each of which MUST be of one of the following types:
 
@@ -36,7 +36,7 @@ In this specification, the top-level element is referred to as the :code:`model`
 
 .. marker_model_2
 
-.. container:: issue-2-3
+.. container:: issue-2-1-3
 
    3. A :code:`model` element MUST NOT contain more than one :code:`encapsulation` elements.
 
