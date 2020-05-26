@@ -8,4 +8,4 @@
 
   .. container:: infospec
 
-    Please see the informative sections on :ref:`Units reference<specC_units_reference>` and :ref:`Component reference<specC_component_reference>` pages for examples specific to importing :code:`units` and :code:`component` elements.
+    Please see the informative sections on :numref:`{number} {name}<specC_units_reference>` and :numref:`{number} {name}<specC_component_reference>` pages for examples specific to importing :code:`units` and :code:`component` elements.

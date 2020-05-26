@@ -12,4 +12,4 @@
     This in turn affects which variables have access to which other variables, and allows the modular behaviour to happen at any level.
     For this reason, there can be only one :code:`encapsulation` item in any model.
 
-    For more information about encapsulation, please refer to :ref:`The encapsulation element information item<specB_encapsulation>`.
+    For more information about encapsulation, please refer to :numref:`{number} {name}<specB_encapsulation>`.
