@@ -38,7 +38,7 @@
 
     This situation is not valid, as the :code:`math` block in component :code:`mass_into_energy` doesn't have access to the variable :code:`m` in the component :code:`calculate_mass`.
     To get around this, you would need to create a new local variable within the :code:`mass_into_energy` component, and use a :code:`connection` element to link it to the mass variable :code:`m` in the other component.
-    The valid form of the model is shown below. You can read more about :code:`connections` in :ref:`The connection element<specB_connection>`, and the :code:`interface_type` attribute in :ref:`The variable element<specB_variable>`.
+    The valid form of the model is shown below. You can read more about :code:`connections` in :numref:`{number} {name}<specB_connection>`, and the :code:`interface_type` attribute in :numref:`{number} {name}<specB_variable>`.
 
     .. code-block:: xml
 

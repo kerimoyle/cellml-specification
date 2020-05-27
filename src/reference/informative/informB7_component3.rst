@@ -13,7 +13,7 @@
       The mathematics of a component
 
     Perhaps the most important part of a :code:`component` item is the mathematics it contains.
-    This is stored inside a collection of :code:`<math>` blocks as described in :ref:`The math element<specB_math>`.
+    This is stored inside a collection of :code:`<math>` blocks as described in :numref:`{number} {name}<specB_math>`.
     The :code:`math` then defines the operation of the local :code:`variable` items and how they relate to each other mathematically.
 
     For example, a component to calculate Einstein's :math:`E=mc^2` could be represented by:
@@ -36,7 +36,7 @@
         ...
       </component>
 
-    Please refer to the :ref:`math element<math>` section for information on the :code:`math` items and MathML format.
+    Please refer to :numref:`{number} {name}<math>` for information on the :code:`math` items and MathML format.
 
     .. container:: heading3
 
@@ -54,10 +54,10 @@
         <variable name="c" units="metres_per_second" />
       </component>
 
-    Please refer to the :ref:`variable element<variable>` section for information on :code:`variable` items.
+    Please refer to :numref:`{number} {name}<variable>` for information on :code:`variable` items.
 
     .. container:: heading3
 
       The reset items of a component
 
-    Please refer to the :ref:`reset element<reset>` section for more information on :code:`reset` items.
+    Please refer to :numref:`{number} {name}<reset>` for more information on :code:`reset` items.
