@@ -14,7 +14,7 @@
 
     The mathematics of a mathematical model is a collection of statements which are held to be true at all times.
     These are distinct from initial conditions of a model (specified using the :code:`initial_value` attribute on :code:`variable` elements) which are only true initially.
-    You can read more about initialisation on the :ref:`Interpretation of initial_values<specC_interpretation_of_initial_values>` page and in the section below this one.
+    You can read more about initialisation in :numref:`{number} {name}<specC_interpretation_of_initial_values>` page and in the section below this one.
 
     The collection of mathematical statements in a CellML model is the set of children of all :code:`math` elements inside its "pertinent components" (as explained in the previous block).
     The example from the previous point is extended below in pseudocode, with the full CellML code beneath the link below.

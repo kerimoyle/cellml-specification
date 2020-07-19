@@ -14,7 +14,7 @@
         - A destination item in the importing model (this is the :code:`units` item called :code:`smallPotOfPaint` in the example below).
 
         - A file to import from, specified using the :code:`xlink:href` attribute of the parent :code:`import` block.
-          This is discussed in more detail in :ref:`The import element information item<specB_import>`.
+          This is discussed in more detail in :numref:`{number} {name}<specB_import>`.
           In the example below this is the :code:`paint_pot_sizes.cellml` file.
 
         - The specific item name to retrieve from the imported file.
@@ -32,7 +32,7 @@
 
       Imported items have the same restrictions as concrete items regarding the uniqueness of their names.
       In the example below, the name :code:`potOfPaint` is used for the locally defined units in line 2, but the same name is used as the name for the imported units in line 6.
-      This is not permitted as it violates :ref:`the uniqueness requirement for unit names<issue_units_name>`\.
+      This is not permitted as it violates the :ref:`unique name<issue_units_name>` requirement.
 
       .. code-block:: xml
 

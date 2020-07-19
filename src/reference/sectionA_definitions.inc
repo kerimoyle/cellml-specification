@@ -190,11 +190,11 @@ The following data representation formats are defined for use in this specificat
 
 1. A CellML identifier:
 
-   .. container:: issue-data-repr-identifier-unicode
+   .. container:: issue-1-3-1-1
 
       1. SHALL consist of a single :ref:`Basic Latin alphabetical character<specA_basic_latin_alphabetical_character>`, which MAY be followed by any combination of :ref:`Basic Latin alphanumerical characters<specA_basic_latin_alphanumerical_character>` and/or :ref:`Basic Latin underscores<specA_basic_latin_underscore>`.
 
-   .. container:: issue-data-repr-identifier-identical
+   .. container:: issue-1-3-1-2
 
       2. SHALL, when comparing two identifiers, be considered identical to another identifier if and only if both identifiers are identical sequences of characters.
 
@@ -204,15 +204,15 @@ The following data representation formats are defined for use in this specificat
 
 2. An integer string:
 
-   .. container:: issue-data-repr-int-base10
+   .. container:: issue-1-3-2-1
 
       1. SHALL be a base 10 representation of an integer.
 
-   .. container:: issue-data-repr-int-sign
+   .. container:: issue-1-3-2-2
 
       2. MAY begin with a single Basic Latin plus character :unicode:`002B` or a single Basic Latin hyphen-minus character :unicode:`002D` as the sign indicator.
 
-   .. container:: issue-data-repr-int-euro-num
+   .. container:: issue-1-3-2-3
 
       3. SHALL, other than the sign indicator, consist of one or more :ref:`digits<specA_digit>`.
 
@@ -222,19 +222,19 @@ The following data representation formats are defined for use in this specificat
 
 3. A basic real number string:
 
-   .. container:: issue-data-repr-basic-real-base10
+   .. container:: issue-1-3-3-1
 
       1. SHALL be a base 10 representation of a real number.
 
-   .. container:: issue-data-repr-basic-real-sign
+   .. container:: issue-1-3-3-2
 
       2. MAY begin with a single Basic Latin plus character :unicode:`002B` or a single Basic Latin hyphen-minus character :unicode:`002D` as the sign indicator.
 
-   .. container:: issue-data-repr-basic-real-decimal
+   .. container:: issue-1-3-3-3
 
       3. MAY contain a single decimal point separator, which SHALL be the Basic Latin full stop character :unicode:`002E`.
 
-   .. container:: issue-data-repr-basic-real-euro-num
+   .. container:: issue-1-3-3-4
 
       4. SHALL, other than the sign indicator and the decimal point separator, consist of one or more :ref:`digits<specA_digit>`.
 
@@ -244,24 +244,24 @@ The following data representation formats are defined for use in this specificat
 
 4. A real number string:
 
-   .. container:: issue-data-repr-real-base10
+   .. container:: issue-1-3-4-1
 
       1. SHALL be a base 10 representation of a real number :math:`r=s \times 10^e` where :math:`s` is the significand, a real number, and :math:`e` is the exponent, an integer.
 
-   .. container:: issue-data-repr-real-repr
+   .. container:: issue-1-3-4-2
 
       2. The representation of the number SHALL be the representation of the significand, optionally followed by a representation of the exponent.
 
-   .. container:: issue-data-repr-real-significand
+   .. container:: issue-1-3-4-3
 
       3. The significand SHALL be represented as a :ref:`basic real number string<specA_basic_real_number>`.
 
-   .. container:: issue-data-repr-real-exponent
+   .. container:: issue-1-3-4-4
 
       4. An exponent SHALL be represented by an exponent separator character, followed by the :ref:`integer string representation<specA_integer>` of the value of the exponent.
          The exponent separator character SHALL be either the Basic Latin "E" character :unicode:`0045` or the Basic Latin "e" character :unicode:`0065`.
 
-   .. container:: issue-data-repr-real-no-exponent
+   .. container:: issue-1-3-4-5
 
       5. If the exponent representation is omitted, the exponent shall be zero.
 
