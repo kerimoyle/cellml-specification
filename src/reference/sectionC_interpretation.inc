@@ -454,9 +454,9 @@ Interpretation of ``map_variables`` elements
 Interpretation of ``reset`` elements
 ------------------------------------
 
-#. For the purposes of this section, we define the "reset variable" to be the variable referenced by a :code:`reset` element's :code:`variable` attribute, and the "test variable" to be the variable referenced by its :code:`test_variable` attribute.
+1. For the purposes of this section, we define the "reset variable" to be the variable referenced by a :code:`reset` element's :code:`variable` attribute, and the "test variable" to be the variable referenced by its :code:`test_variable` attribute.
 
-#. Each :code:`reset` element describes a change to be applied to the reset variable when specified conditions are met during the simulation of the model.
+2. Each :code:`reset` element describes a change to be applied to the reset variable when specified conditions are met during the simulation of the model.
 
 .. marker_interpretation_of_variable_resets_1
 
@@ -467,6 +467,6 @@ Interpretation of ``reset`` elements
 
 4. The condition under which a reset occurs SHALL be defined by the equality of evaluation of the test variable and the evaluation of the MathML expression encoded in the :code:`test_value`.
 
-#. When a reset occurs, the reset variable SHALL be set to the result of evaluating the MathML expression encoded in the :code:`reset_value`.
+5. When a reset occurs, the reset variable SHALL be set to the result of evaluating the MathML expression encoded in the :code:`reset_value`.
 
 .. marker_interpretation_of_resets_end
