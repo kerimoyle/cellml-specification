@@ -283,6 +283,8 @@ The ``reset`` element
 
 A :code:`reset` element information item (referred to in this specification as a :code:`reset` element) is an element in the :ref:`CellML namespace<specA_cellml_namespace>` with a local name equal to :code:`reset`, which appears as a child of a :code:`component` element.
 
+.. marker_reset_1
+
 1. Every :code:`reset` element MUST have exactly one of each of the following attributes:
 
    .. container:: issue-2-9-1-1
@@ -295,12 +297,16 @@ A :code:`reset` element information item (referred to in this specification as a
       2. The :code:`test_variable` attribute.
          The value of the :code:`test_variable` attribute MUST be a valid variable reference, as defined in :numref:`{number} {name}<specC_variable_reference>`.
 
+.. marker_reset_2
+
    .. container:: issue-2-9-1-3
 
       3. The :code:`order` attribute.
          The value of the :code:`order` attribute MUST be an :ref:`integer string<specA_integer>`.
 
          The value of the :code:`order` attribute MUST be unique for all :code:`reset` elements with :code:`variable` attributes that reference variables in the same equivalent variable set (see :numref:`{number} {name}<specC_interpretation_of_map_variables>`).
+
+.. marker_reset_3
 
 .. container:: issue-2-9-2
 

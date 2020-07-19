@@ -35,6 +35,8 @@
     - A :code:`variable` whose value needs to be set for only the *beginning* of a simulation is initialised using the :code:`initial_value` attribute. 
       
         - This is most frequently used for state variables (those whose value is found by solving a differential equation).
+        - It may also be used for variables whose values will be reset during the course of the simulation.
+          Please see :ref:`The reset element<_reset>` section for details.
         - It's possible - but not recommended - to use a variable reference with the :code:`initial_value` attribute.
           This option remains in CellML 2.0 only to provide ease of migration from CellML 1.1 models, and may be discontinued in future versions. 
       
