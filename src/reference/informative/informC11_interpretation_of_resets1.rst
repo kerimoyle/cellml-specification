@@ -1,4 +1,4 @@
-.. _informC11_interpretation_of_variable_resets1:
+.. _informC11_interpretation_of_resets1:
 
 .. container:: toggle
 
