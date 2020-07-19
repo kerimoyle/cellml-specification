@@ -9,4 +9,4 @@
 
   .. container:: infospec
 
-    Please see the notes about the :code:`component_ref` usage under the "See more" link on the :ref:`encapsulation element<encapsulation>` page.
+    Please see the notes about the :code:`component_ref` usage under the "See more" link in :numref:`{number} {name}<encapsulation>`.

@@ -14,7 +14,7 @@
       - A destination in the importing model (this is the :code:`component` item called :code:`pi_calculator` in the example below),
 
       - A file to import from, specified using the :code:`xlink:href` attribute of the parent :code:`import` block.
-        This is discussed in more detail in :ref:`The import element information item<specB_import>`.
+        This is discussed in more detail in :numref:`{number} {name}<specB_import>`.
         In the example below this is the :code:`pi_approximators.cellml` file.
 
       - The specific item name to retrieve from the imported file.
@@ -37,7 +37,7 @@
        Imported items have the same restrictions as locally defined items regarding the uniqueness of their names and their format.
        In the example below, the name :code:`pi_calculator` is used for the locally defined component in line 2, but the same name is used as the name for the imported component in line 6.
        This is not permitted as it violates the uniqueness requirement for names specified above.
-       The second imported component uses an invalid name attribute (see :ref:`Data representation formats in CellML<specA_data_representation_formats>`) so is not permitted either.
+       The second imported component uses an invalid name attribute (see :numref:`{number} {name}<specA_data_representation_formats>`) so is not permitted either.
 
     .. code-block:: xml
 
@@ -59,7 +59,7 @@
       </model>
 
     3. **The component_ref attribute**.
-       This must be a :ref:`valid CellML identifier<specA_cellml_identifier>` (see :ref:`Data representation formats in CellML<specA_data_representation_formats>`).
+       This must be a :ref:`valid CellML identifier<specA_cellml_identifier>` (see :numref:`{number} {name}<specA_data_representation_formats>`).
        It also has to actually exist as a :code:`component` in the given :code:`href` location!
        Neither of the imports below are permitted:
 

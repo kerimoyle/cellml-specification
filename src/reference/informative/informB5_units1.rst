@@ -8,7 +8,7 @@
 
   .. container:: infospec
 
-    The best way to understand how :code:`units` work is to read the informative sections within the :ref:`Unit element section<unit>` in the next section, which defines their child :code:`unit` items.
+    The best way to understand how :code:`units` work is to read the informative sections within the :numref:`{number} {name}<unit>` in the next section, which defines their child :code:`unit` items.
 
     The following examples show examples of what is not permitted when defining :code:`units` items.
 

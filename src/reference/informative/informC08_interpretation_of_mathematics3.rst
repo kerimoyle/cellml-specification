@@ -124,8 +124,8 @@
             </connection>
           </model>
 
-    2. Any custom of built-in units with *differing* unit reduction tuples between connected variables: invalid, as it contradicts point :hardcodedref:`3.10.6` in the :ref:`Interpretation of map_variables<specC_interpretation_of_map_variables>` section.  
-       Please see the third informative block on the :ref:`Interpretation of units<specC_interpretation_of_units>` section for more discussion and examples of unit reductions.
+    2. Any custom of built-in units with *differing* unit reduction tuples between connected variables: invalid, as it contradicts point :hardcodedref:`3.10.6` in :numref:`{number} {name}<specC_interpretation_of_map_variables>`.  
+       Please see the third informative block in :numref:`{number} {name}<specC_interpretation_of_units>` section for more discussion and examples of unit reductions.
 
       .. code::
 

@@ -58,4 +58,4 @@
         <unit units="second" exponent="-1">
       </units>
 
-    For more information on :code:`units` items please refer to :ref:`the previous section<units>`.
+    For more information on :code:`units` items please refer to :numref:`{number} {name}<units>`.
