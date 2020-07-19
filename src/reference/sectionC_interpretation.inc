@@ -451,20 +451,22 @@ Interpretation of ``map_variables`` elements
 .. marker_interpretation_of_map_variables_end
 .. marker_interpretation_of_resets_start
 
-.. _specC_interpretation_of_resets:
-
 Interpretation of ``reset`` elements
 ------------------------------------
 
-#. For the purposes of this section, we define the "reset variable" to be the variable referenced by a :code:`reset` element's :code:`variable` attribute, and the "test variable" to be the variable referenced by its :code:`test_variable` attribute.
+1. For the purposes of this section, we define the "reset variable" to be the variable referenced by a :code:`reset` element's :code:`variable` attribute, and the "test variable" to be the variable referenced by its :code:`test_variable` attribute.
 
-#. Each :code:`reset` element describes a change to be applied to the reset variable when specified conditions are met during the simulation of the model.
+2. Each :code:`reset` element describes a change to be applied to the reset variable when specified conditions are met during the simulation of the model.
 
-#. All :code:`reset` elements SHALL be considered sequentially for the equivalent variable set (see :numref:`{number} {name}<specC_interpretation_of_map_variables>`) to which the reset variable belongs.
+.. marker_interpretation_of_resets_1
+
+3. All :code:`reset` elements SHALL be considered sequentially for the equivalent variable set (see :numref:`{number} {name}<specC_interpretation_of_map_variables>`) to which the reset variable belongs.
    The sequence SHALL be determined by the value of the reset element’s :code:`order` attribute, lowest (least positive / most negative) having priority.
 
-#. The condition under which a reset occurs SHALL be defined by the equality of evaluation of the test variable and the evaluation of the MathML expression encoded in the :code:`test_value`.
+.. marker_interpretation_of_resets_2
 
-#. When a reset occurs, the reset variable SHALL be set to the result of evaluating the MathML expression encoded in the :code:`reset_value`.
+4. The condition under which a reset occurs SHALL be defined by the equality of evaluation of the test variable and the evaluation of the MathML expression encoded in the :code:`test_value`.
+
+5. When a reset occurs, the reset variable SHALL be set to the result of evaluating the MathML expression encoded in the :code:`reset_value`.
 
 .. marker_interpretation_of_resets_end
