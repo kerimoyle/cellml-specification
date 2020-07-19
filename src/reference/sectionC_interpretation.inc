@@ -458,12 +458,12 @@ Interpretation of ``reset`` elements
 
 2. Each :code:`reset` element describes a change to be applied to the reset variable when specified conditions are met during the simulation of the model.
 
-.. marker_interpretation_of_variable_resets_1
+.. marker_interpretation_of_resets_1
 
 3. All :code:`reset` elements SHALL be considered sequentially for the equivalent variable set (see :numref:`{number} {name}<specC_interpretation_of_map_variables>`) to which the reset variable belongs.
    The sequence SHALL be determined by the value of the reset element’s :code:`order` attribute, lowest (least positive / most negative) having priority.
 
-.. marker_interpretation_of_variable_resets_2
+.. marker_interpretation_of_resets_2
 
 4. The condition under which a reset occurs SHALL be defined by the equality of evaluation of the test variable and the evaluation of the MathML expression encoded in the :code:`test_value`.
 
