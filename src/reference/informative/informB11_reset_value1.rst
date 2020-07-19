@@ -19,7 +19,6 @@
         <test_value>
           <math>
               <cn cellml:units="metre">1.0</cn>
-            </apply>
           </math>
         </test_value>
         <reset_value>
