@@ -14,7 +14,7 @@
       Understanding reset elements
 
     Resets are a new addition to CellML in version 2.0, and their intention is to allow the user to specify how and when discontinuities can exist in variable values throughout the solution.
-    A reset lets you set a variable to a totally different value, restart a timer, flip a switch, take a step, start again.
+    A reset lets you set a variable to a totally different value: restart a timer, flip a switch, take a step, start again.
     In order to work, a reset needs to know some information:
 
     - **Which variable's value do you want to change?**
