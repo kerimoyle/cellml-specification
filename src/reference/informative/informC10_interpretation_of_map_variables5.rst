@@ -13,7 +13,7 @@
       Understanding interfaces
 
     There are two hurdles to get past before variables can be mapped to one another.
-    The first is the relative position within the encapsulation hierarchy of the :code:`variable` elements' parent :code:`component` elements (as discussed in :ref:`Interpretation of encapsulation<specC_interpretation_of_encapsulation>`, and the second is the value of the :code:`interface_type` attribute given to each :code:`variable` itself.
+    The first is the relative position within the encapsulation hierarchy of the :code:`variable` elements' parent :code:`component` elements (as discussed in :numref:`{number} {name}<specC_interpretation_of_encapsulation>`, and the second is the value of the :code:`interface_type` attribute given to each :code:`variable` itself.
     This means that even if two components are sufficiently close relatives that they *can* be connected, the modeller still has control at the individual variable level as to which of those relatives can have access.
 
     The :code:`interface_type` attribute value choices are: 

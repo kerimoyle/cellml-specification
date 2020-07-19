@@ -19,7 +19,7 @@
     Finally, there are aspects of the *written* XML which do not contribute to the *conceptual* model as represented by the CellML; simple examples are things like whitespace between elements, comments, quotation and angle bracket markers.
     These are all parts of the written language which guide interpretation into the conceptual model.
     The :code:`id` attribute is likewise an XML attribute which falls into the same category: it may be read when a document is parsed, but as it doesn't form a part of any CellML element, it doesn't exist in the constructed conceptual representation.
-    Having said this, the syntax of CellML is a subset of XML (as specified in :ref:`CellML information sets<specA_cellml_information_sets>`), so the rules of XML :code:`id` attributes must be followed, where present.
+    Having said this, the syntax of CellML is a subset of XML (as specified in :numref:`{number} {name}<specA_cellml_information_sets>`), so the rules of XML :code:`id` attributes must be followed, where present.
 
     Consider the example below.
 

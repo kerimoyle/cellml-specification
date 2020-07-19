@@ -14,5 +14,5 @@
 
     Components are the largest building blocks of the model, and have three important parts to them.
     The first is their naming and contents, similar to all the other CellML items, and described below.
-    The second relates to their structure in relation to other :code:`component` items: this structure is called their *encapsulation* and is described in :ref:`The encapsulation item<encapsulation>`.
-    The third relates to the :code:`import component` item, as described in :ref:`The import_component item<import_component>`.
+    The second relates to their structure in relation to other :code:`component` items: this structure is called their *encapsulation* and is described in :numref:`{number} {name}<encapsulation>`.
+    The third relates to the :code:`import component` item, as described in :numref:`{number} {name}<import_component>`.
