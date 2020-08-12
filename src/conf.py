@@ -142,7 +142,7 @@ extlinks = {
 
     'namespace_help': ('https://www.w3schools.com/xml/xml_namespaces.asp%s', ''),
     'opencor': ('https://opencor.ws/%s', ''),
-    'pmr': ('https://models.physiomeproject.org/welcome/%s', ''),
+    'pmr': ('https://models.physiomeproject.org/%s', ''),
     'python': ('https://www.python.org/%s', ''),
 
     # These should be identical: one for links, one for full URL display

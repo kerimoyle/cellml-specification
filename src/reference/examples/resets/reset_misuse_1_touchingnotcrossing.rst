@@ -3,7 +3,7 @@
 Misuse: Touching, not crossing
 ------------------------------
 
-**Description:** Resets whose :code:`test_value` coincides with a root or turning point of the :code:`test_variable` risk missing detection of the reset point.
+**Description:** Resets whose :code:`test_value` coincides with a turning point of the :code:`test_variable` risk missing detection of the reset point.
 
 .. container:: shortlist
 

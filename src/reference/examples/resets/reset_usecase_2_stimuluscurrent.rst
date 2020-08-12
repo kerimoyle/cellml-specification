@@ -3,7 +3,8 @@
 Usecase: Stimulus current with offset
 -------------------------------------
 
-**Description:** **TODO**
+**Description:** Many :pmr:`electrophysiology<electrophysiology>` models contain statements such as: :code:`I_stim = stim_amplitude if (time % 1000 < 2) else 0`.
+These statements encode discontinuities directly into the mathematics (at t=0, t=1000, t=2000,... and at t=2, t=1002, t=2002, ...), and so can be replaced by reset statements.
 
 .. code-block:: text
 
