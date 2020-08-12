@@ -209,10 +209,10 @@ The second method also uses additional resets instead of conditional statements 
       ├─ variable: r_test
       ├─ variable: r 
       │   ├─ reset: 
-      │   │   ├─ when r_test = -1
+      │   │   ├─ when r_test == -1
       │   │   └─ then r = 1
       │   └─ reset: 
-      │       ├─ when r_test = 1
+      │       ├─ when r_test == 1
       │       └─ then r = 0
       │
       └─ variable: y initially 0 
