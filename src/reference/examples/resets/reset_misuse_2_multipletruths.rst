@@ -88,7 +88,6 @@ However, it's probable that this occurred because you actually wanted a differen
 - **Initial conditions:** If the line in the maths block stating that :math:`y=0` is intended to provide only an initial condition, you should remove it from the maths block.
   Statements here are held to be true for all time, so simple definitions such as :math:`a=1` lock the value of :math:`a` in stone: it cannot be changed by resets, by other mathematics, or by initial conditions.
   To initialise a variable whose value can be changed (including by a reset item) please use the :code:`initial_value` attribute on the variable instead.
-  You can read more about variables and constants in the **TODO pr344_documentation**
 
 - **Default conditions:** If the use of a reset on variable *y* is intended to be a temporary situation, active only when the reset conditions are met, then the mathematics :math:`y=0` should again be removed.
   Resets provide a one-way switch: in the case of the reset above this switch is from :math:`y=0→1`.

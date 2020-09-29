@@ -206,8 +206,5 @@
       The second time through the loop, we exit as there would be no further changes to the variables' values.
 
     There are alternative ways of arranging resets which would have the same functional outcome.
-    These are described in the Examples chapter.
+    These are described in :numref:`{number} {name}<index_examples_resets>`.
 
-.. 
-
-  TODO Examples chapter links
